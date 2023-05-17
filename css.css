@@ -1,0 +1,29 @@
+/*.thecouleur{
+    Voici comment vous pouvez utiliser chaque couleur dans votre code CSS:
+
+Bleu marine: la valeur hexadécimale est # 000080 ou la valeur RGB est rgb(0, 0, 128). Vous pouvez l'utiliser comme ceci:
+css
+Copy code
+color: #000080;  ou  
+color: rgb(0, 0, 128);
+Bleu royal: la valeur hexadécimale est #4169E1 ou la valeur RGB est rgb(65, 105, 225). Vous pouvez l'utiliser comme ceci:
+css
+Copy code
+color: #4169E1; /* ou  
+color: rgb(65, 105, 225);
+Bleu turquoise: la valeur hexadécimale est #40E0D0 ou la valeur RGB est rgb(64, 224, 208). Vous pouvez l'utiliser comme ceci:
+css
+Copy code
+color: #40E0D0; /* ou  
+color: rgb(64, 224, 208);
+Rose poudré: la valeur hexadécimale est # FFB6C1 ou la valeur RGB est rgb(255, 182, 193). Vous pouvez l'utiliser comme ceci:
+css
+Copy code
+color: #FFB6C1; /* ou  
+color: rgb(255, 182, 193);
+Rose magenta: la valeur hexadécimale est #FF00FF ou la valeur RGB est rgb(255, 0, 255). Vous pouvez l'utiliser comme ceci:
+css
+Copy code
+color: #FF00FF; /* ou  
+color: rgb(255, 0, 255);
+}

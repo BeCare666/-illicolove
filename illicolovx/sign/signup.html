@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signup.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script
+        src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+  <body id="yourmybody">
+    <div id="activemyIdt" style="display: none;">
+      <div class="toast activemyId toasta">
+        <div class="toast-content">
+          <p id="iconid"></p>
+          <div class="message">
+            <span class="text text-1" id="etatalert"></span>
+            <span class="text text-2" id="smsalert"></span>
+          </div>
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
+        <!-- Remove 'activemyId' class, this is just to show in Codepen thumbnail 
+              <i class="fas fa-check check"></i>
+      -->
+        <div class="progress activemyId"></div>
+      </div>
+    </div>
+    <form action="javascript:submitmy()">
+      <h1 style="color: blue !important; text-align: center;"><img src="./../assets/img/team-1.jpg" style="width: 10vh; height: 10vh;" alt=""></h1>
+      <h1 style="color: blue !important; text-align: center;" id="autoId">S'inscrire</h1>
+      <input id="input-1" type="text" placeholder="John Doe" required oninput="afficherDiv()"/>
+      <!---required autofocus-->
+      <label for="input-1">
+        <span class="label-text">Full Name</span>
+        <span class="nav-dot"> <i class="fas  fa-user" style="color: blue;"></i></span>
+        <div class="signup-button-trigger" id="signupbutton">S'inscrire</div>
+      </label>
+      <input id="input-2" type="text" placeholder="john" required />
+      <label for="input-2">
+        <span class="label-text">Username</span>
+        <span class="nav-dot"> <i class="fas  fa-user" style="color: blue;"></i></span>
+      </label>
+      <input id="input-3" type="email" placeholder="email@address.com" required
+        />
+      <label for="input-3">
+        <span class="label-text">Email</span>
+        <span class="nav-dot"> <i class="fas  fa-envelope" style="color: blue;"></i></span>
+      </label>
+      <input id="input-4" type="text"
+        placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" required />
+      <label for="input-4">
+        <span class="label-text">Password</span>
+        <span class="nav-dot"> <i class="fas  fa-lock" style="color: blue;"></i></span>
+      </label>
+     
+      <input id="input-5" type="text"
+        placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" required />
+      <label for="input-5">
+        <span class="label-text">Confirm Password</span>
+        <span class="nav-dot"> <i class="fas  fa-lock" style="color: blue;"></i></span>
+      </label>
+      <button type="submit">Create Your Account</button>
+      <p class="tip" style="color: white !important;" onclick="paule()" id="tipid">Cliquer sur Tab</p>
+     
+      <link rel="stylesheet" href="">
+    </form>
+    <script>
+      const firebaseConfig = {
+          apiKey: "AIzaSyBoOxLmlH9WR7si2Y0R01OM3c5I1wgnuPM",
+          authDomain: "illicolove-7c904.firebaseapp.com",
+          databaseURL: "https://illicolove-7c904-default-rtdb.firebaseio.com",
+          projectId: "illicolove-7c904",
+          storageBucket: "illicolove-7c904.appspot.com",
+          messagingSenderId: "1086957054874",
+          appId: "1:1086957054874:web:4f1899c85184210e482823"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    // Référence Firebase contenant les adresses e-mails
+    const emailRef = firebase.database().ref('emails');
+
+    // Écoute de l'événement "click" sur le bouton de recherche
+    function submitmy(){
+      var fullname = document.getElementById('input-1').value
+      var username = document.getElementById('input-2').value
+      const email = document.getElementById('input-3').value;
+      var password = document.getElementById('input-4').value
+      var confirmpassword = document.getElementById('input-5').value
+      
+      const emailInput = document.getElementById('input-3').value;
+      let emailKey = null;
+
+      // Filtrage des données pour trouver l'adresse e-mail spécifique
+      emailRef.once('value', (snapshot) => {
+        const emails = snapshot.val();
+        for (const key in emails) {
+          if (emails.hasOwnProperty(key) && emails[key].email === emailInput) {
+            emailKey = key;
+            break;
+          }
+        }
+
+        if (emailKey) {
+          // L'adresse e-mail a été trouvée
+          const email = emails[emailKey];
+          document.getElementById('input-1').value = ""
+          document.getElementById('input-2').value = ""
+          document.getElementById('input-3').value = ""
+          document.getElementById('input-4').value = ""
+          document.getElementById('input-5').value = ""
+          document.getElementById('iconid').innerHTML = ` <i class="fas fa-exclamation-triangle" style="font-size: 12px;"></i>`
+          document.getElementById('etatalert').innerText = "Désolé"
+          document.getElementById('smsalert').innerHTML = `Vous avez déjà un compte avec cet adresse email !`
+          document.getElementById('activemyIdt').style.display = "block"
+          setTimeout(()=>{
+          document.getElementById('activemyIdt').style.display = "none"
+           },5000)
+          //alert(`L'adresse e-mail ${email.email} de ${emailKey}a été trouvée dans Firebase !`)
+        } else {
+          // L'adresse e-mail n'a pas été trouvée
+        //alert(`L'adresse e-mail ${emailInput} n'a pas été trouvée dans Firebase.`)
+        var id = () => {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+        const userId = id();
+        // Récupération de l'adresse mail entrée par l'utilisateur
+        // Envoi de l'adresse mail à Firebase
+
+        firebase.database().ref('utilisateurs/' + userId).set({
+            userId : userId,
+            email: email,
+            fullname: fullname,
+            username : username,
+            password : password,
+            confirmpassword : confirmpassword,
+            MAVILLEDERESIDENCE : "",
+            MANATIONNALITE : "",
+            MONTRAVAILLEOUOCCUPATION : "",
+            MASITUATIONMATRIMONIALE : "",
+            MONAGE:"",
+            MATAILLE:"",
+            MONPOIDS:"",
+            MONTEINT:"",
+            QUESTIONUNIQUE:"",
+            COMPTECREDIT: 3,
+            MONPAYSDEPUBLICATION:"",
+            VALIDERMONCOMPTE:false,
+            COMPTEFACEBOOK:"",
+            COMPTEINSATAGRAMME:"",
+            MONSEXE:"",
+            TELEPHONE:"",
+            JEVEUXUNERENCONTRE:"", 
+            PIECESDIDENTITE:"",
+            MESDEUXPHOTOS:"",
+            MESDEUXPHOTO2:"",
+            SEXEDEPROFILQUEJECHERCHE:"",
+            SONAGEDEPROFILQUEJECHERCHE:"",
+            SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE:"",
+            PAYSDERESIDENCEDEPROFILQUEJECHERCHE:"",
+            PHYSIQUEDEPROFILQUEJECHERCHE:"",
+            VILLEDHABITATIONDEPROFILQUEJECHERCHE:"",
+            TRAVAILDEDEPROFILQUEJECHERCHE:"",
+            AUTRESPRECISIONSDEPROFILQUEJECHERCHE:"",
+            IDREGION : ""
+
+        }).then(() => {
+          document.getElementById('iconid').innerHTML = `  <i class="fas fa-check check"></i>`
+          document.getElementById('etatalert').innerText = "succès"
+          document.getElementById('smsalert').innerHTML = `Vous êtes inscrit avec succès !`
+          document.getElementById('activemyIdt').style.display = "block"
+          setTimeout(()=>{
+          document.getElementById('activemyIdt').style.display = "none"
+          window.location.href = "login.html"
+          },5000)
+            alert("Adresse mail envoyée à Firebase !");
+            localStorage.setItem('unserconnect', userId)
+            localStorage.setItem('unserconnectmail', email)
+            window.location.href = "smsemail.html"
+        }).catch((error) => {
+            alert("Erreur lors de l'envoi de l'adresse mail à Firebase :", error);
+        });
+
+        }
+      });
+    }
+    window.onload = function() {
+			document.getElementById("signupbutton").click();
+		};
+
+    function afficherDiv(){
+      var divs = document.getElementsByClassName("nav-dot");
+			for (var i = 0; i < divs.length; i++) {
+				divs[i].style.cssText = "display: block;top: 3vh; left: 90%; transform: translate(-50%, 0); display: flex; justify-content: center; align-items: center;";
+			}
+      //document.getElementById("autoId").style.display = "none"
+    }
+    </script>
+  </body>
+</html>

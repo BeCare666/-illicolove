@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script
+        src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+
+    <title>S'inscrire</title>
+  </head>
+  <body>
+    <div id="activemyIdt" style="display: none;">
+      <div class="toast activemyId toasta">
+        <div class="toast-content">
+          <p id="iconid"></p>
+          <div class="message">
+            <span class="text text-1" id="etatalert"></span>
+            <span class="text text-2" id="smsalert"></span>
+          </div>
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
+        <!-- Remove 'activemyId' class, this is just to show in Codepen thumbnail 
+              <i class="fas fa-check check"></i>
+      -->
+        <div class="progress activemyId"></div>
+      </div>
+    </div>
+    <div id="heart-cursor"></div>
+  <div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2" style="background-image: url('./../assets/img/love.svg');" id="breathing-image"></div>
+    <div class="contents order-2 order-md-1">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7">
+            <h3>S'inscrire à<strong> illicolove</strong></h3>
+            <form action="javascript:submitmy()">
+              <div class="form-group first">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" placeholder="Username  " id="username" required>
+              </div>
+              <div class="form-group first">
+                <label for="username">Nom et Prénoms</label>
+                <input type="text" class="form-control" placeholder="Nom et Prénoms " id="name" required>
+              </div>
+              <div class="form-group first">
+                <label for="username">Email</label>
+                <input type="email" class="form-control" placeholder="your-email@gmail.com" id="email" required>
+              </div>
+              <div class="form-group last mb-3">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" placeholder="Votre mode passe" id="password" required>
+              </div>
+              
+              <div class="d-flex mb-5 align-items-center">
+                <label class="control control--checkbox mb-0"><span class="caption">Se souvenir de moi</span>
+                  <input type="checkbox" checked="checked"/>
+                  <div class="control__indicator"></div>
+                </label>
+                <span class="ml-auto"><a href="#" class="forgot-pass">Mot de passe oublié</a></span> 
+              </div>
+
+              <input type="submit" value="S'inscrire" class="btn btn-block" style="background-color: #FFB6C1 !important;">
+              <br>
+              &nbsp; &nbsp; &nbsp;<a href="login.html">J'ai déjà un compte. <strong style="color: #40E0D0; text-align: center;">Connectez-vous</strong> </a>
+              <br>
+              <div style="opacity: 0;">sdfvff</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="preloader" style="display: none;"></div>
+  <script>
+  const firebaseConfig = {
+        apiKey: "AIzaSyBoOxLmlH9WR7si2Y0R01OM3c5I1wgnuPM",
+        authDomain: "illicolove-7c904.firebaseapp.com",
+        databaseURL: "https://illicolove-7c904-default-rtdb.firebaseio.com",
+        projectId: "illicolove-7c904",
+        storageBucket: "illicolove-7c904.appspot.com",
+        messagingSenderId: "1086957054874",
+        appId: "1:1086957054874:web:4f1899c85184210e482823"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+  // Référence Firebase contenant les adresses e-mails
+  const emailRef = firebase.database().ref('utilisateurs');
+
+  // Écoute de l'événement "click" sur le bouton de recherche
+  function submitmy(){
+    document.getElementById('preloader').style.display = "block"
+    var fullname = document.getElementById('name').value
+    var username = document.getElementById('username').value
+    const email = document.getElementById('email').value;
+    var password = document.getElementById('password').value
+    
+    const emailInput = document.getElementById('email').value;
+    let emailKey = null;
+
+    // Filtrage des données pour trouver l'adresse e-mail spécifique
+    emailRef.once('value', (snapshot) => {
+      const emails = snapshot.val();
+      for (const key in emails) {
+        if (emails.hasOwnProperty(key) && emails[key].email === emailInput) {
+          emailKey = key;
+          break;
+        }
+      }
+
+      if (emailKey) {
+        // L'adresse e-mail a été trouvée
+        document.getElementById('preloader').style.display = "none"
+        const email = emails[emailKey];
+        document.getElementById('username').value = ""
+        document.getElementById('email').value = ""
+        document.getElementById('name').value = ""
+        document.getElementById('password').value = ""
+        document.getElementById('iconid').innerHTML = ` <i class="fas fa-exclamation-triangle" style="font-size: 15px;"></i>`
+        document.getElementById('etatalert').innerText = "Désolé"
+        document.getElementById('smsalert').innerHTML = `Vous avez déjà un compte avec cet adresse email !`
+        document.getElementById('activemyIdt').style.display = "block"
+        setTimeout(()=>{
+        document.getElementById('activemyIdt').style.display = "none"
+         },500)
+        //alert(`L'adresse e-mail ${email.email} de ${emailKey}a été trouvée dans Firebase !`)
+      } else {
+        document.getElementById('preloader').style.display = "none"
+        //L'adresse e-mail n'a pas été trouvée
+      //alert(`L'adresse e-mail ${emailInput} n'a pas été trouvée dans Firebase.`)
+      var id = () => {
+          return Math.floor((1 + Math.random()) * 0x10000)
+              .toString(16)
+              .substring(1);
+      }
+      const userId = id();
+      // Récupération de l'adresse mail entrée par l'utilisateur
+      // Envoi de l'adresse mail à Firebase
+
+      firebase.database().ref('utilisateurs/' + userId).set({
+          userId : userId,
+          email: email,
+          fullname: fullname,
+          username : username,
+          password : password,
+          MAVILLEDERESIDENCE : "",
+          MANATIONNALITE : "",
+          MONTRAVAILLEOUOCCUPATION : "",
+          MASITUATIONMATRIMONIALE : "",
+          MONAGE:"",
+          MATAILLE:"",
+          MONPOIDS:"",
+          MONTEINT:"",
+          QUESTIONUNIQUE:"",
+          COMPTECREDIT: 3,
+          MONPAYSDEPUBLICATION:"",
+          VALIDERMONCOMPTE:false,
+          COMPTEFACEBOOK:"",
+          COMPTEINSATAGRAMME:"",
+          MONSEXE:"",
+          TELEPHONE:"",
+          JEVEUXUNERENCONTRE:"", 
+          PIECESDIDENTITE:"",
+          MESDEUXPHOTOS:"",
+          MESDEUXPHOTO2:"",
+          SEXEDEPROFILQUEJECHERCHE:"",
+          SONAGEDEPROFILQUEJECHERCHE:"",
+          SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE:"",
+          PAYSDERESIDENCEDEPROFILQUEJECHERCHE:"",
+          PHYSIQUEDEPROFILQUEJECHERCHE:"",
+          VILLEDHABITATIONDEPROFILQUEJECHERCHE:"",
+          TRAVAILDEDEPROFILQUEJECHERCHE:"",
+          AUTRESPRECISIONSDEPROFILQUEJECHERCHE:"",
+          IDREGION : "",
+          QUESTIONSECUREPASSWORD : ""
+
+      }).then(() => {
+        document.getElementById('preloader').style.display = "none"
+        document.getElementById('iconid').innerHTML = `  <i class="fas fa-check check"></i>`
+        document.getElementById('etatalert').innerText = "succès"
+        document.getElementById('smsalert').innerHTML = `Vous êtes inscrit avec succès !`
+        document.getElementById('activemyIdt').style.display = "block"
+        setTimeout(()=>{
+        document.getElementById('activemyIdt').style.display = "none"
+        window.location.href = "login.html"
+        },5000)
+          alert("Adresse mail envoyée à Firebase !");
+          localStorage.setItem('unserconnect', userId)
+          localStorage.setItem('unserconnectmail', email)
+          window.location.href = "smsemail.html"
+      }).catch((error) => {
+          alert("Erreur lors de l'envoi de l'adresse mail à Firebase :", error);
+      });
+
+      }
+    });
+  }
+
+  </script>
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
+  </body>
+</html>
+    
+

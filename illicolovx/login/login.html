@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+
+    <!-- Inclure les bibliothèques Firebase que vous utilisez (par exemple, la base de données Firebase) -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>Se connecter</title>
+  </head>
+  <body>
+    <div id="activemyIdt" style="display: none;">
+      <div class="toast activemyId toasta">
+        <div class="toast-content">
+          <p id="iconid"></p>
+          <div class="message">
+            <span class="text text-1" id="etatalert"></span>
+            <span class="text text-2" id="smsalert"></span>
+          </div>
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
+        <!-- Remove 'activemyId' class, this is just to show in Codepen thumbnail 
+              <i class="fas fa-check check"></i>
+      -->
+        <div class="progress activemyId"></div>
+      </div>
+    </div>
+
+  <div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2" style="background-image: url('./../assets/img/love.svg');" id="breathing-image"></div>
+    <div class="contents order-2 order-md-1">
+
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7">
+            <h3>Se connecter à<strong> illicolove</strong></h3>
+            <form action="javascript:submitmy()">
+                <div class="form-group first">
+                    <label for="username">Email</label>
+                    <input type="email" class="form-control" placeholder="your-email@gmail.com" id="email" required>
+                  </div>
+              <div class="form-group last mb-3">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" placeholder="Votre mot passe" id="password" required>
+              </div>
+              
+              <div class="d-flex mb-5 align-items-center">
+                <label class="control control--checkbox mb-0"><span class="caption">Se souvenir de moi</span>
+                  <input type="checkbox" checked="checked myClaseBtn"/>
+                  <div class="control__indicator"></div>
+                </label>
+                <span class="ml-auto"><a href="#" class="forgot-pass">Mot de passe oublié</a></span> 
+              </div>
+
+              <input type="submit" value="Se connecter" class="btn btn-block myClaseBtn">
+              <br>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="index.html">J'ai pas un compte. <strong style="color: #40E0D0; text-align: center;">Inscrivez-vous</strong> </a>
+              <style>
+                .myClaseBtn{
+                  background-color: #FFB6C1;
+                }
+              </style>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="preloader" style="display: none;"></div>
+  <script>
+  const firebaseConfig = {
+        apiKey: "AIzaSyBoOxLmlH9WR7si2Y0R01OM3c5I1wgnuPM",
+        authDomain: "illicolove-7c904.firebaseapp.com",
+        databaseURL: "https://illicolove-7c904-default-rtdb.firebaseio.com",
+        projectId: "illicolove-7c904",
+        storageBucket: "illicolove-7c904.appspot.com",
+        messagingSenderId: "1086957054874",
+        appId: "1:1086957054874:web:4f1899c85184210e482823"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+    // Créer une référence à la base de données Firebase
+const dbRef = firebase.database().ref();
+
+// Obtenez une référence à l'emplacement contenant les données d'utilisateur
+const usersRef = dbRef.child("utilisateurs");
+
+  // Écoute de l'événement "click" sur le bouton de recherche
+  // Écoute de l'événement "click" sur le bouton de recherche
+  function submitmy(){
+    document.getElementById('preloader').style.display = "block"
+// Obtenez l'e-mail et le mot de passe de l'utilisateur
+const email = document.getElementById('email').value;
+const password = document.getElementById('password').value;
+
+// Utilisez la méthode Firebase once() pour obtenir une copie des données de l'utilisateur à partir de la base de données
+// Utilisez la méthode Firebase once() pour obtenir une copie des données de l'utilisateur à partir de la base de données
+usersRef.orderByChild("email").equalTo(email).once("value", function(snapshot) {
+  if (snapshot.exists()) {
+    snapshot.forEach(function(userSnapshot) {
+      // Vérifiez si le mot de passe de l'utilisateur correspond au mot de passe donné
+      if (userSnapshot.val().password === password) {
+        // L'utilisateur existe avec l'e-mail et le mot de passe donnés
+        document.getElementById('preloader').style.display = "none"
+        const userId = userSnapshot.key;
+        document.getElementById('email').value = ""
+        document.getElementById('password').value = ""
+        document.getElementById('iconid').innerHTML = `  <i class="fas fa-check check"></i>`
+        document.getElementById('etatalert').innerText = "succès"
+        document.getElementById('smsalert').innerHTML = `Vous êtes connecté avec succès !`
+        document.getElementById('activemyIdt').style.display = "block"
+        localStorage.setItem('unserconnect', userId)
+        localStorage.setItem('unserconnectmail', email)
+        setTimeout(()=>{
+        document.getElementById('activemyIdt').style.display = "none"
+        window.location.href = "./../indexaa.html"
+        },5000)
+       // alert('L\'ID de l\'utilisateur est : ' + userSnapshot.val().password);
+      } else {
+        document.getElementById('preloader').style.display = "none"
+        document.getElementById('email').value = ""
+        document.getElementById('password').value = ""
+        document.getElementById('iconid').innerHTML = `  <i class="fas fa-exclamation-triangle"></i>`
+        document.getElementById('etatalert').innerText = "Désolé"
+        document.getElementById('smsalert').innerHTML = `Le mot de passe est incorrect !`
+        document.getElementById('activemyIdt').style.display = "block"
+        setTimeout(()=>{
+        document.getElementById('activemyIdt').style.display = "none"
+        },5000)
+        // Le mot de passe est incorrect
+       // alert('Le mot de passe est incorrect');
+      }
+    });
+  } else {
+    document.getElementById('preloader').style.display = "none"
+    document.getElementById('email').value = ""
+        document.getElementById('password').value = ""
+        document.getElementById('iconid').innerHTML = `  <i class="fas fa-exclamation-triangle"></i>`
+        document.getElementById('etatalert').innerText = "Désolé"
+        document.getElementById('smsalert').innerHTML = `L'utilisateur n'existe pas avec l'e-mail donné !`
+        document.getElementById('activemyIdt').style.display = "block"
+        setTimeout(()=>{
+        document.getElementById('activemyIdt').style.display = "none"
+        },5000)
+    // L'utilisateur n'existe pas avec l'e-mail donné
+    //alert('L\'utilisateur n\'existe pas');
+  }
+});
+
+        
+  }
+
+ 
+
+  </script>
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
+  </body>
+</html>
+    
+

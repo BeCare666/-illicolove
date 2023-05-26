@@ -1567,7 +1567,7 @@ body {
   transform: scale(0.9);
   transform-origin: top center;
   margin-top: 70px;
-  border-radius: 30px;
+  border-radius: 10px;
   align-items: center;
   justify-content: center;
   right: 0 !important;

@@ -281,6 +281,7 @@
         } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"
 
         const db = getDatabase();
+       
         var myprofileidMaVille = document.getElementById('myprofileidMaVille');
         var myprofileidPrénoms = document.getElementById('myprofileidPrénoms');
         var myprofileidnationèèalité = document.getElementById('myprofileidnationèèalité');
@@ -384,30 +385,65 @@
 
         // Créez une nouvelle instance de FileReader
         var reader = new FileReader();
-  
+
         // Ajoutez un gestionnaire d'événements pour écouter la fin de la lecture du fichier
         reader.onload = function(event) {
-        // Récupérez le contenu du fichier sous forme de tableau d'octets
-        var fileContent = new Uint8Array(event.target.result);
-        console.log("Contenu du fichier : ", fileContent);
+            // Créez une nouvelle instance d'image
+            var img = new Image();
 
-        // Convertissez le tableau d'octets en une chaîne de caractères codée en base64
-        var base64Content = btoa(String.fromCharCode.apply(null, fileContent));
-        console.log("Contenu en base64 : ", base64Content); 
-        base64Contenttable.push(base64Content)
-        } 
+            // Définissez le gestionnaire d'événements pour lorsque l'image est chargée
+            img.onload = function() {
+            // Créez un élément canvas
+            var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+
+            // Déterminez les dimensions de l'image redimensionnée
+            var maxWidth = 800;
+            var maxHeight = 600;
+            var width = img.width;
+            var height = img.height;
+
+            // Vérifiez si l'image doit être redimensionnée
+            if (width > maxWidth || height > maxHeight) {
+                // Calculez le facteur de redimensionnement
+                var ratio = Math.min(maxWidth / width, maxHeight / height);
+
+                // Appliquez le redimensionnement
+                width *= ratio;
+                height *= ratio;
+            }
+
+            // Définissez les dimensions du canvas
+            canvas.width = width;
+            canvas.height = height;
+
+            // Dessinez l'image sur le canvas avec les nouvelles dimensions
+            context.drawImage(img, 0, 0, width, height);
+
+            // Obtenez le contenu de l'image redimensionnée sous forme de base64
+            var base64Content = canvas.toDataURL('image/jpeg');
+            base64Content = base64Content.replace(/^data:image\/jpeg;base64,/, '');
+            console.log("Contenu en base64 : ", base64Content);
+            base64Contenttable.push(base64Content)
+            // ...
+            };
+
+            // Définissez la source de l'image comme le contenu du fichier
+            img.src = event.target.result;
+        };
+
         // Commencez la lecture du fichier
-        reader.readAsArrayBuffer(file);
-    
+        reader.readAsDataURL(file);
         }
 
 
-         // function to upload Photo 1
-        // Sélectionnez l'élément HTML de l'input file qui permet à l'utilisateur de sélectionner une photo
-        var inputElement = document.getElementById("myprofileidPhotos");
+
+
+
+        var inputElement1 = document.getElementById("myprofileidPhotos");
 
         // Ajoutez un gestionnaire d'événements pour écouter le changement de fichier
-        inputElement.addEventListener("change", handleFilesphoto1, false);
+        inputElement1.addEventListener("change", handleFilesphoto1, false);
 
         function handleFilesphoto1() {
         // Récupérez le fichier sélectionné par l'utilisateur
@@ -419,27 +455,65 @@
 
         // Ajoutez un gestionnaire d'événements pour écouter la fin de la lecture du fichier
         reader.onload = function(event) {
-        // Récupérez le contenu du fichier sous forme de tableau d'octets
-        var fileContent = new Uint8Array(event.target.result);
-        console.log("Contenu du fichier : ", fileContent);
+            // Créez une nouvelle instance d'image
+            var img = new Image();
 
-        // Convertissez le tableau d'octets en une chaîne de caractères codée en base64
-        var base64Contentphoto1 = btoa(String.fromCharCode.apply(null, fileContent));
-        console.log("Contenu en base64 : ", base64Contentphoto1); 
-        base64Contentphoto1table.push(base64Contentphoto1)
-        } 
+            // Définissez le gestionnaire d'événements pour lorsque l'image est chargée
+            img.onload = function() {
+            // Créez un élément canvas
+            var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+
+            // Déterminez les dimensions de l'image redimensionnée
+            var maxWidth = 800;
+            var maxHeight = 600;
+            var width = img.width;
+            var height = img.height;
+
+            // Vérifiez si l'image doit être redimensionnée
+            if (width > maxWidth || height > maxHeight) {
+                // Calculez le facteur de redimensionnement
+                var ratio = Math.min(maxWidth / width, maxHeight / height);
+
+                // Appliquez le redimensionnement
+                width *= ratio;
+                height *= ratio;
+            }
+
+            // Définissez les dimensions du canvas
+            canvas.width = width;
+            canvas.height = height;
+
+            // Dessinez l'image sur le canvas avec les nouvelles dimensions
+            context.drawImage(img, 0, 0, width, height);
+
+            // Obtenez le contenu de l'image redimensionnée sous forme de base64
+            var base64Contentphoto1 = canvas.toDataURL('image/jpeg');
+            base64Contentphoto1 = base64Contentphoto1.replace(/^data:image\/jpeg;base64,/, '');
+            console.log("Contenu en base64 : ", base64Contentphoto1);
+            base64Contentphoto1table.push(base64Contentphoto1)
+            // ...
+            };
+
+            // Définissez la source de l'image comme le contenu du fichier
+            img.src = event.target.result;
+        };
+
         // Commencez la lecture du fichier
-        reader.readAsArrayBuffer(file);
-    
+        reader.readAsDataURL(file);
         }
 
 
-         // function to upload pièce photo 2
-        // Sélectionnez l'élément HTML de l'input file qui permet à l'utilisateur de sélectionner une photo
-        var inputElement = document.getElementById("myprofileidPhoto2");
+
+
+
+
+
+
+        var inputElement2 = document.getElementById("myprofileidPhoto2");
 
         // Ajoutez un gestionnaire d'événements pour écouter le changement de fichier
-        inputElement.addEventListener("change", handleFilesphoto2, false);
+        inputElement2.addEventListener("change", handleFilesphoto2, false);
 
         function handleFilesphoto2() {
         // Récupérez le fichier sélectionné par l'utilisateur
@@ -451,24 +525,89 @@
 
         // Ajoutez un gestionnaire d'événements pour écouter la fin de la lecture du fichier
         reader.onload = function(event) {
-        // Récupérez le contenu du fichier sous forme de tableau d'octets
-        var fileContent = new Uint8Array(event.target.result);
-        console.log("Contenu du fichier : ", fileContent);
+            // Créez une nouvelle instance d'image
+            var img = new Image();
 
-        // Convertissez le tableau d'octets en une chaîne de caractères codée en base64
-        var base64Contentphoto2 = btoa(String.fromCharCode.apply(null, fileContent));
-        console.log("Contenu en base64 : ", base64Contentphoto2); 
-        base64Contentphoto2table.push(base64Contentphoto2)
-        } 
+            // Définissez le gestionnaire d'événements pour lorsque l'image est chargée
+            img.onload = function() {
+            // Créez un élément canvas
+            var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+
+            // Déterminez les dimensions de l'image redimensionnée
+            var maxWidth = 800;
+            var maxHeight = 600;
+            var width = img.width;
+            var height = img.height;
+
+            // Vérifiez si l'image doit être redimensionnée
+            if (width > maxWidth || height > maxHeight) {
+                // Calculez le facteur de redimensionnement
+                var ratio = Math.min(maxWidth / width, maxHeight / height);
+
+                // Appliquez le redimensionnement
+                width *= ratio;
+                height *= ratio;
+            }
+
+            // Définissez les dimensions du canvas
+            canvas.width = width;
+            canvas.height = height;
+
+            // Dessinez l'image sur le canvas avec les nouvelles dimensions
+            context.drawImage(img, 0, 0, width, height);
+
+            // Obtenez le contenu de l'image redimensionnée sous forme de base64
+            var base64Contentphoto2 = canvas.toDataURL('image/jpeg');
+            base64Contentphoto2 = base64Contentphoto2.replace(/^data:image\/jpeg;base64,/, '');
+            console.log("Contenu en base64 : ", base64Contentphoto2);
+            base64Contentphoto2table.push(base64Contentphoto2)
+
+            // ...
+            };
+
+            // Définissez la source de l'image comme le contenu du fichier
+            img.src = event.target.result;
+        };
+
         // Commencez la lecture du fichier
-        reader.readAsArrayBuffer(file);
-    
-        }   
+        reader.readAsDataURL(file);
+        }
+
+
+
+
+         
         sunmitannonceid.addEventListener('click', function(){
             preloader.style.display = "block"   
             const PieceID = base64Contenttable.slice(-1).pop();
             const Photo1ID = base64Contentphoto1table.slice(-1).pop();
             const Photo2ID = base64Contentphoto2table.slice(-1).pop();
+            console.log(myprofileidMaVille.value)
+            console.log(myprofileidtéléphone.value)
+            console.log(myprofileidPrénoms.value)
+            console.log(choicesmultipleremovebuttonrencontre.value)
+            console.log(myprofileidnationèèalité.value)
+            console.log(PieceID.value)
+            console.log(Photo1ID.value)
+            console.log(Photo2ID.value)
+            console.log(IDREGION.value)
+            console.log(choicesmultipleremovebuttonSonsexe.value)
+            console.log(choicesmultipleremovebutton.value)
+            console.log(myprofileidtrancheâge.value)
+            console.log(myprofileidâge.value)
+            console.log(choicesmultipleremovebuttonmatrimoniale.value)
+            console.log(myprofileidtaille.value)
+            console.log(myprofileidSonpays.value)
+            console.log(myprofileidpréférences.value)
+            console.log(myprofileidpoids.value)
+            console.log(myprofileidSaville.value)
+            console.log(myprofileidoccupations.value)
+            console.log(myprofileidteint.value)
+            console.log(choicesmultipleremovebuttonsexe.value)
+            console.log(myprofileidprécisions.value)
+            console.log(myprofileidtravail.value)
+    
             if(myprofileidMaVille.value && myprofileidtéléphone.value &&
                myprofileidPrénoms.value && choicesmultipleremovebuttonrencontre.value &&
                myprofileidnationèèalité.value && PieceID && Photo1ID && Photo2ID &&

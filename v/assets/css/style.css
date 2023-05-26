@@ -1558,7 +1558,7 @@ body {
 #modalMyDropdown .iphone {
   background-color: #F7F7F7;
   height: 500px;
-  width: 310px;
+  width: 100% !important;
   box-shadow: 0 11px 15px -1px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   position: relative;

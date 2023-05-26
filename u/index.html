@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Trouvez vos âmes soeurs</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+  * {
+    font-family: 'Montserrat-bold', sans-serif;
+    font-size: 14px !important;
+  }
+</style>
+    <!-- Google Fonts -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- Link to import alert personnal -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+
+  </head>
+
+  <body>
+    <div id="demo-modal" class="modal" style="background-color: #FFB6C1 !important;">
+      <div class="modal__content">
+          <h1 style="text-align: center; color: FFB6C1;" id="iconid"><i class="bi bi-sign-turn-right-fill"></i></h1>
+  
+          <h1 style="text-align: center; font-size: 17px;" id="etatalert">Visiter son profil !</h1>
+  
+          <div class="modal__footer" id="updatecompteId" style="cursor: pointer;">
+            <button class="btn btn " style="background-color: #FFB6C1; color: white;"><i class="bi bi-eye" style="color: white;"></i> Cliquer pour afficher</button>
+          </div>
+  
+         <a href="#" class="modal__close" id="modal__close">&times;</a>
+      </div>
+  </div>
+      <!-- ======= alert ======= -->
+      <section id="team" class="team">
+        <div class="container" data-aos="fade-up">
+
+          <header class="section-header">
+            <h2>illicolove</h2>
+            <p>Trouvez vos âmes soeurs</p>
+          </header>
+
+          <div class="row gy-4">
+            <span id="idtheAllProForsite" style=" display: flex; align-items: center;  justify-content:center; flex-wrap: wrap;"></span>
+            <section id="modalID" style="display: none;">
+              <div style = "display: flex; justify-content: center; margin: auto;">
+                <img src="./../assets/img/no-data/nodata.svg" alt="" style = "width: 100%; height: 40vh;">
+              </div><br>
+              <p style="text-align: center;">Plus aucun autre profil ne correspondre à vos préference pour l'instant.</p>
+          </section>
+          </div>
+
+        </div>
+      </section><!-- End Team Section -->
+    <div id="preloader"></div>
+    <div id="afficher4elementID">
+    <a href="#" id="afficher4element" class="back-to-top d-flex
+      align-items-center justify-content-center active"><i class="bi bi-arrow-repeat"></i></a>
+    </div>
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+        apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
+        authDomain: "illicolove0.firebaseapp.com",
+        databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
+        projectId: "illicolove0",
+        storageBucket: "illicolove0.appspot.com",
+        messagingSenderId: "687063035754",
+        appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+
+        import {
+            getDatabase,
+            ref,
+            set,
+            update,
+            child,
+            onValue,
+            remove,
+            get,
+        } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+
+        import { getStorage, getDownloadURL 
+        } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"
+
+     const db = getDatabase();
+     const myOptionV = localStorage.getItem("myOptionV");
+    //function to get all products in realTime
+    function getAllDataRealtimePro() {
+       var myalldatas = []; 
+       var myalldatasUSers = []; 
+       var tableauTotakeidd = []
+       const dbref = ref(db, "utilisateurs/");
+       onValue(dbref, (snopshot) => {
+        snopshot.forEach((childsnopshot) => {
+          myalldatasUSers.push(childsnopshot.val());
+        });
+        
+        // Parcourez les utilisateurs de la catégorie spécifiée  
+          const filteredUsers = myalldatasUSers.filter(user => user.IDREGION === myOptionV);
+          // Parcourez les utilisateurs de la catégorie spécifiée
+            filteredUsers.forEach(user => {
+              console.log(user.IDREGION, user.COMPTECREDIT, user.email);
+               myalldatas.push(user);
+            });
+         // Vérifier si myalldatas est vide ou non défini
+    if (myalldatas.length > 0) {
+      // Appel initial pour récupérer les 4 premiers utilisateurs
+      fonctionEnfant();
+    } else {
+      // Gérer le cas où myalldatas est vide ou non défini
+      console.log("Aucune donnée disponible");
+    }
+
+       function fonctionEnfant(){
+
+        if (myalldatas.length === 0) {
+          document.getElementById('preloader').style.display = "none"
+          document.getElementById('idtheAllProForsite').style.display = "none"
+          document.getElementById('modalID').style.display = "block"
+            setTimeout(()=>{
+            document.getElementById('idtheAllProForsite').style.display = "block" 
+            document.getElementById('modalID').style.display = "none" 
+            },5000)  
+          }
+        if (myalldatas.length != 0) {
+          var sixPremiersElements = myalldatas.sort(() => Math.random() - 0.5).slice(0, 5); //slice(0, 5);
+          console.log(sixPremiersElements);
+          return sixPremiersElements.forEach((k) => {
+          //validation du compte par les admin
+          var VALIDATECOMPTE = k.COMPTECREDIT
+          if(k.VALIDERMONCOMPTE == true){
+          var divq = document.getElementById('idtheAllProForsite');
+          let trow = document.createElement("div");
+         // function to go check user data principal
+          const dbref = ref(db);
+
+          get(child(dbref, "utilisateurs/" + UserConnectuser))
+          .then((snapshot) => {
+          if (snapshot.exists()) {
+          document.getElementById('preloader').style.display = "none"
+          var myCompta = snapshot.val().COMPTECREDIT
+          //alert(snapshot.val().userId)
+          
+
+          if(snapshot.val().COMPTECREDIT > 0  && snapshot.val().userId != k.userId){
+          // function to take userId
+        alert(snapshot.val().COMPTECREDIT)
+          trow.addEventListener('mouseover', function() {
+              var monElementy = k.userId
+              tableauTotakeidd.push(monElementy)
+              const last = tableauTotakeidd.slice(-1).pop();
+              localStorage.setItem("storageNamey", last);
+          });
+          //function to transforme the photo to base64
+          var photoDataUrl = 'data:image/png;base64,' + k.MESDEUXPHOTOS;
+          trow.innerHTML =
+          `
+          <div class=" align-items-stretch"
+            data-aos="fade-up" data-aos-delay="100" style="width: 90%; height: 55vh; padding: 5px;">
+              <div class="member">
+                <div class="member-img">
+                  <img src="${photoDataUrl}" class="img-fluid"
+                    alt=""style="height: 30vh; width: 100%;">
+                  <div class="social">
+                    <a id="mycontactidw" href="https://wa.me/${k.TELEPHONE}?text=Salut,%20comment%20vas-tu%20?.%20Moi%20c'est%20${k.fullname},%20${k.MONTRAVAILLEOUOCCUPATION}.%20Je%20suis%20vraiment%20intéressé%20pas%20ton%20profil%20que%20j'ai%20vu%20sur%20le%20site%20de%20rencontre%20illicolove.">
+                    <i class="bi bi-whatsapp"></i></a>
+                    <a id="mycontactide" href="mailto:${k.email}" ><i class="bi bi-envelope"></i></a>
+                    <a id="mycontactidt" href="tel:${k.TELEPHONE}" ><i class="bi bi-telephone"></i></a>
+                    <a class="mycontactidvUp" href="#demo-modal" style="cursor:pointer" ><i class="bi bi-eye"></i></a>
+                  </div>
+                </div>
+                <div class="member-info" id="member-info" style="background: url(assets/img/background.jpg) no-repeat !important;">
+                  <h4>${k.username}</h4>
+                  <span>${k.fullname}</span>
+                  <p style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${k.PHYSIQUEDEPROFILQUEJECHERCHE}</p>
+
+                </div>
+              </div>
+            </div>                  
+            `
+            divq.append(trow)
+            
+              }else {
+                if(snapshot.val().userId != k.userId){         
+          //function to transforme the photo to base64
+          //alert(snapshot.val().userId)
+          var photoDataUrl = 'data:image/png;base64,' + k.MESDEUXPHOTOS;
+          trow.innerHTML =
+          `
+          <div class=" align-items-stretch"
+            data-aos="fade-up" data-aos-delay="100" style="width: 90%; height: 55vh; padding: 5px;">
+              <div class="member">
+                <div class="member-img">
+                  <img src="${photoDataUrl}" class="img-fluid"
+                    alt=""style="height: 30vh; width: 100%;">
+                  <div class="social">
+                    <a id="mycontactidw" href="https://wa.me/${k.TELEPHONE}?text=Salut,%20comment%20vas-tu%20?.%20Moi%20c'est%20${k.fullname},%20${k.MONTRAVAILLEOUOCCUPATION}.%20Je%20suis%20vraiment%20intéressé%20pas%20ton%20profil%20que%20j'ai%20vu%20sur%20le%20site%20de%20rencontre%20illicolove." 
+                    style="cursor: none; pointer-events: none; opacity: 0.5;">
+                      <i class="bi bi-whatsapp"></i></a>
+                    <a id="mycontactide" href="mailto:${k.email}" style="cursor: none; pointer-events: none; opacity: 0.5;"><i class="bi bi-envelope"></i></a>
+                    <a id="mycontactidt" href="tel:${k.TELEPHONE}" style="cursor: none; pointer-events: none; opacity: 0.5;"><i class="bi bi-telephone"></i></a>
+                    <a class="mycontactidv" style="cursor:pointer" ><i class="bi bi-eye"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>${k.username}</h4>
+                  <span>${k.fullname}</span>
+                  <p style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${k.PHYSIQUEDEPROFILQUEJECHERCHE}</p>
+
+                </div>
+              </div>
+            </div>                     
+            `
+            divq.append(trow)
+            // Function to alert user the unity is end
+            var mycontactidv = document.querySelectorAll('.mycontactidv')
+            mycontactidv.forEach((T)=>{
+            T.addEventListener('click', function(){
+            document.getElementById('iconid').innerHTML = ` <i class="fas fa-exclamation-triangle"></i>`
+            document.getElementById('etatalert').innerText = "Désolé"
+            document.getElementById('smsalert').innerHTML = `vous ne disposez pas d'unité !`
+            document.getElementById('activemyIdt').style.display = "block"
+            setTimeout(()=>{
+            document.getElementById('activemyIdt').style.display = "none"      
+            },5000)
+              })
+            })
+            }else{
+              
+            }
+            }
+
+                
+            } else {
+              document.getElementById('preloader').style.display = "none"
+                alert("no data");
+            }
+            })
+            .catch((error) => {
+            alert("il y a une ERROR " + error);
+            });
+            }else{
+              
+            }
+          })
+        } else {
+          document.getElementById('team').style.display = "none"
+              document.getElementById('afficher4elementID').style.display = "none"
+              Swal.fire({
+              title: 'Sweet!',
+              text: 'Pas de profil correspondant à vos préférences. Merci !',
+              imageUrl: './../assets/img/no-data/nodata.svg',
+              imageWidth: 400,
+              imageHeight: 200,
+              imageAlt: 'Custom image',
+              allowOutsideClick: false,
+              showCancelButton: false,
+              confirmButtonColor: '#3085d6',
+              confirmButtonText: 'Ok'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                // Exécutez votre fonction ici
+               window.location.href = "./../v/profil.html"
+                // Autres actions à exécuter
+              }
+            });
+        }
+        }
+      });
+    }
+    
+    // function to update compte  
+  const UserConnectuser = localStorage.getItem("unserconnect");
+   var updatecompteId =  document.getElementById('updatecompteId')
+   updatecompteId.addEventListener('click', function(){
+    //var modal__close =  document.getElementById('modal__close');
+    document.getElementById('preloader').style.display = "block"
+    //modal__close.click()
+    const dbref = ref(db);
+        get(child(dbref, "utilisateurs/" + UserConnectuser))
+            .then((snapshot) => {
+            if (snapshot.exists()) {
+            if(snapshot.exists().COMPTECREDIT != 0){
+              var myCompta = snapshot.val().COMPTECREDIT
+              var debit = 1
+              var moncomptvalide = myCompta - debit
+              update(ref(db, "utilisateurs/" + UserConnectuser), {
+                COMPTECREDIT:moncomptvalide
+                }).then(() => {             
+                     window.location.href = "./../userdetails.html"
+                    })
+                    .catch((error) => {
+                        alert("les données ne sont pas mise à jour " + error);
+                    });
+                }else {
+                  alert('veuiller récharger votre compte pour avoir plus de detail !')
+                }
+                
+               } else {
+                alert("no data");
+               }
+            })
+            .catch((error) => {
+            alert("il y a une ERROR " + error);
+            });
+      })  
+      // function to charge users
+      var afficher4element = document.getElementById('afficher4element');
+      afficher4element.addEventListener('click', function(){
+        window.location.reload();
+      })
+    
+     window.onload = getAllDataRealtimePro;
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="./../alert/alert.js"></script>
+
+
+    <!-- Template Main JS File 
+     update(ref(db, "utilisateurs/" + UserConnectuser), {
+                 
+            })
+
+                .then(() => {
+                    //window.location.reload();
+                    alert("les données sont misent à jour");
+                })
+                .catch((error) => {
+                    alert("les données ne sont pas mise à jour " + error);
+                });
+    
+    -->
+    <script src="assets/js/main.js"></script>
+
+  </body>
+
+</html>

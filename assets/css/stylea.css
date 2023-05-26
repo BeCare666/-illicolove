@@ -1,16 +1,6 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-@font-face {
-  font-family: 'Montserrat';
-  src: url('Montserrat-VariableFont_wght.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-*{
-  font-family: 'Montserrat-Bold', sans-serif !important;
-  font-size: 17px !important;
-}
 
 
 #breathing-image {
@@ -25,12 +15,23 @@
  z-index: -1 !important;
 }
 
+#breathing-image {
+  width: 80%; /* ajustez la taille de l'image à vos besoins */
+  height: 70vh;
+ /* background-image: url('./../assets/img/love.svg');  ajoutez votre image de fond */
+  background-size: cover;
+  animation-name: breathing-animation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+ z-index: -1 !important;
+}
 @keyframes breathing-animation {
   from {
     transform: scale(1);
   }
   to {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }
 
@@ -90,7 +91,7 @@
     font-size: 38px;
     line-height: 42px;
     font-weight: 700;
-    color: #012970;
+    color: #4169E1;
   }
   
   @media (max-width: 768px) {
@@ -100,12 +101,18 @@
     }
   }
   
+  @media (max-width: 768px) {
+   #breathing-image {
+     width: 100% !important;
+     height: 100% !important;
+    }
+  }
   /*--------------------------------------------------------------
   # Breadcrumbs
   --------------------------------------------------------------*/
   .breadcrumbs {
     padding: 15px 0;
-    background: #012970;
+    background: #4169E1;
     min-height: 40px;
     margin-top: 82px;
     color: #fff;
@@ -221,7 +228,7 @@
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #012970;
+    color: #4169E1;
     font-family: "Nunito", sans-serif;
     margin-top: 3px;
   }
@@ -263,7 +270,7 @@
     font-family: "Nunito", sans-serif;
     font-size: 16px;
     font-weight: 700;
-    color: #013289;
+    color: #4169E1;
     white-space: nowrap;
     transition: 0.3s;
   }
@@ -367,7 +374,7 @@
   * Mobile Navigation 
   */
   .mobile-nav-toggle {
-    color: #012970;
+    color: #4169E1;
     font-size: 28px;
     cursor: pointer;
     display: none;
@@ -424,7 +431,7 @@
   .navbar-mobile a:focus {
     padding: 10px 20px;
     font-size: 15px;
-    color: #012970;
+    color: #4169E1;
   }
   
   .navbar-mobile a:hover,
@@ -478,15 +485,16 @@
   .hero {
     width: 100%;
     height: 100vh;
-    background: url(../img/background.jpg) top center no-repeat;
-    background-size: cover;
+   /*---background: url(../img/marionel-luciano-Liz-yK48FuA-unsplash.jpg) top center no-repeat;---*/
+   background-color: #ce545450;
+   
   }
   
   .hero h1 {
     margin: 0;
     font-size: 48px;
     font-weight: 700;
-    color: #012970;
+    color: #4169E1;
   }
   
   .hero h2 {
@@ -539,11 +547,7 @@
       padding: 120px 0 60px 0;
     }
   
-    .hero .hero-img {
-      text-align: center;
-      margin-top: 80px;
-    }
-  
+    
     .hero .hero-img img {
       width: 80%;
     }
@@ -588,7 +592,7 @@
   .about h2 {
     font-size: 24px;
     font-weight: 700;
-    color: #012970;
+    color: #4169E1;
   }
   
   .about p {
@@ -635,14 +639,16 @@
   }
   
   .values .box img {
-    padding: 30px 50px;
     transition: 0.5s;
     transform: scale(1.1);
+    height: 30vh;
+    width: 100%;
+    padding-bottom: 30px;
   }
   
   .values .box h3 {
     font-size: 24px;
-    color: #012970;
+    color: #4169E1;
     font-weight: 700;
     margin-bottom: 18px;
   }
@@ -682,7 +688,7 @@
     font-size: 36px;
     display: block;
     font-weight: 600;
-    color: #0b198f;
+    color: #4169E1;
   }
   
   .counts .count-box p {
@@ -704,7 +710,7 @@
   
   .features .feature-box h3 {
     font-size: 18px;
-    color: #012970;
+    color: #4169E1;
     font-weight: 700;
     margin: 0;
   }
@@ -729,7 +735,7 @@
   }
   
   .features .feture-tabs h3 {
-    color: #012970;
+    color: #4169E1;
     font-weight: 700;
     font-size: 32px;
     margin-bottom: 10px;
@@ -738,6 +744,14 @@
   @media (max-width: 768px) {
     .features .feture-tabs h3 {
       font-size: 28px;
+    }
+    .values .box img {
+      transition: 0.5s;
+      transform: scale(1.1);
+      height: 30vh;
+      width: 100%;
+      padding-bottom: 30px;
+      margin-right: 20px !important;
     }
   }
   
@@ -750,7 +764,7 @@
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 600;
-    color: #012970;
+    color: #4169E1;
     padding: 12px 0;
     margin-right: 25px;
     margin-bottom: -2px;
@@ -766,7 +780,7 @@
     font-size: 18px;
     margin: 0;
     font-weight: 700;
-    color: #012970;
+    color: #4169E1;
   }
   
   .features .feture-tabs .tab-content i {
@@ -781,7 +795,7 @@
   }
   
   .features .feature-icons h3 {
-    color: #012970;
+    color: #4169E1;
     font-weight: 700;
     font-size: 32px;
     margin-bottom: 20px;
@@ -802,7 +816,7 @@
     font-size: 20px;
     font-weight: 700;
     margin: 0 0 10px 0;
-    color: #012970;
+    color: #4169E1;
   }
   
   .features .feature-icons .content .icon-box i {
@@ -1210,12 +1224,12 @@
   
   .portfolio .portfolio-wrap .portfolio-info h4 {
     font-size: 20px;
-    color: #012970;
+    color: #4169E1;
     font-weight: 700;
   }
   
   .portfolio .portfolio-wrap .portfolio-info p {
-    color: #012970;
+    color: #4169E1;
     font-weight: 600;
     font-size: 14px;
     text-transform: uppercase;
@@ -1277,8 +1291,36 @@
   }
   
   /*--------------------------------------------------------------
-  # Portfolio Details
+  # User Details
   --------------------------------------------------------------*/
+
+  #mySliderId .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #img1Id {
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  #img2Id {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  #mySliderId .slider img.active {
+    opacity: 1;
+  }
+
   .portfolio-details {
     padding-top: 40px;
   }
@@ -1340,7 +1382,44 @@
   .portfolio-details .portfolio-description p {
     padding: 0;
   }
+    /*--------------------------------------------------------------
+  # preloader
+  --------------------------------------------------------------*/
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #fff;
+  }
   
+  
+  #preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #FFB6C1;
+    border-top-color: #e7e4fe;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: animate-preloader 1s linear infinite;
+  }
+  
+  @keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
   /*--------------------------------------------------------------
   # Testimonials
   --------------------------------------------------------------*/
@@ -1499,7 +1578,7 @@
     font-weight: 700;
     margin-bottom: 5px;
     font-size: 20px;
-    color: #012970;
+    color: #4169E1;
   }
   
   .team .member .member-info span {
@@ -1591,7 +1670,7 @@
   
   .recent-blog-posts .post-box .post-title {
     font-size: 24px;
-    color: #012970;
+    color: #4169E1;
     font-weight: 700;
     margin-bottom: 18px;
     position: relative;
@@ -1637,7 +1716,7 @@
   
   .contact .info-box h3 {
     font-size: 20px;
-    color: #012970;
+    color: #4169E1;
     font-weight: 700;
     margin: 20px 0 10px 0;
   }
@@ -1766,7 +1845,7 @@
   }
   
   .blog .entry .entry-title a {
-    color: #012970;
+    color: #4169E1;
     transition: 0.3s;
   }
   
@@ -1859,7 +1938,7 @@
     top: 0;
     bottom: 0;
     width: 3px;
-    background-color: #012970;
+    background-color: #4169E1;
     margin-top: 20px;
     margin-bottom: 20px;
   }
@@ -1875,7 +1954,7 @@
   }
   
   .blog .entry .entry-footer a {
-    color: #013289;
+    color: #4169E1;
     transition: 0.3s;
   }
   
@@ -1939,7 +2018,7 @@
     font-size: 22px;
     margin-bottom: 0px;
     padding: 0;
-    color: #012970;
+    color: #4169E1;
   }
   
   .blog .blog-author .social-links {
@@ -1994,7 +2073,7 @@
   
   .blog .blog-comments .comment h5 .reply {
     padding-left: 10px;
-    color: #012970;
+    color: #4169E1;
   }
   
   .blog .blog-comments .comment h5 .reply i {
@@ -2057,11 +2136,11 @@
     border-radius: 4px;
     padding: 10px 20px;
     border: 0;
-    background-color: #012970;
+    background-color: #4169E1;
   }
   
   .blog .blog-comments .reply-form .btn-primary:hover {
-    background-color: #013289;
+    background-color: #4169E1;
   }
   
   .blog .blog-pagination {
@@ -2081,7 +2160,7 @@
   }
   
   .blog .blog-pagination li a {
-    color: #012970;
+    color: #4169E1;
     padding: 7px 16px;
     display: flex;
     align-items: center;
@@ -2109,7 +2188,7 @@
     font-weight: 700;
     padding: 0 0 0 0;
     margin: 0 0 15px 0;
-    color: #012970;
+    color: #4169E1;
     position: relative;
   }
   
@@ -2166,7 +2245,7 @@
   }
   
   .blog .sidebar .categories ul a {
-    color: #012970;
+    color: #4169E1;
     transition: 0.3s;
   }
   
@@ -2196,7 +2275,7 @@
   }
   
   .blog .sidebar .recent-posts h4 a {
-    color: #012970;
+    color: #4169E1;
     transition: 0.3s;
   }
   
@@ -2268,7 +2347,7 @@
     padding: 0;
     line-height: 1;
     font-weight: 700;
-    color: #012970;
+    color: #4169E1;
   }
   
   .footer .footer-newsletter form {
@@ -2338,7 +2417,7 @@
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #012970;
+    color: #4169E1;
     font-family: "Nunito", sans-serif;
     margin-top: 3px;
   }
@@ -2360,13 +2439,13 @@
   }
   
   .footer .footer-top .social-links a:hover {
-    color: #012970;
+    color: #4169E1;
   }
   
   .footer .footer-top h4 {
     font-size: 16px;
     font-weight: bold;
-    color: #012970;
+    color: #4169E1;
     text-transform: uppercase;
     position: relative;
     padding-bottom: 12px;
@@ -2400,7 +2479,7 @@
   }
   
   .footer .footer-top .footer-links ul a {
-    color: #013289;
+    color: #4169E1;
     transition: 0.3s;
     display: inline-block;
     line-height: 1;
@@ -2417,12 +2496,28 @@
   .footer .copyright {
     text-align: center;
     padding-top: 30px;
-    color: #012970;
+    color: #4169E1;
   }
   
   .footer .credits {
     padding-top: 10px;
     text-align: center;
     font-size: 13px;
-    color: #012970;
+    color: #4169E1;
+  }
+
+
+  .map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Rapport d'aspect 16:9 (Divisez la hauteur par la largeur et multipliez par 100) */
+    position: relative;
+    height: 0;
+  }
+
+  .map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
   }

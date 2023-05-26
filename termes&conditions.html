@@ -1,239 +1,558 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Portfolio Details - FlexStart Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <title></title>
+    <meta content name="description">
+    <meta content name="keywords">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet">
+         <!-- Link to import alert personnal -->
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+      <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet">
+      <style>
+            * {
+      font-family: 'Montserrat-bold', sans-serif;
+      font-size: 14px !important;
+    }
+        .article-title::before {
+          font-family: 'Font Awesome 5 Free';
+          margin-right: 5px;
+        }
+        .article-title i {
+          color: #FFB6C1 !important;
+        }
+        #IdContent{
+            text-align: start !important;
+        }
+      </style>
+    <!-- Template Main CSS File -->
+    <link href="assets/css/stylea.css" rel="stylesheet">
+  </head>
+  <body>
+    <header id="header" class="header fixed-top" style="background-color: white;">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span>FlexStart</span>
-      </a>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <div class="container">
-      <div class="row">
+      <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+  
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- <img src="assets/img/logo.png" alt="">-->
+          <span>illicolove</span>
+        </a>
+  
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="index.html">Accueil</a></li>
+            <li><a class="nav-link scrollto" href="#about">À propos</a></li>
+            <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li>-->
+            <li><a class="nav-link scrollto" href="#equipe">L'équipe</a></li>
+            <li class="dropdown"><a href="#"><span>Thermes</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="termes&conditions.html">Conditions générales d’utilisation</a></li>
+                <li><a href="politique.html">Politique de confidentialité</a></li>
+              </ul>
+            </li>  
+            <li class="dropdown"><a href="#"><span>Langue</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="#">Français</a></li>
+                <li><a href="#">Anglais</a></li>
+                <li><a href="#">Espagnol</a></li>
+              </ul>
+            </li>     
+            <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
+            <li><a class="getstarted scrollto" href="./v/login/signup.html">S'inscrire</a></li>
+            <li><a class="getstarted scrollto" href="./v/login/login.html">Se connecter</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+  
+      </div>
+    </header><!-- End Header -->
+    <div class="container" id="IdContent" style="margin-top: 17vh !important;">
+      <div class="" style="border-left: #FFB6C1 solid 2px; border-right: #FFB6C1 solid 2px;">
         <div class="col-lg-8 offset-lg-2 mt-5">
-          <h1>Termes et conditions</h1>
+          <h1 style="font-size: 33px !important; text-align: center;">Conditions générales d’utilisation du site illicolove.com</h1>
           <p>
-            Bienvenue sur illicolove.com, une plateforme de rencontres en ligne proposée par BAKO FAMILIA &amp; COMPANY. En utilisant notre site, vous acceptez les termes et conditions décrits ci-dessous.
+            Bienvenue sur illicolove.com, une plateforme de rencontres en ligne
+            proposée par BAKO FAMILIA &amp; COMPANY. En utilisant notre site,
+            vous acceptez les termes et conditions décrits ci-dessous.
           </p>
-          
-          <h3>Utilisation du site et tarification</h3>
-          <p>
-            <i class="fas fa-check-circle"></i> Vous devez avoir au moins 18 ans pour vous inscrire et utiliser nos services.<br>
-            <i class="fas fa-check-circle"></i> L'inscription sur le site est gratuite, mais certaines fonctionnalités peuvent nécessiter un abonnement payant.<br>
-            <i class="fas fa-check-circle"></i> Vous êtes responsable de maintenir la confidentialité de votre compte et de vos informations d'identification.<br>
-            <i class="fas fa-check-circle"></i> Vous devez utiliser le site de manière légale et respectueuse envers les autres membres.<br>
-            <i class="fas fa-check-circle"></i> Nous nous réservons le droit de suspendre ou de résilier votre compte en cas de violation des conditions d'utilisation.<br>
-          </p>
-          
-          <h3>Sécurité et confidentialité</h3>
-          <p>
-            <i class="fas fa-check-circle"></i> Votre sécurité et votre confidentialité sont notre priorité. Nous prenons des mesures pour protéger vos informations personnelles et assurer un environnement sûr sur notre site. Cependant, il est important de noter que la sécurité en ligne ne peut être garantie à 100% et vous devez prendre des précautions supplémentaires lors de l'utilisation de notre service.<br>
-          </p>
-          
-          <h3>Responsabilité</h3>
-          <p>
-            <i class="fas fa-check-circle"></i> Nous nous efforçons de fournir des informations précises et fiables sur illicolove.com, mais nous ne pouvons pas garantir l'exactitude et l'exhaustivité de ces informations. Vous êtes responsable de vos interactions avec d'autres membres du site et vous acceptez de nous dégager de toute responsabilité en cas de différends ou de dommages résultant de ces interactions.<br>
-          </p>
-          
-          <h3>Suppression de compte</h3>
-          <p>
-            <i class="fas fa-check-circle"></i> Vous pouvez supprimer votre compte sur illicolove.com à tout moment en suivant les instructions fournies sur le site. La suppression
-            <h3>Propriété intellectuelle</h3>
-            <p>
-              <i class="fas fa-check-circle"></i> Tous les contenus présents sur illicolove.com, tels que les textes, les images, les logos, les icônes et les boutons, sont la propriété exclusive de BAKO FAMILIA &amp; COMPANY ou de ses partenaires. Toute utilisation non autorisée de ces éléments est strictement interdite.<br>
-            </p>
-            
-            <h3>Mentions légales</h3>
-            <p>
-              <i class="fas fa-check-circle"></i> illicolove.com est une marque déposée de BAKO FAMILIA &amp; COMPANY.<br>
-              <i class="fas fa-check-circle"></i> Pour toute question ou réclamation concernant notre site, veuillez nous contacter à l'adresse suivante : [adresse e-mail].<br>
-              <i class="fas fa-check-circle"></i> Les présents termes et conditions sont régis par les lois du Bénin. Tout litige découlant de l'utilisation de notre site sera soumis à la compétence exclusive des tribunaux compétents du Bénin.
-            </p>
-            
-            <div class="text-center mt-4">
-              <a href="#" class="btn btn-primary">Accepter</a>
-              <a href="#" class="btn btn-secondary">Refuser</a>
-            </div>
-            
+          <div class="row">
+            <article>
+              <h2 class="article-title"> <i class="fas fa-file-alt"></i> ARTICLE
+                1 : Objet</h2>
+              <p>Les présentes « Conditions Générales d’Utilisation » ont pour
+                objet l’encadrement juridique de l’utilisation du site
+                illicolove.com et de ses services.</p>
+              <p>Ce contrat est conclu entre :</p>
+              <p>L’Etablissement BAKO FAMILIA &amp; COMPANY propriétaire du site
+                internet, ci-après désigné « l’Éditeur », ET</p>
+              <p>Toute personne physique souhaitant accéder au site et à ses
+                services, ci-après appelé « l’Utilisateur.trice ».</p>
+              <p>Les conditions générales d’utilisation doivent être acceptées
+                par tout Utilisateur.trice, et son accès au site vaut
+                acceptation de ces conditions.</p>
+                <p>Dans les présentes Conditions Générales d’Utilisation, il est convenu que les
+                  expressions ou mots suivants, qu’ils soient employés au singulier ou au pluriel,
+                  auront la signification suivante :</p>
+                  <ul>
+                    <li><strong> Annonce de recherche</strong> : désigne une publication d’un utilisateur.trice ou
+                      visiteur.euse du site, sous forme de texte via notre formulaire, accompagnée ou non
+                      d’une ou de plusieurs photographies représentant sa trombine.
+                    </li>
+                    <li><strong> Services de rencontres amoureuses</strong> : désigne l’accès par l’Utilisateur.trice à
+                      l’ensemble des annonces de recherche publiées sur le Site Internet (entre autres, les
+                      profils, les liens hypertextes, textes, images, vidéos, les contacts ou adresses par le
+                      biais du « click to show ».
+                    </li>
+                    <li><strong> « Click to show » : « Cliquer pour afficher </strong> : afficher », désigne la fonctionnalité qui permet à
+                      tout utilisateur.trice d’afficher l’adresse électronique, le contact téléphonique ou tout
+                      autre moyen d’entrer en contact avec un.e autre utilisateur.trice qui a préalablement
+                      émis une annonce de recherche et renseigné le moyen de son choix de le /la
+                      contacter. Cette fonctionnalité qui permet d’obtenir un tel renseignement capital est
+                      payante. Son coût est de 95 Francs CFA soit 0,144 Euro environ par clic.
+                    </li>
+                  </ul>
+            </article>
+
+            <article>
+              <h3 class="article-title"><i class="fas fa-file-alt"></i> ARTICLE
+                2 : Mentions légales</h3>
+              <p>L’établissement BAKO FAMILIA &amp; COMPANY est l’Éditeur du
+                site de rencontres illicolove.com.</p>
+              <p>Sis au Lot 191 parcelle b’, à Agbalilamè, elle est une
+                entreprise individuelle de droit béninois. Elle est créée le 29
+                Mai 2008, immatriculée au Registre du Commerce et du Crédit
+                Mobilier RCCM RB/COT/08/A4101 ; et a pour Identifiant Fiscal
+                Unique (IFU) Numéro : 3200800938610.</p>
+              <p>Elle est représentée par Gildas Ghislain GANGBAZO.</p>
+            </article>
+
+            <article>
+              <h3 class="article-title"><i class="fas fa-file-alt"></i> ARTICLE
+                3 : accès aux services</h3>
+              <p>L’Utilisateur.trice du site illicolove.com a accès aux services
+                suivants :</p>
+              <ul>
+                <li>Création d’un compte personnel</li>
+                <li>Création et publication gratuite de son annonce de recherche
+                  via notre formulaire à remplir</li>
+                <li>Consultation des annonces de recherche publiées par les
+                  autres utilisateur.trices</li>
+                <li>L’obtention payante des contacts des profils qui retiennent
+                  son intérêt, et présents sur les annonces de recherche, de
+                  manière illimitée et à sa convenance (Click to show / Cliquer
+                  pour afficher)</li>
+                <li>Possibilité de contacter l’Editeur pour solliciter une
+                  demande de services personnalisés</li>
+              </ul>
+              <p>Le Site Internet propose aussi à l’Utilisateur.trice qui le
+                désire, l’organisation partielle ou complète d’une cérémonie de
+                mariage.</p>
+              <p>Tout Utilisateur.trice ayant accès à internet peut accéder
+                gratuitement et depuis n’importe où au site. Les frais supportés
+                par l’Utilisateur.trice pour y accéder (connexion internet,
+                matériel informatique, etc.) ne sont pas à la charge de
+                l’Éditeur.</p>
+              <p>Les services cités plus haut ne sont pas soumis à une
+                quelconque limite de durée ou de quantité, sous réserve du bon
+                fonctionnement du site.</p>
+              <p>Le Site Internet propose aussi à l’Utilisateur.trice qui le
+                désire, l’organisation partielle
+                ou complète d’une cérémonie de mariage.
+                Tout Utilisateur.trice ayant accès à internet peut accéder
+                gratuitement et depuis
+                n’importe où au site. Les frais supportés par
+                l’Utilisateur.trice pour y accéder
+                (connexion internet, matériel informatique, etc.) ne sont pas à
+                la charge de l’Éditeur.
+                Les services cités plus haut ne sont accessibles pour
+                l’Utilisateur.trice que s’il/elle est
+                membre du site (c’est-à-dire qu’il /elle est identifié.e à
+                l’aide de ses identifiants de
+                connexion) :
+                Le site et ses différents services peuvent être interrompus ou
+                suspendus par l’Éditeur,
+                notamment à l’occasion d’une maintenance, sans obligation de
+                préavis ou de
+                justification.</p>
+            </article>
+            <article>
+              <h3 class="article-title"><i class="fas fa-file-alt"></i> ARTICLE
+                4 : Responsabilité de l’Utilisateur.trice</h3>
+              <p>L’Utilisateur.trice est responsable des risques liés à
+                l’utilisation de son identifiant de
+                connexion et de son mot de passe.
+
+                Le mot de passe de l’Utilisateur.trice doit rester secret. En
+                cas de divulgation de mot
+                de passe, l’Éditeur décline toute responsabilité.
+                L’Utilisateur.trice assume l’entière responsabilité de
+                l’utilisation qu’il fait des
+                informations et contenus présents sur le site illicolove.com.
+                Tout usage du service par l’Utilisateur.trice ayant directement
+                ou indirectement pour
+                conséquence des dommages doit faire l’objet d’une indemnisation
+                au profit du site.
+                Le site permet aux utilisateur.trices de publier une annonce de
+                recherche sur le site
+                en remplissant le formulaire “Publier une annonce”.
+                .</p>
+              <p>
+                L’utilisateur.trice s’engage à fournir des renseignements
+                fiables, proposer des
+                photographies récentes dénuées d’obscénités, écrire dans ses
+                critères de recherche
+                des propos respectueux des autres et de la loi et accepte que
+                sont annonce soit
+                modérées ou refusées par l’Éditeur, sans obligation de
+                justification après un refus de
+                sa part de lui fournir des informations complémentaires pour
+                éviter les faux profils.
+                En publiant son annonce sur le site, l’Utilisateur.trice cède à
+                l’Editeur le droit non
+                exclusif et gratuit de représenter, reproduire, adapter,
+                modifier, diffuser et distribuer
+                son annonce sur les réseaux sociaux, ou directement par un tiers
+                autorisé ; dans le
+                respect de son anonymat ou du mode de confidentialité choisi.
+                L’Éditeur s’engage à préserver les anonymats de tout.e
+                utilisateur.trice en cas de
+                diffusion des annonces sur les réseaux sociaux.
+              </p>
+            </article>
+            <article>
+              <h3 class="article-title"><i class="fas fa-file-alt"></i> ARTICLE
+                5 : Responsabilité de l’Éditeur</h3>
+              <p>Tout dysfonctionnement du serveur ou du réseau ne peut engager
+                la responsabilité de
+                l’Éditeur.</p>
+              <p>De même, la responsabilité du site ne peut être engagée en cas
+                de force majeure ou du
+                fait imprévisible et insurmontable d’un tiers.
+                Le site illicolove.com s’engage à mettre en œuvre tous les
+                moyens nécessaires pour
+                garantir la sécurité et la confidentialité des données.
+                Toutefois, il n’apporte pas une
+                garantie de sécurité totale.</p>
+              <p>L’Éditeur se réserve la faculté d’une non-garantie de la
+                fiabilité des profils, bien que
+                les annonces de recherche diffusées sur le site soient réputées
+                fiables et vérifiées
+                avant la validation de leur publication en back-office par
+                l’équipe de relecture et de
+                validation de l’Editeur.</p>
+            </article>
+            <article>
+              <h3 class="article-title"><i class="fas fa-file-alt"></i> ARTICLE
+                6 : Propriété intellectuelle</h3>
+              <p>BAKO FAMILIA &amp; COMPANY est le propriétaire exclusif de tous
+                les droits de
+                propriété intellectuelle portant tant sur la marque, ou la
+                structure que sur le contenu
+                du Site www.illicolove.com</p>
+              <p>Les contenus du site www.illicolove.com sont destinés à un
+                usage strictement
+                personnel, privé et non collectif, librement pour le contenu
+                gratuit. Il en est de même
+                pour les fils RSS et les newsletters.
+                Toute utilisation dans un cadre professionnel ou commercial ou
+                toute
+                commercialisation de ce contenu auprès de tiers est interdite,
+                sauf accord exprès de
+                BAKO FAMILIA &amp; COMPANY.</p>
+            </article>
+            <article>
+              <h3 class="article-title"><i class="fas fa-file-alt"></i> ARTICLE
+                7 : Données personnelles</h3>
+              <p>Consultez notre Politique de confidentialité, données
+                personnelles et cookies.</p>
+            </article>
+            <article>
+              <h3 class="article-title"><i class="fas fa-file-alt"></i> ARTICLE
+                8 : DLiens hypertextes</h3>
+              <p>Les domaines vers lesquels mènent les liens hypertextes
+                présents sur le site
+                n’engagent pas la responsabilité de l’Éditeur BAKO FAMILIA &amp;
+                COMPANY, qui n’a
+                pas de contrôle sur ces liens.</p>
+              <p>L’Éditeur a mis en place des partenariats avec des fournisseurs
+                de services et peut
+                proposer à l’Utilisateur.trice des informations concernant
+                d’autres sites et/ou
+                services, par exemple par la mention d’adresses de sites Web,
+                et/ou par la présence
+                de liens hypertextes vers ces sites.</p>
+              <p>Ces liens hypertextes qui redirigeant vers des sites tiers
+                n’ont pas été développés par
+                L’Éditeur et ne lui appartiennent pas. L’Éditeur n’assume par
+                conséquent, aucune
+                responsabilité de ces sites, leur contenu, publicités, produits
+                ou services disponibles
+                sur ou à partir de ces sites. Par ailleurs, la responsabilité de
+                L’Éditeur ne saurait être
+                engagée quant aux informations, opinions et recommandations
+                formulées par ces
+                tiers.</p>
+              <p>
+                L’Éditeur ne peut être tenu responsable de tout dommages ou
+                pertes avérés ou
+                allégués, consécutifs ou en relation avec l’utilisation, ou avec
+                le fait d’avoir fait
+                confiance au contenu, à des biens ou des services disponibles
+                sur ces services
+                partenaires ou sources externes.
+              </p>
+              <p>La décision d’activer ces liens relève de la pleine et entière
+                responsabilité de
+                l’Utilisateur.trice.
+                L’Éditeur n’est pas responsable de la disponibilité de ces sites
+                et ne peut en contrôler
+                le contenu ni valider la publicité, les produits et autres
+                informations diffusées sur ces
+                sites Internet.</p>
+              <p>Il est possible pour un tiers de créer un lien vers une page du
+                site illicolove.com sans
+                autorisation expresse de l’éditeur.</p>
+            </article>
+            <article>
+              <h3 class="article-title"><i class="fas fa-file-alt"></i> ARTICLE
+                9 : Mise en garde Particulière</h3>
+              <p>Dans la vie réelle comme dans la vie virtuelle sur internet,
+                vous pouvez croiser le
+                chemin de personnes honnêtes tout comme de personnes
+                malveillantes et escrocs.</p>
+              <p>Il nous revient de façon individuelle d’adopter certaines
+                attitudes de sécurité dans la
+                vie réelle et par surcroit dans le monde virtuel sur internet.
+                BAKO FAMILIA &amp; COMPANY vous invite à :</p>
+              <ul>
+                <li>Ne jamais envoyer de l’argent à un.e inconnu.e rencontré.e
+                  sur ce site ; et ce
+                  sous aucun prétexte.</li>
+                <li>Ne jamais envoyer de photographies intimes à un contact
+                  rencontré sur ce site</li>
+                <li>Être sur vos gardes lorsqu’une personne prétend vivre dans
+                  les environs, mais
+                  travaille à l’étranger.</li>
+                <li>Ne jamais céder sous le prétexte d’une situation urgente où
+                  un proche est
+                  malade et votre correspondant.e virtuel.le vous demande de
+                  l’aider à payer
+                  divers frais. Dans un cas pareil, nous vous invitons à
+                  signaler le profil de ces
+                  escrocs à l’Editeur.</li>
+                <li>Une relation amoureuse naissante sur illicolove.com ne
+                  saurait être pour vous
+                  une source d’ennuis et de prise en charge financière. Faites
+                  donc preuve d’une
+                  grande méfiance lorsqu’un.e inconnu.e vous déclare son amour
+                  sans avoir pu
+                  vous rencontrer ; et même après une rencontre physique, prenez
+                  le temps
+                  nécessaire avant d’engager toute dépense conséquente en
+                  numéraire.</li>
+                <li>
+                  Choisir toujours un lieu public pour une première rencontre.
+                </li>
+                <li>Signaler toujours à un proche vos positions quand vous êtes
+                  en compagnie
+                  d’une personne inconnue que vous venez de rencontrer
+                  fraîchement.</li>
+                <li>Dénoncer et nous signaler, les tentatives de vente de
+                  produits ou de services,
+                  les profils qui se révèlent faux malgré nos filtrages après
+                  vos échanges en privé,
+                  les menaces et intimidations, les propos malsonnants,
+                  homophobes, abusifs et
+                  offensants, les messages de mineurs, et les demandes d’aides
+                  financières ou de
+                  photographies explicites.</li>
+                <p>
+                  Par conséquent, l’Utilisateur.trice reconnaît et accepte sans
+                  réserve être pleinement
+                  responsable de toute action entreprise faisant suite à la
+                  lecture d’une annonce de
+                  rencontre amoureuse et de manière générale à toute information
+                  présente sur le Site.
+                  La fourniture de ces données ne saurait être assimilée, de
+                  quelque façon que ce soit, à
+                  un conseil spécifique ou à une aide à la décision.
+                  L’Utilisateur.trice est pleinement conscient.e du caractère
+                  aléatoire des rencontres
+                  amoureuses aussi bien dans la vie réelle que sur internet.
+                </p>
+              </ul>
+            </article>
+            <article>
+              <h3 class="article-title"><i class="fas fa-file-alt"></i> ARTICLE
+                10 : Suppression des données après 1 an d’inactivité.</h3>
+              <p>Pour des raisons de sécurité, si vous ne vous êtes pas
+                authentifié sur le Site
+                pendant une période d’un an, vous recevrez un e-mail vous
+                invitant à vous
+                connecter dans les plus brefs délais, sans quoi votre profil
+                sera supprimé de
+                nos bases de données.</p>
+            </article>
+            <article>
+              <h3 class="article-title"><i class="fas fa-file-alt"></i> ARTICLE
+                11 : Suppression du compte à la demande.</h3>
+              <p>L’Utilisateur.trice a la possibilité de supprimer son Compte à
+                tout moment, par
+                simple demande à l’Éditeur ou par le menu de suppression de
+                Compte présent
+                dans les paramètres du Compte le cas échéant.</p>
+            </article>
+            <article>
+              <h3 class="article-title"><i class="fas fa-file-alt"></i> ARTICLE
+                12 : Suppression du compte en cas de violation des CGU</h3>
+              <p>En cas de violation d’une ou de plusieurs dispositions des CGU
+                ou de tout
+                autre document incorporé aux présentes par référence, l’Éditeur
+                se réserve le
+                droit de mettre fin ou restreindre sans aucun avertissement
+                préalable et à sa
+                seule discrétion, votre usage et accès aux services, à votre
+                compte et à tous
+                les Sites liés.</p>
+            </article>
+            <article>
+              <h3 class="article-title"><i class="fas fa-file-alt"></i> ARTICLE
+                13 : Indications en cas de faille de sécurité décelée par
+                l’Éditeur.</h3>
+              <p>Nous nous engageons à mettre en œuvre toutes les mesures
+                techniques et
+                organisationnelles appropriées afin de garantir un niveau de
+                sécurité adapté
+                au regard des risques d’accès accidentels, non autorisés ou
+                illégaux, de
+                divulgation, d’altération, de perte ou encore de destruction des
+                données
+                personnelles vous concernant.</p>
+              <p>Dans l’éventualité où nous prendrions
+                connaissance d’un accès illégal aux données personnelles vous
+                concernant
+                stockées sur nos serveurs ou ceux de nos prestataires, ou d’un
+                accès non
+                autorisé ayant pour conséquence la réalisation des risques
+                identifiés ci-
+                dessus, nous nous engageons à :</p>
+              <ul>
+                <li>Examiner les causes de l’incident et vous en informer
+                  (public reporting);</li>
+                <li>Prendre les mesures nécessaires dans la limite du
+                  raisonnable afin
+                  d’amoindrir les effets négatifs et préjudices pouvant résulter
+                  dudit incident.</li>
+
+              </ul>
+            </article>
+            <article>
+              <h3 class="article-title"><i class="fas fa-file-alt"></i> ARTICLE
+                14 : Limitation de la responsabilité</h3>
+              <p>En aucun cas les engagements définis au point ci-dessus
+                relatifs à la
+                notification en cas de faille de sécurité ne peuvent être
+                assimilés à une
+                quelconque reconnaissance de faute ou de responsabilité quant à
+                la
+                survenance de l’incident en question.</p>
+            </article>
+            <article>
+              <h3 class="article-title"><i class="fas fa-file-alt"></i> ARTICLE
+                15 : Durée du contrat</h3>
+              <p>La durée du présent contrat est indéterminée. Le contrat
+                produit ses effets à l’égard
+                de l’Utilisateur.trice à compter du début de l’utilisation du
+                service..</p>
+            </article>
+            <article>
+              <h3 class="article-title"><i class="fas fa-file-alt"></i> ARTICLE
+                16 : Droit applicable et juridiction compétente</h3>
+              <p>La langue des présentes CGU est le français et prédominera sur
+                toutes versions
+                traduites dans une autre langue.</p>
+              <p>
+                Le présent contrat dépend de la législation béninoise, notamment
+                la loi N° 2017-20
+                du 20 avril 2018 portant Code du Numérique en République du
+                Bénin. Le choix de la
+                loi applicable ne porte pas atteinte à vos droits en tant que
+                consommateur
+
+                conformément à la loi applicable de votre lieu de résidence.
+              </p>
+              <p>Si vous êtes un.e
+                consommateur.trice, vous et nous acceptons de se soumettre à la
+                compétence non-
+                exclusive des juridictions béninoises.
+                En cas de litige non résolu à l’amiable entre
+                l’Utilisateur.trice et l’Éditeur, le tribunal
+                de commerce de Cotonou sera compétent pour régler le
+                contentieux.</p>
+            </article>
           </div>
         </div>
-  </div>
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-    <div class="footer-newsletter">
+      </div>
+    </div>
+    
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-12 text-center">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-          </div>
-          <div class="col-lg-6">
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
+        <div class="copyright">
+          &copy; Copyright <strong><span style="color: #FFB6C1;">illicolove</span></strong>.
+          All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">illicolove</a>
         </div>
       </div>
-    </div>
+    </footer><!-- End Footer -->
 
-    <div class="footer-top">
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-5 col-md-12 footer-info">
-            <a href="index.html" class="logo d-flex align-items-center">
-              <img src="assets/img/logo.png" alt="">
-              <span>FlexStart</span>
-            </a>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
+    <a href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
 
-          <div class="col-lg-2 col-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
 
-          <div class="col-lg-2 col-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
 
-          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-            <h4>Contact Us</h4>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
-            </p>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>FlexStart</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
+  </body>
 
 </html>
-
-
-
-
-

@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+        
+        <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet">
+         <!-- Link to import alert personnal -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+      <style>
+      * {
+        font-family: 'Montserrat-bold', sans-serif;
+        font-size: 14px !important;
+      }
+    </style>
+
+
+    <title>S'inscrire</title>
+  </head>
+  <body id="MyIdBody">
+    <section id="modalID" style="display: none;">
+      <div class="wrapper">
+          <a href="#demo-modal" id="dreamIndemo" style="opacity: 0;">Open Demo Modal</a>
+      </div>         
+      <div id="demo-modal" class="modal">
+          <div class="modal__content">
+              <h1 style="text-align: center;" id="iconid"></h1>
+      
+              <h1 style="text-align: center;" id="etatalert"></h1>
+      
+              <div class="modal__footer" id="smsalert">
+                
+              </div>
+      
+             <a href="#" class="modal__close" id="modal__close">&times;</a>
+          </div>
+      </div>
+  </section>
+  <section id="signupbox">
+  <div id="myimgclassesignup">
+    <img src="./images/freestocks-PwRpcm6hEDY-unsplash-removebg-preview.png" alt="" style="height: 100vh; width: 117vh;" id="monIDi">
+  </div>
+  <section id="contentSignup">
+  <div class="d-lg-flex half">
+    <div class="contents order-2 order-md-1">
+      <div class="container" >
+        <div class="row align-items-center justify-content-center" >
+          <div class="col-md-7"  style ="/*background: #fff;
+          box-shadow: 8px 8px 11px 11px rgba(0, 0, 0, 0.06); border-radius: 5px;*/">
+            <h3>S'inscrire à<strong> illicolove</strong></h3>
+            <form action="javascript:submitmy()">
+              <div class="form-group first">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" placeholder="Username  " id="username" required>
+              </div>
+              <div class="form-group first">
+                <label for="username">Nom et Prénoms</label>
+                <input type="text" class="form-control" placeholder="Nom et Prénoms " id="name" required>
+              </div>
+              <div class="form-group first">
+                <label for="username">Email</label>
+                <input type="email" class="form-control" placeholder="your-email@gmail.com" id="email" required>
+              </div>
+              <div class="form-group last mb-3">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" placeholder="Votre mode passe" id="password" required>
+                <span id="password-strength-indicator"></span>
+                <button type="button" id="toggle-password" class="Xbutton">X</button>
+              </div>
+
+              <div class="d-flex mb-5 align-items-center">
+                <label class="control control--checkbox mb-0">
+                  <span class="caption" id="acceptID" style="display: none;"><a href="./../../termes&conditions.html">J'ai lu et j'accepte les termes et conditions</a></span>
+                  <span class="caption"  id="readID" ><a href="./../../termes&conditions.html" style="color: red !important;">Veuillez lire et accepter nos  termes et conditions</a></span>
+                  <input type="checkbox" id="myCheckbox"/>
+                  <div class="control__indicator"></div>
+                </label>               
+              </div>
+              
+              <input type="submit" value="S'inscrire" class="btn btn-block" id="toSignupID"
+              style="background-color: #FFB6C1 !important; color: white; font-size: 20px !important;" disabled>
+              <br>
+              &nbsp; &nbsp; &nbsp;<a href="login.html">Jai déjà un compte. <strong style="color: #40E0D0; text-align: center;">Connectez-vous</strong> </a>
+              <br>
+              <div style="opacity: 0;">sdfvff</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  </section>
+  <style>
+    #signupbox{
+      background-color: #e8f5f5 !important;
+    }
+  </style>
+  <div id="preloader" style="display: none;"></div>
+  <script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
+    authDomain: "illicolove0.firebaseapp.com",
+    databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
+    projectId: "illicolove0",
+    storageBucket: "illicolove0.appspot.com",
+    messagingSenderId: "687063035754",
+    appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+  // Référence Firebase contenant les adresses e-mails
+  // Écoute de l'événement "click" sur le bouton de recherche
+  function submitmy(){
+  const emailRef = firebase.database().ref('utilisateurs');
+
+    document.getElementById('preloader').style.display = "block"
+    var fullname = document.getElementById('name').value
+    var username = document.getElementById('username').value
+    const email = document.getElementById('email').value;
+    var password = document.getElementById('password').value
+    // Ajoutez un gestionnaire d'événements pour l'événement "input"
+    const emailInput = document.getElementById('email').value;
+    let emailKey = null;
+
+    // Filtrage des données pour trouver l'adresse e-mail spécifique
+    emailRef.once('value', (snapshot) => {
+      const emails = snapshot.val();
+      for (const key in emails) {
+        if (emails.hasOwnProperty(key) && emails[key].email === emailInput) {
+          emailKey = key;
+          break;
+        }
+      }
+
+      if (emailKey) {
+        // L'adresse e-mail a été trouvée
+        document.getElementById('preloader').style.display = "none"
+        const email = emails[emailKey];
+        document.getElementById('username').value = ""
+        document.getElementById('email').value = ""
+        document.getElementById('name').value = ""
+        document.getElementById('password').value = ""
+
+        document.getElementById('contentSignup').style.display = "none" 
+        document.getElementById('modalID').style.display = "block"
+        var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
+        dreamIndemo.click();
+        document.getElementById('iconid').innerHTML = `  <img src="./../formulaire/assets/imageNoSucess.svg" alt=""></i>`
+        document.getElementById('etatalert').innerText = "Désolé"
+        document.getElementById('smsalert').innerHTML = `Vous avez déjà un compte avec cet adresse email !`
+        setTimeout(()=>{
+        document.getElementById('contentSignup').style.display = "block" 
+        document.getElementById('modalID').style.display = "none" 
+        },5000)
+        //alert(`L'adresse e-mail ${email.email} de ${emailKey}a été trouvée dans Firebase !`)
+      } else {
+        document.getElementById('preloader').style.display = "none"
+        //L'adresse e-mail n'a pas été trouvée
+      //alert(`L'adresse e-mail ${emailInput} n'a pas été trouvée dans Firebase.`)
+
+    //console.log(monthAbbreviation); 
+ 
+      var id = () => {
+          return Math.floor((1 + Math.random()) * 0x10000)
+              .toString(16)
+              .substring(1);
+      }
+      const userId = id();
+      var userID = username + userId
+      // Récupération de l'adresse mail entrée par l'utilisateur
+      // Envoi de l'adresse mail à Firebase
+
+      firebase.database().ref('utilisateurs/' + userID).set({
+          userId : userID,
+          email: email,
+          fullname: fullname,
+          username : username,
+          password : password,
+          MAVILLEDERESIDENCE : "",
+          MANATIONNALITE : "",
+          MONTRAVAILLEOUOCCUPATION : "",
+          MASITUATIONMATRIMONIALE : "",
+          MONAGE:"",
+          MATAILLE:"",
+          MONPOIDS:"",
+          MONTEINT:"",
+          QUESTIONUNIQUE:"",
+          COMPTECREDIT: 3,
+          COMPTECREDITSATUS: false,
+          isDefaultAccount: true,
+          isPaidAccount: false,
+          MONPAYSDEPUBLICATION:"",
+          VALIDERMONCOMPTE:false,
+          MONCOMPTESUSPENDU:false,
+          COMPTEFACEBOOK:"",
+          COMPTEINSATAGRAMME:"",
+          MONSEXE:"",
+          TELEPHONE:"",
+          JEVEUXUNERENCONTRE:"", 
+          PIECESDIDENTITE:"",
+          MESDEUXPHOTOS:"",
+          MESDEUXPHOTO2:"",
+          SEXEDEPROFILQUEJECHERCHE:"",
+          SONAGEDEPROFILQUEJECHERCHE:"",
+          SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE:"",
+          PAYSDERESIDENCEDEPROFILQUEJECHERCHE:"",
+          PHYSIQUEDEPROFILQUEJECHERCHE:"",
+          VILLEDHABITATIONDEPROFILQUEJECHERCHE:"",
+          TRAVAILDEDEPROFILQUEJECHERCHE:"",
+          AUTRESPRECISIONSDEPROFILQUEJECHERCHE:"",
+          IDREGION : "",
+          QUESTIONSECUREPASSWORDSTATUS : false,
+          QUESTIONSECUREPASSWORD : "",
+          QUESTIONSECUREPASSWORDRESPONSE : "",
+
+
+
+      }).then(() => {
+        document.getElementById('username').value = ""
+        document.getElementById('email').value = ""
+        document.getElementById('name').value = ""
+        document.getElementById('password').value = ""
+        document.getElementById('contentSignup').style.display = "none" 
+        document.getElementById('modalID').style.display = "block"
+        var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
+        dreamIndemo.click();
+        document.getElementById('iconid').innerHTML = `  <img src="./../formulaire/assets/imageSucess.svg" alt=""></i>`
+        document.getElementById('etatalert').innerText = "succès"
+        document.getElementById('smsalert').innerHTML = `Vous êtes inscrit avec succès !`
+        setTimeout(()=>{
+        document.getElementById('contentSignup').style.display = "block" 
+        document.getElementById('modalID').style.display = "none"
+        //alert("Adresse mail envoyée à Firebase !");
+        localStorage.setItem('unserconnect', userId)
+        localStorage.setItem('unserconnectmail', email)
+        window.location.href = "login.html"
+        },7000)
+      }).catch((error) => {
+          alert("Erreur lors de l'envoi de l'adresse mail à Firebase :", error);
+      });
+
+      }
+    });
+  }
+var checkbox = document.getElementById("myCheckbox");
+var ToSignupID = document.getElementById("toSignupID");
+var AcceptID = document.getElementById("acceptID");
+var ReadID = document.getElementById("readID");
+
+checkbox.addEventListener("change", function() {
+  if (checkbox.checked) {
+    ToSignupID.disabled = false;  // Activer le bouton
+    AcceptID.style.display = "block "
+    ReadID.style.display = "none"
+  } else {
+    ToSignupID.disabled = true;   // Désactiver le bouton
+    AcceptID.style.display = "none"
+    ReadID.style.display = "block"
+  }
+});
+
+
+   
+  var username = document.getElementById('username')
+    username.addEventListener('input', function(event) {
+      var inputValue = event.target.value;
+      
+      // Vérifiez si la valeur contient des espaces
+      if (inputValue.includes(' ')) {
+        // Supprimez les espaces de la valeur
+        event.target.value = inputValue.replace(/\s/g, '');
+        Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: `Ne mettez pas d'espace. Merci !`,
+        showConfirmButton: false,
+        timer: 1500
+       // footer: '<a href="">Why do I have this issue?</a>'
+      })
+      }
+    });
+
+    //function to control password
+    const passwordInput = document.getElementById('password');
+    const passwordStrengthIndicator = document.getElementById('password-strength-indicator');
+
+    passwordInput.addEventListener('input', validatePassword);
+
+    function validatePassword() {
+      const password = passwordInput.value;
+      const passwordStrength = calculatePasswordStrength(password);
+
+      // Afficher la force du mot de passe à l'utilisateur
+      passwordStrengthIndicator.textContent = `Force du mot de passe : ${passwordStrength}`;
+
+      // Vérifier si le mot de passe contient des caractères spéciaux
+      const containsSpecialChars = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password);
+
+      // Si le mot de passe contient des caractères spéciaux, afficher un message d'erreur
+      if (containsSpecialChars) {
+        alert('Le mot de passe ne doit pas contenir de caractères spéciaux.');
+      } else {
+        passwordInput.setCustomValidity('');
+      }
+    }
+
+    function calculatePasswordStrength(password) {
+      // Logique pour calculer la force du mot de passe
+      // Vous pouvez utiliser des critères tels que la longueur, la présence de chiffres, de lettres majuscules, de lettres minuscules, etc.
+      // Dans cet exemple, nous utilisons simplement la longueur du mot de passe comme indicateur de force
+      const passwordLength = password.length;
+
+      if (passwordLength < 8) {
+        return 'Faible';
+      } else if (passwordLength >= 8 && passwordLength < 12) {
+        return 'Moyenne';
+      } else {
+        return 'Forte';
+      }
+    }
+
+    const togglePasswordButton = document.getElementById('toggle-password');
+
+    togglePasswordButton.addEventListener('click', togglePasswordVisibility);
+
+    function togglePasswordVisibility() {
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        togglePasswordButton.innerText = 'O';
+      } else {
+        passwordInput.type = 'password';
+        togglePasswordButton.innerText = 'X';
+      }
+    }
+
+  </script>
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
+  </body>
+</html>
+    
+

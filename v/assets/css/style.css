@@ -1566,6 +1566,8 @@ body {
   transform-origin: top center;
   margin-top: 70px;
   border-radius: 30px;
+  align-items: center;
+  justify-content: center;
 }
 
 #modalMyDropdown .header {

@@ -178,7 +178,7 @@
 
           if(snapshot.val().COMPTECREDIT > 0  && snapshot.val().userId != k.userId){
           // function to take userId
-        alert(snapshot.val().COMPTECREDIT)
+         //alert(snapshot.val().COMPTECREDIT)
           trow.addEventListener('mouseover', function() {
               var monElementy = k.userId
               tableauTotakeidd.push(monElementy)
@@ -236,7 +236,7 @@
                     <a class="mycontactidv" style="cursor:pointer" ><i class="bi bi-eye"></i></a>
                   </div>
                 </div>
-                <div class="member-info">
+                <div class="member-info" style="background: url(assets/img/background.jpg) no-repeat !important;">
                   <h4>${k.username}</h4>
                   <span>${k.fullname}</span>
                   <p style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${k.PHYSIQUEDEPROFILQUEJECHERCHE}</p>

@@ -33,6 +33,18 @@
         font-size: 14px !important;
       }
     </style>
+      <script>
+        window.onload = function(){
+          if (/Mobi|Android/i.test(navigator.userAgent)) { 
+        // Code pour appareil mobile
+        //document.body.style.fontSize = "16px"; // Modifier la taille de la police pour appareils mobiles
+        document.getElementById('monIDi').style.display = "none"
+        //document.getElementById('contentSignup').style.marginTop = "5vh"
+        } else {
+            // Code pour ordinateur de bureau
+        }
+       }
+      </script>
     <title>la récupération de l'email</title>
   </head>
   <body id="eleementID">
@@ -47,7 +59,7 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7" >
-            <h3>Envoyer votre email que vous avez utilisé pour s'inscrire à<strong> illicolove.</strong></h3>
+            <h3>Envoyer votre email que vous avez utilisé pour s'inscrire à<strong> illicolove.</strong></h3><br>
             <form action="javascript:submitmy()">
                 <div class="form-group first">
                     <label for="username">Email</label>

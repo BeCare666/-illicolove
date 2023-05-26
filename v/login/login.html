@@ -30,6 +30,18 @@
         font-size: 14px !important;
       }
     </style>
+      <script>
+        window.onload = function(){
+          if (/Mobi|Android/i.test(navigator.userAgent)) { 
+        // Code pour appareil mobile
+        //document.body.style.fontSize = "16px"; // Modifier la taille de la police pour appareils mobiles
+        document.getElementById('monIDi').style.display = "none"
+        //document.getElementById('contentSignup').style.marginTop = "5vh"
+        } else {
+            // Code pour ordinateur de bureau
+        }
+       }
+      </script>
     <title>Se connecter</title>
   </head>
   <body id="eleementID">
@@ -72,16 +84,16 @@
               </div>
               
               <div class="d-flex mb-5 align-items-center">
-                <label class="control control--checkbox mb-0"><span class="caption">Se souvenir de moi</span>
+                <label class="control control--checkbox mb-0"><span class="caption" style="font-size: 10px;">Se souvenir de moi</span>
                   <input type="checkbox" checked="checked myClaseBtn"/>
                   <div class="control__indicator"></div>
                 </label>
-                <span class="ml-auto"><a href="forgotpasseword.html" class="forgot-pass">Mot de passe oublié</a></span> 
+                <span class="ml-auto"><a href="forgotpasseword.html" class="forgot-pass" style="font-size: 10px;">Mot de passe oublié</a></span> 
               </div>
 
               <input type="submit" value="Se connecter" class="btn btn-block myClaseBtn">
               <br>
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="signup.html">Je n'ai pas un compte. <strong style="color: #40E0D0; text-align: center;">Inscrivez-vous</strong> </a>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="signup.html" style="font-size: 10px !important;">Je n'ai pas un compte. <strong style="color: #40E0D0; text-align: center; font-size: 10px !important;">Inscrivez-vous</strong> </a>
               <style>
                 .myClaseBtn{
                   background-color: #FFB6C1;

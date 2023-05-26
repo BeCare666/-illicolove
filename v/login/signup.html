@@ -31,7 +31,18 @@
         font-size: 14px !important;
       }
     </style>
-
+  <script>
+    window.onload = function(){
+      if (/Mobi|Android/i.test(navigator.userAgent)) { 
+    // Code pour appareil mobile
+    //document.body.style.fontSize = "16px"; // Modifier la taille de la police pour appareils mobiles
+    document.getElementById('myimgclassesignup').style.display = "none"
+    document.getElementById('contentSignup').style.marginTop = "10vh"
+    } else {
+        // Code pour ordinateur de bureau
+    }
+   }
+  </script>
 
     <title>S'inscrire</title>
   </head>
@@ -63,8 +74,7 @@
     <div class="contents order-2 order-md-1">
       <div class="container" >
         <div class="row align-items-center justify-content-center" >
-          <div class="col-md-7"  style ="/*background: #fff;
-          box-shadow: 8px 8px 11px 11px rgba(0, 0, 0, 0.06); border-radius: 5px;*/">
+          <div class="col-md-7">
             <h3>S'inscrire à<strong> illicolove</strong></h3>
             <form action="javascript:submitmy()">
               <div class="form-group first">
@@ -82,14 +92,14 @@
               <div class="form-group last mb-3">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" placeholder="Votre mode passe" id="password" required>
-                <span id="password-strength-indicator"></span>
-                <button type="button" id="toggle-password" class="Xbutton">X</button>
+                <!-- <span id="password-strength-indicator"></span>
+                <button type="button" id="toggle-password" class="Xbutton">X</button>-->
               </div>
 
               <div class="d-flex mb-5 align-items-center">
                 <label class="control control--checkbox mb-0">
-                  <span class="caption" id="acceptID" style="display: none;"><a href="./../../termes&conditions.html">J'ai lu et j'accepte les termes et conditions</a></span>
-                  <span class="caption"  id="readID" ><a href="./../../termes&conditions.html" style="color: red !important;">Veuillez lire et accepter nos  termes et conditions</a></span>
+                  <span class="caption" id="acceptID" style="display: none; font-size: 12px !important;"><a href="./../../termes&conditions.html" style="font-size: 12px !important;">J'ai lu et j'accepte les termes et conditions</a></span>
+                  <span class="caption"  id="readID" ><a href="./../../termes&conditions.html" style="color: rgb(247, 100, 100) !important; font-size: 12px !important;">Lire et accepter nos  termes et conditions</a></span>
                   <input type="checkbox" id="myCheckbox"/>
                   <div class="control__indicator"></div>
                 </label>               
@@ -98,7 +108,7 @@
               <input type="submit" value="S'inscrire" class="btn btn-block" id="toSignupID"
               style="background-color: #FFB6C1 !important; color: white; font-size: 20px !important;" disabled>
               <br>
-              &nbsp; &nbsp; &nbsp;<a href="login.html">Jai déjà un compte. <strong style="color: #40E0D0; text-align: center;">Connectez-vous</strong> </a>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="login.html" style="font-size: 10px !important;">Jai déjà un compte. <strong style="color: #40E0D0; text-align: center; font-size: 10px !important;">Connectez-vous</strong> </a>
               <br>
               <div style="opacity: 0;">sdfvff</div>
             </form>
@@ -109,11 +119,6 @@
   </div>
   </section>
   </section>
-  <style>
-    #signupbox{
-      background-color: #e8f5f5 !important;
-    }
-  </style>
   <div id="preloader" style="display: none;"></div>
   <script>
   const firebaseConfig = {
@@ -338,7 +343,7 @@ checkbox.addEventListener("change", function() {
       }
     }
 
-    const togglePasswordButton = document.getElementById('toggle-password');
+   {/* const togglePasswordButton = document.getElementById('toggle-password');
 
     togglePasswordButton.addEventListener('click', togglePasswordVisibility);
 
@@ -350,7 +355,7 @@ checkbox.addEventListener("change", function() {
         passwordInput.type = 'password';
         togglePasswordButton.innerText = 'X';
       }
-    }
+    }*/}
 
   </script>
       <script src="js/jquery-3.3.1.min.js"></script>

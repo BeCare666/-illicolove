@@ -1555,19 +1555,23 @@ body {
   justify-content: center;
 }
 
+
+
 #modalMyDropdown .iphone {
   background-color: #F7F7F7;
   height: 500px;
-  width: 100% !important;
+  width: 310px;
   box-shadow: 0 11px 15px -1px rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(0, 0, 0, 0.15);
   overflow: hidden;
-  position: relative;
+  position: absolute;
   transform: scale(0.9);
   transform-origin: top center;
   margin-top: 70px;
   border-radius: 30px;
   align-items: center;
   justify-content: center;
+  right: 0 !important;
+ 
 }
 
 #modalMyDropdown .header {
@@ -1587,7 +1591,7 @@ body {
   content:"";
   height: 200px;
   width: 200px;
-  background-color: #d68c97;
+  background-color: #d68c976c;
   border-radius: 50%;
   position:absolute;
   top: -60px;
@@ -1599,7 +1603,7 @@ body {
   content:"";
   height: 100px;
   width: 100px;
-  background-color: #d68c97;
+  background-color: #d68c9746;
   border-radius: 50%;
   position:absolute;
   right: -20px;
@@ -1612,7 +1616,7 @@ body {
   content:"";
   height: 500px;
   width: 500px;
-  background-color: #d68c97;
+  background-color: #d68c9762;
   border-radius: 100%;
   position:absolute;
   right: -20px;

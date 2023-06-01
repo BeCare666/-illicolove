@@ -195,12 +195,16 @@
           </div>
         </div>
         <div class="drawer">
-          <span id="logoutID" style="cursor: pointer;"><a ><i class="bi bi-box-arrow-left"></i></a></span>
+          <span id="logoutID" style="cursor: pointer;"><a >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="bi bi-box-arrow-left"></i><br> Se déconnecter</a></span>
           <span><i class="fal fa-chart-bar"></i></span>
-          <div style="background-color: #40E0D0 !important;" class="menu-btn rotate" id="myBtn" data-toggle="modal" data-target="#exampleModalCenter"><i class="bi bi-plus-circle"></i></div>
+          <div style="background-color: #40E0D0 !important;" class="menu-btn rotate" id="myBtn" data-toggle="modal" data-target="#exampleModalCenter">
+            <!---<i class="bi bi-plus-circle"></i>-->
+            Payer d'unité
+          </div>
         <!--<span style="margin-top: 12px !important;"><i class="bi bi-pencil-square"></i></span>-->
           <span><i class="fal fa-sticky-note"></i> </span>
-          <span ><a href="./../index.html"><i class="bi bi-sign-turn-right-fill"></i></a></span>
+          <span ><a href="./../index.html">&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-sign-turn-right-fill"></i><br>Accueil</a></span>
         </div>
       <style>
         .rotate {
@@ -280,7 +284,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Une unité vaut 95 FCFA</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Une unité vaut 95 FCFA, soit 0.144 Euros.</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -590,7 +594,7 @@ style="background-color: #f38e9d !important;"
 
 
         //function to controle button paiement
-      var statusmyCompt = snapshot.val().VALIDERMONCOMPTE
+      var statusmyCompt = snapshot.val().IDREGION
       if(!statusmyCompt){
       var paiementBtn = document.getElementById('myBtn');
       var CONSULTEZLESANNONCES = document.getElementById('CONSULTEZLESANNONCES');

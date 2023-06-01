@@ -560,3 +560,13 @@
     width: 100%;
     height: 100vh;
   }
+
+  .form-container {
+    display: flex;
+    align-items: center;
+}
+
+.form-container select,
+.form-container input[type="text"] {
+    margin-right: 10px;
+}

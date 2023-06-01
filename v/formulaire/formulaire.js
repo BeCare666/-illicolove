@@ -166,7 +166,7 @@
     });
 
         // for pods
-        var myprofileidpoids = document.getElementById('myprofileidpoids');
+       {/* var myprofileidpoids = document.getElementById('myprofileidpoids');
         var errorSmspoids = document.getElementById('errorSmspoids');
         var PpoidsId = document.getElementById('PpoidsId');
       
@@ -178,18 +178,18 @@
             errorSmspoids.style.display = 'none';
             PpoidsId.style.display = 'block';
           }
-        });
+        });*/}
     
       // control for phone
     
-      var myprofileidtéléphone = document.getElementById('myprofileidtéléphone');
+    var myprofileidtéléphone = document.getElementById('myprofileidtéléphone');
       var errorSmsphone = document.getElementById('errorSmsphone');
       var PphoneId = document.getElementById('PphoneId');
 
       myprofileidtéléphone.addEventListener('input', function() {
         var value = myprofileidtéléphone.value;       
         // Vérifier si le premier caractère est "+"
-        if (value.length > 0 && value.charAt(0) !== '+') {
+        if (value.length > 0 && value.charAt(0) === '+') {
           errorSmsphone.style.display = 'block'; // Afficher le message d'erreur
           PphoneId.style.display = 'none';
         } else {
@@ -214,7 +214,7 @@
     
       myprofileidpréférences.addEventListener('input', function() {
         if (myprofileidpréférences.value.length < 100) {
-          TextCounptsms.style.display = 'block';
+          //TextCounptsms.style.display = 'block';
           TextiD.style.display = 'none';
         } else {
           TextCounptsms.style.display = 'none';
@@ -240,10 +240,95 @@
     
       myprofileidprécisions.addEventListener('input', function() {
         if (myprofileidprécisions.value.length < 50) {
-          TextCounptsmsy.style.display = 'block';
+          //TextCounptsmsy.style.display = 'block';
           TextiDy.style.display = 'none';
         } else {
           TextCounptsmsy.style.display = 'none';
           TextiDy.style.display = 'block';
         }
       });
+
+
+      var numberVaribleTable = []
+      var countries; // Variable globale pour stocker la liste des pays
+
+        $(document).ready(function() {
+            // Appel à l'API REST Countries
+            $.ajax({
+                url: "https://restcountries.com/v2/all",
+                type: "GET",
+                success: function(response) {
+                    countries = response; // Stocker la liste des pays
+                    
+                    // Parcourir la liste des pays et générer les options du select
+                    countries.forEach(function(country) {
+                        var option = document.createElement("option");
+                        option.value = country.alpha2Code;
+                        option.text = country.name + " "+getPhonePrefix(country) ;
+                        document.getElementById("countrySelect").appendChild(option);
+                        document.getElementById("myprofileidSonpays").appendChild(option);
+                        document.getElementById("myprofileidnationèèalité").appendChild(option);
+                    });
+                },
+                error: function(error) {
+                    console.log("Une erreur s'est produite lors de l'appel à l'API REST Countries:", error);
+                }
+            });
+        });
+
+        // Fonction pour obtenir le préfixe téléphonique du pays
+        function getPhonePrefix(country) {
+            var prefixes = country.callingCodes;
+            if (prefixes.length > 0) {
+                return "+" + prefixes[0];
+            }
+            return "";
+        }
+
+        // Fonction pour soumettre le numéro de téléphone
+        var PhoneInput = document.getElementById('myprofileidtéléphone');
+        function validatePhoneNumber() {
+          var selectedCountryCode = document.getElementById("countrySelect").value;
+          var phoneNumber = document.getElementById("myprofileidtéléphone").value;
+          var countryCode = getPhonePrefixFromCode(selectedCountryCode);
+
+         
+          // Vérifier si un pays est sélectionné et si un numéro de téléphone est saisi
+          if (selectedCountryCode && phoneNumber) {
+           
+
+            if (phoneNumber.length > 0 && phoneNumber.charAt(0) === '+') {
+              alert("no no +")
+            } else {
+              if (!phoneNumber.startsWith(countryCode)) {  
+                // Ajouter automatiquement le préfixe du pays au numéro de téléphone
+                var numberVarible = countryCode + phoneNumber
+                numberVaribleTable.push(numberVarible)
+                alert(countryCode + phoneNumber)
+            }else{
+              alert("Mettez simplement le numéro sans le préfixe")
+            }
+            }
+              // Vérifier si le préfixe téléphonique correspond au pays sélectionné
+          
+          }else{
+            alert("veuillez selectioner le pays")
+          }
+      }
+      
+
+        // Fonction pour obtenir le préfixe téléphonique à partir du code de pays
+        function getPhonePrefixFromCode(code) {
+            var selectedCountry = countries.find(function(country) {
+                return country.alpha2Code === code;
+            });
+
+            if (selectedCountry) {
+                var prefixes = selectedCountry.callingCodes;
+                if (prefixes.length > 0) {
+                    return "+" + prefixes[0];
+                }
+            }
+            
+            return "";
+        } 

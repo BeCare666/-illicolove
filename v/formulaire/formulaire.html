@@ -31,8 +31,10 @@
     <style>
     * {
       font-family: 'Montserrat-bold', sans-serif;
+      font-size: 15px !important;
     }
   </style>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body id="mybodyID">
         <!-- MultiStep Form -->
@@ -43,92 +45,127 @@
                     <form id="msform">
                         <!-- progressbar -->
                         <ul id="progressbar">
-                            <li class="active">MON PROFIL</li>
-                            <li>MON PROFIL</li>
-                            <li>MON PROFIL</li>
-                            <li>PROFIL QUE JE CHERCHE</li>
-                            <li>PROFIL QUE JE CHERCHE</li>
+                            <li class="active" style="font-size: 9px !important;">MON PROFIL</li>
+                            <li style="font-size: 9px !important;">MON PROFIL</li>
+                            <li style="font-size: 9px !important;">MON PROFIL</li>
+                            <li style="font-size: 9px !important;">PROFIL QUE JE CHERCHE</li>
+                            <li style="font-size: 9px !important;">PROFIL QUE JE CHERCHE</li>
                         </ul>
                         <!-- fieldsets -->
                         <fieldset>
-                            <h2 class="fs-title">DONNÉES PERSONNELLES</h2>
-                            <h3 class="fs-subtitle">Parlez-nous un peu de vous</h3>
+                            <h2 class="fs-title">VEUILLEZ REMPLIR LE FORMULAIRE CI-DESSOUS.</h2>
+                            <h3 class="fs-subtitle">Donnez des informations précises et judicieuses.</h3>
                             <p style="text-align: start !important;">Ma Ville de
                                 résidence <i class="fa fa-star required"></i></p>
                             <input type="text" id="myprofileidMaVille"
                                 name="name" placeholder="Ma Ville de résidence"
                                 required/>
-                            <p style="text-align: start !important;">Nom et
-                                Prénoms <i class="fa fa-star required"></i></p>
+                            <p style="text-align: start !important;">Nom ou Pseudonyme<i class="fa fa-star required"></i></p>
                             <input type="text" id="myprofileidPrénoms"
-                                name="lname" placeholder="Nom et Prénoms" required/>
-                            <p style="text-align: start !important;">Ma
-                                nationalité <i class="fa fa-star required"></i></p>
-                            <input type="text" id="myprofileidnationèèalité"
-                                name="lname" placeholder="Ma nationalité" required/>
-                            <p style="text-align: start !important;">Mon travail
-                                ou occupation <i class="fa fa-star required"></i></p>
-                            <input type="text" id="myprofileidtravail"
-                                name="text" placeholder="Mon travail" required/>
+                                name="lname" placeholder="Nom ou Pseudonyme" required/>
+                                <p style="text-align: start !important;" id="PageId">Mon âge <i class="fa fa-star required"></i></p>
+                                <p id="errorMessage" style="text-align: start !important; display: none; color: red;">Veuillez saisir uniquement des chiffres.<i class="fa fa-star required"></i></p>
+                                <select type="text" id="myprofileidâge"  name="twitter" placeholder="Mon âge " > 
+                                    <option value="18-30" >18-30</option>
+                                    <option value="31-40" >31-40</option>
+                                    <option value="41-50" >41-50</option>
+                                    <option value="51-60" >51-60</option>
+                                    <option value="61-70" >61-70</option>
+                                    <option value="71-80" >71-80</option>
+                                    <option value="80+" >80+</option>
+                                     
+                                </select>
+
+
+                                <p style="text-align: start !important;">Mon Genre <i
+                                    class="fa fa-star required"></i></p>
+                            <select id="choices-multiple-remove-buttonsexe"
+                                >
+                                <option value="Masculin">Homme</option>
+                                <option value="Femme">Femme</option>
+                                <option value="Transgenre">Transgenre</option>
+                                <option value="Fluide">Fluide(Genderfluid)</option>
+                                <option value="Intersexe">Intersexe</option>
+                                <option value="Agenre">Agenre</option>
+                                <option value="Aromantique">Aromantique</option>
+                                <option value="Asexuel.le">Asexuel.le</option>
+                                <option value="Bisexuel.le">Bisexuel.le</option>
+                                <option value="Cisgenre">Cisgenre</option>
+                                <option value="Cisnormativité">Cisnormativité</option>
+                                <option value="Demiromantique">Demiromantique</option>
+                                <option value="Demisexuel.le">Demisexuel.le</option>
+                                <option value="Hétéromantivité">Hétéromantivité</option>
+                                <option value="Iel">Iel</option>
+                                <option value="Mégenrer">Mégenrer</option>
+                                <option value="Non-binaire">Non-binaire</option>
+                                <option value="Pansexuel.le">Pansexuel.le</option>
+                                <option value="Polyamoureux.se">Polyamoureux.se</option>
+                                <option value="Queer">Queer</option>
+                                <option value="Transgenre">Transgenre</option>
+                                <option value="Transition">Transition</option>
+                            </select>
+
+                            <input type="button" name="next" class="next
+                                action-button" value="Suivant"/>
+                        </fieldset>
+                        <fieldset>
+                            <h2 class="fs-title">VEUILLEZ REMPLIR LE FORMULAIRE CI-DESSOUS.</h2>
+                            <h3 class="fs-subtitle">Donnez des informations précises et judicieuses.</h3>
+
                             <p style="text-align: start !important;">Ma
                                 situation matrimoniale <i class="fa fa-star
                                     required"></i></p>
                             <select id="choices-multiple-remove-button"
                                 >
-                                <option value="" selected></option>
                                 <option value="Célibataire">Célibataire</option>
-                                <option value="Célibataire sans enfant(s)">Célibataire
-                                    sans enfant(s)</option>
-                                <option value="Célibataire avec enfant(s)">Célibataire
-                                    avec enfant(s)</option>
-                                <option value="Divorcé(e)">Divorcé(e)</option>
+                                <option value="Célibataire sans enfant(s)">En couple</option>
+                                <option value="Célibataire avec enfant(s)">Divorcé(e)</option>
+                                <option value="Divorcé(e)">Veuf(ve)</option>
                             </select>
-                            <input type="button" name="next" class="next
-                                action-button" value="Suivant"/>
-                        </fieldset>
-                        <fieldset>
-                            <h2 class="fs-title">Mes caratéristiques</h2>
-                            <h3 class="fs-subtitle">Parlez-nous un peu de vous</h3>
-                            <p style="text-align: start !important;" id="PageId">Mon âge <i class="fa fa-star required"></i></p>
-                            <p id="errorMessage" style="text-align: start !important; display: none; color: red;">Veuillez saisir uniquement des chiffres.<i class="fa fa-star required"></i></p>
-                            <input type="text" id="myprofileidâge"  name="twitter" placeholder="Mon âge " pattern="[0-9]+" required/>
+
+                            <p style="text-align: start !important;">Ma
+                                nationalité <i class="fa fa-star required"></i></p>
+                            <select type="text" id="myprofileidnationèèalité"
+                                name="lname" placeholder="Ma nationalité" required></select>
 
                             <p style="text-align: start !important;" id="PtailleId">Ma taille <i class="fa fa-star required"></i></p>
                             <p id="errorSmsTaille" style="text-align: start !important; display: none; color: red;">Veuillez saisir un nombre à virgule entre 1 et 2 chiffres.<i class="fa fa-star required"></i></p>
                             <input type="text" id="myprofileidtaille" name="facebook" placeholder="Ma taille" pattern="^[0-9]+(\.[0-9]{1,2})?$" required/>
 
-                            <p style="text-align: start !important;" id="PpoidsId">Mon poids
+                           <!--- <p style="text-align: start !important;" id="PpoidsId">Mon poids
                                 <i class="fa fa-star required"></i></p>
                             <p id="errorSmspoids" style="text-align: start !important; display: none; color: red;">Veuillez saisir un nombre.<i class="fa fa-star required"></i></p>
                             <input type="text" id="myprofileidpoids"
                                 name="gplus" placeholder="Mon poids" pattern="[0-9]+" required/>
+
                             <p style="text-align: start !important;">Mon teint
                                 <i class="fa fa-star required"></i></p>
                             <input type="text" id="myprofileidteint"
-                                name="gplus" placeholder="Mon teint" required/>
-                            <p style="text-align: start !important;">Mon sexe <i
-                                    class="fa fa-star required"></i></p>
-                            <select id="choices-multiple-remove-buttonsexe"
-                                >
-                                <option value="" ></option>
-                                <option value="Masculin">Masculin</option>
-                                <option value="Féminin">Féminin</option>
-                            </select>
+                                name="gplus" placeholder="Mon teint" required/>-->
+                                <p style="text-align: start !important;">Mon travail
+                                    ou occupation <i class="fa fa-star required"></i></p>
+                                <input type="text" id="myprofileidtravail"
+                                    name="text" placeholder="Mon travail" required/>
+
                             <input type="button" name="previous" class="previous
                                 action-button-previous" value="précédent"/>
                             <input type="button" name="next" class="next
                                 action-button" value="Suivant"/>
                         </fieldset>
                         <fieldset>
-                            <h2 class="fs-title"> Prouvez votre identité</h2>
-                            <h3 class="fs-subtitle">Prouvez nous votre vraie
-                                identité</h3>
+                            <h2 class="fs-title">VEUILLEZ REMPLIR LE FORMULAIRE CI-DESSOUS.</h2>
+                            <h3 class="fs-subtitle">Donnez des informations précises et judicieuses.</h3>
                             <p style="text-align: start !important;" id="PphoneId">téléphone
                                 <i class="fa fa-star required"></i></p>
-                            <p id="errorSmsphone" style="text-align: start !important; display: none; color: red;">Veuillez saisir un nombre avec + au début.<i class="fa fa-star required"></i></p>
-                            <input type="text" id="myprofileidtéléphone" pattern="\+[0-9]+"
-                                name="facebook" placeholder="téléphone"
-                                required/>
+                            <p id="errorSmsphone" style="text-align: start !important; display: none; color: red;">
+                            Saisiz uniquement votre numéro sans le préfixe du pays<i class="fa fa-star required"></i></p>
+                            <div class="form-container">
+                            <select id="countrySelect">
+                                <option value="" selected></option>
+                            </select>
+                            <input type="text" id="myprofileidtéléphone" name="facebook" onblur="validatePhoneNumber()"
+                            placeholder="téléphone" pattern="[^+]*" required/>
+                            </div>
                             <p style="text-align: start !important;">Je veux une
                                 rencontre <i class="fa fa-star required"></i></p>
                             <select id="choices-multiple-remove-buttonrencontre"
@@ -142,9 +179,9 @@
                                     aboutir au mariage</option>
                             </select>
                             <p style="text-align: start !important;">Pièce
-                                d'identité <i class="fa fa-star required"></i></p>
+                                d'identité <!---<i class="fa fa-star required"></i>--></p>
                             <input type="file" id="myprofileididentité"
-                                name="gplus" placeholder="Pièce d'identité" required/>
+                                name="gplus" placeholder="Pièce d'identité" />
                             <p style="text-align: start !important;">
                                 Photo 1 <i class="fa fa-star required"></i></p>
                             <input type="file" id="myprofileidPhotos"
@@ -159,71 +196,93 @@
                                 action-button" value="Suivant"/>
                         </fieldset>
                         <fieldset>
-                            <h2 class="fs-title"> PROFIL QUE JE CHERCHE</h2>
-                            <h3 class="fs-subtitle">Parlez-nous un peu de votre
-                                âme sœur</h3>
-                            <p style="text-align: start !important;">Son sexe <i
+                            <h2 class="fs-title">VEUILLEZ REMPLIR LE FORMULAIRE CI-DESSOUS.</h2>
+                            <h3 class="fs-subtitle">Donnez des informations précises et judicieuses.</h3>
+                            <p style="text-align: start !important;">Son Genre <i
                                     class="fa fa-star required"></i></p>
                             <select id="choices-multiple-remove-buttonSonsexe"
                                 >
-                                <option value="" ></option>
-                                <option value="Masculin">Masculin</option>
-                                <option value="Féminin">Féminin</option>
+                                <option value="Masculin">Homme</option>
+                                <option value="Femme">Femme</option>
+                                <option value="Transgenre">Transgenre</option>
+                                <option value="Fluide">Fluide(Genderfluid)</option>
+                                <option value="Intersexe">Intersexe</option>
+                                <option value="Agenre">Agenre</option>
+                                <option value="Aromantique">Aromantique</option>
+                                <option value="Asexuel.le">Asexuel.le</option>
+                                <option value="Bisexuel.le">Bisexuel.le</option>
+                                <option value="Cisgenre">Cisgenre</option>
+                                <option value="Cisnormativité">Cisnormativité</option>
+                                <option value="Demiromantique">Demiromantique</option>
+                                <option value="Demisexuel.le">Demisexuel.le</option>
+                                <option value="Hétéromantivité">Hétéromantivité</option>
+                                <option value="Iel">Iel</option>
+                                <option value="Mégenrer">Mégenrer</option>
+                                <option value="Non-binaire">Non-binaire</option>
+                                <option value="Pansexuel.le">Pansexuel.le</option>
+                                <option value="Polyamoureux.se">Polyamoureux.se</option>
+                                <option value="Queer">Queer</option>
+                                <option value="Transgenre">Transgenre</option>
+                                <option value="Transition">Transition</option>
                             </select>
                             <p style="text-align: start !important;" id="Pyhold">Sa tranche
                                 d'âge <i class="fa fa-star required"></i></p>
                                 <p id="errorSmsyour" style="text-align: start !important; display: none; color: red;">Veuillez saisir uniquement des chiffres.<i class="fa fa-star required"></i></p>
-                            <input type="text" id="myprofileidtrancheâge"
+                            <select type="text" id="myprofileidtrancheâge"
                                 name="facebook" placeholder="Sa tranche d'âge"
-                                pattern="[0-9]+" required/>
+                                pattern="[0-9]+" >
+                                <option value="18-30" >18-30</option>
+                                <option value="31-40" >31-40</option>
+                                <option value="41-50" >41-50</option>
+                                <option value="51-60" >51-60</option>
+                                <option value="61-70" >61-70</option>
+                                <option value="71-80" >71-80</option>
+                                <option value="80+" >80+</option>
+                            </select>
                             <p style="text-align: start !important;">Sa
                                 situation matrimoniale <i class="fa fa-star
                                     required"></i></p>
                             <select
                                 id="choices-multiple-remove-buttonmatrimoniale"
                                 >
-                                <option value="" ></option>
                                 <option value="Célibataire">Célibataire</option>
-                                <option value="Célibataire sans enfant(s)">Célibataire
-                                    sans enfant(s)</option>
-                                <option value="Célibataire avec enfant(s)">Célibataire
-                                    avec enfant(s)</option>
-                                <option value="Divorcé(e)">Divorcé(e)</option>
+                                <option value="Célibataire sans enfant(s)">En couple</option>
+                                <option value="Célibataire avec enfant(s)">Divorcé(e)</option>
+                                <option value="Divorcé(e)">Veuf(ve)</option>
                             </select>
                             <p style="text-align: start !important;">Son pays de
                                 résidence <i class="fa fa-star required"></i></p>
-                            <input type="text" id="myprofileidSonpays"
-                                name="gplus" placeholder="Son pays" required/>
+                            <select type="text" id="myprofileidSonpays"
+                                name="gplus" placeholder="Son pays" required></select>
                             <input type="button" name="previous" class="previous
                                 action-button-previous" value="précédent"/>
                             <input type="button" name="next" class="next
                                 action-button" value="Suivant"/>
                         </fieldset>
                         <fieldset>
-                            <h2 class="fs-title">PROFIL QUE JE CHERCHE</h2>
-                            <h3 class="fs-subtitle">Parlez-nous un peu de votre
-                                âme sœur</h3>
-                            <p style="text-align: start !important;" id="TextiD">Vos préférences physiques <i class="fa fa-star required"></i></p>
-                            <p style="text-align: start !important; display: none; color: red;" id="TextCounptsms">Le contenu doit comporter au moins 100 caractères.<i class="fa fa-star required"></i></p>
+                            <h2 class="fs-title">VEUILLEZ REMPLIR LE FORMULAIRE CI-DESSOUS.</h2>
+                            <h3 class="fs-subtitle">Donnez des informations précises et judicieuses.</h3>
+                            <p style="text-align: start !important;" id="TextiD">Décrivez l'aspect physique que vous désirez.</p>
+                           <!-- <p style="text-align: start !important; display: none; color: red;" id="TextCounptsms">
+                            Le contenu doit comporter au moins 100 caractères.<i class="fa fa-star required"></i></p>--->
                             <p style="text-align: start !important;" id="TextCounpt"></p>
                             <textarea type="text" id="myprofileidpréférences" maxlength="300" minlength="100"
-                                name="email" placeholder="Vos préférences" required  oninput="countCharacters()"></textarea>
+                                name="email" placeholder="Aspect physique"  oninput="countCharacters()"></textarea>
                             <p style="text-align: start !important;">Sa ville
                                 d'habitation <i class="fa fa-star required"></i></p>
                             <input type="text" id="myprofileidSaville"
-                                name="pass" placeholder="Sa ville
-                                d'habitation" required/>
+                                name="pass" placeholder="Sa ville" required/>
                             <p style="text-align: start !important;">Son travail
                                 ou occupations <i class="fa fa-star required"></i></p>
                             <input type="text" id="myprofileidoccupations"
-                                name="pass" placeholder="Son travail
-                                occupations" required/>
+                                name="pass" placeholder="Son travail" required/>
                              
-                                <p style="text-align: start !important;" id="TextiDy">Autres précisions <i class="fa fa-star required"></i></p>
-                                <p style="text-align: start !important; display: none; color: red;" id="TextCounptsmsy">Le contenu doit comporter au moins 50 caractères.<i class="fa fa-star required"></i></p>
+                                <p style="text-align: start !important;" id="TextiDy">Autres précisions.</p>
+                              <!--- <p style="text-align: start !important; display: none; color: red;" id="TextCounptsmsy">
+                                Le contenu doit comporter au moins 50 caractères.<i class="fa fa-star required"></i></p>---> 
                                 <p style="text-align: start !important;" id="TextCounpty"></p>
                             <textarea type="text" id="myprofileidprécisions" oninput="countCharactersy()"
-                            maxlength="100" minlength="50"   name="email" placeholder="Autres précisions" required></textarea>
+                            maxlength="50" minlength="0"   name="email" placeholder="Autres précisions" ></textarea>
                             <input type="button" name="previous" class="previous
                                 action-button-previous" value="précédent"/>
                             <input type="submit" name="submit" class="submit
@@ -251,74 +310,75 @@
                    <a href="#" class="modal__close" id="modal__close">&times;</a>
                 </div>
             </div>
-        </section>
-        <div id="preloader"></div>
+        </section> 
+      <script src="formulaire.js"></script>
+      <div id="preloader"></div>
         <script type="module">
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-        const firebaseConfig = {
-          apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
-          authDomain: "illicolove0.firebaseapp.com",
-          databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
-          projectId: "illicolove0",
-          storageBucket: "illicolove0.appspot.com",
-          messagingSenderId: "687063035754",
-          appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
-        };
-            // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        import {
-            getDatabase,
-            ref,
-            set,
-            update,
-            child,
-            onValue,
-            remove,
-            get,
-        } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+                const firebaseConfig = {
+                apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
+                authDomain: "illicolove0.firebaseapp.com",
+                databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
+                projectId: "illicolove0",
+                storageBucket: "illicolove0.appspot.com",
+                messagingSenderId: "687063035754",
+                appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
+                };
+                    // Initialize Firebase
+                const app = initializeApp(firebaseConfig);
+                import {
+                    getDatabase,
+                    ref,
+                    set,
+                    update,
+                    child,
+                    onValue,
+                    remove,
+                    get,
+                } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
-        import { getStorage, getDownloadURL 
-        } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"
+                import { getStorage, getDownloadURL 
+                } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"
 
-        const db = getDatabase();
-       
-        var myprofileidMaVille = document.getElementById('myprofileidMaVille');
-        var myprofileidPrénoms = document.getElementById('myprofileidPrénoms');
-        var myprofileidnationèèalité = document.getElementById('myprofileidnationèèalité');
-        var myprofileidtravail = document.getElementById('myprofileidtravail');
-        var choicesmultipleremovebutton = document.getElementById('choices-multiple-remove-button');
-        var myprofileidâge = document.getElementById('myprofileidâge');
-        var myprofileidtaille = document.getElementById('myprofileidtaille');
-        var myprofileidpoids = document.getElementById('myprofileidpoids');
-        var myprofileidteint = document.getElementById('myprofileidteint');
-        var choicesmultipleremovebuttonsexe = document.getElementById('choices-multiple-remove-buttonsexe');
-        var myprofileidtéléphone = document.getElementById('myprofileidtéléphone');
-        var choicesmultipleremovebuttonrencontre = document.getElementById('choices-multiple-remove-buttonrencontre');
-        var myprofileididentité = document.getElementById('myprofileididentité'); 
-        var myprofileidPhotos = document.getElementById('myprofileidPhotos');
-        var myprofileidPhoto2 = document.getElementById('myprofileidPhoto2');
-        var choicesmultipleremovebuttonSonsexe = document.getElementById('choices-multiple-remove-buttonSonsexe');
-        var myprofileidtrancheâge = document.getElementById('myprofileidtrancheâge');
-        var  choicesmultipleremovebuttonmatrimoniale = document.getElementById('choices-multiple-remove-buttonmatrimoniale');
-        var myprofileidSonpays = document.getElementById('myprofileidSonpays');
-        var myprofileidpréférences = document.getElementById('myprofileidpréférences');
-        var myprofileidSaville = document.getElementById('myprofileidSaville');
-        var myprofileidoccupations = document.getElementById('myprofileidoccupations');
-        var myprofileidprécisions = document.getElementById('myprofileidprécisions');
-        var sunmitannonceid = document.getElementById('sunmitannonceid')
-        var preloader = document.getElementById('preloader')
-        const UserConnectuser = localStorage.getItem("unserconnect");
-        var  base64Contenttable = []
-        var base64Contentphoto1table = []
-        var base64Contentphoto2table = []
-        const IDREGION = localStorage.getItem("myOption")
-        function getdata() {
-        const dbref = ref(db);
-        get(child(dbref, "utilisateurs/" + UserConnectuser))
-            .then((snapshot) => {
-            // first place for preloader
+                const db = getDatabase();
+            
+                var myprofileidMaVille = document.getElementById('myprofileidMaVille');
+                var myprofileidPrénoms = document.getElementById('myprofileidPrénoms');
+                var myprofileidnationèèalité = document.getElementById('myprofileidnationèèalité');
+                var myprofileidtravail = document.getElementById('myprofileidtravail');
+                var choicesmultipleremovebutton = document.getElementById('choices-multiple-remove-button');
+                var myprofileidâge = document.getElementById('myprofileidâge');
+                var myprofileidtaille = document.getElementById('myprofileidtaille');
+               // var myprofileidpoids = document.getElementById('myprofileidpoids');
+               // var myprofileidteint = document.getElementById('myprofileidteint');
+                var choicesmultipleremovebuttonsexe = document.getElementById('choices-multiple-remove-buttonsexe');
+                var myprofileidtéléphone = document.getElementById('myprofileidtéléphone');
+                var choicesmultipleremovebuttonrencontre = document.getElementById('choices-multiple-remove-buttonrencontre');
+                var myprofileididentité = document.getElementById('myprofileididentité'); 
+                var myprofileidPhotos = document.getElementById('myprofileidPhotos');
+                var myprofileidPhoto2 = document.getElementById('myprofileidPhoto2');
+                var choicesmultipleremovebuttonSonsexe = document.getElementById('choices-multiple-remove-buttonSonsexe');
+                var myprofileidtrancheâge = document.getElementById('myprofileidtrancheâge');
+                var  choicesmultipleremovebuttonmatrimoniale = document.getElementById('choices-multiple-remove-buttonmatrimoniale');
+                var myprofileidSonpays = document.getElementById('myprofileidSonpays');
+                var myprofileidpréférences = document.getElementById('myprofileidpréférences');
+                var myprofileidSaville = document.getElementById('myprofileidSaville');
+                var myprofileidoccupations = document.getElementById('myprofileidoccupations');
+                var myprofileidprécisions = document.getElementById('myprofileidprécisions');
+                var sunmitannonceid = document.getElementById('sunmitannonceid')
+                var preloader = document.getElementById('preloader')
+                const UserConnectuser = localStorage.getItem("unserconnect");
+                var  base64Contenttable = []
+                var base64Contentphoto1table = []
+                var base64Contentphoto2table = []
+                const IDREGION = localStorage.getItem("myOption")
+                function getdata() {
+                const dbref = ref(db);
+                get(child(dbref, "utilisateurs/" + UserConnectuser))
+                .then((snapshot) => {
+                // first place for preloader
 
-            if (snapshot.exists()) {
+                if (snapshot.exists()) {
                 preloader.style.display = "none" 
                 {/*console.log(snapshot.val().MAVILLEDERESIDENCE)
                 var photoDataUrl = 'data:image/png;base64,' + snapshot.val().MAVILLEDERESIDENCE;
@@ -332,12 +392,14 @@
                  choicesmultipleremovebutton.value =  snapshot.val().MASITUATIONMATRIMONIALE
                  myprofileidâge.value =  snapshot.val().MONAGE
                  myprofileidtaille.value =  snapshot.val().MATAILLE
-                 myprofileidpoids.value =   snapshot.val().MONPOIDS
-                 myprofileidteint.value =   snapshot.val().MONTEINT
+                
                  choicesmultipleremovebuttonsexe.value =  snapshot.val().MONSEXE
                  myprofileidtéléphone.value =   snapshot.val().TELEPHONE
                  choicesmultipleremovebuttonrencontre.value =   snapshot.val().JEVEUXUNERENCONTRE
-                 {/*myprofileididentité.value =   snapshot.val().PIECESDIDENTITE 
+                 {/*
+                myprofileidpoids.value =   snapshot.val().MONPOIDS
+                 myprofileidteint.value =   snapshot.val().MONTEINT
+                myprofileididentité.value =   snapshot.val().PIECESDIDENTITE 
                  myprofileidPhotos.value =  snapshot.val().MESDEUXPHOTOS
                  myprofileidPhoto2.value =  snapshot.val().MESDEUXPHOTO2*/}
                  choicesmultipleremovebuttonSonsexe.value =  snapshot.val().SEXEDEPROFILQUEJECHERCHE
@@ -575,48 +637,96 @@
         }
 
 
+            // Appel à l'API REST Countries
+            $.ajax({
+                url: "https://restcountries.com/v2/all",
+                type: "GET",
+                success: function(response) {
+                    countries = response; // Stocker la liste des pays
+                    
+                    // Parcourir la liste des pays et générer les options du select
+                    countries.forEach(function(country) {
+                        var option = document.createElement("option");
+                        option.value = country.alpha2Code;
+                        option.text = country.name + " "+getPhonePrefix(country) ;
+                        document.getElementById("countrySelect").appendChild(option);
+                    });
+                },
+                error: function(error) {
+                    console.log("Une erreur s'est produite lors de l'appel à l'API REST Countries:", error);
+                }
+            });
+            // Fonction pour obtenir le préfixe téléphonique du pays
+            function getPhonePrefix(country) {
+                var prefixes = country.callingCodes;
+                if (prefixes.length > 0) {
+                    return "+" + prefixes[0];
+                }
+                return "";
+            }
+            // Fonction pour soumettre le numéro de téléphone
+        var PhoneInput = document.getElementById('myprofileidtéléphone');
+        function validatePhoneNumber() {
+          var selectedCountryCode = document.getElementById("countrySelect").value;
+          var phoneNumber = document.getElementById("myprofileidtéléphone").value;
+          var countryCode = getPhonePrefixFromCode(selectedCountryCode);
 
+         
+          // Vérifier si un pays est sélectionné et si un numéro de téléphone est saisi
+          if (selectedCountryCode && phoneNumber) {
+           
 
+            if (phoneNumber.length > 0 && phoneNumber.charAt(0) === '+') {
+              alert("no no +")
+            } else {
+              if (!phoneNumber.startsWith(countryCode)) {  
+                // Ajouter automatiquement le préfixe du pays au numéro de téléphone
+                var numberVarible = countryCode + phoneNumber
+                numberVaribleTable.push(numberVarible)
+            }else{
+              alert("Mettez simplement le numéro sans le préfixe")
+            }
+            }
+              // Vérifier si le préfixe téléphonique correspond au pays sélectionné
+          
+          }else{
+            alert("veuillez selectioner le pays")
+          }
+      }
+      
+
+        // Fonction pour obtenir le préfixe téléphonique à partir du code de pays
+        function getPhonePrefixFromCode(code) {
+            var selectedCountry = countries.find(function(country) {
+                return country.alpha2Code === code;
+            });
+
+            if (selectedCountry) {
+                var prefixes = selectedCountry.callingCodes;
+                if (prefixes.length > 0) {
+                    return "+" + prefixes[0];
+                }
+            }
+            
+            return "";
+        } 
          
         sunmitannonceid.addEventListener('click', function(){
             preloader.style.display = "block"   
             const PieceID = base64Contenttable.slice(-1).pop();
             const Photo1ID = base64Contentphoto1table.slice(-1).pop();
             const Photo2ID = base64Contentphoto2table.slice(-1).pop();
-            console.log(myprofileidMaVille.value)
-            console.log(myprofileidtéléphone.value)
-            console.log(myprofileidPrénoms.value)
-            console.log(choicesmultipleremovebuttonrencontre.value)
-            console.log(myprofileidnationèèalité.value)
-            console.log(PieceID.value)
-            console.log(Photo1ID.value)
-            console.log(Photo2ID.value)
-            console.log(IDREGION.value)
-            console.log(choicesmultipleremovebuttonSonsexe.value)
-            console.log(choicesmultipleremovebutton.value)
-            console.log(myprofileidtrancheâge.value)
-            console.log(myprofileidâge.value)
-            console.log(choicesmultipleremovebuttonmatrimoniale.value)
-            console.log(myprofileidtaille.value)
-            console.log(myprofileidSonpays.value)
-            console.log(myprofileidpréférences.value)
-            console.log(myprofileidpoids.value)
-            console.log(myprofileidSaville.value)
-            console.log(myprofileidoccupations.value)
-            console.log(myprofileidteint.value)
-            console.log(choicesmultipleremovebuttonsexe.value)
-            console.log(myprofileidprécisions.value)
-            console.log(myprofileidtravail.value)
-    
-            if(myprofileidMaVille.value && myprofileidtéléphone.value &&
+            const NumberVaribleTable = numberVaribleTable.slice(-1).pop();
+           
+            if(myprofileidMaVille.value && NumberVaribleTable &&
                myprofileidPrénoms.value && choicesmultipleremovebuttonrencontre.value &&
-               myprofileidnationèèalité.value && PieceID && Photo1ID && Photo2ID &&
+               myprofileidnationèèalité.value && Photo1ID && Photo2ID &&
                myprofileidtravail.value && IDREGION && choicesmultipleremovebuttonSonsexe.value &&
                choicesmultipleremovebutton.value &&  myprofileidtrancheâge.value &&
                myprofileidâge.value && choicesmultipleremovebuttonmatrimoniale.value &&
-               myprofileidtaille.value && myprofileidSonpays.value && myprofileidpréférences.value &&
-               myprofileidpoids.value && myprofileidSaville.value && myprofileidoccupations.value &&
-               myprofileidteint.value && choicesmultipleremovebuttonsexe.value && myprofileidprécisions.value
+               myprofileidtaille.value && myprofileidSonpays.value && 
+               myprofileidSaville.value && myprofileidoccupations.value &&
+                choicesmultipleremovebuttonsexe.value 
             ){
                 update(ref(db, "utilisateurs/" + UserConnectuser), {
                 MAVILLEDERESIDENCE : myprofileidMaVille.value,
@@ -626,12 +736,10 @@
                 MASITUATIONMATRIMONIALE : choicesmultipleremovebutton.value,
                 MONAGE : myprofileidâge.value ,
                 MATAILLE : myprofileidtaille.value,
-                MONPOIDS : myprofileidpoids.value,
-                MONTEINT : myprofileidteint.value,
                 MONSEXE : choicesmultipleremovebuttonsexe.value, 
-                TELEPHONE : myprofileidtéléphone.value,
+                TELEPHONE : NumberVaribleTable,
                 JEVEUXUNERENCONTRE : choicesmultipleremovebuttonrencontre.value,
-                PIECESDIDENTITE : PieceID, 
+                PIECESDIDENTITE : PieceID ? PieceID : "", 
                 MESDEUXPHOTOS : Photo1ID,
                 MESDEUXPHOTO2 : Photo2ID,
                 IDREGION : IDREGION,
@@ -642,7 +750,7 @@
                 PHYSIQUEDEPROFILQUEJECHERCHE : myprofileidpréférences.value,
                 VILLEDHABITATIONDEPROFILQUEJECHERCHE : myprofileidSaville.value,
                 TRAVAILDEDEPROFILQUEJECHERCHE : myprofileidoccupations.value,
-                AUTRESPRECISIONSDEPROFILQUEJECHERCHE : myprofileidprécisions.value,
+                AUTRESPRECISIONSDEPROFILQUEJECHERCHE : myprofileidprécisions.value ?myprofileidprécisions.value:"",
                 VALIDERMONCOMPTE:false
             })
                 .then(() => {
@@ -692,6 +800,5 @@
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
         <!-- /.MultiStep Form -->
-        <script src="formulaire.js"></script>
     </body>
 </html>

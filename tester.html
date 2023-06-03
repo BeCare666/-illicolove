@@ -1,71 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Send Email Example</title>
-  
+  <title>Translation Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
- <!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-
-<!-- Modules supplémentaires Firebase -->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-<!-- Ajoutez d'autres modules Firebase si nécessaire -->
-
-<!-- Firebase Config -->
-<script>
-  // Initialisez votre application Firebase avec les informations de configuration
-  var firebaseConfig = {
-    // Ajoutez ici vos informations de configuration Firebase
-    apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
-        authDomain: "illicolove0.firebaseapp.com",
-        databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
-        projectId: "illicolove0",
-        storageBucket: "illicolove0.appspot.com",
-        messagingSenderId: "687063035754",
-        appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
-  };
-      // Initialisez Firebase
-      firebase.initializeApp(firebaseConfig);
-      // Importer les modules Firebase nécessaires
-    const admin = require('firebase-admin');
- 
-    admin.initializeApp(firebaseConfig);
-
-    // Récupérer l'adresse e-mail de l'utilisateur à partir de la base de données Firebase
-    const userEmail = 'developperfullstacksenou@gmail.com'; // Remplacez par l'adresse e-mail de l'utilisateur
-
-    // Récupérer l'ID de l'utilisateur à partir de la base de données Firebase
-    const userId = 'user123'; // Remplacez par l'ID de l'utilisateur
-
-    // Créer un action de vérification de l'e-mail
-    const actionCodeSettings = {
-      url: 'https://example.com/verification', // Remplacez par l'URL de votre page de vérification
-      handleCodeInApp: true,
-    };
-
-    // Générer le lien de vérification
-    admin
-      .auth()
-      .generateEmailVerificationLink(userEmail, actionCodeSettings)
-      .then((link) => {
-        // Envoyer l'e-mail de vérification à l'utilisateur
-        sendVerificationEmail(userEmail, link);
-      })
-      .catch((error) => {
-        console.error('Une erreur s\'est produite lors de la génération du lien de vérification :', error);
+  <h1>Translation Example</h1>
+  
+  <p>Original Text: <span id="originalText">Hello</span></p>
+  <p>Translated Text: <span id="translatedText"></span></p>
+  
+  <script>
+    $(document).ready(function() {
+      var sourceLang = 'en';
+      var targetLang = 'fr';
+      var originalText = $('#originalText').text();
+      
+      $.ajax({
+        url: 'https://translate.googleapis.com/translate_a/single',
+        type: 'GET',
+        dataType: 'jsonp',
+        data: {
+          client: 'gtx',
+          sl: sourceLang,
+          tl: targetLang,
+          dt: 't',
+          q: originalText
+        },
+        success: function(response) {
+          var translatedText = response[0][0][0];
+          $('#translatedText').text(translatedText);
+        },
+        error: function(error) {
+          console.error('An error occurred during translation:', error);
+        }
       });
-
-    // Fonction pour envoyer l'e-mail de vérification à l'utilisateur
-    function sendVerificationEmail(email, link) {
-      // Remplacez avec votre propre logique d'envoi d'e-mail
-      console.log('Envoyer un e-mail de vérification à', email);
-      console.log('Lien de vérification :', link);
-    }
-
-</script>
-
+    });
+  </script>
 </body>
 </html>

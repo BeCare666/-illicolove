@@ -5,13 +5,17 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Reveal Bootstrap Template</title>
+  <title>Choix de région</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons 
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+            <!-- Link to import alert personnal -->
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
 
   <!-- Google Fonts -->
   <link
@@ -160,66 +164,102 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
               var option3 = 'AUTRESPAYSDUMONDE'
 
               if (snapshot.val().IDREGION === option1) {
-                div1.innerHTML = `<i class="bi bi-check-circle-fill"></i>`;
-                AFRIQUE1.addEventListener('click', function(){
-                top.location.href = "./formulaire/formulaire.html"
-                })
-              } else if (snapshot.val().IDREGION === option2) {
-                // Créer un nouveau span dans le div2
-                div2.innerHTML = `<i class="bi bi-check-circle-fill"></i>`;
-                EUROP2.addEventListener('click', function(){
-                  top.location.href = "./formulaire/formulaire.html"
-                })
-              } else if (snapshot.val().IDREGION === option3) {
-                // Créer un nouveau span dans le div3
-                div3.innerHTML = `<i class="bi bi-check-circle-fill"></i>`;
-                AUTRESPAYSDUMONDE3.addEventListener('click', function(){
-                  top.location.href = "./formulaire/formulaire.html"
-                })
-              }  
-              }
-              //function to detect icon check
-              var divElements = document.querySelectorAll('.chosemyregionclass');
-              divElements.forEach(function(divElement) {
-                divElement.addEventListener('click', function(event) {
-                  var iconElement = divElement.querySelector('.bi-check-circle-fill');
-                    var RIONGIONUPDATE = divElement.id
-                  if (!iconElement && !snapshot.val().IDREGION) {
-                    // L'icône existe dans le div
-                   //alert("L'icône est présente !");
-                    localStorage.setItem('myOption', RIONGIONUPDATE);
-                    top.location.href = "./formulaire/formulaire.html"
-                  } else {
-                    // L'icône n'est pas présente dans le div
-                    document.getElementById('modalID').style.display = "block"
-                    document.getElementById('services').style.display = "none"
-                    var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
-                    dreamIndemo.click();
-                    document.getElementById('iconid').innerHTML = ` <img src="./.././v/formulaire/assets/imageNoSucess.svg" alt="">`
-                    document.getElementById('etatalert').innerText = "Info"
-                    document.getElementById('smsalert').innerHTML = `
-                    Vous avez déjà une publication en cours ! 
-                    <br> Votre ancienne publication sera désactivé et  <br>
-                    ce nouveau formulaire sera soumis au contrôle pour validation sous 24 heures. Merci ! <br>
-                      
-                    `
-                    document.getElementById('updateform').innerHTML = `
-                    <i class="bi bi-pencil-square" style="color: white;"></i> Modifier
-                    
-                    `
-                    //function to close modale
-                    document.getElementById('modal__close').addEventListener('click', function(){
-                      document.getElementById('modalID').style.display = "none "
-                    document.getElementById('services').style.display = "block"
-                    })
-                    document.getElementById('updateform').addEventListener('click', function(){
-                      localStorage.setItem('myOption', RIONGIONUPDATE);
-                    top.location.href = "./formulaire/formulaire.html"
-                    document.getElementById('modalID').style.display = "none"  
-                    })
-                  }
-                });
+              div1.innerHTML = `<i class="bi bi-check-circle-fill"></i>`;
+              AFRIQUE1.addEventListener('click', function() {
+                top.location.href = "./formulaire/formulaire.html";
               });
+            } else if (snapshot.val().IDREGION === option2) {
+              div2.innerHTML = `<i class="bi bi-check-circle-fill"></i>`;
+              EUROP2.addEventListener('click', function() {
+                top.location.href = "./formulaire/formulaire.html";
+              });
+            } else if (snapshot.val().IDREGION === option3) {
+              div3.innerHTML = `<i class="bi bi-check-circle-fill"></i>`;
+              AUTRESPAYSDUMONDE3.addEventListener('click', function() {
+                top.location.href = "./formulaire/formulaire.html";
+              });
+            }
+
+            // Vérifier la présence de l'icône dans chaque div
+            AFRIQUE1.addEventListener('click', function() {
+              if (!div1.querySelector('.bi-check-circle-fill')) {
+                Swal.fire({
+                title: 'Êtes-vous sûr ?',
+                text: `Nous constatons que vous avez déjà une publication 
+                en cours. En procédant avec cette action, votre ancienne 
+                annonce sera modifiée et désactivée. Votre nouvelle annonce 
+                sera soumise aux administrateurs d'illicolove pour validation,
+                 ce processus prendra jusqu'à 24 heures. Nous vous remercions 
+                 pour votre compréhension.`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Oui, Changé',
+                cancelButtonText: 'Retour'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                var AFRIQUEID = "AFRIQUE"
+                localStorage.setItem("myOption", AFRIQUEID)
+                top.location.href = "./formulaire/formulaire.html";
+                }
+              })
+            }
+              });
+              EUROP2.addEventListener('click', function() {
+                if (!div2.querySelector('.bi-check-circle-fill')) {
+                  Swal.fire({
+                title: 'Êtes-vous sûr ?',
+                text: `Nous constatons que vous avez déjà une publication 
+                en cours. En procédant avec cette action, votre ancienne 
+                annonce sera modifiée et désactivée. Votre nouvelle annonce 
+                sera soumise aux administrateurs d'illicolove pour validation,
+                 ce processus prendra jusqu'à 24 heures. Nous vous remercions 
+                 pour votre compréhension.`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                cancelButtonText: 'Retour',
+                confirmButtonText: 'Oui, Changé'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                var EUROPEID = "EUROPE"
+                localStorage.setItem("myOption", EUROPEID)
+                top.location.href = "./formulaire/formulaire.html";
+                }
+              })
+            }
+              });
+              AUTRESPAYSDUMONDE3.addEventListener('click', function() {
+                if (!div3.querySelector('.bi-check-circle-fill')) {
+                Swal.fire({
+                title: 'Êtes-vous sûr ?',
+                text: `Nous constatons que vous avez déjà une publication 
+                en cours. En procédant avec cette action, votre ancienne 
+                annonce sera modifiée et désactivée. Votre nouvelle annonce 
+                sera soumise aux administrateurs d'illicolove pour validation,
+                 ce processus prendra jusqu'à 24 heures. Nous vous remercions 
+                 pour votre compréhension.`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Oui, Changé',
+                cancelButtonText: 'Retour',
+              }).then((result) => {
+                if (result.isConfirmed) {
+                var AUTRESPAYSDUMONDEID = "AUTRESPAYSDUMONDE"
+                localStorage.setItem("myOption", AUTRESPAYSDUMONDEID)
+                top.location.href = "./formulaire/formulaire.html";
+                }
+              })
+              }
+              });
+           
+
+              }
+             
 
 
             } else {

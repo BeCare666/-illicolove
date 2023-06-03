@@ -151,19 +151,19 @@
         });
 
     // for taille
-    var myprofileidtaille = document.getElementById('myprofileidtaille');
-    var errorSmsTaille = document.getElementById('errorSmsTaille');
-    var PtailleId = document.getElementById('PtailleId');
+   // var myprofileidtaille = document.getElementById('myprofileidtaille');
+   // var errorSmsTaille = document.getElementById('errorSmsTaille');
+   // var PtailleId = document.getElementById('PtailleId');
   
-    myprofileidtaille.addEventListener('input', function() {
-      if (!myprofileidtaille.checkValidity()) {
-        errorSmsTaille.style.display = 'block';
-        PtailleId.style.display = 'none';
-      } else {
-        errorSmsTaille.style.display = 'none';
-        PtailleId.style.display = 'block';
-      }
-    });
+   // myprofileidtaille.addEventListener('input', function() {
+   //   if (!myprofileidtaille.checkValidity()) {
+   //     errorSmsTaille.style.display = 'block';
+    //    PtailleId.style.display = 'none';
+    //  } else {
+    //    errorSmsTaille.style.display = 'none';
+    //    PtailleId.style.display = 'block';
+    //  }
+    //});
 
         // for pods
        {/* var myprofileidpoids = document.getElementById('myprofileidpoids');
@@ -215,10 +215,10 @@
       myprofileidpréférences.addEventListener('input', function() {
         if (myprofileidpréférences.value.length < 100) {
           //TextCounptsms.style.display = 'block';
-          TextiD.style.display = 'none';
+          //TextiD.style.display = 'none';
         } else {
-          TextCounptsms.style.display = 'none';
-          TextiD.style.display = 'block';
+          //TextCounptsms.style.display = 'none';
+          //TextiD.style.display = 'block';
         }
       });
 
@@ -332,3 +332,20 @@
             
             return "";
         } 
+
+
+        var tableau = [];
+  
+        document.getElementById("myprofileidSonpays").addEventListener("change", function() {
+            var selectedOptions = Array.from(this.selectedOptions).map(function(option) {
+                return option.value;
+            });
+            tableau.push(selectedOptions);
+            console.log(tableau)
+            getAllOption()
+        });
+        
+      function getAllOption() {
+            var allOptions = tableau.flat().join(', ');
+            document.getElementById('getAllOption').value = allOptions;
+        };

@@ -455,12 +455,12 @@ style="background-color: #f38e9d !important;"
             }
           }, unity);*/}
 
-         var photoDataUrl = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS; 
+         var photoDataUrl = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
          userbuttonID.innerHTML = `${snapshot.val().MESDEUXPHOTOS ? `<img src="${photoDataUrl}" alt="Votre image" style="width: 6vh;  height: 6vh;"/>` : '<i class="bi bi-person-fill" style="width: 30px;"></i>'}`;
          iconValidateID.innerHTML = `${snapshot.val().VALIDERMONCOMPTE ? `<i class="bi bi-patch-check-fill text-primary"> Compte valide</i> ` : '<i class="bi bi-exclamation-circle-fill text-danger"> Compte invalide</i> '}`;
          userMyID.innerHTML = `${snapshot.val().username}`;
          myUnityID.innerHTML = `${snapshot.val().COMPTECREDIT}`;
-         tofuserID.innerHTML = `${snapshot.val().MESDEUXPHOTOS ? `<img src="${photoDataUrl}" class="user-photo" />` : ' <i class="bi bi-person-fill" style="font-size: 11vh !important;  background-color: white; border-radius: 100%;"></i>'}`;
+         tofuserID.innerHTML = `${snapshot.val().MESDEUXPHOTOS ? `<img src="${photoDataUrl}" class="user-photo" />` : '<img src="assets/img/no_user.png" class="user-photo" />'}`;
          //function to checkout in account debit
 
          comptDebitID.innerHTML = `${snapshot.val().COMPTECREDITSATUS ? `
@@ -477,13 +477,13 @@ style="background-color: #f38e9d !important;"
           myAccountID.innerHTML = `${snapshot.val().isDefaultAccount ? `
             <div class="card-item" style="opacity: 0.2 !important; pointer-events: none;">
                 <span>Mon Plan</span>
-                <span >0 <strong class="dollar" style="color: aqua;">U</strong></span>
+                <span >0 &nbsp;<strong class="dollar" style="color: aqua;">U</strong></span>
               </div>   
           ` 
           
           : ` <div class="card-item" >
                 <span>Mon Plan</span>
-                <span id="debyID">${snapshot.val().COMPTECREDIT}<strong class="dollar" style="color: aqua;">U</strong></span>
+                <span id="debyID">${snapshot.val().COMPTECREDIT} <strong class="dollar" style="color: aqua;"> U</strong></span>
               </div>`}  `
 
 
@@ -576,7 +576,25 @@ style="background-color: #f38e9d !important;"
                  // document.getElementById('smsalert').innerHTML = `
                  // Votre compte est en cours de validation, vous ne pouvez pas effectuer de paiement ! Merci ! <br>
                  // `
-                 alert("Votre compte est arrivé à terme !")         
+                 Swal.fire({
+                  title: '<strong>Compte <u>Débit expiré</u> !</strong>',
+                  icon: 'info',
+                  html: `Votre compte de débit a expiré. Veuillez effectuer le 
+                  paiement des unités pour accéder aux annonces et rester en contact 
+                  avec vos partenaires.`,
+                  allowOutsideClick: false,
+                  focusConfirm: false,
+                  confirmButtonText:
+                    '<i class="fa fa-thumbs-up"></i> Great!',
+                  confirmButtonAriaLabel: 'Thumbs up, great!',
+                  cancelButtonText:
+                    '<i class="fa fa-thumbs-down"></i>',
+                  cancelButtonAriaLabel: 'Thumbs down'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    location.reload();
+                }
+                }) 
                  // window.location.reload()
                     })
                     .catch((error) => {
@@ -595,7 +613,7 @@ style="background-color: #f38e9d !important;"
 
         //function to controle button paiement
       var statusmyCompt = snapshot.val().IDREGION
-      if(!statusmyCompt){
+      if(snapshot.val().isDefaultAccount){
       var paiementBtn = document.getElementById('myBtn');
       var CONSULTEZLESANNONCES = document.getElementById('CONSULTEZLESANNONCES');
       function handleMouseEnter() {
@@ -603,12 +621,12 @@ style="background-color: #f38e9d !important;"
       icon: 'error',
       title: 'Oops...',
       text: `Vous ne pouvez pas payer les unités pour l'instant. 
-      Car vous n'avez pas encore un compte validé. `,
+      Car vous êtes encore sur votre compte Débit. Merci.`,
       //footer: '<a href="">Why do I have this issue?</a>'
       })    
       }
 
-      function handleMouseEnterz() {
+     {/*function handleMouseEnterz() {
       Swal.fire({
       icon: 'error',
       title: 'Oops...',
@@ -617,9 +635,8 @@ style="background-color: #f38e9d !important;"
       //footer: '<a href="">Why do I have this issue?</a>'
       })    
       }
-
-      paiementBtn.addEventListener("mouseenter", handleMouseEnter);  
-      CONSULTEZLESANNONCES.addEventListener("mouseenter", handleMouseEnterz);  
+    CONSULTEZLESANNONCES.addEventListener("mouseenter", handleMouseEnterz); */}
+      paiementBtn.addEventListener("mouseenter", handleMouseEnter);   
       }else{
       // function to add unity for kkiapay
       var payYourUnity =  document.getElementById('payYourUnity');
@@ -746,6 +763,7 @@ var logout = document.getElementById('logoutID');
     text: "Après vous être déconnecté, vous avez la possibilité de vous reconnecter.",
     icon: 'warning',
     showCancelButton: true,
+    allowOutsideClick: false,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
     confirmButtonText: 'Oui, déconnecté !'
@@ -754,6 +772,7 @@ var logout = document.getElementById('logoutID');
       localStorage.removeItem('unserconnect');
       Swal.fire({
       icon: 'success',
+      allowOutsideClick: false,
       title: 'Déconnecté',
       text: 'Vous avez été déconnecté.',
       footer:  `<a href="">Vous voulez visiter notre page d'accueil ?</a>`

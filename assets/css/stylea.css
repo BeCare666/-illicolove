@@ -15,6 +15,12 @@
  z-index: -1 !important;
 }
 
+/*mobile-nav-toggle*/
+.mobile-nav-toggle{
+  font-size: 40px !important;
+}
+/*mobile-nav-toggle*/
+
 #breathing-image {
   width: 80%; /* ajustez la taille de l'image à vos besoins */
   height: 70vh;

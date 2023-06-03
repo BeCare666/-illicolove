@@ -225,7 +225,7 @@
                   <td id="sontravail"></td>
                 </tr>
                 </tbody>
-            </table>            
+              </table>            
         </div>
         <script>
           const images = document.querySelectorAll('.slider img');
@@ -329,10 +329,10 @@
   var Sontravail = document.getElementById('sontravail');
 
   function seleectData() {
+    document.getElementById('preloader').style.display = "none"
     const UserConnectIdToBuy = localStorage.getItem("storageNamey");
     const unserconnectID = localStorage.getItem("unserconnect");
     //alert(UserConnectIdToBuy)
-    var tableTotakeUser = []
       const dbref = ref(db);
       get(child(dbref, "utilisateurs/" + UserConnectIdToBuy))
           .then((snapshot) => {
@@ -347,7 +347,6 @@
                 img1Id.src = photoDataUrl1
                 var img2Id = document.getElementById('img2Id');
                 img2Id.src = photoDataUrl2
-                tableTotakeUser.push(snapshot.val().fullname)
                 document.getElementById('fullname').innerHTML = `${snapshot.val().fullname}`
                 document.getElementById('phone').innerHTML = `<a href="mailto:${snapshot.val().TELEPHONE}">${snapshot.val().TELEPHONE}</a>`
                 document.getElementById('whatsapp').innerHTML = `<a href="https://wa.me/${snapshot.val().TELEPHONE}?text=Salut 
@@ -372,6 +371,7 @@
                 Sonpays.innerHTML = `${snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE}`
                 Saville.innerHTML = `${snapshot.val().VILLEDHABITATIONDEPROFILQUEJECHERCHE}`
                 Sontravail.innerHTML = `${snapshot.val().TRAVAILDEDEPROFILQUEJECHERCHE}`
+
                 document.getElementById('myprefenceId').innerHTML = `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}`
               } else {
                   alert("no data");
@@ -384,7 +384,7 @@
           get(child(dbref, "utilisateurs/" + unserconnectID))
           .then((snapshot) => {
               if (snapshot.exists()) { 
-                if(snapshot.val().COMPTECREDIT !=0 && snapshot.val().VALIDERMONCOMPTE){
+                if(snapshot.val().COMPTECREDIT !=0){
                   var ContactUserbtnID = document.getElementById('contactUserbtnID');
                   var ContactUserID = document.getElementById('contactUserID');
                   ContactUserbtnID.addEventListener('click', function(){
@@ -410,12 +410,11 @@
                         });
                       })
                 }else{
-                  if(!snapshot.val().VALIDERMONCOMPTE) {
                   var ContactUserbtnID = document.getElementById('contactUserbtnID');
                    var Footer = document.getElementById('footer');
                   var ToCacheSectionId = document.getElementById('toCacheSectionId');
                   var ContactUserID = document.getElementById('contactUserID');
-                  ContactUserbtnID.style.opacity = "0.5"
+                  ContactUserbtnID.style.opacity = "0.1"
                   ContactUserbtnID.addEventListener('click', function(){
                     ToCacheSectionId.style.display = "none"
                      Footer.style.display = "none"
@@ -423,33 +422,7 @@
                     icon: 'error',
                     allowOutsideClick: false,
                     title: 'Oops...',
-                    text: `Vous ne pouvez pas contacter ${tableTotakeUser[0]}. 
-                    Car vous n'avez pas encore un compte valide.`,
-                    //footer: `<a href="./v/profil.html">Voulez vous  payer d'unité ?</a>`
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                          ToCacheSectionId.style.display = "block"
-                          Footer.style.display = "block"
-                        }
-                    })
-                  })
-                
-                }
-                  if(snapshot.val().COMPTECREDIT ===0){
-                    var ContactUserbtnID = document.getElementById('contactUserbtnID');
-                   var Footer = document.getElementById('footer');
-                  var ToCacheSectionId = document.getElementById('toCacheSectionId');
-                  var ContactUserID = document.getElementById('contactUserID');
-                  ContactUserbtnID.style.opacity = "0.5"
-                  ContactUserbtnID.addEventListener('click', function(){
-                    ToCacheSectionId.style.display = "none"
-                     Footer.style.display = "none"
-                    Swal.fire({
-                    icon: 'error',
-                    allowOutsideClick: false,
-                    title: 'Oops...',
-                    text: `Vous ne pouvez pas contacter ${tableTotakeUser[0]}. 
-                    Car vous ne disposer pas d'unité.`,
+                    text: `Vous ne pouvez pas contacter ${snapshot.val().fullname}. Car vous ne disposer pas d'unité.`,
                     footer: `<a href="./v/profil.html">Voulez vous  payer d'unité ?</a>`
                     }).then((result) => {
                         if (result.isConfirmed) {
@@ -458,7 +431,7 @@
                         }
                     })
                   })
-                  }
+                
                 }
               }  
             }).catch((error)=>{

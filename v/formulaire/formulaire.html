@@ -127,12 +127,24 @@
                                 nationalité <i class="fa fa-star required"></i></p>
                             <select type="text" id="myprofileidnationèèalité"
                                 name="lname" placeholder="Ma nationalité" required></select>
-
+                            
+                            <p style="text-align: start !important;" id="PphoneId">Téléphone
+                            <i class="fa fa-star required"></i></p>
+                            <p id="errorSmsphone" style="text-align: start !important; display: none; color: red;">
+                            Saisiz uniquement votre numéro sans le préfixe du pays<i class="fa fa-star required"></i></p>
+                            <div class="form-container">
+                            <select id="countrySelect">
+                                <option value="" selected></option>
+                            </select>
+                            <input type="text" id="myprofileidtéléphone" name="facebook" onblur="validatePhoneNumber()"
+                            placeholder="téléphone" pattern="[^+]*" required/>
+                            </div>
+                            <!---
                             <p style="text-align: start !important;" id="PtailleId">Ma taille <i class="fa fa-star required"></i></p>
                             <p id="errorSmsTaille" style="text-align: start !important; display: none; color: red;">Veuillez saisir un nombre à virgule entre 1 et 2 chiffres.<i class="fa fa-star required"></i></p>
                             <input type="text" id="myprofileidtaille" name="facebook" placeholder="Ma taille" pattern="^[0-9]+(\.[0-9]{1,2})?$" required/>
 
-                           <!--- <p style="text-align: start !important;" id="PpoidsId">Mon poids
+                            <p style="text-align: start !important;" id="PpoidsId">Mon poids
                                 <i class="fa fa-star required"></i></p>
                             <p id="errorSmspoids" style="text-align: start !important; display: none; color: red;">Veuillez saisir un nombre.<i class="fa fa-star required"></i></p>
                             <input type="text" id="myprofileidpoids"
@@ -155,17 +167,7 @@
                         <fieldset>
                             <h2 class="fs-title">VEUILLEZ REMPLIR LE FORMULAIRE CI-DESSOUS.</h2>
                             <h3 class="fs-subtitle">Donnez des informations précises et judicieuses.</h3>
-                            <p style="text-align: start !important;" id="PphoneId">téléphone
-                                <i class="fa fa-star required"></i></p>
-                            <p id="errorSmsphone" style="text-align: start !important; display: none; color: red;">
-                            Saisiz uniquement votre numéro sans le préfixe du pays<i class="fa fa-star required"></i></p>
-                            <div class="form-container">
-                            <select id="countrySelect">
-                                <option value="" selected></option>
-                            </select>
-                            <input type="text" id="myprofileidtéléphone" name="facebook" onblur="validatePhoneNumber()"
-                            placeholder="téléphone" pattern="[^+]*" required/>
-                            </div>
+
                             <p style="text-align: start !important;">Je veux une
                                 rencontre <i class="fa fa-star required"></i></p>
                             <select id="choices-multiple-remove-buttonrencontre"
@@ -250,10 +252,14 @@
                                 <option value="Célibataire avec enfant(s)">Divorcé(e)</option>
                                 <option value="Divorcé(e)">Veuf(ve)</option>
                             </select>
-                            <p style="text-align: start !important;">Son pays de
-                                résidence <i class="fa fa-star required"></i></p>
-                            <select type="text" id="myprofileidSonpays"
-                                name="gplus" placeholder="Son pays" required></select>
+                            <p style="text-align: start !important;" id="hecountries">Son pays de
+                                résidence <i class="fa fa-star required" ></i></p>
+                                <p style="text-align: start !important; display: none;" id="hecountriesId">vous pouvez selectionner plusieurs pays. <i class="fa fa-star required"></i></p>
+                            <div style="display: flex;">
+                            <select type="text" id="myprofileidSonpays" name="gplus" 
+                            placeholder="Son pays" required></select>
+                            <input type="text" id="getAllOption" style="display: none;">
+                            </div>
                             <input type="button" name="previous" class="previous
                                 action-button-previous" value="précédent"/>
                             <input type="button" name="next" class="next
@@ -391,15 +397,15 @@
                  myprofileidtravail.value =   snapshot.val().MONTRAVAILLEOUOCCUPATION
                  choicesmultipleremovebutton.value =  snapshot.val().MASITUATIONMATRIMONIALE
                  myprofileidâge.value =  snapshot.val().MONAGE
-                 myprofileidtaille.value =  snapshot.val().MATAILLE
-                
+
                  choicesmultipleremovebuttonsexe.value =  snapshot.val().MONSEXE
                  myprofileidtéléphone.value =   snapshot.val().TELEPHONE
                  choicesmultipleremovebuttonrencontre.value =   snapshot.val().JEVEUXUNERENCONTRE
                  {/*
-                myprofileidpoids.value =   snapshot.val().MONPOIDS
+                 myprofileidtaille.value =  snapshot.val().MATAILLE
+                 myprofileidpoids.value =   snapshot.val().MONPOIDS
                  myprofileidteint.value =   snapshot.val().MONTEINT
-                myprofileididentité.value =   snapshot.val().PIECESDIDENTITE 
+                 myprofileididentité.value =   snapshot.val().PIECESDIDENTITE 
                  myprofileidPhotos.value =  snapshot.val().MESDEUXPHOTOS
                  myprofileidPhoto2.value =  snapshot.val().MESDEUXPHOTO2*/}
                  choicesmultipleremovebuttonSonsexe.value =  snapshot.val().SEXEDEPROFILQUEJECHERCHE
@@ -642,14 +648,18 @@
                 url: "https://restcountries.com/v2/all",
                 type: "GET",
                 success: function(response) {
-                    countries = response; // Stocker la liste des pays
-                    
+                    countries = response; // Stocker la liste des pays Africa
+                   
                     // Parcourir la liste des pays et générer les options du select
                     countries.forEach(function(country) {
                         var option = document.createElement("option");
+                        var myOption = document.createElement("option");
+                        myOption.value = country.name;
                         option.value = country.alpha2Code;
+                        myOption.text = country.name;
                         option.text = country.name + " "+getPhonePrefix(country) ;
                         document.getElementById("countrySelect").appendChild(option);
+                        document.getElementById("myprofileidSonpays").appendChild(myOption);
                     });
                 },
                 error: function(error) {
@@ -710,21 +720,35 @@
             
             return "";
         } 
-         
+        var tableau = [];
+  
+        document.getElementById("myprofileidSonpays").addEventListener("change", function() {
+            document.getElementById('getAllOption').style.display = "block"
+            document.getElementById('hecountriesId').style.display = "block"
+            document.getElementById('hecountries').style.display = " none"
+            var selectedOptions = Array.from(this.selectedOptions).map(function(option) {
+                return option.value;
+            });
+            tableau.push(selectedOptions);
+        });
+ 
+
         sunmitannonceid.addEventListener('click', function(){
             preloader.style.display = "block"   
             const PieceID = base64Contenttable.slice(-1).pop();
             const Photo1ID = base64Contentphoto1table.slice(-1).pop();
             const Photo2ID = base64Contentphoto2table.slice(-1).pop();
             const NumberVaribleTable = numberVaribleTable.slice(-1).pop();
-           
+            var allOptions = tableau.flat().join(', ');
+            document.getElementById('getAllOption').value = allOptions;
+            
             if(myprofileidMaVille.value && NumberVaribleTable &&
                myprofileidPrénoms.value && choicesmultipleremovebuttonrencontre.value &&
                myprofileidnationèèalité.value && Photo1ID && Photo2ID &&
                myprofileidtravail.value && IDREGION && choicesmultipleremovebuttonSonsexe.value &&
                choicesmultipleremovebutton.value &&  myprofileidtrancheâge.value &&
                myprofileidâge.value && choicesmultipleremovebuttonmatrimoniale.value &&
-               myprofileidtaille.value && myprofileidSonpays.value && 
+               allOptions && 
                myprofileidSaville.value && myprofileidoccupations.value &&
                 choicesmultipleremovebuttonsexe.value 
             ){
@@ -735,7 +759,7 @@
                 MONTRAVAILLEOUOCCUPATION : myprofileidtravail.value,
                 MASITUATIONMATRIMONIALE : choicesmultipleremovebutton.value,
                 MONAGE : myprofileidâge.value ,
-                MATAILLE : myprofileidtaille.value,
+                //MATAILLE : myprofileidtaille.value,
                 MONSEXE : choicesmultipleremovebuttonsexe.value, 
                 TELEPHONE : NumberVaribleTable,
                 JEVEUXUNERENCONTRE : choicesmultipleremovebuttonrencontre.value,
@@ -746,7 +770,7 @@
                 SEXEDEPROFILQUEJECHERCHE : choicesmultipleremovebuttonSonsexe.value,
                 SONAGEDEPROFILQUEJECHERCHE : myprofileidtrancheâge.value,
                 SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE : choicesmultipleremovebuttonmatrimoniale.value,
-                PAYSDERESIDENCEDEPROFILQUEJECHERCHE : myprofileidSonpays.value,
+                PAYSDERESIDENCEDEPROFILQUEJECHERCHE : allOptions,
                 PHYSIQUEDEPROFILQUEJECHERCHE : myprofileidpréférences.value,
                 VILLEDHABITATIONDEPROFILQUEJECHERCHE : myprofileidSaville.value,
                 TRAVAILDEDEPROFILQUEJECHERCHE : myprofileidoccupations.value,

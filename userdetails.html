@@ -38,6 +38,20 @@
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <!-- Template Main CSS File -->
     <link href="assets/css/stylea.css" rel="stylesheet">
+    <script>
+      window.onload = function(){
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+      // Code pour appareil mobile
+      //document.body.style.fontSize = "16px"; // Modifier la taille de la police pour appareils mobiles
+      document.getElementById('contactUserbtnIDB').style.position = "relative"
+      document.getElementById('contactUserbtnIDB').style.top = "0"
+      document.getElementById('contactUserbtnIDB').style.left = "10vh"
+      
+      } else {
+          // Code pour ordinateur de bureau
+      }
+     }
+    </script>
   </head>
 
   <body>
@@ -97,10 +111,10 @@
 
                   </li>
                   <!-- Ajoutez d'autres éléments de liste ici -->
-                </ul><br><br><br>
+                </ul><br>
                 <div class="text-center text-lg-start align-items-center" id="contactUserbtnID">
                     <button href="#about" class="btn btn scrollto d-inline-flex align-items-center justify-content-center align-self-center"
-                    style="background-color: #FFB6C1; color: white;">
+                    style="background-color: #FFB6C1; color: white;" id="contactUserbtnIDB">
                       <span>Me contacter</span> &nbsp;&nbsp;
                       <i class="bi bi-arrow-right"></i>
                     </button>
@@ -250,7 +264,7 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-12 text-center">
-              <h4>Notre lettre d'information</h4>
+              <h4>OUR NEWSLETTER</h4>
               <p>Abonnez-vous pour recevoir régulièrement des mises à jour.</p>
             </div>
             <div class="col-lg-6">
@@ -426,7 +440,7 @@
                     title: 'Oops...',
                     text: `Vous ne pouvez pas contacter ${tableTotakeUser[0]}. 
                     Car vous n'avez pas encore un compte valide.`,
-                    //footer: `<a href="./v/profil.html">Voulez vous  payer d'unité ?</a>`
+                    footer: `<a href="./v/profil.html">Voulez vous  publier votre annonce ?</a>`
                     }).then((result) => {
                         if (result.isConfirmed) {
                           ToCacheSectionId.style.display = "block"

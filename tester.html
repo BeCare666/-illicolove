@@ -1,41 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Translation Example</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<body>
-  <h1>Translation Example</h1>
-  
-  <p>Original Text: <span id="originalText">Hello</span></p>
-  <p>Translated Text: <span id="translatedText"></span></p>
-  
+  <meta charset="UTF-8">
+  <title>Exemple de page avec traductions</title>
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
   <script>
     $(document).ready(function() {
-      var sourceLang = 'en';
-      var targetLang = 'fr';
-      var originalText = $('#originalText').text();
-      
-      $.ajax({
-        url: 'https://translate.googleapis.com/translate_a/single',
-        type: 'GET',
-        dataType: 'jsonp',
-        data: {
-          client: 'gtx',
-          sl: sourceLang,
-          tl: targetLang,
-          dt: 't',
-          q: originalText
-        },
-        success: function(response) {
-          var translatedText = response[0][0][0];
-          $('#translatedText').text(translatedText);
-        },
-        error: function(error) {
-          console.error('An error occurred during translation:', error);
+      // Configuration de i18next pour les différentes langues
+      i18next.init({
+        lng: localStorage.getItem('selectedLanguage') || 'fr',
+        debug: true,
+        resources: {
+          fr: {
+            translation: {
+              "title": "Exemple de page avec traductions",
+              "sectionTitle": "Section",
+              "sectionText": "Ceci est le contenu de la section.",
+              "sectionButton": "Cliquez ici",
+              "subtitle": "Sous-titre",
+              "content": "Ceci est le contenu principal de la page."
+            }
+          },
+          es: {
+            translation: {
+              "title": "Ejemplo de página con traducciones",
+              "sectionTitle": "Sección",
+              "sectionText": "Este es el contenido de la sección.",
+              "sectionButton": "Haz clic aquí",
+              "subtitle": "Subtítulo",
+              "content": "Este es el contenido principal de la página."
+            }
+          },
+          en: {
+            translation: {
+              "title": "Example Page with Translations",
+              "sectionTitle": "Section",
+              "sectionText": "This is the section content.",
+              "sectionButton": "Click here",
+              "subtitle": "Subtitle",
+              "content": "This is the main content of the page."
+            }
+          }
         }
+      }, function(err, t) {
+        // Traduire le contenu de la page après initialisation de i18next
+        translatePage();
+      });
+
+      // Fonction pour traduire le contenu de la page
+      function translatePage() {
+        $("#title").text(i18next.t("title"));
+        $("#section-title").text(i18next.t("sectionTitle"));
+        $("#section-text").text(i18next.t("sectionText"));
+        $("#section-button").text(i18next.t("sectionButton"));
+        $("#subtitle").text(i18next.t("subtitle"));
+        $("#content").text(i18next.t("content"));
+      }
+
+      // Récupérer la langue sélectionnée à partir du stockage local
+      var selectedLanguage = localStorage.getItem('selectedLanguage');
+
+      if (selectedLanguage) {
+        // Changer la langue selon la valeur récupérée
+        $("#language-select").val(selectedLanguage);
+        i18next.changeLanguage(selectedLanguage);
+      }
+
+      // Écouteur d'événement pour changer la langue
+      $("#language-select").on("change", function() {
+        var selectedLanguage = $(this).val();
+
+        // Enregistrer la langue sélectionnée dans le stockage local
+        localStorage.setItem('selectedLanguage', selectedLanguage);
+
+        // Changer la langue avec i18next
+        i18next.changeLanguage(selectedLanguage, function(err, t) {
+          if (err) return console.error(err);
+          translatePage();
+        });
       });
     });
   </script>
-</body>
-</html>
+</head>
+<body>
+  <h1 id="title"></h1>
+  
+  <section>
+    <h2 id="section-title"></h2>
+      <p id="section-text"></p>
+      <button id="section-button"></button>
+    </section>
+  
+    <h3 id="subtitle"></h3>
+    <p id="content"></p>
+  
+    <select id="language-select">
+      <option value="fr">Français</option>
+      <option value="es">Español</option>
+      <option value="en">English</option>
+    </select>
+  
+  </body>
+  </html>
+  

@@ -55,6 +55,8 @@
   </head>
 
   <body>
+    <a href="./u/index.html"> <button  class="btn btn-primary mt-3" style="margin-left: 5px; cursor: pointer;" 
+      role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button></a>
     <section id="toCacheSectionId">
     <main id="main">
       <!-- ======= Portfolio Details Section ======= -->
@@ -371,9 +373,9 @@
                 document.getElementById('myEmail').innerHTML = `<a href="mailto:${snapshot.val().email}">${snapshot.val().email}</a>`
                 document.getElementById('residenceId').innerHTML = `${snapshot.val().MAVILLEDERESIDENCE}`
                 document.getElementById('occupation').innerHTML = `${snapshot.val().MONTRAVAILLEOUOCCUPATION}`
-                var suiteIdCondi = snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE ? snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE : `<i class="fas fa-database" style="font-size: 15vh !important; color: #FFB6C1;"></i>`;
+                var suiteIdCondi = `${snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE}` ? `${snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE} ` : `<i class="fas fa-database" style="font-size: 10vh !important; color: #FFB6C1;"></i> Pas de données`;
                 document.getElementById('suiteId').innerHTML = `${suiteIdCondi}`
-                Thmaville.innerHTML = `${snapshot.val().MONTRAVAILLEOUOCCUPATION}`
+                Thmaville.innerHTML = `${snapshot.val().MAVILLEDERESIDENCE}`
                 Monpseudonyme.innerHTML = `${snapshot.val().username}`
                 Monages.innerHTML = `${snapshot.val().MONAGE}`
                 MyGenre.innerHTML = `${snapshot.val().MONSEXE}`
@@ -387,7 +389,7 @@
                 Sonpays.innerHTML = `${snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE}`
                 Saville.innerHTML = `${snapshot.val().VILLEDHABITATIONDEPROFILQUEJECHERCHE}`
                 Sontravail.innerHTML = `${snapshot.val().TRAVAILDEDEPROFILQUEJECHERCHE}`
-                document.getElementById('myprefenceId').innerHTML = `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}`
+                document.getElementById('myprefenceId').innerHTML = `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}` ? `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}` : `<i class="fas fa-database" style="font-size: 10vh !important; color: #FFB6C1;"></i> Pas de données.`;
               } else {
                   alert("no data");
               }
@@ -439,7 +441,7 @@
                     allowOutsideClick: false,
                     title: 'Oops...',
                     text: `Vous ne pouvez pas contacter ${tableTotakeUser[0]}. 
-                    Car vous n'avez pas encore un compte valide.`,
+                    Car vous n'avez pas encore un compte validé.`,
                     footer: `<a href="./v/profil.html">Voulez vous  publier votre annonce ?</a>`
                     }).then((result) => {
                         if (result.isConfirmed) {
@@ -464,8 +466,8 @@
                     allowOutsideClick: false,
                     title: 'Oops...',
                     text: `Vous ne pouvez pas contacter ${tableTotakeUser[0]}. 
-                    Car vous ne disposer pas d'unité.`,
-                    footer: `<a href="./v/profil.html">Voulez vous  payer d'unité ?</a>`
+                    Car vous ne disposez pas d'unité.`,
+                    footer: `<a href="./v/profil.html">Voulez vous  payer des unités ?</a>`
                     }).then((result) => {
                         if (result.isConfirmed) {
                           ToCacheSectionId.style.display = "block"

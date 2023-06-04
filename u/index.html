@@ -41,6 +41,8 @@
   </head>
 
   <body>
+ <a href="./../v/profil.html"> <button  class="btn btn-primary mt-3" style="margin-left: 5px; cursor: pointer;" 
+  role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button></a>
     <div id="demo-modal" class="modal" style="background-color: #FFB6C1 !important;">
       <div class="modal__content">
           <h1 style="text-align: center; color: FFB6C1;" id="iconid"><i class="bi bi-sign-turn-right-fill"></i></h1>
@@ -176,7 +178,7 @@
           //alert(snapshot.val().userId)
           
 
-          if(snapshot.val().userId != k.userId){
+          if(snapshot.val().userId){
           // function to take userId
          //alert(snapshot.val().COMPTECREDIT)
           trow.addEventListener('mouseover', function() {

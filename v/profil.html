@@ -57,7 +57,8 @@
 </head>
 <body >
 
-<button class="btn btn-primary mt-3" style="margin-left: 5px; cursor: pointer; display: none;" role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button>
+<button class="btn btn-primary mt-3" style="margin-left: 5px; cursor: pointer; display: none;" 
+role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button>
 <section id="modalID" style="display: none;">
   <div class="wrapper">
       <a href="#demo-modal" id="dreamIndemo" style="opacity: 0;">Open Demo Modal</a>
@@ -578,11 +579,10 @@ style="background-color: #f38e9d !important;"
                  // Votre compte est en cours de validation, vous ne pouvez pas effectuer de paiement ! Merci ! <br>
                  // `
                  Swal.fire({
-                  title: '<strong>Compte <u>Débit expiré</u> !</strong>',
+                  title: '<strong>Compte <u>Débit Vide</u> !</strong>',
                   icon: 'info',
-                  html: `Votre compte de débit a expiré. Veuillez effectuer le 
-                  paiement des unités pour accéder aux annonces et rester en contact 
-                  avec vos partenaires.`,
+                  html: `Votre compte de débit est vide. Veuillez payer des unités pour 
+                  accéder aux contacts des annonces qui vont vous plaire.`,
                   allowOutsideClick: false,
                   focusConfirm: false,
                   confirmButtonText:
@@ -590,12 +590,13 @@ style="background-color: #f38e9d !important;"
                   confirmButtonAriaLabel: 'Thumbs up, great!',
                   cancelButtonText:
                     '<i class="fa fa-thumbs-down"></i>',
-                  cancelButtonAriaLabel: 'Thumbs down'
+                  cancelButtonAriaLabel: 'Thumbs down',
                 }).then((result) => {
                 if (result.isConfirmed) {
                     location.reload();
                 }
-                }) 
+                })
+
                  // window.location.reload()
                     })
                     .catch((error) => {

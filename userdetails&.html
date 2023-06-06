@@ -80,7 +80,7 @@
               <div class="portfolio-info" style="height: 45vh !important;"  
               >
                 <h2><strong>Mes coordonnées :</strong></h2>
-                <ul class="list-group mt-4"  >
+                <ul class="list-group mt-5"  >
                   <li class="list-group-item" >
                     <div class="d-flex align-items-center">
                       <i class="bi bi-person-fill me-2 text-primary"></i>
@@ -114,13 +114,14 @@
                   </li>
                   <!-- Ajoutez d'autres éléments de liste ici -->
                 </ul><br>
+                <!--
                 <div class="text-center text-lg-start align-items-center" id="contactUserbtnID">
                     <button href="#about" class="btn btn scrollto d-inline-flex align-items-center justify-content-center align-self-center"
-                    style="background-color: #FFB6C1; color: white;" id="contactUserbtnIDB">
+                    style="background-color: #FFB6C1; color: white; pointer-events: none;" id="contactUserbtnIDB">
                       <span>Pour me contacter</span> &nbsp;&nbsp;
                       <i class="bi bi-arrow-right"></i>
                     </button>
-                  </div>
+                </div>-->
               </div>
             </div>
             <div class="col-lg-4" id="formysuiteId">
@@ -369,9 +370,7 @@
                 tableTotakeUser.push(snapshot.val().fullname)
                 document.getElementById('fullname').innerHTML = `${snapshot.val().fullname}`
                 document.getElementById('phone').innerHTML = `<a href="mailto:${snapshot.val().TELEPHONE}">${snapshot.val().TELEPHONE}</a>`
-                document.getElementById('whatsapp').innerHTML = `<a href="https://wa.me/${snapshot.val().TELEPHONE}?text=Salut 
-                ${snapshot.val().fullname},%20comment%20vas-tu%20?.%20Tu%20es%20${snapshot.val().MONTRAVAILLEOUOCCUPATION}.
-                %20Je%20suis%20vraiment%20intéressé%20pas%20ton%20profil%20que%20j'ai%20vu%20sur%20le%20site%20de%20rencontre%20illicolove. Visitez son profil: ${encodeURIComponent('https://becare666.github.io/-illicolove/userdetails.html?id=' + `${unserconnectID}`)}">${snapshot.val().TELEPHONE}</a>`
+                document.getElementById('whatsapp').innerHTML = `<a href="https://wa.me/${snapshot.val().TELEPHONE}?text=Salut ${snapshot.val().fullname},%20comment%20vous%20allez%20?%20Vous%20êtes%20${snapshot.val().MONTRAVAILLEOUOCCUPATION}%20et%20je%20suis%20vraiment%20intéressé%20par%20votre%20profil%20que%20j'ai%20vu%20sur%20le%20site%20de%20rencontre%20illicolove. J'aimerais en savoir plus sur vous et explorer les possibilités d'une connexion significative. Pourriez-vous visiter mon profil aussi s'ils vous plaît ?: ${encodeURIComponent('https://becare666.github.io/-illicolove/userdetails&.html?id=' + `${unserconnectID}`)}">${snapshot.val().TELEPHONE}</a>`
                 document.getElementById('myEmail').innerHTML = `<a href="mailto:${snapshot.val().email}">${snapshot.val().email}</a>`
                 document.getElementById('residenceId').innerHTML = `${snapshot.val().MAVILLEDERESIDENCE}`
                 document.getElementById('occupation').innerHTML = `${snapshot.val().MONTRAVAILLEOUOCCUPATION}`

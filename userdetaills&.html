@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title> Details</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet">
+  <!-- Link to import alert personnal -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+    * {
+      font-family: 'Montserrat-bold', sans-serif;
+      font-size: 14px !important;
+    }
+  </style>
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="assets/css/stylea.css" rel="stylesheet">
+    <script>
+      window.onload = function(){
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+      // Code pour appareil mobile
+      //document.body.style.fontSize = "16px"; // Modifier la taille de la police pour appareils mobiles
+      document.getElementById('contactUserbtnIDB').style.position = "relative"
+      document.getElementById('contactUserbtnIDB').style.top = "0"
+      document.getElementById('contactUserbtnIDB').style.left = "10vh"
+      
+      } else {
+          // Code pour ordinateur de bureau
+      }
+     }
+    </script>
+  </head>
+
+  <body>
+    <a href="./u/index.html"> <button  class="btn btn-primary mt-3" style="margin-left: 5px; cursor: pointer;" 
+      role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button></a>
+    <section id="toCacheSectionId">
+    <main id="main">
+      <!-- ======= Portfolio Details Section ======= -->
+      <section id="portfolio-details" class="portfolio-details">
+        <div class="container">
+          <div class="row gy-4">
+
+            <div class="col-lg-4 " id="mySliderId" >
+              <div class="slider">
+                <div class="slide">
+                  <img  alt="Image 1" style="height:
+                    45vh; width: 100%;" id="img1Id" >
+                </div>
+                <div class="slide">
+                  <img   alt="Image 2" style="height:
+                     45vh; width: 100%;" id="img2Id">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4" id="mycoodonnees" style=" border: #FFB6C1 solid 1px;">
+              <div class="portfolio-info" style="height: 45vh !important;"  
+              >
+                <h2><strong>Mes coordonnées :</strong></h2>
+                <ul class="list-group mt-4"  >
+                  <li class="list-group-item" >
+                    <div class="d-flex align-items-center">
+                      <i class="bi bi-person-fill me-2 text-primary"></i>
+                      <div>
+                        <h5 class="mb-1" id="fullname"></h5>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center mt-3">
+                      <i class="bi bi-geo-alt-fill me-2 text-info"></i>
+                      <p class="mb-0" id="residenceId"></p>
+                    </div>
+                    <div class="d-flex align-items-center mt-3">
+                      <i class="bi bi-person-workspace me-2 text-success"></i>
+                      <p class="mb-0" id="occupation"></p>
+                    </div>
+                    <div id="contactUserID" style="display: none;">
+                    <div class="d-flex align-items-center mt-3">
+                      <i class="bi bi-telephone-fill me-2 text-success"></i>
+                      <p class="mb-0" id="phone"></p>
+                    </div>
+                    <div class="d-flex align-items-center mt-3">
+                      <i class="bi bi-whatsapp me-2 text-success"></i>
+                      <p class="mb-0" id="whatsapp"></p>
+                    </div>
+                    <div class="d-flex align-items-center mt-3">
+                      <i class="bi bi-envelope-at-fill me-2 text-primary"></i>
+                      <p class="mb-0" id="myEmail"></p>
+                    </div>
+                    </div>
+
+                  </li>
+                  <!-- Ajoutez d'autres éléments de liste ici -->
+                </ul><br>
+                <div class="text-center text-lg-start align-items-center" id="contactUserbtnID">
+                    <button href="#about" class="btn btn scrollto d-inline-flex align-items-center justify-content-center align-self-center"
+                    style="background-color: #FFB6C1; color: white;" id="contactUserbtnIDB">
+                      <span>Pour me contacter</span> &nbsp;&nbsp;
+                      <i class="bi bi-arrow-right"></i>
+                    </button>
+                  </div>
+              </div>
+            </div>
+            <div class="col-lg-4" id="formysuiteId">
+              <div class="portfolio-info" style="height: 45vh !important;">
+               <div style="height: 22vh;">
+                <h2><strong>Mes préférences physiques :</strong></h2>
+                <p id="suiteId"></p>
+               </div>
+               <h2><strong>Autres précisions :</strong></h2>
+               <p id="myprefenceId"></p>
+              </div>
+              
+            </div>
+          </div>
+          <br>
+          <style>
+            table {
+              border-collapse: collapse;
+              width: 100%;
+              border: #FFB6C1 solid 1px;
+            }
+            
+            th, td {
+              border: 1px solid #ddd;
+              padding: 8px;
+              text-align: left;
+              width: 50%;
+               border: #FFB6C1 solid 1px;
+            }
+            
+            th {
+              background-color: #f2f2f2;
+            }
+            
+            tr:nth-child(even) {
+              background-color: #f9f9f9;
+            }
+            
+            tr:hover {
+              background-color: #eaeaea;
+            }
+          </style>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Mon Profil</th>
+                  <th>Réponses</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ma Ville de résidence :</td>
+                  <td id="thmaville"></td>
+                </tr>
+                <tr>
+                  <td>Mon nom ou pseudonyme:</td>
+                  <td id="monpseudonyme"></td>
+                </tr>
+                <tr>
+                  <td>Mon âge :</td>
+                  <td id="monages"></td>
+                </tr>
+                <tr>
+                  <td>Mon genre:</td>
+                  <td id="myGenre"></td>
+                </tr>
+                <tr>
+                  <td>Ma situation matrimoniale:</td>
+                  <td id="masituamatri"></td>
+                </tr>
+                <tr>
+                  <td>Ma nationalité :</td>
+                  <td id="manationalite"></td>
+                </tr>
+                <tr>
+                  <td>Mon travail ou occupation:</td>
+                  <td id="montravail"></td>
+                </tr>
+                <tr>
+                  <td>Je veux une rencontre :</td>
+                  <td id="unerencontreId"></td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <br>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Profil que je cherche</th>
+                  <th>Réponses</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Son genre :</td>
+                  <td id="qsongenre"></td>
+                </tr>
+                <tr>
+                  <td>Sa tranche d'âge :</td>
+                  <td id="satranche"></td>
+                </tr>
+                <tr>
+                  <td>Sa situation matrimoniale :</td>
+                  <td id="sasituationMa"></td>
+                </tr>
+                <tr>
+                  <td>Son pays de résidence :</td>
+                  <td id="sonpays"></td>
+                </tr>
+                <tr>
+                  <td>Sa ville d'habitation :</td>
+                  <td id="saville"></td>
+                </tr>
+                <tr>
+                  <td>Son travail ou occupation :</td>
+                  <td id="sontravail"></td>
+                </tr>
+                </tbody>
+            </table>            
+        </div>
+        <script>
+          const images = document.querySelectorAll('.slider img');
+          let currentImageIndex = 0;
+      
+          function showNextImage() {
+            images[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].classList.add('active');
+          }
+      
+          setInterval(showNextImage, 2000); // Change d'image toutes les 2 secondes
+        </script>
+      </section><!-- End Portfolio Details Section -->
+
+    </main><!-- End #main -->
+ </section>
+    <footer id="footer" class="footer" style="margin-bottom: 0 !important;">
+
+      <div class="footer-newsletter">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+              <h4>NEWSLETTER</h4>
+              <p>Abonnez-vous pour recevoir régulièrement des mises à jour.</p>
+            </div>
+            <div class="col-lg-6">
+              <form action="" method="post">
+                <input type="email" name="email"><input type="submit"
+                  value="Souscrire">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="copyright" style="color: rgb(43, 42, 42);">
+          &copy; Copyright 2023<strong><span style="color: #FFB6C1;"> illicolove</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits" style="color: rgb(43, 42, 42);">
+          Designed by <a href="" style="color: #FFB6C1;">illicolove</a>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center
+      justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <div id="preloader"></div>
+ 
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+              apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
+              authDomain: "illicolove0.firebaseapp.com",
+              databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
+              projectId: "illicolove0",
+              storageBucket: "illicolove0.appspot.com",
+              messagingSenderId: "687063035754",
+              appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+
+        import {
+            getDatabase,
+            ref,
+            set,
+            update,
+            child,
+            onValue,
+            remove,
+            get,
+        } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+
+        import { getStorage, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"
+
+        const db = getDatabase();
+                    
+        //--------------Select data-----------------//
+        var Thmaville = document.getElementById('thmaville');
+        var Monpseudonyme = document.getElementById('monpseudonyme');
+        var Monages = document.getElementById('monages');
+        var MyGenre = document.getElementById('myGenre');
+        var Masituamatri = document.getElementById('masituamatri');
+        var Manationalite = document.getElementById('manationalite');
+        var Montravail = document.getElementById('montravail');
+        var UnerencontreId = document.getElementById('unerencontreId');
+        var Qsongenre = document.getElementById('qsongenre');
+        var Satranche = document.getElementById('satranche');
+        var SasituationMa = document.getElementById('sasituationMa');
+        var Sonpays = document.getElementById('sonpays');
+        var Saville = document.getElementById('saville');
+        var Sontravail = document.getElementById('sontravail');
+
+        function seleectData() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const UserConnectIdToBuy = urlParams.get('id');
+         // const UserConnectIdToBuy = localStorage.getItem("storageNamey");
+          const unserconnectID = localStorage.getItem("unserconnect");
+          //alert(UserConnectIdToBuy)
+          var tableTotakeUser = []
+            const dbref = ref(db);
+          get(child(dbref, "utilisateurs/" + UserConnectIdToBuy))
+              .then((snapshot) => {
+                if (snapshot.exists()) {
+                document.getElementById('preloader').style.display = "none"
+                var photoDataUrl1 = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
+                var photoDataUrl2 = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTO2;
+                //conditon ternaire to genre
+                var status = snapshot.val().MONSEXE
+                
+                var img1Id = document.getElementById('img1Id');
+                img1Id.src = photoDataUrl1
+                var img2Id = document.getElementById('img2Id');
+                img2Id.src = photoDataUrl2
+                tableTotakeUser.push(snapshot.val().fullname)
+                document.getElementById('fullname').innerHTML = `${snapshot.val().fullname}`
+                document.getElementById('phone').innerHTML = `<a href="mailto:${snapshot.val().TELEPHONE}">${snapshot.val().TELEPHONE}</a>`
+                document.getElementById('whatsapp').innerHTML = `<a href="https://wa.me/${snapshot.val().TELEPHONE}?text=Salut 
+                ${snapshot.val().fullname},%20comment%20vas-tu%20?.%20Tu%20es%20${snapshot.val().MONTRAVAILLEOUOCCUPATION}.
+                %20Je%20suis%20vraiment%20intéressé%20pas%20ton%20profil%20que%20j'ai%20vu%20sur%20le%20site%20de%20rencontre%20illicolove. Visitez son profil: ${encodeURIComponent('https://becare666.github.io/-illicolove/userdetails.html?id=' + `${unserconnectID}`)}">${snapshot.val().TELEPHONE}</a>`
+                document.getElementById('myEmail').innerHTML = `<a href="mailto:${snapshot.val().email}">${snapshot.val().email}</a>`
+                document.getElementById('residenceId').innerHTML = `${snapshot.val().MAVILLEDERESIDENCE}`
+                document.getElementById('occupation').innerHTML = `${snapshot.val().MONTRAVAILLEOUOCCUPATION}`
+                var suiteIdCondi = `${snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE}` ? `${snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE} ` : `<i class="fas fa-database" style="font-size: 10vh !important; color: #FFB6C1;"></i> Pas de données`;
+                document.getElementById('suiteId').innerHTML = `${suiteIdCondi}`
+                Thmaville.innerHTML = `${snapshot.val().MAVILLEDERESIDENCE}`
+                Monpseudonyme.innerHTML = `${snapshot.val().username}`
+                Monages.innerHTML = `${snapshot.val().MONAGE}`
+                MyGenre.innerHTML = `${snapshot.val().MONSEXE}`
+                Masituamatri.innerHTML = `${snapshot.val().MASITUATIONMATRIMONIALE}`
+                Manationalite.innerHTML = `${snapshot.val().MANATIONNALITE}`
+                Montravail.innerHTML = `${snapshot.val().MONTRAVAILLEOUOCCUPATION}`
+                UnerencontreId.innerHTML = `${snapshot.val().JEVEUXUNERENCONTRE}`
+                Qsongenre.innerHTML = `${snapshot.val().SEXEDEPROFILQUEJECHERCHE}`
+                Satranche.innerHTML = `${snapshot.val().SONAGEDEPROFILQUEJECHERCHE}`
+                SasituationMa.innerHTML = `${snapshot.val().SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE}`
+                Sonpays.innerHTML = `${snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE}`
+                Saville.innerHTML = `${snapshot.val().VILLEDHABITATIONDEPROFILQUEJECHERCHE}`
+                Sontravail.innerHTML = `${snapshot.val().TRAVAILDEDEPROFILQUEJECHERCHE}`
+                document.getElementById('myprefenceId').innerHTML = `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}` ? `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}` : `<i class="fas fa-database" style="font-size: 10vh !important; color: #FFB6C1;"></i> Pas de données.`;
+              } else {
+                  alert("no data");
+              }
+          })
+          .catch((error) => {
+              alert("il y a une ERROR " + error);
+          });
+
+          get(child(dbref, "utilisateurs/" + unserconnectID))
+          .then((snapshot) => {
+              if (snapshot.exists()) { 
+                if(snapshot.val().COMPTECREDIT !=0 && snapshot.val().VALIDERMONCOMPTE){
+                  var ContactUserbtnID = document.getElementById('contactUserbtnID');
+                  var ContactUserID = document.getElementById('contactUserID');
+                  ContactUserbtnID.addEventListener('click', function(){
+                    ContactUserbtnID.style.display = "none"
+                    ContactUserID.style.display = "block"
+                    //function to update compte
+                    var myCompta = snapshot.val().COMPTECREDIT
+                  var debit = 1
+                  var moncomptvalide = myCompta - debit
+                  update(ref(db, "utilisateurs/" + unserconnectID), {
+                    COMPTECREDIT:moncomptvalide
+                    }).then(() => {             
+                      Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `Votre compte est débité`,
+                        showConfirmButton: false,
+                        timer: 2500
+                      })
+                        })
+                        .catch((error) => {
+                            alert("les données ne sont pas mise à jour " + error);
+                        });
+                      })
+                }else{
+                  if(!snapshot.val().VALIDERMONCOMPTE) {
+                  var ContactUserbtnID = document.getElementById('contactUserbtnID');
+                   var Footer = document.getElementById('footer');
+                  var ToCacheSectionId = document.getElementById('toCacheSectionId');
+                  var ContactUserID = document.getElementById('contactUserID');
+                  ContactUserbtnID.style.opacity = "0.5"
+                  ContactUserbtnID.addEventListener('click', function(){
+                    ToCacheSectionId.style.display = "none"
+                     Footer.style.display = "none"
+                    Swal.fire({
+                    icon: 'error',
+                    allowOutsideClick: false,
+                    title: 'Oops...',
+                    text: `Vous ne pouvez pas contacter ${tableTotakeUser[0]}. 
+                    Car vous n'avez pas encore un compte validé.`,
+                    footer: `<a href="./v/profil.html">Voulez vous  publier votre annonce ?</a>`
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                          ToCacheSectionId.style.display = "block"
+                          Footer.style.display = "block"
+                        }
+                    })
+                  })
+                
+                }
+                  if(snapshot.val().COMPTECREDIT ===0){
+                    var ContactUserbtnID = document.getElementById('contactUserbtnID');
+                   var Footer = document.getElementById('footer');
+                  var ToCacheSectionId = document.getElementById('toCacheSectionId');
+                  var ContactUserID = document.getElementById('contactUserID');
+                  ContactUserbtnID.style.opacity = "0.5"
+                  ContactUserbtnID.addEventListener('click', function(){
+                    ToCacheSectionId.style.display = "none"
+                     Footer.style.display = "none"
+                    Swal.fire({
+                    icon: 'error',
+                    allowOutsideClick: false,
+                    title: 'Oops...',
+                    text: `Vous ne pouvez pas contacter ${tableTotakeUser[0]}. 
+                    Car vous ne disposez pas d'unité.`,
+                    footer: `<a href="./v/profil.html">Voulez vous  payer des unités ?</a>`
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                          ToCacheSectionId.style.display = "block"
+                          Footer.style.display = "block"
+                        }
+                    })
+                  })
+                  }
+                }
+              }  
+            }).catch((error)=>{
+
+            })
+    }
+    window.onload = seleectData;
+  </script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+  </body>
+
+</html>

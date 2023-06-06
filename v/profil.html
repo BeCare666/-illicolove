@@ -407,8 +407,8 @@ style="background-color: #f38e9d !important;"
     appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
 };
       // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  import {
+    const app = initializeApp(firebaseConfig);
+    import {
       getDatabase,
       ref,
       set,
@@ -417,10 +417,10 @@ style="background-color: #f38e9d !important;"
       onValue,
       remove,
       get,
-  } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+    } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
-  import { getStorage, getDownloadURL 
-  } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"      
+    import { getStorage, getDownloadURL 
+    } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"      
     const db = getDatabase();
     const UserConnectuser = localStorage.getItem("unserconnect");
     var userMyID = document.getElementById('userMyID');
@@ -459,7 +459,7 @@ style="background-color: #f38e9d !important;"
 
          var photoDataUrl = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
          userbuttonID.innerHTML = `${snapshot.val().MESDEUXPHOTOS ? `<img src="${photoDataUrl}" alt="Votre image" style="width: 6vh;  height: 6vh;"/>` : '<i class="bi bi-person-fill" style="width: 30px;"></i>'}`;
-         iconValidateID.innerHTML = `${snapshot.val().VALIDERMONCOMPTE ? `<i class="bi bi-patch-check-fill text-primary"> Compte valide</i> ` : '<i class="bi bi-exclamation-circle-fill text-danger"> Compte invalide</i> '}`;
+         iconValidateID.innerHTML = `${snapshot.val().VALIDERMONCOMPTE ? `<i class="bi bi-patch-check-fill text" style="color:#000080"> Compte valide</i> ` : '<i class="bi bi-exclamation-circle-fill text-danger"> Compte invalide</i> '}`;
          userMyID.innerHTML = `${snapshot.val().username}`;
          myUnityID.innerHTML = `${snapshot.val().COMPTECREDIT}`;
          tofuserID.innerHTML = `${snapshot.val().MESDEUXPHOTOS ? `<img src="${photoDataUrl}" class="user-photo" />` : '<img src="assets/img/no_user.png" class="user-photo" />'}`;

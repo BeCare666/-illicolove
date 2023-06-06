@@ -1,30 +1,24 @@
-const functions = require('firebase-functions');
-const nodemailer = require('nodemailer');
-
-// Configurez le transporteur Nodemailer
-const transporter = nodemailer.createTransport({
-  service: 'paymybase@gmail.com', // Par exemple, Gmail, Yahoo, etc.
-  auth: {
-    user: 'paymybase@gmail.com',
-    pass: 'Azer123++',
-  },
-});
-
-exports.sendEmail = functions.https.onCall((data, context) => {
-  const mailOptions = {
-    from: 'illicolove',
-    to: 'developperfullstacksenou@gmail.com',
-    subject: 'Test Email',
-    text: 'This is a test email from Firebase.',
-  };
-
-  return transporter.sendMail(mailOptions)
-    .then(() => {
-      console.log('Email sent successfully');
-      return { message: 'Email sent successfully' };
-    })
-    .catch((error) => {
-      console.error('Error sending email:', error);
-      throw new functions.https.HttpsError('internal', 'Error sending email');
-    });
-});
+window.onload = function(){
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+// Code pour appareil mobile
+//document.body.style.fontSize = "16px"; // Modifier la taille de la police pour appareils mobiles
+document.getElementById('breathing-image').style.paddingRight = "60px"
+document.getElementById('breathing-image').style.paddingTop = "30px"
+// document.getElementById('tof1').style.height = "62vh"
+document.getElementById('tof2').style.height = "62vh"
+document.getElementById('tof3').style.height = "62vh"
+document.getElementById('tof4').style.height = "62vh" 
+document.getElementById('Mymaps').style.margin ="0"
+//document.getElementById('Mymaps').style.marginTop ="0"
+} else {
+    // Code pour ordinateur de bureau
+    document.getElementById('Mymapsq').style.marginTop ="5.5vh"
+}
+}
+// function to open detail  
+var OpendetailIDILLI = document.getElementById('opendetailIDILLI');
+var DetailIDILLI = document.getElementById('detailIDILLI');
+OpendetailIDILLI.addEventListener('click', function(){
+DetailIDILLI.style.display = "block"
+})
+    

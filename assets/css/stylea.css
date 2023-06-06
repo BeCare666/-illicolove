@@ -97,7 +97,7 @@
     font-size: 38px;
     line-height: 42px;
     font-weight: 700;
-    color: #4169E1;
+    color: #000080;
   }
   
   @media (max-width: 768px) {
@@ -118,7 +118,7 @@
   --------------------------------------------------------------*/
   .breadcrumbs {
     padding: 15px 0;
-    background: #4169E1;
+    background: #000080;
     min-height: 40px;
     margin-top: 82px;
     color: #fff;
@@ -234,7 +234,7 @@
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #4169E1;
+    color: #000080;
     font-family: "Nunito", sans-serif;
     margin-top: 3px;
   }
@@ -276,7 +276,7 @@
     font-family: "Nunito", sans-serif;
     font-size: 16px;
     font-weight: 700;
-    color: #4169E1;
+    color: #000080;
     white-space: nowrap;
     transition: 0.3s;
   }
@@ -380,7 +380,7 @@
   * Mobile Navigation 
   */
   .mobile-nav-toggle {
-    color: #4169E1;
+    color: #000080;
     font-size: 28px;
     cursor: pointer;
     display: none;
@@ -437,7 +437,7 @@
   .navbar-mobile a:focus {
     padding: 10px 20px;
     font-size: 15px;
-    color: #4169E1;
+    color: #000080;
   }
   
   .navbar-mobile a:hover,
@@ -500,7 +500,7 @@
     margin: 0;
     font-size: 48px;
     font-weight: 700;
-    color: #4169E1;
+    color: #000080;
   }
   
   .hero h2 {
@@ -598,7 +598,7 @@
   .about h2 {
     font-size: 24px;
     font-weight: 700;
-    color: #4169E1;
+    color: #000080;
   }
   
   .about p {
@@ -654,7 +654,7 @@
   
   .values .box h3 {
     font-size: 24px;
-    color: #4169E1;
+    color: #000080;
     font-weight: 700;
     margin-bottom: 18px;
   }
@@ -694,7 +694,7 @@
     font-size: 36px;
     display: block;
     font-weight: 600;
-    color: #4169E1;
+    color: #000080;
   }
   
   .counts .count-box p {
@@ -716,7 +716,7 @@
   
   .features .feature-box h3 {
     font-size: 18px;
-    color: #4169E1;
+    color: #000080;
     font-weight: 700;
     margin: 0;
   }
@@ -741,7 +741,7 @@
   }
   
   .features .feture-tabs h3 {
-    color: #4169E1;
+    color: #000080;
     font-weight: 700;
     font-size: 32px;
     margin-bottom: 10px;
@@ -770,7 +770,7 @@
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 600;
-    color: #4169E1;
+    color: #000080;
     padding: 12px 0;
     margin-right: 25px;
     margin-bottom: -2px;
@@ -786,7 +786,7 @@
     font-size: 18px;
     margin: 0;
     font-weight: 700;
-    color: #4169E1;
+    color: #000080;
   }
   
   .features .feture-tabs .tab-content i {
@@ -801,7 +801,7 @@
   }
   
   .features .feature-icons h3 {
-    color: #4169E1;
+    color: #000080;
     font-weight: 700;
     font-size: 32px;
     margin-bottom: 20px;
@@ -822,7 +822,7 @@
     font-size: 20px;
     font-weight: 700;
     margin: 0 0 10px 0;
-    color: #4169E1;
+    color: #000080;
   }
   
   .features .feature-icons .content .icon-box i {
@@ -1230,12 +1230,12 @@
   
   .portfolio .portfolio-wrap .portfolio-info h4 {
     font-size: 20px;
-    color: #4169E1;
+    color: #000080;
     font-weight: 700;
   }
   
   .portfolio .portfolio-wrap .portfolio-info p {
-    color: #4169E1;
+    color: #000080;
     font-weight: 600;
     font-size: 14px;
     text-transform: uppercase;
@@ -1584,7 +1584,7 @@
     font-weight: 700;
     margin-bottom: 5px;
     font-size: 20px;
-    color: #4169E1;
+    color: #000080;
   }
   
   .team .member .member-info span {
@@ -1676,7 +1676,7 @@
   
   .recent-blog-posts .post-box .post-title {
     font-size: 24px;
-    color: #4169E1;
+    color: #000080;
     font-weight: 700;
     margin-bottom: 18px;
     position: relative;
@@ -1722,7 +1722,7 @@
   
   .contact .info-box h3 {
     font-size: 20px;
-    color: #4169E1;
+    color: #000080;
     font-weight: 700;
     margin: 20px 0 10px 0;
   }
@@ -1851,7 +1851,7 @@
   }
   
   .blog .entry .entry-title a {
-    color: #4169E1;
+    color: #000080;
     transition: 0.3s;
   }
   
@@ -1944,7 +1944,7 @@
     top: 0;
     bottom: 0;
     width: 3px;
-    background-color: #4169E1;
+    background-color: #000080;
     margin-top: 20px;
     margin-bottom: 20px;
   }
@@ -1960,7 +1960,7 @@
   }
   
   .blog .entry .entry-footer a {
-    color: #4169E1;
+    color: #000080;
     transition: 0.3s;
   }
   
@@ -2024,9 +2024,11 @@
     font-size: 22px;
     margin-bottom: 0px;
     padding: 0;
-    color: #4169E1;
+    color: #000080;
   }
-  
+  .social-links i {
+    font-size: 6vh !important;
+  }
   .blog .blog-author .social-links {
     margin: 0 10px 10px 0;
   }
@@ -2079,7 +2081,7 @@
   
   .blog .blog-comments .comment h5 .reply {
     padding-left: 10px;
-    color: #4169E1;
+    color: #000080;
   }
   
   .blog .blog-comments .comment h5 .reply i {
@@ -2142,11 +2144,11 @@
     border-radius: 4px;
     padding: 10px 20px;
     border: 0;
-    background-color: #4169E1;
+    background-color: #000080;
   }
   
   .blog .blog-comments .reply-form .btn-primary:hover {
-    background-color: #4169E1;
+    background-color: #000080;
   }
   
   .blog .blog-pagination {
@@ -2166,7 +2168,7 @@
   }
   
   .blog .blog-pagination li a {
-    color: #4169E1;
+    color: #000080;
     padding: 7px 16px;
     display: flex;
     align-items: center;
@@ -2194,7 +2196,7 @@
     font-weight: 700;
     padding: 0 0 0 0;
     margin: 0 0 15px 0;
-    color: #4169E1;
+    color: #000080;
     position: relative;
   }
   
@@ -2251,7 +2253,7 @@
   }
   
   .blog .sidebar .categories ul a {
-    color: #4169E1;
+    color: #000080;
     transition: 0.3s;
   }
   
@@ -2281,7 +2283,7 @@
   }
   
   .blog .sidebar .recent-posts h4 a {
-    color: #4169E1;
+    color: #000080;
     transition: 0.3s;
   }
   
@@ -2353,7 +2355,7 @@
     padding: 0;
     line-height: 1;
     font-weight: 700;
-    color: #4169E1;
+    color: #000080;
   }
   
   .footer .footer-newsletter form {
@@ -2423,7 +2425,7 @@
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #4169E1;
+    color: #000080;
     font-family: "Nunito", sans-serif;
     margin-top: 3px;
   }
@@ -2445,13 +2447,13 @@
   }
   
   .footer .footer-top .social-links a:hover {
-    color: #4169E1;
+    color: #000080;
   }
   
   .footer .footer-top h4 {
     font-size: 16px;
     font-weight: bold;
-    color: #4169E1;
+    color: #000080;
     text-transform: uppercase;
     position: relative;
     padding-bottom: 12px;
@@ -2485,7 +2487,7 @@
   }
   
   .footer .footer-top .footer-links ul a {
-    color: #4169E1;
+    color: #000080;
     transition: 0.3s;
     display: inline-block;
     line-height: 1;
@@ -2502,14 +2504,14 @@
   .footer .copyright {
     text-align: center;
     padding-top: 30px;
-    color: #4169E1;
+    color: #000080;
   }
   
   .footer .credits {
     padding-top: 10px;
     text-align: center;
     font-size: 13px;
-    color: #4169E1;
+    color: #000080;
   }
 
 

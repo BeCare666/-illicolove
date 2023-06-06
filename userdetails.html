@@ -117,7 +117,7 @@
                 <div class="text-center text-lg-start align-items-center" id="contactUserbtnID">
                     <button href="#about" class="btn btn scrollto d-inline-flex align-items-center justify-content-center align-self-center"
                     style="background-color: #FFB6C1; color: white;" id="contactUserbtnIDB">
-                      <span>Me contacter</span> &nbsp;&nbsp;
+                      <span>Pour me contacter</span> &nbsp;&nbsp;
                       <i class="bi bi-arrow-right"></i>
                     </button>
                   </div>
@@ -266,7 +266,7 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-12 text-center">
-              <h4>OUR NEWSLETTER</h4>
+              <h4>NEWSLETTER</h4>
               <p>Abonnez-vous pour recevoir régulièrement des mises à jour.</p>
             </div>
             <div class="col-lg-6">
@@ -294,66 +294,66 @@
  
     <script type="module">
 
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-        apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
-        authDomain: "illicolove0.firebaseapp.com",
-        databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
-        projectId: "illicolove0",
-        storageBucket: "illicolove0.appspot.com",
-        messagingSenderId: "687063035754",
-        appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
-  };
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+              apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
+              authDomain: "illicolove0.firebaseapp.com",
+              databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
+              projectId: "illicolove0",
+              storageBucket: "illicolove0.appspot.com",
+              messagingSenderId: "687063035754",
+              appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
+        };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
 
 
-  import {
-      getDatabase,
-      ref,
-      set,
-      update,
-      child,
-      onValue,
-      remove,
-      get,
-  } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+        import {
+            getDatabase,
+            ref,
+            set,
+            update,
+            child,
+            onValue,
+            remove,
+            get,
+        } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
-  import { getStorage, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"
+        import { getStorage, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"
 
-  const db = getDatabase();
-               
-  //--------------Select data-----------------//
-  var Thmaville = document.getElementById('thmaville');
-  var Monpseudonyme = document.getElementById('monpseudonyme');
-  var Monages = document.getElementById('monages');
-  var MyGenre = document.getElementById('myGenre');
-  var Masituamatri = document.getElementById('masituamatri');
-  var Manationalite = document.getElementById('manationalite');
-  var Montravail = document.getElementById('montravail');
-  var UnerencontreId = document.getElementById('unerencontreId');
-  var Qsongenre = document.getElementById('qsongenre');
-  var Satranche = document.getElementById('satranche');
-  var SasituationMa = document.getElementById('sasituationMa');
-  var Sonpays = document.getElementById('sonpays');
-  var Saville = document.getElementById('saville');
-  var Sontravail = document.getElementById('sontravail');
+        const db = getDatabase();
+                    
+        //--------------Select data-----------------//
+        var Thmaville = document.getElementById('thmaville');
+        var Monpseudonyme = document.getElementById('monpseudonyme');
+        var Monages = document.getElementById('monages');
+        var MyGenre = document.getElementById('myGenre');
+        var Masituamatri = document.getElementById('masituamatri');
+        var Manationalite = document.getElementById('manationalite');
+        var Montravail = document.getElementById('montravail');
+        var UnerencontreId = document.getElementById('unerencontreId');
+        var Qsongenre = document.getElementById('qsongenre');
+        var Satranche = document.getElementById('satranche');
+        var SasituationMa = document.getElementById('sasituationMa');
+        var Sonpays = document.getElementById('sonpays');
+        var Saville = document.getElementById('saville');
+        var Sontravail = document.getElementById('sontravail');
 
-  function seleectData() {
-    const UserConnectIdToBuy = localStorage.getItem("storageNamey");
-    const unserconnectID = localStorage.getItem("unserconnect");
-    //alert(UserConnectIdToBuy)
-    var tableTotakeUser = []
-      const dbref = ref(db);
-      get(child(dbref, "utilisateurs/" + UserConnectIdToBuy))
-          .then((snapshot) => {
-              if (snapshot.exists()) {
+        function seleectData() {
+          const UserConnectIdToBuy = localStorage.getItem("storageNamey");
+          const unserconnectID = localStorage.getItem("unserconnect");
+          //alert(UserConnectIdToBuy)
+          var tableTotakeUser = []
+            const dbref = ref(db);
+          get(child(dbref, "utilisateurs/" + UserConnectIdToBuy))
+              .then((snapshot) => {
+                if (snapshot.exists()) {
                 document.getElementById('preloader').style.display = "none"
                 var photoDataUrl1 = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
                 var photoDataUrl2 = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTO2;

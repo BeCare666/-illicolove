@@ -34,6 +34,10 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/stylea.css" rel="stylesheet">
 
+  <!--import firebase--->
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+  
  
 </head>
 
@@ -163,7 +167,7 @@
             <div class="tab-content ">
 
               <div class="tab-pane fade show " id="tab1">
-                <p style="margin-top: 5vh !important;">La mise en service de cette plateforme de rencontres en ligne répond à nos initiatives
+                <p style="margin-top: 5vh !important;"> La mise en service de cette plateforme de rencontres en ligne répond à nos initiatives
                   de lutte contre le célibat et la solitude.
                   Elle matérialise notre action dans la ligne définie par la Déclaration Universelle des
                   Droits de l’Homme en son article 16, qui rappelle le droit au mariage pour la femme
@@ -189,17 +193,17 @@
               <div class="tab-pane fade show active" id="tab2">
                 
                
-                <p> <i class="bi bi-check-circle-fill" style="color: #FFB6C1;"></i>&nbsp;&nbsp; À partir de l’âge nubile, l’homme et la femme, sans aucune restriction quant à la
+                <p> <i class="bi bi-check-circle-fill" style="color: #FFB6C1;"></i>&nbsp;&nbsp; <em> À partir de l’âge nubile, l’homme et la femme, sans aucune restriction quant à la
                   race, la nationalité ou la religion, ont le droit de se marier et de fonder une famille.
                   Ils ont des droits égaux au regard du mariage, durant le mariage et lors de sa
-                  dissolution.</p>
+                  dissolution.</em></p>
                  
-              <p> <i class="bi bi-check-circle-fill" style="color: #FFB6C1;"></i>&nbsp;&nbsp; Le mariage ne peut être conclu qu’avec le libre et plein consentement des futurs
-                époux.</p>
+              <p> <i class="bi bi-check-circle-fill" style="color: #FFB6C1;"></i>&nbsp;&nbsp; <em> Le mariage ne peut être conclu qu’avec le libre et plein consentement des futurs
+                époux.</em></p>
                 <div class="d-flex align-items-center mb-2">
                  
                 </div>
-              <p><em>La famille est l’élément naturel et fondamental de la société et a droit à la
+              <p>La famille est l’élément naturel et fondamental de la société et a droit à la
                 protection de la société et de l’Etat. »
                 
                 La solitude, le célibat, l’isolement social, constituent un impératif humanitaire qui
@@ -209,7 +213,7 @@
                 Illicolove.com a vu le jour dans ce contexte, avec la volonté de proposer autrement et
                 simplement, des services de rencontres en ligne ; avec une chasse avérée aux profils
                 fictifs.
-                Bienvenue ! </em></p>
+                Bienvenue !</p>
               </div><!-- End Tab 2 Content -->
 
               <div class="tab-pane fade show" id="tab3">
@@ -255,8 +259,8 @@
             <div class="count-box">
               <i class="bi bi-people-fill"></i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-                <p>Tout nos utilisateurs</p>
+                <span data-purecounter-start="0"  data-purecounter-duration="1" class="purecounter" id="ALLCOUNTRY"></span>
+                <p>Tous nos utilisateurs</p>
               </div>
             </div>
           </div>
@@ -265,7 +269,7 @@
             <div class="count-box">
               <i class="bi bi-globe-europe-africa"></i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0"  data-purecounter-duration="1" class="purecounter" id="AFRI"></span>
                 <p>En Afrique</p>
               </div>
             </div>
@@ -275,7 +279,7 @@
             <div class="count-box">
               <i class="bi bi-globe-central-south-asia"></i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0"  data-purecounter-duration="1" class="purecounter" id="EURO"></span>
                 <p>En Europe</p>
               </div>
             </div>
@@ -285,8 +289,8 @@
             <div class="count-box">
               <i class="bi bi-globe2"></i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-                <p>Autres pays</p>
+                <span data-purecounter-start="0"  data-purecounter-duration="1" class="purecounter" id="PAYSDUM"></span>
+                <p>Autres pays du monde</p>
               </div>
             </div>
           </div>
@@ -321,7 +325,7 @@
             <div class="box">
               <img src="assets/img/IMG-20230517-WA0004.jpg" class="img-fluid temClass" alt="" style="height: 46vh;" id="tof2">
               <h3>Adama KABA</h3>
-              <p>La Directrice</p>
+              <p>Directrice</p>
             </div>
           </div>
 
@@ -375,20 +379,20 @@
                 <div class="info-box" style="height: 35vh !important;">
                   <i class="bi bi-phone-fill" style="font-size: 26px !important;"></i>
                   <h3>Téléphone</h3>
-                  <p>+229 51 26 02 31<br>+229 51 26 02 31</p>
+                  <p> +229 64 39 01 06 <br> +229 96 98 56 35</p>
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="info-box">
+                <div class="info-box" style="height: 32vh !important;">
                   <i class="bi bi-envelope-at-fill" style="font-size: 26px !important;"></i>
-                  <h3>Nos mails</h3>
-                  <p>validation@illicolove.com<br>info@illicolove.com <br>ggangbazo@yahoo.fr</p>
+                  <h3>E-mails</h3>
+                  <p>info@illicolove.com <br>ggangbazo@yahoo.fr</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box" style="height: 32vh !important;">
                   <i class="bi bi-dribbble" style="font-size: 26px !important;"></i>
-                  <h3>Nos différents réseaux sociaux</h3>
+                  <h3>Réseaux sociaux</h3>
                   <div class="social-links d-md-flex align-items-center">
                     <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>&nbsp;&nbsp;
                     <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>&nbsp;&nbsp;
@@ -454,7 +458,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-12 text-center">
-            <h4> OUR NEWSLETTER</h4>
+            <h4>NEWSLETTER</h4>
             <p>Abonnez-vous pour recevoir régulièrement des mises à jour.</p>
           </div>
           <div class="col-lg-6">
@@ -473,38 +477,74 @@
         Designed by <a href="" style="color: #FFB6C1;">illicolove</a>
       </div>
     </div>
-    <!--Les numéros à mettre sur le site : 
-    +229 64 39 01 06
-    +229 96 98 56 35
-    -->
+
   </footer><!-- End Footer -->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script>
-    window.onload = function(){
-      if (/Mobi|Android/i.test(navigator.userAgent)) {
-    // Code pour appareil mobile
-    //document.body.style.fontSize = "16px"; // Modifier la taille de la police pour appareils mobiles
-    document.getElementById('breathing-image').style.paddingRight = "60px"
-    document.getElementById('breathing-image').style.paddingTop = "30px"
-    document.getElementById('tof1').style.height = "62vh"
-    document.getElementById('tof2').style.height = "62vh"
-    document.getElementById('tof3').style.height = "62vh"
-    document.getElementById('tof4').style.height = "62vh" 
-    document.getElementById('Mymaps').style.margin ="0"
-    //document.getElementById('Mymaps').style.marginTop ="0"
-    } else {
-        // Code pour ordinateur de bureau
-        document.getElementById('Mymapsq').style.marginTop ="5.5vh"
-    }
-   }
-   // function to open detail  
-   var OpendetailIDILLI = document.getElementById('opendetailIDILLI');
-   var DetailIDILLI = document.getElementById('detailIDILLI');
-   OpendetailIDILLI.addEventListener('click', function(){
-    DetailIDILLI.style.display = "block"
-   })
-  </script>
+   <script type="module">
+  
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+    apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
+    authDomain: "illicolove0.firebaseapp.com",
+    databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
+    projectId: "illicolove0",
+    storageBucket: "illicolove0.appspot.com",
+    messagingSenderId: "687063035754",
+    appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+
+    import {
+        getDatabase,
+        ref,
+        onValue,
+        remove,
+        get,
+    } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+
+  var Xafri = []; 
+  var Yeuro = []; 
+  var Zpaysdumonde = [];
+  var myalldatasUSers = [];
+  const db = getDatabase();
+
+  var  allCocuntry = document.getElementById('ALLCOUNTRY');
+  var  Afri = document.getElementById('AFRI');
+  var  Euro = document.getElementById('EURO');
+  var  PaysDuMonde = document.getElementById('PAYSDUM');
+   const dbref = ref(db, "utilisateurs/");
+   onValue(dbref, (snopshot) => {
+    snopshot.forEach((childsnopshot) => {
+      myalldatasUSers.push(childsnopshot.val());
+      //console.log(childsnopshot.val());
+    })
+    myalldatasUSers.map((T)=>{
+      allCocuntry.setAttribute('data-purecounter-end', `${myalldatasUSers.length}`);
+      
+      if(T.IDREGION === "AFRIQUE"){
+        Xafri.push(T.IDREGION)
+        Afri.setAttribute('data-purecounter-end', `${Xafri.length}`);
+      }
+      if(T.IDREGION === "EUROPE"){
+        Yeuro.push(T.IDREGION)
+        Euro.setAttribute('data-purecounter-end', `${Yeuro.length}`);
+      }
+      if(T.IDREGION === "AUTRESPAYSDUMONDE"){
+        Zpaysdumonde.push(T.IDREGION)
+        PaysDuMonde.setAttribute('data-purecounter-end', `${Zpaysdumonde.length}`);
+      }
+    })
+  })
+</script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -516,6 +556,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="index.js"></script>
 
 </body>
 

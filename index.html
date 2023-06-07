@@ -33,6 +33,10 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/stylea.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+   <!-- Link to import alert personnal -->
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
 
   <!--import firebase--->
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
@@ -151,15 +155,15 @@
 
             <ul class="nav nav-pills mb-3">
               <li>
-                <a class="nav-link " data-bs-toggle="pill" href="#tab1">Nos objectifs</a>
+                <a class="nav-link " data-bs-toggle="pill" href="#tab1" style="color: #000080 !important;">Nos objectifs</a>
               </li>
               
               <li>
-                <a class="nav-link" data-bs-toggle="pill" href="#tab3">Notre cible</a>
+                <a class="nav-link" data-bs-toggle="pill" href="#tab3" style="color: #000080 !important;">Notre cible</a>
               </li>
 
               <li>
-                <a class="nav-link active" data-bs-toggle="pill" href="#tab2">Article 16</a>
+                <a class="nav-link active" data-bs-toggle="pill" href="#tab2" style="color: #000080 !important;">Article 16</a>
               </li>
             </ul><!-- End Tabs -->
 
@@ -253,7 +257,7 @@
           <h2>Nos utilisateurs <i class="bi bi-check-circle-fill"></i></h2>
          <!-- <p style="font-size: 23px;">Nos utilisateurs, en Afrique, en Europe en partout dans le monde</p>-->
         </header>
-        <div class="row gy-4">
+        <div class="row gy-4 AllClassUser">
 
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
@@ -290,7 +294,7 @@
               <i class="bi bi-globe2"></i>
               <div>
                 <span data-purecounter-start="0"  data-purecounter-duration="1" class="purecounter" id="PAYSDUM"></span>
-                <p>Autres pays du monde</p>
+                <p style="font-size: 13.5px !important;">Autres Pays du Monde</p>
               </div>
             </div>
           </div>
@@ -299,6 +303,17 @@
 
       </div>
     </section><!-- End Counts Section -->
+    <div id="cookieModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Accepter les cookies</h2>
+        <p>Nous utilisons des cookies pour améliorer votre expérience sur notre site. Veuillez accepter l'utilisation des cookies.</p>
+        <div class="buttons">
+          <button id="acceptBtn" class="btn">Accepter <i class="fas fa-check"></i></button>
+          <button id="refuseBtn" class="btn">Refuser <i class="fas fa-times"></i></button>
+        </div>
+      </div>
+    </div>    
     <!-- ======= Values Section ======= -->
     <div id="google_translate_element"></div>
     <div id="equipe"></div>
@@ -323,7 +338,7 @@
 
           <div class="col-lg-4 mt-4 mt-lg-0 borderClass" data-aos="fade-up" data-aos-delay="400">
             <div class="box">
-              <img src="assets/img/IMG-20230517-WA0004.jpg" class="img-fluid temClass" alt="" style="height: 46vh;" id="tof2">
+              <img src="assets/img/DIRECTRICE.png" class="img-fluid temClass" alt="" style="height: 46vh;" id="tof2">
               <h3>Adama KABA</h3>
               <p>Directrice</p>
             </div>
@@ -338,7 +353,7 @@
           </div>
           <div class="col-lg-4 mt-4 mt-lg-0 borderClass" data-aos="fade-up" data-aos-delay="400">
             <div class="box">
-              <img src="assets/img/CEO.jpeg" class="img-fluid" alt="" style="height: 46vh;" id="tof4">
+              <img src="assets/img/CEO.png" class="img-fluid" alt="" style="height: 46vh;" id="tof4">
               <h3>Gérard SODINYESSI</h3>
               <p>Développeur et SEO</p>
             </div>
@@ -459,13 +474,20 @@
         <div class="row justify-content-center">
           <div class="col-lg-12 text-center">
             <h4>NEWSLETTER</h4>
-            <p>Abonnez-vous pour recevoir régulièrement des mises à jour.</p>
           </div>
           <div class="col-lg-6">
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Souscrire">
+            <form action="https://formsubmit.co/paymybase@gmail.com" method="POST">
+              <input type="email" name="email" id="submitFormEmail">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_autoresponse" id="_autoresponse">
+              <input type="submit" value="Souscrire" id="submitFormID">
             </form>
-          </div>
+          </div><div style="opacity: 0;">ssfdsfdd</div>
+          <p style="text-align: center;">Votre adresse électronique est collectée et traitée par <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong> pour vous tenir
+            informer de nouvelles fonctionnalités du site illicolove ou de mise à jour.
+            En application de la loi 2017-20 portant code du numérique en République du Bénin, sur la protection des
+            données à caractère personnel, vous pouvez vous désabonner ou exercer vos droits d’accès, d’opposition,
+            de rectification et de suppression en envoyant un mail au <strong style="color: #000080;">info@illicolove.com</strong></p>
         </div>
       </div>
     </div>

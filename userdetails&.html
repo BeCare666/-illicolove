@@ -55,7 +55,7 @@
   </head>
 
   <body>
-    <a href="./u/index.html"> <button  class="btn btn-primary mt-3" style="margin-left: 5px; cursor: pointer;" 
+    <a href="./u/index.html"> <button  class="btn btn mt-3" style="margin-left: 5px; cursor: pointer; background-color: #FFB6C1; color: white;" 
       role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button></a>
     <section id="toCacheSectionId">
     <main id="main">
@@ -173,6 +173,10 @@
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <td>Mon pays de résidence :</td>
+                  <td id="thmonpays"></td>
+                </tr>
                 <tr>
                   <td>Ma Ville de résidence :</td>
                   <td id="thmaville"></td>
@@ -328,10 +332,11 @@
 
         import { getStorage, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"
 
-        const db = getDatabase();
+        const db = getDatabase(); 
                     
         //--------------Select data-----------------//
         var Thmaville = document.getElementById('thmaville');
+        var Thmonpays = document.getElementById('thmonpays');
         var Monpseudonyme = document.getElementById('monpseudonyme');
         var Monages = document.getElementById('monages');
         var MyGenre = document.getElementById('myGenre');
@@ -375,7 +380,8 @@
                 document.getElementById('residenceId').innerHTML = `${snapshot.val().MAVILLEDERESIDENCE}`
                 document.getElementById('occupation').innerHTML = `${snapshot.val().MONTRAVAILLEOUOCCUPATION}`
                 var suiteIdCondi = `${snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE}` ? `${snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE} ` : `<i class="fas fa-database" style="font-size: 10vh !important; color: #FFB6C1;"></i> Pas de données`;
-                document.getElementById('suiteId').innerHTML = `${suiteIdCondi}`
+                document.getElementById('suiteId').innerHTML = `${suiteIdCondi}` 
+                Thmonpays.innerHTML = `${snapshot.val().MYCOUNTRY}`
                 Thmaville.innerHTML = `${snapshot.val().MAVILLEDERESIDENCE}`
                 Monpseudonyme.innerHTML = `${snapshot.val().username}`
                 Monages.innerHTML = `${snapshot.val().MONAGE}`

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      const apiKey = "F14232488388C8DBEAB1A6EF5A3D3323F01D2F4BFAB8CDDC9C750A2018562AF805A25855732571939EB7235A48BAE1A7";
+      const apiUrl = "https://api.elasticemail.com/v2/email/send";
+
+      // Définir les paramètres de l'e-mail
+      const emailParams = {
+        apiKey: apiKey,
+        subject: "Validation de compte",
+        from: "paymybase@gmail.com",
+        fromName: "illicolove",
+        to: "becare.fr.ge@gmail.com",
+        bodyHtml: `
+        <table cellpadding="10" cellspacing="0" style="background-color: #f1f1f1; padding: 20px;">
+        <tr>
+            <td>
+            <h1 style="color: #333;">Félicitations !</h1>
+            <p style="font-size: 16px; color: #666;">
+                Nous sommes heureux de vous informer que votre compte illicolove a été validé avec succès. 
+                Cela signifie que vous pouvez désormais profiter des fonctionnalités suivantes :    
+            </p>
+            <ul>
+                <li>Modifier votre annonce</li>
+                <li>Consulter les annonces disponibles</li>
+                <li>Acheter des unités</li>
+            </ul>
+            <p style="font-size: 14px; color: #999;">
+                Restez à l'écoute pour recevoir d'autres nouvelles passionnantes !     
+            </p>
+            <p style="font-size: 14px; color: #999;">
+                Cordialement,     
+            </p>
+            <p style="font-size: 14px; color: #999;">
+                L'équipe illicolove.      
+            </p>
+            </td>
+        </tr>
+        </table>
+        `
+      };
+
+      // Effectuer une requête POST vers l'API ElasticEmail
+      fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams(emailParams)
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data); // Afficher la réponse de l'API ElasticEmail
+          if (data.success) {
+            console.log("E-mail envoyé avec succès.");
+          } else {
+            console.error("Erreur lors de l'envoi de l'e-mail.");
+          }
+        })
+        .catch((error) => {
+          console.error("Erreur lors de la requête API :", error);
+        });
+    </script>
+   
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Envoyer un e-mail de vérification</title>
+  <!-- Inclure les liens CDN Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <!-- Ajouter d'autres liens CDN Firebase si nécessaire -->
+</head>
+<body>
+  <script>
+    // Configurer votre application Firebase
+    var firebaseConfig = {
+      // Ajoutez ici vos informations de configuration Firebase
+      apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
+        authDomain: "illicolove0.firebaseapp.com",
+        databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
+        projectId: "illicolove0",
+        storageBucket: "illicolove0.appspot.com",
+        messagingSenderId: "687063035754",
+        appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
+    };
+    // Initialiser Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Récupérer l'adresse e-mail de l'utilisateur à partir de la base de données Firebase
+    var userEmail = 'paymybase@gmail.com'; // Remplacez par l'adresse e-mail de l'utilisateur
+
+    // Récupérer les données de l'utilisateur depuis la base de données Firebase
+    var usersRef = firebase.database().ref('utilisateurs');
+    usersRef.orderByChild('email').equalTo(userEmail).once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        var userData = childSnapshot.val();
+
+        // Vérifier si l'utilisateur a déjà vérifié son e-mail
+        if (userData.emailVerified) {
+          console.log('L\'e-mail de l\'utilisateur est déjà vérifié.');
+        } else {
+          // Mettre à jour la propriété "emailVerified" de l'utilisateur dans la base de données
+          childSnapshot.ref.update({ emailVerified: true }, function(error) {
+            if (error) {
+              console.error('Une erreur s\'est produite lors de la mise à jour de l\'e-mail vérifié:', error);
+            } else {
+              // Envoyer l'e-mail de vérification
+              console.log('E-mail de vérification envoyé à', userEmail);
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

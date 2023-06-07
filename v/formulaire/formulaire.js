@@ -268,6 +268,7 @@
                         document.getElementById("countrySelect").appendChild(option);
                         document.getElementById("myprofileidSonpays").appendChild(option);
                         document.getElementById("myprofileidnationèèalité").appendChild(option);
+                       
                     });
                 },
                 error: function(error) {
@@ -304,7 +305,7 @@
                 // Ajouter automatiquement le préfixe du pays au numéro de téléphone
                 var numberVarible = countryCode + phoneNumber
                 numberVaribleTable.push(numberVarible)
-                alert(countryCode + phoneNumber)
+                //alert(countryCode + phoneNumber)
             }else{
               alert("Mettez simplement le numéro sans le préfixe")
             }
@@ -349,3 +350,5 @@
             var allOptions = tableau.flat().join(', ');
             document.getElementById('getAllOption').value = allOptions;
         };
+
+      

@@ -762,9 +762,18 @@
   }
   
   .features .feture-tabs .nav-pills {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eee !important;
   }
-  
+  .nav-pills {
+    --bs-nav-pills-border-radius: 0.375rem;
+    --bs-nav-pills-link-active-bg: #FFB6C1 !important;
+}
+
+
+.nav-pills .nav-link.active {
+    background-color: var(--bs-nav-pills-link-active-bg);
+    /* Autres styles souhaités pour le lien actif */
+}
   .features .feture-tabs .nav-link {
     background: none;
     text-transform: uppercase;
@@ -778,8 +787,8 @@
   }
   
   .features .feture-tabs .nav-link.active {
-    color: #FFB6C1;
-    border-bottom: 3px solid #FFB6C1;
+    color: #FFB6C1 !important;
+    border-bottom: 3px solid #FFB6C1 !important;
   }
   
   .features .feture-tabs .tab-content h4 {
@@ -828,7 +837,7 @@
   .features .feature-icons .content .icon-box i {
     font-size: 44px;
     line-height: 44px;
-    color: #0245bc;
+    color: #000080;
     margin-right: 15px;
   }
   
@@ -2029,6 +2038,11 @@
   .social-links i {
     font-size: 6vh !important;
   }
+
+  .AllClassUser i {
+    font-size: 6vh !important;
+  }
+
   .blog .blog-author .social-links {
     margin: 0 10px 10px 0;
   }

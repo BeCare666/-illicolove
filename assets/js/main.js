@@ -290,3 +290,24 @@
 
 })();
 
+// function to submit Newsletter  
+var SubmitFormID = document.getElementById('submitFormID');
+var SubmitFormEmail = document.getElementById('submitFormEmail').value;
+var _autoresponsE = document.getElementById('_autoresponse').value;
+SubmitFormID.addEventListener('submit', function(){
+  _autoresponsE = `
+  Cher(e) ${SubmitFormEmail},
+
+Merci de vous être abonné(e) à notre newsletter ! Nous sommes ravis de vous avoir parmi nos abonnés.
+
+À partir de maintenant, vous recevrez régulièrement nos dernières actualités, mises à jour et offres spéciales directement dans votre boîte de réception.
+
+Si vous avez des questions, des commentaires ou si vous avez besoin d'aide, n'hésitez pas à nous contacter. Notre équipe se fera un plaisir de vous assister.
+
+Encore une fois, bienvenue dans notre communauté et merci de votre confiance !
+
+Cordialement,
+Ghislain GANGBOZO / illicolove
+  
+  `
+})

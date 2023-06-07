@@ -179,11 +179,12 @@
                   <div>
                     <h4 style="color: #40E0D0;">Publier une Annonce</h4>
                     <p style="font-size: 13px !important;">
-                        En cliquant sur le bouton &quot;Publiez une annonce&quot;, vous pouvez choisir de publier soit
+                        En cliquant sur le bouton &quot;Publiez votre annonce&quot;, vous pouvez choisir de publier soit
                         sur la page &quot;Afrique&quot;, soit sur la page &quot;Europe&quot; ou sur la page &quot;Autres pays du
                         monde&quot; ; selon votre lieu de résidence. Remplissez simplement le formulaire de
-                        recherche qui s’affichera. Nous vous invitons à publier votre annonce...<a id="toopenPUAID">suite</a></p>
-                        <p style="display: none; font-size: 11px !important;" id="openPUA">sur la page de
+                        recherche qui s’affichera. <a id="toopenPUAID">suite...</a></p>
+                        <p style="display: none; font-size: 13px !important;" id="openPUA">Nous vous invitons 
+                          à publier votre annonce sur la page de
                             votre zone géographique de résidence, toutefois, vous pouvez consulter et prendre
                             contact avec tout profil d’une annonce de recherche en dehors de votre zone
                             géographique de résidence.
@@ -358,14 +359,18 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-12 text-center">
-            <h4>Notre lettre d'information</h4>
-            <p>Abonnez-vous pour recevoir régulièrement des mises à jour.</p>
+            <h4>NEWSLETTER</h4>
           </div>
           <div class="col-lg-6">
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Souscrire">
             </form>
-          </div>
+          </div><div style="opacity: 0;">ssfdsfdd</div>
+          <p style="text-align: center;">Votre adresse électronique est collectée et traitée par <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong> pour vous tenir
+            informer de nouvelles fonctionnalités du site illicolove ou de mise à jour.
+            En application de la loi 2017-20 portant code du numérique en République du Bénin, sur la protection des
+            données à caractère personnel, vous pouvez vous désabonner ou exercer vos droits d’accès, d’opposition,
+            de rectification et de suppression en envoyant un mail au <strong style="color: #000080;">info@illicolove.com</strong></p>
         </div>
       </div>
     </div>
@@ -405,6 +410,7 @@
     if(OpenPUA.style.display ==="none"){
       ToopenPUAID.addEventListener('click', function(){
     OpenPUA.style.display = "block"
+    ToopenPUAID.style.display = "none"
     })
     }else{
       ToopenPUAID.addEventListener('click', function(){

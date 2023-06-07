@@ -126,26 +126,34 @@
   };
   firebase.initializeApp(firebaseConfig);
 
-    // Créer une référence à la base de données Firebase
-const dbRef = firebase.database().ref();
-
-// Obtenez une référence à l'emplacement contenant les données d'utilisateur
-const usersRef = dbRef.child("utilisateurs");
-
-  // Écoute de l'événement "click" sur le bouton de recherche
-  // Écoute de l'événement "click" sur le bouton de recherche
-  function submitmy(){
+  // Créer une référence à la base de données Firebase
+  const dbRef = firebase.database().ref();
+  // get cookies option for user
+  const UserConnectId = localStorage.getItem("ToacceptCookies");
+  if(UserConnectId){
+  var savedUsername = localStorage.getItem("Email");
+  var savedPassword = localStorage.getItem("Password");
+  document.getElementById('email').value = savedUsername
+  document.getElementById('password').value = savedPassword
+  }
+  // Obtenez une référence à l'emplacement contenant les données d'utilisateur
+  const usersRef = dbRef.child("utilisateurs");
+    // Écoute de l'événement "click" sur le bouton de recherche
+    // Écoute de l'événement "click" sur le bouton de recherche ToacceptCookies
+    function submitmy(){
     document.getElementById('preloader').style.display = "block"
-// Obtenez l'e-mail et le mot de passe de l'utilisateur
-const email = document.getElementById('email').value;
-const password = document.getElementById('password').value;
+  // Obtenez l'e-mail et le mot de passe de l'utilisateur
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
 
-// Utilisez la méthode Firebase once() pour obtenir une copie des données de l'utilisateur à partir de la base de données
-// Utilisez la méthode Firebase once() pour obtenir une copie des données de l'utilisateur à partir de la base de données
-usersRef.orderByChild("email").equalTo(email).once("value", function(snapshot) {
-  if (snapshot.exists()) {
+  // Utilisez la méthode Firebase once() pour obtenir une copie des données de l'utilisateur à partir de la base de données
+  // Utilisez la méthode Firebase once() pour obtenir une copie des données de l'utilisateur à partir de la base de données
+
+  usersRef.orderByChild("email").equalTo(email).once("value", function(snapshot) {
+    if (snapshot.exists()) {
     snapshot.forEach(function(userSnapshot) {
       // Vérifiez si le mot de passe de l'utilisateur correspond au mot de passe donné
+    
       if (userSnapshot.val().password === password) {
         // L'utilisateur existe avec l'e-mail et le mot de passe donnés
         document.getElementById('preloader').style.display = "none"
@@ -162,6 +170,9 @@ usersRef.orderByChild("email").equalTo(email).once("value", function(snapshot) {
         document.getElementById('smsalert').innerHTML = `Vous êtes connecté avec succès !`
         localStorage.setItem('unserconnect', userId)
         localStorage.setItem('unserconnectmail', email)
+        // funnction to get cookies options     
+        localStorage.setItem("Email", email);
+        localStorage.setItem("Password", password);
         setTimeout(()=>{
         //document.getElementById('contentSignup').style.display = "block" 
         //document.getElementById('modalID').style.display = "none"
@@ -207,17 +218,13 @@ usersRef.orderByChild("email").equalTo(email).once("value", function(snapshot) {
     //alert('L\'utilisateur n\'existe pas');
   }
 });
-
-        
-  }
-
- 
-
+       
+}
   </script>
-      <script src="js/jquery-3.3.1.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/main.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
   </body>
 </html>
     

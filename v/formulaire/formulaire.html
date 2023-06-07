@@ -55,8 +55,8 @@
                         <fieldset>
                             <h2 class="fs-title">VEUILLEZ REMPLIR LE FORMULAIRE CI-DESSOUS.</h2>
                             <h3 class="fs-subtitle">Donnez des informations précises et judicieuses.</h3>
-                            <p style="text-align: start !important;">Ma
-                                nationalité <i class="fa fa-star required"></i></p>
+                            <p style="text-align: start !important;">Mon pays de
+                                résidence <i class="fa fa-star required"></i></p>
                             <select type="text" id="mycountry"
                                 name="lname" placeholder="Ma nationalité" required></select>
                             <p style="text-align: start !important;">Ma Ville de
@@ -683,13 +683,16 @@
                     countries.forEach(function(country) {
                         var option = document.createElement("option");
                         var myOption = document.createElement("option");
+                        var myOptionSonpays = document.createElement("option");
+                        myOptionSonpays.value = country.name;
                         myOption.value = country.name;
                         option.value = country.alpha2Code;
                         myOption.text = country.name;
+                        myOptionSonpays.text = country.name;
                         option.text = country.name + " "+getPhonePrefix(country) ;
                         document.getElementById("countrySelect").appendChild(option);
                         document.getElementById("myprofileidSonpays").appendChild(myOption);
-                        document.getElementById("mycountry").appendChild(myOption);
+                        document.getElementById("mycountry").appendChild(myOptionSonpays);
                     });
                 },
                 error: function(error) {

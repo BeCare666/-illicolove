@@ -296,7 +296,7 @@ var SubmitFormEmail = document.getElementById('submitFormEmail').value;
 var _autoresponsE = document.getElementById('_autoresponse').value;
 SubmitFormID.addEventListener('submit', function(){
   _autoresponsE = `
-  Cher(e) ${SubmitFormEmail},
+Cher(e) utilisateur,
 
 Merci de vous être abonné(e) à notre newsletter ! Nous sommes ravis de vous avoir parmi nos abonnés.
 
@@ -307,6 +307,7 @@ Si vous avez des questions, des commentaires ou si vous avez besoin d'aide, n'h�
 Encore une fois, bienvenue dans notre communauté et merci de votre confiance !
 
 Cordialement,
+
 Ghislain GANGBOZO / illicolove
   
   `

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous">
   
@@ -185,28 +186,13 @@
         //L'adresse e-mail n'a pas été trouvée
       //alert(`L'adresse e-mail ${emailInput} n'a pas été trouvée dans Firebase.`)
 
-    //console.log(monthAbbreviation); 
- 
-      var id = () => {
-          return Math.floor((1 + Math.random()) * 0x10000)
-              .toString(16)
-              .substring(1);
-      }
-      const userId = id();
-      var userID = username + userId
       // Récupération de l'adresse mail entrée par l'utilisateur
       // Envoi de l'adresse mail à Firebase
-
-      // Créez une nouvelle instance de l'objet Date
-      const currentDate = new Date();
-      // Obtenez les différentes composantes de la date
-      const year = currentDate.getFullYear(); // Année (ex: 2023)
-      const month = currentDate.getMonth() + 1; // Mois (de 0 à 11, donc on ajoute 1)
-      const day = currentDate.getDate(); // Jour du mois (de 1 à 31)
-      const hours = currentDate.getHours(); // Heures (de 0 à 23)
-      const minutes = currentDate.getMinutes(); // Minutes (de 0 à 59)
-      const seconds = currentDate.getSeconds(); // Secondes (de 0 à 59)
-
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+     .then((userCredential) => {
+            // L'inscription a réussi, vous pouvez maintenant procéder à la création du profil utilisateur dans la base de données
+            const user = userCredential.user;
+            const userID = user.uid;
       firebase.database().ref('utilisateurs/' + userID).set({
           userId : userID,
           email: email,
@@ -249,8 +235,6 @@
           QUESTIONSECUREPASSWORDSTATUS : false,
           QUESTIONSECUREPASSWORD : "",
           QUESTIONSECUREPASSWORDRESPONSE : "",
-          USERCONNECT : false,
-          DATETIME : `${day}/${month}/${year}`
 
 
 
@@ -270,14 +254,17 @@
         document.getElementById('contentSignup').style.display = "block" 
         document.getElementById('modalID').style.display = "none"
         //alert("Adresse mail envoyée à Firebase !");
-        localStorage.setItem('unserconnect', userId)
+        localStorage.setItem('unserconnect', userID)
         localStorage.setItem('unserconnectmail', email)
         window.location.href = "login.html"
         },7000)
       }).catch((error) => {
           alert("Erreur lors de l'envoi de l'adresse mail à Firebase :", error);
       });
-
+    }).catch((error) => {
+            // Une erreur s'est produite lors de l'inscription de l'utilisateur
+            console.error("Erreur lors de l'inscription de l'utilisateur :", error);
+        });
       }
     });
   }

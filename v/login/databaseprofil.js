@@ -9,7 +9,7 @@ const firebaseConfig = {
   };
   firebase.initializeApp(firebaseConfig);
 
-    // Créer une référence à la base de données Firebase
+// Créer une référence à la base de données Firebase
 const dbRef = firebase.database().ref();
 
 // Obtenez une référence à l'emplacement contenant les données d'utilisateur
@@ -94,12 +94,9 @@ usersRef.orderByChild("email").equalTo(email).once("value", function(snapshot) {
         if (result.isConfirmed) {
           // Référence à la base de données des utilisateurs
           var usersRef = firebase.database().ref("utilisateurs");
-
-  
           // Mettre à jour l'e-mail de l'utilisateurF
           var updates = {};
           updates["/" + UserConnectuser + "/password"] = tableToTakeUserrsponUp[0];
-
           usersRef.update(updates)
             .then(function() {
               document.getElementById('eleementIDCose').style.display = "none"

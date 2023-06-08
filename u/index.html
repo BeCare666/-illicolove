@@ -144,7 +144,7 @@
       fonctionEnfant();
     } else {
       // Gérer le cas où myalldatas est vide ou non défini
-      console.log("Aucune donnée disponible");
+     // console.log("Aucune donnée disponible");
     }
 
        function fonctionEnfant(){
@@ -160,7 +160,7 @@
           }
         if (myalldatas.length != 0) {
           var sixPremiersElements = myalldatas.sort(() => Math.random() - 0.5).slice(0, 5); //slice(0, 5);
-          console.log(sixPremiersElements);
+         // console.log(sixPremiersElements);
           return sixPremiersElements.forEach((k) => {
           //validation du compte par les admin
           var VALIDATECOMPTE = k.COMPTECREDIT
@@ -348,8 +348,9 @@
     
      window.onload = getAllDataRealtimePro;
     </script>
-    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+        <!-- Inclure les bibliothèques Firebase que vous utilisez (par exemple, la base de données Firebase) -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
     <!-- Vendor JS Files -->
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
@@ -359,6 +360,7 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="./../alert/alert.js"></script>
+    <script src="./../v/userConnect.js"></script>
 
 
     <!-- Template Main JS File 

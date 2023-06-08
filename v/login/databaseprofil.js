@@ -102,7 +102,7 @@ usersRef.orderByChild("email").equalTo(email).once("value", function(snapshot) {
               document.getElementById('eleementIDCose').style.display = "none"
               Swal.fire({
               icon: 'success',
-              title: 'Supper...',
+              title: 'Super...',
               allowOutsideClick: false,
               text: 'Mot de passe mis à jour avec succès !',
               footer: '<a href="login.html">Connectez-vous</a>',

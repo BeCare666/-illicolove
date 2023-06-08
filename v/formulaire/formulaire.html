@@ -259,8 +259,9 @@
                                 résidence <i class="fa fa-star required" ></i></p>
                                 <p style="text-align: start !important; display: none;" id="hecountriesId">vous pouvez selectionner plusieurs pays. <i class="fa fa-star required"></i></p>
                             <div style="display: flex;">
-                            <select type="text" id="myprofileidSonpays" name="gplus" 
-                            placeholder="Son pays" required></select>
+                            <select type="text" id="myprofileidSonpays" name="gplus" placeholder="Son pays" required>
+                                <option value=""></option>
+                            </select>
                             <input type="text" id="getAllOption" style="display: none;">
                             </div>
                             <input type="button" name="previous" class="previous action-button-previous" value="précédent" />
@@ -412,7 +413,7 @@
                  myprofileidtravail.value =   snapshot.val().MONTRAVAILLEOUOCCUPATION
                  choicesmultipleremovebutton.value =  snapshot.val().MASITUATIONMATRIMONIALE
                  myprofileidâge.value =  snapshot.val().MONAGE
-
+                // myprofileidSonpays.value = snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE
                  choicesmultipleremovebuttonsexe.value =  snapshot.val().MONSEXE
                  myprofileidtéléphone.value =   snapshot.val().TELEPHONE
                  choicesmultipleremovebuttonrencontre.value =   snapshot.val().JEVEUXUNERENCONTRE
@@ -426,7 +427,7 @@
                  choicesmultipleremovebuttonSonsexe.value =  snapshot.val().SEXEDEPROFILQUEJECHERCHE
                  myprofileidtrancheâge.value =   snapshot.val().SONAGEDEPROFILQUEJECHERCHE
                  choicesmultipleremovebuttonmatrimoniale.value =  snapshot.val().SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE
-                 myprofileidSonpays.value =  snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE
+                 //myprofileidSonpays.value =  snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE
                  myprofileidpréférences.value =   snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE
                  myprofileidSaville.value =   snapshot.val().VILLEDHABITATIONDEPROFILQUEJECHERCHE
                  myprofileidoccupations.value =   snapshot.val().TRAVAILDEDEPROFILQUEJECHERCHE
@@ -774,7 +775,25 @@
             const NumberVaribleTable = numberVaribleTable.slice(-1).pop();
             var allOptions = tableau.flat().join(', ');
             document.getElementById('getAllOption').value = allOptions;
-            
+            console.log(myprofileidMaVille.value)
+            console.log(myprofileidPrénoms.value)
+            console.log(choicesmultipleremovebuttonrencontre.value)
+            console.log(Photo1ID)
+            console.log(choicesmultipleremovebuttonrencontre.value)
+            console.log( myprofileidnationèèalité.value)
+            console.log(Photo2ID)
+            console.log( myprofileidtravail.value)
+            console.log(IDREGION)
+            console.log( choicesmultipleremovebuttonSonsexe.value)
+            console.log(choicesmultipleremovebutton.value)
+            console.log(myprofileidtrancheâge.value)
+            console.log(myprofileidâge.value)
+            console.log(choicesmultipleremovebuttonmatrimoniale.value)
+            console.log(allOptions)
+            console.log(myprofileidSaville.value)
+            console.log(myprofileidoccupations.value)
+           console.log(choicesmultipleremovebuttonsexe.value)
+            console.log(Mycountry.value)
             if(myprofileidMaVille.value && NumberVaribleTable &&
                myprofileidPrénoms.value && choicesmultipleremovebuttonrencontre.value &&
                myprofileidnationèèalité.value && Photo1ID && Photo2ID &&
@@ -797,7 +816,7 @@
                 MONSEXE : choicesmultipleremovebuttonsexe.value, 
                 TELEPHONE : NumberVaribleTable,
                 JEVEUXUNERENCONTRE : choicesmultipleremovebuttonrencontre.value,
-                PIECESDIDENTITE : PieceID ? PieceID : "", 
+                PIECESDIDENTITE : PieceID , 
                 MESDEUXPHOTOS : Photo1ID,
                 MESDEUXPHOTO2 : Photo2ID,
                 IDREGION : IDREGION,

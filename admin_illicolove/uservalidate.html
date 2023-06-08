@@ -84,7 +84,7 @@ font-size: 13.5px !important;
                   </div>
                 </div>
                 <div class="col-lg-4" id="mycoodonnees" style=" border: #FFB6C1 solid 1px;">
-                  <div class="portfolio-info" style="height: 55vh !important;"  
+                  <div class="portfolio-info" style="height: 58vh !important;"  
                   >
                     <h2><strong>Mes coordonnées :</strong></h2>
                     <span id="iconValidateID"></span>
@@ -101,12 +101,12 @@ font-size: 13.5px !important;
                           <p class="mb-0" id="residenceId"></p>
                         </div>
                         <div class="d-flex align-items-center mt-3">
-                          <i class="bi bi-person-workspace me-2 text-success"></i>
+                          <i class="bi bi-briefcase-fill me-2 text-success"></i>
                           <p class="mb-0" id="occupation"></p>
                         </div>
                         <div id="contactUserID">
                         <div class="d-flex align-items-center mt-3">
-                          <i class="bi bi-telephone-fill me-2 text-success"></i>
+                          <i class="bi bi-telephone-fill me-2 text-success"></i> 
                           <p class="mb-0" id="phone"></p>
                         </div>
                         <div class="d-flex align-items-center mt-3">
@@ -114,8 +114,12 @@ font-size: 13.5px !important;
                           <p class="mb-0" id="whatsapp"></p>
                         </div>
                         <div class="d-flex align-items-center mt-3">
-                          <i class="bi bi-envelope-at-fill me-2 text-primary"></i>
+                          <i class="bi bi-envelope-fill me-2 text-primary"></i>
                           <p class="mb-0" id="myEmail"></p>
+                        </div>
+                        <div class="d-flex align-items-center mt-3" style="cursor: pointer;">
+                          <i class="bi bi-file-text-fill me-2" style="color: #FFB6C1;"></i>
+                          <p class="mb-0" id="myDoc" style="color: #FFB6C1;">Consulter son CDN</p>
                         </div>
                         </div>
     
@@ -352,10 +356,11 @@ font-size: 13.5px !important;
 
         const db = getDatabase();
 
-        //--------------Select data-----------------//
+        //--------------Select data-----------------//  
         function seleectData() {
         const UserID = localStorage.getItem("userID");
         var Thmonpays = document.getElementById('thmonpays');
+        var MyDoc = document.getElementById('myDoc');
         var Thmaville = document.getElementById('thmaville');
         var Monpseudonyme = document.getElementById('monpseudonyme');
         var Monages = document.getElementById('monages');
@@ -430,7 +435,25 @@ font-size: 13.5px !important;
                 }
                 document.getElementById('myprefenceId').innerHTML = `${snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE}`
 
-
+              // Get CIN
+              MyDoc.addEventListener('click', function(){
+                if(snapshot.val().PIECESDIDENTITE){
+                  Swal.fire({
+                  title: 'CIN!',
+                  //text: 'Modal with a custom image.',
+                  imageUrl: `${snapshot.val().PIECESDIDENTITE} `,
+                  imageWidth: 400,
+                  imageHeight: 200,
+                  imageAlt: 'Custom image',
+                })
+                }{
+                  Swal.fire(
+                    'Désolé!',
+                    `${snapshot.val().fullname} n'a pas soumis de CIN.`,
+                    'error'
+                    )
+                }
+              })
               //FOUNCTION TO SEND EMAIL FOR USER //
               var validateVarible = document.getElementById('dropdowtToValidate');
               var Footer = document.getElementById('footer');

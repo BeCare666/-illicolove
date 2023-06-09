@@ -373,21 +373,23 @@
                                     <thead>
                                         <tr>
                                             <th>Nom et prénoms </th>
-                                            <th>email</th>
+                                            <th>Email</th>                                    
+                                            <th>Connexion</th>
                                             <th>Date</th>
-                                            <th>Âge</th>
+                                           <!--<th>Âge</th>-->
                                             <th>Unité</th>
                                             <th>Région</th>
                                             <th>Status</th>
                                             <th>Button</th>
                                         </tr>
                                     </thead>
-                                    <tfoot style="display: none;">
+                                    <tfoot >
                                         <tr>
                                             <th>Nom et prénoms</th>
-                                            <th>email</th>
-                                            <th>Date</th>
-                                            <th>Âge</th>
+                                            <th>Email</th>
+                                            <th>connexion</th>
+                                            <th>Date </th>
+                                           <!--<th>Âge</th>-->
                                             <th>Unité</th>
                                             <th>Région</th>
                                             <th>Status</th>
@@ -564,6 +566,15 @@
         td2.textContent = user.email;
         tr.appendChild(td2);
 
+         // Ajouter sa dernière connexion aux cellules du tableau (td)
+         var td2endConnexion = document.createElement('td');
+         if (user.ONLINEDATE === user.ONLINEHOURS) {
+        td2endConnexion.innerHTML = user.ONLINEHOURS;
+        } else {
+        td2endConnexion.innerHTML = `${user.ONLINEDATE}<br>${user.ONLINEHOURS}`;
+        }
+        tr.appendChild(td2endConnexion);
+
         var DateTime = user.DATETIME
         var userConnect = DateTime ? user.DATETIME : 'Néant';
         // Ajouter Âges aux cellules du tableau (td)
@@ -571,13 +582,13 @@
         tdx.textContent = userConnect;
         tr.appendChild(tdx);
 
-         // Ajouter Online aux cellules du tableau (td)
+        {/* // Ajouter Online aux cellules du tableau (td)
         var AGES = user.MONAGE
         var MYMONAGE = AGES ? user.MONAGE : 'Néant';
         // Ajouter Âges aux cellules du tableau (td)
         var td3 = document.createElement('td');
         td3.textContent = MYMONAGE;
-        tr.appendChild(td3);
+        tr.appendChild(td3);*/}
 
         // Ajouter Unité aux cellules du tableau (td)
         var td4 = document.createElement('td');

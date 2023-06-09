@@ -77,13 +77,19 @@
               </div>
             </div>
             <div class="col-lg-4" id="mycoodonnees" style=" border: #FFB6C1 solid 1px;">
-              <div class="portfolio-info" style="height: 55vh !important;"  
+              <div class="portfolio-info" style="height: 60vh !important;"  
               >
                 <h2><strong>Mes coordonnées :</strong></h2>
                 <ul class="list-group mt-4"  >
                   <li class="list-group-item" >
                     <div class="d-flex align-items-center">
                       <i class="bi bi-person-fill me-2 text-primary"></i>
+                      <div>
+                        <h5 class="mb-1" id="ConnexionMyID"></h5>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center mt-3">
+                      <i class="bi bi-person-fill me-2 text-primary "></i>
                       <div>
                         <h5 class="mb-1" id="fullname"></h5>
                       </div>
@@ -350,6 +356,7 @@
         var Sonpays = document.getElementById('sonpays');
         var Saville = document.getElementById('saville');
         var Sontravail = document.getElementById('sontravail');
+        var connexionMyID = document.getElementById('ConnexionMyID'); 
 
         function seleectData() {
           const UserConnectIdToBuy = localStorage.getItem("storageNamey");
@@ -394,6 +401,11 @@
                 Saville.innerHTML = `${snapshot.val().VILLEDHABITATIONDEPROFILQUEJECHERCHE}`
                 Sontravail.innerHTML = `${snapshot.val().TRAVAILDEDEPROFILQUEJECHERCHE}`
                 document.getElementById('myprefenceId').innerHTML = `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}` ? `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}` : `<i class="fas fa-database" style="font-size: 10vh !important; color: #FFB6C1;"></i> Pas de données.`;
+                // to now if the user is connect or no
+                const content = snapshot.val().ONLINEDATE === snapshot.val().ONLINEHOURS
+                ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> ${snapshot.val().ONLINEHOURS} `   
+                : `En ligne le ${snapshot.val().ONLINEDATE} à ${snapshot.val().ONLINEHOURS}`;
+                connexionMyID.innerHTML = content
               } else {
                   alert("no data");
               }

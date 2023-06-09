@@ -69,7 +69,8 @@
                                 name="lname" placeholder="Nom ou Pseudonyme" required/>
                                 <p style="text-align: start !important;" id="PageId">Mon âge <i class="fa fa-star required"></i></p>
                                 <p id="errorMessage" style="text-align: start !important; display: none; color: red;">Veuillez saisir uniquement des chiffres.<i class="fa fa-star required"></i></p>
-                                <select type="text" id="myprofileidâge"  name="twitter" placeholder="Mon âge " > 
+                                <select type="text" id="myprofileidâge"  name="twitter" placeholder="Mon âge " required>
+                    
                                     <option value="18-30" >18-30</option>
                                     <option value="31-40" >31-40</option>
                                     <option value="41-50" >41-50</option>
@@ -85,7 +86,7 @@
                                     class="fa fa-star required"></i></p>
                             <select id="choices-multiple-remove-buttonsexe"
                                 >
-                                <option value="Masculin">Homme</option>
+                                <option value="Masculin" selected>Homme</option>
                                 <option value="Femme">Femme</option>
                                 <option value="Transgenre">Transgenre</option>
                                 <option value="Fluide">Fluide(Genderfluid)</option>
@@ -120,7 +121,7 @@
                                     required"></i></p>
                             <select id="choices-multiple-remove-button"
                                 >
-                                <option value="Célibataire">Célibataire</option>
+                                <option value="Célibataire" selected>Célibataire</option>
                                 <option value="Célibataire sans enfant(s)">En couple</option>
                                 <option value="Célibataire avec enfant(s)">Divorcé(e)</option>
                                 <option value="Divorcé(e)">Veuf(ve)</option>
@@ -175,7 +176,6 @@
                                 rencontre <i class="fa fa-star required"></i></p>
                             <select id="choices-multiple-remove-buttonrencontre"
                                 >
-                                <option value="" ></option>
                                 <option value="Amicale, une compagnie pour
                                     briser la solitude">Amicale, une compagnie
                                     pour briser la solitude</option>
@@ -206,8 +206,8 @@
                             <p style="text-align: start !important;">Son Genre <i
                                     class="fa fa-star required"></i></p>
                             <select id="choices-multiple-remove-buttonSonsexe"
-                                >
-                                <option value="Masculin">Homme</option>
+                                required>
+                                <option value="Masculin" selected>Homme</option>
                                 <option value="Femme">Femme</option>
                                 <option value="Transgenre">Transgenre</option>
                                 <option value="Fluide">Fluide(Genderfluid)</option>
@@ -235,8 +235,8 @@
                                 <p id="errorSmsyour" style="text-align: start !important; display: none; color: red;">Veuillez saisir uniquement des chiffres.<i class="fa fa-star required"></i></p>
                             <select type="text" id="myprofileidtrancheâge"
                                 name="facebook" placeholder="Sa tranche d'âge"
-                                pattern="[0-9]+" >
-                                <option value="18-30" >18-30</option>
+                                pattern="[0-9]+" required>
+                                <option value="18-30" selected>18-30</option>
                                 <option value="31-40" >31-40</option>
                                 <option value="41-50" >41-50</option>
                                 <option value="51-60" >51-60</option>
@@ -249,8 +249,8 @@
                                     required"></i></p>
                             <select
                                 id="choices-multiple-remove-buttonmatrimoniale"
-                                >
-                                <option value="Célibataire">Célibataire</option>
+                                required>
+                                <option value="Célibataire" selected>Célibataire</option>
                                 <option value="Célibataire sans enfant(s)">En couple</option>
                                 <option value="Célibataire avec enfant(s)">Divorcé(e)</option>
                                 <option value="Divorcé(e)">Veuf(ve)</option>
@@ -259,8 +259,8 @@
                                 résidence <i class="fa fa-star required" ></i></p>
                                 <p style="text-align: start !important; display: none;" id="hecountriesId">vous pouvez selectionner plusieurs pays. <i class="fa fa-star required"></i></p>
                             <div style="display: flex;">
-                            <select type="text" id="myprofileidSonpays" name="gplus" placeholder="Son pays" required>
-                                <option value=""></option>
+                            <select type="text" style="border-color: red !important;" id="myprofileidSonpays" name="gplus" placeholder="Son pays" required>
+                            <option value="" selected></option>
                             </select>
                             <input type="text" id="getAllOption" style="display: none;">
                             </div>
@@ -405,7 +405,7 @@
                 {/*console.log(snapshot.val().MAVILLEDERESIDENCE)
                 var photoDataUrl = 'data:image/png;base64,' + snapshot.val().MAVILLEDERESIDENCE;
                 var photoElement = document.getElementById("photo");
-                photoElement.src = photoDataUrl;*/}
+                photoElement.src = photoDataUrl; 
 
                  myprofileidMaVille.value =  snapshot.val().MAVILLEDERESIDENCE
                  myprofileidPrénoms.value =   snapshot.val().fullname
@@ -423,7 +423,7 @@
                  myprofileidteint.value =   snapshot.val().MONTEINT
                  myprofileididentité.value =   snapshot.val().PIECESDIDENTITE 
                  myprofileidPhotos.value =  snapshot.val().MESDEUXPHOTOS
-                 myprofileidPhoto2.value =  snapshot.val().MESDEUXPHOTO2*/}
+                 myprofileidPhoto2.value =  snapshot.val().MESDEUXPHOTO2
                  choicesmultipleremovebuttonSonsexe.value =  snapshot.val().SEXEDEPROFILQUEJECHERCHE
                  myprofileidtrancheâge.value =   snapshot.val().SONAGEDEPROFILQUEJECHERCHE
                  choicesmultipleremovebuttonmatrimoniale.value =  snapshot.val().SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE
@@ -431,7 +431,7 @@
                  myprofileidpréférences.value =   snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE
                  myprofileidSaville.value =   snapshot.val().VILLEDHABITATIONDEPROFILQUEJECHERCHE
                  myprofileidoccupations.value =   snapshot.val().TRAVAILDEDEPROFILQUEJECHERCHE
-                 myprofileidprécisions.value =   snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE 
+                 myprofileidprécisions.value =   snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE*/} 
                 
             } else {
                 document.getElementById('myFormulaireId').style.display = "none" 
@@ -764,6 +764,8 @@
                 return option.value;
             });
             tableau.push(selectedOptions);
+            var elementx = document.getElementById("myprofileidSonpays");
+            elementx.style.borderColor = "transparent";
         });
  
 

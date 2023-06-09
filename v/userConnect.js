@@ -27,6 +27,8 @@ let inactiveTimeoutId;
 function handleUserActive() {
 clearTimeout(inactiveTimeoutId); // Réinitialiser le délai
 updates["/" + UserConnectuser + "/USERCONNECT"] = true;
+updates['/' + UserConnectuser + '/ONLINEDATE'] = "en ligne";
+updates['/' + UserConnectuser + '/ONLINEHOURS'] = "en ligne";
 usersRef.update(updates)
 .then(function() {
 }).catch(function(error) {
@@ -39,13 +41,26 @@ console.error("Erreur :", error);
 // Fonction appelée lorsque l'utilisateur quitte la page
 function handleUserInactive() {
 inactiveTimeoutId = setTimeout(function() {
+// Créez une nouvelle instance de l'objet Date
+const currentDate = new Date();
+// Obtenez les différentes composantes de la date
+const year = currentDate.getFullYear(); // Année (ex: 2023)
+const month = currentDate.getMonth() + 1; // Mois (de 0 à 11, donc on ajoute 1)
+const day = currentDate.getDate(); // Jour du mois (de 1 à 31)
+const hours = currentDate.getHours().toString().padStart(2, '0'); // Heures (de 00 à 23)
+const minutes = currentDate.getMinutes(); // Minutes (de 0 à 59)
+//const seconds = currentDate.getSeconds(); // Secondes (de 0 à 59)
+var theOnlineDate = `${day}/${month}/${year}`
+var theOnlinehours = `${hours}h:${minutes}min`
 updates["/" + UserConnectuser + "/USERCONNECT"] = false;
+updates['/' + UserConnectuser + '/ONLINEDATE'] = theOnlineDate;
+updates['/' + UserConnectuser + '/ONLINEHOURS'] = theOnlinehours;
 usersRef.update(updates)
 .then(function() {
 }).catch(function(error) {
 console.error("Erreur :", error);
 });
-    //console.log("L'utilisateur a quitté la page");
+   // console.log("L'utilisateur a quitté la page");
     // Mettre à jour le statut ou effectuer d'autres actions ici
   }, 60000); // Délai de 60 secondes avant de mettre à jour le statut
 }

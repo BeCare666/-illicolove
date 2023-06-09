@@ -189,10 +189,13 @@
           });
           //function to transforme the photo to base64
           var photoDataUrl = 'data:image/png;base64,' + k.MESDEUXPHOTOS;
+          const content = k.ONLINEDATE === k.ONLINEHOURS
+          ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> ${k.ONLINEHOURS} `   
+          : `En ligne le ${k.ONLINEDATE} à ${k.ONLINEHOURS}`;
           trow.innerHTML =
           `
           <div class=" align-items-stretch"
-            data-aos="fade-up" data-aos-delay="100" style="width: 90%; height: 55vh; padding: 5px;">
+            data-aos="fade-up" data-aos-delay="100" style="width: 90%; height: 60vh; padding: 5px;">
               <div class="member">
                 <div class="member-img">
                   <img src="${photoDataUrl}" class="img-fluid"
@@ -209,10 +212,12 @@
                   <h4>${k.username}</h4>
                   <span>${k.fullname}</span>
                   <p style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${k.MYCOUNTRY}. ${k.MAVILLEDERESIDENCE}, ${k.MANATIONNALITE}</p>
+                  <p>${content}.</p>
 
                 </div>
               </div>
-            </div>                  
+            </div>
+            <div style="opacity: 0;">sjdfklgdf <br>qsdfgf</div>                
             `
             divq.append(trow)
             
@@ -221,6 +226,9 @@
           //function to transforme the photo to base64
           //alert(snapshot.val().userId)
           var photoDataUrl = 'data:image/png;base64,' + k.MESDEUXPHOTOS;
+          const content = k.ONLINEDATE === k.ONLINEHOURS
+          ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> ${k.ONLINEHOURS} `   
+          : `En ligne le ${k.ONLINEDATE} à ${k.ONLINEHOURS}`;
           trow.innerHTML =
           `
           <div class=" align-items-stretch"
@@ -241,10 +249,11 @@
                   <h4>${k.username}</h4>
                   <span>${k.fullname}</span>
                   <p style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${k.MYCOUNTRY}. ${k.MAVILLEDERESIDENCE}, ${k.MANATIONNALITE}</p>
-
+                  <p>${content}.</p>
                 </div>
               </div>
-            </div>                          
+            </div>
+            <div style="opacity: 0;">sjdfklgdf <br>qsdfgf</div>                        
             `
             divq.append(trow)
             // Function to alert user the unity is end

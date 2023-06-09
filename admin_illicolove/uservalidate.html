@@ -84,13 +84,19 @@ font-size: 13.5px !important;
                   </div>
                 </div>
                 <div class="col-lg-4" id="mycoodonnees" style=" border: #FFB6C1 solid 1px;">
-                  <div class="portfolio-info" style="height: 58vh !important;"  
+                  <div class="portfolio-info" style="height: 61vh !important;"  
                   >
                     <h2><strong>Mes coordonnées :</strong></h2>
                     <span id="iconValidateID"></span>
                     <ul class="list-group mt-4"  >
                       <li class="list-group-item" >
                         <div class="d-flex align-items-center">
+                          <i class="bi bi-person-fill me-2 text-primary"></i>
+                          <div>
+                            <h5 class="mb-1" id="ConnexionMyID"></h5>
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-3">
                           <i class="bi bi-person-fill me-2 text-primary"></i>
                           <div>
                             <h5 class="mb-1" id="fullname"></h5>
@@ -375,6 +381,7 @@ font-size: 13.5px !important;
         var Sonpays = document.getElementById('sonpays');
         var Saville = document.getElementById('saville');
         var Sontravail = document.getElementById('sontravail');
+        var connexionMyID = document.getElementById('ConnexionMyID'); 
           // function to logout
           if(!UserID){
             window.location.href = "login.html"
@@ -391,6 +398,28 @@ font-size: 13.5px !important;
                 document.getElementById('preloader').style.display = "none"
                 var photoDataUrl1 = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
                 var photoDataUrl2 = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTO2;
+                var photoDataUrl3 = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
+                              // Get CIN
+              MyDoc.addEventListener('click', function(){
+               MyBodyID.style.display = "none" 
+               Footer.style.display = "none" 
+                if(snapshot.val().PIECESDIDENTITE){
+                  Swal.fire({
+                  title: 'CIN !',
+                  //text: 'Modal with a custom image.',
+                  imageUrl: `${photoDataUrl3} `,
+                  imageWidth: 400,
+                  imageHeight: 300,
+                  imageAlt: 'Custom image',
+                  allowOutsideClick: false,
+                }).then((result) => {
+                if (result.isConfirmed) {
+                MyBodyID.style.display = "block" 
+                 Footer.style.display = "block" 
+                }
+                })
+                }
+              })
                 //conditon ternaire to genre
                 var status = snapshot.val().MONSEXE                
                 var img1Id = document.getElementById('img1Id');
@@ -420,7 +449,12 @@ font-size: 13.5px !important;
                 Sonpays.innerHTML = `${snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE}`
                 Saville.innerHTML = `${snapshot.val().VILLEDHABITATIONDEPROFILQUEJECHERCHE}`
                 Sontravail.innerHTML = `${snapshot.val().TRAVAILDEDEPROFILQUEJECHERCHE}`
-                document.getElementById('myprefenceId').innerHTML = `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}`
+                document.getElementById('myprefenceId').innerHTML = `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}`;
+                // to now if the user is connect or no
+                const content = snapshot.val().ONLINEDATE === snapshot.val().ONLINEHOURS
+                ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> ${snapshot.val().ONLINEHOURS} `   
+                : `En ligne le ${snapshot.val().ONLINEDATE} à ${snapshot.val().ONLINEHOURS}`;
+                connexionMyID.innerHTML = content
                 
                 var compteCertifie = snapshot.val().VALIDERMONCOMPTE
                 var comptesuspendu = snapshot.val().MONCOMPTESUSPENDU
@@ -435,25 +469,7 @@ font-size: 13.5px !important;
                 }
                 document.getElementById('myprefenceId').innerHTML = `${snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE}`
 
-              // Get CIN
-              MyDoc.addEventListener('click', function(){
-                if(snapshot.val().PIECESDIDENTITE){
-                  Swal.fire({
-                  title: 'CIN!',
-                  //text: 'Modal with a custom image.',
-                  imageUrl: `${snapshot.val().PIECESDIDENTITE} `,
-                  imageWidth: 400,
-                  imageHeight: 200,
-                  imageAlt: 'Custom image',
-                })
-                }{
-                  Swal.fire(
-                    'Désolé!',
-                    `${snapshot.val().fullname} n'a pas soumis de CIN.`,
-                    'error'
-                    )
-                }
-              })
+
               //FOUNCTION TO SEND EMAIL FOR USER //
               var validateVarible = document.getElementById('dropdowtToValidate');
               var Footer = document.getElementById('footer');

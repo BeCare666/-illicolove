@@ -165,24 +165,18 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 
               if (snapshot.val().IDREGION === option1) {
               div1.innerHTML = `<i class="bi bi-check-circle-fill"></i>`;
-              AFRIQUE1.addEventListener('click', function() {
-                top.location.href = "./formulaire/formulaire.html";
-              });
+ 
             } else if (snapshot.val().IDREGION === option2) {
               div2.innerHTML = `<i class="bi bi-check-circle-fill"></i>`;
-              EUROP2.addEventListener('click', function() {
-                top.location.href = "./formulaire/formulaire.html";
-              });
+              
             } else if (snapshot.val().IDREGION === option3) {
               div3.innerHTML = `<i class="bi bi-check-circle-fill"></i>`;
-              AUTRESPAYSDUMONDE3.addEventListener('click', function() {
-                top.location.href = "./formulaire/formulaire.html";
-              });
+               
             }
 
             // Vérifier la présence de l'icône dans chaque div
             AFRIQUE1.addEventListener('click', function() {
-              if (!div1.querySelector('.bi-check-circle-fill')) {
+              
                 Swal.fire({
                 title: 'Êtes-vous sûr ?',
                 text: `Nous constatons que vous avez déjà une publication 
@@ -204,11 +198,11 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
                 top.location.href = "./formulaire/formulaire.html";
                 }
               })
-            }
+            
               });
               EUROP2.addEventListener('click', function() {
-                if (!div2.querySelector('.bi-check-circle-fill')) {
-                  Swal.fire({
+                 
+                Swal.fire({
                 title: 'Êtes-vous sûr ?',
                 text: `Nous constatons que vous avez déjà une publication 
                 en cours. En procédant avec cette action, votre ancienne 
@@ -229,10 +223,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
                 top.location.href = "./formulaire/formulaire.html";
                 }
               })
-            }
+            
               });
-              AUTRESPAYSDUMONDE3.addEventListener('click', function() {
-                if (!div3.querySelector('.bi-check-circle-fill')) {
+
+              AUTRESPAYSDUMONDE3.addEventListener('click', function() {              
                 Swal.fire({
                 title: 'Êtes-vous sûr ?',
                 text: `Nous constatons que vous avez déjà une publication 
@@ -254,7 +248,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
                 top.location.href = "./formulaire/formulaire.html";
                 }
               })
-              }
+              
               });
 
               }else{

@@ -555,9 +555,11 @@
         reader.onload = function(event) {
             // Créez une nouvelle instance d'image
             var img = new Image();
+            const minWidth = 300; // La largeur minimale souhaitée
 
             // Définissez le gestionnaire d'événements pour lorsque l'image est chargée
             img.onload = function() {
+
             // Créez un élément canvas
             var canvas = document.createElement('canvas');
             var context = canvas.getContext('2d');
@@ -806,6 +808,7 @@
                myprofileidSaville.value && myprofileidoccupations.value &&
                 choicesmultipleremovebuttonsexe.value && Mycountry.value
             ){
+                const updatedValue = PieceID ? PieceID : "";
                 update(ref(db, "utilisateurs/" + UserConnectuser), {
                 MAVILLEDERESIDENCE : myprofileidMaVille.value,
                 fullname : myprofileidPrénoms.value,
@@ -818,7 +821,7 @@
                 MONSEXE : choicesmultipleremovebuttonsexe.value, 
                 TELEPHONE : NumberVaribleTable,
                 JEVEUXUNERENCONTRE : choicesmultipleremovebuttonrencontre.value,
-                PIECESDIDENTITE : PieceID , 
+                PIECESDIDENTITE : updatedValue , 
                 MESDEUXPHOTOS : Photo1ID,
                 MESDEUXPHOTO2 : Photo2ID,
                 IDREGION : IDREGION,

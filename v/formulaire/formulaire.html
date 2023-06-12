@@ -477,6 +477,9 @@
 
             // Définissez le gestionnaire d'événements pour lorsque l'image est chargée
             img.onload = function() {
+            const minWidth = 300; // La largeur minimale souhaitée
+            const minHeight = 300; // La longeur minimale souhaitée
+            if (img.width >= minWidth && img.height >= minHeight) { 
             // Créez un élément canvas
             var canvas = document.createElement('canvas');
             var context = canvas.getContext('2d');
@@ -510,6 +513,10 @@
             console.log("Contenu en base64 : ", base64Content);
             base64Contenttable.push(base64Content)
             // ...
+            }else{
+                alert(`Votre image est trop pétite. Veuillez sélectionner une image d'au moins 300x300 pixels.`)
+                inputElement.value = ""
+            }
             };
 
             // Définissez la source de l'image comme le contenu du fichier
@@ -555,11 +562,11 @@
         reader.onload = function(event) {
             // Créez une nouvelle instance d'image
             var img = new Image();
-            const minWidth = 300; // La largeur minimale souhaitée
-
             // Définissez le gestionnaire d'événements pour lorsque l'image est chargée
             img.onload = function() {
-
+            const minWidth = 300; // La largeur minimale souhaitée
+            const minHeight = 300; // La largeur minimale souhaitée
+            if (img.width >= minWidth && img.height >= minHeight) { 
             // Créez un élément canvas
             var canvas = document.createElement('canvas');
             var context = canvas.getContext('2d');
@@ -593,6 +600,10 @@
             console.log("Contenu en base64 : ", base64Contentphoto1);
             base64Contentphoto1table.push(base64Contentphoto1)
             // ...
+            }else{
+                alert(`Votre image est trop pétite. Veuillez sélectionner une image d'au moins 300x300 pixels.`)
+                inputElement1.value = ""
+            }
             };
 
             // Définissez la source de l'image comme le contenu du fichier
@@ -630,6 +641,9 @@
 
             // Définissez le gestionnaire d'événements pour lorsque l'image est chargée
             img.onload = function() {
+            const minWidth = 300; // La largeur minimale souhaitée
+            const minHeight = 300; // La longeur minimale souhaitée
+            if (img.width >= minWidth && img.height >= minHeight) { 
             // Créez un élément canvas
             var canvas = document.createElement('canvas');
             var context = canvas.getContext('2d');
@@ -662,7 +676,10 @@
             base64Contentphoto2 = base64Contentphoto2.replace(/^data:image\/jpeg;base64,/, '');
             console.log("Contenu en base64 : ", base64Contentphoto2);
             base64Contentphoto2table.push(base64Contentphoto2)
-
+            }else{
+                alert(`Votre image est trop pétite. Veuillez sélectionner une image d'au moins 300x300 pixels.`)
+                inputElement2.value = ""
+            }
             // ...
             };
 

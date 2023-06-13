@@ -85,7 +85,7 @@
                                 <p style="text-align: start !important;">Mon Genre <i
                                     class="fa fa-star required"></i></p>
                             <select id="choices-multiple-remove-buttonsexe"
-                                >
+                                required>
                                 <option value="Masculin" selected>Homme</option>
                                 <option value="Femme">Femme</option>
                                 <option value="Transgenre">Transgenre</option>
@@ -116,11 +116,10 @@
                             <h2 class="fs-title">VEUILLEZ REMPLIR LE FORMULAIRE CI-DESSOUS.</h2>
                             <h3 class="fs-subtitle">Donnez des informations précises et judicieuses.</h3>
 
-                            <p style="text-align: start !important;">Ma
-                                situation matrimoniale <i class="fa fa-star
+                            <p style="text-align: start !important;">Ma situation matrimoniale <i class="fa fa-star
                                     required"></i></p>
                             <select id="choices-multiple-remove-button"
-                                >
+                                required>
                                 <option value="Célibataire" selected>Célibataire</option>
                                 <option value="Célibataire sans enfant(s)">En couple</option>
                                 <option value="Célibataire avec enfant(s)">Divorcé(e)</option>
@@ -138,7 +137,7 @@
                             Saisiz uniquement votre numéro sans le préfixe du pays<i class="fa fa-star required"></i></p>
                             <div class="form-container">
                             <select id="countrySelect">
-                                <option value="" selected></option>
+                               <option value="" selected></option>
                             </select>
                             <input type="text" id="myprofileidtéléphone" name="facebook" onblur="validatePhoneNumber()"
                             placeholder="téléphone" pattern="[^+]*" required/>
@@ -175,7 +174,7 @@
                             <p style="text-align: start !important;">Je veux une
                                 rencontre <i class="fa fa-star required"></i></p>
                             <select id="choices-multiple-remove-buttonrencontre"
-                                >
+                                required>
                                 <option value="Amicale, une compagnie pour
                                     briser la solitude">Amicale, une compagnie
                                     pour briser la solitude</option>
@@ -244,25 +243,22 @@
                                 <option value="71-80" >71-80</option>
                                 <option value="80+" >80+</option>
                             </select>
-                            <p style="text-align: start !important;">Sa
-                                situation matrimoniale <i class="fa fa-star
+                            <p style="text-align: start !important;">Sa situation matrimoniale <i class="fa fa-star
                                     required"></i></p>
                             <select
-                                id="choices-multiple-remove-buttonmatrimoniale"
+                                id="buttonmatrimonialeID"
                                 required>
                                 <option value="Célibataire" selected>Célibataire</option>
                                 <option value="Célibataire sans enfant(s)">En couple</option>
                                 <option value="Célibataire avec enfant(s)">Divorcé(e)</option>
                                 <option value="Divorcé(e)">Veuf(ve)</option>
                             </select>
-                            <p style="text-align: start !important;" id="hecountries">Son pays de
-                                résidence <i class="fa fa-star required" ></i></p>
+                            <p style="text-align: start !important;" id="hecountries">Son pays de résidence <i class="fa fa-star required" ></i></p>
                                 <p style="text-align: start !important; display: none;" id="hecountriesId">vous pouvez selectionner plusieurs pays. <i class="fa fa-star required"></i></p>
                             <div style="display: flex;">
                             <select type="text" style="border-color: red !important;" id="myprofileidSonpays" name="gplus" placeholder="Son pays" required>
-                            <option value="" selected></option>
                             </select>
-                            <input type="text" id="getAllOption" style="display: none;">
+                            <input type="text" id="getAllOption" style="display: none;" placeholder="Son pays de résidence">
                             </div>
                             <input type="button" name="previous" class="previous action-button-previous" value="précédent" />
                             <input type="button" name="next" class="next action-button" value="Suivant" id="IDsuivant"/>
@@ -278,8 +274,7 @@
                                 name="email" placeholder="Aspect physique"  oninput="countCharacters()"></textarea>
                             <p style="text-align: start !important;">Sa ville
                                 d'habitation <i class="fa fa-star required"></i></p>
-                            <input type="text" id="myprofileidSaville"
-                                name="pass" placeholder="Sa ville" required/>
+                            <input type="text" id="myprofileidSavilleID" name="pass" placeholder="Sa ville" required/>
                             <p style="text-align: start !important;">Son travail
                                 ou occupations <i class="fa fa-star required"></i></p>
                             <input type="text" id="myprofileidoccupations"
@@ -371,20 +366,20 @@
                 var choicesmultipleremovebutton = document.getElementById('choices-multiple-remove-button');
                 var myprofileidâge = document.getElementById('myprofileidâge');
                 var myprofileidtaille = document.getElementById('myprofileidtaille');
-               // var myprofileidpoids = document.getElementById('myprofileidpoids');
-               var Mycountry = document.getElementById('mycountry');
+                var countrySelectMV = document.getElementById('countrySelect');
+                var Mycountry = document.getElementById('mycountry');
                 var choicesmultipleremovebuttonsexe = document.getElementById('choices-multiple-remove-buttonsexe');
                 var myprofileidtéléphone = document.getElementById('myprofileidtéléphone');
                 var choicesmultipleremovebuttonrencontre = document.getElementById('choices-multiple-remove-buttonrencontre');
                 var myprofileididentité = document.getElementById('myprofileididentité'); 
                 var myprofileidPhotos = document.getElementById('myprofileidPhotos');
                 var myprofileidPhoto2 = document.getElementById('myprofileidPhoto2');
-                var choicesmultipleremovebuttonSonsexe = document.getElementById('choices-multiple-remove-buttonSonsexe');
+                var buttonSonGenre = document.getElementById('choices-multiple-remove-buttonSonsexe');
                 var myprofileidtrancheâge = document.getElementById('myprofileidtrancheâge');
-                var  choicesmultipleremovebuttonmatrimoniale = document.getElementById('choices-multiple-remove-buttonmatrimoniale');
+                var  buttonmatrimonialeValue = document.getElementById('buttonmatrimonialeID');
                 var myprofileidSonpays = document.getElementById('myprofileidSonpays');
                 var myprofileidpréférences = document.getElementById('myprofileidpréférences');
-                var myprofileidSaville = document.getElementById('myprofileidSaville');
+                var myprofileidSaville = document.getElementById('myprofileidSavilleID');
                 var myprofileidoccupations = document.getElementById('myprofileidoccupations');
                 var myprofileidprécisions = document.getElementById('myprofileidprécisions');
                 var sunmitannonceid = document.getElementById('sunmitannonceid')
@@ -404,35 +399,86 @@
                 //preloader.style.display = "none" 
                 {/*console.log(snapshot.val().MAVILLEDERESIDENCE)
                 var photoDataUrl = 'data:image/png;base64,' + snapshot.val().MAVILLEDERESIDENCE;
-                var photoElement = document.getElementById("photo");
-                photoElement.src = photoDataUrl; 
+                var photoElement = document.getElementById("photo"); 
+                photoElement.src = photoDataUrl; */} 
+                const MycountryN = snapshot.val().MYCOUNTRY;  
+                const sonGenreVariable = snapshot.val().SEXEDEPROFILQUEJECHERCHE
+                const trancheâgeVariable = snapshot.val().SONAGEDEPROFILQUEJECHERCHE
+                const buttonmatrimonialeVariable = snapshot.val().SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE
+                const myprofileidSonpaysVariable = snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE
+                // Parcourir toutes les options du select et sélectionner celle qui correspond à  countrySelect
+                for (let i = 0; i < Mycountry.options.length; i++) {
+                    if (Mycountry.options[i].value === MycountryN) {
+                        Mycountry.selectedIndex = i;
+                    break;
+                    }
+                }
 
+                for (let i = 0; i < buttonSonGenre.options.length; i++) {
+                    if (buttonSonGenre.options[i].value === sonGenreVariable) {
+                        buttonSonGenre.selectedIndex = i;
+                    break;
+                    }
+                }
+
+                for (let i = 0; i < myprofileidtrancheâge.options.length; i++) {
+                    if (myprofileidtrancheâge.options[i].value === trancheâgeVariable) {
+                        myprofileidtrancheâge.selectedIndex = i;
+                    break;
+                    }
+                }
+
+                for (let i = 0; i < buttonmatrimonialeValue.options.length; i++) {
+                    if (buttonmatrimonialeValue.options[i].value === buttonmatrimonialeVariable) {
+                        buttonmatrimonialeValue.selectedIndex = i;
+                    break;
+                    } 
+                }
+
+                for (let i = 0; i < myprofileidSonpays.options.length; i++) {
+                    if (myprofileidSonpays.options[i].value === myprofileidSonpaysVariable) {
+                        var addBorderColor = document.getElementById('getAllOption');
+                        var MYprofileidSonpays = document.getElementById('myprofileidSonpays');
+                        document.getElementById('getAllOption').style.display ="block"           
+                        myprofileidSonpays.selectedIndex = i;
+                        addBorderColor.value = myprofileidSonpaysVariable
+                        MYprofileidSonpays.style.borderColor = "green";
+                        document.getElementById("myprofileidSonpays").dispatchEvent(new Event("change"));
+                    break;
+                    }
+                }
                  myprofileidMaVille.value =  snapshot.val().MAVILLEDERESIDENCE
                  myprofileidPrénoms.value =   snapshot.val().fullname
                  myprofileidnationèèalité.value =  snapshot.val().MANATIONNALITE
                  myprofileidtravail.value =   snapshot.val().MONTRAVAILLEOUOCCUPATION
                  choicesmultipleremovebutton.value =  snapshot.val().MASITUATIONMATRIMONIALE
                  myprofileidâge.value =  snapshot.val().MONAGE
-                // myprofileidSonpays.value = snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE
                  choicesmultipleremovebuttonsexe.value =  snapshot.val().MONSEXE
                  myprofileidtéléphone.value =   snapshot.val().TELEPHONE
                  choicesmultipleremovebuttonrencontre.value =   snapshot.val().JEVEUXUNERENCONTRE
+                 myprofileidSaville.value = snapshot.val().VILLEDHABITATIONDEPROFILQUEJECHERCHE
+                 myprofileidoccupations.value =   snapshot.val().TRAVAILDEDEPROFILQUEJECHERCHE
+                 
+                 buttonSonGenre.value =  snapshot.val().SEXEDEPROFILQUEJECHERCHE
+                 myprofileidtrancheâge.value =   snapshot.val().SONAGEDEPROFILQUEJECHERCHE
+                 buttonmatrimonialeValue.value =  snapshot.val().SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE
+                 myprofileidSonpays.value =  snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE
+                 myprofileidpréférences.value =   snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE
+                 myprofileidprécisions.value =   snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE 
+
                  {/*
-                 myprofileidtaille.value =  snapshot.val().MATAILLE
-                 myprofileidpoids.value =   snapshot.val().MONPOIDS
-                 myprofileidteint.value =   snapshot.val().MONTEINT
-                 myprofileididentité.value =   snapshot.val().PIECESDIDENTITE 
+                myprofileididentité.value =   snapshot.val().PIECESDIDENTITE 
                  myprofileidPhotos.value =  snapshot.val().MESDEUXPHOTOS
                  myprofileidPhoto2.value =  snapshot.val().MESDEUXPHOTO2
-                 choicesmultipleremovebuttonSonsexe.value =  snapshot.val().SEXEDEPROFILQUEJECHERCHE
-                 myprofileidtrancheâge.value =   snapshot.val().SONAGEDEPROFILQUEJECHERCHE
-                 choicesmultipleremovebuttonmatrimoniale.value =  snapshot.val().SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE
-                 //myprofileidSonpays.value =  snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE
-                 myprofileidpréférences.value =   snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE
-                 myprofileidSaville.value =   snapshot.val().VILLEDHABITATIONDEPROFILQUEJECHERCHE
-                 myprofileidoccupations.value =   snapshot.val().TRAVAILDEDEPROFILQUEJECHERCHE
-                 myprofileidprécisions.value =   snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE*/} 
-                
+
+                 myprofileidtaille.value =  snapshot.val().MATAILLE
+                 myprofileidpoids.value =   snapshot.val().MONPOIDS
+                 myprofileidteint.value =   snapshot.val().MONTEINT*/}
+                 //alert(VILLEDHABITATIONDEPROFILQUEJECHERCHE)
+                 //myprofileidSaville.value =   snapshot.val().VILLEDHABITATIONDEPROFILQUEJECHERCHE
+                // myprofileidSonpays.value = snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE
+                //alert(snapshot.val().SEXEDEPROFILQUEJECHERCHE) getAllOption myprofileidSonpays 
+               
             } else {
                 document.getElementById('myFormulaireId').style.display = "none" 
                 var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
@@ -450,7 +496,7 @@
             }
             })
             .catch((error) => {
-            alert("il y a une ERROR " + error);
+            console.log("il y a une ERROR " + error);
             });
         }
         window.onload = getdata;
@@ -796,31 +842,13 @@
             const NumberVaribleTable = numberVaribleTable.slice(-1).pop();
             var allOptions = tableau.flat().join(', ');
             document.getElementById('getAllOption').value = allOptions;
-            console.log(myprofileidMaVille.value)
-            console.log(myprofileidPrénoms.value)
-            console.log(choicesmultipleremovebuttonrencontre.value)
-            console.log(Photo1ID)
-            console.log(choicesmultipleremovebuttonrencontre.value)
-            console.log( myprofileidnationèèalité.value)
-            console.log(Photo2ID)
-            console.log( myprofileidtravail.value)
-            console.log(IDREGION)
-            console.log( choicesmultipleremovebuttonSonsexe.value)
-            console.log(choicesmultipleremovebutton.value)
-            console.log(myprofileidtrancheâge.value)
-            console.log(myprofileidâge.value)
-            console.log(choicesmultipleremovebuttonmatrimoniale.value)
-            console.log(allOptions)
-            console.log(myprofileidSaville.value)
-            console.log(myprofileidoccupations.value)
-           console.log(choicesmultipleremovebuttonsexe.value)
-            console.log(Mycountry.value)
+            
             if(myprofileidMaVille.value && NumberVaribleTable &&
                myprofileidPrénoms.value && choicesmultipleremovebuttonrencontre.value &&
                myprofileidnationèèalité.value && Photo1ID && Photo2ID &&
-               myprofileidtravail.value && IDREGION && choicesmultipleremovebuttonSonsexe.value &&
+               myprofileidtravail.value && IDREGION && buttonSonGenre.value &&
                choicesmultipleremovebutton.value &&  myprofileidtrancheâge.value &&
-               myprofileidâge.value && choicesmultipleremovebuttonmatrimoniale.value &&
+               myprofileidâge.value && buttonmatrimonialeValue.value &&
                allOptions && 
                myprofileidSaville.value && myprofileidoccupations.value &&
                 choicesmultipleremovebuttonsexe.value && Mycountry.value
@@ -842,9 +870,9 @@
                 MESDEUXPHOTOS : Photo1ID,
                 MESDEUXPHOTO2 : Photo2ID,
                 IDREGION : IDREGION,
-                SEXEDEPROFILQUEJECHERCHE : choicesmultipleremovebuttonSonsexe.value,
+                SEXEDEPROFILQUEJECHERCHE : buttonSonGenre.value,
                 SONAGEDEPROFILQUEJECHERCHE : myprofileidtrancheâge.value,
-                SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE : choicesmultipleremovebuttonmatrimoniale.value,
+                SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE : buttonmatrimonialeValue.value,
                 PAYSDERESIDENCEDEPROFILQUEJECHERCHE : allOptions,
                 PHYSIQUEDEPROFILQUEJECHERCHE : myprofileidpréférences.value,
                 VILLEDHABITATIONDEPROFILQUEJECHERCHE : myprofileidSaville.value,

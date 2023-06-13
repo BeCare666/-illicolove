@@ -125,8 +125,8 @@
        var myalldatas = []; 
        var myalldatasUSers = []; 
        var tableauTotakeidd = []
-       const dbref = ref(db, "utilisateurs/");
-       onValue(dbref, (snopshot) => {
+       const dbref = ref(db);
+       get(child(dbref, "utilisateurs")).then((snopshot) => {
         snopshot.forEach((childsnopshot) => {
           myalldatasUSers.push(childsnopshot.val());
         });
@@ -159,7 +159,7 @@
             },5000)  
           }
         if (myalldatas.length != 0) {
-          var sixPremiersElements = myalldatas.sort(() => Math.random() - 0.5).slice(0, 4); //slice(0, 5);
+          var sixPremiersElements = myalldatas.sort(() => Math.random() - 0.5).slice(0, 5); //slice(0, 5);
          // console.log(sixPremiersElements);
           return sixPremiersElements.forEach((k) => {
           //validation du compte par les admin
@@ -195,7 +195,7 @@
           trow.innerHTML =
           `
           <div class=" align-items-stretch"
-            data-aos="fade-up" data-aos-delay="100" style="width: 90%; height: 60vh; padding: 5px;">
+            data-aos="fade-up" data-aos-delay="100" style="width: 95%; height: 52vh; padding: 5px;">
               <div class="member">
                 <div class="member-img">
                   <img src="${photoDataUrl}" class="img-fluid"
@@ -211,11 +211,11 @@
                 <div class="member-info" id="member-info" style="background: url(assets/img/background.jpg) no-repeat !important;">
                   <h4>${k.username}</h4>
                   <span>${content}</span>
-                  <p style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${k.MYCOUNTRY}. ${k.MAVILLEDERESIDENCE}, ${k.MANATIONNALITE}</p>
+                  <p style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"><i class="bi bi-geo-alt-fill me-2 text-info"></i> ${k.MYCOUNTRY}. ${k.MAVILLEDERESIDENCE}, ${k.MANATIONNALITE}</p>
                 </div>
               </div>
             </div>
-            <div style="opacity: 0;">sjdfklgdf <br>qsdfgf</div>                
+            <div style="opacity: 0;">dfjdklmsldlff <br>dffff</div>      
             `
             divq.append(trow)
             
@@ -230,11 +230,11 @@
           trow.innerHTML =
           `
           <div class=" align-items-stretch"
-            data-aos="fade-up" data-aos-delay="100" style="width: 90%; height: 55vh; padding: 5px;">
+            data-aos="fade-up" data-aos-delay="100" style="width: 90%; height: 52vh; padding: 5px;">
               <div class="member">
                 <div class="member-img">
                   <img src="${photoDataUrl}" class="img-fluid"
-                    alt=""style="height: 30vh; width: 100%;">
+                    alt="" style="width: 100%; height: 30vh; ">
                   <div class="social">
                     <a id="mycontactidw" style="cursor: none; pointer-events: none; opacity: 0.5;" href="https://wa.me/${k.TELEPHONE}?text=Salut,%20comment%20vas-tu%20?.%20Moi%20c'est%20${k.fullname},%20${k.MONTRAVAILLEOUOCCUPATION}.%20Je%20suis%20vraiment%20intéressé%20pas%20ton%20profil%20que%20j'ai%20vu%20sur%20le%20site%20de%20rencontre%20illicolove.">
                     <i class="bi bi-whatsapp" style="cursor: none; pointer-events: none; opacity: 0.5;"></i></a>
@@ -245,13 +245,12 @@
                 </div>
                 <div class="member-info" id="member-info" style="background: url(assets/img/background.jpg) no-repeat !important;">
                   <h4>${k.username}</h4>
-                  <span>${k.fullname}</span>
-                  <p style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${k.MYCOUNTRY}. ${k.MAVILLEDERESIDENCE}, ${k.MANATIONNALITE}</p>
-                  <p>${content}.</p>
+                  <span>${content}</span>
+                  <p style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"><i class="bi bi-geo-alt-fill me-2 text-info"></i> ${k.MYCOUNTRY}. ${k.MAVILLEDERESIDENCE}, ${k.MANATIONNALITE}</p>
                 </div>
               </div>
             </div>
-            <div style="opacity: 0;">sjdfklgdf <br>qsdfgf</div>                        
+            <div style="opacity: 0;">dfjdklmsldlff <br>dffff</div>                  
             `
             divq.append(trow)
             // Function to alert user the unity is end

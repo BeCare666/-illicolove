@@ -14,12 +14,12 @@ const dbRef = firebase.database().ref();
 
 // Obtenez une référence à l'emplacement contenant les données d'utilisateur
 const usersRef = dbRef.child("utilisateurs");
-const UserConnectuser = localStorage.getItem("unserconnect");
+ //const UserConnectuser = localStorage.getItem("unserconnect");
   // Écoute de l'événement "click" sur le bouton de recherche
   // Écoute de l'événement "click" sur le bouton de recherche
   //const password = document.getElementById('password').value; 
   function submitmy(){
-    var tableToTakeUsername =[]
+    var tableToTakeUserId =[]
     var tableToTakeUserrspon = []
     var tableToTakeUserrsponUp = []
     var TquestionSecure = []
@@ -35,7 +35,9 @@ usersRef.orderByChild("email").equalTo(email).once("value", function(snapshot) {
   if (snapshot.exists()) {
     tableToTakeUserrspon[0].forEach(function(userSnapshot){
     var questionSecure = userSnapshot.val().QUESTIONSECUREPASSWORD
+    var questionSecureIdUser = userSnapshot.val().userId
     TquestionSecure.push(questionSecure)
+    tableToTakeUserId.push(questionSecureIdUser)
     })
  
   document.getElementById('eleementIDCose').style.display = "none"
@@ -94,9 +96,10 @@ usersRef.orderByChild("email").equalTo(email).once("value", function(snapshot) {
         if (result.isConfirmed) {
           // Référence à la base de données des utilisateurs
           var usersRef = firebase.database().ref("utilisateurs");
+          //const UserConnectuser = localStorage.getItem("unserconnect");
           // Mettre à jour l'e-mail de l'utilisateurF
           var updates = {};
-          updates["/" + UserConnectuser + "/password"] = tableToTakeUserrsponUp[0];
+          updates["/" + tableToTakeUserId[0] + "/password"] = tableToTakeUserrsponUp[0];
           usersRef.update(updates)
             .then(function() {
               document.getElementById('eleementIDCose').style.display = "none"
@@ -146,7 +149,7 @@ usersRef.orderByChild("email").equalTo(email).once("value", function(snapshot) {
   }
 });
 
-  } else {
+} else {
     document.getElementById('eleementIDCose').style.display = "none"
     Swal.fire({
       

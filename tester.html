@@ -70,7 +70,7 @@
       // Écouteur d'événement pour changer la langue
       $("#language-select").on("change", function() {
         var selectedLanguage = $(this).val();
-
+        alert($(this).val())
         // Enregistrer la langue sélectionnée dans le stockage local
         localStorage.setItem('selectedLanguage', selectedLanguage);
 

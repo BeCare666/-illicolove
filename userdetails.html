@@ -461,12 +461,14 @@
                 }else{
                   if(!snapshot.val().VALIDERMONCOMPTE) {
                   var ContactUserbtnID = document.getElementById('contactUserbtnID');
-                   var Footer = document.getElementById('footer');
-                  var ToCacheSectionId = document.getElementById('toCacheSectionId');
+                  var Main = document.getElementById('main');
+                  var Footer = document.getElementById('footer');
+                  var header = document.getElementById('header');
                   var ContactUserID = document.getElementById('contactUserID');
                   ContactUserbtnID.style.opacity = "0.5"
                   ContactUserbtnID.addEventListener('click', function(){
-                    ToCacheSectionId.style.display = "none"
+                    header.style.display = "none"
+                    Main.style.display = "none"
                      Footer.style.display = "none"
                     Swal.fire({
                     icon: 'error',
@@ -477,8 +479,9 @@
                     footer: `<a href="./v/profil.html">Voulez vous  publier votre annonce ?</a>`
                     }).then((result) => {
                         if (result.isConfirmed) {
-                          ToCacheSectionId.style.display = "block"
+                          header.style.display = "block"
                           Footer.style.display = "block"
+                          Main.style.display = "block"
                         }
                     })
                   })
@@ -486,13 +489,15 @@
                 }
                   if(snapshot.val().COMPTECREDIT ===0){
                     var ContactUserbtnID = document.getElementById('contactUserbtnID');
+                    var Main = document.getElementById('main');
                    var Footer = document.getElementById('footer');
-                  var ToCacheSectionId = document.getElementById('toCacheSectionId');
+                  var header = document.getElementById('header');
                   var ContactUserID = document.getElementById('contactUserID');
                   ContactUserbtnID.style.opacity = "0.5"
                   ContactUserbtnID.addEventListener('click', function(){
-                    ToCacheSectionId.style.display = "none"
-                     Footer.style.display = "none"
+                    header.style.display = "none"
+                    Main.style.display = "none"
+                    Footer.style.display = "none"
                     Swal.fire({
                     icon: 'error',
                     allowOutsideClick: false,
@@ -502,7 +507,8 @@
                     footer: `<a href="./v/profil.html">Voulez vous  payer des unités ?</a>`
                     }).then((result) => {
                         if (result.isConfirmed) {
-                          ToCacheSectionId.style.display = "block"
+                          header.style.display = "block"
+                          Main.style.display = "block"
                           Footer.style.display = "block"
                         }
                     })

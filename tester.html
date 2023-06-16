@@ -1,106 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Exemple de page avec traductions</title>
-  <script src="https://unpkg.com/jquery"></script>
-  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      // Configuration de i18next pour les différentes langues
-      i18next.init({
-        lng: localStorage.getItem('selectedLanguage') || 'fr',
-        debug: true,
-        resources: {
-          fr: {
-            translation: {
-              "title": "Exemple de page avec traductions",
-              "sectionTitle": "Section",
-              "sectionText": "Ceci est le contenu de la section.",
-              "sectionButton": "Cliquez ici",
-              "subtitle": "Sous-titre",
-              "content": "Ceci est le contenu principal de la page."
-            }
-          },
-          es: {
-            translation: {
-              "title": "Ejemplo de página con traducciones",
-              "sectionTitle": "Sección",
-              "sectionText": "Este es el contenido de la sección.",
-              "sectionButton": "Haz clic aquí",
-              "subtitle": "Subtítulo",
-              "content": "Este es el contenido principal de la página."
-            }
-          },
-          en: {
-            translation: {
-              "title": "Example Page with Translations",
-              "sectionTitle": "Section",
-              "sectionText": "This is the section content.",
-              "sectionButton": "Click here",
-              "subtitle": "Subtitle",
-              "content": "This is the main content of the page."
-            }
-          }
-        }
-      }, function(err, t) {
-        // Traduire le contenu de la page après initialisation de i18next
-        translatePage();
-      });
-
-      // Fonction pour traduire le contenu de la page
-      function translatePage() {
-        $("#title").text(i18next.t("title"));
-        $("#section-title").text(i18next.t("sectionTitle"));
-        $("#section-text").text(i18next.t("sectionText"));
-        $("#section-button").text(i18next.t("sectionButton"));
-        $("#subtitle").text(i18next.t("subtitle"));
-        $("#content").text(i18next.t("content"));
-      }
-
-      // Récupérer la langue sélectionnée à partir du stockage local
-      var selectedLanguage = localStorage.getItem('selectedLanguage');
-
-      if (selectedLanguage) {
-        // Changer la langue selon la valeur récupérée
-        $("#language-select").val(selectedLanguage);
-        i18next.changeLanguage(selectedLanguage);
-      }
-
-      // Écouteur d'événement pour changer la langue
-      $("#language-select").on("change", function() {
-        var selectedLanguage = $(this).val();
-        alert($(this).val())
-        // Enregistrer la langue sélectionnée dans le stockage local
-        localStorage.setItem('selectedLanguage', selectedLanguage);
-
-        // Changer la langue avec i18next
-        i18next.changeLanguage(selectedLanguage, function(err, t) {
-          if (err) return console.error(err);
-          translatePage();
-        });
-      });
-    });
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Swipe Interface</title>
 </head>
 <body>
-  <h1 id="title"></h1>
-  
-  <section>
-    <h2 id="section-title"></h2>
-      <p id="section-text"></p>
-      <button id="section-button"></button>
-    </section>
-  
-    <h3 id="subtitle"></h3>
-    <p id="content"></p>
-  
-    <select id="language-select">
-      <option value="fr">Français</option>
-      <option value="es">Español</option>
-      <option value="en">English</option>
-    </select>
-  
-  </body>
-  </html>
-  
+  <script>
+    function formatTimeAgo(date) {
+  const now = new Date();
+  const diff = now - date;
+
+  // Conversion des millisecondes en secondes, minutes, heures et jours
+  const seconds = Math.floor(diff / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+
+  // Vérification de la durée écoulée
+  if (days > 0) {
+    return `En ligne il y a ${days} jours`;
+  } else if (hours > 0) {
+    return `En ligne il y a ${hours} heures`;
+  } else if (minutes > 0) {
+    return `En ligne il y a ${minutes} minutes`;
+  } else {
+    return "En ligne maintenant";
+  }
+}
+
+// Exemple d'utilisation
+const timestamp = new Date("2023-06-09T00:46:00");
+const formattedTimeAgo = formatTimeAgo(timestamp);
+console.log(formattedTimeAgo);
+
+  </script>
+</body>
+</html>

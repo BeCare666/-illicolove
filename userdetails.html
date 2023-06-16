@@ -43,7 +43,7 @@
         if (/Mobi|Android/i.test(navigator.userAgent)) {
       // Code pour appareil mobile
       //document.body.style.fontSize = "16px"; // Modifier la taille de la police pour appareils mobiles
-      document.getElementById('contactUserbtnIDB').style.position = "relative"
+      document.getElementById('contactUserbtnIDB').style.position = "relative" 
       document.getElementById('contactUserbtnIDB').style.top = "0"
       document.getElementById('contactUserbtnIDB').style.left = "10vh"
       
@@ -55,11 +55,27 @@
   </head>
 
   <body>
-    <a href="./u/index.html"> <button  class="btn btn mt-3" style="margin-left: 5px; cursor: pointer; background-color: #FFB6C1; color: white;" 
-      role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button></a>
-    <section id="toCacheSectionId">
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top" style="background-color: white;">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- <img src="assets/img/logo.png" alt="">-->
+        <button class="btn btn" style="margin-left: 5px; cursor: pointer; background-color: #FFB6C1; color: white;" 
+        role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button>
+      </a>
+
+      <nav id="navbar" class="navbar" style="cursor: pointer;">
+       <a href="index.html"> <i class="bi bi-house-door" style="font-size: 26px !important; color: #FFB6C1;"></i></a>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
     <main id="main">
       <!-- ======= Portfolio Details Section ======= -->
+      <div style="opacity: 0;">sgtorgfgbtolkfgobridfvtor,odfrgseo 
+      <br>qsjdkflgkqfbpkdjfbokdjfbdj<br>bokdjfbdj<br></div>
       <section id="portfolio-details" class="portfolio-details">
         <div class="container">
           <div class="row gy-4">
@@ -193,7 +209,7 @@
                   <td id="monpseudonyme"></td>
                 </tr>
                 <tr>
-                  <td>Mon âge :</td>
+                  <td>Ma tranche d'âge :</td>
                   <td id="monages"></td>
                 </tr>
                 <tr>

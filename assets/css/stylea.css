@@ -2040,7 +2040,14 @@
     margin-right: 2vh !important;
   }
  #language-select li:hover{
-  background-color: #013ca3;
+  background-color: #000080;
+ }
+ #language-select img {
+  width: 4vh;
+  height: 4vh;
+ }
+ .header .dropdown ul{
+  background-color: #FFB6C1 !important;
  }
   .AllClassUser i {
     font-size: 6vh !important;

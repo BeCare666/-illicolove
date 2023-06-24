@@ -11,7 +11,7 @@
     <!-- Favicons
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
-
+    <link href="assets/img/illicolove.png" rel="icon">
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
@@ -412,7 +412,7 @@
                 document.getElementById('myEmail').innerHTML = `<a href="mailto:${snapshot.val().email}">${snapshot.val().email}</a>`
                 document.getElementById('residenceId').innerHTML = `${snapshot.val().MAVILLEDERESIDENCE}`
                 document.getElementById('occupation').innerHTML = `${snapshot.val().MONTRAVAILLEOUOCCUPATION}`
-                var suiteIdCondi = `${snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE}` ? `${snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE} ` : `<i class="fas fa-database" style="font-size: 10vh !important; color: #FFB6C1;"></i> Pas de données`;
+                var suiteIdCondi = `${snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE}` ? `${snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE} ` : `<p id="IDTRANSLATEUSERD24YX"></p>`;
                 document.getElementById('suiteId').innerHTML = `${suiteIdCondi}`
                 Thmaville.innerHTML = `${snapshot.val().MAVILLEDERESIDENCE}`
                 Monpseudonyme.innerHTML = `${snapshot.val().username}`
@@ -438,7 +438,10 @@
                 $('[id="IDTRANSLATEUSERD23"]').text(texteIDTRANSLATEUSERD23);
 
                 var texteIDTRANSLATEUSERD24 = i18next.t("IDTRANSLATEUSERD24");
-                $('[id="IDTRANSLATEUSERD24"]').html(texteIDTRANSLATEUSERD24);  
+                $('[id="IDTRANSLATEUSERD24"]').html(texteIDTRANSLATEUSERD24); 
+                
+                var texteIDTRANSLATEUSERD24YX = i18next.t("IDTRANSLATEUSERD24");
+                $('[id="IDTRANSLATEUSERD24YX"]').html(texteIDTRANSLATEUSERD24YX);  
               } else {
                 Swal.showValidationMessage(i18next.t('IDTRANSLATEUSERD25'));
                   //alert("no data");

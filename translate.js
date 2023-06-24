@@ -1042,7 +1042,7 @@ $(document).ready(function() {
 
 
 
-          "IDTRANSLATEUSERD24":`<i class="fas fa-database" style="font-size: 10vh !important; color: #FFB6C1;"></i> Pas de données.`,
+          "IDTRANSLATEUSERD24":`<i class="fas fa-database" style="font-size: 5vh !important; color: #FFB6C1;"></i> Pas de données.`,
           "IDTRANSLATEUSERD25":`Pas de données.`,
           "IDTRANSLATEUSERD26":`il y a une ERREUR.`,
           "IDTRANSLATEUSERD27":`Votre compte est débité`,
@@ -2067,7 +2067,7 @@ $(document).ready(function() {
             
             
             
-            "IDTRANSLATEUSERD24":`<i class=" fas fa- database " style="font-size: 10vh !important; color : #FFB6C1;"></i> Sin datos.`,
+            "IDTRANSLATEUSERD24":`<i class="fas fa-database" style="font-size: 5vh !important; color: #FFB6C1;"></i> Sin datos.`,
             "IDTRANSLATEUSERD25":`Sin datos.`,
             "IDTRANSLATEUSERD26":`hay un ERROR.`,
             "IDTRANSLATEUSERD27":`Su cuenta está debitada`,
@@ -3095,7 +3095,7 @@ $(document).ready(function() {
             
             
             
-            "IDTRANSLATEUSERD24":`<i class=" fas fa- database " style="font-size: 10vh !important; color : #FFB6C1;"></i> No data.`,
+            "IDTRANSLATEUSERD24":`<i class="fas fa-database" style="font-size: 5vh !important; color: #FFB6C1;"></i> No data.`,
             "IDTRANSLATEUSERD25":`No data.`,
             "IDTRANSLATEUSERD26":`there is an ERROR.`,
             "IDTRANSLATEUSERD27":`Your account is debited`,
@@ -3683,11 +3683,10 @@ $(document).ready(function() {
     // Écouteur d'événement pour changer la langue
     $("#language-select li").on("click", function() {
     var selectedLanguage = $(this).find("img").attr("alt");
-    // Faire quelque chose avec la valeur de "language"
-    //alert(selectedLanguage);
     // Enregistrer la langue sélectionnée dans le stockage local
     localStorage.setItem('selectedLanguage', selectedLanguage);
-
+    $('#language-select').hide();
+    location.reload();
     // Changer la langue avec i18next
     i18next.changeLanguage(selectedLanguage, function(err, t) {
     if (err) return console.error(err);

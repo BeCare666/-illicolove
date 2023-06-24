@@ -1037,6 +1037,7 @@ $(document).ready(function() {
           "IDTRANSLATEUSERD21":`Sa ville d'habitation :`,
           "IDTRANSLATEUSERD22":`Son travail ou occupation :`,
           "IDTRANSLATEUSERD23":`En ligne le`,
+          "IDTRANSLATEUSERD23VG":`<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> en ligne`,
 
 
 
@@ -1780,9 +1781,9 @@ $(document).ready(function() {
             "IDTRANSLATEPROFIL7":`Mis datos`,
             "myNameIDX": `Borrar su cuenta`,
             "myBtn": `Recargar mi cuenta`,
-            "IDTRANSLATEPROFIL9": `Ir a inicio`,
+            "IDTRANSLATEPROFIL9": `Ir a inicio`,  
             "IDTRANSLATEPROFIL10":`Cerrar sesión`,
-            "CONSULTA LOS ANUNCIOS": `CONSULTA LOS ANUNCIOS`,
+            "CONSULTEZLESANNONCES": `CONSULTA LOS ANUNCIOS`,
             "IDTRANSLATEPROFIL11":`EDITA TU ANUNCIO`,
             "IDTRANSLATEPROFIL12":`PUBLICAR ANUNCIO`,
             "IDTRANSLATEPROFIL13":`¡Bienvenido!`,
@@ -2063,6 +2064,7 @@ $(document).ready(function() {
             "IDTRANSLATEUSERD21":`Su ciudad de residencia:`,
             "IDTRANSLATEUSERD22":`Su trabajo u ocupación:`,
             "IDTRANSLATEUSERD23":`En línea el`,
+            "IDTRANSLATEUSERD23VG":`<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> En línea`,
             
             
             
@@ -2809,7 +2811,7 @@ $(document).ready(function() {
             "myBtn": `Recharge my account`,
             "IDTRANSLATEPROFIL9": `Go to home`,
             "IDTRANSLATEPROFIL10":`Logout`,
-            "CHECK THE ADS": `CHECK THE ADS`,
+            "CONSULTEZLESANNONCES": `CHECK THE ADS`,
             "IDTRANSLATEPROFIL11":`EDIT YOUR ADVERT`,
             "IDTRANSLATEPROFIL12":`POST AN AD`,
             "IDTRANSLATEPROFIL13":`Welcome to you!`,
@@ -3091,6 +3093,7 @@ $(document).ready(function() {
             "IDTRANSLATEUSERD21":`Her city of residence:`,
             "IDTRANSLATEUSERD22":`His job or occupation:`,
             "IDTRANSLATEUSERD23":`Online on`,
+            "IDTRANSLATEUSERD23VG":`<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> Online`,
             
             
             
@@ -3630,8 +3633,9 @@ $(document).ready(function() {
       $("#IDTRANSLATEUSERD19").text(i18next.t("IDTRANSLATEUSERD19"));
       $("#IDTRANSLATEUSERD20").text(i18next.t("IDTRANSLATEUSERD20"));
       $("#IDTRANSLATEUSERD21").text(i18next.t("IDTRANSLATEUSERD21"));
-      $("#IDTRANSLATEUSERD22").text(i18next.t("IDTRANSLATEUSERD22"));
+      $("#IDTRANSLATEUSERD22").text(i18next.t("IDTRANSLATEUSERD22")); 
       $("#IDTRANSLATEUSERD23").text(i18next.t("IDTRANSLATEUSERD23"));
+      $("#IDTRANSLATEUSERD23VG").html(i18next.t("IDTRANSLATEUSERD23VG"));
       $("#IDTRANSLATEUSERD24").text(i18next.t("IDTRANSLATEUSERD24"));
       $("#IDTRANSLATEUSERD25").text(i18next.t("IDTRANSLATEUSERD25"));
       $("#IDTRANSLATEUSERD26").text(i18next.t("IDTRANSLATEUSERD26"));

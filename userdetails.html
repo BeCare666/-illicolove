@@ -430,7 +430,7 @@
                 document.getElementById('myprefenceId').innerHTML = `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}` ? `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}` : `<p id="IDTRANSLATEUSERD24"></p>`;
                 // to now if the user is connect or no
                 const content = snapshot.val().ONLINEDATE === snapshot.val().ONLINEHOURS
-                ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> ${snapshot.val().ONLINEHOURS} `   
+                ? `<div id="IDTRANSLATEUSERD23VG"></div>`   
                 : `<div style="display:flex;"><p id="IDTRANSLATEUSERD23"></p> &nbsp;<p>${snapshot.val().ONLINEDATE} à ${snapshot.val().ONLINEHOURS}</div>`;
                 connexionMyID.innerHTML = content
                 var texteIDTRANSLATEUSERD23 = i18next.t("IDTRANSLATEUSERD23"); 
@@ -440,7 +440,10 @@
                 $('[id="IDTRANSLATEUSERD24"]').html(texteIDTRANSLATEUSERD24);
 
                 var texteIDTRANSLATEUSERD24YX = i18next.t("IDTRANSLATEUSERD24");
-                $('[id="IDTRANSLATEUSERD24YX"]').html(texteIDTRANSLATEUSERD24YX);  
+                $('[id="IDTRANSLATEUSERD24YX"]').html(texteIDTRANSLATEUSERD24YX); 
+
+                var texteIDTRANSLATEUSERD24YX = i18next.t("IDTRANSLATEUSERD23VG");
+                $('[id="IDTRANSLATEUSERD23VG"]').html(texteIDTRANSLATEUSERD24YX);  
               } else {
                 Swal.showValidationMessage(i18next.t('IDTRANSLATEUSERD25'));
                   //alert("no data");

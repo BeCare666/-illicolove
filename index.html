@@ -41,7 +41,9 @@
   <!--import firebase--->
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
-  
+
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
  
 </head>
 
@@ -53,33 +55,33 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- <img src="assets/img/logo.png" alt="">-->
+        <img src="assets/img/illicolove.png" alt=""> 
         <span>illicolove</span>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Accueil</a></li>
-          <li><a class="nav-link scrollto" href="#about">À propos</a></li>
+          <li><a class="nav-link scrollto active" href="#hero" id="IDTRANSLATE1"></a></li>
+          <li><a class="nav-link scrollto" href="#about" id="IDTRANSLATE2"></a></li>
           <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li>-->
-          <li><a class="nav-link scrollto" href="Comment&ça&fonctionne.html">Comment ça fonctionne ?</a></li>
-          <li class="dropdown"><a href="#"><span>Termes</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto" href="Comment&ça&fonctionne.html" id="IDTRANSLATE3"></a></li>
+          <li class="dropdown"><a href="#"><span id="IDTRANSLATE4"></span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="termes&conditions.html">Conditions Générales d’Utilisation</a></li>
-              <li><a href="politique.html">Politique de Confidentialité</a></li>
+              <li><a href="termes&conditions.html" id="IDTRANSLATE5"></a></li>
+              <li><a href="politique.html" id="IDTRANSLATE6"></a></li>
             </ul>
           </li>  
           <li class="dropdown"><a href="#"><span><i class="bi bi-globe2"></i></span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1eb_1f1f7/32.png" alt="" ></li>
-              <li  style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1ec_1f1e7/32.png" alt=""></li>
-              <li  style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1ea_1f1f8/32.png" alt=""></li>
+            <ul id="language-select">
+              <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1eb_1f1f7/32.png" alt="fr" ></li>
+              <li  style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1ec_1f1e7/32.png" alt="en"></li>
+              <li  style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1ea_1f1f8/32.png" alt="es"></li>
             </ul>
           </li>
           <li><a href="faq.html">F.A.Q</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="./v/login/signup.html">S'inscrire</a></li>
-          <li><a class="getstarted scrollto" href="./v/login/login.html">Se connecter</a></li>
+          <li><a class="nav-link scrollto" href="#contact" id="IDTRANSLATE7"></a></li>
+          <li><a class="getstarted scrollto" href="./v/login/signup.html" id="IDTRANSLATE8"></a></li>
+          <li><a class="getstarted scrollto" href="./v/login/login.html" id="IDTRANSLATE9"></a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -93,14 +95,15 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-5 d-flex flex-column mt-5 justify-content-center">
-          <h1 data-aos="fade-up" style="font-size: 23px !important;"><strong style="color: #bb0852; font-size: 23px !important;">illicolove,</strong> votre plateforme de rencontres, pour lutter contre le célibat et
-            la solitude.</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">Nous considérons la solitude involontaire comme un problème humanitaire et nous
-            nous engageons à offrir une solution aux personnes qui en souffrent.</h2>
+         <div>
+          <h1 data-aos="fade-up" style="font-size: 23px !important;"><strong style="color: #bb0852; font-size: 23px !important;">illicolove</strong></h1>
+            <h1 data-aos="fade-up" style="font-size: 23px !important;" id="IDTRANSLATE11"> </h1>
+         </div>
+          <h2 data-aos="fade-up" data-aos-delay="400" id="IDTRANSLATE12"></h2>
           <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-center text-lg-start">
               <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                <span>À propos</span>
+                <span id="IDTRANSLATE13"></span>
                 <i class="bi bi-arrow-right"></i>
               </a>
             </div>
@@ -126,20 +129,15 @@
           </div>
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="content">
-              <h3>À propos de nous <i class="bi bi-check-circle-fill"></i></h3>
-              <h2>Votre plateforme de rencontres en ligne illicolove.com vous est proposée par les
-                Établissements BAKO FAMILIA &amp; COMPANY, une entreprise individuelle(EI) de
-                droit béninois immatriculée au Registre du Commerce et du Crédit Mobilier RCCM
-                RB/COT/08/A4101 ; à l’Identifiant Fiscal Unique (IFU) 3200800938610.</h2>
+              <h3 id="IDTRANSLATE14"> <i class="bi bi-check-circle-fill"></i></h3>
+              <h2 id="IDTRANSLATE15"></h2>
                 
-              <p>
-                Elle a pour activités, le Wedding planning (accompagnement dans l’organisation de
-                mariage), le Tourisme-Loisirs, l’organisation de foires et Salons. Elle a été créée en
-                Mai 2008 à Cotonou. 
+              <p id="IDTRANSLATE16">
+                
               </p>
               <div class="text-center text-lg-start" id="opendetailIDILLI">
                 <a href="#detailIDILLI" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                  <span>Plus de détails</span>
+                  <span id="IDTRANSLATE17"></span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
               </div>
@@ -155,13 +153,13 @@
 
             <ul class="nav nav-pills mb-3">
               <li>
-                <a class="nav-link " data-bs-toggle="pill" href="#tab1" style="color: #000080 !important;">Nos objectifs</a>
+                <a class="nav-link " data-bs-toggle="pill" href="#tab1" style="color: #000080 !important;" id="IDTRANSLATE18"></a>
               </li>
               <li>
-                <a class="nav-link active" data-bs-toggle="pill" href="#tab2" style="color: #000080 !important;">Article 16</a>
+                <a class="nav-link active" data-bs-toggle="pill" href="#tab2" style="color: #000080 !important;"  id="IDTRANSLATE19"></a>
               </li>
               <li>
-                <a class="nav-link" data-bs-toggle="pill" href="#tab3" style="color: #000080 !important;">Notre cible</a>
+                <a class="nav-link" data-bs-toggle="pill" href="#tab3" style="color: #000080 !important;"  id="IDTRANSLATE20"></a>
               </li>
             </ul><!-- End Tabs -->
 
@@ -169,25 +167,20 @@
             <div class="tab-content ">
 
               <div class="tab-pane fade show " id="tab1">
-                <p style="margin-top: 5vh !important;"> La mise en service de cette plateforme de rencontres en ligne répond à nos initiatives
-                  de lutte contre le célibat et la solitude.
-                  Elle matérialise notre action dans la ligne définie par la Déclaration Universelle des
-                  Droits de l’Homme en son article 16, qui rappelle le droit au mariage pour la femme
-                  et pour l’homme, et l’importance de la famille qui doit être protégée par la société et
-                  par l’Etat.</p>
+                <p style="margin-top: 5vh !important;" id="IDTRANSLATE21"> </p>
 
-                  <h2>Nos valeurs :</h2>
+                  <h2 id="IDTRANSLATE22"></h2>
                   <div class="d-flex align-items-center ">
                     <i class="bi bi-check-circle-fill" style="color: #FFB6C1;"></i>&nbsp;&nbsp;
-                    <h4>La fiabilité,</h4>
+                    <h4 id="IDTRANSLATE23"></h4>
                   </div>
                   <div class="d-flex align-items-center mb-2">
                     <i class="bi bi-check-circle-fill" style="color: #FFB6C1;"></i>&nbsp;&nbsp;
-                    <h4>La courtoisie et</h4>
+                    <h4 id="IDTRANSLATE24"></h4>
                   </div>
                   <div class="d-flex align-items-center mb-2">
                     <i class="bi bi-check-circle-fill" style="color: #FFB6C1;"></i>&nbsp;&nbsp;
-                    <h4>La discrétion.</h4>
+                    <h4 id="IDTRANSLATE25"></h4>
                   </div>
                 
               </div><!-- End Tab 1 Content -->
@@ -195,46 +188,32 @@
               <div class="tab-pane fade show active" id="tab2">
                 
                
-                <p> <i class="bi bi-check-circle-fill" style="color: #FFB6C1;"></i>&nbsp;&nbsp; <em> À partir de l’âge nubile, l’homme et la femme, sans aucune restriction quant à la
-                  race, la nationalité ou la religion, ont le droit de se marier et de fonder une famille.
-                  Ils ont des droits égaux au regard du mariage, durant le mariage et lors de sa
-                  dissolution.</em></p>
+                <p> <i class="bi bi-check-circle-fill" style="color: #FFB6C1;"></i>&nbsp;&nbsp; <em id="IDTRANSLATE26"> </em></p>
                  
-              <p> <i class="bi bi-check-circle-fill" style="color: #FFB6C1;"></i>&nbsp;&nbsp; <em> Le mariage ne peut être conclu qu’avec le libre et plein consentement des futurs
-                époux.</em></p>
+              <p> <i class="bi bi-check-circle-fill" style="color: #FFB6C1;"></i>&nbsp;&nbsp; <em id="IDTRANSLATE27"> </em></p>
                 <div class="d-flex align-items-center mb-2">
                  
                 </div>
-              <p>La famille est l’élément naturel et fondamental de la société et a droit à la
-                protection de la société et de l’Etat.
-                
-                La solitude, le célibat, l’isolement social, constituent un impératif humanitaire qui
-                interpelle les pouvoirs publics, les associations et les entreprises du domaine.
-                La solitude chronique et involontaire constitue un drame individuel que vivent ceux
-                qui en souffrent, la plupart du temps, en silence.
-                Illicolove.com a vu le jour dans ce contexte, avec la volonté de proposer autrement et
-                simplement, des services de rencontres en ligne ; avec une chasse avérée aux profils
-                fictifs.
-                Bienvenue !</p>
+              <p id="IDTRANSLATE28"></p>
               </div><!-- End Tab 2 Content -->
 
               <div class="tab-pane fade show" id="tab3">
-                <p>Nous ciblons uniquement les particuliers :</p>
+                <p id="IDTRANSLATE29"></p>
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check-circle-fill" style="color: #FFB6C1;"></i>&nbsp;&nbsp;
-                  <h4>Les jeunes âgés de 18 ans au moins.</h4>
+                  <h4 id="IDTRANSLATE30"></h4>
                 </div>
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check-circle-fill" style="color: #FFB6C1;"></i>&nbsp;&nbsp;
-                  <h4>Les célibataires involontaires d’âge avancé, les désespéré(es) et déçu(es).</h4>
+                  <h4 id="IDTRANSLATE31"></h4>
                 </div>
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check-circle-fill" style="color: #FFB6C1;"></i>&nbsp;&nbsp;
-                  <h4>Les divorcé(es).</h4>
+                  <h4 id="IDTRANSLATE32"></h4>
                 </div>
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check-circle-fill" style="color: #FFB6C1;"></i>&nbsp;&nbsp;
-                  <h4>Les Veuf(ves).</h4>
+                  <h4 id="IDTRANSLATE33"></h4>
                 </div>
               </div><!-- End Tab 3 Content -->
 
@@ -252,7 +231,7 @@
     <section id="counts" class="counts">
       <div class="container" data-aos="fade-up">
         <header class="section-header">
-          <h2>Nos utilisateurs <i class="bi bi-check-circle-fill"></i></h2>
+          <h2 id="IDTRANSLATE34"> <i class="bi bi-check-circle-fill"></i></h2>
          <!-- <p style="font-size: 23px;">Nos utilisateurs, en Afrique, en Europe en partout dans le monde</p>-->
         </header>
         <div class="row gy-4 AllClassUser">
@@ -262,7 +241,7 @@
               <i class="bi bi-people-fill"></i>
               <div>
                 <span data-purecounter-start="0"  data-purecounter-duration="1" class="purecounter" id="ALLCOUNTRY"></span>
-                <p>Tous nos utilisateurs</p>
+                <p id="IDTRANSLATE35"></p>
               </div>
             </div>
           </div>
@@ -272,7 +251,7 @@
               <i class="bi bi-globe-europe-africa"></i>
               <div>
                 <span data-purecounter-start="0"  data-purecounter-duration="1" class="purecounter" id="AFRI"></span>
-                <p>En Afrique</p>
+                <p id="IDTRANSLATE36"></p>
               </div>
             </div>
           </div>
@@ -282,7 +261,7 @@
               <i class="bi bi-globe-central-south-asia"></i>
               <div>
                 <span data-purecounter-start="0"  data-purecounter-duration="1" class="purecounter" id="EURO"></span>
-                <p>En Europe</p>
+                <p id="IDTRANSLATE37"></p>
               </div>
             </div>
           </div>
@@ -292,7 +271,7 @@
               <i class="bi bi-globe2"></i>
               <div>
                 <span data-purecounter-start="0"  data-purecounter-duration="1" class="purecounter" id="PAYSDUM"></span>
-                <p style="font-size: 13.5px !important;">Autres Pays du Monde</p>
+                <p style="font-size: 13.5px !important;" id="IDTRANSLATE38"></p>
               </div>
             </div>
           </div>
@@ -309,7 +288,7 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h2>Notre équipe <i class="bi bi-check-circle-fill"></i></h2>
+          <h2 id="IDTRANSLATE39"> <i class="bi bi-check-circle-fill"></i></h2>
           <!---<p style="font-size: 23px;">Voici les membres de notre équipe.</p>--->
         </header>
 
@@ -327,7 +306,7 @@
             <div class="box">
               <img src="assets/img/DIRECTRICE.png" class="img-fluid temClass" alt="" style="height: 46vh;" id="tof2">
               <h3>Adama KABA</h3>
-              <p>Directrice</p>
+              <p id="IDTRANSLATE40"></p>
             </div>
           </div>
 
@@ -335,14 +314,14 @@
             <div class="box">
               <img src="assets/img/IMG-20230518-WA0008-removebg-preview.png" class="img-fluid temClass" alt="" style="height: 46vh;" id="tof3">
               <h3>Larissa ADON</h3>
-              <p>Relectrice, et Responsable marketing</p>
+              <p id="IDTRANSLATE41"></p>
             </div>
           </div>
           <div class="col-lg-4 mt-4 mt-lg-0 borderClass" data-aos="fade-up" data-aos-delay="400">
             <div class="box">
               <img src="assets/img/CEO.png" class="img-fluid" alt="" style="height: 46vh;" id="tof4">
               <h3>Gérard SODINYESSI</h3>
-              <p>Développeur et SEO</p>
+              <p id="IDTRANSLATE42"></p>
             </div>
           </div>
 
@@ -360,8 +339,8 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h2>Contact <i class="bi bi-check-circle-fill" ></i></h2>
-          <p>Contactez-nous</p>
+          <h2 id="IDTRANSLATECONTACT1"> <i class="bi bi-check-circle-fill" ></i></h2>
+          <p id="IDTRANSLATECONTACT2"></p>
         </header>
 
         <div class="row gy-4">
@@ -370,7 +349,7 @@
               <div class="col-md-6" >
                 <div class="info-box">
                   <i class="bi bi-geo-fill" style="font-size: 26px !important;"></i>
-                  <h3>Adresse</h3>
+                  <h3 id="IDTRANSLATECONTACT3"></h3>
                  <p>Lot 191 Parcelle b’ Agbalilamè <br>
                   Agblangandan<br>
                   SÈMÈ- PODJI<br>
@@ -380,26 +359,30 @@
               <div class="col-md-6">
                 <div class="info-box" style="height: 35vh !important;">
                   <i class="bi bi-phone-fill" style="font-size: 26px !important;"></i>
-                  <h3>Téléphone</h3>
+                  <h3 id="IDTRANSLATECONTACT4"></h3>
                   <p> +229 64 39 01 06 <br> +229 96 98 56 35</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box" style="height: 32vh !important;">
                   <i class="bi bi-envelope-at-fill" style="font-size: 26px !important;"></i>
-                  <h3>E-mails</h3>
+                  <h3 id="IDTRANSLATECONTACT5"></h3>
                   <p>info@illicolove.com <br>ggangbazo@yahoo.fr</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box" style="height: 32vh !important;">
                   <i class="bi bi-dribbble" style="font-size: 26px !important;"></i>
-                  <h3>Réseaux sociaux</h3>
+                  <h3 id="IDTRANSLATECONTACT6"></h3>
                   <div class="social-links d-md-flex align-items-center">
-                    <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>&nbsp;&nbsp;
-                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>&nbsp;&nbsp;
-                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>&nbsp;&nbsp;
+                    <a href="https://twitter.com/illicolove_com" class="twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="https://web.facebook.com/illicolove/" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/illicolove/" class="instagram"><i class="bi bi-instagram"></i></a>
                     <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+                    <a href="https://www.snapchat.com/add/illicolove?share_id=I3RMDZq6GNQ&locale=fr-BJ" class="linkedin"><i class="bi bi-snapchat"></i></a>
+                    <a href="https://www.tiktok.com/@illicolove?_t=8dEw09tT2hh&_r=1" class="linkedin"><i class="bi bi-tiktok"></i></a>
+
+                    
                   </div>
                 </div>
               </div>
@@ -483,11 +466,7 @@
               <input type="submit" value="Souscrire" id="submitFormID">
             </form>
           </div><div style="opacity: 0;">ssfdsfdd</div>
-          <p style="text-align: center;">Votre adresse électronique est collectée et traitée par <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong> pour vous tenir
-            informer de nouvelles fonctionnalités du site illicolove ou de mise à jour.
-            En application de la loi 2017-20 portant code du numérique en République du Bénin, sur la protection des
-            données à caractère personnel, vous pouvez vous désabonner ou exercer vos droits d’accès, d’opposition,
-            de rectification et de suppression en envoyant un mail au <strong style="color: #000080;">info@illicolove.com</strong></p>
+          <span style="text-align: center;"><div id="IDTRANSLATE1INF1"></span>
         </div>
       </div>
     </div>
@@ -580,7 +559,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="index.js"></script>
-
+  <script src="translate.js"></script>
 </body>
 
 </html>

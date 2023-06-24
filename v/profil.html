@@ -38,6 +38,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
   <script>
     window.onload = function(){
       if (/Mobi|Android/i.test(navigator.userAgent)) {
@@ -47,6 +49,7 @@
     document.getElementById('myiframeconsult').style.height = "190vh" 
     document.getElementById('footer').style.position = "relative"
     document.getElementById('footer').style.bottom = "0"
+    
     } else {
         // Code pour ordinateur de bureau
         //document.body.style.fontSize = "18px"; // Modifier la taille de la police pour ordinateurs de bureau
@@ -54,14 +57,13 @@
         document.getElementById('myiframe').style.marginTop = "7vh"
         document.getElementById('myiframeconsult').style.height = "80vh"
         document.getElementById('myiframeconsult').style.marginTop = "7vh"
+ 
     }
    }
   </script>
 </head>
 <body >
 
-<button class="btn btn mt-3" style="margin-left: 5px; cursor: pointer; display: none; background-color: #FFB6C1; color: white;" 
-role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button>
 <section id="modalID" style="display: none;">
   <div class="wrapper">
       <a href="#demo-modal" id="dreamIndemo" style="opacity: 0;">Open Demo Modal</a>
@@ -94,10 +96,13 @@ role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button>
         <i class="bi bi-phone d-flex align-items-center ms-4"><span>+229 64 39 01 06</span></i>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://twitter.com/illicolove_com" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="https://web.facebook.com/illicolove/" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/illicolove/" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="https://www.snapchat.com/add/illicolove?share_id=I3RMDZq6GNQ&locale=fr-BJ" class="linkedin"><i class="bi bi-snapchat"></i></a>
+        <a href="https://www.tiktok.com/@illicolove?_t=8dEw09tT2hh&_r=1" class="linkedin"><i class="bi bi-tiktok"></i></a>
+        
       </div>
     </div>
   </section><!-- End Top Bar-->
@@ -107,7 +112,11 @@ role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button>
     <div class="container d-flex justify-content-between">
 
       <div id="logo">
-        <h1><a href="index.html">illico<span>love</span></a></h1>
+        <img src="./../assets/img/illicolove.png" alt="" style=" max-height: 40px;"> 
+        <span style="font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #000080;">illicolove</span>
       </div>
     </div>
     <button class="image-button btn-my-color circle-image " id="user-button" 
@@ -153,31 +162,7 @@ role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button>
               <span id="myAccountID"></span>
             </div>
           </div>
-          <!--<div class="transactions"><span class="t-desc">Recent Transactions</span>
-            <div class="transaction">
-              <div class="t-icon-container"><img src="assets/img/team-2.jpg"
-                  class="t-icon"></div>
-              <div class="t-details">
-                <div class="t-title">99 designs</div>
-                <div class="t-time">03.45PM
-                </div>
-              </div>
-              <div class="t-amount">+&nbsp;750&#8377;
-              </div>
-            </div>
-  
-            <div class="transaction">
-              <div class="t-icon-container"><img src="assets/img/team-1.jpg" class="t-icon"></div>
-              <div class="t-details">
-                <div class="t-title">Paypal </div>
-                <div class="t-time">03.45 AM
-                </div>
-              </div>
-              <div class="t-amount">+&nbsp;200&#8377;
-              </div>
-            </div>
-          </div>-->
-          <div class="transactions"><span class="t-desc">Mes données</span>
+          <div class="transactions"><span class="t-desc" id="IDTRANSLATEPROFIL7"></span>
             <div class="transaction">
               <div class="t-icon-container"><i class="bi bi-person-fill" class="t-icon"></i></div>
               <div id="myEmailID" class="t-details" style="width: 29vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
@@ -192,27 +177,28 @@ role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button>
             </div>
             <div class="transaction" id="deleteMyAccountID" style="cursor: pointer !important;">
               <div class="t-icon-container"><i class="bi bi-trash3-fill" style="color: #f38e9d;"></i></div>
-              <div id="myNameID" class="t-details" style="width: 29vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
-               Supprimer votre compte
-              </div>              
+              <div id="myNameIDX" class="t-details" style="width: 29vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+              
+              </div>           
             </div>
           </div>
         </div>
         <div class="drawer">
           <span id="logoutID" style="cursor: pointer;"><a >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <i class="bi bi-box-arrow-left" style="font-size: 26px !important;"></i><br> Se déconnecter</a></span>
+            <i class="bi bi-box-arrow-left" style="font-size: 26px !important;"></i><br> <p id="IDTRANSLATEPROFIL10"></p></a></span>
           <span><i class="fal fa-chart-bar"></i></span>&nbsp;&nbsp;&nbsp;
           <div style="background-color: #40E0D0 !important; height: 11vh !important; width: 11vh !important; text-align: center;"
-           class="menu-btn rotate" id="myBtn" data-toggle="modal" data-target="#exampleModalCenter">
+           class="menu-btn rotate" id="myBtn" data-toggle="modal" data-target="#exampleModalCenter" >
             <!---<i class="bi bi-plus-circle"></i>-->
-           Recharger mon compte
+            
+          
           </div>
           <!--<span style="margin-top: 12px !important;"><i class="bi bi-pencil-square"></i></span> 
           <i class="bi bi-sign-turn-right-fill"></i>-->
           <span><i class="fal fa-sticky-note"></i> </span>
           <span ><a href="./../index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <i class="bi bi-house-door" style="font-size: 26px !important;"></i>
-          <br>Aller à l'accueil</a></span>
+          <br><p id="IDTRANSLATEPROFIL9"></p></a></span>
         </div>
       <style>
         .rotate {
@@ -254,10 +240,11 @@ role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button>
     </div>
   <section id="hero">
     <div class="hero-content" data-aos="fade-up">
-      <h2>illicolove,<span style="font-size: 15px !important; color: #f38e9d;" id="mon-paragrapheId"></span></h2>
+      <h2>illicolove,<span style="font-size: 15px !important; color: #f38e9d;" id="IDTRANSLATEPROFIL13"></span></h2>
+      
       <div>
         <a href="#" class="btn-get-started scrollto annoncy" id="PUBLIEZUNEANNONCE" onclick="PUBLIEZUNEANNONCE()"></a>
-        <a href="#" class="btn-projects scrollto annoncy" id="CONSULTEZLESANNONCES" onclick="CONSULTEZLESANNONCES()">CONSULTEZ LES ANNONCES</a>
+        <a href="#" class="btn-projects scrollto annoncy" id="CONSULTEZLESANNONCES" onclick="CONSULTEZLESANNONCES()"></a>
       </div>
     </div>
 
@@ -292,18 +279,18 @@ role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button>
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Une unité vaut 95 FCFA, soit 0.144 Euros.</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body" id="myBodyTopaie">
-        <p id="errorSms" style="text-align: start !important; font-size: 12px !important; display: none; color: #FFB6C1;">Vous devez saisir un nombre.<i class="fa fa-star required"></i></p>
-        <p id="SmspayId" style="text-align: start !important; font-size: 12px !important;">Saisisez ici le nombre d'unité.<i class="fa fa-star required"></i></p>
-        <input type="text" placeholder="Entrer l'unité" pattern="[0-9]+" required id="payYourUnity">
+        <p id="errorSms" style="text-align: start !important; font-size: 12px !important; display: none; color: #FFB6C1;"><i class="fa fa-star required"></i></p>
+        <p id="SmspayId" style="text-align: start !important; font-size: 12px !important;"> <i class="fa fa-star required"></i></p>
+        <input type="text" pattern="[0-9]+" required id="payYourUnity">
       <div class="modal-footer">
-        <button type="button" class="btn btn" style="background-color: #4169E1; color: white;">Retour</button>
-        <button type="button" class="btn btn" style="background-color: #FFB6C1; color: white;" id="payYourUnitybtn" data-dismiss="modal">Valider</button> 
+        <button type="button" class="btn btn" style="background-color: #4169E1; color: white;" id="IDTRANSLATEPROFIL14"></button>
+        <button type="button" class="btn btn" style="background-color: #FFB6C1; color: white;" id="payYourUnitybtn" data-dismiss="modal"></button> 
       </div>
     </div>
   </div>
@@ -316,52 +303,50 @@ style="background-color: #f38e9d !important;"
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Sécurisez votre compte. <i class="bi bi-exclamation-circle-fill text-danger"></i></h5>
+        <h5 class="modal-title" id="exampleModalLongTitleX"> <i class="bi bi-exclamation-circle-fill text-danger"></i></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body" id="myBodyTopaie">
-        <p id="errorSms" style="text-align: start !important; font-size: 12px !important; display: none; color: #FFB6C1;">Vous devez saisir un nombre.<i class="fa fa-star required"></i></p>
-        <p id="SmspayId" style="text-align: start !important; font-size: 12px !important;">Veuillez fournir une réponse que vous n'oublierez jamais. 
-          Cette réponse vous sera demandée lors de la récupération de 
-          votre compte. Sans cette réponse, votre compte restera inaccessible.<i class="fa fa-star required"></i></p>
+        <p id="IDTRANSLATEPROFIL15" style="text-align: start !important; font-size: 12px !important;">
+          <i class="fa fa-star required"></i></p>
         <div class="form-group">
-          <label for="exampleFormControlSelect1">Selectionner votre question</label>
+          <label for="exampleFormControlSelect1" id="IDTRANSLATEPROFIL16"></label>
           <select class="form-control" id="RxampleFormControlSelect1" 
           style="background-color: #f38e9d !important; border: none; cursor: pointer;">
-            <option value="Qu'est-ce qui rend une personne spéciale à vos yeux ?">
-            Qu'est-ce qui rend une personne spéciale ?</option>
+            <option value="Qu'est-ce qui rend une personne spéciale à vos yeux ?" id="IDTRANSLATEPROFIL17">
+            </option>
 
-            <option value="Qu'est-ce qui vous fait sentir le plus aimé et apprécié ?">
-              Qu'est-ce qui vous fait sentir le plus aimé(e)s ?</option>
+            <option value="Qu'est-ce qui vous fait sentir le plus aimé et apprécié ?" id="IDTRANSLATEPROFIL18">
+            </option>
 
-            <option value="Comment imaginez-vous votre vie quotidienne ?">
-              Comment imaginez-vous votre vie quotidienne ?</option>
+            <option value="Comment imaginez-vous votre vie quotidienne ?" id="IDTRANSLATEPROFIL19">
+            </option>
 
-              <option value="Qu'est-ce qui est le plus important pour vous ?">
-              Qu'est-ce qui est le plus important pour vous ?</option>
+              <option value="Qu'est-ce qui est le plus important pour vous ?" id="IDTRANSLATEPROFIL20">
+              </option>
 
-              <option value="Quelle est le nom de la personne qui vous est la plus chère au monde ?">
-              Quel est le nom de la personne qui vous inspire ?</option>
+              <option value="Quelle est le nom de la personne qui vous est la plus chère au monde ?" id="IDTRANSLATEPROFIL21">
+              </option>
 
-              <option value="Quelle est votre pays favoris ?">
-              Quel est votre pays favoris ?</option>
+              <option value="Quelle est votre pays favoris ?" id="IDTRANSLATEPROFIL22">
+              </option>
 
-              <option value="Quelle est votre joueur favoris ?">
-              Quel est votre joueur favoris ?</option>
+              <option value="Quelle est votre joueur favoris ?" id="IDTRANSLATEPROFIL23">
+              </option>
 
-              <option value="Quelle est artiste joueur favoris ?">
-              Quel est votre artiste favoris ?</option>
+              <option value="Quelle est artiste joueur favoris ?" id="IDTRANSLATEPROFIL24">
+              </option>
            
           </select>
         </div>
         <div class="form-group">
-          <label for="exampleFormControlInput1">Quelle est votre reponse ? Juste un mot. Pas d'espace.</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="reponse de sécurité">
+          <label for="exampleFormControlInput1" id="IDTRANSLATEPROFIL25"></label>
+          <input type="text" class="form-control" id="exampleFormControlInput1">
         </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn" style="background-color: #FFB6C1; color: white;" id="btnSecureAccount" data-dismiss="modal">Valider</button> 
+        <button type="button" class="btn btn" style="background-color: #FFB6C1; color: white;" id="btnSecureAccount" data-dismiss="modal"></button> 
       </div>
     </div>
   </div>
@@ -383,23 +368,13 @@ style="background-color: #f38e9d !important;"
 
   <script>
    function PUBLIEZUNEANNONCE(){
-         document.getElementById('myheaderid').style.display = "none" 
-         document.getElementById('footer').style.display = "none"
-         document.getElementById('main').style.display = "block"
-         document.getElementById('mainconsultconsult').style.display = "none"
-         document.getElementById('comeBackId').style.display = "block"
+      window.location.href="choix.html"
    }
  
    function CONSULTEZLESANNONCES(){
-    document.getElementById('myheaderid').style.display = "none" 
-         document.getElementById('footer').style.display = "none"
-         document.getElementById('main').style.display = "none"
-         document.getElementById('mainconsultconsult').style.display = "block"
-         document.getElementById('comeBackId').style.display = "block"
+    window.location.href="consulte.html"
    }
-  document.getElementById('comeBackId').addEventListener('click', function(){
-    location.reload()
-  })
+
   </script>
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
@@ -446,52 +421,40 @@ style="background-color: #f38e9d !important;"
       .then((snapshot) => {
       document.getElementById('preloader').style.display = "none"
       if (snapshot.exists()) {
+       
          if(snapshot.val().IDREGION){
-          document.getElementById('PUBLIEZUNEANNONCE').innerHTML = `<i class="bi bi-pencil-square"></i> MODIFIEZ VOTRE ANNONCE`
+          document.getElementById('PUBLIEZUNEANNONCE').innerHTML = `<i class="bi bi-pencil-square"></i> <span id="IDTRANSLATEPROFIL11"></span>`
          }else{
-          document.getElementById('PUBLIEZUNEANNONCE').innerHTML = `<i class="bi bi-send"></i> PUBLIEZ UNE ANNONCE`
+          document.getElementById('PUBLIEZUNEANNONCE').innerHTML = `<i class="bi bi-send"></i> <span id="IDTRANSLATEPROFIL12"></span> `
          }
-         // founction to increment unity number
-        {/* var compteur = 0;
-         var unity = snapshot.val().COMPTECREDIT
-          var intervalId = setInterval(function(){
-            if (compteur < unity) {
-              compteur++;
-              document.getElementById("debyID").innerHTML = compteur;
-              myUnityID.innerHTML = compteur
-            } else {
-              clearInterval(intervalId);
-            }
-          }, unity);*/}
-
+         
          var photoDataUrl = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
          userbuttonID.innerHTML = `${snapshot.val().MESDEUXPHOTOS ? `<img src="${photoDataUrl}" alt="Votre image" style="width: 6vh;  height: 6vh;"/>` : '<i class="bi bi-person-fill" style="width: 30px;"></i>'}`;
-         iconValidateID.innerHTML = `${snapshot.val().VALIDERMONCOMPTE ? `<i class="bi bi-patch-check-fill text" style="color:#000080"> Compte valide</i> ` : '<i class="bi bi-exclamation-circle-fill text-danger"> Compte invalide</i> '}`;
+         iconValidateID.innerHTML = `${snapshot.val().VALIDERMONCOMPTE ? `<i class="bi bi-patch-check-fill text" style="color:#000080" id="IDTRANSLATEPROFIL1"> </i> ` : '<i class="bi bi-exclamation-circle-fill text-danger" id="IDTRANSLATEPROFIL2"></i> '}`;
          userMyID.innerHTML = `${snapshot.val().username}`;
          myUnityID.innerHTML = `${snapshot.val().COMPTECREDIT}`;
          tofuserID.innerHTML = `${snapshot.val().MESDEUXPHOTOS ? `<img src="${photoDataUrl}" class="user-photo" />` : '<img src="assets/img/no_user.png" class="user-photo" />'}`;
          //function to checkout in account debit
-
          comptDebitID.innerHTML = `${snapshot.val().COMPTECREDITSATUS ? `
           <div class="card-item" style="opacity: 0.2 !important; pointer-events: none;">
-                <span>Compte Débit</span>
+                <span id="IDTRANSLATEPROFIL3"></span>
                 <span>0 <strong class="dollar" style="color: aqua;">U</strong>
           </div>` 
           
           : `<div class="card-item" >
-          <span>Compte Débit</span>
+          <span id="IDTRANSLATEPROFIL4"></span>
           <span id="debyOfferID"> ${snapshot.val().COMPTECREDIT} <strong class="dollar" style="color: aqua;">U</strong>
           </div>`}  `
 
           myAccountID.innerHTML = `${snapshot.val().isDefaultAccount ? `
             <div class="card-item" style="opacity: 0.2 !important; pointer-events: none;">
-                <span>Mon Plan</span>
+                <span id="IDTRANSLATEPROFIL5"></span>
                 <span >0 &nbsp;<strong class="dollar" style="color: aqua;">U</strong></span>
               </div>   
           ` 
           
           : ` <div class="card-item" >
-                <span>Mon Plan</span>
+                <span id="IDTRANSLATEPROFIL5"></span>
                 <span id="debyID">${snapshot.val().COMPTECREDIT} <strong class="dollar" style="color: aqua;"> U</strong></span>
               </div>`}  `
 
@@ -502,13 +465,39 @@ style="background-color: #f38e9d !important;"
          myNameID.innerHTML = `${snapshot.val().email}`;
          if(snapshot.val().COMPTECREDIT = 0){
           alertUnity.innerHTML = `
-          <div class="alert alert-danger" role="alert" style="font-size: 10px; text-align: center;">
-          Salut ${snapshot.val().fullname}, Nous vous informons que vous ne disposer plus d'unité sur 
-          votre compte. Veuillez le recharger ici <a href="#" class="alert-link">an</a>. ou rendez-vous 
-          sur votre profil. Merci !
+          <div class="alert alert-danger" role="alert" style="font-size: 10px; text-align: center;" id="IDTRANSLATEPROFIL46">
+          
           </div>
           `
          }
+         //function to translate the create for inerhtml
+         var texteTraduit = i18next.t("IDTRANSLATEPROFIL2");
+         $('[id="IDTRANSLATEPROFIL2"]').text(texteTraduit);
+
+         var texteTraduit1 = i18next.t("IDTRANSLATEPROFIL1");
+         $('[id="IDTRANSLATEPROFIL1"]').text(texteTraduit1);
+
+         var texteTraduit3 = i18next.t("IDTRANSLATEPROFIL3");
+         $('[id="IDTRANSLATEPROFIL3"]').text(texteTraduit3);
+
+         var texteTraduit4 = i18next.t("IDTRANSLATEPROFIL4");
+         $('[id="IDTRANSLATEPROFIL4"]').text(texteTraduit4);
+
+         var texteTraduit5 = i18next.t("IDTRANSLATEPROFIL5");
+         $('[id="IDTRANSLATEPROFIL5"]').text(texteTraduit5);
+         var texteTraduit6 = i18next.t("IDTRANSLATEPROFIL6"); 
+         $('[id="IDTRANSLATEPROFIL6"]').text(texteTraduit6);
+
+         var texteTraduit11 = i18next.t("IDTRANSLATEPROFIL11");
+         $('[id="IDTRANSLATEPROFIL11"]').text(texteTraduit11);
+         
+         var texteTraduit12 = i18next.t("IDTRANSLATEPROFIL12");
+         $('[id="IDTRANSLATEPROFIL12"]').text(texteTraduit12);
+         var texteTraduit45X = i18next.t("IDTRANSLATEPROFIL46");
+         $('[id="IDTRANSLATEPROFIL46"]').text(texteTraduit45X);
+
+         
+
          //function to update password
          if(snapshot.val().QUESTIONSECUREPASSWORDSTATUS == false){
           setTimeout(()=>{ btnSecureAccount
@@ -530,7 +519,7 @@ style="background-color: #f38e9d !important;"
               Swal.fire({
               icon: 'error',
               title: 'Oops...',
-              text: `Ne mettez pas d'espace. Merci !`,
+              text: i18next.t('accountSecureMessageX'),
               showConfirmButton: false,
               timer: 1500
             // footer: '<a href="">Why do I have this issue?</a>'
@@ -553,8 +542,8 @@ style="background-color: #f38e9d !important;"
                   monModal.style.display = 'none';
                   Swal.fire({
                   icon: 'success',
-                  title: 'Félicitation !',
-                  text: `Votre compte est sécurisé. Merci !`,
+                  title: i18next.t('congratulationsTitle'),
+                  text: i18next.t('accountSecureMessage'),
                   showConfirmButton: false,
                   timer: 5000
                 // footer: '<a href="">Why do I have this issue?</a>'
@@ -563,7 +552,10 @@ style="background-color: #f38e9d !important;"
                  // window.location.reload()
                     })
                     .catch((error) => {
-                    alert("les données ne sont pas mise à jour " + error);
+                      Swal.fire({
+                      text: i18next.t('IDTRANSLATEPROFIL45'),
+                      icon: 'error'
+                      }); 
 
                     });
           })
@@ -588,8 +580,7 @@ style="background-color: #f38e9d !important;"
                  Swal.fire({
                   title: '<strong>Compte <u>Débit Vide</u> !</strong>',
                   icon: 'info',
-                  html: `Votre compte de débit est vide. Veuillez payer des unités pour 
-                  accéder aux contacts des annonces qui vont vous plaire.`,
+                  html: i18next.t('IDTRANSLATEPROFIL28'),
                   allowOutsideClick: false,
                   focusConfirm: false,
                   confirmButtonText:
@@ -607,7 +598,10 @@ style="background-color: #f38e9d !important;"
                  // window.location.reload()
                     })
                     .catch((error) => {
-                    alert("les données ne sont pas mise à jour " + error);
+                      Swal.fire({
+                      text: i18next.t('IDTRANSLATEPROFIL45'),
+                      icon: 'error'
+                      }); 
 
                     });
               debyID.innerHTML = `${snapshot.val().COMPTECREDIT}`;
@@ -618,7 +612,7 @@ style="background-color: #f38e9d !important;"
         window.location.href = "./../v/login/login.html"
           //alert("no data");
       }
-
+      
 
         //function to controle button paiement
       var statusmyCompt = snapshot.val().IDREGION
@@ -629,8 +623,7 @@ style="background-color: #f38e9d !important;"
       Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: `Vous ne pouvez pas payer les unités pour l'instant. 
-      Car vous êtes encore sur votre compte Débit. Merci.`,
+      text: i18next.t('IDTRANSLATEPROFIL29'),
       //footer: '<a href="">Why do I have this issue?</a>'
       })    
       }
@@ -695,15 +688,17 @@ style="background-color: #f38e9d !important;"
                   window.location.reload()
                     })
                     .catch((error) => {
-                    alert("les données ne sont pas mise à jour " + error);
-
+                      Swal.fire({
+                      text: i18next.t('IDTRANSLATEPROFIL45'),
+                      icon: 'error'
+                      }); 
                     });  
 
                 } else {
-                  alert(`quelque chose s'est mal passé`);
-
-
-
+                  Swal.fire({
+                  text: i18next.t('IDTRANSLATEPROFIL44'),
+                  icon: 'error'
+                  });
                 }
               });
 
@@ -716,16 +711,20 @@ style="background-color: #f38e9d !important;"
            alert("il y a une ERROR " + error);
             });
       }else{
-        
-       alert("Le champs n'est pas bien rempli")
+      Swal.fire({
+      text: i18next.t('IDTRANSLATEPROFIL43'),
+      icon: 'error'
+      });
       }
       })  
   } 
     
       })
       .catch((error) => {
-       console.log("il y a une ERROR " + error);
-
+      Swal.fire({
+      text: i18next.t('IDTRANSLATEPROFIL42'),
+      icon: 'error'
+      });
   });
 
 // Supprimer l'utilisateur de la base de données
@@ -734,29 +733,30 @@ style="background-color: #f38e9d !important;"
 var DeleteMyAccountID = document.getElementById('deleteMyAccountID');
 DeleteMyAccountID.addEventListener('click', function(){
   Swal.fire({
-  title: 'Êtes-vous sûr ?',
-  text: "Vous ne pourrez plus revenir en arrière !",
+  title: i18next.t('IDTRANSLATEPROFIL30W'),
+  text: i18next.t('IDTRANSLATEPROFIL30'),
   icon: 'warning',
   showCancelButton: true,
   confirmButtonColor: '#3085d6',
   cancelButtonColor: '#d33',
-  confirmButtonText: 'Oui, supprimez-le !'
+  confirmButtonText: i18next.t('IDTRANSLATEPROFIL31'),
 }).then((result) => {
   if (result.isConfirmed) {
     remove(ref(db, "utilisateurs/" + UserConnectuser))
     .then(() => {
-      Swal.fire(
-      'Supprimé !',
-      'Votre compte a été supprimé avec succès !',
-      'success'
-    )
+      Swal.fire({
+      title: i18next.t('IDTRANSLATEPROFIL38'),
+      text: i18next.t('IDTRANSLATEPROFIL39'),
+      icon: 'success'
+    });
+     
      //window.location.reload();
      }).catch((error) => {
-      Swal.fire(
-      'Supprimé !',
-      "Erreur lors de la suppression de l'utilisateur ! ",
-      'error'
-    )
+      Swal.fire({
+      title: i18next.t('IDTRANSLATEPROFIL40'),
+      text: i18next.t('IDTRANSLATEPROFIL41'),
+      icon: 'error'
+    });
      // alert("les données ne sont pas supprimées " + error);
       });
    
@@ -768,23 +768,23 @@ DeleteMyAccountID.addEventListener('click', function(){
 var logout = document.getElementById('logoutID');
     logout.addEventListener('click', function() {
     Swal.fire({
-    title: 'Êtes-vous sûr ?',
-    text: "Après vous être déconnecté, vous avez la possibilité de vous reconnecter.",
+    title: i18next.t('IDTRANSLATEPROFIL32'), 
+    text: i18next.t('IDTRANSLATEPROFIL33'), 
     icon: 'warning',
     showCancelButton: true,
     allowOutsideClick: false,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Oui, déconnecté !'
+    confirmButtonText: i18next.t('IDTRANSLATEPROFIL34'), 
   }).then((result) => {
     if (result.isConfirmed) {
       localStorage.removeItem('unserconnect');
       Swal.fire({
       icon: 'success',
       allowOutsideClick: false,
-      title: 'Déconnecté',
-      text: 'Vous avez été déconnecté.',
-      footer:  `<a href="">Vous voulez visiter notre page d'accueil ?</a>`
+      title: i18next.t('IDTRANSLATEPROFIL35'), 
+      text: i18next.t('IDTRANSLATEPROFIL36'),
+      footer: '<a href="" id="IDTRANSLATEPROFIL37">' + i18next.t('IDTRANSLATEPROFIL37') + '</a>',
     }).then((result)=>{
      if(result.isConfirmed){
       window.location.href = "./login/login.html"
@@ -796,6 +796,7 @@ var logout = document.getElementById('logoutID');
     if(!UserConnectuser){
       window.location.href = "./login/login.html"
       }
+      
 </script>
   <!-- Vendor JS Files -->
   <script src="https://cdn.kkiapay.me/k.js"></script>
@@ -815,6 +816,7 @@ var logout = document.getElementById('logoutID');
    <!-- script to import alert personnal -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
   <script src="userConnect.js"></script>
+  <script src="./../translate.js"></script>
 </div>
 </body>
 <style>

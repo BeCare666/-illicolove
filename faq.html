@@ -34,7 +34,8 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/stylea.css" rel="stylesheet">
 
- 
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
 </head>
 
 <body>
@@ -45,33 +46,33 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- <img src="assets/img/logo.png" alt="">-->
+        <img src="assets/img/illicolove.png" alt=""> 
         <span>illicolove</span>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="index.html">Accueil</a></li>
-          <li><a class="nav-link scrollto" href="index.html#about">À propos</a></li>
+          <li><a class="nav-link scrollto" href="index.html" id="IDTRANSLATE1"></a></li>
+          <li><a class="nav-link scrollto" href="index.html#about" id="IDTRANSLATE2"></a></li>
           <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li>-->
-          <li><a class="nav-link scrollto" href="Comment&ça&fonctionne.html">Comment ça fonctionne ?</a></li>
-          <li class="dropdown"><a href="#"><span>Termes</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto" href="Comment&ça&fonctionne.html" id="IDTRANSLATE3"></a></li>
+          <li class="dropdown"><a href="#"><span id="IDTRANSLATE4"></span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="termes&conditions.html">Conditions Générales d’Utilisation</a></li>
-              <li><a href="politique.html">Politique de Confidentialité</a></li>
+              <li><a href="termes&conditions.html" id="IDTRANSLATE5"></a></li>
+              <li><a href="politique.html" id="IDTRANSLATE6"></a></li>
             </ul>
           </li>  
           <li class="dropdown"><a href="#"><span><i class="bi bi-globe2"></i></span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1eb_1f1f7/32.png" alt="" ></li>
-              <li  style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1ec_1f1e7/32.png" alt=""></li>
-              <li  style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1ea_1f1f8/32.png" alt=""></li>
+            <ul id="language-select">
+              <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1eb_1f1f7/32.png" alt="fr" ></li>
+              <li  style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1ec_1f1e7/32.png" alt="en"></li>
+              <li  style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1ea_1f1f8/32.png" alt="es"></li>
             </ul>
-          </li>     
-          <li><a class="nav-link scrollto active" href="faq.html">F.A.Q</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="./v/login/signup.html">S'inscrire</a></li>
-          <li><a class="getstarted scrollto" href="./v/login/login.html">Se connecter</a></li>
+          </li>
+          <li><a href="faq.html" class="nav-link scrollto active">F.A.Q</a></li>
+          <li><a class="nav-link scrollto" href="#contact" id="IDTRANSLATE7"></a></li>
+          <li><a class="getstarted scrollto" href="./v/login/signup.html" id="IDTRANSLATE8"></a></li>
+          <li><a class="getstarted scrollto" href="./v/login/login.html" id="IDTRANSLATE9"></a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -87,7 +88,7 @@
 
         <header class="section-header">
           <h2>F.A.Q <i class="bi bi-check-circle-fill"></i></h2>
-          <p style="font-size: 23px;">Les Questions fréquemment posées.</p>
+          <p style="font-size: 23px;" id="IDTRANSLATEX15"></p>
         </header>
 
         <div class="row">
@@ -96,85 +97,77 @@
             <div class="accordion accordion-flush" id="faqlist1">
               <div class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1A">
-                    Puis-je faire une belle rencontre sur votre site ?
+                  <button id="IDTRANSLATEX16" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1A">
+                   
                   </button>
                 </h2>
                 <div id="faq-content-1A" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
-                  <div class="accordion-body">
-                    Oui, à condition de bien remplir le formulaire de recherche en fournissant des
-                    informations vraies sur vous.
+                  <div class="accordion-body" id="IDTRANSLATEX17">
+                    
                   </div>
                 </div>
               </div>
 
               <div class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2B">
-                    Est-ce que votre site de rencontres est payant ?
+                  <button id="IDTRANSLATEX18" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2B">
+                    
                   </button>
                 </h2>
                 <div id="faq-content-2B" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
-                  <div class="accordion-body">
-                    Oui, uniquement pour consulter l’adresse de contact d’un profil qui aura retenu
-                    particulièrement votre intérêt.
+                  <div class="accordion-body" id="IDTRANSLATEX19">
+                   
                   </div>
                 </div>
               </div>
 
               <div class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3D">
-                    Combien coûte la consultation de l’adresse de contact
-                    d’un profil qui m’attire et m’intéresse ?
+                  <button id="IDTRANSLATEX20" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3D">
+                    
                   </button>
                 </h2>
                 <div id="faq-content-3D" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
-                  <div class="accordion-body">
-                    95 FCFA soit 0.14 Euros.
+                  <div class="accordion-body" id="IDTRANSLATEX21">
+                    
                   </div>
                 </div>
               </div>
 
               <div class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3E">
-                   Est-ce que votre site de rencontres est gratuit ?
+                  <button id="IDTRANSLATEX22" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3E">
+                  
                   </button>
                 </h2>
                 <div id="faq-content-3E" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
-                  <div class="accordion-body">
-                    Oui, l’inscription et la publication de votre annonce de recherche amoureuse sont
-                    gratuites sur illicolove.
+                  <div class="accordion-body" id="IDTRANSLATEX23">
+                    
                   </div>
                 </div>
               </div>
 
               <div class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3F">
-                    Comment publier une annonce de rencontre ?
+                  <button id="IDTRANSLATEX24" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3F">
+                   
                   </button>
                 </h2>
                 <div id="faq-content-3F" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
-                  <div class="accordion-body">
-                    Après votre inscription sur illicolove, cliquez sur le bouton ou l’onglet « PUBLIEZ
-                    UNE ANNONCE ». Ensuite sur la page qui va s’afficher, choisissez le nom du
-                    continent qui correspond à votre continent de résidence habituelle. Enfin remplissez
-                    correctement le formulaire de recherche qui va s’afficher puis soumettez.
+                  <div class="accordion-body" id="IDTRANSLATEX25">
+                    
                   </div>
                 </div>
               </div>
               <div class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3G">
-                    Puis-je résider en Afrique et contacter un profil résidant
-                    hors d’Afrique ?
+                  <button id="IDTRANSLATEX26" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3G">
+                   
                   </button>
                 </h2>
                 <div id="faq-content-3G" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
-                  <div class="accordion-body">
-                    Oui !
+                  <div class="accordion-body" id="IDTRANSLATEX27">
+                    
                   </div>
                 </div>
               </div>
@@ -202,85 +195,77 @@
 
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1">
-                  Puis-je résider en Europe et contacter un profil résidant
-                  hors d’Europe ?
+                <button id="IDTRANSLATEX28" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1">
+                  
                 </button>
               </h2>
               <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                <div class="accordion-body">
-                  Oui !
+                <div class="accordion-body" id="IDTRANSLATEX29">
+                
                 </div>
               </div>
             </div>
 
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2">
-                  Puis-je résider en Europe et publier mon annonce de
-                  recherche sur les pages « Afrique » et « Autres pays du
-                  monde » ?
+                <button id="IDTRANSLATEX30" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2">
+                  
                 </button>
               </h2>
               <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                <div class="accordion-body">
-                  Non ! Publiez votre annonce de recherche uniquement dans la page correspondant à
-                  votre zone de résidence.
+                <div class="accordion-body" id="IDTRANSLATEX31">
+                  
                 </div>
               </div>
             </div>
 
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3">
-                  Puis- je payer des unités par mobile money ?
+                <button id="IDTRANSLATEX32" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3">
+                  
                 </button>
               </h2>
               <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                <div class="accordion-body">
-                  Oui !
+                <div class="accordion-body" id="IDTRANSLATEX33">
+                  
                 </div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-11">
-                  Quel est le tarif d’abonnement sur votre site ?
+                <button id="IDTRANSLATEX34" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-11">
+                 
                 </button>
               </h2>
               <div id="faq2-content-11" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                <div class="accordion-body">
-                  Il n’y a pas d’abonnement sur illicolove.
+                <div class="accordion-body" id="IDTRANSLATEX35">
+                 
                 </div>
               </div>
             </div>
 
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-22">
-                  Comment puis-je recharger mon compte Crédit-Débit ?
+                <button id="IDTRANSLATEX36" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-22">
+                 
                 </button>
               </h2>
               <div id="faq2-content-22" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                <div class="accordion-body">
-                  Nous vous offrons un système de paiement sécurisé par KKiaPay qui est notre
-                  agrégateur de paiement partenaire. Selon votre convenance, rechargez votre compte
-                  par carte de crédit ou par mobile money.
-                  Sous votre profil, cliquez sur le bouton « JE RECHARGE MON COMPTE » et suivez
-                  les étapes simplement.
+                <div class="accordion-body" id="IDTRANSLATEX37">
+                  
                 </div>
               </div>
             </div>
 
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3H">
-                  Dois-je payer pour publier mon annonce de recherche ?
+                <button id="IDTRANSLATEX38" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3H">
+                  
                 </button>
               </h2>
               <div id="faq2-content-3H" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                <div class="accordion-body">
-                  Non ! La publication d’une annonce de recherche est gratuite.
+                <div class="accordion-body" id="IDTRANSLATEX39">
+                 
                 </div>
               </div>
             </div>
@@ -300,94 +285,76 @@
 
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1X">
-                  Dois-je payer pour consulter les annonces ?
+                <button id="IDTRANSLATEX40" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1X">
+                  
                 </button>
               </h2>
               <div id="faq2-content-1X" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                <div class="accordion-body">
-                  Non ! La consultation des annonces est gratuite, c’est l’obtention de l’adresse de
-                  contact contenu dans une annonce qui est payante.
+                <div class="accordion-body" id="IDTRANSLATEX41">
+                  
                 </div>
               </div>
             </div>
 
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2C">
-                  Comment fonctionne le système de Crédit-Débit ?
+                <button id="IDTRANSLATEX42" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2C">
+                  
                 </button>
               </h2>
               <div id="faq2-content-2C" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                <div class="accordion-body">
-                  Lors de votre inscription, vous recevez automatiquement et gratuitement trois (03) unités
-                  de crédit vous permettant de consulter trois (03) adresses de contacts dans les
-                  annonces de votre choix. Chaque unité a une valeur de 95 FCFA soit 0.14 Euros.
-                  Lorsque vos unités s’épuisent, il vous est loisible d’en acheter selon votre convenance et
-                  votre capacité. La quantité d’unités que vous pouvez acheter va d’une unité au nombre
-                  d’unités que vous désirez.
+                <div class="accordion-body" id="IDTRANSLATEX43">
+                 
                 </div>
               </div>
             </div>
 
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-31">
-                  Mes unités que j’achète ont-elles une date d’expiration ?
+                <button id="IDTRANSLATEX44" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-31">
+                 
                 </button>
               </h2>
               <div id="faq2-content-31" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                <div class="accordion-body">
-                  Non ! Vos unités sont à durée illimitée.
+                <div class="accordion-body" id="IDTRANSLATEX45">
+                  
                 </div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1I">
-                  Dois-je m’abonner pour jouir de votre service de
-                  rencontres ?
+                <button id="IDTRANSLATEX46" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1I">
+                  
                 </button>
               </h2>
               <div id="faq2-content-1I" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                <div class="accordion-body">
-                  Sur illicolove, il n’y a aucun abonnement pour jouir de nos services en dehors de
-                  l’abonnement au newsletter qui est facultatif.
+                <div class="accordion-body" id="IDTRANSLATEX47">
+                  
                 </div>
               </div>
             </div>
 
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2J">
-                  Quelle est la politique de confidentialité sur
-                  illicolove.com ?
+                <button id="IDTRANSLATEX48" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2J">
+                  
                 </button>
               </h2>
               <div id="faq2-content-2J" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                <div class="accordion-body">
-                  Nous accordons une grande importance à la confidentialité de vos informations. Vos
-                  données personnelles sont sécurisées et ne sont pas partagées avec des tiers sans
-                  votre consentement. Vous pouvez consulter  <a href="politique.html">ici</a> notre politique de confidentialité pour plus
-                  de détails.
+                <div class="accordion-body" id="IDTRANSLATEX49">
+                   <a href="politique.html" id="IDTRANSLATEX50"></a>
                 </div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2Jx">
-                  Où puis-je trouver l'e-mail de validation de mon compte ?
+                <button id="IDTRANSLATEX51" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2Jx">
+                 
                 </button>
               </h2>
               <div id="faq2-content-2Jx" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-                <div class="accordion-body">
-                  Il est possible que l'e-mail de validation de votre compte se trouve dans votre dossier de spam 
-                  ou de courrier indésirable. Les filtres de sécurité des fournisseurs de messagerie peuvent parfois 
-                  diriger les e-mails de validation vers ces dossiers pour votre protection. Veuillez vérifier votre 
-                  dossier de spam ou de courrier indésirable et assurez-vous de marquer l'e-mail comme "non spam" ou 
-                  "non indésirable" si vous le trouvez là-bas. Si vous ne parvenez toujours pas à trouver l'e-mail de
-                   validation, 
-                  veuillez contacter notre service d'assistance pour obtenir de l'aide supplémentaire.
+                <div class="accordion-body" id="IDTRANSLATEX52">
+                  
                 </div>
               </div>
             </div>
@@ -402,102 +369,104 @@
     </section><!-- End F.A.Q Section -->
 
     <!-- ======= Contact Section ======= -->
+    <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact" data-aos="fade-up">
 
-        <div class="container" data-aos="fade-up">
-  
-          <header class="section-header">
-            <h2>Contact <i class="bi bi-check-circle-fill" ></i></h2>
-            <p>Contactez-nous</p>
-          </header>
-  
-          <div class="row gy-4">
-            <div class="col-lg-6"  data-aos="fade-up" >
-              <div class="row gy-4">
-                <div class="col-md-6" >
-                  <div class="info-box">
-                    <i class="bi bi-geo-fill" style="font-size: 26px !important;"></i>
-                    <h3>Adresse</h3>
-                   <p>Lot 191 Parcelle b’ Agbalilamè <br>
-                    Agblangandan<br>
-                    SÈMÈ- PODJI<br>
-                    BÉNIN</p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="info-box" style="height: 35vh !important;">
-                    <i class="bi bi-phone-fill" style="font-size: 26px !important;"></i>
-                    <h3>Téléphone</h3>
-                    <p> +229 64 39 01 06 <br> +229 96 98 56 35</p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="info-box" style="height: 32vh !important;">
-                    <i class="bi bi-envelope-at-fill" style="font-size: 26px !important;"></i>
-                    <h3>E-mails</h3>
-                    <p>info@illicolove.com <br>ggangbazo@yahoo.fr</p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="info-box" style="height: 32vh !important;">
-                    <i class="bi bi-dribbble" style="font-size: 26px !important;"></i>
-                    <h3>Réseaux sociaux</h3>
-                    <div class="social-links d-md-flex align-items-center">
-                      <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>&nbsp;&nbsp;
-                      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>&nbsp;&nbsp;
-                      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>&nbsp;&nbsp;
-                      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-  
-            </div>
-  
-            <div class="col-lg-6  p-2 pt-5"  data-aos="zoom-out" data-aos-delay="200"  
-              style="background-color: #FFB6C1; " id="Mymaps">
-              <div class="map-responsive" id="Mymapsq">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31721.275233835073!2d2.49462563906653!3d6.37341200357748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103caa466b4f2f95%3A0x72832e6d91f86902!2sAgblangandan!5e0!3m2!1sfr!2sbj!4v1684867687472!5m2!1sfr!2sbj" 
-                width="600" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-              <form action="forms/contact.php" method="post" class="php-email-form" style="display: none;">
-                <div class="row gy-4">
-  
-                  <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Votre nom" required>
-                  </div>
-  
-                  <div class="col-md-6 ">
-                    <input type="email" class="form-control" name="email" placeholder="Votre email" required>
-                  </div>
-  
-                  <div class="col-md-12">
-                    <input type="text" class="form-control" name="subject" placeholder="Sujet" required>
-                  </div>
-  
-                  <div class="col-md-12">
-                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                  </div>
-  
-                  <div class="col-md-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-  
-                    <button type="submit">Envoyer Message</button>
-                  </div>
-  
-                </div>
-              </form>
-  
-            </div>
-  
-          </div>
-  
-        </div>
-  
-      </section><!-- End Contact Section -->
+      <div class="container" data-aos="fade-up">
 
+        <header class="section-header">
+          <h2 id="IDTRANSLATECONTACT1"> <i class="bi bi-check-circle-fill" ></i></h2>
+          <p id="IDTRANSLATECONTACT2"></p>
+        </header>
+
+        <div class="row gy-4">
+          <div class="col-lg-6"  data-aos="fade-up" >
+            <div class="row gy-4">
+              <div class="col-md-6" >
+                <div class="info-box">
+                  <i class="bi bi-geo-fill" style="font-size: 26px !important;"></i>
+                  <h3 id="IDTRANSLATECONTACT3"></h3>
+                 <p>Lot 191 Parcelle b’ Agbalilamè <br>
+                  Agblangandan<br>
+                  SÈMÈ- PODJI<br>
+                  BÉNIN</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box" style="height: 35vh !important;">
+                  <i class="bi bi-phone-fill" style="font-size: 26px !important;"></i>
+                  <h3 id="IDTRANSLATECONTACT4"></h3>
+                  <p> +229 64 39 01 06 <br> +229 96 98 56 35</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box" style="height: 32vh !important;">
+                  <i class="bi bi-envelope-at-fill" style="font-size: 26px !important;"></i>
+                  <h3 id="IDTRANSLATECONTACT5"></h3>
+                  <p>info@illicolove.com <br>ggangbazo@yahoo.fr</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box" style="height: 32vh !important;">
+                  <i class="bi bi-dribbble" style="font-size: 26px !important;"></i>
+                  <h3 id="IDTRANSLATECONTACT6"></h3>
+                  <div class="social-links d-md-flex align-items-center">
+                    <a href="https://twitter.com/illicolove_com" class="twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="https://web.facebook.com/illicolove/" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/illicolove/" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+                    <a href="https://www.snapchat.com/add/illicolove?share_id=I3RMDZq6GNQ&locale=fr-BJ" class="linkedin"><i class="bi bi-snapchat"></i></a>
+                    <a href="https://www.tiktok.com/@illicolove?_t=8dEw09tT2hh&_r=1" class="linkedin"><i class="bi bi-tiktok"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6  p-2 pt-5"  data-aos="zoom-out" data-aos-delay="200"  
+            style="background-color: #FFB6C1;" id="Mymaps">
+            <div class="map-responsive" id="Mymapsq">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31721.275233835073!2d2.49462563906653!3d6.37341200357748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103caa466b4f2f95%3A0x72832e6d91f86902!2sAgblangandan!5e0!3m2!1sfr!2sbj!4v1684867687472!5m2!1sfr!2sbj" 
+              width="600" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <form action="forms/contact.php" method="post" class="php-email-form" style="display: none;">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Votre nom" required>
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Votre email" required>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Sujet" required>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Envoyer Message</button>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Contact Section -->
   </main><!-- End #main -->
   
   <!-- ======= Footer ======= -->
@@ -530,11 +499,7 @@
               <input type="submit" value="Souscrire" id="submitFormID">
             </form>
           </div><div style="opacity: 0;">ssfdsfdd</div>
-          <p style="text-align: center;">Votre adresse électronique est collectée et traitée par <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong> pour vous tenir
-            informer de nouvelles fonctionnalités du site illicolove ou de mise à jour.
-            En application de la loi 2017-20 portant code du numérique en République du Bénin, sur la protection des
-            données à caractère personnel, vous pouvez vous désabonner ou exercer vos droits d’accès, d’opposition,
-            de rectification et de suppression en envoyant un mail au <strong style="color: #000080;">info@illicolove.com</strong></p>
+          <span style="text-align: center;"><div id="IDTRANSLATE1INF1"></span>
         </div>
       </div>
     </div>
@@ -585,7 +550,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="translate.js"></script>
 </body>
 
 </html>

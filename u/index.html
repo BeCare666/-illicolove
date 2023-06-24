@@ -37,20 +37,21 @@
     <!-- Link to import alert personnal -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
-
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
   </head>
 
   <body>
- <a href="./../v/profil.html"> <button  class="btn btn mt-3" style="margin-left: 5px; cursor: pointer; background-color: #FFB6C1; color: white;" 
+ <a href="./../v/consulte.html"> <button  class="btn btn mt-3" style="margin-left: 5px; cursor: pointer; background-color: #FFB6C1; color: white;" 
   role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button></a>
     <div id="demo-modal" class="modal" style="background-color: #FFB6C1 !important;">
       <div class="modal__content">
           <h1 style="text-align: center; color: FFB6C1;" id="iconid"><i class="bi bi-sign-turn-right-fill"></i></h1>
   
-          <h1 style="text-align: center; font-size: 17px;" id="etatalert">Visiter son profil !</h1>
+          <h1 style="text-align: center; font-size: 17px;" id="etatalert"></h1>
   
           <div class="modal__footer" id="updatecompteId" style="cursor: pointer;">
-            <button class="btn btn " style="background-color: #FFB6C1; color: white;"><i class="bi bi-eye" style="color: white;"></i> Cliquer pour afficher</button>
+            <button class="btn btn " style="background-color: #FFB6C1; color: white;" id="IDTRANSLATEUSERD35"></button>
           </div>
   
          <a href="#" class="modal__close" id="modal__close">&times;</a>
@@ -368,6 +369,7 @@
     <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="./../alert/alert.js"></script>
     <script src="./../v/userConnect.js"></script>
+    <script src="./../translate.js"></script>
 
 
     <!-- Template Main JS File 

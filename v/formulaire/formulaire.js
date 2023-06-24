@@ -80,45 +80,6 @@
       return false;
     })
 
-    //select founction
-
-    {/*$(document).ready(function(){
-    
-        var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
-           removeItemButton: true,
-           maxItemCount:5,
-           searchResultLimit:5,
-           renderChoiceLimit:5
-         }); 
-
-         var multipleCancelButton1 = new Choices('#choices-multiple-remove-buttonsexe', {
-            removeItemButton: true,
-            maxItemCount:5,
-            searchResultLimit:5,
-            renderChoiceLimit:5
-          }); 
-          var multipleCancelButton2 = new Choices('#choices-multiple-remove-buttonrencontre', {
-            removeItemButton: true,
-            maxItemCount:5,
-            searchResultLimit:5,
-            renderChoiceLimit:5,
-          }); 
-          var multipleCancelButton3 = new Choices('#choices-multiple-remove-buttonSonsexe', {
-            removeItemButton: true,
-            maxItemCount:5,
-            searchResultLimit:5,
-            renderChoiceLimit:5
-          }); 
-          var multipleCancelButton4 = new Choices('#choices-multiple-remove-buttonmatrimoniale', {
-            removeItemButton: true,
-            maxItemCount:5,
-            searchResultLimit:5,
-            renderChoiceLimit:5
-          }); 
-        
-        
-    });*/}
-
     //function to control form
     // for age
     const input = document.getElementById('myprofileidâge'); 
@@ -313,6 +274,7 @@
               // Vérifier si le préfixe téléphonique correspond au pays sélectionné
           
           }else{
+            Swal.showValidationMessage(i18next.t('IDTRANSLATEFORM108'));
             alert("veuillez selectioner le pays")
           }
       }
@@ -352,3 +314,5 @@
         };
 
       
+
+        

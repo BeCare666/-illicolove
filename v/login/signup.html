@@ -23,6 +23,8 @@
          <!-- Link to import alert personnal -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
       <style>
       * {
         font-family: 'Montserrat-bold', sans-serif;
@@ -73,24 +75,24 @@
       <div class="container" >
         <div class="row align-items-center justify-content-center" >
           <div class="col-md-7">
-            <h3>S'inscrire à<strong> illicolove</strong></h3>
+            <h3 id="IDTRANSLATESIGNUP1"></h3>
             <form action="javascript:submitmy()">
               <div class="form-group first">
-                <label for="username">Pseudonyme</label>
-                <input type="text" class="form-control" placeholder="Pseudonyme  " id="username" required>
+                <label for="username" id="IDTRANSLATESIGNUP2"></label>
+                <input type="text" class="form-control" id="username" required>
               </div>
               <div class="form-group first">
-                <label for="username">Nom et Prénoms</label>
-                <input type="text" class="form-control" placeholder="Nom et Prénoms " id="name" required>
+                <label for="username" id="IDTRANSLATESIGNUP4"></label>
+                <input type="text" class="form-control" id="name" required>
               </div>
               <div class="form-group first">
-                <label for="username">Email</label>
-                <input type="email" class="form-control" placeholder="Votre adresse e-mail" id="email" required>
+                <label for="username" id="IDTRANSLATESIGNUP6"></label>
+                <input type="email" class="form-control" id="email" required>
               </div>
               <div class="form-group last mb-3">
-                <label for="password">Password</label>
+                <label for="password" id="IDTRANSLATESIGNUP8"></label>
                 <div style="display: flex !important;">
-                <input type="password" class="form-control" placeholder="Votre mot de passe" id="password" required>
+                <input type="password" class="form-control" id="password" required>
                 <span class="toggle-password Xbutton" onclick="togglePasswordVisibility()" style="cursor: pointer; color: #FFB6C1;">
                  <i class="fas fa-eye"></i>
                 </span>
@@ -101,17 +103,18 @@
 
               <div class="d-flex mb-5 align-items-center">
                 <label class="control control--checkbox mb-0">
-                  <span class="caption" id="acceptID" style="display: none; font-size: 12px !important;"><a href="./../../termes&conditions.html" style="font-size: 12px !important;">J'ai lu et j'accepte les termes et conditions</a></span>
-                  <span class="caption"  id="readID" ><a href="./../../termes&conditions.html" style="color: rgb(247, 100, 100) !important; font-size: 12px !important;">Lire et accepter nos  termes et conditions</a></span>
+                  <span class="caption" id="acceptID" style="display: none; font-size: 12px !important;"><a href="./../../termes&conditions.html" style="font-size: 12px !important;" id="IDTRANSLATESIGNUP10"></a></span>
+                  <span class="caption"  id="readID" ><a href="./../../termes&conditions.html" style="color: rgb(247, 100, 100) !important; font-size: 12px !important;" id="IDTRANSLATESIGNUP11"></a></span>
                   <input type="checkbox" id="myCheckbox"/>
                   <div class="control__indicator"></div>
                 </label>               
               </div>
               
-              <input type="submit" value="S'inscrire" class="btn btn-block" id="toSignupID"
+              <input type="submit" class="btn btn-block" id="toSignupID"
               style="background-color: #FFB6C1 !important; color: white; font-size: 20px !important;" disabled>
               <br>
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<a href="login.html" style="font-size: 10px !important;">J'ai déjà un compte. <strong style="color: #40E0D0; text-align: center; font-size: 10px !important;">Connectez-vous</strong> </a>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<a href="login.html" style="font-size: 10px !important;" id="IDTRANSLATESIGNUP12"> </a>
+              <a href="login.html"><strong style="color: #40E0D0; text-align: center; font-size: 10px !important;"  id="IDTRANSLATESIGNUP13"></strong></a>
               <br>
               <div style="opacity: 0;">sdfvff</div>
             </form>
@@ -173,13 +176,19 @@
         var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
         dreamIndemo.click();
         document.getElementById('iconid').innerHTML = `  <img src="./../formulaire/assets/imageNoSucess.svg" alt=""></i>`
-        document.getElementById('etatalert').innerText = "Désolé"
-        document.getElementById('smsalert').innerHTML = `Vous avez déjà un compte avec cet adresse email !`
+        document.getElementById('etatalert').innerHTML = `<p id="IDTRANSLATESIGNUP14"></p>`
+        document.getElementById('smsalert').innerHTML = `<p id="IDTRANSLATESIGNUP15"></p>`
         setTimeout(()=>{
         document.getElementById('contentSignup').style.display = "block" 
         document.getElementById('modalID').style.display = "none" 
         },5000)
         //alert(`L'adresse e-mail ${email.email} de ${emailKey}a été trouvée dans Firebase !`)
+        var texteTraduitprofil14X = i18next.t("IDTRANSLATESIGNUP14");
+        $('[id="IDTRANSLATESIGNUP14"]').text(texteTraduitprofil14X);
+
+        var texteTraduitprofil15X = i18next.t("IDTRANSLATESIGNUP15");
+        $('[id="IDTRANSLATESIGNUP15"]').text(texteTraduitprofil15X);
+
       } else {
         document.getElementById('preloader').style.display = "none"
         //L'adresse e-mail n'a pas été trouvée
@@ -266,8 +275,8 @@
         var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
         dreamIndemo.click();
         document.getElementById('iconid').innerHTML = `  <img src="./../formulaire/assets/imageSucess.svg" alt=""></i>`
-        document.getElementById('etatalert').innerText = "succès"
-        document.getElementById('smsalert').innerHTML = `Vous êtes inscrit avec succès !`
+        document.getElementById('etatalert').innerHTML = `<p id="IDTRANSLATESIGNUP16"></p>`
+        document.getElementById('smsalert').innerHTML = `<p id="IDTRANSLATESIGNUP17"></p>`
         setTimeout(()=>{
         document.getElementById('contentSignup').style.display = "block" 
         document.getElementById('modalID').style.display = "none"
@@ -276,29 +285,42 @@
         localStorage.setItem('unserconnectmail', email)
         window.location.href = "login.html"
         },7000)
+        var texteTraduitprofil16X = i18next.t("IDTRANSLATESIGNUP16");
+        $('[id="IDTRANSLATESIGNUP16"]').text(texteTraduitprofil16X);
+
+        var texteTraduitprofil17X = i18next.t("IDTRANSLATESIGNUP17");
+        $('[id="IDTRANSLATESIGNUP17"]').text(texteTraduitprofil17X);
       }).catch((error) => {
-          alert("Erreur lors de l'envoi de l'adresse mail à Firebase :", error);
+        Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: i18next.t('IDTRANSLATESIGNUP18'),
+        showConfirmButton: false,
+        timer: 1500
+       // footer: '<a href="">Why do I have this issue?</a>'
+      })
+          //alert("Erreur lors de l'envoi de l'adresse mail à Firebase :", error);
       });
 
       }
     });
-  }
-var checkbox = document.getElementById("myCheckbox");
-var ToSignupID = document.getElementById("toSignupID");
-var AcceptID = document.getElementById("acceptID");
-var ReadID = document.getElementById("readID");
+    }
+  var checkbox = document.getElementById("myCheckbox");
+  var ToSignupID = document.getElementById("toSignupID");
+  var AcceptID = document.getElementById("acceptID");
+  var ReadID = document.getElementById("readID");
 
-checkbox.addEventListener("change", function() {
-  if (checkbox.checked) {
-    ToSignupID.disabled = false;  // Activer le bouton
-    AcceptID.style.display = "block "
-    ReadID.style.display = "none"
-  } else {
-    ToSignupID.disabled = true;   // Désactiver le bouton
-    AcceptID.style.display = "none"
-    ReadID.style.display = "block"
-  }
-});
+  checkbox.addEventListener("change", function() {
+    if (checkbox.checked) {
+      ToSignupID.disabled = false;  // Activer le bouton
+      AcceptID.style.display = "block "
+      ReadID.style.display = "none"
+    } else {
+      ToSignupID.disabled = true;   // Désactiver le bouton
+      AcceptID.style.display = "none"
+      ReadID.style.display = "block"
+    }
+  });
 
 
    
@@ -313,7 +335,7 @@ checkbox.addEventListener("change", function() {
         Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: `Ne mettez pas d'espace. Merci !`,
+        text: i18next.t('IDTRANSLATESIGNUP19'),
         showConfirmButton: false,
         timer: 1500
        // footer: '<a href="">Why do I have this issue?</a>'
@@ -379,6 +401,7 @@ checkbox.addEventListener("change", function() {
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <script src="js/main.js"></script>
+      <script src="./../../translate.js"></script>
   </body>
 </html>
     

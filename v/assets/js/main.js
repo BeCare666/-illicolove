@@ -335,7 +335,7 @@ function onmyOnchange(){
    }
 
 
-   var text = "Vous souhaite la Bienvenue !"; // Le texte à écrire et effacer
+{/*   var text = "Vous souhaite la Bienvenue !"; // Le texte à écrire et effacer
    var speed = 50; // La vitesse d'écriture/effacement (en millisecondes)
    var delay = 1000; // Le temps d'attente avant de commencer l'effacement (en millisecondes)
    var element = document.getElementById("mon-paragrapheId"); // L'élément HTML où afficher le texte
@@ -364,7 +364,7 @@ function onmyOnchange(){
    }
  
    // Lancer le processus d'écriture/effacement
-   typeWriter(text, 0, element);
+  typeWriter(text, 0, element);*/}
 
 
    // for the modal paiement

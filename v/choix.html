@@ -40,12 +40,16 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="./sign/logina.css">
   <link rel="stylesheet" href="choix.css">
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
+  <a href="profil.html"><button class="btn btn mt-3" style="margin-left: 5px; cursor: pointer; background-color: #FFB6C1; color: white;" 
+    role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button></a>
   <section id="modalID" style="display: none;">
     <div class="wrapper">
         <a href="#demo-modal" id="dreamIndemo" style="opacity: 0;">Open Demo Modal</a>
@@ -82,7 +86,7 @@
             <div class="box">
               <span class="iconvaliderzone" id="div1"></span>
               <div class="icon"><i class="bi bi-globe-europe-africa"></i></div>
-              <h4 class="title"><a >Afrique</a></h4>
+              <h4 class="title"><a id="IDTRANSLATECONSULTE1"></a></h4>
               <!----<p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestia</p>-->
             </div>
           </div>
@@ -99,7 +103,7 @@
             <div class="box">
               <span class="iconvaliderzone" id="div2"></span>
               <div class="icon"><i class="bi bi-globe-central-south-asia"></i></div>
-              <h4 class="title"><a >Europe</a></h4>
+              <h4 class="title"><a id="IDTRANSLATECONSULTE2"></a></h4>
                <!---- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestia</p>-->
             </div>
           </div>
@@ -108,7 +112,7 @@
             <div class="box">
               <span class="iconvaliderzone" id="div3"></span>
               <div class="icon"><i class="bi bi-globe2"></i></div>
-              <h4 class="title"><a >Autres pays du monde</a></h4>
+              <h4 class="title"><a id="IDTRANSLATECONSULTE3"></a></h4>
                 <!--<p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestia</p>-->
             </div>
           </div>
@@ -178,19 +182,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
             AFRIQUE1.addEventListener('click', function() {
               
                 Swal.fire({
-                title: 'Êtes-vous sûr ?',
-                text: `Nous constatons que vous avez déjà une publication 
-                en cours. En procédant avec cette action, votre ancienne 
-                annonce sera modifiée et désactivée. Votre nouvelle annonce 
-                sera soumise aux administrateurs d'illicolove pour validation,
-                 ce processus prendra jusqu'à 24 heures. Nous vous remercions 
-                 pour votre compréhension.`,
+                title: i18next.t('IDTRANSLATEPROFIL47'),
+                text: i18next.t('IDTRANSLATEPROFIL48'),
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Oui, Changé',
-                cancelButtonText: 'Retour'
+                cancelButtonText: i18next.t('IDTRANSLATEPROFIL49'),
+                confirmButtonText: i18next.t('IDTRANSLATEPROFIL50'),
               }).then((result) => {
                 if (result.isConfirmed) {
                 var AFRIQUEID = "AFRIQUE"
@@ -203,19 +202,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
               EUROP2.addEventListener('click', function() {
                  
                 Swal.fire({
-                title: 'Êtes-vous sûr ?',
-                text: `Nous constatons que vous avez déjà une publication 
-                en cours. En procédant avec cette action, votre ancienne 
-                annonce sera modifiée et désactivée. Votre nouvelle annonce 
-                sera soumise aux administrateurs d'illicolove pour validation,
-                 ce processus prendra jusqu'à 24 heures. Nous vous remercions 
-                 pour votre compréhension.`,
+                title: i18next.t('IDTRANSLATEPROFIL47'),
+                text: i18next.t('IDTRANSLATEPROFIL48'),
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                cancelButtonText: 'Retour',
-                confirmButtonText: 'Oui, Changé'
+                cancelButtonText: i18next.t('IDTRANSLATEPROFIL49'),
+                confirmButtonText: i18next.t('IDTRANSLATEPROFIL50'),
               }).then((result) => {
                 if (result.isConfirmed) {
                 var EUROPEID = "EUROPE"
@@ -228,19 +222,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 
               AUTRESPAYSDUMONDE3.addEventListener('click', function() {              
                 Swal.fire({
-                title: 'Êtes-vous sûr ?',
-                text: `Nous constatons que vous avez déjà une publication 
-                en cours. En procédant avec cette action, votre ancienne 
-                annonce sera modifiée et désactivée. Votre nouvelle annonce 
-                sera soumise aux administrateurs d'illicolove pour validation,
-                 ce processus prendra jusqu'à 24 heures. Nous vous remercions 
-                 pour votre compréhension.`,
+                  title: i18next.t('IDTRANSLATEPROFIL47'),
+                text: i18next.t('IDTRANSLATEPROFIL48'),
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Oui, Changé',
-                cancelButtonText: 'Retour',
+                cancelButtonText: i18next.t('IDTRANSLATEPROFIL49'),
+                confirmButtonText: i18next.t('IDTRANSLATEPROFIL50'),
               }).then((result) => {
                 if (result.isConfirmed) {
                 var AUTRESPAYSDUMONDEID = "AUTRESPAYSDUMONDE"
@@ -296,7 +285,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="./../translate.js"></script>
 </body>
 
 </html>

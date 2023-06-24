@@ -31,11 +31,16 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+
   <!-- Template Main CSS File -->
   <link href="assets/css/stylea.css" rel="stylesheet">
 </head>
 
 <body>
+  <a href="profil.html"><button class="btn btn mt-3" style="margin-left: 5px; cursor: pointer; background-color: #FFB6C1; color: white;" 
+    role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button></a>
   <main >
     <!-- ======= Services Section ======= -->
     <section id="services">
@@ -50,7 +55,7 @@
           <div class="col-lg-4 col-md-4 chosemyregionclass" data-aos="fade-up" data-aos-delay="100" style="cursor: pointer !important;" id="AFRIQUE">
             <div class="box">
               <div class="icon"><i class="bi bi-globe-europe-africa"></i></div>
-              <h4 class="title"><a >Afrique</a></h4>
+              <h4 class="title"><a id="IDTRANSLATECONSULTE1"></a></h4>
               <!----<p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestia</p>-->
             </div>
           </div>
@@ -58,7 +63,7 @@
           <div class="col-lg-4 col-md-4 chosemyregionclass" data-aos="fade-up" data-aos-delay="200" style="cursor: pointer !important;" id="EUROPE">
             <div class="box">
               <div class="icon"><i class="bi bi-globe-central-south-asia"></i></div>
-              <h4 class="title"><a>Europe</a></h4>
+              <h4 class="title"><a id="IDTRANSLATECONSULTE2"></a></h4>
                <!---- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestia</p>-->
             </div>
           </div>
@@ -66,7 +71,7 @@
           <div class="col-lg-4 col-md-4 chosemyregionclass" data-aos="fade-up" data-aos-delay="300" style="cursor: pointer !important;" id="AUTRESPAYSDUMONDE">
             <div class="box">
               <div class="icon"><i class="bi bi-globe2"></i></div>
-              <h4 class="title"><a>Autres pays du monde</a></h4>
+              <h4 class="title"><a id="IDTRANSLATECONSULTE3"></a></h4>
                 <!--<p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestia</p>-->
             </div>
           </div>
@@ -104,7 +109,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="./../translate.js"></script>
 </body>
 
 </html>

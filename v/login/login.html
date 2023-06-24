@@ -24,6 +24,8 @@
         <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
         rel="stylesheet">
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
       <style>
       * {
         font-family: 'Montserrat-bold', sans-serif;
@@ -72,16 +74,16 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7" >
-            <h3>Connectez-vous à<strong> illicolove.</strong></h3>
+            <h3 id="IDTRANSLATELOGIN1"></h3>
             <form action="javascript:submitmy()">
                 <div class="form-group first">
-                    <label for="username">Email</label>
-                    <input type="email" class="form-control" placeholder="Votre adresse e-mail" id="email" required>
+                    <label for="username" id="IDTRANSLATELOGIN2"></label>
+                    <input type="email" class="form-control" id="email" required>
                   </div>
               <div class="form-group last mb-3">
-                <label for="password">Mot de passe</label>
+                <label for="password" id="IDTRANSLATELOGIN4"></label>
                 <div style="display: flex !important;">
-                  <input type="password" class="form-control" placeholder="Votre mot de passe" id="password" required>
+                  <input type="password" class="form-control" id="password" required>
                   <span class="toggle-password Xbutton" onclick="togglePasswordVisibility()" style="cursor: pointer; color: #FFB6C1;">
                    <i class="fas fa-eye"></i>
                   </span>
@@ -89,16 +91,17 @@
               </div>
               
               <div class="d-flex mb-5 align-items-center">
-                <label class="control control--checkbox mb-0"><span class="caption" style="font-size: 10px;">Se souvenir de moi</span>
+                <label class="control control--checkbox mb-0"><span class="caption" style="font-size: 10px;" id="IDTRANSLATELOGIN6"></span>
                   <input type="checkbox" checked="checked myClaseBtn"/>
                   <div class="control__indicator"></div>
                 </label>
-                <span class="ml-auto"><a href="forgotpasseword.html" class="forgot-pass" style="font-size: 10px;">Mot de passe oublié</a></span> 
+                <span class="ml-auto"><a href="forgotpasseword.html" class="forgot-pass" style="font-size: 10px;" id="IDTRANSLATELOGIN7"></a></span> 
               </div>
 
-              <input type="submit" value="Se connecter" class="btn btn-block myClaseBtn">
+              <input type="submit" class="btn btn-block myClaseBtn" id="IDTRANSLATELOGIN10">
               <br>
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="signup.html" style="font-size: 10px !important;">Je n'ai pas un compte. <strong style="color: #40E0D0; text-align: center; font-size: 10px !important;">Inscrivez-vous gratuitement</strong> </a>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="signup.html" style="font-size: 10px !important;" id="IDTRANSLATELOGIN8"></a>
+              <a href="signup.html"><strong style="color: #40E0D0; text-align: center; font-size: 10px !important;" id="IDTRANSLATELOGIN9"></strong></a>
               <style>
                 .myClaseBtn{
                   background-color: #FFB6C1;
@@ -166,8 +169,8 @@
         var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
         dreamIndemo.click();
         document.getElementById('iconid').innerHTML = `  <img src="./../formulaire/assets/imageSucess.svg" alt=""></i>`
-        document.getElementById('etatalert').innerText = "Succès"
-        document.getElementById('smsalert').innerHTML = `Vous êtes connecté avec succès !`
+        document.getElementById('etatalert').innerHTML = `<p id="IDTRANSLATELOGIN11"></p>`
+        document.getElementById('smsalert').innerHTML = `<p id="IDTRANSLATELOGIN12"></p> `
         localStorage.setItem('unserconnect', userId)
         localStorage.setItem('unserconnectmail', email)
         // funnction to get cookies options     
@@ -189,8 +192,8 @@
         var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
         dreamIndemo.click();
         document.getElementById('iconid').innerHTML = `  <img src="./../formulaire/assets/imageNoSucess.svg" alt=""></i>`
-        document.getElementById('etatalert').innerText = "Désolé"
-        document.getElementById('smsalert').innerHTML = `Le mot de passe est incorrect !`
+        document.getElementById('etatalert').innerHTML = `<p id="IDTRANSLATELOGIN13"></p>`
+        document.getElementById('smsalert').innerHTML = `<p id="IDTRANSLATELOGIN14"></p> `
         setTimeout(()=>{
         document.getElementById('contentSignup').style.display = "block" 
         document.getElementById('modalID').style.display = "none" 
@@ -198,6 +201,18 @@
         // Le mot de passe est incorrect
        // alert('Le mot de passe est incorrect');
       }
+      var texteTraduitprofil11 = i18next.t("IDTRANSLATELOGIN11");
+      $('[id="IDTRANSLATELOGIN11"]').text(texteTraduitprofil11);
+
+      var texteTraduitprofil12 = i18next.t("IDTRANSLATELOGIN12");
+      $('[id="IDTRANSLATELOGIN12"]').text(texteTraduitprofil12);
+
+      var texteTraduitprofil13 = i18next.t("IDTRANSLATELOGIN13");
+      $('[id="IDTRANSLATELOGIN13"]').text(texteTraduitprofil13);
+
+      var texteTraduitprofil14 = i18next.t("IDTRANSLATELOGIN14");
+      $('[id="IDTRANSLATELOGIN14"]').text(texteTraduitprofil14);
+
     });
   } else {
         document.getElementById('preloader').style.display = "none"
@@ -208,8 +223,8 @@
         var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
         dreamIndemo.click();
         document.getElementById('iconid').innerHTML = `  <img src="./../formulaire/assets/imageNoSucess.svg" alt=""></i>`
-        document.getElementById('etatalert').innerText = "Désolé"
-        document.getElementById('smsalert').innerHTML = `L'utilisateur n'existe pas avec l'e-mail donné !`
+        document.getElementById('etatalert').innerHTML = `<p id="IDTRANSLATELOGIN15"></p>`
+        document.getElementById('smsalert').innerHTML = `<p id="IDTRANSLATELOGIN16"></p>`
         setTimeout(()=>{
         document.getElementById('contentSignup').style.display = "block" 
         document.getElementById('modalID').style.display = "none" 
@@ -217,6 +232,11 @@
     // L'utilisateur n'existe pas avec l'e-mail donné
     //alert('L\'utilisateur n\'existe pas');
   }
+     var texteTraduitprofil15 = i18next.t("IDTRANSLATELOGIN15");
+      $('[id="IDTRANSLATELOGIN15"]').text(texteTraduitprofil15);
+
+      var texteTraduitprofil16 = i18next.t("IDTRANSLATELOGIN16");
+      $('[id="IDTRANSLATELOGIN16"]').text(texteTraduitprofil16);
 });
        
 }
@@ -225,6 +245,7 @@
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="./../../translate.js"></script>
   </body>
 </html>
     

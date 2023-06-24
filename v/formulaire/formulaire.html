@@ -25,9 +25,11 @@
             src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
         <link rel="stylesheet" href="formulaire.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+      <script src="https://unpkg.com/jquery"></script>
+      <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
     <style>
     * {
       font-family: 'Montserrat-bold', sans-serif;
@@ -45,30 +47,24 @@
                     <form id="msform">
                         <!-- progressbar -->
                         <ul id="progressbar">
-                            <li class="active" style="font-size: 9px !important;">MON PROFIL</li>
-                            <li style="font-size: 9px !important;">MON PROFIL</li>
-                            <li style="font-size: 9px !important;">MON PROFIL</li>
-                            <li style="font-size: 9px !important;">PROFIL QUE JE CHERCHE</li>
-                            <li style="font-size: 9px !important;">PROFIL QUE JE CHERCHE</li>
+                            <li class="active" style="font-size: 9px !important; cursor: pointer;" id="IDTRANSLATEFORM1"></li>
+                            <li style="font-size: 9px !important;" id="IDTRANSLATEFORM2"></li>
+                            <li style="font-size: 9px !important;" id="IDTRANSLATEFORM3"></li>
+                            <li style="font-size: 9px !important;" id="IDTRANSLATEFORM4"></li>
+                            <li style="font-size: 9px !important;" id="IDTRANSLATEFORM5"></li>
                         </ul>
                         <!-- fieldsets -->
                         <fieldset>
-                            <h2 class="fs-title">VEUILLEZ REMPLIR LE FORMULAIRE CI-DESSOUS.</h2>
-                            <h3 class="fs-subtitle">Donnez des informations précises et judicieuses.</h3>
-                            <p style="text-align: start !important;">Mon pays de
-                                résidence <i class="fa fa-star required"></i></p>
-                            <select type="text" id="mycountry"
-                                name="lname" placeholder="Ma nationalité" required></select>
-                            <p style="text-align: start !important;">Ma Ville de
-                                résidence <i class="fa fa-star required"></i></p>
-                            <input type="text" id="myprofileidMaVille"
-                                name="name" placeholder="Ma Ville de résidence"
-                                required/>
-                            <p style="text-align: start !important;">Nom ou Pseudonyme<i class="fa fa-star required"></i></p>
-                            <input type="text" id="myprofileidPrénoms"
-                                name="lname" placeholder="Nom ou Pseudonyme" required/>
-                                <p style="text-align: start !important;" id="PageId">Mon âge <i class="fa fa-star required"></i></p>
-                                <p id="errorMessage" style="text-align: start !important; display: none; color: red;">Veuillez saisir uniquement des chiffres.<i class="fa fa-star required"></i></p>
+                            <h2 class="fs-title" id="IDTRANSLATEFORM6"></h2>
+                            <h3 class="fs-subtitle" id="IDTRANSLATEFORM7"></h3>
+                            <p style="text-align: start !important;" id="IDTRANSLATEFORM8"></p>
+                            <select type="text" id="mycountry" name="lname" placeholder="Ma nationalité" required></select>
+                            <p style="text-align: start !important;" id="IDTRANSLATEFORM9"></p>
+                            <input type="text" id="myprofileidMaVille" name="name" required/>
+                            <p style="text-align: start !important;" id="IDTRANSLATEFORM10"></p>
+                            <input type="text" id="myprofileidPrénoms" name="lname" required/>
+                            <p style="text-align: start !important;" id="PageId"></p>
+                            <p id="errorMessage" style="text-align: start !important; display: none; color: red;"></p>
                                 <select type="text" id="myprofileidâge"  name="twitter" placeholder="Mon âge " required>
                     
                                     <option value="18-30" >18-30</option>
@@ -82,59 +78,52 @@
                                 </select>
 
 
-                                <p style="text-align: start !important;">Mon Genre <i
-                                    class="fa fa-star required"></i></p>
-                            <select id="choices-multiple-remove-buttonsexe"
-                                required>
-                                <option value="Masculin" selected>Homme</option>
-                                <option value="Femme">Femme</option>
-                                <option value="Transgenre">Transgenre</option>
-                                <option value="Fluide">Fluide(Genderfluid)</option>
-                                <option value="Intersexe">Intersexe</option>
-                                <option value="Agenre">Agenre</option>
-                                <option value="Aromantique">Aromantique</option>
-                                <option value="Asexuel.le">Asexuel.le</option>
-                                <option value="Bisexuel.le">Bisexuel.le</option>
-                                <option value="Cisgenre">Cisgenre</option>
-                                <option value="Cisnormativité">Cisnormativité</option>
-                                <option value="Demiromantique">Demiromantique</option>
-                                <option value="Demisexuel.le">Demisexuel.le</option>
-                                <option value="Hétéromantivité">Hétéromantivité</option>
-                                <option value="Iel">Iel</option>
-                                <option value="Mégenrer">Mégenrer</option>
-                                <option value="Non-binaire">Non-binaire</option>
-                                <option value="Pansexuel.le">Pansexuel.le</option>
-                                <option value="Polyamoureux.se">Polyamoureux.se</option>
-                                <option value="Queer">Queer</option>
-                                <option value="Transgenre">Transgenre</option>
-                                <option value="Transition">Transition</option>
+                            <p style="text-align: start !important;" id="IDTRANSLATEFORM13"></p>
+                            <select id="choices-multiple-remove-buttonsexe" required>
+                                <option   selected id="IDTRANSLATEFORM14"></option>
+                                <option   id="IDTRANSLATEFORM15"></option>
+                                <option   id="IDTRANSLATEFORM16"></option>
+                                <option   id="IDTRANSLATEFORM17"></option>
+                                <option   id="IDTRANSLATEFORM18"></option>
+                                <option   id="IDTRANSLATEFORM19"></option>
+                                <option   id="IDTRANSLATEFORM20"></option>
+                                <option   id="IDTRANSLATEFORM21"></option>
+                                <option   id="IDTRANSLATEFORM22"></option>
+                                <option   id="IDTRANSLATEFORM23"></option>
+                                <option   id="IDTRANSLATEFORM24"></option>
+                                <option   id="IDTRANSLATEFORM25"></option>
+                                <option   id="IDTRANSLATEFORM26"></option>
+                                <option   id="IDTRANSLATEFORM27"></option>
+                                <option   id="IDTRANSLATEFORM28"></option>
+                                <option   id="IDTRANSLATEFORM29"></option>
+                                <option   id="IDTRANSLATEFORM30"></option>
+                                <option   id="IDTRANSLATEFORM31"></option>
+                                <option   id="IDTRANSLATEFORM32"></option>
+                                <option   id="IDTRANSLATEFORM33"></option>
+                                <option   id="IDTRANSLATEFORM34"></option>
+                                <option   id="IDTRANSLATEFORM35"></option>
                             </select>
 
-                            <input type="button" name="next" class="next action-button" value="Suivant" id="IDnext"/>
+                        <input type="button" name="next" class="next action-button" id="IDnext"/>
                         </fieldset>
                         <fieldset>
-                            <h2 class="fs-title">VEUILLEZ REMPLIR LE FORMULAIRE CI-DESSOUS.</h2>
-                            <h3 class="fs-subtitle">Donnez des informations précises et judicieuses.</h3>
+                            <h2 class="fs-title" id="IDTRANSLATEFORM36"></h2>
+                            <h3 class="fs-subtitle" id="IDTRANSLATEFORM37"></h3>
 
-                            <p style="text-align: start !important;">Ma situation matrimoniale <i class="fa fa-star
-                                    required"></i></p>
-                            <select id="choices-multiple-remove-button"
-                                required>
-                                <option value="Célibataire" selected>Célibataire</option>
-                                <option value="Célibataire sans enfant(s)">En couple</option>
-                                <option value="Célibataire avec enfant(s)">Divorcé(e)</option>
-                                <option value="Divorcé(e)">Veuf(ve)</option>
+                            <p style="text-align: start !important;" id="IDTRANSLATEFORM38"></p>
+                            <select id="choices-multiple-remove-button" required>
+                                <option  selected id="IDTRANSLATEFORM39"></option>
+                                <option  id="IDTRANSLATEFORM40"></option>
+                                <option  id="IDTRANSLATEFORM41"></option>
+                                <option  id="IDTRANSLATEFORM42"></option> 
                             </select>
 
-                            <p style="text-align: start !important;">Ma
-                                nationalité <i class="fa fa-star required"></i></p>
-                            <select type="text" id="myprofileidnationèèalité"
-                                name="lname" placeholder="Ma nationalité" required></select>
+                            <p style="text-align: start !important;" id="IDTRANSLATEFORM43"></p>
+                            <select type="text" id="myprofileidnationèèalité" name="lname" placeholder="Ma nationalité" required></select>
                             
-                            <p style="text-align: start !important;" id="PphoneId">Téléphone
-                            <i class="fa fa-star required"></i></p>
+                            <p style="text-align: start !important;" id="PphoneId"></p>
                             <p id="errorSmsphone" style="text-align: start !important; display: none; color: red;">
-                            Saisiz uniquement votre numéro sans le préfixe du pays<i class="fa fa-star required"></i></p>
+                            </p>
                             <div class="form-container">
                             <select id="countrySelect">
                                <option value="" selected></option>
@@ -142,99 +131,63 @@
                             <input type="text" id="myprofileidtéléphone" name="facebook" onblur="validatePhoneNumber()"
                             placeholder="téléphone" pattern="[^+]*" required/>
                             </div>
-                            <!---
-                            <p style="text-align: start !important;" id="PtailleId">Ma taille <i class="fa fa-star required"></i></p>
-                            <p id="errorSmsTaille" style="text-align: start !important; display: none; color: red;">Veuillez saisir un nombre à virgule entre 1 et 2 chiffres.<i class="fa fa-star required"></i></p>
-                            <input type="text" id="myprofileidtaille" name="facebook" placeholder="Ma taille" pattern="^[0-9]+(\.[0-9]{1,2})?$" required/>
+                                <p style="text-align: start !important;" id="IDTRANSLATEFORM46"></p>
+                                <input type="text" id="myprofileidtravail" name="text" required/>
 
-                            <p style="text-align: start !important;" id="PpoidsId">Mon poids
-                                <i class="fa fa-star required"></i></p>
-                            <p id="errorSmspoids" style="text-align: start !important; display: none; color: red;">Veuillez saisir un nombre.<i class="fa fa-star required"></i></p>
-                            <input type="text" id="myprofileidpoids"
-                                name="gplus" placeholder="Mon poids" pattern="[0-9]+" required/>
-
-                            <p style="text-align: start !important;">Mon teint
-                                <i class="fa fa-star required"></i></p>
-                            <input type="text" id="myprofileidteint"
-                                name="gplus" placeholder="Mon teint" required/>-->
-                                <p style="text-align: start !important;">Mon travail
-                                    ou occupation <i class="fa fa-star required"></i></p>
-                                <input type="text" id="myprofileidtravail"
-                                    name="text" placeholder="Mon travail" required/>
-
-                            <input type="button" name="previous" class="previous
-                                action-button-previous" value="précédent"/>
-                            <input type="button" name="next" class="next
-                                action-button" value="Suivant"/>
+                            <input type="button" name="previous" class="previous action-button-previous" id="firstPre"/>
+                            <input type="button" name="next" class="next action-button" id="firstNext"/>
                         </fieldset>
                         <fieldset>
-                            <h2 class="fs-title">VEUILLEZ REMPLIR LE FORMULAIRE CI-DESSOUS.</h2>
-                            <h3 class="fs-subtitle">Donnez des informations précises et judicieuses.</h3>
+                            <h2 class="fs-title" id="IDTRANSLATEFORM48"></h2>
+                            <h3 class="fs-subtitle" id="IDTRANSLATEFORM49"></h3>
 
-                            <p style="text-align: start !important;">Je veux une
-                                rencontre <i class="fa fa-star required"></i></p>
-                            <select id="choices-multiple-remove-buttonrencontre"
-                                required>
-                                <option value="Amicale, une compagnie pour
-                                    briser la solitude">Amicale, une compagnie
-                                    pour briser la solitude</option>
-                                <option value="Durable">Durable</option>
-                                <option value="Pouvant aboutir au mariage">Pouvant
-                                    aboutir au mariage</option>
+                            <p style="text-align: start !important;" id="IDTRANSLATEFORM50"></p>
+                            <select id="choices-multiple-remove-buttonrencontre" required>
+                                <option   id="IDTRANSLATEFORM51"></option>
+                                <option   id="IDTRANSLATEFORM52"></option>
+                                <option   id="IDTRANSLATEFORM53"></option>
                             </select>
-                            <p style="text-align: start !important;">Pièce
-                                d'identité <!---<i class="fa fa-star required"></i>--></p>
-                            <input type="file" id="myprofileididentité"
-                                name="gplus" placeholder="Pièce d'identité" />
-                            <p style="text-align: start !important;">
-                                Photo 1 <i class="fa fa-star required"></i></p>
-                            <input type="file" id="myprofileidPhotos"
-                                name="gplus" placeholder="Deux de vos Photos" required/>
-                            <p style="text-align: start !important;">
-                                Photo 2 <i class="fa fa-star required"></i></p>
-                            <input type="file" id="myprofileidPhoto2"
-                                name="gplus" placeholder="Deux de vos Photos" required/>
-                            <input type="button" name="previous" class="previous
-                                action-button-previous" value="précédent"/>
-                            <input type="button" name="next" class="next
-                                action-button" value="Suivant"/>
+                            <p style="text-align: start !important;" id="IDTRANSLATEFORM54"></p>
+                            <input type="file" id="myprofileididentité" name="gplus" placeholder="Pièce d'identité" />
+                            <p style="text-align: start !important;" id="IDTRANSLATEFORM55"></p>
+                            <input type="file" id="myprofileidPhotos"  name="gplus" placeholder="Deux de vos Photos" required/>
+                            <p style="text-align: start !important;" id="IDTRANSLATEFORM56"> </p>
+                            <input type="file" id="myprofileidPhoto2"  name="gplus" placeholder="Deux de vos Photos" required/>
+                            <input type="button" name="previous" class="previous  action-button-previous" id="secondtPre"/>
+                            <input type="button" name="next" class="next action-button" id="secondNext"/>
                         </fieldset>
                         <fieldset>
-                            <h2 class="fs-title">VEUILLEZ REMPLIR LE FORMULAIRE CI-DESSOUS.</h2>
-                            <h3 class="fs-subtitle">Donnez des informations précises et judicieuses.</h3>
-                            <p style="text-align: start !important;">Son Genre <i
-                                    class="fa fa-star required"></i></p>
+                            <h2 class="fs-title" id="IDTRANSLATEFORM57"></h2>
+                            <h3 class="fs-subtitle" id="IDTRANSLATEFORM58"></h3>
+                            <p style="text-align: start !important;" id="IDTRANSLATEFORM59"></p>
                             <select id="choices-multiple-remove-buttonSonsexe"
                                 required>
-                                <option value="Masculin" selected>Homme</option>
-                                <option value="Femme">Femme</option>
-                                <option value="Transgenre">Transgenre</option>
-                                <option value="Fluide">Fluide(Genderfluid)</option>
-                                <option value="Intersexe">Intersexe</option>
-                                <option value="Agenre">Agenre</option>
-                                <option value="Aromantique">Aromantique</option>
-                                <option value="Asexuel.le">Asexuel.le</option>
-                                <option value="Bisexuel.le">Bisexuel.le</option>
-                                <option value="Cisgenre">Cisgenre</option>
-                                <option value="Cisnormativité">Cisnormativité</option>
-                                <option value="Demiromantique">Demiromantique</option>
-                                <option value="Demisexuel.le">Demisexuel.le</option>
-                                <option value="Hétéromantivité">Hétéromantivité</option>
-                                <option value="Iel">Iel</option>
-                                <option value="Mégenrer">Mégenrer</option>
-                                <option value="Non-binaire">Non-binaire</option>
-                                <option value="Pansexuel.le">Pansexuel.le</option>
-                                <option value="Polyamoureux.se">Polyamoureux.se</option>
-                                <option value="Queer">Queer</option>
-                                <option value="Transgenre">Transgenre</option>
-                                <option value="Transition">Transition</option>
+                                <option   selected id="IDTRANSLATEFORM60"></option>
+                                <option   id="IDTRANSLATEFORM61"></option>
+                                <option   id="IDTRANSLATEFORM62"></option>
+                                <option   id="IDTRANSLATEFORM63"></option>
+                                <option   id="IDTRANSLATEFORM64"></option>
+                                <option   id="IDTRANSLATEFORM65"></option>
+                                <option   id="IDTRANSLATEFORM66"></option>
+                                <option   id="IDTRANSLATEFORM67"></option>
+                                <option   id="IDTRANSLATEFORM68"></option>
+                                <option   id="IDTRANSLATEFORM69"></option>
+                                <option   id="IDTRANSLATEFORM70"></option>
+                                <option   id="IDTRANSLATEFORM71"></option>
+                                <option   id="IDTRANSLATEFORM72"></option>
+                                <option   id="IDTRANSLATEFORM73"></option>
+                                <option   id="IDTRANSLATEFORM74"></option>
+                                <option   id="IDTRANSLATEFORM75"></option>
+                                <option   id="IDTRANSLATEFORM76"></option>
+                                <option   id="IDTRANSLATEFORM77"></option>
+                                <option   id="IDTRANSLATEFORM78"></option>
+                                <option   id="IDTRANSLATEFORM79"></option>
+                                <option   id="IDTRANSLATEFORM80"></option>
+                                <option   id="IDTRANSLATEFORM81"></option>
                             </select>
-                            <p style="text-align: start !important;" id="Pyhold">Sa tranche
-                                d'âge <i class="fa fa-star required"></i></p>
-                                <p id="errorSmsyour" style="text-align: start !important; display: none; color: red;">Veuillez saisir uniquement des chiffres.<i class="fa fa-star required"></i></p>
-                            <select type="text" id="myprofileidtrancheâge"
-                                name="facebook" placeholder="Sa tranche d'âge"
-                                pattern="[0-9]+" required>
+                            <p style="text-align: start !important;" id="Pyhold"></p>
+                            <p id="errorSmsyour" style="text-align: start !important; display: none; color: red;">Veuillez saisir uniquement des chiffres.<i class="fa fa-star required"></i></p>
+                            <select type="text" id="myprofileidtrancheâge"  name="facebook" placeholder="Sa tranche d'âge" pattern="[0-9]+" required>
                                 <option value="18-30" selected>18-30</option>
                                 <option value="31-40" >31-40</option>
                                 <option value="41-50" >41-50</option>
@@ -243,54 +196,45 @@
                                 <option value="71-80" >71-80</option>
                                 <option value="80+" >80+</option>
                             </select>
-                            <p style="text-align: start !important;">Sa situation matrimoniale <i class="fa fa-star
-                                    required"></i></p>
-                            <select
-                                id="buttonmatrimonialeID"
-                                required>
-                                <option value="Célibataire" selected>Célibataire</option>
-                                <option value="Célibataire sans enfant(s)">En couple</option>
-                                <option value="Célibataire avec enfant(s)">Divorcé(e)</option>
-                                <option value="Divorcé(e)">Veuf(ve)</option>
+                            <p style="text-align: start !important;" id="IDTRANSLATEFORM83"></p>
+                            <select id="buttonmatrimonialeID" required>
+                                <option  selected id="IDTRANSLATEFORM84"></option>
+                                <option  id="IDTRANSLATEFORM85"></option>
+                                <option  id="IDTRANSLATEFORM86"></option>
+                                <option  id="IDTRANSLATEFORM87"></option> 
                             </select>
-                            <p style="text-align: start !important;" id="hecountries">Son pays de résidence <i class="fa fa-star required" ></i></p>
-                                <p style="text-align: start !important; display: none;" id="hecountriesId">vous pouvez selectionner plusieurs pays. <i class="fa fa-star required"></i></p>
+                            <p style="text-align: start !important;" id="hecountries"></p>
+                            <p style="text-align: start !important; display: none;" id="hecountriesId"></p>
                             <div style="display: flex;">
-                            <select type="text" style="border-color: red !important;" id="myprofileidSonpays" name="gplus" placeholder="Son pays" required>
+                            <select type="text" style="border-color: red !important;" id="myprofileidSonpays" name="gplus" required>
                             </select>
-                            <input type="text" id="getAllOption" style="display: none;" placeholder="Son pays de résidence">
+                            <input type="text" id="getAllOption" style="display: none;">
                             </div>
-                            <input type="button" name="previous" class="previous action-button-previous" value="précédent" />
-                            <input type="button" name="next" class="next action-button" value="Suivant" id="IDsuivant"/>
+                            <input type="button" name="previous" class="previous action-button-previous" id="treetPre"/>
+                            <input type="button" name="next" class="next action-button" id="IDsuivant"/>
                         </fieldset>
                         <fieldset>
-                            <h2 class="fs-title">VEUILLEZ REMPLIR LE FORMULAIRE CI-DESSOUS.</h2>
-                            <h3 class="fs-subtitle">Donnez des informations précises et judicieuses.</h3>
-                            <p style="text-align: start !important;" id="TextiD">Décrivez l'aspect physique que vous désirez.</p>
+                            <h2 class="fs-title" id="IDTRANSLATEFORM92"></h2>
+                            <h3 class="fs-subtitle" id="IDTRANSLATEFORM93"></h3>
+                            <p style="text-align: start !important;" id="TextiD"></p>
                            <!-- <p style="text-align: start !important; display: none; color: red;" id="TextCounptsms">
                             Le contenu doit comporter au moins 100 caractères.<i class="fa fa-star required"></i></p>--->
                             <p style="text-align: start !important;" id="TextCounpt"></p>
                             <textarea type="text" id="myprofileidpréférences" maxlength="125" minlength="0"
                                 name="email" placeholder="Aspect physique"  oninput="countCharacters()"></textarea>
-                            <p style="text-align: start !important;">Sa ville
-                                d'habitation <i class="fa fa-star required"></i></p>
-                            <input type="text" id="myprofileidSavilleID" name="pass" placeholder="Sa ville" required/>
-                            <p style="text-align: start !important;">Son travail
-                                ou occupations <i class="fa fa-star required"></i></p>
-                            <input type="text" id="myprofileidoccupations"
-                                name="pass" placeholder="Son travail" required/>
+                            <p style="text-align: start !important;" id="IDTRANSLATEFORM95"></p>
+                            <input type="text" id="myprofileidSavilleID" name="pass"  required/>
+                            <p style="text-align: start !important;" id="IDTRANSLATEFORM97"></p>
+                            <input type="text" id="myprofileidoccupations" name="pass" required/>
                              
-                                <p style="text-align: start !important;" id="TextiDy">Autres précisions.</p>
+                            <p style="text-align: start !important;" id="TextiDy"></p>
                               <!--- <p style="text-align: start !important; display: none; color: red;" id="TextCounptsmsy">
                                 Le contenu doit comporter au moins 50 caractères.<i class="fa fa-star required"></i></p>---> 
-                                <p style="text-align: start !important;" id="TextCounpty"></p>
+                            <p style="text-align: start !important;" id="TextCounpty"></p>
                             <textarea type="text" id="myprofileidprécisions" oninput="countCharactersy()"
-                            maxlength="125" minlength="0"   name="email" placeholder="Autres précisions" ></textarea>
-                            <input type="button" name="previous" class="previous 
-                                action-button-previous" id="IDprevious" value="précédent"/>
-                            <input type="submit" name="submit" class="submit
-                                action-button" value="Envoyer"
-                                id="sunmitannonceid"/>
+                            maxlength="125" minlength="0"   name="email" ></textarea>
+                            <input type="button" name="previous" class="previous action-button-previous" id="IDprevious"/>
+                            <input type="submit" name="submit" class="submit action-button" id="sunmitannonceid"/>
                         </fieldset>
                     </form>
                 </div>
@@ -319,16 +263,7 @@
         <script src="formulaire.js"></script>
         <div id="preloader"></div>
         <div style="font-size: 7px !important; margin-bottom: 0 !important;" class="alert alert-success" role="alert"   id="IdAlertSms">
-            <p ><em> Les données à caractère personnel collectées dans le présent formulaire par <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong> seront traitées exclusivement à des fins du bon déroulement du service de rencontres
-                amoureuses que vous sollicitez.
-                Les données à caractère personnel collectées ne sont communiquées à personne sans votre consentement.
-                En application des dispositions de la loi 2017-20 portant code du numérique en République du Bénin sur
-                la protection des données à caractère personnel, le traitement portant sur les données collectées a été
-                déclaré devant l’APDP.</em>
-            </p>
-            <hr>
-            <p class="mb-0"><em>Conformément à la loi précitée, vous pouvez exercer vos droits d’accès, d’opposition, de rectification et
-                de suppression auprès de <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong>.</em></p>
+            
         </div>
         <script type="module">
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
@@ -396,6 +331,11 @@
                 .then((snapshot) => {
                 // first place for preloader
                 if (snapshot.exists()) {
+                document.getElementById('IDTRANSLATEFORM1').addEventListener('click', function(){
+                    var choices = document.getElementById('choices-multiple-remove-button')
+                    alert(choices.value)
+                })
+                
                 //preloader.style.display = "none" 
                 {/*console.log(snapshot.val().MAVILLEDERESIDENCE)
                 var photoDataUrl = 'data:image/png;base64,' + snapshot.val().MAVILLEDERESIDENCE;
@@ -451,14 +391,15 @@
                  myprofileidPrénoms.value =   snapshot.val().fullname
                  myprofileidnationèèalité.value =  snapshot.val().MANATIONNALITE
                  myprofileidtravail.value =   snapshot.val().MONTRAVAILLEOUOCCUPATION
-                 choicesmultipleremovebutton.value =  snapshot.val().MASITUATIONMATRIMONIALE
+                 var selectedValue = $("#choices-multiple-remove-button").val();
+                 selectedValue =  snapshot.val().MASITUATIONMATRIMONIALE
                  myprofileidâge.value =  snapshot.val().MONAGE
-                 choicesmultipleremovebuttonsexe.value =  snapshot.val().MONSEXE
+                 var selectedValuegenre = $("#choices-multiple-remove-buttonsexe").val();
+                 selectedValuegenre =  snapshot.val().MONSEXE
                  myprofileidtéléphone.value =   snapshot.val().TELEPHONE
                  choicesmultipleremovebuttonrencontre.value =   snapshot.val().JEVEUXUNERENCONTRE
                  myprofileidSaville.value = snapshot.val().VILLEDHABITATIONDEPROFILQUEJECHERCHE
-                 myprofileidoccupations.value =   snapshot.val().TRAVAILDEDEPROFILQUEJECHERCHE
-                 
+                 myprofileidoccupations.value =   snapshot.val().TRAVAILDEDEPROFILQUEJECHERCHE                
                  buttonSonGenre.value =  snapshot.val().SEXEDEPROFILQUEJECHERCHE
                  myprofileidtrancheâge.value =   snapshot.val().SONAGEDEPROFILQUEJECHERCHE
                  buttonmatrimonialeValue.value =  snapshot.val().SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE
@@ -560,7 +501,8 @@
             base64Contenttable.push(base64Content)
             // ...
             }else{
-                alert(`Votre image est trop pétite. Veuillez sélectionner une image d'au moins 300x300 pixels.`)
+                Swal.showValidationMessage(i18next.t('IDTRANSLATEFORM105'));
+                //alert(`Votre image est trop pétite. Veuillez sélectionner une image d'au moins 300x300 pixels.`)
                 inputElement.value = ""
             }
             };
@@ -647,7 +589,8 @@
             base64Contentphoto1table.push(base64Contentphoto1)
             // ...
             }else{
-                alert(`Votre image est trop pétite. Veuillez sélectionner une image d'au moins 300x300 pixels.`)
+                Swal.showValidationMessage(i18next.t('IDTRANSLATEFORM105'));
+                //alert(`Votre image est trop pétite. Veuillez sélectionner une image d'au moins 300x300 pixels.`)
                 inputElement1.value = ""
             }
             };
@@ -723,7 +666,8 @@
             console.log("Contenu en base64 : ", base64Contentphoto2);
             base64Contentphoto2table.push(base64Contentphoto2)
             }else{
-                alert(`Votre image est trop pétite. Veuillez sélectionner une image d'au moins 300x300 pixels.`)
+                Swal.showValidationMessage(i18next.t('IDTRANSLATEFORM105'));
+                //alert(`Votre image est trop pétite. Veuillez sélectionner une image d'au moins 300x300 pixels.`)
                 inputElement2.value = ""
             }
             // ...
@@ -762,7 +706,8 @@
                     });
                 },
                 error: function(error) {
-                    console.log("Une erreur s'est produite lors de l'appel à l'API REST Countries:", error);
+                    Swal.showValidationMessage(i18next.t('IDTRANSLATEFORM106'));
+                    //console.log("Une erreur s'est produite lors de l'appel à l'API REST Countries:", error);
                 }
             });
             // Fonction pour obtenir le préfixe téléphonique du pays
@@ -793,13 +738,16 @@
                 var numberVarible = countryCode + phoneNumber
                 numberVaribleTable.push(numberVarible)
             }else{
-              alert("Mettez simplement le numéro sans le préfixe")
+              Swal.showValidationMessage(i18next.t('IDTRANSLATEFORM107'));
+              //alert("Mettez simplement le numéro sans le préfixe")
             }
             }
               // Vérifier si le préfixe téléphonique correspond au pays sélectionné
           
           }else{
-            alert("veuillez selectioner le pays")
+            
+            Swal.showValidationMessage(i18next.t('IDTRANSLATEFORM108'));
+            //alert("veuillez selectioner le pays")
           }
       }
       
@@ -888,8 +836,8 @@
                 var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
                 dreamIndemo.click();
                 document.getElementById('iconid').innerHTML = ` <img src="assets/imageSucess.svg" alt="">`
-                document.getElementById('etatalert').innerText = "Succès"
-                document.getElementById('smsalert').innerHTML = `Votre formulaire est soumis au contrôle pour validation sous 24 heures <i class="fa fa-heart"></i>.`
+                document.getElementById('etatalert').innerHTML = `<p id="IDTRANSLATEFORM109"></p>`
+                document.getElementById('smsalert').innerHTML = `<p id="IDTRANSLATEFORM110"></p>`
                 setTimeout(()=>{
                     document.getElementById('myFormulaireId').style.display = "block"
                     document.getElementById('modalID').style.display = "none"  
@@ -898,7 +846,10 @@
                 setTimeout(()=>{
                 window.location.replace("./../profil.html");
                 }, 10000)
-                  
+                var texteTraduitprofil1X = i18next.t("IDTRANSLATEFORM109");
+                $('[id="IDTRANSLATEFORM109"]').text(texteTraduitprofil1X);  
+                var texteTraduitprofil1X0 = i18next.t("IDTRANSLATEFORM110");
+                $('[id="IDTRANSLATEFORM110"]').html(texteTraduitprofil1X0);  
                 })
                 .catch((error) => {
                
@@ -911,12 +862,15 @@
                 var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
                 dreamIndemo.click();
                 document.getElementById('iconid').innerHTML = ` <img src="assets/imageNoSucess.svg" alt="">`
-                document.getElementById('etatalert').innerText = "Désolé"
-                document.getElementById('smsalert').innerHTML = `Tout vos champs ne sont pas rempli`
+                document.getElementById('etatalert').innerHTML = `<p id="IDTRANSLATEFORM111"></p>`
+                document.getElementById('smsalert').innerHTML =  `<p id="IDTRANSLATEFORM112"></p>`
                 setTimeout(()=>{
                     document.getElementById('myFormulaireId').style.display = "block"
                     document.getElementById('modalID').style.display = "none"  
                 },5000)
+                
+                var texteTraduitprofil1X02 = i18next.t("IDTRANSLATEFORM112");
+                $('[id="IDTRANSLATEFORM112"]').html(texteTraduitprofil1X02); 
             }
         })
         </script>
@@ -926,6 +880,7 @@
             src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
         <script src="./../userConnect.js"></script>
+        <script src="./../../translate.js"></script>
     </body>
     
 </html>

@@ -32,6 +32,8 @@
       <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet">
+      <script src="https://unpkg.com/jquery"></script>
+      <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
       <style>
                  * {
       font-family: 'Montserrat-bold', sans-serif;
@@ -59,33 +61,33 @@
       <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
   
         <a href="index.html" class="logo d-flex align-items-center">
-          <!-- <img src="assets/img/logo.png" alt="">-->
+          <img src="assets/img/illicolove.png" alt=""> 
           <span>illicolove</span>
         </a>
-  
+   
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link scrollto" href="index.html">Accueil</a></li>
-            <li><a class="nav-link scrollto" href="#about">À propos</a></li>
+            <li><a class="nav-link scrollto" href="index.html" id="IDTRANSLATE1"></a></li>
+            <li><a class="nav-link scrollto" href="index.html#about" id="IDTRANSLATE2"></a></li>
             <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li>-->
-          <li><a class="nav-link scrollto" href="Comment&ça&fonctionne.html">Comment ça fonctionne ?</a></li>
-            <li class="dropdown"><a href="#"><span>Termes</span> <i class="bi bi-chevron-down"></i></a> 
+            <li><a class="nav-link scrollto" href="Comment&ça&fonctionne.html" id="IDTRANSLATE3"></a></li>
+            <li class="dropdown"><a href="#"><span id="IDTRANSLATE4"></span> <i class="bi bi-chevron-down"></i></a>
               <ul>
-                <li><a href="termes&conditions.html">Conditions Générales d’Utilisation</a></li>
-                <li><a class="nav-link scrollto active" href="politique.html">Politique de Confidentialité</a></li>
+                <li><a href="termes&conditions.html" id="IDTRANSLATE5"></a></li>
+                <li><a  class="nav-link scrollto active" href="politique.html" id="IDTRANSLATE6"></a></li>
               </ul>
             </li>  
             <li class="dropdown"><a href="#"><span><i class="bi bi-globe2"></i></span> <i class="bi bi-chevron-down"></i></a>
-              <ul>
-                <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1eb_1f1f7/32.png" alt="" ></li>
-                <li  style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1ec_1f1e7/32.png" alt=""></li>
-                <li  style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1ea_1f1f8/32.png" alt=""></li>
+              <ul id="language-select">
+                <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1eb_1f1f7/32.png" alt="fr" ></li>
+                <li  style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1ec_1f1e7/32.png" alt="en"></li>
+                <li  style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f1ea_1f1f8/32.png" alt="es"></li>
               </ul>
-            </li>     
-            <li><a href="faq.html">F.A.Q</a></li>
-            <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
-            <li><a class="getstarted scrollto" href="./v/login/signup.html">S'inscrire</a></li>
-            <li><a class="getstarted scrollto" href="./v/login/login.html">Se connecter</a></li>
+            </li>
+            <li><a href="faq.html" class="nav-link scrollto">F.A.Q</a></li>
+            <li><a class="nav-link scrollto" href="#contact" id="IDTRANSLATE7"></a></li>
+            <li><a class="getstarted scrollto" href="./v/login/signup.html" id="IDTRANSLATE8"></a></li>
+            <li><a class="getstarted scrollto" href="./v/login/login.html" id="IDTRANSLATE9"></a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -95,180 +97,86 @@
     <div class="container" style="margin-top: 40px !important;">
       <div class="row" style="border-left: #FFB6C1 solid 2px; border-right: #FFB6C1 solid 2px;">
         <div class="col-lg-8 offset-lg-2 mt-5">
-          <h1 style="font-size: 33px !important; text-align: center;">POLITIQUE DE CONFIDENTIALITE</h1>
+          <h1 style="font-size: 33px !important; text-align: center;" id="IDTRANSLATEPC1"></h1>
 
           <div class="row">
             <article>
-              <h3 class="article-title"><i class="fas fa-file-alt"></i> Mentions légales</h3>
-              <p>Les présentes mentions légales et politique de confidentialité disposent et vous éclairent de la
-                manière dont BAKO FAMILIA &amp; COMPANY utilise et protège les informations que vous nous
-                transmettez, également, lorsque vous utilisez notre site de rencontres amoureuses accessible à
-                partir de l’URL : www.illicolove.com.</p>
+              <h3 class="article-title" id="IDTRANSLATEPC2"><i class="fas fa-file-alt"></i> </h3>
+              <p id="IDTRANSLATEPC3"></p>
                
-              <p>Nous vous prions de noter que notre politique de confidentialité est susceptible d’être modifiée
-                et/ou complétée à tout moment, notamment en vue de se conformer à toute évolution législative,
-                règlementaire, jurisprudentielle ou technologique. Dans un tel cas, la date de sa mise à jour sera
-                indiquée dans la présente politique. Ces modifications engagent l’utilisateur dès leur mise en
-                ligne.</p>
-              <p>Nous vous invitons par conséquent à consulter régulièrement les présentes mentions et politique
-                de confidentialité afin de prendre connaissance de ses éventuelles modifications.</p>
+              <p id="IDTRANSLATEPC4"></p>
             </article>
 
             <article>
-              <h3 class="article-title"><i class="fas fa-file-alt"></i> Déclaration à l’Autorité de Protection des Données à caractère
-                Personnel (APDP)</h3>
-              <p>Conformément à la loi n° 2017-20 du 20 avril 2018 portant code du numérique en République du
-                Bénin (Livre 5 ième relatif à la protection des données personnelles et de la vie
-                privée) le site internet www.illicolove.com a fait l&#39;objet d&#39;une déclaration auprès de l’Autorité de
-                Protection des Données à caractère Personnel (apdp.bj) sous le numéro…………</p>
+              <h3 class="article-title" id="IDTRANSLATEPC5"><i class="fas fa-file-alt"></i></h3>
+              <p id="IDTRANSLATEPC6"></p>
 
-              <p>En tout état de cause, BAKO FAMILIA &amp; COMPANY ne collecte des informations personnelles
-                relatives à l’utilisateur.trice que pour les besoins du service de rencontres amoureuses proposé
-                par son site internet. L’utilisateur.trice fournit ces informations en toute connaissance de cause,
-                notamment lorsqu’il procède par lui-même à leur saisie.</p>
+              <p id="IDTRANSLATEPC7"></p>
 
-              <p>Conformément aux dispositions de la loi 2017-20 portant code du numérique en
-              République du Bénin, tout utilisateur.trice dispose d’un droit d’accès, de rectification et
-              d’opposition aux données personnelles le concernant, en effectuant sa demande écrite et signée,
-              accompagnée d’une copie d’une pièce d’identité avec signature du titulaire de la pièce, en
-              précisant l’adresse à laquelle la réponse doit être envoyée. Aucune information personnelle d’un
-              utilisateur.trice de notre site internet « www.illicolove.com » n’est publiée, cédée ou vendue sur
-              un support quelconque ou à des tiers à son insu.</p>
+              <p id="IDTRANSLATEPC8"></p>
             </article>
 
             <article>
-              <h3 class="article-title"><i class="fas fa-file-alt"></i> Confidentialité des données</h3>
-              <p>Vos données personnelles sont confidentielles et ne seront en aucun cas
-                communiquées à des tiers.</p>
- 
-              <p>La nature privée de notre service de rencontres amoureuses ne nous permet pas de
-                communiquer vos données personnelles (noms, contacts, adresses, etc) à un individu, quel que
-                soit son rang ou sa qualité.</p>
+              <h3 class="article-title" id="IDTRANSLATEPC9"><i class="fas fa-file-alt"></i> </h3>
+              <p id="IDTRANSLATEPC10"></p>
                
                
             </article>
             <article>
-              <h3 class="article-title"><i class="fas fa-file-alt"></i> Droit d&#39;accès</h3>
-              <p>En application des dispositions de la loi portant code du numérique en République du Bénin, tout utilisateur
-                de notre site internet www.illicolove.com dispose d’un droit d’accès, de rectification, de modification et de
-                suppression relative aux données qui le concerne individuellement. Ce droit peut être exercé par le
-                titulaire sur demande adressée par voie électronique à l’adresse e-mail suivante : info@illicolove.com. Les
-                informations personnelles collectées ne sont en aucun cas confiées à des tiers.
-                </p>
+              <h3 class="article-title" id="IDTRANSLATEPC11"><i class="fas fa-file-alt"></i> </h3>
+              <p id="IDTRANSLATEPC12">
+              </p>
               
             <article>
-              <h3 class="article-title"><i class="fas fa-file-alt"></i> Droit de rectification</h3>
-              <p>Conformément à la loi portant code du numérique en République du Bénin, tout utilisateur de
-                notre site internet www.illicolove.com peut demander la rectification, la mise à jour, la
-                suppression, le verrouillage ou encore l’effacement des données le concernant, et qui peuvent
-                s’avérer inexactes, erronées, incomplètes, équivoques ou obsolètes.</p>
+              <h3 class="article-title" id="IDTRANSLATEPC13"><i class="fas fa-file-alt"></i> </h3>
+              <p id="IDTRANSLATEPC14"></p>
                
             </article>
-            <article>Durée de conservation.</h3>
-              <p>Vos données personnelles sont conservées par BAKO FAMILIA &amp; COMPANY uniquement pour
-                le temps correspondant à votre besoin de services de rencontres amoureuses. Toutefois, cette
-                durée de conservation n’excède pas treize (12) mois.</p>
+            <article id="IDTRANSLATEPC15"></h3>
+              <p id="IDTRANSLATEPC16"></p>
                
             </article>
             <article>
-              <h3 class="article-title"><i class="fas fa-file-alt"></i> Plainte auprès de l’autorité compétente</h3>
-              <p>Si vous considérez que BAKO FAMILIA &amp; COMPANY ne respecte pas ses obligations au regard
-                de vos données personnelles collectées lors de votre visite sur son site internet
-                www.illicolove.com, vous pouvez adresser, comme le prescrit la procédure légale, une plainte ou
-                une demande auprès de l’Autorité de Protection des Données à caractère Personnel(APDP).</p>
+              <h3 class="article-title" id="IDTRANSLATEPC17"><i class="fas fa-file-alt"></i> </h3>
+              <p id="IDTRANSLATEPC18"></p>
             </article>
-            <article>
-              <h3 class="article-title"><i class="fas fa-file-alt"></i> Propriété intellectuelle</h3>
-              <p>Tout le contenu du présent site internet, incluant, de façon non limitative, les graphismes, images,
-                textes, vidéos, animations, sons, logos, gifs et icônes ainsi que leur mise en forme sont la
-                propriété exclusive de BAKO FAMILIA &amp; COMPANY à l&#39;exception des marques, logos ou
-                contenus appartenant à d&#39;autres sociétés partenaires ou auteurs.</p>
-              <p>Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même
-                partielle, de ces différents éléments est strictement interdite sans l&#39;accord exprès écrit de BAKO
-                FAMILIA &amp; COMPANY.</p>
+            <article> 
+              <h3 class="article-title" id="IDTRANSLATEPC19"><i class="fas fa-file-alt"></i> </h3>
+              <p id="IDTRANSLATEPC20"></p>
                
              
                
             </article>
             <article>
-              <h3 class="article-title"><i class="fas fa-file-alt"></i> Conditions de service</h3>
-              <p>Le site internet www.illicolove.com est proposé en langue française, avec des traductions en
-                anglais et en espagnol. Pour un meilleur confort d&#39;utilisation, nous vous recommandons de
-                recourir à des navigateurs compatibles et modernes comme : Chrome, Safari, Firefox.</p>
+              <h3 class="article-title" id="IDTRANSLATEPC21"><i class="fas fa-file-alt"></i> </h3>
+              <p id="IDTRANSLATEPC22"></p>
             </article>
             <article>
-              <h3 class="article-title"><i class="fas fa-file-alt"></i> Informations et suggestions</h3>
-              <p>BAKO FAMILIA &amp; COMPANY met en œuvre tous les moyens en sa possession, pour assurer un
-                service de rencontres amoureuses fiable et une mise à jour permanente de son site internet
-                www.illicolove.com. Toutefois, des erreurs ou omissions peuvent subvenir. En conséquence, tout utilisateur.trice peut nous envoyer des suggestions ou des informations à : info@illicolove.com et
-                indiquer toutes modifications du site qu&#39;il jugerait pertinentes.</p>
+              <h3 class="article-title" id="IDTRANSLATEPC23"><i class="fas fa-file-alt"></i> </h3>
+              <p id="IDTRANSLATEPC24"></p>
             </article>
             <article>
-              <h3 class="article-title"><i class="fas fa-file-alt"></i> Cookies.</h3>
-              <p>Pour des besoins de performance techniques, de statistiques et d&#39;affichage, le site internet
-                www.illicolove.com peut utiliser des cookies. Les cookies sont de petits fichiers textes stockés sur
-                votre terminal, et qui ne permettent pas l’identification de l’utilisateur, mais qui enregistrent des
-                informations relatives à la navigation d’un terminal sur un site internet. Certaines parties de ce
-                site ne peuvent être fonctionnelles sans l’acceptation de cookies. Les données ainsi obtenues
-                visent à faciliter la navigation ultérieure sur ce site. Les cookies ont également vocation à
-                permettre diverses mesures d’audience et de fréquentation.</p>
-                <p>
-                  Le refus d’installation d’un cookie peut entraîner l’impossibilité d’accéder à certaines
-                  fonctionnalités. Tout utilisateur de ce site internet peut toutefois configurer son terminal pour
-                  décliner l’installation des cookies, comme indiqué ci-dessous :
+              <h3 class="article-title" id="IDTRANSLATEPC25"><i class="fas fa-file-alt"></i> </h3>
+              <p id="IDTRANSLATEPC26"></p>
+                <p id="IDTRANSLATEPC27">
+                 
                 </p>
                 <ul>
-                  <li>
-                    Utilisateurs de Safari : Choisissez Safari &gt; Préférences,
-                    cliquez sur Confidentialité, puis sélectionnez l’option
-                    relative aux « Cookies et données de site web ». Toujours
-                    bloquer : Safari ne permet à aucun site web, tiers ni
-                    annonceur de stocker des cookies et autres données sur
-                    votre Mac. Cela peut empêcher certains sites web de
-                    fonctionner correctement.
+                  <li id="IDTRANSLATEPC28">
+                    
                   </li>
-                  <li>
-                    Utilisateurs de Safari : Choisissez Safari &gt; Préférences,
-                    cliquez sur Confidentialité, puis sélectionnez l’option
-                    relative aux « Cookies et données de site web ». Toujours
-                    bloquer : Safari ne permet à aucun site web, tiers ni
-                    annonceur de stocker des cookies et autres données sur
-                    votre Mac. Cela peut empêcher certains sites web de
-                    fonctionner correctement.
+                  <li id="IDTRANSLATEPC29">
+                    
                   </li>
-                  <li>Utilisateurs de Google Chrome : Menu &gt; Paramètres &gt;
-                    Afficher les paramètres avancés (situé au bas de la page).
-                    Il faut ensuite cliquer sur le bouton Paramètres de contenu
-                    puis cocher la case Bloquer les cookies et les données de
-                    sites tiers, enfin cliquer sur OK pour valider votre choix.</li>
-                    <li>Utilisateurs d’Internet Explorer : Menu &gt; Options Internet &gt;
-                      Onglet &quot;Confidentialité&quot; et sur le bouton Avancé pour faite
-                      apparaitre la fenêtre des Paramètres de confidentialité
-                      avancés. Cochez ensuite la case &quot;Ignorer la gestion
-                      automatique des cookies&quot;, puis sélectionner &quot;Refuser&quot;
-                      dans la colonne &quot;Cookies tierces parties&quot;.</li>
-                    <li>Utilisateurs de Microsoft Edge : onglet outil / options
-                      internet. Cliquez sur Confidentialité et choisissez Bloquer
-                      tous les cookies.</li>
-                    <p>Suivant les pratiques en la matière, certains cookies sont
-                      dispensés du recueil préalable de votre consentement
-                      dans la mesure où ils sont indispensables au
-                      fonctionnement de ce site internet. Ils ont pour finalité de
-                      faciliter la communication par voie électronique. Il s’agit
-                      notamment des cookies d’identifiant de session,
-                      d’authentification et de personnalisation de votre interface.
-                      Ces cookies sont émis et gérés par BAKO FAMILIA &amp;
-                      COMPANY et sont tous soumis à la présente politique.</p>
+                  <li id="IDTRANSLATEPC30"></li>
+                    <li id="IDTRANSLATEPC31"></li>
+                    <li id="IDTRANSLATEPC32"></li>
+                    <p id="IDTRANSLATEPC33"></p>
                 </ul>
             </article>
             <article>
-              <h3 class="article-title"><i class="fas fa-file-alt"></i> Liens hypertextes</h3>
-              <p>Le site internet « www.illicolove.com » peut offrir des liens vers d’autres sites internet ou d’autres
-                ressources disponibles sur Internet. BAKO FAMILIA &amp; COMPANY ne dispose d&#39;aucun moyen
-                pour contrôler les sites en connexion avec son site internet. Par ailleurs, il ne répond pas de la
-                disponibilité de tels sites et sources externes, ni ne la garantit. Il ne peut être tenue pour
-                responsable de tout dommage, de quelque nature que ce soit, résultant du contenu de ces sites
-                ou sources externes.</p>
+              <h3 class="article-title" id="IDTRANSLATEPC34"><i class="fas fa-file-alt"></i> </h3>
+              <p id="IDTRANSLATEPC35"></p>
             </article>
           </div>
         </div>
@@ -302,7 +210,7 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-
+    <script src="translate.js"></script>
   </body>
 
 </html>

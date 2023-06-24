@@ -36,6 +36,8 @@
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
     <!-- Template Main CSS File -->
     <link href="assets/css/stylea.css" rel="stylesheet">
     <script>
@@ -60,7 +62,7 @@
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="././v/profil.html" class="logo d-flex align-items-center">
         <!-- <img src="assets/img/logo.png" alt="">-->
         <button class="btn btn" style="margin-left: 5px; cursor: pointer; background-color: #FFB6C1; color: white;" 
         role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button>
@@ -80,22 +82,22 @@
         <div class="container">
           <div class="row gy-4">
 
-            <div class="col-lg-4 " id="mySliderId" >
+            <div class="col-lg-7 " id="mySliderId" >
               <div class="slider">
                 <div class="slide">
                   <img  alt="Image 1" style="height:
-                    55vh; width: 100%;" id="img1Id" >
+                    60vh; width: 100%;" id="img1Id" >
                 </div>
                 <div class="slide">
                   <img   alt="Image 2" style="height:
-                     55vh; width: 100%;" id="img2Id">
+                     60vh; width: 100%;" id="img2Id">
                 </div>
               </div>
             </div>
-            <div class="col-lg-4" id="mycoodonnees" style=" border: #FFB6C1 solid 1px;">
+            <div class="col-lg-5" id="mycoodonnees" style=" border: #FFB6C1 solid 1px;">
               <div class="portfolio-info" style="height: 60vh !important;"  
               >
-                <h2><strong>Mes coordonnées :</strong></h2>
+                <h2><strong id="IDTRANSLATEUSERD1"></strong></h2>
                 <ul class="list-group mt-4"  >
                   <li class="list-group-item" >
                     <div class="d-flex align-items-center">
@@ -139,23 +141,23 @@
                 <div class="text-center text-lg-start align-items-center" id="contactUserbtnID">
                     <button href="#about" class="btn btn scrollto d-inline-flex align-items-center justify-content-center align-self-center"
                     style="background-color: #FFB6C1; color: white;" id="contactUserbtnIDB">
-                      <span>Pour me contacter</span> &nbsp;&nbsp;
+                      <span id="IDTRANSLATEUSERD2"></span> &nbsp;&nbsp;
                       <i class="bi bi-arrow-right"></i>
                     </button>
                   </div>
               </div>
             </div>
-            <div class="col-lg-4" id="formysuiteId">
+            <div class="col-lg-4" id="formysuiteId" style="display: none;">
               <div class="portfolio-info" style="height: 55vh !important;">
                <div style="height: 22vh;">
-                <h2><strong>Mes préférences physiques :</strong></h2>
-                <p id="suiteId"></p>
+                <h2><strong></strong></h2> 
+                <p id=" "></p> 
                </div>
                <h2 style="opacity: 0;"><strong>Mes préférences physiques :</strong>
                 </h2>
                <div style="height: 22vh;">
-               <h2><strong>Autres précisions :</strong></h2>
-               <p id="myprefenceId"></p>
+               <h2><strong></strong></h2>
+               <p id=" "></p>
               </div>
               </div>
             </div>
@@ -195,42 +197,51 @@
             <table>
               <thead>
                 <tr>
-                  <th>Mon Profil</th>
-                  <th>Réponses</th>
+                  <th id="IDTRANSLATEUSERD3"></th>
+                  <th id="IDTRANSLATEUSERD4"></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Ma Ville de résidence :</td>
+                  <td id="IDTRANSLATEUSERD5"></td>
                   <td id="thmaville"></td>
                 </tr>
                 <tr>
-                  <td>Mon nom ou pseudonyme:</td>
+                  <td id="IDTRANSLATEUSERD6"></td>
                   <td id="monpseudonyme"></td>
                 </tr>
                 <tr>
-                  <td>Ma tranche d'âge :</td>
+                  <td id="IDTRANSLATEUSERD7"></td>
                   <td id="monages"></td>
                 </tr>
                 <tr>
-                  <td>Mon genre:</td>
+                  <td id="IDTRANSLATEUSERD8"></td>
                   <td id="myGenre"></td>
                 </tr>
                 <tr>
-                  <td>Ma situation matrimoniale:</td>
+                  <td id="IDTRANSLATEUSERD9"></td>
                   <td id="masituamatri"></td>
                 </tr>
                 <tr>
-                  <td>Ma nationalité :</td>
+                  <td id="IDTRANSLATEUSERD10"></td>
                   <td id="manationalite"></td>
                 </tr>
                 <tr>
-                  <td>Mon travail ou occupation:</td>
+                  <td id="IDTRANSLATEUSERD11"></td>
                   <td id="montravail"></td>
                 </tr>
                 <tr>
-                  <td>Je veux une rencontre :</td>
+                  <td id="IDTRANSLATEUSERD12"></td>
                   <td id="unerencontreId"></td>
+                </tr>
+                 
+                <tr>
+                  <td id="IDTRANSLATEUSERD13"></td>  
+                  <td id="suiteId"></td>
+                </tr>
+                <tr>
+                  <td id="IDTRANSLATEUSERD14"></td>
+                  <td id="myprefenceId"></td>
                 </tr>
               </tbody>
             </table>
@@ -240,33 +251,33 @@
             <table>
               <thead>
                 <tr>
-                  <th>Profil que je cherche</th>
-                  <th>Réponses</th>
+                  <th id="IDTRANSLATEUSERD15"></th>
+                  <th id="IDTRANSLATEUSERD16"></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Son genre :</td>
+                  <td id="IDTRANSLATEUSERD17"></td>
                   <td id="qsongenre"></td>
                 </tr>
                 <tr>
-                  <td>Sa tranche d'âge :</td>
+                  <td id="IDTRANSLATEUSERD18"></td>
                   <td id="satranche"></td>
                 </tr>
                 <tr>
-                  <td>Sa situation matrimoniale :</td>
+                  <td id="IDTRANSLATEUSERD19"></td>
                   <td id="sasituationMa"></td>
                 </tr>
                 <tr>
-                  <td>Son pays de résidence :</td>
+                  <td id="IDTRANSLATEUSERD20"></td>
                   <td id="sonpays"></td>
                 </tr>
                 <tr>
-                  <td>Sa ville d'habitation :</td>
+                  <td id="IDTRANSLATEUSERD21"></td>
                   <td id="saville"></td>
                 </tr>
                 <tr>
-                  <td>Son travail ou occupation :</td>
+                  <td id="IDTRANSLATEUSERD22"></td>
                   <td id="sontravail"></td>
                 </tr>
                 </tbody>
@@ -396,7 +407,7 @@
                 tableTotakeUser.push(snapshot.val().fullname)
                 document.getElementById('fullname').innerHTML = `${snapshot.val().fullname}`
                 document.getElementById('phone').innerHTML = `<a href="mailto:${snapshot.val().TELEPHONE}">${snapshot.val().TELEPHONE}</a>`
-                document.getElementById('whatsapp').innerHTML = `<a href="https://wa.me/${snapshot.val().TELEPHONE}?text=Salut ${snapshot.val().fullname},%20comment%20allez-vous%20?%20Vous%20êtes%20${snapshot.val().MONTRAVAILLEOUOCCUPATION}%20et%20je%20suis%20vraiment%20intéressé%20par%20votre%20profil%20que%20j'ai%20vu%20sur%20le%20site%20de%20rencontre%20illicolove. J'aimerais en savoir plus sur vous et explorer les possibilités d'une connexion significative. Pourriez-vous visiter mon profil aussi s'ils vous plaît ?: ${encodeURIComponent('https://becare666.github.io/-illicolove/userdetails&.html?id=' + `${unserconnectID}`)}">${snapshot.val().TELEPHONE}</a>`
+                document.getElementById('whatsapp').innerHTML = `<a href="https://wa.me/${snapshot.val().TELEPHONE}?text=Salut ${snapshot.val().fullname},%20comment%20allez-vous%20?%20Vous%20êtes%20${snapshot.val().MONTRAVAILLEOUOCCUPATION}%20et%20je%20suis%20vraiment%20intéressé%20par%20votre%20profil%20que%20j'ai%20vu%20sur%20le%20site%20de%20rencontre%20illicolove. J'aimerais en savoir plus sur vous et explorer les possibilités d'une connexion significative. Pourriez-vous visiter mon profil aussi s'ils vous plaît ?: ${encodeURIComponent('https://www.illicolove.com/userdetails&.html?id=' + `${unserconnectID}`)}">${snapshot.val().TELEPHONE}</a>`
                 document.getElementById('myEmail').innerHTML = `<a href="mailto:${snapshot.val().email}">${snapshot.val().email}</a>`
                 document.getElementById('residenceId').innerHTML = `${snapshot.val().MAVILLEDERESIDENCE}`
                 document.getElementById('occupation').innerHTML = `${snapshot.val().MONTRAVAILLEOUOCCUPATION}`
@@ -416,18 +427,25 @@
                 Sonpays.innerHTML = `${snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE}`
                 Saville.innerHTML = `${snapshot.val().VILLEDHABITATIONDEPROFILQUEJECHERCHE}`
                 Sontravail.innerHTML = `${snapshot.val().TRAVAILDEDEPROFILQUEJECHERCHE}`
-                document.getElementById('myprefenceId').innerHTML = `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}` ? `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}` : `<i class="fas fa-database" style="font-size: 10vh !important; color: #FFB6C1;"></i> Pas de données.`;
+                document.getElementById('myprefenceId').innerHTML = `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}` ? `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}` : `<p id="IDTRANSLATEUSERD24"></p>`;
                 // to now if the user is connect or no
                 const content = snapshot.val().ONLINEDATE === snapshot.val().ONLINEHOURS
                 ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> ${snapshot.val().ONLINEHOURS} `   
-                : `En ligne le ${snapshot.val().ONLINEDATE} à ${snapshot.val().ONLINEHOURS}`;
+                : `<div style="display:flex;"><p id="IDTRANSLATEUSERD23"></p> &nbsp;<p>${snapshot.val().ONLINEDATE} à ${snapshot.val().ONLINEHOURS}</div>`;
                 connexionMyID.innerHTML = content
+                var texteIDTRANSLATEUSERD23 = i18next.t("IDTRANSLATEUSERD23");
+                $('[id="IDTRANSLATEUSERD23"]').text(texteIDTRANSLATEUSERD23);
+
+                var texteIDTRANSLATEUSERD24 = i18next.t("IDTRANSLATEUSERD24");
+                $('[id="IDTRANSLATEUSERD24"]').html(texteIDTRANSLATEUSERD24);  
               } else {
-                  alert("no data");
+                Swal.showValidationMessage(i18next.t('IDTRANSLATEUSERD25'));
+                  //alert("no data");
               }
           })
           .catch((error) => {
-              alert("il y a une ERROR " + error);
+            Swal.showValidationMessage(i18next.t('IDTRANSLATEUSERD26'));
+              //alert("il y a une ERROR " + error);
           });
 
           get(child(dbref, "utilisateurs/" + unserconnectID))
@@ -449,13 +467,14 @@
                       Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: `Votre compte est débité`,
+                        title: i18next.t('IDTRANSLATEUSERD27'),
                         showConfirmButton: false,
                         timer: 2500
                       })
                         })
                         .catch((error) => {
-                            alert("les données ne sont pas mise à jour " + error);
+                          Swal.showValidationMessage(i18next.t('IDTRANSLATEUSERD28'));
+                          //alert("les données ne sont pas mise à jour " + error);
                         });
                       })
                 }else{
@@ -474,44 +493,44 @@
                     icon: 'error',
                     allowOutsideClick: false,
                     title: 'Oops...',
-                    text: `Vous ne pouvez pas contacter ${tableTotakeUser[0]}. 
-                    Car vous n'avez pas encore un compte validé.`,
-                    footer: `<a href="./v/profil.html">Voulez vous  publier votre annonce ?</a>`
+                    text: i18next.t('IDTRANSLATEUSERD29'),
+                    confirmButtonText: i18next.t('IDTRANSLATEUSERD33'),
+                    footer: '<a href="./v/profil.html" id="IDTRANSLATEUSERD30">' + i18next.t('IDTRANSLATEUSERD30') + '</a>' 
                     }).then((result) => {
-                        if (result.isConfirmed) {
-                          header.style.display = "block"
-                          Footer.style.display = "block"
-                          Main.style.display = "block"
-                        }
+                    if (result.isConfirmed) {
+                    header.style.display = "block"
+                    Footer.style.display = "block"
+                    Main.style.display = "block"
+                    }
                     })
                   })
                 
                 }
                   if(snapshot.val().COMPTECREDIT ===0){
-                    var ContactUserbtnID = document.getElementById('contactUserbtnID');
-                    var Main = document.getElementById('main');
-                   var Footer = document.getElementById('footer');
+                  var ContactUserbtnID = document.getElementById('contactUserbtnID');
+                  var Main = document.getElementById('main');
+                  var Footer = document.getElementById('footer');
                   var header = document.getElementById('header');
                   var ContactUserID = document.getElementById('contactUserID');
                   ContactUserbtnID.style.opacity = "0.5"
                   ContactUserbtnID.addEventListener('click', function(){
-                    header.style.display = "none"
-                    Main.style.display = "none"
-                    Footer.style.display = "none"
-                    Swal.fire({
-                    icon: 'error',
-                    allowOutsideClick: false,
-                    title: 'Oops...',
-                    text: `Vous ne pouvez pas contacter ${tableTotakeUser[0]}. 
-                    Car vous ne disposez pas d'unité.`,
-                    footer: `<a href="./v/profil.html">Voulez vous  payer des unités ?</a>`
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                          header.style.display = "block"
-                          Main.style.display = "block"
-                          Footer.style.display = "block"
-                        }
-                    })
+                  header.style.display = "none"
+                  Main.style.display = "none"
+                  Footer.style.display = "none"
+                  Swal.fire({
+                  icon: 'error',
+                  allowOutsideClick: false,
+                  title: 'Oops...',
+                  text: i18next.t('IDTRANSLATEUSERD31'),
+                  confirmButtonText: i18next.t('IDTRANSLATEUSERD33'),
+                  footer: '<a href="./v/profil.html" id="IDTRANSLATEUSERD32">' + i18next.t('IDTRANSLATEUSERD32') + '</a>'
+                  }).then((result) => {
+                  if (result.isConfirmed) {
+                  header.style.display = "block"
+                  Main.style.display = "block"
+                  Footer.style.display = "block"
+                  }
+                  })
                   })
                   }
                 }
@@ -533,6 +552,7 @@
     <script src="./v/userConnect.js"></script>
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="translate.js"></script>
 
   </body>
 

@@ -227,7 +227,7 @@
   
   .header .logo img {
     max-height: 40px;
-    margin-right: 6px;
+    
   }
   
   .header .logo span {
@@ -2036,9 +2036,12 @@
     color: #000080;
   }
   .social-links i {
-    font-size: 6vh !important;
+    font-size: 4vh !important;
+    margin-right: 2vh !important;
   }
-
+ #language-select li:hover{
+  background-color: #013ca3;
+ }
   .AllClassUser i {
     font-size: 6vh !important;
   }

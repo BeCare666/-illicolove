@@ -79,4 +79,4 @@ var DetailIDILLI = document.getElementById('detailIDILLI');
 OpendetailIDILLI.addEventListener('click', function(){
 DetailIDILLI.style.display = "block"
 })
-    
+

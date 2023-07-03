@@ -15,6 +15,19 @@
  z-index: -1 !important;
 }
 
+.image-button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  z-index: 1;
+
+}
+
+.image-button img {
+  display: block;
+  width: 28px;
+  border-radius: 100%;
+}
 /*mobile-nav-toggle*/
 .mobile-nav-toggle{
   font-size: 40px !important;

@@ -79,8 +79,24 @@
           </li>
           <li><a href="faq.html">F.A.Q</a></li>
           <li><a class="nav-link scrollto" href="#contact" id="IDTRANSLATE7"></a></li>
-          <li><a class="getstarted scrollto" href="./v/login/signup.html" id="IDTRANSLATE8"></a></li>
-          <li><a class="getstarted scrollto" href="./v/login/login.html" id="IDTRANSLATE9"></a></li>
+          <li id="IDTRANSLATE8LI"><a class="getstarted scrollto" href="./v/login/signup.html" id="IDTRANSLATE8"></a></li>
+          <li id="IDTRANSLATE9LI"><a class="getstarted scrollto" href="./v/login/login.html" id="IDTRANSLATE9"></a></li>
+          <li><a href="#" id="IDTRANSLATEBACK">
+            <div id="backtoprofilID" style="display: none;">
+              <button class="image-button btn-my-color circle-image" id="user-button" 
+              style="display: flex;  border-radius: 100%; justify-content: center;
+              align-items: center;
+              width: 7vh;
+              height: 7vh;
+              border-radius: 100%;
+              overflow: hidden;
+              border-color: #000080 !important;
+              background-color: #FFB6C1;
+              color: white; 
+              transition: background-color 0.5s ease;">
+              </button>
+            </div>
+          </a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -479,22 +495,8 @@
     </div>
 
   </footer><!-- End Footer -->
+  <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <div id="backtoprofilID" style="display: none;">
-    <button class="image-button btn-my-color circle-image back-to-profil" id="user-button" 
-    style="display: flex;  border-radius: 100%; justify-content: center;
-    align-items: center;
-    width: 7vh;
-    height: 7vh;
-    border-radius: 100%;
-    overflow: hidden;
-    border-color: #000080 !important;
-    background-color: #FFB6C1;
-    color: white; 
-    transition: background-color 0.5s ease;">
-    </button>
-  </div>
- 
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
    <script type="module">
   
@@ -568,7 +570,10 @@
     get(child(dbrefuser, "utilisateurs/" + UserConnectuser))
     .then((snapshot) => {
      if (snapshot.exists()){ 
-      BacktoprofilID.style.display = "block"
+      BacktoprofilID.style.display = "block"  
+      document.getElementById('IDTRANSLATE8LI').style.display = "none"
+      document.getElementById('IDTRANSLATE9LI').style.display = "none"
+      document.getElementById('preloader').style.display = "none"
       //const userData = childSnapshot.val();
       var photoDataUrl = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
       userbuttonID.innerHTML = `${snapshot.val().MESDEUXPHOTOS ? `<img src="${photoDataUrl}" alt="Votre image" style="width: 6vh;  height: 6vh;"/>` : '<i class="bi bi-person-fill" style="width: 30px;"></i>'}`;
@@ -580,10 +585,11 @@
       //alert("mmmmmmoooo")
      }else{
       //alert("hoooo")
+      document.getElementById('preloader').style.display = "none"
      }
         
     })
-</script>
+   </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>

@@ -26,7 +26,8 @@ $(document).ready(function() {
             "IDTRANSLATE10":"illicolove,",
             "IDTRANSLATE11":`votre plateforme de rencontres, pour lutter contre le célibat et la solitude.`,
             "IDTRANSLATE12":`Nous considérons la solitude involontaire comme un problème humanitaire et nous nous engageons à offrir une solution aux personnes qui en souffrent.`,
-            "IDTRANSLATE13":`À propos`,
+            "IDTRANSLATE13":`S'inscrire gratuitement`,
+            "IDTRANSLATE13KLM":`Aller sur votre profil`,
             "IDTRANSLATE14":`À propos de nous`,
             "IDTRANSLATE15":`Votre plateforme de rencontres en ligne illicolove.com vous est proposée par les Établissements BAKO FAMILIA &; COMPANY, une entreprise individuelle(EI) de droit béninois immatriculée au Registre du Commerce et du Crédit Mobilier RCCM RB/COT/08/A4101 ; à l’Identifiant Fiscal Unique (IFU) 3200800938610.`,
 
@@ -421,6 +422,9 @@ Le site et ses différents services peuvent être interrompus ou suspendus par l
           "IDTRANSLATEPROFIL23":`Quel est votre joueur favoris ?`,
           "IDTRANSLATEPROFIL24":`Quel est votre artiste favoris ?`,
           "IDTRANSLATEPROFIL25":`Quelle est votre réponse ? Juste un mot. Pas d'espace.`,
+          
+          "submitFormID":`Souscrire`,
+          "TOCLOSEMODALID":`Fermer`,   
           "IDTRANSLATEPROFIL26":`Valider`, 
           "IDTRANSLATEPROFIL27":`reponse de sécurité`,
           "payYourUnity":`Entrer l'unité  `,
@@ -719,7 +723,8 @@ Le site et ses différents services peuvent être interrompus ou suspendus par l
 "IDTRANSLATE10":"illicolove,",
 "IDTRANSLATE11":` Su plataforma de citas, para luchar contra el celibato y la soledad `,
 "IDTRANSLATE12":` Consideramos la soledad involuntaria como un problema humanitario y nos comprometemos a ofrecer una solución a las personas que la padecen.`,
-"IDTRANSLATE13":` Sobre `,
+"IDTRANSLATE13":` Regístrese gratis `,
+"IDTRANSLATE13KLM":`Ir a su perfil`,
  "IDTRANSLATE14":` Sobre nosotros `,
  "IDTRANSLATE15":` Su plataforma de encuentros en línea illicolove.com le es propuesta por los Establecimientos BAKO FAMILIA & COMPANY, una empresa individual(EI) de derecho beninés inscrita en el Registro de Comercio y Crédito Mobiliario RCCM RB/COT/08/A4101; al Identificador Fiscal Único (IFU) 3200800938610.`,
             "IDTRANSLATE16":` Tiene por actividades, el Wedding planning (acompañamiento en la organización de bodas), el Turismo-Ocio, la organización de ferias. Fue creada en mayo de 2008 en Cotonú. `,
@@ -1032,6 +1037,8 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATEPROFIL23":` ¿Cuál es tu jugador favorito?`,
           "IDTRANSLATEPROFIL24":` ¿Cuál es tu artista favorito?`,
           "IDTRANSLATEPROFIL25":` ¿Cuál es su respuesta? Sólo una palabra. Sin espacio.`,
+          "submitFormID":`Suscríbase`,
+          "TOCLOSEMODALID":`Cerrar`,   
           "IDTRANSLATEPROFIL26":` Validar `, 
           "IDTRANSLATEPROFIL27":` Respuesta de seguridad `,
           "payYourUnity":` Entrar en la unidad `,
@@ -1324,7 +1331,8 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
 "IDTRANSLATE10":"illicolove,",
 "IDTRANSLATE11":` Your dating platform, to fight against celibacy and loneliness.`,
 "IDTRANSLATE12":` We see involuntary loneliness as a humanitarian problem and we are committed to providing a solution for those suffering from it.`,
- "IDTRANSLATE13":` About `,
+ "IDTRANSLATE13":` Sign up for free `,
+ "IDTRANSLATE13KLM":`Go to your profile`,
   "IDTRANSLATE14":` About us `,
   "IDTRANSLATE15":` Your illicolove.com online dating platform is offered by Establishments BAKO FAMILIA & COMPANY, a sole proprietorship under Beninese law registered in the Trade and Personal Property Credit Register RCCM RB/COT/08/A4101; to the Unique Tax Identifier (IFU) 3200800938610.`,
             "IDTRANSLATE16":` It has for activities, the Wedding planning, the Tourism-Leisure, the organization of fairs. It was created in May 2008 in Cotonou. `,
@@ -1655,6 +1663,8 @@ It is up to us individually to adopt certain attitudes of security in real life 
           "IDTRANSLATEPROFIL23":` Who’s your favorite player?`,
           "IDTRANSLATEPROFIL24":` Who’s your favorite artist?`,
           "IDTRANSLATEPROFIL25":` What is your answer? Just one word. No space.`,
+          "submitFormID":`Subscribe`,
+          "TOCLOSEMODALID":`Close`,  
           "IDTRANSLATEPROFIL26":` Confirm `, 
           "IDTRANSLATEPROFIL27":` Safety answering `,
           "payYourUnity":` Enter the unit  `,
@@ -1944,7 +1954,8 @@ It is up to us individually to adopt certain attitudes of security in real life 
       $("#IDTRANSLATE9").text(i18next.t("IDTRANSLATE9"));
       $("#IDTRANSLATE10").text(i18next.t("IDTRANSLATE10"));
       $("#IDTRANSLATE11").text(i18next.t("IDTRANSLATE11"));
-      $("#IDTRANSLATE12").text(i18next.t("IDTRANSLATE12"));
+      $("#IDTRANSLATE12").text(i18next.t("IDTRANSLATE12")); 
+      $("#IDTRANSLATE13KLM").text(i18next.t("IDTRANSLATE13KLM"));
       $("#IDTRANSLATE13").text(i18next.t("IDTRANSLATE13"));
       $("#IDTRANSLATE14").text(i18next.t("IDTRANSLATE14"));
       $("#IDTRANSLATE15").text(i18next.t("IDTRANSLATE15"));
@@ -2184,8 +2195,9 @@ It is up to us individually to adopt certain attitudes of security in real life 
       $("#IDTRANSLATEPROFIL21").val(i18next.t("IDTRANSLATEPROFIL21"));
       $("#IDTRANSLATEPROFIL22").val(i18next.t("IDTRANSLATEPROFIL22"));
       $("#IDTRANSLATEPROFIL23").val(i18next.t("IDTRANSLATEPROFIL23"));
-      $("#IDTRANSLATEPROFIL24").val(i18next.t("IDTRANSLATEPROFIL24"));
+      $("#IDTRANSLATEPROFIL24").val(i18next.t("IDTRANSLATEPROFIL24")); 
       $("#IDTRANSLATEPROFIL25").val(i18next.t("IDTRANSLATEPROFIL25"));
+      $("#submitFormID").val(i18next.t("submitFormID"));
       $("#IDTRANSLATEPROFIL25").text(i18next.t("IDTRANSLATEPROFIL25")); 
       $("#btnSecureAccount").text(i18next.t("IDTRANSLATEPROFIL26")); 
       $("#IDTRANSLATEPROFIL28").text(i18next.t("IDTRANSLATEPROFIL28"));

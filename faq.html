@@ -12,7 +12,7 @@
   <!-- Favicons 
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
-  <link href="assets/img/illicolove.png" rel="icon">
+  <link href="assets/img/illicolove-.png" rel="icon">
   <!-- Google Fonts -->
   <link
   href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
@@ -87,6 +87,12 @@
               color: white; 
               transition: background-color 0.5s ease;">
               </button>
+            </div>
+            <div id="myModalfinger" class="modal">
+              <div class="modal-contentfinger">
+                <img src="assets/img/finger-removebg-preview.png" alt="" id="fingerID">
+                <p id="fingerIDP">Cliquer ici pour <br> visiter votre profil. <button class="btn btn-primary" id="ACCEPTINDICATORA">Ok</button></p>
+              </div>
             </div>
           </a></li>
         </ul>
@@ -386,7 +392,7 @@
 
     <!-- ======= Contact Section ======= -->
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact" data-aos="fade-up">
+    <section id="contact" class="contact" data-aos="fade-up" style="display: none;">
 
       <div class="container" data-aos="fade-up">
 
@@ -591,29 +597,33 @@
         var BacktoprofilID = document.getElementById('backtoprofilID');
         var userbuttonID = document.getElementById('user-button');
     
-        const dbrefuser = ref(db);  
-        get(child(dbrefuser, "utilisateurs/" + UserConnectuser))
-        .then((snapshot) => {
-         if (snapshot.exists()){ 
-          BacktoprofilID.style.display = "block"  
-          document.getElementById('IDTRANSLATE8LI').style.display = "none"
-          document.getElementById('IDTRANSLATE9LI').style.display = "none"
-          document.getElementById('preloader').style.display = "none"
-          //const userData = childSnapshot.val();
-          var photoDataUrl = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
-          userbuttonID.innerHTML = `${snapshot.val().MESDEUXPHOTOS ? `<img src="${photoDataUrl}" alt="Votre image" style="width: 6vh;  height: 6vh;"/>` : '<i class="bi bi-person-fill" style="width: 30px;"></i>'}`;
-          userbuttonID.addEventListener('click', function(){
-            window.location.href= "./v/profil.html"
-          })
-          console.log(snapshot.val().MESDEUXPHOTOS);
-        // Utilisez les données de l'utilisateur comme vous le souhaitez
-          //alert("mmmmmmoooo")
-         }else{
-          //alert("hoooo")
-          document.getElementById('preloader').style.display = "none"
-         }
-            
-        })
+    if(UserConnectuser){
+    const dbrefuser = ref(db);  
+    get(child(dbrefuser, "utilisateurs/" + UserConnectuser))
+    .then((snapshot) => {
+     if (snapshot.exists()){ 
+      BacktoprofilID.style.display = "block"  
+      document.getElementById('IDTRANSLATE8LI').style.display = "none"
+      document.getElementById('IDTRANSLATE9LI').style.display = "none"
+      document.getElementById('preloader').style.display = "none"
+      //const userData = childSnapshot.val();
+      var photoDataUrl = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
+      userbuttonID.innerHTML = `${snapshot.val().MESDEUXPHOTOS ? `<img src="${photoDataUrl}" alt="Votre image" style="width: 6vh;  height: 6vh;"/>` : '<i class="bi bi-person-fill" style="width: 30px;"></i>'}`;
+      userbuttonID.addEventListener('click', function(){
+        window.location.href= "./v/profil.html"
+      })
+      console.log(snapshot.val().MESDEUXPHOTOS);
+    // Utilisez les données de l'utilisateur comme vous le souhaitez
+      //alert("mmmmmmoooo")
+     }else{
+      //alert("hoooo")
+      document.getElementById('preloader').style.display = "none"
+     }
+        
+    })
+  }else{
+    document.getElementById('preloader').style.display = "none"
+  }
        </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>

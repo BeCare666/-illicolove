@@ -9,15 +9,13 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons 
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
+  <!-- Favicons  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
   <link href="assets/img/illicolove-.png" rel="icon">
+ 
   <!-- Google Fonts -->
   <link
   href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
   rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <style>
 * {
   font-family: 'Montserrat-bold', sans-serif;
@@ -34,8 +32,18 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/stylea.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+   <!-- Link to import alert personnal -->
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+
+  <!--import firebase--->
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+
   <script src="https://unpkg.com/jquery"></script>
   <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+ 
 </head>
 
 <body>
@@ -49,12 +57,13 @@
         <img src="assets/img/illicolove.png" alt=""> 
         <span>illicolove</span>
       </a>
+
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="index.html" id="IDTRANSLATE1"></a></li>
-          <li><a class="nav-link scrollto" href="index.html#about" id="IDTRANSLATE2"></a></li>
+          <li><a class="nav-link scrollto " href="#hero" id="IDTRANSLATE1"></a></li>
+          <li><a class="nav-link scrollto" href="apropos.html" id="IDTRANSLATE2"></a></li>
           <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li>-->
-          <li><a class="nav-link scrollto active" href="Comment&ça&fonctionne.html" id="IDTRANSLATE3"></a></li>
+          <li><a class="nav-link scrollto" href="Comment&ça&fonctionne.html" id="IDTRANSLATE3"></a></li>
           <li class="dropdown"><a href="#"><span id="IDTRANSLATE4"></span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="termes&conditions.html" id="IDTRANSLATE5"></a></li>
@@ -69,10 +78,10 @@
             </ul>
           </li>
           <li><a href="faq.html">F.A.Q</a></li>
-          <li><a class="nav-link scrollto" href="#contact" id="IDTRANSLATE7"></a></li>
+          <li><a class="nav-link scrollto active" href="#contact" id="IDTRANSLATE7"></a></li>
           <li id="IDTRANSLATE8LI"><a class="getstarted scrollto" href="./v/login/signup.html" id="IDTRANSLATE8"></a></li>
           <li id="IDTRANSLATE9LI"><a class="getstarted scrollto" href="./v/login/login.html" id="IDTRANSLATE9"></a></li>
-          <li><a href="#" id="IDTRANSLATEBACK">
+          <li><a href="#" id="IDTRANSLATEBACK" >
             <div id="backtoprofilID" style="display: none;">
               <button class="image-button btn-my-color circle-image" id="user-button" 
               style="display: flex;  border-radius: 100%; justify-content: center;
@@ -86,14 +95,15 @@
               color: white; 
               transition: background-color 0.5s ease;">
               </button>
+            </div>       
+          <div id="myModalfinger" class="modal">
+            <div class="modal-contentfinger">
+              <img src="assets/img/finger-removebg-preview.png" alt="" id="fingerID">
+              <p id="fingerIDP">Cliquer ici pour <br> visiter votre profil. <button class="btn btn-primary" id="ACCEPTINDICATORA">Ok</button></p>
             </div>
-            <div id="myModalfinger" class="modal">
-              <div class="modal-contentfinger">
-                <img src="assets/img/finger-removebg-preview.png" alt="" id="fingerID">
-                <p id="fingerIDP">Cliquer ici pour <br> visiter votre profil. <button class="btn btn-primary" id="ACCEPTINDICATORA">Ok</button></p>
-              </div>
-            </div>
-          </a></li>
+          </div>
+        </a>
+        </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -101,170 +111,15 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main">
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features" >
-
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h2 id="IDTRANSLATEX1"> <i class="bi bi-check-circle-fill"></i></h2>
-          <div style="opacity: 0;">qsdfdghjhkjgf</div>
-          <p style="font-size: 23px;" id="IDTRANSLATEX2"></p>    
-        </header>
-
-        <div class="row">
-          <!--
-          <div class="col-lg-6">
-            <img src="assets/img/features.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
-            <div class="row align-self-center gy-4">
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Eos aspernatur rem</h3>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Facilis neque ipsa</h3>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Volup amet voluptas</h3>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Rerum omnis sint</h3>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Alias possimus</h3>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Repellendus mollitia</h3>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div> --><!-- / row -->
-        <!-- Feature Icons -->
-        <div class="row feature-icons" data-aos="fade-up" style="font-size: 16.5px !important;">
-          <div class="row">
-            <div class="col-xl-5 text-center" data-aos="fade-right" data-aos-delay="100">
-              <img src="assets/img/pexels-andrea-piacquadio-3967023.jpg" class="img-fluid p-4" alt="" style="height: 66vh; width: 100%; ">
-            </div>
-
-            <div class="col-xl-7 d-flex content">
-              <div class="row align-self-center gy-4">
-
-                <div class="col-md-6 icon-box" data-aos="fade-up">
-                  <i class="bi bi-1-circle-fill" style="color: #40E0D0;"></i>
-                  <div>
-                    <h4 style="color: #40E0D0;" id="IDTRANSLATEX3"> </h4>
-                    <p style="font-size: 13px !important;" id="IDTRANSLATEX4"></p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                  <i class="bi bi-2-circle-fill" style="color: #40E0D0;"></i>
-                  <div>
-                    <h4 style="color: #40E0D0;" id="IDTRANSLATEX5"></h4>
-                    <p style="font-size: 13px !important;" id="IDTRANSLATEX6"></p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                  <i class="bi bi-3-circle-fill" style="color: #40E0D0;"></i>
-                  <div>
-                    <h4 style="color: #40E0D0;" id="IDTRANSLATEX7"></h4>
-                    <div>
-                      <p style="font-size: 13px !important;   margin-bottom: 0;" id="IDTRANSLATEX8">
-                      </p><span id="toopenPUAID" style="color: #FFB6C1;  margin-top: 0 !important; cursor: pointer;" data-toggle="modal" data-target="#ampleModalCenterXX"></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                  <i class="bi bi-4-circle-fill" style="color: #40E0D0;"></i>
-                  <div>
-                    <h4 style="color: #40E0D0;" id="IDTRANSLATEX9"></h4>
-                    <p style="font-size: 13px !important;" id="IDTRANSLATEX10"></p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                  <i class="bi bi-5-circle-fill" style="color: #40E0D0;"></i>
-                  <div>
-                    <h4 style="color: #40E0D0;" id="IDTRANSLATEX11"></h4>
-                    <p style="font-size: 13px !important;" id="IDTRANSLATEX12"></p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-                  <i class="bi bi-6-circle-fill" style="color: #40E0D0;"></i>
-                  <div>
-                    <h4 style="color: #40E0D0;" id="IDTRANSLATEX13"></h4>
-                    <p style="font-size: 13px !important;" id="IDTRANSLATEX14"></p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-        </div><!-- End Feature Icons -->
-
-      </div>
-
-    </section><!-- End Features Section -->
-    <div class="modal fade" id="ampleModalCenterXX" tabindex="-1" role="dialog" aria-labelledby="ampleModalCenterXX" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-           <div id="openPUA"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn" style="background-color: #FFB6C1; color: white !important;" data-dismiss="modal" id="TOCLOSEMODALID"></button>
-          </div>
-        </div>
-      </div>
-    </div>
-
+ 
     <!-- ======= Contact Section ======= -->
-         <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact" data-aos="fade-up" style="display: none;">
+    <section id="contact" class="contact" data-aos="fade-up">
 
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
           <h2 id="IDTRANSLATECONTACT1"> <i class="bi bi-check-circle-fill" ></i></h2>
+          <div style="opacity: 0;">qsdfghjio</div>
           <p id="IDTRANSLATECONTACT2"></p>
         </header>
 
@@ -306,6 +161,8 @@
                     <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
                     <a href="https://www.snapchat.com/add/illicolove?share_id=I3RMDZq6GNQ&locale=fr-BJ" class="linkedin"><i class="bi bi-snapchat"></i></a>
                     <a href="https://www.tiktok.com/@illicolove?_t=8dEw09tT2hh&_r=1" class="linkedin"><i class="bi bi-tiktok"></i></a>
+
+                    
                   </div>
                 </div>
               </div>
@@ -361,9 +218,7 @@
   
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
-<!-- Button trigger modal -->
 
-<!-- Modal -->
     <div class="footer-newsletter">
       <div class="container">
         <div class="row justify-content-center">
@@ -388,7 +243,7 @@
               Cordialement,
               
               Ghislain GANGBOZO / illicolove">
-              <input type="submit" id="submitFormID">
+              <input type="submit" value="Souscrire" id="submitFormID">
             </form>
           </div><div style="opacity: 0;">ssfdsfdd</div>
           <span style="text-align: center;"><div id="IDTRANSLATE1INF1"></span>
@@ -403,80 +258,80 @@
         Designed by <a href="" style="color: #FFB6C1;">illicolove</a>
       </div>
     </div>
+
   </footer><!-- End Footer -->
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script>
-    window.onload = function(){
-      if (/Mobi|Android/i.test(navigator.userAgent)) {
-    // Code pour appareil mobile
-    //document.body.style.fontSize = "16px"; // Modifier la taille de la police pour appareils mobiles
-    document.getElementById('breathing-image').style.paddingRight = "60px"
-    document.getElementById('breathing-image').style.paddingTop = "30px"
-    document.getElementById('tof1').style.height = "62vh"
-    document.getElementById('tof2').style.height = "62vh"
-    document.getElementById('tof3').style.height = "62vh"
-    document.getElementById('tof4').style.height = "62vh" 
-    document.getElementById('Mymaps').style.margin ="0"
-    document.getElementById('Mymaps').style.marginTop ="3.5vh"
-    } else {
-        // Code pour ordinateur de bureau
-        document.getElementById('Mymapsq').style.marginTop ="5.5vh"
-    }
-   }
-    {/* // fuction to toopenPUAID  
-    var ToopenPUAID = document.getElementById('toopenPUAID');
-    ToopenPUAID.style.cursor = "pointer"
-    var OpenPUA = document.getElementById('openPUA');
-    if(OpenPUA.style.display ==="none"){
-      ToopenPUAID.addEventListener('click', function(){
-    OpenPUA.style.display = "block"
-    ToopenPUAID.style.display = "none"
+   <script type="module">
+  
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+    apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
+    authDomain: "illicolove0.firebaseapp.com",
+    databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
+    projectId: "illicolove0",
+    storageBucket: "illicolove0.appspot.com",
+    messagingSenderId: "687063035754",
+    appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+
+    import {
+        getDatabase,
+        ref,
+        onValue,
+        remove,
+        get,
+        child,
+    } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+
+    var Xafri = []; 
+    var Yeuro = []; 
+    var Zpaysdumonde = [];
+    var myalldatasUSers = [];
+    const db = getDatabase();
+    const UserConnectuser = localStorage.getItem("unserconnect"); 
+    var BacktoprofilID = document.getElementById('backtoprofilID');
+    var userbuttonID = document.getElementById('user-button');
+    var  allCocuntry = document.getElementById('ALLCOUNTRY');
+    var  Afri = document.getElementById('AFRI');
+    var  Euro = document.getElementById('EURO');
+    var  PaysDuMonde = document.getElementById('PAYSDUM');
+
+    const dbref = ref(db, "utilisateurs/");
+   onValue(dbref, (snopshot) => {
+    snopshot.forEach((childsnopshot) => {
+      myalldatasUSers.push(childsnopshot.val());
+      //console.log(childsnopshot.val());
     })
-    }else{
-      ToopenPUAID.addEventListener('click', function(){
-    OpenPUA.style.display = "none"
+    myalldatasUSers.map((T)=>{
+      allCocuntry.setAttribute('data-purecounter-end', `${myalldatasUSers.length}`);
+      
+      if(T.IDREGION === "AFRIQUE"){
+        Xafri.push(T.IDREGION)
+        Afri.setAttribute('data-purecounter-end', `${Xafri.length}`);
+      }
+      if(T.IDREGION === "EUROPE"){
+        Yeuro.push(T.IDREGION)
+        Euro.setAttribute('data-purecounter-end', `${Yeuro.length}`);
+      }
+      if(T.IDREGION === "AUTRESPAYSDUMONDE"){
+        Zpaysdumonde.push(T.IDREGION)
+        PaysDuMonde.setAttribute('data-purecounter-end', `${Zpaysdumonde.length}`);
+      }
     })
-    }*/}
-    
-  </script>
-     <script type="module">
-  
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-  
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-      apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
-      authDomain: "illicolove0.firebaseapp.com",
-      databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
-      projectId: "illicolove0",
-      storageBucket: "illicolove0.appspot.com",
-      messagingSenderId: "687063035754",
-      appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
-      };
-  
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-  
-  
-      import {
-          getDatabase,
-          ref,
-          onValue,
-          remove,
-          get,
-          child,
-      } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
-      const db = getDatabase();
-      const UserConnectuser = localStorage.getItem("unserconnect"); 
-      var BacktoprofilID = document.getElementById('backtoprofilID');
-      var userbuttonID = document.getElementById('user-button');
-  
-    if(UserConnectuser){
+  });
+
+  if(UserConnectuser){
     const dbrefuser = ref(db);  
     get(child(dbrefuser, "utilisateurs/" + UserConnectuser))
     .then((snapshot) => {
@@ -503,7 +358,9 @@
   }else{
     document.getElementById('preloader').style.display = "none"
   }
-     </script>
+
+
+   </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -512,13 +369,12 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="index.js"></script>
   <script src="translate.js"></script>
+  <script src="showuser.js"></script>
 </body>
 
 </html>

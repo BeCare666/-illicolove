@@ -780,6 +780,8 @@ var logout = document.getElementById('logoutID');
   }).then((result) => {
     if (result.isConfirmed) {
       localStorage.removeItem('unserconnect');
+      localStorage.removeItem('Email');
+      localStorage.removeItem('Password');
       Swal.fire({
       icon: 'success',
       allowOutsideClick: false,

@@ -62,7 +62,7 @@
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="./v/consulte.html" class="logo d-flex align-items-center">
+      <a href="./u/index.html" class="logo d-flex align-items-center">
         <!-- <img src="assets/img/logo.png" alt="">-->
         <button class="btn btn" style="margin-left: 5px; cursor: pointer; background-color: #FFB6C1; color: white;" 
         role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button>
@@ -388,6 +388,7 @@
         function seleectData() {
           const UserConnectIdToBuy = localStorage.getItem("storageNamey");
           const unserconnectID = localStorage.getItem("unserconnect");
+          var selectedLanguage = localStorage.getItem('selectedLanguage');
           //alert(UserConnectIdToBuy)
           var tableTotakeUser = []
             const dbref = ref(db);
@@ -429,13 +430,27 @@
                 Sontravail.innerHTML = `${snapshot.val().TRAVAILDEDEPROFILQUEJECHERCHE}`
                 document.getElementById('myprefenceId').innerHTML = `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}` ? `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}` : `<p id="IDTRANSLATEUSERD24"></p>`;
                 // to now if the user is connect or no
-                const content = snapshot.val().ONLINEDATE === snapshot.val().ONLINEHOURS
-                ? `<div id="IDTRANSLATEUSERD23VG"></div>`   
-                : `<div style="display:flex;"><p id="IDTRANSLATEUSERD23"></p> &nbsp;<p>${snapshot.val().ONLINEDATE} à ${snapshot.val().ONLINEHOURS}</div>`;
-                connexionMyID.innerHTML = content
-                var texteIDTRANSLATEUSERD23 = i18next.t("IDTRANSLATEUSERD23"); 
-                $('[id="IDTRANSLATEUSERD23"]').text(texteIDTRANSLATEUSERD23);
+                var muvar = selectedLanguage;
+                var content;
+                if (muvar === 'fr') {
+                  content = snapshot.val().ONLINEDATE === snapshot.val().ONLINEHOURS
+                    ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> en ligne `
+                    : `En ligne ${snapshot.val().ONLINEDATE} à ${snapshot.val().ONLINEHOURS}`;
+                } else if (muvar === 'en') {
+                  content = snapshot.val().ONLINEDATE === snapshot.val().ONLINEHOURS
+                    ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> Online `
+                    : `Online ${snapshot.val().ONLINEDATE} on ${snapshot.val().ONLINEHOURS}`;
+                } else if (muvar === 'es') {
+                  content = snapshot.val().ONLINEDATE === snapshot.val().ONLINEHOURS
+                    ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> En línea `
+                    : `En línea el ${snapshot.val().ONLINEDATE} a las ${snapshot.val().ONLINEHOURS}`;
+                } else {
+                  // Default language
+                  content = `En ligne le ${k.ONLINEDATE} à ${snapshot.val().ONLINEHOURS}`;
+                }
 
+                connexionMyID.innerHTML = content
+                
                 var texteIDTRANSLATEUSERD24 = i18next.t("IDTRANSLATEUSERD24");
                 $('[id="IDTRANSLATEUSERD24"]').html(texteIDTRANSLATEUSERD24);
 

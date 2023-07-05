@@ -120,6 +120,7 @@
 
      const db = getDatabase();
      const myOptionV = localStorage.getItem("myOptionV");
+     var selectedLanguage = localStorage.getItem('selectedLanguage');
     //function to get all products in realTime
     function getAllDataRealtimePro() {
        var myalldatas = []; 
@@ -147,8 +148,7 @@
      // console.log("Aucune donnée disponible");
     }
 
-       function fonctionEnfant(){
-
+        function fonctionEnfant(){
         if (myalldatas.length === 0) {
           document.getElementById('preloader').style.display = "none"
           document.getElementById('idtheAllProForsite').style.display = "none"
@@ -180,7 +180,6 @@
 
           if(snapshot.val().userId){
           // function to take userId
-         //alert(snapshot.val().COMPTECREDIT)
           trow.addEventListener('mouseover', function() {
               var monElementy = k.userId
               tableauTotakeidd.push(monElementy)
@@ -188,10 +187,28 @@
               localStorage.setItem("storageNamey", last);
           });
           //function to transforme the photo to base64
+          //console.log(selectedLanguage)
           var photoDataUrl = 'data:image/png;base64,' + k.MESDEUXPHOTOS;
-          const content = k.ONLINEDATE === k.ONLINEHOURS
-          ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> ${k.ONLINEHOURS} `   
-          : `En ligne le ${k.ONLINEDATE} à ${k.ONLINEHOURS}`;
+          var muvar = selectedLanguage;
+          var content;
+
+          if (muvar === 'fr') {
+            content = k.ONLINEDATE === k.ONLINEHOURS
+              ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> en ligne `
+              : `En ligne ${k.ONLINEDATE} à ${k.ONLINEHOURS}`;
+          } else if (muvar === 'en') {
+            content = k.ONLINEDATE === k.ONLINEHOURS
+              ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> Online `
+              : `Online ${k.ONLINEDATE} on ${k.ONLINEHOURS}`;
+          } else if (muvar === 'es') {
+            content = k.ONLINEDATE === k.ONLINEHOURS
+              ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> En línea `
+              : `En línea el ${k.ONLINEDATE} a las ${k.ONLINEHOURS}`;
+          } else {
+            // Default language
+            content = `En ligne le ${k.ONLINEDATE} à ${k.ONLINEHOURS}`;
+          }
+
           trow.innerHTML =
           `
           <div class=" align-items-stretch"
@@ -212,7 +229,7 @@
                 <div class="member-info" id="member-info" style="background: url(assets/img/background.jpg) no-repeat !important;  background-color: #FFB6C1 !important;">
                   <h4>${k.username}</h4>
                   <span style="font-size: 12px !important;">${content}</span>
-                  <span style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"><i class="bi bi-geo-alt-fill me-2 text-info"></i> ${k.MYCOUNTRY}. ${k.MAVILLEDERESIDENCE}, ${k.MANATIONNALITE}</span>
+                  <span style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold;"><i class="bi bi-geo-alt-fill me-2 text-info"></i> ${k.MYCOUNTRY}. ${k.MAVILLEDERESIDENCE}, ${k.MANATIONNALITE}</span>
                 </div>
               </div>
             </div>
@@ -220,14 +237,31 @@
             `
             divq.append(trow)
             
-              }else {
-                if(snapshot.val().userId != k.userId){         
+          }else {
+          if(snapshot.val().userId != k.userId){         
           //function to transforme the photo to base64
-          //alert(snapshot.val().userId)
+          //var selectedLanguage = localStorage.getItem('selectedLanguage');
+          //alert(selectedLanguage)
           var photoDataUrl = 'data:image/png;base64,' + k.MESDEUXPHOTOS;
-          const content = k.ONLINEDATE === k.ONLINEHOURS
-          ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> ${k.ONLINEHOURS} `   
-          : `En ligne le ${k.ONLINEDATE} à ${k.ONLINEHOURS}`;
+          var muvar = selectedLanguage;
+          var content;
+
+          if (muvar === 'fr') {
+            content = k.ONLINEDATE === k.ONLINEHOURS
+              ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> en ligne `
+              : `En ligne ${k.ONLINEDATE} à ${k.ONLINEHOURS}`;
+          } else if (muvar === 'en') {
+            content = k.ONLINEDATE === k.ONLINEHOURS
+              ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> Online `
+              : `Online ${k.ONLINEDATE} on ${k.ONLINEHOURS}`;
+          } else if (muvar === 'es') {
+            content = k.ONLINEDATE === k.ONLINEHOURS
+              ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> En línea `
+              : `En línea el ${k.ONLINEDATE} a las ${k.ONLINEHOURS}`;
+          } else {
+            // Default language
+            content = `En ligne le ${k.ONLINEDATE} à ${k.ONLINEHOURS}`;
+          }
           trow.innerHTML =
           `
           <div class=" align-items-stretch"
@@ -247,7 +281,7 @@
                 <div class="member-info" id="member-info" style="background: url(assets/img/background.jpg) no-repeat !important;">
                   <h4>${k.username}</h4>
                   <span>${content}</span>
-                  <p style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"><i class="bi bi-geo-alt-fill me-2 text-info"></i> ${k.MYCOUNTRY}. ${k.MAVILLEDERESIDENCE}, ${k.MANATIONNALITE}</p>
+                  <p style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold;"><i class="bi bi-geo-alt-fill me-2 text-info"></i> ${k.MYCOUNTRY}. ${k.MAVILLEDERESIDENCE}, ${k.MANATIONNALITE}</p>
                 </div>
               </div>
             </div>

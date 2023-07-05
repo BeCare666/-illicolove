@@ -389,6 +389,7 @@
           const urlParams = new URLSearchParams(window.location.search);
           const UserConnectIdToBuy = urlParams.get('id');
           const unserconnectID = localStorage.getItem("unserconnect");
+          var selectedLanguage = localStorage.getItem('selectedLanguage');
           //alert(UserConnectIdToBuy)
           var tableTotakeUser = []
             const dbref = ref(db);
@@ -430,12 +431,27 @@
                 Sontravail.innerHTML = `${snapshot.val().TRAVAILDEDEPROFILQUEJECHERCHE}`
                 document.getElementById('myprefenceId').innerHTML = `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}` ? `${snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE}` : `<p id="IDTRANSLATEUSERD24"></p>`;
                 // to now if the user is connect or no
-                const content = snapshot.val().ONLINEDATE === snapshot.val().ONLINEHOURS
-                ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> ${snapshot.val().ONLINEHOURS} `   
-                : `<div style="display:flex;"><p id="IDTRANSLATEUSERD23"></p> &nbsp;<p>${snapshot.val().ONLINEDATE} à ${snapshot.val().ONLINEHOURS}</div>`;
+                var muvar = selectedLanguage;
+                var content;
+                if (muvar === 'fr') {
+                  content = snapshot.val().ONLINEDATE === snapshot.val().ONLINEHOURS
+                    ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> en ligne `
+                    : `En ligne ${snapshot.val().ONLINEDATE} à ${snapshot.val().ONLINEHOURS}`;
+                } else if (muvar === 'en') {
+                  content = snapshot.val().ONLINEDATE === snapshot.val().ONLINEHOURS
+                    ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> Online `
+                    : `Online ${snapshot.val().ONLINEDATE} on ${snapshot.val().ONLINEHOURS}`;
+                } else if (muvar === 'es') {
+                  content = snapshot.val().ONLINEDATE === snapshot.val().ONLINEHOURS
+                    ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> En línea `
+                    : `En línea el ${snapshot.val().ONLINEDATE} a las ${snapshot.val().ONLINEHOURS}`;
+                } else {
+                  // Default language
+                  content = `En ligne le ${k.ONLINEDATE} à ${snapshot.val().ONLINEHOURS}`;
+                }
+                
                 connexionMyID.innerHTML = content
-                var texteIDTRANSLATEUSERD23 = i18next.t("IDTRANSLATEUSERD23");
-                $('[id="IDTRANSLATEUSERD23"]').text(texteIDTRANSLATEUSERD23);
+
 
                 var texteIDTRANSLATEUSERD24 = i18next.t("IDTRANSLATEUSERD24");
                 $('[id="IDTRANSLATEUSERD24"]').html(texteIDTRANSLATEUSERD24); 

@@ -148,7 +148,7 @@ $(document).ready(function() {
             "IDTRANSLATEX51":` Où puis-je trouver l'e-mail de validation de mon compte ?`,
             "IDTRANSLATEX52":`Il est possible que l'e-mail de validation de votre compte se trouve dans votre dossier de spam  ou de courrier indésirable. Les filtres de sécurité des fournisseurs de messagerie peuvent parfois  diriger les e-mails de validation vers ces dossiers pour votre protection. Veuillez vérifier votre  dossier de spam ou de courrier indésirable et assurez-vous de marquer l'e-mail comme "non spam" ou  "non indésirable" si vous le trouvez là-bas. Si vous ne parvenez toujours pas à trouver l'e-mail de validation, veuillez contacter notre service d'assistance pour obtenir de l'aide supplémentaire.`,
             "IDTRANSLATETCU1":`Conditions Générales d’Utilisation`,
-            "IDTRANSLATETCU2":`Bienvenue sur illicolove.com, une plateforme de rencontres en ligne proposée par BAKO FAMILIA &amp; COMPANY. En utilisant notre site, vous acceptez les termes et conditions décrits ci-dessous.`,
+            "IDTRANSLATETCU2":`Bienvenue sur illicolove.com, une plateforme de rencontres en ligne proposée par BAKO FAMILIA & COMPANY. En utilisant notre site, vous acceptez les termes et conditions décrits ci-dessous.`,
             "IDTRANSLATETCU3":`ARTICLE 1 : Objet`,
             "IDTRANSLATETCU4":`Les présentes « Conditions Générales d’Utilisation » ont pour             objet l’encadrement juridique de l’utilisation du site illicolove.com et de ses services.`,
 
@@ -156,7 +156,7 @@ $(document).ready(function() {
 
 
             "IDTRANSLATETCU5":`Ce contrat est conclu entre :`,
-            "IDTRANSLATETCU6":`L’Etablissement BAKO FAMILIA &amp; COMPANY propriétaire du site internet, ci-après désigné « l’Éditeur », ET Toute personne physique souhaitant accéder au site et à ses   services, ci-après appelé « l’Utilisateur.trice ». Les conditions générales d’utilisation doivent être acceptées  par tout Utilisateur.trice, et son accès au site vaut acceptation de ces conditions.
+            "IDTRANSLATETCU6":`L’Etablissement BAKO FAMILIA & COMPANY propriétaire du site internet, ci-après désigné « l’Éditeur », ET Toute personne physique souhaitant accéder au site et à ses   services, ci-après appelé « l’Utilisateur.trice ». Les conditions générales d’utilisation doivent être acceptées  par tout Utilisateur.trice, et son accès au site vaut acceptation de ces conditions.
             Dans les présentes Conditions Générales d’Utilisation, il est convenu que les expressions ou mots suivants, qu’ils soient employés au singulier ou au pluriel, auront la signification suivante :`,
             "IDTRANSLATETCU7":`Annonce de recherche : désigne une publication d’un utilisateur.trice ou visiteur.euse du site, sous forme de texte via notre formulaire, accompagnée ou non  d’une ou de plusieurs photographies représentant sa trombine.`,
             "IDTRANSLATETCU8":`Services de rencontres amoureuses  : désigne l’accès par l’Utilisateur.trice à l’ensemble des annonces de recherche publiées sur le Site Internet entre autres, les profils, les liens hypertextes, textes, images, vidéos, les contacts ou adresses par le biais du « click to show ».`,
@@ -167,7 +167,7 @@ $(document).ready(function() {
 
 
            
-           "IDTRANSLATETCU11X":`L’établissement BAKO FAMILIA &amp; COMPANY est l’Éditeur du site de rencontres illicolove.com.  Sis au Lot 191 parcelle b’, à Agbalilamè, elle est une entreprise individuelle de droit béninois. Elle est créée le 29 Mai 2008, immatriculée au Registre du Commerce et du Crédit Mobilier RCCM RB/COT/08/A4101 ; et a pour Identifiant Fiscal Unique (IFU) Numéro : 3200800938610.  Elle est représentée par Gildas Ghislain GANGBAZO.`,
+           "IDTRANSLATETCU11X":`L’établissement BAKO FAMILIA & COMPANY est l’Éditeur du site de rencontres illicolove.com.  Sis au Lot 191 parcelle b’, à Agbalilamè, elle est une entreprise individuelle de droit béninois. Elle est créée le 29 Mai 2008, immatriculée au Registre du Commerce et du Crédit Mobilier RCCM RB/COT/08/A4101 ; et a pour Identifiant Fiscal Unique (IFU) Numéro : 3200800938610.  Elle est représentée par Gildas Ghislain GANGBAZO.`,
           "IDTRANSLATETCU11":`ARTICLE 3 : accès aux services`,
           "IDTRANSLATETCU12":`L’Utilisateur.trice du site illicolove.com a accès aux services suivants :`,
           "IDTRANSLATETCU13":`Création d’un compte personnel`,
@@ -201,11 +201,10 @@ Le site et ses différents services peuvent être interrompus ou suspendus par l
 
 
           "IDTRANSLATETCU24":`ARTICLE 6 : Propriété intellectuelle`,
-"IDTRANSLATETCU25":`BAKO FAMILIA & COMPANY est le propriétaire exclusif de tous les droits de propriété intellectuelle portant tant sur la marque, ou la structure que sur le contenu du Site www.illicolove.com. Les contenus du site www.illicolove.com sont destinés à un usage strictement personnel, privé et non collectif, librement pour le contenu  gratuit. Il en est de même pour les fils RSS et les newsletters. Toute utilisation dans un cadre professionnel ou commercial ou toute   commercialisation de ce contenu auprès de tiers est interdite, sauf accord exprès de BAKO FAMILIA & COMPANY.`,
+          "IDTRANSLATETCU25":`BAKO FAMILIA & COMPANY est le propriétaire exclusif de tous les droits de propriété intellectuelle portant tant sur la marque, ou la structure que sur le contenu du Site www.illicolove.com. Les contenus du site www.illicolove.com sont destinés à un usage strictement personnel, privé et non collectif, librement pour le contenu  gratuit. Il en est de même pour les fils RSS et les newsletters. Toute utilisation dans un cadre professionnel ou commercial ou toute   commercialisation de ce contenu auprès de tiers est interdite, sauf accord exprès de BAKO FAMILIA & COMPANY.`,
           "IDTRANSLATETCU26":`ARTICLE 7 : Données personnelles.`,
           "IDTRANSLATETCU27":`Consultez notre Politique de Confidentialité, données
-          personnelles et cookies.`,
-          "IDTRANSLATETCU28":`ici`,
+          personnelles et cookies ici <a href="politique.html"><i class="bi bi-arrow-right-circle"></i></a>`,
           "IDTRANSLATETCU29":`ARTICLE 8 : Liens hypertextes`,
           "IDTRANSLATETCU30":`Les domaines vers lesquels mènent les liens hypertextes présents sur le site n’engagent pas la responsabilité de l’Éditeur BAKO FAMILIA & COMPANY, qui n’a pas de contrôle sur ces liens.  L’Éditeur a mis en place des partenariats avec des fournisseurs de services et peut          proposer à l’Utilisateur.trice des informations concernant d’autres sites et/ou services, par exemple par la mention d’adresses de sites Web, et/ou par la présence de liens hypertextes vers ces sites.          Ces liens hypertextes qui redirigeant vers des sites tiers n’ont pas été développés par l’Éditeur et ne lui appartiennent pas. L’Éditeur n’assume par conséquent, aucune responsabilité de ces sites, leur contenu, publicités, produits ou services disponibles sur ou à partir de ces sites. Par ailleurs, la responsabilité de l’Éditeur ne saurait être engagée quant aux informations, opinions et recommandations formulées par ces tiers. `,
 
@@ -277,7 +276,7 @@ Le site et ses différents services peuvent être interrompus ou suspendus par l
 
 
           "IDTRANSLATEPC3":`Les présentes mentions légales et politique de confidentialité disposent et vous éclairent de la
-          manière dont BAKO FAMILIA &amp; COMPANY utilise et protège les informations que vous nous
+          manière dont BAKO FAMILIA & COMPANY utilise et protège les informations que vous nous
           transmettez, également, lorsque vous utilisez notre site de rencontres amoureuses accessible à
           partir de l’URL : www.illicolove.com.`,
           "IDTRANSLATEPC4":`Nous vous prions de noter que notre politique de confidentialité est susceptible d’être modifiée
@@ -310,14 +309,14 @@ Le site et ses différents services peuvent être interrompus ou suspendus par l
 
           "IDTRANSLATEPC14":`Conformément à la loi portant code du numérique en République du Bénin, tout utilisateur de notre site internet www.illicolove.com peut demander la rectification, la mise à jour, la suppression, le verrouillage ou encore l’effacement des données le concernant, et qui peuvent s’avérer inexactes, erronées, incomplètes, équivoques ou obsolètes.`,
           "IDTRANSLATEPC15":`Durée de conservation.`,
-          "IDTRANSLATEPC16":`Vos données personnelles sont conservées par BAKO FAMILIA &amp; COMPANY uniquement pour le temps correspondant à votre besoin de services de rencontres amoureuses. Toutefois, cette  durée de conservation n’excède pas treize (12) mois.`,
+          "IDTRANSLATEPC16":`Vos données personnelles sont conservées par BAKO FAMILIA & COMPANY uniquement pour le temps correspondant à votre besoin de services de rencontres amoureuses. Toutefois, cette  durée de conservation n’excède pas treize (12) mois.`,
           "IDTRANSLATEPC17":`Plainte auprès de l’autorité compétente`,
           "IDTRANSLATEPC18":`Si vous considérez que BAKO FAMILIA & COMPANY ne respecte pas ses obligations au regard de vos données personnelles collectées lors de votre visite sur son site internet
           www.illicolove.com, vous pouvez adresser, comme le prescrit la procédure légale, une plainte ou  une demande auprès de l’Autorité de Protection des Données à caractère Personnel(APDP).`,
           "IDTRANSLATEPC19":`Propriété intellectuelle`,
           "IDTRANSLATEPC20":`Tout le contenu du présent site internet, incluant, de façon non limitative, les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi que leur mise en forme sont la   propriété exclusive de BAKO FAMILIA & COMPANY à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs. 
           Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l'accord exprès écrit de BAKO FAMILIA & COMPANY.`,
-          " IDTRANSLATEPC21  ":`Conditions de service`,
+          "IDTRANSLATEPC21":`Conditions de service`,
           "IDTRANSLATEPC22":`Le site internet www.illicolove.com est proposé en langue française, avec des traductions en anglais et en espagnol. Pour un meilleur confort d'utilisation, nous vous recommandons de recourir à des navigateurs compatibles et modernes comme : Chrome, Safari, Firefox.`,
           "IDTRANSLATEPC23":`Informations et suggestions`,
 
@@ -427,7 +426,7 @@ Le site et ses différents services peuvent être interrompus ou suspendus par l
           "TOCLOSEMODALID":`Fermer`,   
           "IDTRANSLATEPROFIL26":`Valider`, 
           "IDTRANSLATEPROFIL27":`reponse de sécurité`,
-          "payYourUnity":`Entrer l'unité  `,
+          "payYourUnity":`Entrer l'unité`,
           congratulationsTitle: "Félicitation !",
           accountSecureMessage: "Votre compte est sécurisé. Merci !",       
           accountSecureMessageX: "Ne mettez pas d'espace. Merci !",
@@ -677,11 +676,7 @@ Le site et ses différents services peuvent être interrompus ou suspendus par l
           "IDTRANSLATEUSERD20":`Son pays de résidence :`,
           "IDTRANSLATEUSERD21":`Sa ville d'habitation :`,
           "IDTRANSLATEUSERD22":`Son travail ou occupation :`,
-          "texteIDTRANSLATEUSERD23":`En ligne le`,
-
-
-
-
+          "TIDTRANSLATEUSERD23":`En ligne le`,
 
           "IDTRANSLATEUSERD24":`<i class="fas fa-database" style="font-size: 5vh !important; color: #FFB6C1;"></i> Pas de données.`,
           "IDTRANSLATEUSERD25":`Pas de données.`,
@@ -879,8 +874,7 @@ El sitio y sus diferentes servicios pueden ser interrumpidos o suspendidos por e
           "IDTRANSLATETCU24":` ARTÍCULO 6: Propiedad intelectual `,
 "IDTRANSLATETCU25":` BAKO FAMILIA & COMPANY es el propietario exclusivo de todos los derechos de propiedad intelectual sobre la marca, la estructura y el contenido del Sitio www.illicolove.com. Los contenidos del sitio www.illicolove.com están destinados a un uso estrictamente personal, privado y no colectivo, libremente para el contenido gratuito. Lo mismo ocurre con los canales RSS y los boletines informativos. Queda prohibido el uso o la comercialización de dicho contenido en el ámbito profesional o comercial con terceros, a menos que BAKO FAMILIA & COMPANY lo apruebe expresamente.`,
           "IDTRANSLATETCU26":` ARTÍCULO 7: Datos personales.`,
-          "IDTRANSLATETCU27":` Consulte nuestra Política de Privacidad, datos personales y cookies. `,
-          "IDTRANSLATETCU28":` aquí `,
+          "IDTRANSLATETCU27":` Consulte nuestra Política de Privacidad, datos personales y cookies aquí <a href="politique.html"><i class="bi bi-arrow-right-circle"></i></a>`,
           "IDTRANSLATETCU29":` ARTÍCULO 8: Hipervínculos `,
           "IDTRANSLATETCU30":` Los dominios a los que conducen los hipervínculos presentes en el sitio no son responsabilidad del Editor BAKO FAMILIA & COMPANY, que no tiene control sobre estos enlaces.  El Editor ha establecido asociaciones con proveedores de servicios y puede ofrecer al Usuario información sobre otros sitios y/o servicios, por ejemplo, indicando direcciones de sitios web y/o la presencia de hipervínculos a dichos sitios. Estos hipervínculos que redirigen a sitios de terceros no han sido desarrollados por el Editor y no le pertenecen. Por lo tanto, el Editor no asume ninguna responsabilidad por estos sitios, su contenido, anuncios, productos o servicios disponibles en o desde estos sitios. Por otra parte, el Editor no será responsable de la información, las opiniones y las recomendaciones formuladas por dichos terceros.`,
    "IDTRANSLATETCU31":` El Editor no se hace responsable de ningún daño o pérdida que se haya demostrado o alegado, sea consecuencia o en relación con el uso, o con la confianza en el contenido, bienes o servicios disponibles en dichos servicios asociados o fuentes externas.  La decisión de activar estos enlaces es totalmente responsabilidad del Usuario.trice.
@@ -963,7 +957,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATEPC19":` Propiedad intelectual `,
           "IDTRANSLATEPC20":` Todo el contenido de esta página web, incluyendo, entre otros, gráficos, imágenes, textos, vídeos, animaciones, sonidos, logotipos, gifs e iconos, así como su formato, son propiedad exclusiva de BAKO FAMILIA & COMPANY con excepción de las marcas, logotipos o contenidos pertenecientes a otras empresas asociadas o autores. 
           Cualquier reproducción, distribución, modificación, adaptación, retransmisión o publicación, incluso parcial, de estos diferentes elementos está estrictamente prohibida sin el consentimiento expreso por escrito de BAKO FAMILIA & COMPANY.`,
-          " IDTRANSLATEPC21  ":` Condiciones de servicio `,
+          "IDTRANSLATEPC21":` Condiciones de servicio `,
           "IDTRANSLATEPC22":` El sitio web www.illicolove.com está disponible en francés, con traducciones al inglés y al español. Para mayor comodidad de uso, recomendamos utilizar navegadores compatibles y modernos como: Chrome, Safari, Firefox.`,
           "IDTRANSLATEPC23":` Información y sugerencias `,
 
@@ -1286,7 +1280,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATEUSERD20":` Su país de residencia`,
           "IDTRANSLATEUSERD21":` Su ciudad de residencia `,
           "IDTRANSLATEUSERD22":` Su trabajo u ocupación `,
-          "texteIDTRANSLATEUSERD23":` online el `,
+          "TIDTRANSLATEUSERD23":`online el`,
 
 
 
@@ -1490,17 +1484,16 @@ The site and its various services may be interrupted or suspended by the Editor,
 
 
           "IDTRANSLATETCU24":` ARTICLE 6: Intellectual Property `,
-"IDTRANSLATETCU25":` BAKO FAMILIA & COMPANY is the exclusive owner of all intellectual property rights relating to the trademark, structure and content of the Site www.illicolove.com. The contents of the website www.illicolove.com are intended for a strictly personal, private and not collective use, freely for free content. The same applies to RSS feeds and newsletters. Any professional or commercial use or marketing of this content to third parties is prohibited, unless expressly agreed by BAKO FAMILIA & COMPANY.`,
+          "IDTRANSLATETCU25":` BAKO FAMILIA & COMPANY is the exclusive owner of all intellectual property rights relating to the trademark, structure and content of the Site www.illicolove.com. The contents of the website www.illicolove.com are intended for a strictly personal, private and not collective use, freely for free content. The same applies to RSS feeds and newsletters. Any professional or commercial use or marketing of this content to third parties is prohibited, unless expressly agreed by BAKO FAMILIA & COMPANY.`,
           "IDTRANSLATETCU26":` ARTICLE 7: Personal data.`,
-          "IDTRANSLATETCU27":` Consult our Privacy Policy, personal data and cookies. `,
-          "IDTRANSLATETCU28":` here `,
+          "IDTRANSLATETCU27":` Consult our Privacy Policy, personal data and cookies here <a href="politique.html"><i class="bi bi-arrow-right-circle"></i></a>`,
           "IDTRANSLATETCU29":` ARTICLE 8: Hyperlinks `,
           "IDTRANSLATETCU30":` The domains to which the hypertext links on the site lead are not the responsibility of the BAKO FAMILIA & COMPANY Editor, who has no control over these links.  The Editor has established partnerships with service providers and may provide the User with information about other sites and/or services, for example by mentioning website addresses, and/or by hyperlinking to those sites. These hyperlinks that redirect to third-party sites have not been developed by the Editor and do not belong to it. The Editor therefore assumes no responsibility for these sites, their content, advertisements, products or services available on or from these sites. Furthermore, the Editor cannot be held liable for the information, opinions and recommendations made by these third parties.`,
-   "IDTRANSLATETCU31":` The Editor shall not be liable for any damage or loss proven or alleged, consequential or in connection with the use, or trust in the content, goods or services available on these partner services or external sources.  The decision to activate these links is the full responsibility of the User.trice.
+          "IDTRANSLATETCU31":` The Editor shall not be liable for any damage or loss proven or alleged, consequential or in connection with the use, or trust in the content, goods or services available on these partner services or external sources.  The decision to activate these links is the full responsibility of the User.trice.
           The Editor is not responsible for the availability of these sites and cannot control their content or validate the advertising, products and other information posted on these websites. It is possible for a third party to link to a page on illicolove.com without express permission from the Editor.`,
           "IDTRANSLATETCU32":` ARTICLE 9: Special Warning `,
           "IDTRANSLATETCU33":` In real life as in virtual life on the internet, you can cross paths with honest people as well as malicious people and scammers. 
-It is up to us individually to adopt certain attitudes of security in real life and moreover in the virtual world on the internet. BAKO FAMILIA & COMPANY invites you to:`,
+          It is up to us individually to adopt certain attitudes of security in real life and moreover in the virtual world on the internet. BAKO FAMILIA & COMPANY invites you to:`,
           "IDTRANSLATETCU34":` Never send money to a stranger you met on this site; under no circumstances.`,
           "IDTRANSLATETCU35":` Never send intimate photographs to a contact met on this site`,
 
@@ -1873,8 +1866,8 @@ It is up to us individually to adopt certain attitudes of security in real life 
           "IDTRANSLATEFORM103":` Send `,
 
 
-   "IDTRANSLATEFORM104":`<p ><em> Personal data collected in this form by <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong> will be treated exclusively for the purposes of the smooth running of the dating service that you request. The personal data collected is not communicated to anyone without your consent. 
-         Pursuant to the provisions of Law 2017-20 on the Digital Code in the Republic of Benin on the Protection of Personal Data, the processing of the collected data was declared before to APDP.</em> </p>
+          "IDTRANSLATEFORM104":`<p ><em> Personal data collected in this form by <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong> will be treated exclusively for the purposes of the smooth running of the dating service that you request. The personal data collected is not communicated to anyone without your consent. 
+          Pursuant to the provisions of Law 2017-20 on the Digital Code in the Republic of Benin on the Protection of Personal Data, the processing of the collected data was declared before to APDP.</em> </p>
           <hr>
           <p class="mb-0"><em> In accordance with the aforementioned law, you can exercise your rights of access, opposition, rectification and deletion with <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong>.
           </em></p>`,
@@ -1913,7 +1906,7 @@ It is up to us individually to adopt certain attitudes of security in real life 
           "IDTRANSLATEUSERD20":` Her/His country of residence`,
           "IDTRANSLATEUSERD21":` Her/His hometown `,
           "IDTRANSLATEUSERD22":` Her/His work or occupation:`,
-          "texteIDTRANSLATEUSERD23":` online the `,
+          "TIDTRANSLATEUSERD23":`online the`,
 
 
 
@@ -2078,7 +2071,7 @@ It is up to us individually to adopt certain attitudes of security in real life 
       $("#IDTRANSLATETCU24").text(i18next.t("IDTRANSLATETCU24"));
       $("#IDTRANSLATETCU25").text(i18next.t("IDTRANSLATETCU25"));
       $("#IDTRANSLATETCU26").text(i18next.t("IDTRANSLATETCU26"));
-      $("#IDTRANSLATETCU27").text(i18next.t("IDTRANSLATETCU27"));
+      $("#IDTRANSLATETCU27").html(i18next.t("IDTRANSLATETCU27"));
       $("#IDTRANSLATETCU28").text(i18next.t("IDTRANSLATETCU28"));
       $("#IDTRANSLATETCU29").text(i18next.t("IDTRANSLATETCU29"));
       $("#IDTRANSLATETCU30").text(i18next.t("IDTRANSLATETCU30"));
@@ -2453,8 +2446,8 @@ It is up to us individually to adopt certain attitudes of security in real life 
       $("#IDTRANSLATEUSERD18").text(i18next.t("IDTRANSLATEUSERD18"));
       $("#IDTRANSLATEUSERD19").text(i18next.t("IDTRANSLATEUSERD19"));
       $("#IDTRANSLATEUSERD20").text(i18next.t("IDTRANSLATEUSERD20"));
-      $("#IDTRANSLATEUSERD21").text(i18next.t("IDTRANSLATEUSERD21"));
-      $("#IDTRANSLATEUSERD22").text(i18next.t("IDTRANSLATEUSERD22")); 
+      $("#IDTRANSLATEUSERD21").text(i18next.t("IDTRANSLATEUSERD21")); 
+      $("#IDTRANSLATEUSERD22").text(i18next.t("IDTRANSLATEUSERD22"));
       $("#IDTRANSLATEUSERD24").text(i18next.t("IDTRANSLATEUSERD24"));
       $("#IDTRANSLATEUSERD25").text(i18next.t("IDTRANSLATEUSERD25"));
       $("#IDTRANSLATEUSERD26").text(i18next.t("IDTRANSLATEUSERD26"));

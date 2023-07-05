@@ -1996,6 +1996,7 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATEX6").text(i18next.t("IDTRANSLATEX6"));
       $("#IDTRANSLATEX7").text(i18next.t("IDTRANSLATEX7")); 
       $("#IDTRANSLATEX8").text(i18next.t("IDTRANSLATEX8")); 
+      $("#TOCLOSEMODALID").text(i18next.t("TOCLOSEMODALID")); 
       $("#toopenPUAID").text(i18next.t("toopenPUAID"));
       $("#openPUA").text(i18next.t("openPUA"));
       $("#IDTRANSLATEX9").text(i18next.t("IDTRANSLATEX9"));

@@ -61,6 +61,14 @@ if(!acceptToUseCookies){
         'success'
       );
       // Ajoutez votre code pour gérer l'acceptation des cookies ici
+      setTimeout(()=>{
+        Swal.fire({
+          text: `
+          Chers utilisateurs, nous tenons à vous informer que notre site illicolve.com est toujours en cours de développement. 
+          Nous vous remercions de votre compréhension et de votre patience pendant cette phase de création.`,
+          icon: 'info'
+          });
+      },5000)
     } else {
       Swal.fire(
         'Cookies refusés',

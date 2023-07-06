@@ -335,7 +335,7 @@ Le site et ses différents services peuvent être interrompus ou suspendus par l
           site ne peuvent être fonctionnelles sans l’acceptation de cookies. Les données ainsi obtenues
           visent à faciliter la navigation ultérieure sur ce site. Les cookies ont également vocation à diverses mesures d’audience et de fréquentation.`,
           "IDTRANSLATEPC27":` Le refus d’installation d’un cookie peut entraîner l’impossibilité d’accéder à certaines fonctionnalités. Tout utilisateur de ce site internet peut toutefois configurer son terminal pour décliner l’installation des cookies, comme indiqué ci-dessous :`,
-          "IDTRANSLATEPC28":`Utilisateurs de Safari : Choisissez Safari &gt; Préférences,
+          "IDTRANSLATEPC28":`Utilisateurs de Safari : Choisissez Safari  Préférences,
           cliquez sur Confidentialité, puis sélectionnez l’option
           relative aux « Cookies et données de site web ». Toujours
           bloquer : Safari ne permet à aucun site web, tiers ni
@@ -347,7 +347,7 @@ Le site et ses différents services peuvent être interrompus ou suspendus par l
 
 
 
-          "IDTRANSLATEPC29":`Utilisateurs de Safari : Choisissez Safari &gt; Préférences,
+          "IDTRANSLATEPC29":`Utilisateurs de Safari : Choisissez Safari Préférences,
           cliquez sur Confidentialité, puis sélectionnez l’option
           relative aux « Cookies et données de site web ». Toujours
           bloquer : Safari ne permet à aucun site web, tiers ni
@@ -977,13 +977,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
 
 
 
-          "IDTRANSLATEPC29":`Utilisateurs de Safari : Choisissez Safari &gt; Préférences,
-          cliquez sur Confidentialité, puis sélectionnez l’option
-          relative aux « Cookies et données de site web ». Toujours
-          bloquer : Safari ne permet à aucun site web, tiers ni
-          annonceur de stocker des cookies et autres données sur
-          votre Mac. Cela peut empêcher certains sites web de
-          fonctionner correctement.`,
+          "IDTRANSLATEPC29":`Usuarios de Safari: Elija Preferencias de Safari, haga clic en Confidencialidad y, a continuación, seleccione la opción "Cookies y datos de sitios web". Bloquear siempre: Safari no permite que ningún sitio web, tercero o anunciante almacene cookies y otros datos en tu Mac. Esto puede impedir que algunos sitios web funcionen correctamente.`,
           "IDTRANSLATEPC30":` Usuarios de Google Chrome: Menú; Configuración;   Mostrar configuración avanzada (situado en la parte inferior de la página). A continuación, haga clic en el botón Configuración de contenido y, a continuación, marque la casilla Bloquear cookies y datos de sitios de terceros, finalmente haga clic en Aceptar para validar su elección.`,
           "IDTRANSLATEPC31":` Usuarios de Internet Explorer: Menú Opciones de Internet Ficha Privacidad y en el botón Avanzado para abrir la ventana de Configuración de privacidad avanzada. A continuación, marque la casilla Ignorar la gestión automática de cookies y seleccione Rechazar en la columna Cookies de terceros.`,
           "IDTRANSLATEPC32":` Usuarios de Microsoft Edge: ficha herramienta/ opciones de internet. Haga clic en Privacidad y seleccione Bloquear todas las cookies.`,
@@ -1601,13 +1595,7 @@ The site and its various services may be interrupted or suspended by the Editor,
 
 
 
-          "IDTRANSLATEPC29":`Utilisateurs de Safari : Choisissez Safari &gt; Préférences,
-          cliquez sur Confidentialité, puis sélectionnez l’option
-          relative aux « Cookies et données de site web ». Toujours
-          bloquer : Safari ne permet à aucun site web, tiers ni
-          annonceur de stocker des cookies et autres données sur
-          votre Mac. Cela peut empêcher certains sites web de
-          fonctionner correctement.`,
+          "IDTRANSLATEPC29":`Safari users: Choose Safari Preferences, click on Privacy, then select the "Cookies and website data" option. Always block: Safari does not allow any website, third party or advertiser to store cookies and other data on your Mac. This may prevent certain websites from functioning properly.`,
           "IDTRANSLATEPC30":` Google Chrome users: Menu; Settings;
           Display advanced settings (located at the bottom of the page).
           You must then click on the Content Settings button and check the Block cookies and third-party site data box, then click OK to confirm your choice.`,

@@ -23,7 +23,7 @@ $(document).ready(function() {
             "IDTRANSLATECONTACT6":"Réseaux sociaux",
             "IDTRANSLATETITLE":"Trouvez votre âme sœur",
             "IDTRANSLATETITLEFORM":"Formulaire",
-            "IDTRANSLATE1INF1":`Votre adresse électronique est collectée et traitée par BAKO FAMILIA &   COMPANY pour vous tenir informer de nouvelles fonctionnalités du site illicolove ou des mises à jour.
+            "IDTRANSLATE1INF1":`Votre adresse électronique est collectée et traitée par BAKO FAMILIA & COMPANY pour vous tenir informer de nouvelles fonctionnalités du site illicolove ou des mises à jour.
             En application de la loi 2017-20 portant code du numérique en République du Bénin, sur la   protection des données à caractère personnel, vous pouvez vous désabonner ou exercer vos droits d’accès, d’opposition, de rectification et de suppression en envoyant un mail à info@illicolove.com`,
             "IDTRANSLATE10":"illicolove,",
             "IDTRANSLATE11":`votre plateforme de rencontres, pour lutter contre le célibat et la solitude.`,
@@ -31,7 +31,7 @@ $(document).ready(function() {
             "IDTRANSLATE13":`S'inscrire gratuitement`,
             "IDTRANSLATE13KLM":`Aller sur votre profil`,
             "IDTRANSLATE14":`À propos de nous`,
-            "IDTRANSLATE15":`Votre plateforme de rencontres en ligne illicolove.com vous est proposée par les Établissements BAKO FAMILIA &; COMPANY, une entreprise individuelle(EI) de droit béninois immatriculée au Registre du Commerce et du Crédit Mobilier RCCM RB/COT/08/A4101 ; à l’Identifiant Fiscal Unique (IFU) 3200800938610.`,
+            "IDTRANSLATE15":`Votre plateforme de rencontres en ligne illicolove.com vous est proposée par les Établissements BAKO FAMILIA & COMPANY, une entreprise individuelle(EI) de droit béninois immatriculée au Registre du Commerce et du Crédit Mobilier RCCM RB/COT/08/A4101 ; à l’Identifiant Fiscal Unique (IFU) 3200800938610.`,
 
             "IDTRANSLATE16":`Elle a pour activités, le Wedding planning (accompagnement dans l’organisation de mariage), le Tourisme-Loisirs, l’organisation de foires et Salons. Elle a été créée en Mai 2008 à Cotonou. `,
             "IDTRANSLATE17":`Plus de détails`,

@@ -19,8 +19,10 @@ $(document).ready(function() {
             "IDTRANSLATECONTACT2":"Contactez-nous",
             "IDTRANSLATECONTACT3":"Adresse",
             "IDTRANSLATECONTACT4":'Téléphone',
-            "IDTRANSLATECONTACT5":"E-mails",
+            "IDTRANSLATECONTACT5":"E-mails", 
             "IDTRANSLATECONTACT6":"Réseaux sociaux",
+            "IDTRANSLATETITLE":"Trouvez votre âme sœur",
+            "IDTRANSLATETITLEFORM":"Formulaire",
             "IDTRANSLATE1INF1":`Votre adresse électronique est collectée et traitée par BAKO FAMILIA &   COMPANY pour vous tenir informer de nouvelles fonctionnalités du site illicolove ou des mises à jour.
             En application de la loi 2017-20 portant code du numérique en République du Bénin, sur la   protection des données à caractère personnel, vous pouvez vous désabonner ou exercer vos droits d’accès, d’opposition, de rectification et de suppression en envoyant un mail à info@illicolove.com`,
             "IDTRANSLATE10":"illicolove,",
@@ -35,11 +37,12 @@ $(document).ready(function() {
             "IDTRANSLATE17":`Plus de détails`,
             "IDTRANSLATE18":`Nos objectifs`,
             "IDTRANSLATE19":`Article 16`,
-
-
-
-
             "IDTRANSLATE20":`Notre cible`,
+
+            "IDTRANSLATE17USER":`Sélection de région`,
+            "IDTRANSLATE18USER":`Détails de l'utilisateur`,
+            "IDTRANSLATE19USER":`Profil`,
+
             "IDTRANSLATE21":`La mise en service de cette plateforme de rencontres en ligne répond à  nos initiatives de lutte contre le célibat et la solitude.
             Elle matérialise notre action dans la ligne définie par la Déclaration Universelle des
             Droits de l’Homme en son article 16, qui rappelle le droit au mariage pour la femme
@@ -712,6 +715,8 @@ Le site et ses différents services peuvent être interrompus ou suspendus par l
 "IDTRANSLATECONTACT4":' Teléfono ',
 "IDTRANSLATECONTACT5":"E-mails",
 "IDTRANSLATECONTACT6":" Redes sociales ",
+"IDTRANSLATETITLE":"Find your soul mate",
+"IDTRANSLATETITLEFORM":"Form",
 "IDTRANSLATE1INF1":`Su dirección de correo electrónico es recopilada y procesada por BAKO FAMILIA & COMPANY para mantenerle informado de las nuevas características de la página web o de actualización.
             En aplicación de la ley 2017-20 sobre el código digital en la República de Benín, sobre la protección de los datos de carácter personal, puede darse de baja o ejercer sus derechos de acceso, de oposición, rectificación y supresión enviando un correo electrónico a info@illicolove.com`,
 
@@ -726,8 +731,12 @@ Le site et ses différents services peuvent être interrompus ou suspendus par l
             "IDTRANSLATE17":` Más detalles `,
             "IDTRANSLATE18":` Nuestros objetivos `,
             "IDTRANSLATE19":` Artículo 16`,
-"IDTRANSLATE20":` Nuestro objetivo `,
- "IDTRANSLATE21":` La puesta en marcha de esta plataforma de citas en línea responde a nuestras iniciativas de lucha contra el celibato y la soledad.
+            "IDTRANSLATE20":` Nuestro objetivo `,
+            "IDTRANSLATE17USER":`Selección de región`,
+            "IDTRANSLATE18USER":`Detalles del usuario`,
+            "IDTRANSLATE19USER":`Perfil`,
+
+            "IDTRANSLATE21":` La puesta en marcha de esta plataforma de citas en línea responde a nuestras iniciativas de lucha contra el celibato y la soledad.
             Materializa nuestra acción en la línea definida por la Declaración Universal de Derechos Humanos en su artículo 16, que recuerda el derecho al matrimonio para la mujer y para el hombre, y la importancia de la familia que debe ser protegida por la sociedad y por el Estado.`,
            "IDTRANSLATE22":` Nuestros valores :`,
            "IDTRANSLATE23":` Fiabilidad,`,
@@ -1313,6 +1322,8 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
 "IDTRANSLATECONTACT4":' Phone ',
 "IDTRANSLATECONTACT5":"E-mails",
 "IDTRANSLATECONTACT6":" Social networks ",
+"IDTRANSLATETITLE":"Encuentre a su alma gemela",
+"IDTRANSLATETITLEFORM":"Formulario",
 "IDTRANSLATE1INF1":`Your email address is collected and processed by BAKO FAMILIA & COMPANY to keep you informed of new features of the illicolove site or update.
             In application of the law 2017-20 on the protection of personal data, you can unsubscribe or exercise your rights of access, opposition, rectification and deletion by sending an email to info@illicolove.com`,
 
@@ -1328,6 +1339,9 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
             "IDTRANSLATE18":` Our goals `,
             "IDTRANSLATE19":`Article 16`,
 "IDTRANSLATE20":` Our target `,
+"IDTRANSLATE17USER":`Region selection`,
+"IDTRANSLATE18USER":`User details`,
+"IDTRANSLATE19USER":`Profile`,
  "IDTRANSLATE21":` The launch of this online dating platform responds to our initiatives to fight against celibacy and loneliness.
             It materializes our action in the line defined by the Universal Declaration of Human Rights in its article 16, which recalls the right to marriage for women and men, and the importance of the family which must be protected by society and by the State.`,
            "IDTRANSLATE22":` Our values :`,
@@ -1933,12 +1947,25 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATE7").text(i18next.t("IDTRANSLATE7"));
       $("#IDTRANSLATE8").text(i18next.t("IDTRANSLATE8"));
       $("#IDTRANSLATE9").text(i18next.t("IDTRANSLATE9"));
+
+      $("#IDTRANSLATE1K").text(i18next.t("IDTRANSLATE1"));
+      $("#IDTRANSLATE2K").text(i18next.t("IDTRANSLATE2"));
+      $("#IDTRANSLATE3K").text(i18next.t("IDTRANSLATE3"));
+      $("#IDTRANSLATE4K").text(i18next.t("IDTRANSLATE4"));
+      $("#IDTRANSLATE5K").text(i18next.t("IDTRANSLATE5"));
+      $("#IDTRANSLATE6K").text(i18next.t("IDTRANSLATE6"));
+      $("#IDTRANSLATE7K").text(i18next.t("IDTRANSLATE7"));
+      $("#IDTRANSLATE8K").text(i18next.t("IDTRANSLATE8"));
+      $("#IDTRANSLATE9K").text(i18next.t("IDTRANSLATE9"));
+
       $("#IDTRANSLATE10").text(i18next.t("IDTRANSLATE10"));
       $("#IDTRANSLATE11").text(i18next.t("IDTRANSLATE11"));
       $("#IDTRANSLATE12").text(i18next.t("IDTRANSLATE12")); 
       $("#IDTRANSLATE13KLM").text(i18next.t("IDTRANSLATE13KLM"));
       $("#IDTRANSLATE13").text(i18next.t("IDTRANSLATE13"));
       $("#IDTRANSLATE14").text(i18next.t("IDTRANSLATE14"));
+      $("#IDTRANSLATETITLE").text(i18next.t("IDTRANSLATETITLE")); 
+      $("#IDTRANSLATETITLEFORM").text(i18next.t("IDTRANSLATETITLEFORM")); 
       $("#IDTRANSLATE15").text(i18next.t("IDTRANSLATE15"));
       $("#IDTRANSLATE16").text(i18next.t("IDTRANSLATE16"));
       $("#IDTRANSLATE17").text(i18next.t("IDTRANSLATE17"));
@@ -1948,6 +1975,12 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATE21").text(i18next.t("IDTRANSLATE21"));
       $("#IDTRANSLATE22").text(i18next.t("IDTRANSLATE22"));
       $("#IDTRANSLATE23").text(i18next.t("IDTRANSLATE23"));
+
+      $("#IDTRANSLATE17USER").text(i18next.t("IDTRANSLATE17USER"));
+      $("#IDTRANSLATE18USER").text(i18next.t("IDTRANSLATE18USER"));
+      $("#IDTRANSLATE19USER").text(i18next.t("IDTRANSLATE19USER"));
+
+
       $("#IDTRANSLATE24").text(i18next.t("IDTRANSLATE24"));
       $("#IDTRANSLATE25").text(i18next.t("IDTRANSLATE25"));
       $("#IDTRANSLATE26").text(i18next.t("IDTRANSLATE26"));

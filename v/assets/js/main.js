@@ -309,7 +309,6 @@
 
 const userButton = document.getElementById('user-button');
 const userDropdown = document.getElementById('modalMyDropdown');
- 
 
 userButton.addEventListener('click', () => {
  if(userDropdown.style.display === "none"){

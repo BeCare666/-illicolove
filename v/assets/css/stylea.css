@@ -1313,3 +1313,20 @@ section {
 #footer .credits a {
   color: #4169E1;
 }
+
+
+  /* Style pour le cadre rouge (invisible par défaut) */
+  .clickable-image {
+    border: 1px solid transparent; /* Le cadre est initialement transparent */
+  }
+  
+  /* Style pour le cadre rouge lorsque l'image est cliquée */
+  .clickable-image.clicked {
+    border-color: white;
+  }
+  
+  /* Styles pour le bouton désactivé (vous pouvez personnaliser le style en fonction de vos besoins) */
+  button[disabled] {
+    opacity: 0.6; /* Réduire l'opacité pour indiquer visuellement que le bouton est désactivé */
+    cursor: not-allowed; /* Changer le curseur pour indiquer qu'il n'est pas cliquable */
+  }

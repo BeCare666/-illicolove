@@ -180,7 +180,7 @@ $(document).ready(function() {
           "IDTRANSLATETCU16":`L’obtention payante des contacts des profils qui retiennent son intérêt, et présents sur les annonces de recherche, de manière illimitée et à sa convenance (Click to show / Cliquer pour afficher)`,
           "IDTRANSLATETCU17":`Possibilité de contacter l’Editeur pour solliciter une demande de services personnalisés`,
           "IDTRANSLATETCU18":`Le Site Internet propose aussi à l’Utilisateur.trice qui le désire, l’organisation partielle  ou complète d’une cérémonie de mariage. Tout Utilisateur.trice ayant accès à internet peut accéder gratuitement et depuis n’importe où au site. Les frais supportés par l’Utilisateur.trice pour y accéder (connexion internet, matériel informatique, etc.) ne sont pas à  la charge de l’Éditeur.  Les services cités plus haut ne sont accessibles pour l’Utilisateur.trice que s’il/elle est  membre du site (c’est-à-dire qu’il /elle est identifié.e à l’aide de ses identifiants de    connexion) : 
-Le site et ses différents services peuvent être interrompus ou suspendus par l’Éditeur,           notamment à l’occasion d’une maintenance, sans obligation de    préavis ou de justification.`,
+          Le site et ses différents services peuvent être interrompus ou suspendus par l’Éditeur,           notamment à l’occasion d’une maintenance, sans obligation de    préavis ou de justification.`,
           "IDTRANSLATETCU19":`ARTICLE 4 : Responsabilité de l’Utilisateur.trice`,
           "IDTRANSLATETCU20":`L’Utilisateur.trice est responsable des risques liés à l’utilisation de son identifiant de connexion et de son mot de passe.  Le mot de passe de l’Utilisateur.trice doit rester secret. En   cas de divulgation de mot de passe, l’Éditeur décline toute responsabilité. L’Utilisateur.trice assume l’entière responsabilité de l’utilisation qu’il fait des informations et contenus présents sur le site illicolove.com.
           Tout usage du service par l’Utilisateur.trice ayant directement ou indirectement pour conséquence des dommages doit faire l’objet d’une indemnisation au profit du site.
@@ -2190,6 +2190,7 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#errorSms").text(i18next.t("errorSms")); 
       $("#SmspayId").text(i18next.t("SmspayId"));
       $("#payYourUnitybtn").text(i18next.t("payYourUnitybtn"));
+      $("#payYourUnitybtnd").text(i18next.t("payYourUnitybtn"));
       $("#IDTRANSLATEPROFIL14").text(i18next.t("IDTRANSLATEPROFIL14"));
       $("#IDTRANSLATEPROFIL15").text(i18next.t("IDTRANSLATEPROFIL15"));
       $("#IDTRANSLATEPROFIL16").text(i18next.t("IDTRANSLATEPROFIL16"));

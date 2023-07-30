@@ -8,7 +8,7 @@
   <title id="IDTRANSLATE19USER"></title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+  <script src="https://api.feexpay.me/feexpay-javascript-sdk/index.js"></script>
   <!-- Favicons 
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
@@ -22,6 +22,7 @@
     font-family: 'Montserrat-bold', sans-serif;
     font-size: 14px !important;
   }
+
 </style>
     <!-- Inclure les bibliothèques Firebase que vous utilisez (par exemple, la base de données Firebase) -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
@@ -63,9 +64,9 @@
    }
   </script>
 </head>
-<body >
+<body>
 
-<section id="modalID" style="display: none;">
+<section id="modalID" style="display: none;"> 
   <div class="wrapper">
       <a href="#demo-modal" id="dreamIndemo" style="opacity: 0;">Open Demo Modal</a>
   </div>         
@@ -252,8 +253,10 @@
     <div class="hero-slider swiper">
       <div class="swiper-wrapper">
         
-        <div class="swiper-slide" style="background-image: url('assets/img/bg_1.jpg');"></div>
-         <!--  <div class="swiper-slide" style="background-image: url('assets/img/bg_3.jpg');"></div> 
+        <div class="swiper-slide" style="background-image: url('assets/img/love@.jpg');"></div>
+         <!--  
+           <div class="swiper-slide" style="background-image: url('assets/img/bg_1.jpg');"></div>
+          <div class="swiper-slide" style="background-image: url('assets/img/bg_3.jpg');"></div> 
         <div class="swiper-slide" style="background-image: url('assets/img/bg_2.jpg');"></div>
         <div class="swiper-slide" style="background-image: url('assets/img/hero-carousel/4.jpg');"></div>
         <div class="swiper-slide" style="background-image: url('assets/img/hero-carousel/5.jpg');"></div> -->
@@ -289,14 +292,59 @@
         <p id="errorSms" style="text-align: start !important; font-size: 12px !important; display: none; color: #FFB6C1;"><i class="fa fa-star required"></i></p>
         <p id="SmspayId" style="text-align: start !important; font-size: 12px !important;"> <i class="fa fa-star required"></i></p>
         <input type="text" pattern="[0-9]+" required id="payYourUnity">
+
+      <div class="modal-body" id="myBodyTopaieX" style=" display: flex;
+       justify-content: center;
+       align-items: center; height: 30vh !important; background-color: #FFB6C1 !important;">
+       <div>
+        <div style="  text-align: center; /* Pour centrer horizontalement le contenu du div */
+        transform: translate(-50%, -50%); /* Pour centrer verticalement et horizontalement */
+        position: absolute;
+        top: 50%;
+        left: 50%;">
+        <img src="assets/img/apple-touch-icon.png" alt="" 
+        style="width: 10vh; height: 10vh; cursor: pointer;"
+        class="clickable-image" id="FEEXPAY">
+        <span style="opacity: 0;">feexpay</span>
+        <img src="https://app.feexpay.me/_nuxt/img/feexpay_logo-h.047b89d.png" alt="" 
+        style="width: 10vh; height: 10vh; cursor: pointer;"
+        class="clickable-image" id="KKIAPAY">
+        </div>
+      </div>
+    </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn" style="background-color: #4169E1; color: white;" id="IDTRANSLATEPROFIL14"></button>
-        <button type="button" class="btn btn" style="background-color: #FFB6C1; color: white;" id="payYourUnitybtn" data-dismiss="modal"></button> 
+        <button disabled type="button" class="btn btn" style="background-color: #FFB6C1; color: white; display: none;" id="payYourUnitybtn"></button>
+        <button disabled type="button" class="btn btn" style="background-color: #FFB6C1; color: white;  display: none;" id="payYourUnitybtnd" 
+        data-dismiss="modal" aria-label="Close"></button>
+        <div id="render"></div>
       </div>
     </div>
   </div>
 </div>
 </div>
+
+
+
+
+<style>
+  /* Style pour le cadre rouge (invisible par défaut) */
+.clickable-image {
+  border: 1px solid transparent; /* Le cadre est initialement transparent */
+}
+
+/* Style pour le cadre rouge lorsque l'image est cliquée */
+.clickable-image.clicked {
+  border-color: white;
+}
+
+/* Styles pour le bouton désactivé (vous pouvez personnaliser le style en fonction de vos besoins) */
+button[disabled] {
+  opacity: 0.6; /* Réduire l'opacité pour indiquer visuellement que le bouton est désactivé */
+  cursor: not-allowed; /* Changer le curseur pour indiquer qu'il n'est pas cliquable */
+}
+</style>
 <!---Modal to secure password-->
 <div class="modal fade" id="modalToSecurepasseword" tabindex="-1" role="dialog"
 style="background-color: #f38e9d !important;"
@@ -416,6 +464,36 @@ style="background-color: #f38e9d !important;"
     var iconValidateID = document.getElementById('iconValidateID');
     var comptDebitID = document.getElementById('comptDebitID')
     var myAccountID = document.getElementById('myAccountID')
+    var tableTotakePaiement = []
+    $(document).ready(function() {
+    // Ajoutez un gestionnaire d'événement de clic à toutes les images avec la classe "clickable-image"
+    $(".clickable-image").click(function() {
+      // Retirez la classe "clicked" de toutes les images pour réinitialiser les autres cadres
+      $(".clickable-image").removeClass("clicked");
+      tableTotakePaiement.push(clickedImageId)
+      var payYourUnity = document.getElementById('payYourUnity');
+      if (!payYourUnity.checkValidity()) {       
+      }else {
+      $("#payYourUnitybtn").prop("disabled", false);
+      $("#payYourUnitybtnd").prop("disabled", false);
+       // Ajoutez la classe "clicked" à l'image cliquée pour afficher le cadre rouge
+       $(this).addClass("clicked");
+     }
+     var clickedImageId = $(this).attr("id");
+      var fees = "FEEXPAY"
+      if(clickedImageId===fees){
+        var payYourUnitybtn = document.getElementById('payYourUnitybtn');
+        payYourUnitybtn.style.display = "block"
+        var payYourUnitybtnd = document.getElementById('payYourUnitybtnd');
+        payYourUnitybtnd.style.display = "none"
+      }else{
+        var payYourUnitybtnd = document.getElementById('payYourUnitybtnd');
+        payYourUnitybtnd.style.display = "block"
+        var payYourUnitybtn = document.getElementById('payYourUnitybtn');
+        payYourUnitybtn.style.display = "none"
+      }
+    });
+  });
     const dbref = ref(db);
     
     get(child(dbref, "utilisateurs/" + UserConnectuser))
@@ -717,9 +795,99 @@ style="background-color: #f38e9d !important;"
           icon: 'error'
           });
           }
-          })  
+          })
+        // Deuxième moyens de paiement
+        const renderDiv = document.getElementById('render');
+
+        renderDiv.addEventListener('click', function() {
+          renderDiv.style.position = '';
+          renderDiv.style.top = '';
+          renderDiv.style.left = '';
+          renderDiv.style.transform = '';
+        });
+      var payYourUnity =  document.getElementById('payYourUnity');
+      var payYourUnitybtn =  document.getElementById('payYourUnitybtnd');
+      payYourUnitybtn.addEventListener('click', function(){
+        var inputValue = payYourUnity.value;
+        if(payYourUnity.value != null
+        && payYourUnity.value != 0 && payYourUnity.value != "" ){
+        //var modal__close =  document.getElementById('modal__close'); 
+        document.getElementById('preloader').style.display = "block"
+        document.getElementById('myheaderid').style.display = "none"
+        document.getElementById('footer').style.display = "none"
+        $("#render").trigger("click");
+        //modal__close.click()
+        const dbref = ref(db);
+        get(child(dbref, "utilisateurs/" + UserConnectuser))
+            .then((snapshot) => {
+            if (snapshot.exists()) {
+              document.getElementById('preloader').style.display = "none"
+              var debit = payYourUnity.value
+              var priceUnity = debit * 95
+              //alert(priceUnity)
+              localStorage.setItem('unityVal', priceUnity)
+              window.location.href = "nx.html"
+              {/*
+              FeexPayButton.init("render",{
+                id: "64b7a5536efe766ee1327ad8",
+                amount: `${priceUnity}`,
+                token:"fp_hdL0LQPAKXx3RzBkjK3nmeoW3fURHK2UxetQBZ7AMP9nGrRyx33FEq2UjlckXok5",
+                callback: paymentCallback,
+                mode:'live',
+                description: "live",
+            });
+              */}
+              //la reponse du payement kkiapay
+              function paymentCallback(response) {
+              // Cette fonction sera appelée après le paiement réussi 
+              var paymentId = response.paymentId;
+              if (paymentId) {
+                  var myCompta = snapshot.val().COMPTECREDIT
+                  var debit = payYourUnity.value
+
+                  var myComptaConvertis = parseFloat(myCompta);
+                  var debitConvertis = parseFloat(debit)
+
+                  var moncomptvalide = myComptaConvertis + debitConvertis
+
+                  update(ref(db, "utilisateurs/" + UserConnectuser), {
+                  COMPTECREDIT:moncomptvalide
+                  }).then(() => {  
+                        
+                  window.location.reload()
+                    })
+                    .catch((error) => {
+                      Swal.fire({
+                      text: i18next.t('IDTRANSLATEPROFIL45'),
+                      icon: 'error'
+                      }); 
+                    });  
+
+                } else {
+                  Swal.fire({
+                  text: i18next.t('IDTRANSLATEPROFIL44'),
+                  icon: 'error'
+                  });
+                }
+            }
+
+              
+            } else {
+                alert("no data");
+            }
+            })
+            .catch((error) => {
+           alert("il y a une ERROR " + error);
+            });
+          }else{
+          Swal.fire({
+          text: i18next.t('IDTRANSLATEPROFIL43'),
+          icon: 'error'
+          });
+          }
+          })
       } 
-        
+      
       })
       .catch((error) => {
       Swal.fire({
@@ -821,6 +989,8 @@ var logout = document.getElementById('logoutID');
   <script src="userConnect.js"></script>
   <script src="./../translate.js"></script>
 </div>
+
+
 </body>
 <style>
  

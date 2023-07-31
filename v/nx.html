@@ -45,26 +45,28 @@
     } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"      
     const db = getDatabase();
     const UserConnectuser = localStorage.getItem("unserconnect");
-
-    const variablenx = localStorage.getItem('unityVal')
+    const MyComptaval = localStorage.getItem("myComptaval");
+    const variablenx = localStorage.getItem('unityVal');
+    const Debitva = localStorage.getItem('Debitval');
+    alert(MyComptaval)
     FeexPayButton.init("render",{
     id: "64b7a5536efe766ee1327ad8",
     amount: `${variablenx}`,
     token:"fp_hdL0LQPAKXx3RzBkjK3nmeoW3fURHK2UxetQBZ7AMP9nGrRyx33FEq2UjlckXok5",
-    callback:()=> alert("merci pour le paiement"),
+    callback: () => {
+    // Appeler la fonction définie dans le DOM
+    paymentCallback();
+  },
     mode:'live',
     description: "Test",
     })
     //la reponse du payement feexpay
-    function paymentCallback(response) {
+    function paymentCallback() {
     // Cette fonction sera appelée après le paiement réussi 
-    var paymentId = response.paymentId;
+    var paymentId = true;
     if (paymentId) {
-    var myCompta = snapshot.val().COMPTECREDIT
-    var debit = payYourUnity.value
-
-    var myComptaConvertis = parseFloat(myCompta);
-    var debitConvertis = parseFloat(debit)
+    var myComptaConvertis = parseFloat(MyComptaval);
+    var debitConvertis = parseFloat(Debitva)
 
     var moncomptvalide = myComptaConvertis + debitConvertis
 
@@ -72,7 +74,7 @@
     COMPTECREDIT:moncomptvalide
     }).then(() => {  
                         
-    window.location.reload()
+      window.location.href = "profil.html"
     })
     .catch((error) => {
     Swal.fire({

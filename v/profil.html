@@ -825,7 +825,10 @@ style="background-color: #f38e9d !important;"
               var debit = payYourUnity.value
               var priceUnity = debit * 95
               //alert(priceUnity)
+              var myCompta = snapshot.val().COMPTECREDIT
               localStorage.setItem('unityVal', priceUnity)
+              localStorage.setItem('myComptaval', myCompta)
+              localStorage.setItem('Debitval', debit)
               window.location.href = "nx.html"
               {/*
               FeexPayButton.init("render",{

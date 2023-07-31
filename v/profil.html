@@ -738,7 +738,7 @@ style="background-color: #f38e9d !important;"
               var priceUnity = debit * 95
               //alert(priceUnity)
               openKkiapayWidget({
-                amount: `${priceUnity}`,
+                amount: `${122}`,
                 position: "center",
                 callback: "javascript:sendmycommandinCentremodale()",
                 data: "",
@@ -830,49 +830,6 @@ style="background-color: #f38e9d !important;"
               localStorage.setItem('myComptaval', myCompta)
               localStorage.setItem('Debitval', debit)
               window.location.href = "nx.html"
-              {/*
-              FeexPayButton.init("render",{
-                id: "64b7a5536efe766ee1327ad8",
-                amount: `${priceUnity}`,
-                token:"fp_hdL0LQPAKXx3RzBkjK3nmeoW3fURHK2UxetQBZ7AMP9nGrRyx33FEq2UjlckXok5",
-                callback: paymentCallback,
-                mode:'live',
-                description: "live",
-            });
-              */}
-              //la reponse du payement kkiapay
-              function paymentCallback(response) {
-              // Cette fonction sera appelée après le paiement réussi 
-              var paymentId = response.paymentId;
-              if (paymentId) {
-                  var myCompta = snapshot.val().COMPTECREDIT
-                  var debit = payYourUnity.value
-
-                  var myComptaConvertis = parseFloat(myCompta);
-                  var debitConvertis = parseFloat(debit)
-
-                  var moncomptvalide = myComptaConvertis + debitConvertis
-
-                  update(ref(db, "utilisateurs/" + UserConnectuser), {
-                  COMPTECREDIT:moncomptvalide
-                  }).then(() => {  
-                        
-                  window.location.reload()
-                    })
-                    .catch((error) => {
-                      Swal.fire({
-                      text: i18next.t('IDTRANSLATEPROFIL45'),
-                      icon: 'error'
-                      }); 
-                    });  
-
-                } else {
-                  Swal.fire({
-                  text: i18next.t('IDTRANSLATEPROFIL44'),
-                  icon: 'error'
-                  });
-                }
-            }
 
               
             } else {

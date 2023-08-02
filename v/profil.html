@@ -252,9 +252,12 @@
 
     <div class="hero-slider swiper">
       <div class="swiper-wrapper">
-        
+        <div class="swiper-slide">
+          <div class="swiper-slide" style="background-image: url('assets/img/blue-wallpaper-with-blue-background.jpg');"></div>
+         
+        </div>
+        <!-- 
         <div class="swiper-slide" style="background-image: url('assets/img/love@.jpg');"></div>
-         <!--  
            <div class="swiper-slide" style="background-image: url('assets/img/bg_1.jpg');"></div>
           <div class="swiper-slide" style="background-image: url('assets/img/bg_3.jpg');"></div> 
         <div class="swiper-slide" style="background-image: url('assets/img/bg_2.jpg');"></div>
@@ -293,8 +296,7 @@
         <p id="SmspayId" style="text-align: start !important; font-size: 12px !important;"> <i class="fa fa-star required"></i></p>
         <input type="text" pattern="[0-9]+" required id="payYourUnity">
 
-      <div class="modal-body" id="myBodyTopaieX" style=" display: flex;
-       justify-content: center;
+      <div class="modal-body" id="myBodyTopaieX" style="
        align-items: center; height: 30vh !important; background-color: #FFB6C1 !important;">
        <div>
         <div style="  text-align: center; /* Pour centrer horizontalement le contenu du div */
@@ -302,13 +304,22 @@
         position: absolute;
         top: 50%;
         left: 50%;">
-        <img src="assets/img/apple-touch-icon.png" alt="" 
-        style="width: 10vh; height: 10vh; cursor: pointer;"
-        class="clickable-image" id="FEEXPAY">
-        <span style="opacity: 0;">feexpay</span>
-        <img src="https://app.feexpay.me/_nuxt/img/feexpay_logo-h.047b89d.png" alt="" 
-        style="width: 10vh; height: 10vh; cursor: pointer;"
-        class="clickable-image" id="KKIAPAY">
+        <p id="CHOISEYOURPAIEMENT" style="display: none;">Choisissez le moyen de paiement.</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <img src="https://app.feexpay.me/_nuxt/img/feexpay_logo-h.047b89d.png" alt="" 
+            style="width: 12vh; height: 10vh; cursor: pointer; background-color: white;"
+            class="clickable-image" id="KKIAPAY">
+          </div>
+
+          <div class="col-6">
+            <img src="assets/img/Touch-Point-by-Intouch.png" alt="" 
+            style="width: 12vh; height: 10vh; cursor: pointer; background-color: white;"
+            class="clickable-image" id="FEEXPAY">
+          </div>
+        </div>
+      </div>
         </div>
       </div>
     </div>
@@ -336,7 +347,7 @@
 
 /* Style pour le cadre rouge lorsque l'image est cliquée */
 .clickable-image.clicked {
-  border-color: white;
+  border-color: green;
 }
 
 /* Styles pour le bouton désactivé (vous pouvez personnaliser le style en fonction de vos besoins) */
@@ -738,7 +749,7 @@ style="background-color: #f38e9d !important;"
               var priceUnity = debit * 95
               //alert(priceUnity)
               openKkiapayWidget({
-                amount: `${122}`,
+                amount: `${122    }`,
                 position: "center",
                 callback: "javascript:sendmycommandinCentremodale()",
                 data: "",

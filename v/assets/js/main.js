@@ -371,6 +371,7 @@ function onmyOnchange(){
    var payYourUnity = document.getElementById('payYourUnity');
    var errorSms = document.getElementById('errorSms');
    var SmspayId = document.getElementById('SmspayId');
+   var CHOISEYOURPAIEMENTVAL = document.getElementById('CHOISEYOURPAIEMENT');
  
    payYourUnity.addEventListener('input', function() {
      if (!payYourUnity.checkValidity()) {
@@ -379,5 +380,6 @@ function onmyOnchange(){
      } else {
        errorSms.style.display = 'none';
        SmspayId.style.display = 'block';
+       CHOISEYOURPAIEMENTVAL.style.display = 'block';
      }
    });

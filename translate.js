@@ -408,8 +408,9 @@ $(document).ready(function() {
           "exampleModalLongTitle":`Une unité vaut 95 FCFA, soit 0.144 Euros.`,
           "errorSms":`Vous devez saisir un nombre.`,
           "SmspayId":`Saisissez ici le nombre d'unités.`,
-          "IDTRANSLATEPROFIL14":`Retour`,
+          "IDTRANSLATEPROFIL14":`Retour`, 
           "payYourUnitybtn":`Valider`,
+          "CHOISEYOURPAIEMENT":`Sélectionnez le mode de paiement.`,
           "exampleModalLongTitleX":`Sécurisez votre compte.`,
           "IDTRANSLATEPROFIL15":`Veuillez fournir une réponse que vous n'oublierez jamais. 
           Cette réponse vous sera demandée lors de la récupération de 
@@ -1022,6 +1023,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "SmspayId":` Introduzca aquí el número de unidades.`,
           "IDTRANSLATEPROFIL14":` Regreso `,
           "payYourUnitybtn":` Validar `,
+          "CHOISEYOURPAIEMENT":`Seleccione el método de pago.`,
           "exampleModalLongTitleX":` Asegura tu cuenta.`,
           "IDTRANSLATEPROFIL15":` Proporcione una respuesta que nunca olvidará. Esta respuesta se le pedirá cuando recupere su cuenta. Sin esta respuesta, su cuenta seguirá siendo inaccesible. `,
           "IDTRANSLATEPROFIL16":` Seleccionar su pregunta `,
@@ -1646,6 +1648,7 @@ The site and its various services may be interrupted or suspended by the Editor,
           "SmspayId":` Enter the number of units here.`,
           "IDTRANSLATEPROFIL14":` Back `,
           "payYourUnitybtn":` Confirm `,
+          "CHOISEYOURPAIEMENT":`Choose the payment method.`,
           "exampleModalLongTitleX":` Secure your account.`,
           "IDTRANSLATEPROFIL15":` Please provide an answer that you will never forget, which will be requested when you retrieve your account. Without this answer, your account will remain inaccessible. `,
           "IDTRANSLATEPROFIL16":` Select your question `,
@@ -2189,8 +2192,9 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#exampleModalLongTitleX").text(i18next.t("exampleModalLongTitleX")); 
       $("#errorSms").text(i18next.t("errorSms")); 
       $("#SmspayId").text(i18next.t("SmspayId"));
-      $("#payYourUnitybtn").text(i18next.t("payYourUnitybtn"));
+      $("#payYourUnitybtn").text(i18next.t("payYourUnitybtn")); 
       $("#payYourUnitybtnd").text(i18next.t("payYourUnitybtn"));
+      $("#CHOISEYOURPAIEMENT").text(i18next.t("CHOISEYOURPAIEMENT"));
       $("#IDTRANSLATEPROFIL14").text(i18next.t("IDTRANSLATEPROFIL14"));
       $("#IDTRANSLATEPROFIL15").text(i18next.t("IDTRANSLATEPROFIL15"));
       $("#IDTRANSLATEPROFIL16").text(i18next.t("IDTRANSLATEPROFIL16"));

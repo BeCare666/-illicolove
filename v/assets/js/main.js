@@ -372,6 +372,7 @@ function onmyOnchange(){
    var errorSms = document.getElementById('errorSms');
    var SmspayId = document.getElementById('SmspayId');
    var CHOISEYOURPAIEMENTVAL = document.getElementById('CHOISEYOURPAIEMENT');
+   var CHOISEYOURPAIEMENTMYI = document.getElementById('CHOISEYOURPAIEMENTMYID');
  
    payYourUnity.addEventListener('input', function() {
      if (!payYourUnity.checkValidity()) {
@@ -379,7 +380,8 @@ function onmyOnchange(){
        SmspayId.style.display = 'none';
      } else {
        errorSms.style.display = 'none';
-       SmspayId.style.display = 'block';
+       SmspayId.style.display = 'block'; 
        CHOISEYOURPAIEMENTVAL.style.display = 'block';
+       CHOISEYOURPAIEMENTMYI.style.marginTop = 0;
      }
    });

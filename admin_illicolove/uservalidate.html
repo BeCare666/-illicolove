@@ -9,7 +9,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
+    <link href="./../assets/img/illicolove-.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
         <!-- Custom fonts for this template-->
@@ -519,14 +519,14 @@ font-size: 13.5px !important;
                 })
                 .then(() => {
                 // statr envoi de mail de validation
-                const apiKey = "F14232488388C8DBEAB1A6EF5A3D3323F01D2F4BFAB8CDDC9C750A2018562AF805A25855732571939EB7235A48BAE1A7";
+                const apiKey = "34F593452254BAB8CACDA4A39FC9C44BFC0D3E63B8842CD369FF37BBE4AC5017DA7917B6E03C3C8EB379F906C80E9DED";
                 const apiUrl = "https://api.elasticemail.com/v2/email/send";
                 
                 // Définir les paramètres de l'e-mail
                 const emailParams = {
                   apiKey: apiKey,
                   subject: "Validation de compte",
-                  from: "paymybase@gmail.com",
+                  from: "validation@illicolove.com",
                   fromName: "illicolove",
                   to: UserEmail,
                   bodyHtml: `
@@ -602,13 +602,13 @@ font-size: 13.5px !important;
                 })
                 .then(() => {
                 //  envoi de mail de suspension
-                const apiKey = "F14232488388C8DBEAB1A6EF5A3D3323F01D2F4BFAB8CDDC9C750A2018562AF805A25855732571939EB7235A48BAE1A7";
+                const apiKey = "34F593452254BAB8CACDA4A39FC9C44BFC0D3E63B8842CD369FF37BBE4AC5017DA7917B6E03C3C8EB379F906C80E9DED";
                 const apiUrl = "https://api.elasticemail.com/v2/email/send";
                 // Définir les paramètres de l'e-mail
                 const emailParams = {
                   apiKey: apiKey,
                   subject: "Suspension de compte",
-                  from: "paymybase@gmail.com",
+                  from: "validation@illicolove.com",
                   fromName: "illicolove",
                   to: UserEmail,
                   bodyHtml: `
@@ -689,14 +689,14 @@ font-size: 13.5px !important;
                 remove(ref(db, "utilisateurs/" + OneUserIDy))
                 .then(() => {
                   //  envoi de mail de suppression
-                const apiKey = "F14232488388C8DBEAB1A6EF5A3D3323F01D2F4BFAB8CDDC9C750A2018562AF805A25855732571939EB7235A48BAE1A7";
+                const apiKey = "34F593452254BAB8CACDA4A39FC9C44BFC0D3E63B8842CD369FF37BBE4AC5017DA7917B6E03C3C8EB379F906C80E9DED";
                 const apiUrl = "https://api.elasticemail.com/v2/email/send";
 
                 // Définir les paramètres de l'e-mail
                 const emailParams = {
                   apiKey: apiKey,
                   subject: "Suppression De Compte",
-                  from: "paymybase@gmail.com",
+                  from: "validation@illicolove.com",
                   fromName: "illicolove",
                   to: UserEmail,
                   bodyHtml: `

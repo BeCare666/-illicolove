@@ -306,13 +306,13 @@
           <div class="col-6">
             <img src="https://app.feexpay.me/_nuxt/img/feexpay_logo-h.047b89d.png" alt="" 
             style="width: 12vh; height: 10vh; cursor: pointer; background-color: white;"
-            class="clickable-image" id="KKIAPAY">
+            class="clickable-image" id="FEEXPAY">
           </div>
           
           <div class="col-6">
             <img src="assets/img/Touch-Point-by-Intouch.png" alt="" 
             style="width: 12vh; height: 10vh; cursor: pointer; background-color: white;"
-            class="clickable-image" id="FEEXPAY">
+            class="clickable-image" id="INTOUCH">
           </div>
         </div>
       </div>
@@ -487,7 +487,7 @@ style="background-color: #f38e9d !important;"
        $(this).addClass("clicked");
      }
      var clickedImageId = $(this).attr("id");
-      var fees = "FEEXPAY"
+      var fees = "INTOUCH"
       if(clickedImageId===fees){
         var payYourUnitybtn = document.getElementById('payYourUnitybtn');
         payYourUnitybtn.style.display = "block"
@@ -730,6 +730,12 @@ style="background-color: #f38e9d !important;"
       var payYourUnity =  document.getElementById('payYourUnity');
       var payYourUnitybtn =  document.getElementById('payYourUnitybtn');
       payYourUnitybtn.addEventListener('click', function(){
+
+        Swal.fire({
+        text: i18next.t('IDTRANSLATEPROFIL44IN'),
+        icon: 'info'
+        });
+        {/*
         var inputValue = payYourUnity.value;
         if(payYourUnity.value != null
         && payYourUnity.value != 0 && payYourUnity.value != "" ){
@@ -802,6 +808,7 @@ style="background-color: #f38e9d !important;"
           icon: 'error'
           });
           }
+        */}
           })
         // Deuxième moyens de paiement
         const renderDiv = document.getElementById('render');

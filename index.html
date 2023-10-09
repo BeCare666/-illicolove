@@ -47,8 +47,7 @@
 </head>
 
 <body>
-
-  <!-- ======= Header ======= -->
+  <!-- ======= Header ======= --> 
   <header id="header" class="header fixed-top" style="background-color: white;">
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -110,13 +109,14 @@
 
     </div>
   </header><!-- End Header -->
-
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center" >
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 d-flex flex-column mt-5 justify-content-center">
+    <div class="container" >
+      <div class="containerClass" style="align-items: center ">
+        <img id="image" src="assets/img/illicolove.jpeg" alt="Votre image">
+      </div>
+      <div class="row" id="imgAnimationId" style="display: none;">
+        <div class="col-lg-12 d-flex flex-column mt-5 justify-content-center">
          <div>
           <h1 data-aos="fade-up" style="font-size: 23px !important;"><strong style="color: #bb0852; font-size: 23px !important;">illicolove</strong></h1>
             <h1 data-aos="fade-up" style="font-size: 23px !important;" id="IDTRANSLATE11"> </h1>
@@ -137,9 +137,10 @@
             </div>
           </div>
         </div>
-         <div class="col-lg-7 hero-img" data-aos="zoom-out" data-aos-delay="200" >
-          <img src="assets/img/flavia-gava--sq1TWD_vi0-unsplash-removebg-preview.png" alt="" style="width: 100%; height: 100%;" id="breathing-image">
-        </div>
+         <!--  <div class="col-lg-7 hero-img" data-aos="zoom-out" data-aos-delay="200" >
+          <img src="assets/img/illicolov.jpeg" alt="" style="width: 100%; height: 100%;" id="breathing-image">
+         <img src="assets/img/flavia-gava--sq1TWD_vi0-unsplash-removebg-preview.png" alt="" style="width: 100%; height: 100%;" id="breathing-image"> 
+        </div>-->
       </div>
     </div>
 
@@ -494,7 +495,7 @@
               <input type="submit" value="Souscrire" id="submitFormID">
             </form>
           </div><div style="opacity: 0;">ssfdsfdd</div>
-          <span style="text-align: center;"><div id="IDTRANSLATE1INF1"></span>
+          <span style="text-align: center; "><div id="IDTRANSLATE1INF1"></span>
         </div>
       </div>
     </div>
@@ -508,6 +509,49 @@
     </div>
 
   </footer><!-- End Footer -->
+
+<style>
+ 
+  .containerClass {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      
+      position: relative;
+  }
+  
+  #image {
+      border-radius: 100%;
+      max-width: 0;
+      max-height: 0;
+      opacity: 0;
+      transition: all 15s ease-in-out;
+  }
+  </style>
+  <script>
+   document.addEventListener("DOMContentLoaded", function () { 
+    const image = document.getElementById("image");
+    const ImgAnimationId = document.getElementById("imgAnimationId");
+
+    // Démarrez l'animation lorsque la page est chargée
+    setTimeout(() => {
+        image.style.marginTop = "10%";
+        image.style.maxWidth = "60%";
+        image.style.maxHeight = "90%";
+        image.style.opacity = "1";
+    }, 1000);
+
+    // Disparition de l'image après 5 secondes
+    setTimeout(() => {
+      image.style.display = "none"
+      //  image.style.maxWidth = "0";
+      //  image.style.maxHeight = "0";
+       // image.style.opacity = "0";
+       ImgAnimationId.style.display = "block"
+    }, 8000);
+});  
+  </script>
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -552,8 +596,11 @@
     var userbuttonID = document.getElementById('user-button');
     var  allCocuntry = document.getElementById('ALLCOUNTRY');
     var  Afri = document.getElementById('AFRI');
-    var  Euro = document.getElementById('EURO');
+    var  Euro = document.getElementById('EURO');   
     var  PaysDuMonde = document.getElementById('PAYSDUM');
+    var Header = document.getElementById('header');
+    var Hero = document.getElementById('hero');
+    var Footer = document.getElementById('footer');
 
     const dbref = ref(db, "utilisateurs/");
    onValue(dbref, (snopshot) => {
@@ -598,18 +645,20 @@
       })
       //console.log(snapshot.val().MESDEUXPHOTOS);
     // Utilisez les données de l'utilisateur comme vous le souhaitez
-      //alert("mmmmmmoooo")
+      //alert("mmmmmmoooo") 
      }else{
       //alert("hoooo")
       document.getElementById('preloader').style.display = "none"
+      
      }
-        
+      
     })
   }else{
     document.getElementById('preloader').style.display = "none"
+    
   }
 
-
+   
    </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>

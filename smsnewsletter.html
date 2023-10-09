@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>illicolove</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons 
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-    * {
-    font-family: 'Montserrat-bold', sans-serif;
-    font-size: 15px !important;
-    }
-    </style>
-   <!-- Link to import alert personnal -->
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Animation d'image</title>
 </head>
-
 <body>
-<script>
-window.onload = function(){
-    Swal.fire({
-  title: 'Félicitation !',
-  text: 'Abonnement à notre newsleter réussi.',
-  imageUrl: 'https://unsplash.it/400/200',
-  imageWidth: 400,
-  imageHeight: 200,
-  allowOutsideClick: false,
-  imageAlt: 'Custom image',
-}).then((result) => {
-    if (result.isConfirmed) {
-        window.history.back();
-     }
-   })
+    <div class="containerClass">
+        <img id="image" src="assets/img/about.jpg" alt="Votre image">
+    </div>
+<style>
+    body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
 }
-</script>
-</body>
 
+.containerClass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+    position: relative;
+}
+
+#image {
+    max-width: 0;
+    max-height: 0;
+    opacity: 0;
+    transition: all 2s ease-in-out;
+}
+     </style>
+     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    const image = document.getElementById("image");
+
+    // Démarrez l'animation lorsque la page est chargée
+    setTimeout(() => {
+        image.style.maxWidth = "100%";
+        image.style.maxHeight = "100%";
+        image.style.opacity = "1";
+    }, 1000);
+
+    // Disparition de l'image après 5 secondes
+    setTimeout(() => {
+      image.style.display = "none"
+      //  image.style.maxWidth = "0";
+      //  image.style.maxHeight = "0";
+       // image.style.opacity = "0";
+    }, 3000);
+});
+     </script>
+</body>
 </html>

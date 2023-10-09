@@ -184,7 +184,7 @@
               </div>           
             </div>
           </div>
-        </div>
+        </div><script src="ab/ab.js"></script>
         <div class="drawer">
           <span id="logoutID" style="cursor: pointer;"><a >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <i class="bi bi-box-arrow-left" style="font-size: 26px !important;"></i><br> <p id="IDTRANSLATEPROFIL10"></p></a></span>
@@ -419,7 +419,7 @@ style="background-color: #f38e9d !important;"
       </div>
     </div>
   </footer><!-- End Footer -->
-  <div id="preloader"></div>
+  <!--<div id="preloader"></div>-->
  <!-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> -->
 
   <script>
@@ -473,6 +473,7 @@ style="background-color: #f38e9d !important;"
     var myAccountID = document.getElementById('myAccountID')
     var tableTotakePaiement = []
     $(document).ready(function() {
+      document.getElementById('preloader').style.display = "none"
     // Ajoutez un gestionnaire d'événement de clic à toutes les images avec la classe "clickable-image"
     $(".clickable-image").click(function() {
       // Retirez la classe "clicked" de toutes les images pour réinitialiser les autres cadres

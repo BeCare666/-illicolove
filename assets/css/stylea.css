@@ -1474,6 +1474,9 @@
   #IDTRANSLATE2{
     display: none !important;
   }
+  #IDTRANSLATE16{
+    display: none !important;
+  }
   @keyframes animate-preloader {
     0% {
       transform: rotate(0deg);

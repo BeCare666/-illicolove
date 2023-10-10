@@ -3,17 +3,17 @@
 --------------------------------------------------------------*/
 
 
-#breathing-image {
-  width: 80%; /* ajustez la taille de l'image à vos besoins */
+/*#breathing-image {
+  width: 80%;  ajustez la taille de l'image à vos besoins 
   height: 88%;
-  background-image: url('./../assets/img/love.svg'); /* ajoutez votre image de fond */
+  background-image: url('./../assets/img/love.svg'); 
   background-size: cover;
   animation-name: breathing-animation;
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
  z-index: -1 !important;
-}
+}*/
 
 .image-button {
   border: none;
@@ -248,8 +248,15 @@
     [data-aos-delay] {
       transition-delay: 0 !important;
     }
+    #putImgLevelId{
+      display: none;
+    }
   }
-  
+  #putImgLevelId{
+    position: absolute;
+    top: 40px;
+    left: 48% !important;
+  }
   /*--------------------------------------------------------------
   # Header
   --------------------------------------------------------------*/

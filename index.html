@@ -117,7 +117,7 @@
         <img id="image" src="assets/img/illicolove.jpeg" alt="Votre image">
       </div>
       <div class="row" id="imgAnimationId" style="display: none;">
-        <div class="col-lg-12 d-flex flex-column mt-5 justify-content-center">
+        <div class="col-lg-5 col-md-12  d-flex flex-column mt-5 justify-content-center">
          <div>
           <h1 data-aos="fade-up" style="font-size: 23px !important;"><strong style="color: #bb0852; font-size: 23px !important;">illicolove</strong></h1>
             <h1 data-aos="fade-up" style="font-size: 23px !important;" id="IDTRANSLATE11"> </h1>
@@ -510,7 +510,7 @@
     </div>
 
   </footer><!-- End Footer -->
-
+  
 <style>
  
   .containerClass {
@@ -534,6 +534,9 @@
    document.addEventListener("DOMContentLoaded", function () { 
     const image = document.getElementById("image");
     const ImgAnimationId = document.getElementById("imgAnimationId");
+    var Header = document.getElementById('header');
+    var Hero = document.getElementById('hero');
+    var Footer = document.getElementById('footer');
 
     // Démarrez l'animation lorsque la page est chargée
     setTimeout(() => {
@@ -541,6 +544,8 @@
         image.style.maxWidth = "60%";
         image.style.maxHeight = "90%";
         image.style.opacity = "1";
+        Header.style.opacity = "0"
+        Footer.style.setProperty("display", "none", "important");
     }, 1000);
 
     // Disparition de l'image après 5 secondes
@@ -550,6 +555,8 @@
       //  image.style.maxHeight = "0";
        // image.style.opacity = "0";
        ImgAnimationId.style.display = "block"
+       Header.style.opacity = "1"
+       Footer.style.setProperty("display", "block", "important");
     }, 8000);
 });  
   </script>

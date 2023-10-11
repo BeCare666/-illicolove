@@ -11,7 +11,7 @@
     <!-- Favicons
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
-    <link href="assets/img/logoilli.jpeg" rel="icon">
+    <link href="assets/img/illicolove-.png" rel="icon">
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
@@ -62,7 +62,7 @@
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="" class="logo d-flex align-items-center">
+      <a href="./u/index.html" class="logo d-flex align-items-center">
         <!-- <img src="assets/img/logo.png" alt="">-->
         <button class="btn btn" style="margin-left: 5px; cursor: pointer; background-color: #FFB6C1; color: white;" 
         role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button>
@@ -138,13 +138,13 @@
                   </li>
                   <!-- Ajoutez d'autres éléments de liste ici -->
                 </ul><br>
-                <!-- <div class="text-center text-lg-start align-items-center" id="contactUserbtnID">
+                <div class="text-center text-lg-start align-items-center" id="contactUserbtnID">
                     <button href="#about" class="btn btn scrollto d-inline-flex align-items-center justify-content-center align-self-center"
                     style="background-color: #FFB6C1; color: white;" id="contactUserbtnIDB">
                       <span id="IDTRANSLATEUSERD2"></span> &nbsp;&nbsp;
                       <i class="bi bi-arrow-right"></i>
                     </button>
-                </div>-->
+                  </div>
               </div>
             </div>
             <div class="col-lg-4" id="formysuiteId" style="display: none;">
@@ -386,8 +386,7 @@
         var connexionMyID = document.getElementById('ConnexionMyID'); 
 
         function seleectData() {
-          const urlParams = new URLSearchParams(window.location.search);
-          const UserConnectIdToBuy = urlParams.get('id');
+          const UserConnectIdToBuy = localStorage.getItem("storageNamey");
           const unserconnectID = localStorage.getItem("unserconnect");
           var selectedLanguage = localStorage.getItem('selectedLanguage');
           //alert(UserConnectIdToBuy)
@@ -449,15 +448,17 @@
                   // Default language
                   content = `En ligne le ${k.ONLINEDATE} à ${snapshot.val().ONLINEHOURS}`;
                 }
-                
+
                 connexionMyID.innerHTML = content
-
-
-                var texteIDTRANSLATEUSERD24 = i18next.t("IDTRANSLATEUSERD24");
-                $('[id="IDTRANSLATEUSERD24"]').html(texteIDTRANSLATEUSERD24); 
                 
+                var texteIDTRANSLATEUSERD24 = i18next.t("IDTRANSLATEUSERD24");
+                $('[id="IDTRANSLATEUSERD24"]').html(texteIDTRANSLATEUSERD24);
+
                 var texteIDTRANSLATEUSERD24YX = i18next.t("IDTRANSLATEUSERD24");
-                $('[id="IDTRANSLATEUSERD24YX"]').html(texteIDTRANSLATEUSERD24YX);  
+                $('[id="IDTRANSLATEUSERD24YX"]').html(texteIDTRANSLATEUSERD24YX); 
+
+                var texteIDTRANSLATEUSERD24YX = i18next.t("IDTRANSLATEUSERD23VG");
+                $('[id="IDTRANSLATEUSERD23VG"]').html(texteIDTRANSLATEUSERD24YX);  
               } else {
                 Swal.showValidationMessage(i18next.t('IDTRANSLATEUSERD25'));
                   //alert("no data");

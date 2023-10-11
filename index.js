@@ -82,9 +82,9 @@ if(!acceptToUseCookies){
 
 }
 // function to open detail  
-var OpendetailIDILLI = document.getElementById('opendetailIDILLI');
-var DetailIDILLI = document.getElementById('detailIDILLI');
-OpendetailIDILLI.addEventListener('click', function(){
-DetailIDILLI.style.display = "block"
-})
+//var OpendetailIDILLI = document.getElementById('opendetailIDILLI');
+//var DetailIDILLI = document.getElementById('detailIDILLI');
+//OpendetailIDILLI.addEventListener('click', function(){
+//DetailIDILLI.style.display = "block"
+//})
 

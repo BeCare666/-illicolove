@@ -390,8 +390,8 @@ $(document).ready(function() {
           "IDTRANSLATECONSULTE1":`Afrique`,
           "IDTRANSLATECONSULTE2":`Europe`,
           "IDTRANSLATECONSULTE3":`Autres pays du monde`,
-          "IDTRANSLATEPROFIL1": "Compte valide",
-          "IDTRANSLATEPROFIL2": "Compte non valide",
+          "IDTRANSLATEPROFIL1": " Compte valide",
+          "IDTRANSLATEPROFIL2": " Compte non valide",
           "IDTRANSLATEPROFIL3":`Compte Débit`,
           "IDTRANSLATEPROFIL4":`Compte Débit`,
           "IDTRANSLATEPROFIL5":`Mon Plan`,
@@ -654,14 +654,14 @@ $(document).ready(function() {
           "IDTRANSLATEFORM110":`Votre formulaire est soumis au contrôle pour validation sous 24 heures <i class="fa fa-heart"></i>.`,
           "IDTRANSLATEFORM111":`Désolé`,
           "IDTRANSLATEFORM112":`Tous vos champs ne sont pas remplis.`,
-          "IDTRANSLATEUSERD1":`Mes coordonnées :`,
+          "IDTRANSLATEUSERD1":`Mes coordonnées  <svg xmlns="http://www.w3.org/2000/svg" width="10.444" height="9.7"><defs><clipPath id="a"><path fill="none" d="M0 0h10.444v9.7H0z"/></clipPath></defs><g fill="none" stroke="#2a46cc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.438" clip-path="url(#a)"><path d="M.719 4.85h8.709M5.594 8.683L9.427 4.85M5.594 1.017L9.427 4.85"/></g></svg>`,
 
 
 
 
 
           "IDTRANSLATEUSERD2":`Pour me contacter`,
-          "IDTRANSLATEUSERD3":`Mon Profil`,
+          "IDTRANSLATEUSERD3":`<i class="bi bi-alexa"></i> Mon Profil `,
           "IDTRANSLATEUSERD4":`Réponses`,
           "IDTRANSLATEUSERD5":`Ma Ville de résidence :`,
           "IDTRANSLATEUSERD6":`Mon nom ou pseudonyme:`,
@@ -673,7 +673,7 @@ $(document).ready(function() {
           "IDTRANSLATEUSERD12":`Je veux une rencontre :`,
           "IDTRANSLATEUSERD13":`Mes préférences physiques :`,
           "IDTRANSLATEUSERD14":`Autres précisions :`,
-          "IDTRANSLATEUSERD15":`Profil que je cherche`,
+          "IDTRANSLATEUSERD15":`<i class="bi bi-alexa"></i> Profil que je cherche`,
           "IDTRANSLATEUSERD16":`Réponses`,
           "IDTRANSLATEUSERD17":`Son genre :`,
           "IDTRANSLATEUSERD18":`Sa tranche d'âge :`,
@@ -2457,9 +2457,9 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IdAlertSms").html(i18next.t("IDTRANSLATEFORM104"));
       $("#IDTRANSLATEFORM105").text(i18next.t("IDTRANSLATEFORM105"));
       // USERDETAILS PAGE
-      $("#IDTRANSLATEUSERD1").text(i18next.t("IDTRANSLATEUSERD1"));
+      $("#IDTRANSLATEUSERD1").html(i18next.t("IDTRANSLATEUSERD1"));
       $("#IDTRANSLATEUSERD2").text(i18next.t("IDTRANSLATEUSERD2"));
-      $("#IDTRANSLATEUSERD3").text(i18next.t("IDTRANSLATEUSERD3"));
+      $("#IDTRANSLATEUSERD3").html(i18next.t("IDTRANSLATEUSERD3"));
       $("#IDTRANSLATEUSERD4").text(i18next.t("IDTRANSLATEUSERD4"));
       $("#IDTRANSLATEUSERD5").text(i18next.t("IDTRANSLATEUSERD5"));
       $("#IDTRANSLATEUSERD6").text(i18next.t("IDTRANSLATEUSERD6"));
@@ -2471,7 +2471,7 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATEUSERD12").text(i18next.t("IDTRANSLATEUSERD12"));
       $("#IDTRANSLATEUSERD13").text(i18next.t("IDTRANSLATEUSERD13"));
       $("#IDTRANSLATEUSERD14").text(i18next.t("IDTRANSLATEUSERD14"));
-      $("#IDTRANSLATEUSERD15").text(i18next.t("IDTRANSLATEUSERD15"));
+      $("#IDTRANSLATEUSERD15").html(i18next.t("IDTRANSLATEUSERD15"));
       $("#IDTRANSLATEUSERD16").text(i18next.t("IDTRANSLATEUSERD16"));
       $("#IDTRANSLATEUSERD17").text(i18next.t("IDTRANSLATEUSERD17"));
       $("#IDTRANSLATEUSERD18").text(i18next.t("IDTRANSLATEUSERD18"));

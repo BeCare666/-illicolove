@@ -30,7 +30,7 @@
       <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
-    <link href="./../../assets/img/illicolove-.png" rel="icon">
+    <link href="./../../assets/img/logoilli.jpeg" rel="icon">
     <style>
     * {
       font-family: 'Montserrat-bold', sans-serif;
@@ -148,12 +148,14 @@
                                 <option   id="IDTRANSLATEFORM52"></option>
                                 <option   id="IDTRANSLATEFORM53"></option>
                             </select>
+                            <!---
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM54"></p>
                             <input type="file" id="myprofileididentité" name="gplus" placeholder="Pièce d'identité" />
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM55"></p>
                             <input type="file" id="myprofileidPhotos"  name="gplus" placeholder="Deux de vos Photos" required/>
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM56"> </p>
                             <input type="file" id="myprofileidPhoto2"  name="gplus" placeholder="Deux de vos Photos" required/>
+                            -->
                             <input type="button" name="previous" class="previous  action-button-previous" id="secondtPre"/>
                             <input type="button" name="next" class="next action-button" id="secondNext"/>
                         </fieldset>
@@ -442,6 +444,8 @@
             });
         }
         window.onload = getdata;
+{/**
+
 
         // function to upload pièce d'identité     
         // Sélectionnez l'élément HTML de l'input file qui permet à l'utilisateur de sélectionner une photo
@@ -516,23 +520,6 @@
         reader.readAsDataURL(file);
         }
 
-        //function to contrôle the alert  
-        var iDnext = document.getElementById('IDnext');
-        var idAlertSms = document.getElementById('IdAlertSms');
-        var iDsuivant = document.getElementById('IDsuivant');
-        var iDprevious = document.getElementById('IDprevious');
-
-        iDnext.addEventListener('click', function(){
-            idAlertSms.style.display = "none"
-        });
-
-        iDsuivant.addEventListener('click', function(){
-            idAlertSms.style.display = "block"
-        });
-
-        iDprevious.addEventListener('click', function(){
-            idAlertSms.style.display = "none"
-        });
 
         var inputElement1 = document.getElementById("myprofileidPhotos");
 
@@ -683,6 +670,26 @@
         }
 
 
+***/}
+
+        //function to contrôle the alert  
+        var iDnext = document.getElementById('IDnext');
+        var idAlertSms = document.getElementById('IdAlertSms');
+        var iDsuivant = document.getElementById('IDsuivant');
+        var iDprevious = document.getElementById('IDprevious');
+
+        iDnext.addEventListener('click', function(){
+            idAlertSms.style.display = "none"
+        });
+
+        iDsuivant.addEventListener('click', function(){
+            idAlertSms.style.display = "block"
+        });
+
+        iDprevious.addEventListener('click', function(){
+            idAlertSms.style.display = "none"
+        });
+
             // Appel à l'API REST Countries
             $.ajax({
                 url: "https://restcountries.com/v2/all",
@@ -794,7 +801,7 @@
             
             if(myprofileidMaVille.value && NumberVaribleTable &&
                myprofileidPrénoms.value && choicesmultipleremovebuttonrencontre.value &&
-               myprofileidnationèèalité.value && Photo1ID && Photo2ID &&
+               myprofileidnationèèalité.value && //Photo1ID && Photo2ID &&
                myprofileidtravail.value && IDREGION && buttonSonGenre.value &&
                choicesmultipleremovebutton.value &&  myprofileidtrancheâge.value &&
                myprofileidâge.value && buttonmatrimonialeValue.value &&
@@ -802,7 +809,7 @@
                myprofileidSaville.value && myprofileidoccupations.value &&
                 choicesmultipleremovebuttonsexe.value && Mycountry.value
             ){
-                const updatedValue = PieceID ? PieceID : "";
+                //const updatedValue = PieceID ? PieceID : "";
                 update(ref(db, "utilisateurs/" + UserConnectuser), {
                 MAVILLEDERESIDENCE : myprofileidMaVille.value,
                 fullname : myprofileidPrénoms.value,
@@ -815,9 +822,9 @@
                 MONSEXE : choicesmultipleremovebuttonsexe.value, 
                 TELEPHONE : NumberVaribleTable,
                 JEVEUXUNERENCONTRE : choicesmultipleremovebuttonrencontre.value,
-                PIECESDIDENTITE : updatedValue , 
-                MESDEUXPHOTOS : Photo1ID,
-                MESDEUXPHOTO2 : Photo2ID,
+                //PIECESDIDENTITE : updatedValue , 
+                //MESDEUXPHOTOS : Photo1ID,
+                //MESDEUXPHOTO2 : Photo2ID,
                 IDREGION : IDREGION,
                 SEXEDEPROFILQUEJECHERCHE : buttonSonGenre.value,
                 SONAGEDEPROFILQUEJECHERCHE : myprofileidtrancheâge.value,

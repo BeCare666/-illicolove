@@ -1,57 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Animation d'image</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-    <div class="containerClass">
-        <img id="image" src="assets/img/about.jpg" alt="Votre image">
-    </div>
+  <!--
+Template: https://www.uidesigndaily.com/posts/sketch-lists-list-card-day-1285
+-->
+
+<div class="box box--list">
+	<header class="box--list__header">
+		<h1 class="box--list__header-title">Resources</h1>
+		<a href="#" class="box--list__header-link">
+			View all
+			<svg xmlns="http://www.w3.org/2000/svg" width="10.444" height="9.7"><defs><clipPath id="a"><path fill="none" d="M0 0h10.444v9.7H0z"/></clipPath></defs><g fill="none" stroke="#2a46cc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.438" clip-path="url(#a)"><path d="M.719 4.85h8.709M5.594 8.683L9.427 4.85M5.594 1.017L9.427 4.85"/></g></svg>
+		</a>
+	</header>
+
+	<div class="box--list__items">
+		<div class="box--list__item">
+			<h2 class="box--list__title">How Does It Work?</h2>
+			<p class="box--list__description">You can create Flows and different types of Guides here (Cards, Tooltips, Modals, Hotspots), without the need of writing a single …</p>
+		</div>
+		
+		<div class="box--list__item">
+			<h2 class="box--list__title">Display Frequency</h2>
+			<div class="box--list__description">For the display frequency to be activated you need to enable User tracking. That means that along with your generated boardme scri …</div>
+		</div>
+		
+		<div class="box--list__item">
+			<h2 class="box--list__title">Applying a Theme</h2>
+			<div class="box--list__description">To apply a theme you need to go to the Guide Editor and select the theme of your choice from the Control Panel in the top right corner …</div>
+		</div>
+	</div>
+</div>
 <style>
-    body, html {
-    height: 100%;
+  /* Variables */
+:root {
+    --color-primary: #1A183E;
+    --color-secondary: #2A46CC;
+    --background-base: #F0F0F4;
+    --base-font-weight-normal: 400;
+    --base-font-weight-medium: 500;
+}
+
+/* Reset CSS */
+* {
+    box-sizing: border-box;
     margin: 0;
-    overflow: hidden;
+    padding: 0;
 }
 
-.containerClass {
-    display: flex;
-    justify-content: center;
+/* Global Styles */
+html, body {
+    margin: 0;
+    padding: 20px 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: var(--base-font-weight-normal);
+    color: var(--color-primary);
+    line-height: 1;
+    background-color: var(--background-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+}
+
+@media (max-width: 870px) {
+    html, body {
+        padding: 0;
+    }
+}
+
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-weight: var(--base-font-weight-medium);
+}
+
+/* Button Styles */
+.button {
+    display: inline-flex;
     align-items: center;
-    height: 100%;
-    
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button-more {
+    width: 169px;
+    height: 55px;
+    color: var(--color-secondary);
+    font-weight: var(--base-font-weight-medium);
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid var(--color-secondary);
+    background-color: #fff;
+    transition: background-color 250ms;
+}
+
+.button-more:hover {
+    color: #fff;
+    background-color: var(--color-secondary);
+    transition: background-color 250ms;
+}
+
+/* Tag Styles */
+.tag {
+    display: inline-block;
+}
+
+.tag-primary {
+    padding: 5px 20px;
+    color: var(--color-secondary);
+    font-size: 14px;
+    background-color: var(--background-base);
+    border-radius: 20px;
+}
+
+/* Box List Styles */
+.box--list {
+    padding: 60px 70px 100px;
+    max-width: 635px;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 870px) {
+    .box--list {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}
+
+.box--list__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box--list__header-title {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.box--list__header-link {
+    color: var(--color-secondary);
+    font-size: 16px;
+    font-weight: var(--base-font-weight-medium);
+    text-decoration: none;
+}
+
+.box--list__header-link svg {
     position: relative;
+    top: -1px;
+    margin-left: 5px;
 }
 
-#image {
-    max-width: 0;
-    max-height: 0;
-    opacity: 0;
-    transition: all 2s ease-in-out;
+.box--list__item {
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid var(--background-base);
 }
-     </style>
-     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-    const image = document.getElementById("image");
 
-    // Démarrez l'animation lorsque la page est chargée
-    setTimeout(() => {
-        image.style.maxWidth = "100%";
-        image.style.maxHeight = "100%";
-        image.style.opacity = "1";
-    }, 1000);
+.box--list__item:first-child {
+    border-top-width: 0;
+}
 
-    // Disparition de l'image après 5 secondes
-    setTimeout(() => {
-      image.style.display = "none"
-      //  image.style.maxWidth = "0";
-      //  image.style.maxHeight = "0";
-       // image.style.opacity = "0";
-    }, 3000);
-});
-     </script>
+.box--list__title {
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: var(--color-secondary);
+}
+
+.box--list__description {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.box--list__item:hover {
+    background-color: #fff;
+    transition: background-color 250ms;
+}
+
+.box--list__item:hover .box--list__title {
+    left: 1rem;
+}
+
+/* Box Grid Styles */
+.box--grid {
+    padding: 60px;
+    padding-right: 70px;
+    max-width: 863px;
+    box-shadow: 0 25px 60px rgba(lighten(#1A183E, 76%), 0.76);
+}
+
+.box--grid__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -35px;
+}
+
+.box--grid__item {
+    width: calc(50% - 35px);
+    padding: 30px;
+    margin-bottom: 35px;
+    border: 1px solid var(--background-base);
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 250ms;
+}
+
+.box--grid__item:nth-child(2n) {
+    margin-left: 35px;
+}
+
+.box--grid__item:hover {
+    color: #fff;
+    background-color: var(--color-secondary);
+    transition: background-color 250ms;
+}
+
+.box--grid__title {
+    margin-bottom: 14px;
+    font-size: 18px;
+    font-weight: var(--base-font-weight-medium);
+}
+
+.box--grid__description {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.box--grid__button {
+    margin-top: -5px;
+    text-align: right;
+}
+
+@media (max-width: 767px) {
+    .box--grid__items {
+        border-radius: 0;
+        flex-direction: column;
+        margin-right: 0;
+    }
+
+    .box--grid__item {
+        width: 100%;
+    }
+
+    .box--grid__item:nth-child(2n) {
+        margin-left: 0;
+    }
+
+    .box--grid__button {
+        text-align: center;
+    }
+}
+
+/* Box Styles */
+.box {
+    background-color: #fff;
+    border-radius: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (max-width: 870px) {
+    .box {
+        border-radius: 0;
+        max-width: 100%;
+        box-shadow: none;
+    }
+}
+
+</style>
+
 </body>
 </html>

@@ -155,8 +155,8 @@
         </div>
           <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200" id="putImgLevelId">
           <!-- <img src="assets/img/illicolov.jpeg" alt="" style="width: 100%; height: 100%;" id="breathing-image">-->
-         <img src="assets/img/flavia-gava--sq1TWD_vi0-unsplash-removebg-preview.png" alt="" 
-         style="width: 100%; height: 100%; margin-top: 20vh !important; padding-right: 19vh;" 
+         <img src="assets/img/accueiltof.jpeg" alt="" 
+         style="width: 77vh; height: 60vh !important; margin-top: 20vh !important; padding-right: 19vh;" 
          id="breathing-image"> 
         </div>
       </div>
@@ -544,7 +544,7 @@
       max-width: 0;
       max-height: 0;
       opacity: 0;
-      transition: all 5s ease-in-out;
+      transition: all 10s ease-in-out;
   }
   </style>
   <script>
@@ -557,13 +557,14 @@
 
     // Démarrez l'animation lorsque la page est chargée
     setTimeout(() => {
-        image.style.marginTop = "10%";
-        image.style.maxWidth = "40%";
-        image.style.maxHeight = "70%";
+        image.style.marginTop = "0%";
+        image.style.maxWidth = "100vh";
+        image.style.maxHeight = "100%";
         image.style.opacity = "1";
+        image.style.borderRadius = "1%"
         Header.style.opacity = "0"
         Footer.style.setProperty("display", "none", "important");
-    }, 1000);
+    }, 100);
 
     // Disparition de l'image après 5 secondes
     setTimeout(() => {
@@ -574,7 +575,7 @@
        ImgAnimationId.style.display = "block"
        Header.style.opacity = "1"
        Footer.style.setProperty("display", "block", "important");
-    }, 5000);
+    }, 10000);
 });  
   </script>
   <div id="preloader"></div>

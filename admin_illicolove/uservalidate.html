@@ -89,19 +89,19 @@ font-size: 13.5px !important;
                 <div class="col-lg-4 " id="mySliderId" >
                   <div class="slider">
                     <div class="slide">
-                      <img  alt="Image 1" style="height:
-                        55vh; width: 100%;" id="img1Id" >
+                      <div id="img1Id" style=" border: #FFB6C1 solid 1px;"></div>
+                      <!--<img  alt="Image 1" style="height: 55vh; width: 100%;"  >-->
                     </div>
-                    <div class="slide">
+                    <!--<div class="slide">
                       <img   alt="Image 2" style="height:
                          55vh; width: 100%;" id="img2Id">
-                    </div>
+                    </div>-->
                   </div>
                 </div>
                 <div class="col-lg-4" id="mycoodonnees" style=" border: #FFB6C1 solid 1px;">
                   <div class="portfolio-info" style="height: 61vh !important;"  
                   >
-                    <h2><strong>Mes coordonnées :</strong></h2>
+                    <h2><strong>Ses coordonnées :</strong></h2>
                     <span id="iconValidateID"></span>
                     <ul class="list-group mt-4"  >
                       <li class="list-group-item" >
@@ -138,7 +138,7 @@ font-size: 13.5px !important;
                           <i class="bi bi-envelope-fill me-2 text-primary"></i>
                           <p class="mb-0" id="myEmail"></p>
                         </div>
-                        <div class="d-flex align-items-center mt-3" style="cursor: pointer;">
+                        <div class="d-flex align-items-center mt-3" style="cursor: pointer; display: none !important;">
                           <i class="bi bi-file-text-fill me-2" style="color: #FFB6C1;"></i>
                           <p class="mb-0" id="myDoc" style="color: #FFB6C1;">Consulter son CDN</p>
                         </div>
@@ -149,13 +149,13 @@ font-size: 13.5px !important;
                     </ul>
                   </div>
                 </div>
-                <div class="col-lg-4" id="formysuiteId">
+                <div class="col-lg-4" id="formysuiteId" >
                     <span class="nav-item dropdown no-arrow" id="dropdowtToValidate" 
                     style="cursor: pointer;"> <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400" 
                     style="color: #FFB6C1 !important;"></i></span> 
-                  <div class="portfolio-info" style="height: 55vh !important;">
+                  <div class="portfolio-info" style="height: 55vh !important; border: #FFB6C1 solid 1px;">
                    <div style="height: 22vh;">
-                    <h2><strong>Mes préférences physiques :</strong></h2>
+                    <h2><strong>Ses préférences physiques :</strong></h2>
                     <p id="suiteId"></p>
                    </div><br>
                    <h2><strong>Autres précisions :</strong></h2>
@@ -411,9 +411,9 @@ font-size: 13.5px !important;
                 var Userfullename = snapshot.val().fullname
                 var UserEmail =  snapshot.val().email
                 document.getElementById('preloader').style.display = "none"
-                var photoDataUrl1 = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
-                var photoDataUrl2 = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTO2;
-                var photoDataUrl3 = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
+                //var photoDataUrl = snapshot.val().PIECESDIDENTITE ? 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE : '';
+                //var photoDataUrl2 = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
+                //var photoDataUrl3 = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
                               // Get CIN
               MyDoc.addEventListener('click', function(){
                MyBodyID.style.display = "none" 
@@ -437,10 +437,11 @@ font-size: 13.5px !important;
               })
                 //conditon ternaire to genre
                 var status = snapshot.val().MONSEXE                
-                var img1Id = document.getElementById('img1Id');
-                img1Id.src = photoDataUrl1
-                var img2Id = document.getElementById('img2Id');
-                img2Id.src = photoDataUrl2
+                var Img1Id = document.getElementById('img1Id');
+                var photoDataUrl = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
+                Img1Id.innerHTML = `${snapshot.val().PIECESDIDENTITE ? `<img src="${photoDataUrl}" alt="Image 1" style="height: 55vh; width: 100%;"/>` : '<img src="img/log.png" alt="Image 1" style="height: 55vh; width: 100%;"/>&nbsp;'}`;
+                //var img2Id = document.getElementById('img2Id');
+                //img2Id.src = photoDataUrl2
                 document.getElementById('fullname').innerHTML = `${snapshot.val().fullname}`
                 document.getElementById('phone').innerHTML = `${snapshot.val().TELEPHONE}`
                 document.getElementById('whatsapp').innerHTML = `${snapshot.val().TELEPHONE}`

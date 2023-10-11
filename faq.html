@@ -607,12 +607,12 @@
       document.getElementById('IDTRANSLATE9LI').style.display = "none"
       document.getElementById('preloader').style.display = "none"
       //const userData = childSnapshot.val();
-      var photoDataUrl = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
-      userbuttonID.innerHTML = `${snapshot.val().MESDEUXPHOTOS ? `<img src="${photoDataUrl}" alt="Votre image" style="width: 6vh;  height: 6vh;"/>` : '<i class="bi bi-person-fill" style="width: 30px;"></i>&nbsp;'}`;
+      var photoDataUrl = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
+      userbuttonID.innerHTML = `${snapshot.val().PIECESDIDENTITE ? `<img src="${photoDataUrl}" alt="Votre image" style="width: 6vh;  height: 6vh;"/>` : '<i class="bi bi-person-fill" style="width: 30px;"></i>&nbsp;'}`;
       userbuttonID.addEventListener('click', function(){
         window.location.href= "./v/profil.html"
       })
-      console.log(snapshot.val().MESDEUXPHOTOS);
+      console.log(snapshot.val().PIECESDIDENTITE);
     // Utilisez les données de l'utilisateur comme vous le souhaitez
       //alert("mmmmmmoooo")
      }else{

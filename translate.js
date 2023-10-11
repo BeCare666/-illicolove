@@ -661,7 +661,7 @@ $(document).ready(function() {
 
 
           "IDTRANSLATEUSERD2":`Pour me contacter`,
-          "IDTRANSLATEUSERD3":`<i class="bi bi-alexa"></i> Mon Profil `,
+          "IDTRANSLATEUSERD3":`<i class="bi bi-alexa"></i> Profil `,
           "IDTRANSLATEUSERD4":`Réponses`,
           "IDTRANSLATEUSERD5":`Ma Ville de résidence :`,
           "IDTRANSLATEUSERD6":`Mon nom ou pseudonyme:`,
@@ -1267,7 +1267,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
 
 
           "IDTRANSLATEUSERD2":` Para contactarme `,
-          "IDTRANSLATEUSERD3":` Mi perfil `,
+          "IDTRANSLATEUSERD3":` Perfil `,
           "IDTRANSLATEUSERD4":` Respuestas `,
           "IDTRANSLATEUSERD5":` Mi ciudad de residencia`,
           "IDTRANSLATEUSERD6":` Mi nombre o seudónimo`,
@@ -1894,7 +1894,7 @@ The site and its various services may be interrupted or suspended by the Editor,
 
 
           "IDTRANSLATEUSERD2":` To contact me `,
-          "IDTRANSLATEUSERD3":` My profile `,
+          "IDTRANSLATEUSERD3":` Profile `,
           "IDTRANSLATEUSERD4":` Answers `,
           "IDTRANSLATEUSERD5":` My hometown`,
           "IDTRANSLATEUSERD6":` My name or pseudonym`,

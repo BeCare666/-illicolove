@@ -83,9 +83,9 @@
       <span style="opacity: 0 !important;">kfdjjfdkdkfdkfldkfkdlfdfdd</span>
       <span style="opacity: 0 !important;">kfdjjfdkdkfdkfldkfkdlfdfdd</span>
       <div class="box box--list">
-        <header class="box--list__header">
-          <h1 class="box--list__header-title" id="IDTRANSLATEUSERD3"></h1>
-          <a href="#" class="box--list__header-link" id="IDTRANSLATEUSERD1" data-toggle="modal" data-target="#exampleModalCentermo">     
+        <header class="box--list__header" style="box-shadow: 2px 2px 1px 0px; height: 20vh !important; width: 100% !important; padding: 10px !important;">
+          <h1 class="box--list__header-title" id="IDTRANSLATEUSERD3" style="color: #FFB6C1;"></h1>
+          <a href="#" class="box--list__header-link" id="IDTRANSLATEUSERD1" data-toggle="modal" data-target="#exampleModalCentermo" style="color: #FFB6C1;">     
           </a>
         </header>
       
@@ -141,8 +141,8 @@
             <div class="box--list__description" id="myprefenceId"> </div>
           </div>
 
-          <div class="box--list__item"> 
-            <h2 class="box--list__title" id="IDTRANSLATEUSERD15"> </h2>
+          <div class="box--list__item" style="box-shadow: 2px 2px 1px 0px; height: 10vh !important; width: 100% !important; padding-top: 20px !important; padding-left: 10px !important;"> 
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD15" style="color: #FFB6C1;"> </h2>
              
           </div>
 
@@ -196,9 +196,10 @@
        
       <div class="modal-body">
         <div class="col-lg-12" id="mycoodonnees" style=" border: #FFB6C1 solid 1px;">
-          <div class="portfolio-info" style="height: 60vh !important;"  
+          <div class="portfolio-info" style="height: 35vh !important;"  
           >
             <h2><strong ></strong></h2>
+            
             <ul class="list-group mt-4"  >
               <li class="list-group-item" >
                 <div class="d-flex align-items-center">
@@ -335,7 +336,7 @@
               .then((snapshot) => {
                 if (snapshot.exists()) {
                 document.getElementById('preloader').style.display = "none"
-                var photoDataUrl1 = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
+                var photoDataUrl1 = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
                 var photoDataUrl2 = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTO2;
                 //conditon ternaire to genre
                 var status = snapshot.val().MONSEXE

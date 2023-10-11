@@ -515,12 +515,12 @@ style="background-color: #f38e9d !important;"
           document.getElementById('PUBLIEZUNEANNONCE').innerHTML = `<i class="bi bi-send"></i> <span id="IDTRANSLATEPROFIL12"></span> `
          }
          
-         var photoDataUrl = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
-         userbuttonID.innerHTML = `${snapshot.val().MESDEUXPHOTOS ? `<img src="${photoDataUrl}" alt="Votre image" style="width: 6vh;  height: 6vh;"/>` : '<i class="bi bi-person-fill" style="width: 30px;"></i>'}`;
+         var photoDataUrl = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
+         userbuttonID.innerHTML = `${snapshot.val().PIECESDIDENTITE ? `<img src="${photoDataUrl}" alt="Votre image" style="width: 7vh;  height: 7vh;"/>` : '<i class="bi bi-person-fill" style="width: 30px;"></i>'}`;
          iconValidateID.innerHTML = `${snapshot.val().VALIDERMONCOMPTE ? `<i class="bi bi-patch-check-fill text" style="color:#000080" id="IDTRANSLATEPROFIL1"> </i> ` : '<i class="bi bi-exclamation-circle-fill text-danger" id="IDTRANSLATEPROFIL2"></i> '}`;
          userMyID.innerHTML = `${snapshot.val().username}`;
          myUnityID.innerHTML = `${snapshot.val().COMPTECREDIT}`;
-         tofuserID.innerHTML = `${snapshot.val().MESDEUXPHOTOS ? `<img src="${photoDataUrl}" class="user-photo" />` : '<img src="assets/img/log.png" class="user-photo" />'}`;
+         tofuserID.innerHTML = `${snapshot.val().PIECESDIDENTITE ? `<img src="${photoDataUrl}" class="user-photo" />` : '<img src="assets/img/log.png" class="user-photo" />'}`;
          //function to checkout in account debit
          comptDebitID.innerHTML = `${snapshot.val().COMPTECREDITSATUS ? `
           <div class="card-item" style="opacity: 0.2 !important; pointer-events: none;">

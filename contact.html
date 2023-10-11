@@ -332,7 +332,7 @@
 
         <div class="container" data-aos="fade-up">
   
-          <header class="section-header">
+          <header class="section-header" style="display: none;">
             <h2 id="IDTRANSLATECONTACT1"> <i class="bi bi-check-circle-fill" ></i></h2>
             <div style="opacity: 0;">qsdfghjio</div>
             <p id="IDTRANSLATECONTACT2"></p>
@@ -345,7 +345,8 @@
                   <div class="info-box">
                     <i class="bi bi-geo-fill" style="font-size: 26px !important;"></i>
                     <h3 id="IDTRANSLATECONTACT3"></h3>
-                   <p>Lot 191 Parcelle b’ Agbalilamè <br>
+                    BAKO FAMILIA & COMPANY, RCCM RB/COT/08/A4101 IFU:3200800938610. <br>
+                   <p>Lot 124<br>
                     Agblangandan<br>
                     SÈMÈ- PODJI<br>
                     BÉNIN</p>
@@ -356,13 +357,14 @@
                     <i class="bi bi-phone-fill" style="font-size: 26px !important;"></i>
                     <h3 id="IDTRANSLATECONTACT4"></h3>
                     <p> +229 64 39 01 06 <!---<br> +229 96 98 56 35 <br>+224 624 633 690--> </p>
+                     
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="info-box" style="height: 32vh !important;">
                     <i class="bi bi-envelope-at-fill" style="font-size: 26px !important;"></i>
                     <h3 id="IDTRANSLATECONTACT5"></h3>
-                    <p>info@illicolove.com <br>ggangbazo@yahoo.fr</p>
+                    <p>info@illicolove.com <!---<br>ggangbazo@yahoo.fr</p>-->
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -555,12 +557,12 @@
       document.getElementById('IDTRANSLATE9LI').style.display = "none"
       document.getElementById('preloader').style.display = "none"
       //const userData = childSnapshot.val();
-      var photoDataUrl = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
-      userbuttonID.innerHTML = `${snapshot.val().MESDEUXPHOTOS ? `<img src="${photoDataUrl}" alt="Votre image" style="width: 6vh;  height: 6vh;"/>` : '<i class="bi bi-person-fill" style="width: 30px;"></i>&nbsp;'}`;
+      var photoDataUrl = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
+      userbuttonID.innerHTML = `${snapshot.val().PIECESDIDENTITE ? `<img src="${photoDataUrl}" alt="Votre image" style="width: 6vh;  height: 6vh;"/>` : '<i class="bi bi-person-fill" style="width: 30px;"></i>&nbsp;'}`;
       userbuttonID.addEventListener('click', function(){
         window.location.href= "./v/profil.html"
       })
-      console.log(snapshot.val().MESDEUXPHOTOS);
+      console.log(snapshot.val().PIECESDIDENTITE);
     // Utilisez les données de l'utilisateur comme vous le souhaitez
       //alert("mmmmmmoooo")
      }else{

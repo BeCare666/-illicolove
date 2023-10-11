@@ -213,12 +213,7 @@
       }, true);
     }
 
-    //function to accept indicator alert
-    var IDTOACCEPTVAL = localStorage.getItem('IDTOACCEPT');
-    if(!IDTOACCEPTVAL){
-      var fingerI = document.getElementById("myModalfinger"); 
-      fingerI.style.display = "block";
-    }
+
     var ACCEPTINDICATORA = document.getElementById('ACCEPTINDICATORA');
     ACCEPTINDICATORA.addEventListener('click', function(){
       var indigo = "AZERTYUIDT"
@@ -226,6 +221,7 @@
       fingerI.style.display = "none";
       localStorage.setItem('IDTOACCEPT', indigo)
     })
+
    {/* window.onclick = function(event){
         var fingerI = document.getElementById("myModalfinger");
         if (event.target == fingerI) {

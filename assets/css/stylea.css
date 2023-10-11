@@ -2655,9 +2655,9 @@
   }
   #fingerID {
   position: fixed;
-   top: 359px;
+   top: 337px;
    height: 15vh;
-   left: 45px !important;
+   left: 53px !important;
    transform: rotate(-63deg);
 }
 #fingerIDP{

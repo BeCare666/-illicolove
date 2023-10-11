@@ -111,7 +111,7 @@
               transition: background-color 0.5s ease;">
               </button>
             </div>       
-          <div id="myModalfinger" class="modal">
+          <div id="myModalfinger" class="modal" style="display: none !important;">
             <div class="modal-contentfinger">
               <img src="assets/img/finger-removebg-preview.png" alt="" id="fingerID">
               <p id="fingerIDP">Cliquer ici pour <br> visiter votre profil. <button class="btn btn-primary" id="ACCEPTINDICATORA">Ok</button></p>
@@ -619,6 +619,7 @@
     const db = getDatabase();
     const UserConnectuser = localStorage.getItem("unserconnect"); 
     var BacktoprofilID = document.getElementById('backtoprofilID');
+    var MyModalfinger = document.getElementById('myModalfinger');
     var userbuttonID = document.getElementById('user-button');
     var  allCocuntry = document.getElementById('ALLCOUNTRY');
     var  Afri = document.getElementById('AFRI');
@@ -657,7 +658,8 @@
     get(child(dbrefuser, "utilisateurs/" + UserConnectuser)) 
     .then((snapshot) => {
      if (snapshot.exists()){ 
-      BacktoprofilID.style.display = "block"  
+      BacktoprofilID.style.display = "block" 
+      MyModalfinger.style.display = "block"  
       document.getElementById('IDTRANSLATE8LI').style.display = "none"
       document.getElementById('IDTRANSLATE9LI').style.display = "none"
       document.getElementById('BTNTOCOMEBACKMYID1').style.display = "none"
@@ -669,13 +671,22 @@
       userbuttonID.addEventListener('click', function(){
         window.location.href= "./v/profil.html"
       })
+          //function to accept indicator alert
+        var IDTOACCEPTVAL = localStorage.getItem('IDTOACCEPT');
+        if(!IDTOACCEPTVAL){
+          var fingerI = document.getElementById("myModalfinger"); 
+          fingerI.style.display = "block";
+        } else{
+          var fingerI = document.getElementById("myModalfinger"); 
+          fingerI.style.display = "none";
+        }
       //console.log(snapshot.val().MESDEUXPHOTOS);
     // Utilisez les données de l'utilisateur comme vous le souhaitez
       //alert("mmmmmmoooo") 
      }else{
       //alert("hoooo")
       document.getElementById('preloader').style.display = "none"
-      
+      MyModalfinger.style.display = "none"
      }
       
     })

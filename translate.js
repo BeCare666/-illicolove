@@ -1,7 +1,7 @@
 $(document).ready(function() {
     // Configuration de i18next pour les différentes langues
     i18next.init({
-      lng: localStorage.getItem('selectedLanguage') || 'fr',
+      lng: localStorage.getItem('selectedLanguage') || 'en',
       debug: true, 
       resources: {
         fr: {

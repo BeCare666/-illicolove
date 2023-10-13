@@ -204,7 +204,7 @@
                                 <option  selected id="IDTRANSLATEFORM84"></option>
                                 <option  id="IDTRANSLATEFORM85"></option>
                                 <option  id="IDTRANSLATEFORM86"></option>
-                                <option  id="IDTRANSLATEFORM87"></option> 
+                                <option  id="IDTRANSLATEFORM87"></option> <img src="" alt="">
                             </select>
                             <p style="text-align: start !important;" id="hecountries"></p>
                             <p style="text-align: start !important; display: none;" id="hecountriesId"></p>
@@ -827,7 +827,8 @@
                 VILLEDHABITATIONDEPROFILQUEJECHERCHE : myprofileidSaville.value,
                 TRAVAILDEDEPROFILQUEJECHERCHE : myprofileidoccupations.value,
                 AUTRESPRECISIONSDEPROFILQUEJECHERCHE : myprofileidprécisions.value,
-                VALIDERMONCOMPTE:false
+                VALIDERMONCOMPTE:false,
+                COMMISSION : "0"
             })
                 .then(() => {
                 //window.location.reload();
@@ -839,18 +840,116 @@
                 document.getElementById('iconid').innerHTML = ` <img src="assets/imageSucess.svg" alt="">`
                 document.getElementById('etatalert').innerHTML = `<p id="IDTRANSLATEFORM109" style="color: black !important;"></p>`
                 document.getElementById('smsalert').innerHTML = `<p id="IDTRANSLATEFORM110" style="color: black !important;"></p>`
-                setTimeout(()=>{
-                    document.getElementById('myFormulaireId').style.display = "block"
+                    setTimeout(()=>{
+                    //document.getElementById('myFormulaireId').style.display = "none"
                     document.getElementById('modalID').style.display = "none"  
                 },10000)
 
                 setTimeout(()=>{
-                window.location.replace("./../profil.html");
+                const IDAFILIATEID = localStorage.getItem("IDAFILIATE");
+                if(IDAFILIATEID){
+                var dbrefx = ref(db);
+                get(child(dbrefx, "utilisateurs/" + IDAFILIATEID))
+                    .then((snapshot) => {
+                    if (snapshot.exists()) {
+                        var COMMISSIONVALUE = snapshot.val().COMMISSION
+                        var Userfullename = snapshot.val().fullname
+                        var UserEmail =  snapshot.val().email
+                            var addCommission = "100"
+                            var myComptaConvertis = parseFloat(COMMISSIONVALUE);
+                            var addCommissionConvertis = parseFloat(addCommission)
+                            var myCommissionAdd = myComptaConvertis + addCommissionConvertis
+                            update(ref(db, "utilisateurs/" + IDAFILIATEID), {
+                                COMMISSION : myCommissionAdd, 
+                                STATUSAFILIATE : true
+                        }).then(() => { 
+                        // statr envoi de mail de validation
+                        const apiKey = "34F593452254BAB8CACDA4A39FC9C44BFC0D3E63B8842CD369FF37BBE4AC5017DA7917B6E03C3C8EB379F906C80E9DED";
+                        const apiUrl = "https://api.elasticemail.com/v2/email/send";
+                        
+                        // Définir les paramètres de l'e-mail
+                        const emailParams = {
+                        apiKey: apiKey,
+                        subject: "Gain de point",
+                        from: "validation@illicolove.com",
+                        fromName: "illicolove",
+                        to: UserEmail,
+                        bodyHtml: `
+                        <table cellpadding="10" cellspacing="0" style="background-color: #f1f1f1; padding: 20px;">
+                        <tr>
+                            <td>
+                            <h1 style="color: #333;">Félicitations ${Userfullename} !</h1>
+                            <div style="text-align: center;">
+                                <img src="https://illicolove.com/assets/img/illicolove-.png" style="max-width: 100%; height: auto; display: inline-block;" />
+                            </div>
+                            <p style="font-size: 16px; color: #666;">
+                                Nous sommes heureux de vous informer que vous  venez de gagner 1OO FCFA sur illicolove grâce à votre affilié.    
+                            </p>
+                            <ul>
+                                <li><a href="https://illicolove.com/v/profil.html">Vous pouvez visiter votre profil.</a></li>
+                                <li><a href="https://illicolove.com/userdetails&.html?id=${IDAFILIATEID}">Visiter le profil de votre affilié.</a></li>
+                            </ul>
+                            <p style="font-size: 14px; color: #999;">
+                                Restez à l'écoute pour recevoir d'autres nouvelles passionnantes !     
+                            </p>
+                            <p style="font-size: 14px; color: #999;">
+                                Cordialement,     
+                            </p>
+                            <p style="font-size: 14px; color: #999;">
+                                L'équipe illicolove.      
+                            </p>
+                            </td>
+                        </tr>
+                        </table>
+                        `
+                        };
+
+                        // Effectuer une requête POST vers l'API ElasticEmail
+                        fetch(apiUrl, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        body: new URLSearchParams(emailParams)
+                        })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            //console.log(data); // Afficher la réponse de l'API ElasticEmail
+                            if (data.success) {
+                            //console.log("E-mail envoyé avec succès.");
+                            } else {
+                            // console.error("Erreur lors de l'envoi de l'e-mail.");
+                            }
+                        })
+                        .catch((error) => {
+                            //console.error("Erreur lors de la requête API :", error);
+                        });
+                        // end envoi de mail de validation
+
+                        localStorage.removeItem('IDAFILIATE');
+                        //alert('le compte est bon')
+                        setTimeout(()=>{
+                        window.location.replace("./../profil.html");
+                        }, 2000)
+                        })
+                        .catch((error) => {
+                        alert("il y a une ERROR " + error);
+                        });  
+                    } else {
+                        //alert("no data");
+                    }
+                    })
+                    .catch((error) => {
+                    alert("il y a une ERROR " + error);
+                    });
+                    }{
+                        window.location.replace("./../profil.html");
+                    }
                 }, 10000)
                 var texteTraduitprofil1X = i18next.t("IDTRANSLATEFORM109");
                 $('[id="IDTRANSLATEFORM109"]').text(texteTraduitprofil1X);  
                 var texteTraduitprofil1X0 = i18next.t("IDTRANSLATEFORM110");
-                $('[id="IDTRANSLATEFORM110"]').html(texteTraduitprofil1X0);  
+                $('[id="IDTRANSLATEFORM110"]').html(texteTraduitprofil1X0); 
                 })
                 .catch((error) => {
                

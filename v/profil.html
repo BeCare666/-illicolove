@@ -146,17 +146,23 @@
 <div class="container">
       <div class="iphone">
         <div class="header">
-          <div class="header-summary">
+          <div class="header-summary"><br>
             <span id="iconValidateID"></span><br>
             <div class="summary-text" id="userMyID">
             </div>
-            <div class="summary-balance " style="display: flex; width: 10vh;" >
-              <strong style="color: aqua; font-size: 20px !important;">U</strong>&nbsp; <p style="font-size: 20px !important;" id="myUnityID"></p> 
+            <div class="summary-balance " style="display: flex; width: 10vh; margin-bottom: 0 !important;" >
+              <strong style="color: aqua; font-size: 20px !important; margin-top: 0 !important;">U</strong>&nbsp; <p style="font-size: 20px !important;" id="myUnityID"></p>
+              </div>
+              <div style="margin-top: 0 !important; display: flex !important;">
+              <strong style="color: aqua; font-size: 20px !important; margin-top: 0 !important; ">C</strong>&nbsp; <p style="font-size: 20px !important;" id="myCommiID"></p>
+              &nbsp;<span style="font-size: 20px !important;">FCFA</span>
             </div>
+             
           </div>
           <div class="user-profile" id="tofuserID">
             
           </div>
+          
         </div>
         <div class="content scroll-container" style="  height: 180px; overflow: auto;">
           <div class="card">
@@ -167,17 +173,37 @@
           </div>
           <div class="transactions"><span class="t-desc" id="IDTRANSLATEPROFIL7"></span>
             <div class="transaction">
-              <div class="t-icon-container"><i class="bi bi-person-fill" class="t-icon"></i></div>
+              <div class="t-icon-container"><i class="bi bi-person-fill" class="t-icon" style="color: #f38e9d;"></i></div>
               <div id="myEmailID" class="t-details" style="width: 29vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
                 
               </div>           
             </div>
             <div class="transaction">
-              <div class="t-icon-container"><i class="bi bi-envelope-at-fill" class="t-icon"></i></div>
+              <div class="t-icon-container"><i class="bi bi-envelope-at-fill" class="t-icon" style="color: #f38e9d;"></i></div>
               <div id="myNameID" class="t-details" style="width: 29vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
                
               </div>              
             </div>
+            <a href="wallet.html">
+            <div class="transaction" style="cursor: pointer;">
+              <div class="t-icon-container"><i class="bi bi-wallet-fill" style="color: #f38e9d;"></i></div>
+              
+                <div id="myNameIDwallet" class="t-details" style="width: 29vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; color: black !important;">
+                  Rétirer votre commission
+                 </div> 
+
+                      
+            </div>
+            </a>    
+            <div class="transaction" id="affiliateID" style="cursor: pointer !important;">
+              <div class="t-icon-container"><i class="bi bi-link-45deg" style="color: #f38e9d; font-size: 26px !important;"></i></div>
+              <div id="myNameIDXA" class="t-details" style="width: 29vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+                <form data-copy=true>
+                  <input id="linkInput" type="text" data-click-select-all style="border: none !important;"/>
+                </form>
+              </div>           
+            </div>
+
             <div class="transaction" id="deleteMyAccountID" style="cursor: pointer !important;">
               <div class="t-icon-container"><i class="bi bi-trash3-fill" style="color: #f38e9d;"></i></div>
               <div id="myNameIDX" class="t-details" style="width: 29vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
@@ -461,8 +487,9 @@ style="background-color: #f38e9d !important;"
     } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"      
     const db = getDatabase();
     const UserConnectuser = localStorage.getItem("unserconnect");
-    var userMyID = document.getElementById('userMyID');
+    var userMyID = document.getElementById('userMyID'); 
     var myUnityID = document.getElementById('myUnityID');
+    var MyCommiID = document.getElementById('myCommiID');
     var tofuserID = document.getElementById('tofuserID');
     var debyOfferID = document.getElementById('debyOfferID');
     var debyID = document.getElementById('debyID');
@@ -508,7 +535,17 @@ style="background-color: #f38e9d !important;"
       .then((snapshot) => {
       document.getElementById('preloader').style.display = "none"
       if (snapshot.exists()) {
-       
+
+       //function to generate affilition link
+        const linkInput = document.getElementById('linkInput');
+        const copyButton = document.getElementById('affiliateID');
+        linkInput.value = `https://illicolove.com?id=${UserConnectuser}`
+        // function to hide border when you click
+        copyButton.addEventListener('click', () => {
+        linkInput.select(); // Sélectionne le texte dans l'input
+        document.execCommand('copy'); // Copie le texte sélectionné dans le presse-papiers
+        });
+
          if(snapshot.val().IDREGION){
           document.getElementById('PUBLIEZUNEANNONCE').innerHTML = `<i class="bi bi-pencil-square"></i> <span id="IDTRANSLATEPROFIL11"></span>`
          }else{
@@ -520,6 +557,7 @@ style="background-color: #f38e9d !important;"
          iconValidateID.innerHTML = `${snapshot.val().VALIDERMONCOMPTE ? `<i class="bi bi-patch-check-fill text" style="color:#000080" id="IDTRANSLATEPROFIL1"> </i> ` : '<i class="bi bi-exclamation-circle-fill text-danger" id="IDTRANSLATEPROFIL2"></i> '}`;
          userMyID.innerHTML = `${snapshot.val().username}`;
          myUnityID.innerHTML = `${snapshot.val().COMPTECREDIT}`;
+         MyCommiID.innerHTML = `${snapshot.val().COMMISSION}`;
          tofuserID.innerHTML = `${snapshot.val().PIECESDIDENTITE ? `<img src="${photoDataUrl}" class="user-photo" />` : '<img src="assets/img/log.png" class="user-photo" />'}`;
          //function to checkout in account debit
          comptDebitID.innerHTML = `${snapshot.val().COMPTECREDITSATUS ? `
@@ -637,14 +675,14 @@ style="background-color: #f38e9d !important;"
                 })
                 // alert("Votre compte est arrivé à terme !")         
                  // window.location.reload()
-                    })
-                    .catch((error) => {
-                      Swal.fire({
-                      text: i18next.t('IDTRANSLATEPROFIL45'),
-                      icon: 'error'
-                      }); 
+                })
+                .catch((error) => {
+                Swal.fire({
+                text: i18next.t('IDTRANSLATEPROFIL45'),
+                icon: 'error'
+                }); 
 
-                    });
+                });
           })
           },500)
          }else{

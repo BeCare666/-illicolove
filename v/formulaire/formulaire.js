@@ -314,5 +314,49 @@
         };
 
       
+{/***
 
+       // function 
+        function takeYourCommission(){
+
+        const IDAFILIATEID = localStorage.getItem("IDAFILIATE");
+        if(IDAFILIATEID){
+        get(child(dbref, "utilisateurs/" + IDAFILIATEID))
+            .then((snapshot) => {
+               if (snapshot.exists()) {
+                  var COMMISSIONVALUE = snapshot.val().COMMISSION  
+                    var addCommission = "1"
+                     var myComptaConvertis = parseFloat(COMMISSIONVALUE);
+                     var addCommissionConvertis = parseFloat(addCommission)
+                     var myCommissionAdd = myComptaConvertis + addCommissionConvertis
+                     update(ref(db, "utilisateurs/" + IDAFILIATEID), {
+                        COMMISSION : myCommissionAdd
+                   }).then(() => {         
+                    localStorage.removeItem('IDAFILIATE');
+                    setTimeout(()=>{
+                    document.getElementById('myFormulaireId').style.display = "block"
+                    document.getElementById('modalID').style.display = "none"  
+                },10000)
+
+                setTimeout(()=>{
+                window.location.replace("./../profil.html");
+                }, 10000)
+                var texteTraduitprofil1X = i18next.t("IDTRANSLATEFORM109");
+                $('[id="IDTRANSLATEFORM109"]').text(texteTraduitprofil1X);  
+                var texteTraduitprofil1X0 = i18next.t("IDTRANSLATEFORM110");
+                $('[id="IDTRANSLATEFORM110"]').html(texteTraduitprofil1X0); 
+
+                })
+                .catch((error) => {
+                });  
+            } else {
+                alert("no data");
+            }
+            })
+            .catch((error) => {
+             alert("il y a une ERROR " + error);
+            });
+            }
+          }
+***/}
         

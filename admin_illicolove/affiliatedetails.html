@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>E-wallet</title>
+	<link rel="stylesheet" href="E-wallet.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="wallet.css">
+    <link rel="stylesheet" href="assets/css/stylea.css">
+    <link href="./../assets/img/logoilli.jpeg" rel="icon">
+    <link rel="stylesheet" href="affiliatedetails.css">
+    <!-- Link to import alert personnal -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+    <style>
+        * {
+          font-family: 'Montserrat-bold', sans-serif;
+          font-size: 13.5px !important;
+        }
+      </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+	<div class="wallet-container text-center" id="wallet-containerId">
+		<p class="page-title" ><i class="fa fa-align-left"></i>My E-wallet</p>
+
+		<div class="amount-box text-center">
+			<img src="https://lh3.googleusercontent.com/ohLHGNvMvQjOcmRpL4rjS3YQlcpO0D_80jJpJ-QA7-fQln9p3n7BAnqu3mxQ6kI4Sw" alt="wallet">
+			<p>Total Balance</p>
+			<p class="amount" id="amount"></p>
+		</div>
+
+		<div class="btn-group text-center" id="imgNodata">
+            <button type="button" class="btn btn-outline-light" id="comeBackId">Retour</button>
+			<button type="button" class="btn btn-outline-light" id="idTogetwallet" style="display: none;">Retirer vos gains</button>
+            	
+        </div>
+
+			<div class="txn-history"  id="historyId">
+				<p><b >History</b></p>
+              
+                <div style="height: 60vh; overflow: auto; display: none;"  id="phistoryId">   
+                </div>
+				
+			</div>
+
+    </div>
+<div id="preloader"></div>
+<script src="wallet.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+<!-- Ajoutez d'autres bibliothèques Firebase si nécessaire (auth, firestore, etc.) -->
+<script src="affiliatedetails.js"></script>
+</body>
+</html>

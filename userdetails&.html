@@ -19,7 +19,7 @@
   <!-- Link to import alert personnal -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
@@ -40,6 +40,7 @@
     <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
     <!-- Template Main CSS File -->
     <link href="assets/css/stylea.css" rel="stylesheet">
+    <link rel="stylesheet" href="userdetail.css">
     <script>
       window.onload = function(){
         if (/Mobi|Android/i.test(navigator.userAgent)) {
@@ -62,7 +63,7 @@
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="" class="logo d-flex align-items-center">
+      <a href="./u/index.html" class="logo d-flex align-items-center">
         <!-- <img src="assets/img/logo.png" alt="">-->
         <button class="btn btn" style="margin-left: 5px; cursor: pointer; background-color: #FFB6C1; color: white;" 
         role="button" id="comeBackId"><i class="bi bi-arrow-90deg-left"></i></button>
@@ -75,259 +76,198 @@
     </div>
   </header><!-- End Header -->
     <main id="main">
-      <!-- ======= Portfolio Details Section ======= -->
-      <div style="opacity: 0;">sgtorgfgbtolkfgobridfvtor,odfrgseo 
-      <br>qsjdkflgkqfbpkdjfbokdjfbdj<br>bokdjfbdj<br></div>
-      <section id="portfolio-details" class="portfolio-details">
-        <div class="container">
-          <div class="row gy-4">
-
-            <div class="col-lg-7 " id="mySliderId" >
-              <div class="slider">
-                <div class="slide">
-                  <img  alt="Image 1" style="height:
-                    60vh; width: 100%;" id="img1Id" >
-                </div>
-                <div class="slide">
-                  <img   alt="Image 2" style="height:
-                     60vh; width: 100%;" id="img2Id">
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-5" id="mycoodonnees" style=" border: #FFB6C1 solid 1px;">
-              <div class="portfolio-info" style="height: 60vh !important;"  
-              >
-                <h2><strong id="IDTRANSLATEUSERD1"></strong></h2>
-                <ul class="list-group mt-4"  >
-                  <li class="list-group-item" >
-                    <div class="d-flex align-items-center">
-                      <i class="bi bi-person-fill me-2 text-primary"></i>
-                      <div>
-                        <h5 class="mb-1" id="ConnexionMyID"></h5>
-                      </div>
-                    </div>
-                    <div class="d-flex align-items-center mt-3">
-                      <i class="bi bi-person-fill me-2 text-primary "></i>
-                      <div>
-                        <h5 class="mb-1" id="fullname"></h5>
-                      </div>
-                    </div>
-                    <div class="d-flex align-items-center mt-3">
-                      <i class="bi bi-geo-alt-fill me-2 text-info"></i>
-                      <p class="mb-0" id="residenceId"></p>
-                    </div>
-                    <div class="d-flex align-items-center mt-3">
-                      <i class="bi bi-person-workspace me-2 text-success"></i>
-                      <p class="mb-0" id="occupation"></p>
-                    </div>
-                    <div id="contactUserID" style="display: none;">
-                    <div class="d-flex align-items-center mt-3">
-                      <i class="bi bi-telephone-fill me-2 text-success"></i>
-                      <p class="mb-0" id="phone"></p>
-                    </div>
-                    <div class="d-flex align-items-center mt-3">
-                      <i class="bi bi-whatsapp me-2 text-success"></i>
-                      <p class="mb-0" id="whatsapp"></p>
-                    </div>
-                    <div class="d-flex align-items-center mt-3">
-                      <i class="bi bi-envelope-at-fill me-2 text-primary"></i>
-                      <p class="mb-0" id="myEmail"></p>
-                    </div>
-                    </div>
-
-                  </li>
-                  <!-- Ajoutez d'autres éléments de liste ici -->
-                </ul><br>
-                <!-- <div class="text-center text-lg-start align-items-center" id="contactUserbtnID">
-                    <button href="#about" class="btn btn scrollto d-inline-flex align-items-center justify-content-center align-self-center"
-                    style="background-color: #FFB6C1; color: white;" id="contactUserbtnIDB">
-                      <span id="IDTRANSLATEUSERD2"></span> &nbsp;&nbsp;
-                      <i class="bi bi-arrow-right"></i>
-                    </button>
-                </div>-->
-              </div>
-            </div>
-            <div class="col-lg-4" id="formysuiteId" style="display: none;">
-              <div class="portfolio-info" style="height: 55vh !important;">
-               <div style="height: 22vh;">
-                <h2><strong></strong></h2> 
-                <p id=" "></p> 
-               </div>
-               <h2 style="opacity: 0;"><strong>Mes préférences physiques :</strong>
-                </h2>
-               <div style="height: 22vh;">
-               <h2><strong></strong></h2>
-               <p id=" "></p>
-              </div>
-              </div>
-            </div>
-          </div>
-          <h2 style="opacity: 0;"><strong>Mes préférences physiques :</strong>
-            <strong>Mes préférences physiques :</strong><br>
-            <strong>Mes préférences physiques :</strong><br>
-            <strong>Mes préférences physiques :</strong></h2>
-          <style>
-            table {
-              border-collapse: collapse;
-              width: 100%;
-              border: #FFB6C1 solid 1px;
-            }
-            
-            th, td {
-              border: 1px solid #ddd;
-              padding: 8px;
-              text-align: left;
-              width: 50%;
-               border: #FFB6C1 solid 1px;
-            }
-            
-            th {
-              background-color: #f2f2f2;
-            }
-            
-            tr:nth-child(even) {
-              background-color: #f9f9f9;
-            }
-            
-            tr:hover {
-              background-color: #eaeaea;
-            }
-          </style>
-            
-            <table>
-              <thead>
-                <tr>
-                  <th id="IDTRANSLATEUSERD3"></th>
-                  <th id="IDTRANSLATEUSERD4"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td id="IDTRANSLATEUSERD5"></td>
-                  <td id="thmaville"></td>
-                </tr>
-                <tr>
-                  <td id="IDTRANSLATEUSERD6"></td>
-                  <td id="monpseudonyme"></td>
-                </tr>
-                <tr>
-                  <td id="IDTRANSLATEUSERD7"></td>
-                  <td id="monages"></td>
-                </tr>
-                <tr>
-                  <td id="IDTRANSLATEUSERD8"></td>
-                  <td id="myGenre"></td>
-                </tr>
-                <tr>
-                  <td id="IDTRANSLATEUSERD9"></td>
-                  <td id="masituamatri"></td>
-                </tr>
-                <tr>
-                  <td id="IDTRANSLATEUSERD10"></td>
-                  <td id="manationalite"></td>
-                </tr>
-                <tr>
-                  <td id="IDTRANSLATEUSERD11"></td>
-                  <td id="montravail"></td>
-                </tr>
-                <tr>
-                  <td id="IDTRANSLATEUSERD12"></td>
-                  <td id="unerencontreId"></td>
-                </tr>
-                 
-                <tr>
-                  <td id="IDTRANSLATEUSERD13"></td>  
-                  <td id="suiteId"></td>
-                </tr>
-                <tr>
-                  <td id="IDTRANSLATEUSERD14"></td>
-                  <td id="myprefenceId"></td>
-                </tr>
-              </tbody>
-            </table>
-            
-            <br>
-            
-            <table>
-              <thead>
-                <tr>
-                  <th id="IDTRANSLATEUSERD15"></th>
-                  <th id="IDTRANSLATEUSERD16"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td id="IDTRANSLATEUSERD17"></td>
-                  <td id="qsongenre"></td>
-                </tr>
-                <tr>
-                  <td id="IDTRANSLATEUSERD18"></td>
-                  <td id="satranche"></td>
-                </tr>
-                <tr>
-                  <td id="IDTRANSLATEUSERD19"></td>
-                  <td id="sasituationMa"></td>
-                </tr>
-                <tr>
-                  <td id="IDTRANSLATEUSERD20"></td>
-                  <td id="sonpays"></td>
-                </tr>
-                <tr>
-                  <td id="IDTRANSLATEUSERD21"></td>
-                  <td id="saville"></td>
-                </tr>
-                <tr>
-                  <td id="IDTRANSLATEUSERD22"></td>
-                  <td id="sontravail"></td>
-                </tr>
-                </tbody>
-            </table>            
-        </div>
-        <script>
-          const images = document.querySelectorAll('.slider img');
-          let currentImageIndex = 0;
+      <span style="opacity: 0 !important;">kfdjjfdkdkfdkfldkfkdlfdfdd</span>
+      <span style="opacity: 0 !important;">kfdjjfdkdkfdkfldkfkdlfdfdd</span>
+      <span style="opacity: 0 !important;">kfdjjfdkdkfdkfldkfkdlfdfdd</span>
+      <span style="opacity: 0 !important;">kfdjjfdkdkfdkfldkfkdlfdfdd</span>
+      <span style="opacity: 0 !important;">kfdjjfdkdkfdkfldkfkdlfdfdd</span>
+      <span style="opacity: 0 !important;">kfdjjfdkdkfdkfldkfkdlfdfdd</span>
+      <div class="box box--list">
+        <header class="box--list__header" style="box-shadow: 2px 2px 1px 0px; height: 20vh !important; width: 100% !important; padding: 10px !important;">
+          <h1 class="box--list__header-title" id="IDTRANSLATEUSERD3" style="color: #FFB6C1;"></h1>
+          <a href="#" class="box--list__header-link" id="IDTRANSLATEUSERD1" data-toggle="modal" data-target="#exampleModalCentermo" style="color: #FFB6C1; display: none !important;">     
+          </a>
+        </header>
       
-          function showNextImage() {
-            images[currentImageIndex].classList.remove('active');
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            images[currentImageIndex].classList.add('active');
-          }
-      
-          setInterval(showNextImage, 2000); // Change d'image toutes les 2 secondes
-        </script>
-      </section><!-- End Portfolio Details Section -->
-
-    </main><!-- End #main -->
- </section>
-    <footer id="footer" class="footer" style="margin-bottom: 0 !important;">
-
-      <!--<div class="footer-newsletter">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-12 text-center">
-              <h4>NEWSLETTER</h4>
-              <p>Abonnez-vous pour recevoir régulièrement des mises à jour.</p>
-            </div>
-            <div class="col-lg-6">
-              <form action="" method="post">
-                <input type="email" name="email"><input type="submit"
-                  value="Souscrire">
-              </form>
-            </div>
+        <div class="box--list__items">
+          <div class="box--list__item">
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD5"></h2>
+            <p class="box--list__description" id="thmaville"></p>
           </div>
-        </div>
-      </div>-->
-      <div class="container">
-        <div class="copyright" style="color: rgb(43, 42, 42);">
-          &copy; Copyright 2023<strong><span style="color: #FFB6C1;"> illicolove</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits" style="color: rgb(43, 42, 42);">
-          Designed by <a href="" style="color: #FFB6C1;">illicolove</a>
+          
+          <div class="box--list__item">
+             
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD6"></h2>
+            <div class="box--list__description" id="monpseudonyme"></div>
+          </div>
+          
+          <div class="box--list__item">
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD7"> </h2>
+            <div class="box--list__description" id="monages"> </div>
+          </div>
+          
+          <div class="box--list__item">
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD8"> </h2>
+            <div class="box--list__description" id="myGenre"> </div>
+          </div>
+          
+          <div class="box--list__item">
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD9"> </h2>
+            <div class="box--list__description" id="masituamatri"> </div>
+          </div>
+           
+          <div class="box--list__item">
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD10"> </h2>
+            <div class="box--list__description" id="manationalite"> </div>
+          </div>
+        
+          <div class="box--list__item">
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD11"> </h2>
+            <div class="box--list__description" id="montravail"> </div>
+          </div>
+          
+          <div class="box--list__item">
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD12"> </h2>
+            <div class="box--list__description" id="unerencontreId"> </div>
+          </div>
+
+          <div class="box--list__item">
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD13"> </h2>
+            <div class="box--list__description" id="suiteId"> </div>
+          </div>
+
+          <div class="box--list__item">
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD14"> </h2>
+            <div class="box--list__description" id="myprefenceId"> </div>
+          </div>
+
+          <div class="box--list__item" style="box-shadow: 2px 2px 1px 0px; height: 10vh !important; width: 100% !important; padding-top: 20px !important; padding-left: 10px !important;"> 
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD15" style="color: #FFB6C1;"> </h2>
+             
+          </div>
+
+          <div class="box--list__item">
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD17"> </h2>
+            <div class="box--list__description" id="qsongenre"> </div>
+          </div>
+
+          <div class="box--list__item">
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD18"> </h2>
+            <div class="box--list__description" id="satranche"> </div>
+          </div>
+
+          <div class="box--list__item">
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD19"> </h2>
+            <div class="box--list__description" id="sasituationMa"> </div>
+          </div>
+
+          <div class="box--list__item">
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD20"> </h2>
+            <div class="box--list__description" id="sonpays"> </div>
+          </div>
+
+          <div class="box--list__item">
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD21"> </h2>
+            <div class="box--list__description" id="saville"> </div>
+          </div>
+
+          <div class="box--list__item">
+            <h2 class="box--list__title" id="IDTRANSLATEUSERD22"> </h2>
+            <div class="box--list__description" id="sontravail"> </div>
+          </div>
+ 
         </div>
       </div>
-    </footer><!-- End Footer -->
-    <a href="#" class="back-to-top d-flex align-items-center
-      justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+      <span style="opacity: 0 !important;">kfdjjfdkdkfdkfldkfkdlfdfdd</span>
+      <span style="opacity: 0 !important;">kfdjjfdkdkfdkfldkfkdlfdfdd</span>
+      <span style="opacity: 0 !important;">kfdjjfdkdkfdkfldkfkdlfdfdd</span>
+      <span style="opacity: 0 !important;">kfdjjfdkdkfdkfldkfkdlfdfdd</span>
+      <span style="opacity: 0 !important;">kfdjjfdkdkfdkfldkfkdlfdfdd</span>
+      <span style="opacity: 0 !important;">kfdjjfdkdkfdkfldkfkdlfdfdd</span>
+    </main><!-- End #main -->
+ </section>
+
+ 
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCentermo" style="background-color: #FFB6C1;" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+       
+      <div class="modal-body">
+        <div class="col-lg-12" id="mycoodonnees" style=" border: #FFB6C1 solid 1px;">
+          <div class="portfolio-info" style="height: 35vh !important;"  
+          >
+            <h2><strong ></strong></h2>
+            
+            <ul class="list-group mt-4"  >
+              <li class="list-group-item" >
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-person-fill me-2 text-primary"></i>
+                  <div>
+                    <h5 class="mb-1" id="ConnexionMyID"></h5>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center mt-3">
+                  <i class="bi bi-person-fill me-2 text-primary "></i>
+                  <div>
+                    <h5 class="mb-1" id="fullname"></h5>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center mt-3">
+                  <i class="bi bi-geo-alt-fill me-2 text-info"></i>
+                  <p class="mb-0" id="residenceId"></p>
+                </div>
+                <div class="d-flex align-items-center mt-3">
+                  <i class="bi bi-person-workspace me-2 text-success"></i>
+                  <p class="mb-0" id="occupation"></p>
+                </div>
+                <div id="contactUserID" style="display: none;">
+                <div class="d-flex align-items-center mt-3">
+                  <i class="bi bi-telephone-fill me-2 text-success"></i>
+                  <p class="mb-0" id="phone"></p>
+                </div>
+                <div class="d-flex align-items-center mt-3">
+                  <i class="bi bi-whatsapp me-2 text-success"></i>
+                  <p class="mb-0" id="whatsapp"></p>
+                </div>
+                <div class="d-flex align-items-center mt-3">
+                  <i class="bi bi-envelope-at-fill me-2 text-primary"></i>
+                  <p class="mb-0" id="myEmail"></p>
+                </div>
+                </div>
+  
+              </li>
+              <!-- Ajoutez d'autres éléments de liste ici -->
+            </ul><br>
+            <div class="text-center text-lg-start align-items-center" id="contactUserbtnID">
+                <button href="#about" class="btn btn scrollto d-inline-flex align-items-center justify-content-center align-self-center"
+                style="background-color: #FFB6C1; color: white;" id="contactUserbtnIDB">
+                  <span id="IDTRANSLATEUSERD2"></span> &nbsp;&nbsp;
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+          </div>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="TOCLOSEMODALID"></button><br>
+          <span style="opacity: 0;">sdfghjkl</span>
+        </div>
+      </div>
+       
+    </div>
+  </div>
+</div>
+<footer id="footer" class="footer" style="margin-bottom: 0 !important;">
+  <div class="container">
+    <div class="copyright" style="color: #000080;">
+      &copy; Copyright 2023 illicolove. All Rights Reserved
+    </div>
+    <div class="credits" style="color: #000080;">
+      Designed by illicolove
+    </div>
+  </div>
+</footer><!-- End Footer -->
+<a href="#" class="back-to-top d-flex align-items-center
+  justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <div id="preloader"></div>
  
@@ -397,15 +337,15 @@
               .then((snapshot) => {
                 if (snapshot.exists()) {
                 document.getElementById('preloader').style.display = "none"
-                var photoDataUrl1 = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
+                var photoDataUrl1 = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
                 var photoDataUrl2 = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTO2;
                 //conditon ternaire to genre
                 var status = snapshot.val().MONSEXE
                 
-                var img1Id = document.getElementById('img1Id');
-                img1Id.src = photoDataUrl1
-                var img2Id = document.getElementById('img2Id');
-                img2Id.src = photoDataUrl2
+                //var img1Id = document.getElementById('img1Id');
+               // img1Id.src = photoDataUrl1
+                //var img2Id = document.getElementById('img2Id');
+                //img2Id.src = photoDataUrl2
                 tableTotakeUser.push(snapshot.val().fullname)
                 document.getElementById('fullname').innerHTML = `${snapshot.val().fullname}`
                 document.getElementById('phone').innerHTML = `<a href="mailto:${snapshot.val().TELEPHONE}">${snapshot.val().TELEPHONE}</a>`
@@ -449,15 +389,17 @@
                   // Default language
                   content = `En ligne le ${k.ONLINEDATE} à ${snapshot.val().ONLINEHOURS}`;
                 }
-                
+
                 connexionMyID.innerHTML = content
-
-
-                var texteIDTRANSLATEUSERD24 = i18next.t("IDTRANSLATEUSERD24");
-                $('[id="IDTRANSLATEUSERD24"]').html(texteIDTRANSLATEUSERD24); 
                 
+                var texteIDTRANSLATEUSERD24 = i18next.t("IDTRANSLATEUSERD24");
+                $('[id="IDTRANSLATEUSERD24"]').html(texteIDTRANSLATEUSERD24);
+
                 var texteIDTRANSLATEUSERD24YX = i18next.t("IDTRANSLATEUSERD24");
-                $('[id="IDTRANSLATEUSERD24YX"]').html(texteIDTRANSLATEUSERD24YX);  
+                $('[id="IDTRANSLATEUSERD24YX"]').html(texteIDTRANSLATEUSERD24YX); 
+
+                var texteIDTRANSLATEUSERD24YX = i18next.t("IDTRANSLATEUSERD23VG");
+                $('[id="IDTRANSLATEUSERD23VG"]').html(texteIDTRANSLATEUSERD24YX);  
               } else {
                 Swal.showValidationMessage(i18next.t('IDTRANSLATEUSERD25'));
                   //alert("no data");
@@ -570,6 +512,11 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="./v/userConnect.js"></script>
+       <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
     <script src="translate.js"></script>

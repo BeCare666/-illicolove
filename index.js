@@ -1,4 +1,12 @@
 window.onload = function(){
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const UserAffiliateID = urlParams.get('id');
+  if(UserAffiliateID){
+    localStorage.setItem("IDAFILIATE", UserAffiliateID)
+    localStorage.setItem("IDAFILIATETWO", UserAffiliateID)
+    //alert('Oui')
+  }
   if (/Mobi|Android/i.test(navigator.userAgent)) {
 // Code pour appareil mobile
 //document.body.style.fontSize = "16px"; // Modifier la taille de la police pour appareils mobiles
@@ -81,6 +89,7 @@ if(!acceptToUseCookies){
 }
 
 }
+
 // function to open detail  
 //var OpendetailIDILLI = document.getElementById('opendetailIDILLI');
 //var DetailIDILLI = document.getElementById('detailIDILLI');

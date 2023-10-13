@@ -630,7 +630,7 @@
     var Footer = document.getElementById('footer');
 
     const dbref = ref(db, "utilisateurs/");
-   onValue(dbref, (snopshot) => {
+    onValue(dbref, (snopshot) => {
     snopshot.forEach((childsnopshot) => {
       myalldatasUSers.push(childsnopshot.val());
       //console.log(childsnopshot.val());

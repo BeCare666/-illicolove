@@ -6,15 +6,24 @@ window.onload = function(){
  var HistoryId =  document.getElementById('historyId');
  var ImgNodata =  document.getElementById('imgNodata');
  var PhistoryId =  document.getElementById('phistoryId');
+ var IdTogetwallet = document.getElementById('idTogetwallet');
  wallet.style.height = "99%"
  wallet.style.width = "99%"
+ wallet.style.setProperty("font-size", "75px", "important");
+ var ComeBackId =  document.getElementById('comeBackId');
+ ComeBackId.style.fontSize = "2vh"
+ IdTogetwallet.style.fontSize = "2vh"
  //wallet.style.marginTop = "1%"
- HistoryId.style.marginTop = "46%"
+ //HistoryId.style.marginTop = "46%"
  ImgNodata.style.height = "30vh"
  PhistoryId.style.height = "30vh"
   //document.getElementById('contentSignup').style.marginTop = "5vh"
   } else {
       // Code pour ordinateur de bureau
+      var ComeBackId =  document.getElementById('comeBackId');
+      var IdTogetwallet = document.getElementById('idTogetwallet');
+      ComeBackId.style.fontSize = "2vh"
+      IdTogetwallet.style.fontSize = "2vh"
   }
   //star function to comBack
   document.getElementById('comeBackId').addEventListener('click', function(){
@@ -97,14 +106,15 @@ const firebaseConfig = {
             const usergal = userArray[userId];
             const userLi = document.createElement("p");
             userLi.innerHTML = `${usergal.status ? `<p class="txn-list" style="cursor: pointer !important; border-radius: 5px !important;">
-            <strong>En cours</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>${usergal.time} 
+            <strong id="IDTRANSLATEWALLETU"></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>${usergal.time} 
             </strong><span class="debit-amount" style="color: green !important;">${usergal.gain} FCFA</span></p>`: 
             `<p class="txn-list" style="cursor: pointer !important; border-radius: 5px !important;">
-            <strong>Payé</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>${usergal.time} 
+            <strong id="IDTRANSLATEWALLETX"></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>${usergal.time} 
             </strong><span class="debit-amount" style="color:#FFB6C1 !important;">${usergal.gain} FCFA</span></p>`} `;
+            
             userListUl.appendChild(userLi);
+           
         }
-    
         // Ajoutez la liste à la balise p
         userListP.appendChild(userListUl);
 
@@ -122,8 +132,8 @@ const firebaseConfig = {
                         document.getElementById('preloader').style.display = "none"
                         Swal.fire({
                             icon: 'error',
-                            title: 'Désolé !',
-                            text: 'Votre transfert a échoué. Veuillez réessayer plus tard.',
+                            title: i18next.t('IDTRANSLATEWALLET'),
+                            text: i18next.t('IDTRANSLATEWALLETM'), 
                             allowOutsideClick: false,
                           }).then((result) => {
                             if (result.isConfirmed){
@@ -153,8 +163,8 @@ const firebaseConfig = {
                 //console.log("La mise à jour a réussi !");
                 Swal.fire({
                     icon: 'success',
-                    title: 'Félicitations !',
-                    text: 'Votre transfert a été effectué avec succès !',
+                    title: i18next.t('IDTRANSLATEWALLET1'),
+                    text: i18next.t('IDTRANSLATEWALLET2'),
                     allowOutsideClick: false,
                   }).then((result) => {
                     if (result.isConfirmed){
@@ -226,12 +236,16 @@ const firebaseConfig = {
                   });
 
             })
+            var texteTraduit3W = i18next.t("IDTRANSLATEWALLETU");
+            $('[id="IDTRANSLATEWALLETU"]').text(texteTraduit3W);
+            var texteTraduit3WX = i18next.t("IDTRANSLATEWALLETX");
+            $('[id="IDTRANSLATEWALLETX"]').text(texteTraduit3WX);
         } else {
-          console.log("Utilisateur introuvable.");
+          //console.log("Utilisateur introuvable.");
         }
       })
       .catch((error) => {
-        console.error("Erreur lors de la récupération de l'utilisateur :", error);
+        //console.error("Erreur lors de la récupération de l'utilisateur :", error);
       });
   }
   

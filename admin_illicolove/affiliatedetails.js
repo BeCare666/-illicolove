@@ -1,20 +1,20 @@
 window.onload = function(){
     if (/Mobi|Android/i.test(navigator.userAgent)) { 
-  // Code pour appareil mobile
-  //document.body.style.fontSize = "16px"; // Modifier la taille de la police pour appareils mobiles
- var wallet =  document.getElementById('wallet-containerId'); 
+var wallet =  document.getElementById('wallet-containerId'); 
  var HistoryId =  document.getElementById('historyId');
- var ImgNodata =  document.getElementById('imgNodata');
+ var ComeBackId =  document.getElementById('comeBackId');
  var PhistoryId =  document.getElementById('phistoryId');
  wallet.style.height = "99%"
  wallet.style.width = "99%"
- //wallet.style.marginTop = "1%"
- HistoryId.style.marginTop = "46%"
- ImgNodata.style.height = "30vh"
+ wallet.style.setProperty("font-size", "75px", "important");
+ //HistoryId.style.marginTop = "46%"
+ ComeBackId.style.fontSize = "5vh"
  PhistoryId.style.height = "30vh"
   //document.getElementById('contentSignup').style.marginTop = "5vh"
   } else {
       // Code pour ordinateur de bureau
+      var ComeBackId =  document.getElementById('comeBackId');
+      ComeBackId.style.fontSize = "2vh"
   }
   //star function to comBack
   document.getElementById('comeBackId').addEventListener('click', function(){
@@ -69,10 +69,10 @@ const firebaseConfig = {
         const userArray = Object.entries(UserGETALLWALLET).map(([key, value]) => ({ id: key, ...value }));
         //function to controle the paiement
         if(userArray.length == 0){
-            ImgNodata.style.display = "block"
+           // ImgNodata.style.display = "block"
             PhistoryId.style.display = "none"
           }else{
-            ImgNodata.style.display = "none"
+            //ImgNodata.style.display = "none"
             PhistoryId.style.display = "block"
           }
         // Trier le tableau en fonction de la valeur du champ "comptValidé"
@@ -93,7 +93,7 @@ const firebaseConfig = {
         for (const userId in userArray) {
             const usergal = userArray[userId];
             const userLi = document.createElement("p");
-            userLi.innerHTML = `${usergal.status ? `<p class="txn-list" id="${usergal.id}" style="cursor: pointer !important; border-radius: 5px !important;"><strong>En cours</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>${usergal.time} </strong><strong><span class="debit-amount" style="color: green !important;">${usergal.gain} FCFA</span></strong></p>`: `<p class="txn-list" style="border-radius: 5px !important;"><strong >Payé</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>${usergal.time} </strong><span class="debit-amount" style="color:#FFB6C1 !important;"><strong>${usergal.gain} FCFA</span></strong></p>`} `;
+            userLi.innerHTML = `${usergal.status ? `<p class="txn-list" id="${usergal.id}" style="cursor: pointer !important; border-radius: 5px !important; "><strong>En cours</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>${usergal.time} </strong><strong><span class="debit-amount" style="color: green !important;">${usergal.gain} FCFA</span></strong></p>`: `<p class="txn-list" style="border-radius: 5px !important;"><strong >Payé</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>${usergal.time} </strong><span class="debit-amount" style="color:#FFB6C1 !important;"><strong>${usergal.gain} FCFA</span></strong></p>`} `;
             userListUl.appendChild(userLi);
             //console.log(usergal.id)
             if(usergal.status){
@@ -158,14 +158,6 @@ const firebaseConfig = {
                          })
                         //alert("Erreur lors de la mise à jour : ");
                       });
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                
                 })
             }
         }

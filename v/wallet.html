@@ -12,6 +12,8 @@
     <!-- Link to import alert personnal -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
     <style>
         * {
           font-family: 'Montserrat-bold', sans-serif;
@@ -22,22 +24,22 @@
 <body>
   <div id="particles-js"></div>
 	<div class="wallet-container text-center" id="wallet-containerId">
-		<p class="page-title" ><i class="fa fa-align-left"></i>My E-wallet</p>
+		<p class="page-title" id="MYEWALLETID"></p>
 
 		<div class="amount-box text-center">
 			<img src="https://lh3.googleusercontent.com/ohLHGNvMvQjOcmRpL4rjS3YQlcpO0D_80jJpJ-QA7-fQln9p3n7BAnqu3mxQ6kI4Sw" alt="wallet">
-			<p>Total Balance</p>
+			<p id="MYEWALLETID1"></p>
 			<p class="amount" id="amount"></p>
 		</div>
 
 		<div class="btn-group text-center">
-            <button type="button" class="btn btn-outline-light" id="comeBackId">Retour</button>
-			<button type="button" class="btn btn-outline-light" id="idTogetwallet">Retirer vos gains</button>
+            <button type="button" class="btn btn-outline-light" id="comeBackId"></button>
+			<button type="button" class="btn btn-outline-light" id="idTogetwallet"></button>
             	
         </div>
 
 			<div class="txn-history"  id="historyId">
-				<p><b>History</b></p>
+				<p><b id="HISTORYISMY"></b></p>
                 <div id="imgNodata" style="display: none;">
                     <img src="assets/img/no-data-concept.jpg" alt="" style="height: 60vh; width: 100%; display: flex; align-items: center !important;">
                 </div>
@@ -54,5 +56,6 @@
 <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
 <!-- Ajoutez d'autres bibliothèques Firebase si nécessaire (auth, firestore, etc.) -->
+<script src="./../translate.js"></script>
 </body>
 </html>

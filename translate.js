@@ -695,7 +695,20 @@ $(document).ready(function() {
           "IDTRANSLATEUSERD33":`D'accord`,
           "IDTRANSLATEUSERD34":`Visiter son profil !`,
           "IDTRANSLATEUSERD35":`<i class="bi bi-eye" style="color: white;"></i> Cliquer pour afficher.`,
-          "texteIDTRANSLATEUSERD24YX": "en ligne"
+          "texteIDTRANSLATEUSERD24YX": "en ligne",
+          "myNameIDwallet":"Retirez vos commissions.",
+          "MYEWALLETID":`<i class="fa fa-align-left"></i>Mon portefeuille`,
+          "MYEWALLETID1":"Solde total", 
+          "comeBackId":"Retour",
+          "idTogetwallet":"Retirer vos gains",
+          "HISTORYISMY":"Historique",
+          "IDTRANSLATEWALLETU":"En cours",
+          "IDTRANSLATEWALLETX":"Payé",
+          "IDTRANSLATEWALLET":"Désolé !",
+          "IDTRANSLATEWALLETM":"Votre transfert a échoué. Veuillez réessayer plus tard.", 
+          "IDTRANSLATEWALLET1":"Félicitations !",
+          "IDTRANSLATEWALLET2":"Votre transfert a été effectué avec succès !",
+
 
           }
 
@@ -1305,7 +1318,19 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATEUSERD33":`Ok`,
           "IDTRANSLATEUSERD34":` Ver su perfil `,
           "IDTRANSLATEUSERD35":`<i class="bi bi-eye" style="color: white;"></i> Hacer clic para ver.`,
-          "texteIDTRANSLATEUSERD24YX": "en línea"
+          "texteIDTRANSLATEUSERD24YX": "en línea",
+          "myNameIDwallet":"Retira tus comisiones.",
+          "MYEWALLETID":`<i class="fa fa-align-left"></i>Mi monedero electrónico`,
+          "MYEWALLETID1":"Saldo total",
+          "comeBackId":"Volver",
+          "idTogetwallet":"Retirar tus ganancias",
+          "HISTORYISMY":"Historia",
+          "IDTRANSLATEWALLETU":"En proceso",
+          "IDTRANSLATEWALLETX":"Pagado",
+          "IDTRANSLATEWALLET":"¡Lo siento!",
+          "IDTRANSLATEWALLETM":"Su transferencia ha fallado. Por favor, inténtelo de nuevo más tarde.",
+          "IDTRANSLATEWALLET1":"¡Felicidades!",
+          "IDTRANSLATEWALLET2":"¡Su transferencia se realizó con éxito!",
 
           }
         },
@@ -1932,7 +1957,19 @@ The site and its various services may be interrupted or suspended by the Editor,
           "IDTRANSLATEUSERD33":`Okay`,
           "IDTRANSLATEUSERD34":` Visit the profile!`,
           "IDTRANSLATEUSERD35":`<i class="bi bi-eye" style="color: white;"></i> Click to display.`,
-          "texteIDTRANSLATEUSERD24YX": "online"
+          "texteIDTRANSLATEUSERD24YX": "online",
+          "myNameIDwallet":"Withdraw your commissions.",
+          "MYEWALLETID":`<i class="fa fa-align-left"></i>My E-wallet`,
+          "MYEWALLETID1":"Total Balance",
+          "comeBackId":"Return",
+          "idTogetwallet":"Withdraw your earnings",
+          "HISTORYISMY":"History",
+          "IDTRANSLATEWALLETU":"In progress",
+          "IDTRANSLATEWALLETX":"Paid",
+          "IDTRANSLATEWALLET":"Sorry!",
+          "IDTRANSLATEWALLETM":"Your transfer has failed. Please try again later.",
+          "IDTRANSLATEWALLET1":"Congratulations!",
+          "IDTRANSLATEWALLET2":"Your transfer was successful!",
 
         }
         }
@@ -2516,6 +2553,20 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATEUSERD58").text(i18next.t("IDTRANSLATEUSERD58"));
       $("#IDTRANSLATEUSERD59").text(i18next.t("IDTRANSLATEUSERD59"));
       $("#IDTRANSLATEUSERD60").text(i18next.t("IDTRANSLATEUSERD60"));
+
+      $("#myNameIDwallet").text(i18next.t("myNameIDwallet"));
+      $("#MYEWALLETID").html(i18next.t("MYEWALLETID"));
+      $("#MYEWALLETID1").text(i18next.t("MYEWALLETID1"));
+      $("#comeBackId").text(i18next.t("comeBackId"));
+      $("#idTogetwallet").text(i18next.t("idTogetwallet"));
+      $("#HISTORYISMY").text(i18next.t("HISTORYISMY"));
+      $("#IDTRANSLATEWALLETU").text(i18next.t("IDTRANSLATEWALLETU"));
+      $("#IDTRANSLATEWALLETX").text(i18next.t("IDTRANSLATEWALLETX")); 
+      $("#IDTRANSLATEWALLET").text(i18next.t("IDTRANSLATEWALLET"));
+      $("#IDTRANSLATEWALLETM").text(i18next.t("IDTRANSLATEWALLETM"));
+      $("#IDTRANSLATEWALLET1").text(i18next.t("IDTRANSLATEWALLET1"));
+      $("#IDTRANSLATEWALLET2").text(i18next.t("IDTRANSLATEWALLET2"));
+      
   }
 
     // Récupérer la langue sélectionnée à partir du stockage local

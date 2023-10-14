@@ -712,7 +712,7 @@ $(document).ready(function() {
           "IDTRANSLATEWALLET2":"Votre transfert a été effectué avec succès !",
           "TITLEWALLETID": "Portefeuille électronique",
           "IDTRANSLATEFOEMXX": "Veuillez ne saisir que des lettres, les chiffres ne sont pas autorisés dans ce champ.",
-
+          "linkInput": "Copier ici votre lien d'affiliation",
 
           }
 
@@ -1339,6 +1339,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATEWALLET2":"¡Su transferencia se realizó con éxito!",
           "TITLEWALLETID": "Monedero electrónico",
           "IDTRANSLATEFOEMXX":"Por favor, ingrese solo letras, los números no están permitidos.",
+          "linkInput": "Copia aquí tu enlace de afiliación.",
 
           }
         },
@@ -1982,6 +1983,7 @@ The site and its various services may be interrupted or suspended by the Editor,
           "IDTRANSLATEWALLET2":"Your transfer was successful!",
           "TITLEWALLETID": "E-wallet",
           "IDTRANSLATEFOEMXX":"Please enter only letters, numbers are not allowed.",
+          "linkInput": "Copy your affiliate link here.",
 
         }
         }
@@ -2495,6 +2497,7 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#myprofileidoccupations").attr("placeholder", i18next.t("IDTRANSLATEFORM98"));
       $("#TextiDy").text(i18next.t("IDTRANSLATEFORM99"));
       $("#myprofileidprécisions").attr("placeholder", i18next.t("IDTRANSLATEFORM100"));
+      $("#linkInput").attr("placeholder", i18next.t("linkInput"));
       $("#IDnext").val(i18next.t("IDTRANSLATEFORM101"));
       $("#firstPre").val(i18next.t("IDTRANSLATEFORM102"));
       $("#firstNext").val(i18next.t("IDTRANSLATEFORM101"));

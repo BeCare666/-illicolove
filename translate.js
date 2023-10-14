@@ -399,6 +399,7 @@ $(document).ready(function() {
           "IDTRANSLATEPROFIL7":`Mes données`,
           "myNameIDX":` Supprimer votre compte`,
           "myBtn":` Recharger mon compte`,
+          "myBtn2":` Recharger mon compte`,
           "IDTRANSLATEPROFIL9":`Aller à l'accueil`,
           "IDTRANSLATEPROFIL10":`Se déconnecter`,
           "CONSULTEZLESANNONCES":`CONSULTEZ LES ANNONCES`,
@@ -532,6 +533,7 @@ $(document).ready(function() {
           "IDTRANSLATEFORM9":`Ma Ville de résidence <i class="fa fa-star required"></i>`,
           "IDTRANSLATEFORM10":`Nom ou Pseudonyme <i class="fa fa-star required"></i>`,
           "IDTRANSLATEFORM11":`Mon âge <i class="fa fa-star required"></i>`,
+          "IDTRANSLATEFORM9PL":`Ma Ville de résidence `,
 
 
 
@@ -654,14 +656,14 @@ $(document).ready(function() {
           "IDTRANSLATEFORM110":`Votre formulaire est soumis au contrôle pour validation sous 24 heures <i class="fa fa-heart"></i>.`,
           "IDTRANSLATEFORM111":`Désolé`,
           "IDTRANSLATEFORM112":`Tous vos champs ne sont pas remplis.`,
-          "IDTRANSLATEUSERD1":`Mes coordonnées  <svg xmlns="http://www.w3.org/2000/svg" width="10.444" height="9.7"><defs><clipPath id="a"><path fill="none" d="M0 0h10.444v9.7H0z"/></clipPath></defs><g fill="none" stroke="#2a46cc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.438" clip-path="url(#a)"><path d="M.719 4.85h8.709M5.594 8.683L9.427 4.85M5.594 1.017L9.427 4.85"/></g></svg>`,
+          "IDTRANSLATEUSERD1":`Contactez-moi  <svg xmlns="http://www.w3.org/2000/svg" width="10.444" height="9.7"><defs><clipPath id="a"><path fill="none" d="M0 0h10.444v9.7H0z"/></clipPath></defs><g fill="none" stroke="#2a46cc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.438" clip-path="url(#a)"><path d="M.719 4.85h8.709M5.594 8.683L9.427 4.85M5.594 1.017L9.427 4.85"/></g></svg>`,
 
 
 
 
 
           "IDTRANSLATEUSERD2":`Pour me contacter`,
-          "IDTRANSLATEUSERD3":`<i class="bi bi-alexa"></i> Profil `,
+          "IDTRANSLATEUSERD3":`<i class="bi bi-alexa"></i>Mon Profil `,
           "IDTRANSLATEUSERD4":`Réponses`,
           "IDTRANSLATEUSERD5":`Ma Ville de résidence :`,
           "IDTRANSLATEUSERD6":`Mon nom ou pseudonyme:`,
@@ -709,6 +711,7 @@ $(document).ready(function() {
           "IDTRANSLATEWALLET1":"Félicitations !",
           "IDTRANSLATEWALLET2":"Votre transfert a été effectué avec succès !",
           "TITLEWALLETID": "Portefeuille électronique",
+          "IDTRANSLATEFOEMXX": "Veuillez ne saisir que des lettres, les chiffres ne sont pas autorisés dans ce champ.",
 
 
           }
@@ -717,24 +720,24 @@ $(document).ready(function() {
         es: {
           translation : {
             "IDTRANSLATE1": "Inicio",
-"IDTRANSLATE2": " Sobre ",
-"IDTRANSLATE3": `Cómo funciona? `,
- "IDTRANSLATE4": `Términos `, 
-"IDTRANSLATE5":"Condiciones Generales de Uso ",
-"IDTRANSLATE6":" Política de Privacidad ",
-"IDTRANSLATE7":"Contacto",
-"IDTRANSLATE8":" Registrarse ",
-"IDTRANSLATE9":" Conectarse ",
-"IDTRANSLATECONTACT1":"Contacto",
-"IDTRANSLATECONTACT2":" Contáctenos ",
-"IDTRANSLATECONTACT3":" Dirección ",
-"IDTRANSLATECONTACT4":' Teléfono ',
-"IDTRANSLATECONTACT5":"E-mails",
-"IDTRANSLATECONTACT6":" Redes sociales ",
-"IDTRANSLATETITLE":"Find your soul mate",
-"IDTRANSLATETITLEFORM":"Form",
+            "IDTRANSLATE2": " Sobre ",
+            "IDTRANSLATE3": `Cómo funciona? `,
+            "IDTRANSLATE4": `Términos `, 
+            "IDTRANSLATE5":"Condiciones Generales de Uso ",
+            "IDTRANSLATE6":" Política de Privacidad ",
+            "IDTRANSLATE7":"Contacto",
+            "IDTRANSLATE8":" Registrarse ",
+            "IDTRANSLATE9":" Conectarse ",
+            "IDTRANSLATECONTACT1":"Contacto",
+            "IDTRANSLATECONTACT2":" Contáctenos ",
+            "IDTRANSLATECONTACT3":" Dirección ",
+            "IDTRANSLATECONTACT4":' Teléfono ',
+            "IDTRANSLATECONTACT5":"E-mails",
+            "IDTRANSLATECONTACT6":" Redes sociales ",
+            "IDTRANSLATETITLE":"Find your soul mate",
+            "IDTRANSLATETITLEFORM":"Form",
 "IDTRANSLATE1INF1":`Su dirección de correo electrónico es recopilada y procesada por BAKO FAMILIA & COMPANY para mantenerle informado de las nuevas características de la página web o de actualización.
-            En aplicación de la ley 2017-20 sobre el código digital en la República de Benín, sobre la protección de los datos de carácter personal, puede darse de baja o ejercer sus derechos de acceso, de oposición, rectificación y supresión enviando un correo electrónico a info@illicolove.com`,
+          En aplicación de la ley 2017-20 sobre el código digital en la República de Benín, sobre la protección de los datos de carácter personal, puede darse de baja o ejercer sus derechos de acceso, de oposición, rectificación y supresión enviando un correo electrónico a info@illicolove.com`,
 
 "IDTRANSLATE10":"illicolove,",
 "IDTRANSLATE11":` Su plataforma de citas, para luchar contra el celibato y la soledad `,
@@ -788,8 +791,8 @@ $(document).ready(function() {
            "IDTRANSLATEX8":` Al hacer clic en el botón «Publicar su anuncio», puede elegir publicar en la página «África», en la página «Europa»; o en la página «Otros países del mundo»; según su lugar de residencia. Simplemente rellene el formulario de búsqueda que aparecerá.`,
            "toopenPUAID":` Más......`,
            "openPUA":`Le invitamos a publicar su anuncio en la página de su zona geográfica de residencia, sin embargo, puede consultar y ponerse en contacto con cualquier perfil de un anuncio de búsqueda fuera de su zona geográfica de residencia.
-             Por ejemplo, si usted vive en Francia, debe publicar su anuncio en la página
-             «Europa» y puede consultar y ponerse en contacto con anuncios en las páginas «África», «Europa» y «Otros países del mundo»
+            Por ejemplo, si usted vive en Francia, debe publicar su anuncio en la página
+            «Europa» y puede consultar y ponerse en contacto con anuncios en las páginas «África», «Europa» y «Otros países del mundo»
              Cuando termine de llenar y enviar su formulario de búsqueda, su
              anuncio aparecerá en un plazo máximo de 24 horas, si juzgamos su perfil
              fiable después de la revisión y posibles verificaciones. Nuestro equipo de revisión y validación puede escribirle en privado para asegurarse de la fiabilidad de su perfil. Es posible que se le solicite información sobre su identidad, voz o vídeo. En esta óptica la validación y la aparición de su anuncio en illicolove podrían superar las 24 horas. La celeridad para la publicación de su anuncio dependerá de usted mismo. Descartamos sistemáticamente cualquier anuncio fantasioso, irrealista y sobre todo los falsos perfiles sin previo aviso.
@@ -1027,6 +1030,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATEPROFIL7":` Mi información `,
           "myNameIDX":` Eliminar su cuenta `,
           "myBtn":` Recargar mi cuenta `,
+          "myBtn2":` Recargar mi cuenta `,
           "IDTRANSLATEPROFIL9":` Ir a la recepción `,
           "IDTRANSLATEPROFIL10":` Desconectar `,
           "CONSULTEZLESANNONCES":` CONSULTAR LOS ANUNCIOS `,
@@ -1155,6 +1159,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATEFORM9":` Mi ciudad de residencia <i class="fa fa-star required"></i>`,
           "IDTRANSLATEFORM10":` Nombre o alias <i class="fa fa-star required"></i>`,
           "IDTRANSLATEFORM11":` Mis años <i class="fa fa-star required"></i>`,
+          "IDTRANSLATEFORM9PL":`Mi ciudad de residencia `,
 
 
 
@@ -1261,7 +1266,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATEFORM102":` Anterior `,
           "IDTRANSLATEFORM103":` Enviar `,
 
-   "IDTRANSLATEFORM104":`<p ><em> Los datos personales recogidos en este formulario por <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong> serán tratadas exclusivamente para el buen desarrollo del servicio de encuentros amorosos que usted solicite. Los datos personales recopilados no se comparten con nadie sin su consentimiento.
+          "IDTRANSLATEFORM104":`<p ><em> Los datos personales recogidos en este formulario por <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong> serán tratadas exclusivamente para el buen desarrollo del servicio de encuentros amorosos que usted solicite. Los datos personales recopilados no se comparten con nadie sin su consentimiento.
           En aplicación de las disposiciones de la Ley 2017-20 relativa al Código Numérico en la República de Benin sobre la protección de los datos de carácter personal, el tratamiento de los datos recogidos ha sido declarado ante la APDP.</em> </p>
           <hr>
           <p class="mb-0"><em> De conformidad con la ley antes mencionada, puede ejercer sus derechos de acceso, oposición, rectificación y supresión ante <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong>.
@@ -1274,14 +1279,14 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATEFORM110":` Su formulario se somete a control para validación en 24 horas <i class="fa fa-heart"></i>.`,
           "IDTRANSLATEFORM111":` Siento `,
           "IDTRANSLATEFORM112":` No todos sus campos están llenos.`,
-          "IDTRANSLATEUSERD1":` Mi información de contacto:`,
+          "IDTRANSLATEUSERD1":` Contáctame`,
 
 
 
 
 
           "IDTRANSLATEUSERD2":` Para contactarme `,
-          "IDTRANSLATEUSERD3":` Perfil `,
+          "IDTRANSLATEUSERD3":`Mi Perfil `,
           "IDTRANSLATEUSERD4":` Respuestas `,
           "IDTRANSLATEUSERD5":` Mi ciudad de residencia`,
           "IDTRANSLATEUSERD6":` Mi nombre o seudónimo`,
@@ -1333,6 +1338,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATEWALLET1":"¡Felicidades!",
           "IDTRANSLATEWALLET2":"¡Su transferencia se realizó con éxito!",
           "TITLEWALLETID": "Monedero electrónico",
+          "IDTRANSLATEFOEMXX":"Por favor, ingrese solo letras, los números no están permitidos.",
 
           }
         },
@@ -1666,7 +1672,8 @@ The site and its various services may be interrupted or suspended by the Editor,
           "IDTRANSLATEPROFIL7":` My data `,
           "myNameIDX":` Delete your account `,
           "myBtn":` Recharge my account `,
-          "IDTRANSLATEPROFIL9":` Go to Homepage `,
+          "myBtn2":` Recharge my account `,
+          "IDTRANSLATEPROFIL9":` Go to Homepage`,
           "IDTRANSLATEPROFIL10":` Log out `,
           "CONSULTEZLESANNONCES":` CHECK ADS `,
           "IDTRANSLATEPROFIL11":` EDIT YOUR AD `, 
@@ -1794,6 +1801,7 @@ The site and its various services may be interrupted or suspended by the Editor,
           "IDTRANSLATEFORM9":` My home town <i class="fa fa-star required"></i>`,
           "IDTRANSLATEFORM10":` Name or pseudonym <i class="fa fa-star required"></i>`,
           "IDTRANSLATEFORM11":` My age <i class="fa fa-star required"></i>`,
+          "IDTRANSLATEFORM9PL":`My home town `,
 
 
 
@@ -1914,14 +1922,14 @@ The site and its various services may be interrupted or suspended by the Editor,
           "IDTRANSLATEFORM110":` Your form is submitted for validation within 24 hours <i class="fa fa-heart"></i>.`,
           "IDTRANSLATEFORM111":` Sorry `,
           "IDTRANSLATEFORM112":` Not all of your fields are filled.`,
-          "IDTRANSLATEUSERD1":` My contact information :`,
+          "IDTRANSLATEUSERD1":` Contact me`,
 
 
 
 
 
           "IDTRANSLATEUSERD2":` To contact me `,
-          "IDTRANSLATEUSERD3":` Profile `,
+          "IDTRANSLATEUSERD3":`My Profile `,
           "IDTRANSLATEUSERD4":` Answers `,
           "IDTRANSLATEUSERD5":` My hometown`,
           "IDTRANSLATEUSERD6":` My name or pseudonym`,
@@ -1973,6 +1981,7 @@ The site and its various services may be interrupted or suspended by the Editor,
           "IDTRANSLATEWALLET1":"Congratulations!",
           "IDTRANSLATEWALLET2":"Your transfer was successful!",
           "TITLEWALLETID": "E-wallet",
+          "IDTRANSLATEFOEMXX":"Please enter only letters, numbers are not allowed.",
 
         }
         }
@@ -2224,6 +2233,7 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATEPROFIL7").text(i18next.t("IDTRANSLATEPROFIL7"));
       $("#myNameIDX").text(i18next.t("myNameIDX")); 
       $("#myBtn").text(i18next.t("myBtn"));
+      $("#myBtn2").text(i18next.t("myBtn2"));
       $("#CONSULTEZLESANNONCES").text(i18next.t("CONSULTEZLESANNONCES"));
       $("#IDTRANSLATEPROFIL9").text(i18next.t("IDTRANSLATEPROFIL9"));
       $("#IDTRANSLATEPROFIL10").text(i18next.t("IDTRANSLATEPROFIL10")); 
@@ -2368,7 +2378,7 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATEFORM7").text(i18next.t("IDTRANSLATEFORM7"));
       $("#IDTRANSLATEFORM8").html(i18next.t("IDTRANSLATEFORM8")); 
       $("#IDTRANSLATEFORM9").html(i18next.t("IDTRANSLATEFORM9"));
-      $("#myprofileidMaVille").attr("placeholder", i18next.t("IDTRANSLATEFORM9X"));
+      $("#myprofileidMaVille").attr("placeholder", i18next.t("IDTRANSLATEFORM9PL"));
       $("#IDTRANSLATEFORM10").html(i18next.t("IDTRANSLATEFORM10"));
       $("#myprofileidPrénoms").attr("placeholder", i18next.t("IDTRANSLATEFORM10X"));
       $("#PageId").html(i18next.t("IDTRANSLATEFORM11"));
@@ -2570,6 +2580,7 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATEWALLET1").text(i18next.t("IDTRANSLATEWALLET1"));
       $("#IDTRANSLATEWALLET2").text(i18next.t("IDTRANSLATEWALLET2"));
       $("#TITLEWALLETID").text(i18next.t("TITLEWALLETID"));
+      $("#IDTRANSLATEFOEMXX").text(i18next.t("IDTRANSLATEFOEMXX"));
       
   }
 

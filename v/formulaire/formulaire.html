@@ -56,14 +56,14 @@
                         </ul>
                         <!-- fieldsets -->
                         <fieldset>
-                            <h2 class="fs-title" id="IDTRANSLATEFORM6"></h2>
+                            <h2 class="fs-title" id="IDTRANSLATEFORM6" ></h2>
                             <h3 class="fs-subtitle" id="IDTRANSLATEFORM7"></h3>
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM8"></p>
                             <select type="text" id="mycountry" name="lname" placeholder="Ma nationalité" required></select>
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM9"></p>
-                            <input type="text" id="myprofileidMaVille" name="name" required/>
+                            <input type="text" id="myprofileidMaVille" name="name" required oninput="validerSaisie(this)"/>
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM10"></p>
-                            <input type="text" id="myprofileidPrénoms" name="lname" required/>
+                            <input type="text" id="myprofileidPrénoms" name="lname" required oninput="validerSaisie(this)"/>
                             <p style="text-align: start !important;" id="PageId"></p>
                             <p id="errorMessage" style="text-align: start !important; display: none; color: red;"></p>
                                 <select type="text" id="myprofileidâge"  name="twitter" placeholder="Mon âge " required>
@@ -130,10 +130,10 @@
                                <option value="" selected></option>
                             </select>
                             <input type="text" id="myprofileidtéléphone" name="facebook" onblur="validatePhoneNumber()"
-                            placeholder="téléphone" pattern="[^+]*" required/>
+                            placeholder="téléphone" pattern="[^+]*" required />
                             </div>
                                 <p style="text-align: start !important;" id="IDTRANSLATEFORM46"></p>
-                                <input type="text" id="myprofileidtravail" name="text" required/>
+                                <input type="text" id="myprofileidtravail" name="text" required oninput="validerSaisie(this)"/>
 
                             <input type="button" name="previous" class="previous action-button-previous" id="firstPre"/>
                             <input type="button" name="next" class="next action-button" id="firstNext"/>
@@ -226,9 +226,9 @@
                             <textarea type="text" id="myprofileidpréférences" maxlength="125" minlength="0"
                                 name="email" placeholder="Aspect physique"  oninput="countCharacters()"></textarea>
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM95"></p>
-                            <input type="text" id="myprofileidSavilleID" name="pass"  required/>
+                            <input type="text" id="myprofileidSavilleID" name="pass"  required oninput="validerSaisie(this)"/>
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM97"></p>
-                            <input type="text" id="myprofileidoccupations" name="pass" required/>
+                            <input type="text" id="myprofileidoccupations" name="pass" required oninput="validerSaisie(this)"/>
                              
                             <p style="text-align: start !important;" id="TextiDy"></p>
                               <!--- <p style="text-align: start !important; display: none; color: red;" id="TextCounptsmsy">
@@ -828,7 +828,11 @@
                 TRAVAILDEDEPROFILQUEJECHERCHE : myprofileidoccupations.value,
                 AUTRESPRECISIONSDEPROFILQUEJECHERCHE : myprofileidprécisions.value,
                 VALIDERMONCOMPTE:false,
-                COMMISSION : "0"
+                COMMISSION : "0",
+                GETALLWALLET : "",
+                STATUSAFILIATE : false,
+                TAKEMYIDAFILIAT : "",
+                AMOUNTALREDYPAID : "0"
             })
                 .then(() => {
                 //window.location.reload();
@@ -844,14 +848,17 @@
                     //document.getElementById('myFormulaireId').style.display = "none"
                     document.getElementById('modalID').style.display = "none"  
                 },10000)
-
-                setTimeout(()=>{
-                const IDAFILIATEID = localStorage.getItem("IDAFILIATE");
-                if(IDAFILIATEID){
+                const IDAFILIATEID = localStorage.getItem("IDAFILIATE"); 
+                if(!IDAFILIATEID){
+                    window.location.replace("./../profil.html");
+                }else{
+                    setTimeout(()=>{
+                const IDAFILIATEID = localStorage.getItem("IDAFILIATE"); 
                 var dbrefx = ref(db);
                 get(child(dbrefx, "utilisateurs/" + IDAFILIATEID))
                     .then((snapshot) => {
                     if (snapshot.exists()) {
+                        alert(IDAFILIATEID)
                         var COMMISSIONVALUE = snapshot.val().COMMISSION
                         var Userfullename = snapshot.val().fullname
                         var UserEmail =  snapshot.val().email
@@ -860,7 +867,7 @@
                             var addCommissionConvertis = parseFloat(addCommission)
                             var myCommissionAdd = myComptaConvertis + addCommissionConvertis
                             update(ref(db, "utilisateurs/" + IDAFILIATEID), {
-                                COMMISSION : myCommissionAdd, 
+                                COMMISSION : myCommissionAdd,
                                 STATUSAFILIATE : true
                         }).then(() => { 
                         // statr envoi de mail de validation
@@ -942,10 +949,9 @@
                     .catch((error) => {
                     alert("il y a une ERROR " + error);
                     });
-                    }{
-                        window.location.replace("./../profil.html");
-                    }
+                   
                 }, 10000)
+                }
                 var texteTraduitprofil1X = i18next.t("IDTRANSLATEFORM109");
                 $('[id="IDTRANSLATEFORM109"]').text(texteTraduitprofil1X);  
                 var texteTraduitprofil1X0 = i18next.t("IDTRANSLATEFORM110");

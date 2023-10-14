@@ -313,6 +313,29 @@
             document.getElementById('getAllOption').value = allOptions;
         };
 
+
+        //function to delete number of input
+
+        function validerSaisie(input) {
+          const valeurSaisie = input.value;
+          const regexLettres = /^[A-Za-z]+$/;
+    
+          if (!regexLettres.test(valeurSaisie)) {
+            //alert("ne fait pas ça")
+            // Effacez la saisie incorrecte
+            input.value = input.value.replace(/[^A-Za-z]/g, '');
+            Swal.fire({
+              position: 'top-end',
+              icon: 'error',
+              title: i18next.t('IDTRANSLATEFOEMXX'),
+              showConfirmButton: false,
+              timer: 1800
+            })
+          } else {
+            //alert("fait pas ça")
+          }
+        }
+
       
 {/***
 

@@ -194,12 +194,13 @@
 
                       
             </div>
-            </a>    
+            </a>
+            <strong style="font-size: 12px !important; color: #f38e9d; display: none;"><strong style="opacity: 0;">fghjkld</strong> Copier ici votre lien d'affiliation.</strong>
             <div class="transaction" id="affiliateID" style="cursor: pointer !important;">
               <div class="t-icon-container"><i class="bi bi-link-45deg" style="color: #f38e9d; font-size: 26px !important;"></i></div>
               <div id="myNameIDXA" class="t-details" style="width: 29vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
                 <form data-copy=true>
-                  <input id="linkInput" type="text" data-click-select-all style="border: none !important;"/>
+                  <input id="linkInput" type="text" data-click-select-all style="border: none !important; cursor: pointer;"/>
                 </form>
               </div>           
             </div>
@@ -219,9 +220,11 @@
           <div style="background-color: #40E0D0 !important; height: 11vh !important; width: 11vh !important; text-align: center;"
            class="menu-btn rotate" id="myBtn" data-toggle="modal" data-target="#exampleModalCenter" >
             <!---<i class="bi bi-plus-circle"></i>-->
-            
-          
           </div>
+          <div style="display: none; background-color: #40E0D0 !important; height: 11vh !important; width: 11vh !important; text-align: center; padding: 3px !important;"
+          class="menu-btn rotate" id="myBtn2">
+           <!---<i class="bi bi-plus-circle"></i>-->
+         </div>
           <!--<span style="margin-top: 12px !important;"><i class="bi bi-pencil-square"></i></span> 
           <i class="bi bi-sign-turn-right-fill"></i>-->
           <span><i class="fal fa-sticky-note"></i> </span>
@@ -539,9 +542,10 @@ style="background-color: #f38e9d !important;"
        //function to generate affilition link
         const linkInput = document.getElementById('linkInput');
         const copyButton = document.getElementById('affiliateID');
-        linkInput.value = `https://becare666.github.io/-illicolove/?id=${UserConnectuser}`
+        linkInput.value = `Copier ici votre lien d'affiliation.`
         // function to hide border when you click
         copyButton.addEventListener('click', () => {
+        linkInput.value = `https://becare666.github.io/-illicolove/?id=${UserConnectuser}`
         linkInput.select(); // Sélectionne le texte dans l'input
         document.execCommand('copy'); // Copie le texte sélectionné dans le presse-papiers
         });
@@ -743,6 +747,9 @@ style="background-color: #f38e9d !important;"
       var statusmyCompt = snapshot.val().IDREGION
       if(snapshot.val().isDefaultAccount){
       var paiementBtn = document.getElementById('myBtn');
+      var paiementBtnV = document.getElementById('myBtn2');
+      paiementBtnV.style.display = "block"
+      paiementBtn.style.display = "none"
       var CONSULTEZLESANNONCES = document.getElementById('CONSULTEZLESANNONCES');
       function handleMouseEnter() {
       Swal.fire({
@@ -763,8 +770,10 @@ style="background-color: #f38e9d !important;"
       })    
       }
     CONSULTEZLESANNONCES.addEventListener("mouseenter", handleMouseEnterz); */}
-      paiementBtn.addEventListener("mouseenter", handleMouseEnter);   
+    paiementBtnV.addEventListener("click", handleMouseEnter);   
       }else{
+      paiementBtnV.style.display = "none"
+      paiementBtn.style.display = "block"
       // function to add unity for kkiapay
       var payYourUnity =  document.getElementById('payYourUnity');
       var payYourUnitybtn =  document.getElementById('payYourUnitybtn');

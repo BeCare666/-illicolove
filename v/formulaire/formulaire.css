@@ -570,3 +570,11 @@
 .form-container input[type="text"] {
     margin-right: 10px;
 }
+#IdAlertSms * {
+  font-size: 13px !important;
+  text-align: center !important;
+}
+
+.fs-title{
+  display: none !important;
+}

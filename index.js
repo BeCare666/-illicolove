@@ -3,6 +3,7 @@ window.onload = function(){
   const urlParams = new URLSearchParams(window.location.search);
   const UserAffiliateID = urlParams.get('id');
   if(UserAffiliateID){
+    
     localStorage.setItem("IDAFILIATE", UserAffiliateID)
     localStorage.setItem("IDAFILIATETWO", UserAffiliateID)
     //alert('Oui')

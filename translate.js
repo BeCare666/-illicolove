@@ -708,6 +708,7 @@ $(document).ready(function() {
           "IDTRANSLATEWALLETM":"Votre transfert a échoué. Veuillez réessayer plus tard.", 
           "IDTRANSLATEWALLET1":"Félicitations !",
           "IDTRANSLATEWALLET2":"Votre transfert a été effectué avec succès !",
+          "TITLEWALLETID": "Portefeuille électronique",
 
 
           }
@@ -1331,6 +1332,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATEWALLETM":"Su transferencia ha fallado. Por favor, inténtelo de nuevo más tarde.",
           "IDTRANSLATEWALLET1":"¡Felicidades!",
           "IDTRANSLATEWALLET2":"¡Su transferencia se realizó con éxito!",
+          "TITLEWALLETID": "Monedero electrónico",
 
           }
         },
@@ -1970,6 +1972,7 @@ The site and its various services may be interrupted or suspended by the Editor,
           "IDTRANSLATEWALLETM":"Your transfer has failed. Please try again later.",
           "IDTRANSLATEWALLET1":"Congratulations!",
           "IDTRANSLATEWALLET2":"Your transfer was successful!",
+          "TITLEWALLETID": "E-wallet",
 
         }
         }
@@ -2566,6 +2569,7 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATEWALLETM").text(i18next.t("IDTRANSLATEWALLETM"));
       $("#IDTRANSLATEWALLET1").text(i18next.t("IDTRANSLATEWALLET1"));
       $("#IDTRANSLATEWALLET2").text(i18next.t("IDTRANSLATEWALLET2"));
+      $("#TITLEWALLETID").text(i18next.t("TITLEWALLETID"));
       
   }
 

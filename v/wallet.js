@@ -7,8 +7,8 @@ window.onload = function(){
  var ImgNodata =  document.getElementById('imgNodata');
  var PhistoryId =  document.getElementById('phistoryId');
  var IdTogetwallet = document.getElementById('idTogetwallet');
- wallet.style.height = "99%"
- wallet.style.width = "99%"
+ wallet.style.height = "100%"
+ wallet.style.width = "100%"
  wallet.style.setProperty("font-size", "75px", "important");
  var ComeBackId =  document.getElementById('comeBackId');
  ComeBackId.style.fontSize = "2vh"
@@ -16,7 +16,7 @@ window.onload = function(){
  //wallet.style.marginTop = "1%"
  //HistoryId.style.marginTop = "46%"
  ImgNodata.style.height = "30vh"
- PhistoryId.style.height = "30vh"
+ PhistoryId.style.height = "55vh"
   //document.getElementById('contentSignup').style.marginTop = "5vh"
   } else {
       // Code pour ordinateur de bureau

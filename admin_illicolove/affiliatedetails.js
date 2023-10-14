@@ -4,21 +4,21 @@ var wallet =  document.getElementById('wallet-containerId');
  var HistoryId =  document.getElementById('historyId');
  var ComeBackId =  document.getElementById('comeBackId');
  var PhistoryId =  document.getElementById('phistoryId');
- wallet.style.height = "99%"
- wallet.style.width = "99%"
+ wallet.style.height = "100%"
+ wallet.style.width = "100%"
  wallet.style.setProperty("font-size", "75px", "important");
  //HistoryId.style.marginTop = "46%"
- ComeBackId.style.fontSize = "5vh"
- PhistoryId.style.height = "30vh"
+ ComeBackId.style.fontSize = "2vh"
+ PhistoryId.style.height = "55vh"
   //document.getElementById('contentSignup').style.marginTop = "5vh"
   } else {
-      // Code pour ordinateur de bureau
-      var ComeBackId =  document.getElementById('comeBackId');
-      ComeBackId.style.fontSize = "2vh"
+// Code pour ordinateur de bureau
+var ComeBackId =  document.getElementById('comeBackId');
+ComeBackId.style.fontSize = "2vh"
   }
   //star function to comBack
   document.getElementById('comeBackId').addEventListener('click', function(){
-    window.location.href = "profil.html"
+    window.location.href = "tableaffiliate.html"
   })
   // end function tocomeBack
   // Configuration Firebase
@@ -32,7 +32,7 @@ const firebaseConfig = {
     messagingSenderId: "687063035754",
     appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
   };
-  const UserConnectuser = localStorage.getItem("unserconnect");
+  const UserConnectuser = localStorage.getItem("userIdTake");
   // Initialisation de Firebase
   firebase.initializeApp(firebaseConfig);
   
@@ -67,12 +67,14 @@ const firebaseConfig = {
           //console.log("Utilisateur récupéré :", UserGETALLWALLET);
         // Convertir l'objet d'utilisateurs en un tableau d'objets
         const userArray = Object.entries(UserGETALLWALLET).map(([key, value]) => ({ id: key, ...value }));
-        //function to controle the paiement
+        //function to controle the 
+        //console.log(userArray.length)
         if(userArray.length == 0){
-           // ImgNodata.style.display = "block"
+          //alert('ça marche bien')
+           ImgNodata.style.display = "block !important";
             PhistoryId.style.display = "none"
           }else{
-            //ImgNodata.style.display = "none"
+            ImgNodata.style.display = "none"
             PhistoryId.style.display = "block"
           }
         // Trier le tableau en fonction de la valeur du champ "comptValidé"
@@ -127,7 +129,7 @@ const firebaseConfig = {
                     
                     // Usage : Mettez à jour l'enregistrement pour un utilisateur spécifique
                     var userAfiId = usergal.id
-                    const UserConnectuser = localStorage.getItem("unserconnect");// Remplacez par l'ID de l'utilisateur
+                    const UserConnectuser = localStorage.getItem("userIdTake");// Remplacez par l'ID de l'utilisateur
                     const nouveauStatus = false; // Remplacez par le nouveau statut
                     updateGainForUser(UserConnectuser, userAfiId, nouveauStatus, dateFormatee)
                     .then(() => {

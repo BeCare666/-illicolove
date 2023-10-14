@@ -22,7 +22,7 @@ background-size: cover;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  position: fixed;
+  position: absolute;
   left: 0;
   width: 100%;
 }

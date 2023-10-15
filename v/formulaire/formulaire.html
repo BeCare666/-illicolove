@@ -858,7 +858,7 @@
                 get(child(dbrefx, "utilisateurs/" + IDAFILIATEID))
                     .then((snapshot) => {
                     if (snapshot.exists()) {
-                        alert(IDAFILIATEID)
+                        //alert(IDAFILIATEID)
                         var COMMISSIONVALUE = snapshot.val().COMMISSION
                         var Userfullename = snapshot.val().fullname
                         var UserEmail =  snapshot.val().email

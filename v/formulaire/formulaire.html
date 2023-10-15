@@ -866,6 +866,7 @@
                             var myComptaConvertis = parseFloat(COMMISSIONVALUE);
                             var addCommissionConvertis = parseFloat(addCommission)
                             var myCommissionAdd = myComptaConvertis + addCommissionConvertis
+                            //var TheStatusAffiliate = true
                             update(ref(db, "utilisateurs/" + IDAFILIATEID), {
                                 COMMISSION : myCommissionAdd,
                                 STATUSAFILIATE : true

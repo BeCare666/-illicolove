@@ -31,6 +31,7 @@
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
     <link href="./../../assets/img/logoilli.jpeg" rel="icon">
+
     <style>
     * {
       font-family: 'Montserrat-bold', sans-serif;
@@ -60,12 +61,14 @@
                             <h3 class="fs-subtitle" id="IDTRANSLATEFORM7"></h3>
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM8"></p>
                             <select type="text" id="mycountry" name="lname" placeholder="Ma nationalité" required></select>
+                            <input type="text" id="selectID1" name="lname" style="display: none; border-color: green;"/>
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM9"></p>
                             <input type="text" id="myprofileidMaVille" name="name" required oninput="validerSaisie(this)"/>
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM10"></p>
                             <input type="text" id="myprofileidPrénoms" name="lname" required oninput="validerSaisie(this)"/>
                             <p style="text-align: start !important;" id="PageId"></p>
                             <p id="errorMessage" style="text-align: start !important; display: none; color: red;"></p>
+                            <input type="text" id="selectID2" name="lname" style="display: none; border-color: green;"/>
                                 <select type="text" id="myprofileidâge"  name="twitter" placeholder="Mon âge " required>
                     
                                     <option value="18-30" >18-30</option>
@@ -80,6 +83,7 @@
 
 
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM13"></p>
+                            <input type="text" id="selectID3" name="lname" style="display: none; border-color: green;"/>
                             <select id="choices-multiple-remove-buttonsexe" required>
                                 <option   selected id="IDTRANSLATEFORM14"></option>
                                 <option   id="IDTRANSLATEFORM15"></option>
@@ -112,6 +116,7 @@
                             <h3 class="fs-subtitle" id="IDTRANSLATEFORM37"></h3>
 
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM38"></p>
+                            <input type="text" id="selectID4" name="lname" style="display: none; border-color: green;"/>
                             <select id="choices-multiple-remove-button" required>
                                 <option  selected id="IDTRANSLATEFORM39"></option>
                                 <option  id="IDTRANSLATEFORM40"></option>
@@ -120,12 +125,14 @@
                             </select>
 
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM43"></p>
+                            <input type="text" id="selectID5" name="lname" style="display: none; border-color: green;"/>
                             <select type="text" id="myprofileidnationèèalité" name="lname" placeholder="Ma nationalité" required></select>
                             
                             <p style="text-align: start !important;" id="PphoneId"></p>
                             <p id="errorSmsphone" style="text-align: start !important; display: none; color: red;">
                             </p>
                             <div class="form-container">
+                           
                             <select id="countrySelect">
                                <option value="" selected></option>
                             </select>
@@ -143,6 +150,7 @@
                             <h3 class="fs-subtitle" id="IDTRANSLATEFORM49"></h3>
 
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM50"></p>
+                            <input type="text" id="selectID6" name="lname" style="display: none; border-color: green;"/>
                             <select id="choices-multiple-remove-buttonrencontre" required>
                                 <option   id="IDTRANSLATEFORM51"></option>
                                 <option   id="IDTRANSLATEFORM52"></option>
@@ -163,6 +171,7 @@
                             <h2 class="fs-title" id="IDTRANSLATEFORM57"></h2>
                             <h3 class="fs-subtitle" id="IDTRANSLATEFORM58"></h3>
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM59"></p>
+                            <input type="text" id="selectID7" name="lname" style="display: none; border-color: green;"/>
                             <select id="choices-multiple-remove-buttonSonsexe"
                                 required>
                                 <option   selected id="IDTRANSLATEFORM60"></option>
@@ -190,6 +199,7 @@
                             </select>
                             <p style="text-align: start !important;" id="Pyhold"></p>
                             <p id="errorSmsyour" style="text-align: start !important; display: none; color: red;">Veuillez saisir uniquement des chiffres.<i class="fa fa-star required"></i></p>
+                            <input type="text" id="selectID8" name="lname" style="display: none; border-color: green;"/>
                             <select type="text" id="myprofileidtrancheâge"  name="facebook" placeholder="Sa tranche d'âge" pattern="[0-9]+" required>
                                 <option value="18-30" selected>18-30</option>
                                 <option value="31-40" >31-40</option>
@@ -200,6 +210,7 @@
                                 <option value="80+" >80+</option>
                             </select>
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM83"></p>
+                            <input type="text" id="selectID10" name="lname" style="display: none; border-color: green;"/>
                             <select id="buttonmatrimonialeID" required>
                                 <option  selected id="IDTRANSLATEFORM84"></option>
                                 <option  id="IDTRANSLATEFORM85"></option>
@@ -209,6 +220,7 @@
                             <p style="text-align: start !important;" id="hecountries"></p>
                             <p style="text-align: start !important; display: none;" id="hecountriesId"></p>
                             <div style="display: flex;">
+                                <input type="text" id="selectID9" name="lname" style="display: none; border-color: green;"/>
                             <select type="text" style="border-color: red !important;" id="myprofileidSonpays" name="gplus" required>
                             </select>
                             <input type="text" id="getAllOption" style="display: none;">
@@ -264,7 +276,7 @@
         </section>
         
         <script src="formulaire.js"></script>
-        <div id="preloader"></div>
+        <div id="preloader"></div> 
         <div style="font-size: 7px !important; margin-bottom: 0 !important;" class="alert alert-success" role="alert"   id="IdAlertSms">
             
         </div>
@@ -389,6 +401,189 @@
                         document.getElementById("myprofileidSonpays").dispatchEvent(new Event("change"));
                     break;
                     }
+                }
+                // function to hide selecteID1 input
+                if(snapshot.val().MYCOUNTRY){
+                    var selectID1 = document.getElementById('selectID1');
+                    var mycountry = document.getElementById('mycountry');
+                    mycountry.style.display = "none"
+                    selectID1.style.display = "block"
+                    selectID1.value = snapshot.val().MYCOUNTRY
+                    selectID1.addEventListener('click', function(){
+                        mycountry.style.display = "block"
+                        selectID1.style.display = "none"
+                    })
+
+                }else{
+                    var selectID1 = document.getElementById('selectID1');
+                    var mycountry = document.getElementById('mycountry');
+                    mycountry.style.display = "block"
+                    selectID1.style.display = "none" 
+                }
+
+                    // function to hide selecteID2 input
+                    if(snapshot.val().MONAGE){
+                    var selectID2 = document.getElementById('selectID2');
+                    var myprofilholde = document.getElementById('myprofileidâge');
+                    myprofilholde.style.display = "none"
+                    selectID2.style.display = "block"
+                    selectID2.value = snapshot.val().MONAGE
+                    selectID2.addEventListener('click', function(){
+                        myprofilholde.style.display = "block"
+                        selectID2.style.display = "none"
+                    })
+
+                }else{
+                    var selectID2 = document.getElementById('selectID2');
+                    var myprofilholde = document.getElementById('myprofileidâge');
+                    myprofilholde.style.display = "block"
+                    selectID2.style.display = "none" 
+                }
+                    // function to hide selecteID3 input
+                    if(snapshot.val().MONSEXE){
+                    var selectID3 = document.getElementById('selectID3');
+                    var SEXE = document.getElementById('choices-multiple-remove-buttonsexe');
+                    SEXE.style.display = "none"
+                    selectID3.style.display = "block"
+                    selectID3.value = snapshot.val().MONSEXE
+                    selectID3.addEventListener('click', function(){
+                        SEXE.style.display = "block"
+                        selectID3.style.display = "none"
+                    })
+
+                }else{
+                    var selectID3 = document.getElementById('selectID3');
+                    var SEXE = document.getElementById('choices-multiple-remove-buttonsexe');
+                    SEXE.style.display = "block"
+                    selectID3.style.display = "none" 
+                }
+                    // function to hide selecteID4 input
+                    if(snapshot.val().MASITUATIONMATRIMONIALE){
+                    var selectID4 = document.getElementById('selectID4');
+                    var MASM = document.getElementById('choices-multiple-remove-button');
+                    MASM.style.display = "none"
+                    selectID4.style.display = "block"
+                    selectID4.value = snapshot.val().MASITUATIONMATRIMONIALE
+                    selectID4.addEventListener('click', function(){
+                        MASM.style.display = "block"
+                        selectID4.style.display = "none"
+                    })
+
+                }else{
+                    var selectID4 = document.getElementById('selectID4');
+                    var MASM = document.getElementById('choices-multiple-remove-button');
+                    MASM.style.display = "block"
+                    selectID4.style.display = "none" 
+                }
+                    // function to hide selecteID5 input
+                    if(snapshot.val().MANATIONNALITE){
+                    var selectID5 = document.getElementById('selectID5');
+                    var MYNATIONALITY = document.getElementById('myprofileidnationèèalité');
+                    MYNATIONALITY.style.display = "none"
+                    selectID5.style.display = "block"
+                    selectID5.value = snapshot.val().MANATIONNALITE
+                    selectID5.addEventListener('click', function(){
+                        MYNATIONALITY.style.display = "block"
+                        selectID5.style.display = "none"
+                    })
+
+                }else{
+                    var selectID5 = document.getElementById('selectID5');
+                    var MYNATIONALITY = document.getElementById('myprofileidnationèèalité');
+                    MYNATIONALITY.style.display = "block"
+                    selectID5.style.display = "none" 
+                }
+    
+                    // function to hide selecteID7 input
+                    if(snapshot.val().JEVEUXUNERENCONTRE){
+                    var selectID6 = document.getElementById('selectID6');
+                    var JEVEUXRENCONTRE = document.getElementById('choices-multiple-remove-buttonrencontre');
+                    JEVEUXRENCONTRE.style.display = "none"
+                    selectID6.style.display = "block"
+                    selectID6.value = snapshot.val().JEVEUXUNERENCONTRE
+                    selectID6.addEventListener('click', function(){
+                        JEVEUXRENCONTRE.style.display = "block"
+                        selectID6.style.display = "none"
+                    })
+
+                }else{
+                    var selectID6 = document.getElementById('selectID6');
+                    var JEVEUXRENCONTRE = document.getElementById('choices-multiple-remove-buttonrencontre');
+                    JEVEUXRENCONTRE.style.display = "block"
+                    selectID6.style.display = "none" 
+                }
+                    // function to hide selecteID7 input
+                    if(snapshot.val().SEXEDEPROFILQUEJECHERCHE){
+                    var selectID7 = document.getElementById('selectID7');
+                    var SEXEDEPROFILQUEJER = document.getElementById('choices-multiple-remove-buttonSonsexe');
+                    SEXEDEPROFILQUEJER.style.display = "none"
+                    selectID7.style.display = "block"
+                    selectID7.value = snapshot.val().SEXEDEPROFILQUEJECHERCHE
+                    selectID7.addEventListener('click', function(){
+                        SEXEDEPROFILQUEJER.style.display = "block"
+                        selectID7.style.display = "none"
+                    })
+
+                }else{
+                    var selectID7 = document.getElementById('selectID7');
+                    var SEXEDEPROFILQUEJER = document.getElementById('choices-multiple-remove-buttonSonsexe');
+                    SEXEDEPROFILQUEJER.style.display = "block"
+                    selectID7.style.display = "none" 
+                }
+                   // function to hide selecteID8 input
+                    if(snapshot.val().SONAGEDEPROFILQUEJECHERCHE){
+                    var selectID8 = document.getElementById('selectID8');
+                    var MYTRANCEHOLDE = document.getElementById('myprofileidtrancheâge');
+                    MYTRANCEHOLDE.style.display = "none"
+                    selectID8.style.display = "block"
+                    selectID8.value = snapshot.val().SONAGEDEPROFILQUEJECHERCHE
+                    selectID8.addEventListener('click', function(){
+                        MYTRANCEHOLDE.style.display = "block"
+                        selectID8.style.display = "none"
+                    })
+
+                }else{
+                    var selectID8 = document.getElementById('selectID8');
+                    var MYTRANCEHOLDE = document.getElementById('myprofileidtrancheâge');
+                    MYTRANCEHOLDE.style.display = "block"
+                    selectID8.style.display = "none" 
+                }
+                    // function to hide selecteID9 input
+                    if(snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE){
+                    var selectID9 = document.getElementById('selectID9');
+                    var MYcountryVAL = document.getElementById('myprofileidSonpays');
+                    MYcountryVAL.style.display = "none"
+                    selectID9.style.display = "block"
+                    selectID9.value = snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE
+                    selectID9.addEventListener('click', function(){
+                        MYcountryVAL.style.display = "block"
+                        selectID9.style.display = "none"
+                    })
+
+                }else{
+                    var selectID9 = document.getElementById('selectID9');
+                    var MYcountryVAL = document.getElementById('myprofileidSonpays');
+                    MYcountryVAL.style.display = "block"
+                    selectID9.style.display = "none" 
+                }
+
+                // function to hide selecteID10 input
+                if(snapshot.val().SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE){
+                    var selectID10 = document.getElementById('selectID10');
+                    var SMDEPQUEJECHE = document.getElementById('buttonmatrimonialeID');
+                    SMDEPQUEJECHE.style.display = "none"
+                    selectID10.style.display = "block"
+                    selectID10.value = snapshot.val().SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE
+                    selectID10.addEventListener('click', function(){
+                        SMDEPQUEJECHE.style.display = "block"
+                        selectID10.style.display = "none"
+                    })
+
+                }else{
+                    var selectID10 = document.getElementById('selectID10');
+                    var SMDEPQUEJECHE = document.getElementById('buttonmatrimonialeID');
+                    SMDEPQUEJECHE.style.display = "block"
+                    selectID10.style.display = "none" 
                 }
                  myprofileidMaVille.value =  snapshot.val().MAVILLEDERESIDENCE
                  myprofileidPrénoms.value =   snapshot.val().fullname
@@ -783,7 +978,7 @@
         });
  
 
-        sunmitannonceid.addEventListener('click', function(){
+            sunmitannonceid.addEventListener('click', function(){
             preloader.style.display = "block"   
             const PieceID = base64Contenttable.slice(-1).pop();
             const Photo1ID = base64Contentphoto1table.slice(-1).pop();
@@ -981,10 +1176,8 @@
             }
         })
         </script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
         <script src="./../userConnect.js"></script>
         <script src="./../../translate.js"></script>

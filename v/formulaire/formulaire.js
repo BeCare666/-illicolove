@@ -318,12 +318,12 @@
 
         function validerSaisie(input) {
           const valeurSaisie = input.value;
-          const regexLettres = /^[A-Za-z]+$/;
+          const regexLettres =  /^[A-Za-z\s]+$/;
     
           if (!regexLettres.test(valeurSaisie)) {
             //alert("ne fait pas ça")
             // Effacez la saisie incorrecte
-            input.value = input.value.replace(/[^A-Za-z]/g, '');
+            input.value = input.value.replace(/[^A-Za-z\s]/g, '');
             Swal.fire({
               position: 'top-end',
               icon: 'error',

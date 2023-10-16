@@ -523,9 +523,11 @@ $(document).ready(function() {
           "IDTRANSLATEFORGET14":`Ce n'est pas la bonne réponse`,
           "IDTRANSLATEFORGET15":`L'utilisateur n'existe pas.`, 
           "IDTRANSLATEFORM1":`MON PROFIL`,
+          "IDTRANSLATEFORM1W":`MON PROFIL`,
           "IDTRANSLATEFORM2":`MON PROFIL`,
           "IDTRANSLATEFORM3":`MON PROFIL`,
           "IDTRANSLATEFORM4":`PROFIL QUE JE CHERCHE`,
+          "IDTRANSLATEFORM4W":`PROFIL QUE JE CHERCHE`,
           "IDTRANSLATEFORM5":`PROFIL QUE JE CHERCHE`,
           "IDTRANSLATEFORM6":`VEUILLEZ REMPLIR LE FORMULAIRE CI-DESSOUS.`,
           "IDTRANSLATEFORM7":`Donnez des informations précises et judicieuses.`,
@@ -636,6 +638,7 @@ $(document).ready(function() {
           "IDTRANSLATEFORM98":`Son travail`,
           "IDTRANSLATEFORM99":`Autres précisions.`,
           "IDTRANSLATEFORM100":`Autres précisions`,
+          "IDTRANSLATEFORM10w":` Aspects physiques`,
           "IDTRANSLATEFORM101":`Suivant`,
           "IDTRANSLATEFORM102":`précédent`,
           "IDTRANSLATEFORM103":`Envoyer`,
@@ -713,6 +716,15 @@ $(document).ready(function() {
           "TITLEWALLETID": "Portefeuille électronique",
           "IDTRANSLATEFOEMXX": "Veuillez ne saisir que des lettres, les chiffres ne sont pas autorisés dans ce champ.",
           "linkInput": "Copier ici votre lien d'affiliation",
+          "TERMINATOR" :"TERMINER",
+          "PHOTOID" :"PHOTO",
+          "TERMINATORW" :"TERMINER",
+          "PHOTOIDW" :"PHOTO",
+          "STEPS14":"Étape 1 - 4",
+          "STEPS23":"Étape 2 - 4",
+          "STEPS34":"Étape 3 - 4",
+          "STEPS44":"Étape 4 - 4",
+
 
           }
 
@@ -1149,9 +1161,11 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATEFORGET14":` Esa no es la respuesta correcta `,
           "IDTRANSLATEFORGET15":` El usuario no existe.`, 
           "IDTRANSLATEFORM1":` MI PERFIL `,
+          "IDTRANSLATEFORM1W":` MI PERFIL `,
           "IDTRANSLATEFORM2":` MI PERFIL `,
           "IDTRANSLATEFORM3":` MI PERFIL `,
           "IDTRANSLATEFORM4":` PERFIL QUE ESTOY BUSCANDO `,
+          "IDTRANSLATEFORM4w":` PERFIL QUE ESTOY BUSCANDO `,
           "IDTRANSLATEFORM5":` PERFIL QUE ESTOY BUSCANDO `,
           "IDTRANSLATEFORM6":` POR FAVOR COMPLETE EL SIGUIENTE FORMULARIO.`,
           "IDTRANSLATEFORM7":` Proporcione información precisa y correcta`,
@@ -1260,8 +1274,9 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATEFORM96":` Su ciudad `,
           "IDTRANSLATEFORM97":` Su trabajo u ocupaciones <i class="fa fa-star required"></i>`,
           "IDTRANSLATEFORM98":` Su trabajo `,
-          "IDTRANSLATEFORM99":` Más precisiones.`,
+          "IDTRANSLATEFORM99":` Más precisiones.`, 
           "IDTRANSLATEFORM100":` Más precisiones.`,
+          "IDTRANSLATEFORM10w":` Aspectos físicos`,
           "IDTRANSLATEFORM101":` Siguiente `,
           "IDTRANSLATEFORM102":` Anterior `,
           "IDTRANSLATEFORM103":` Enviar `,
@@ -1340,6 +1355,14 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "TITLEWALLETID": "Monedero electrónico",
           "IDTRANSLATEFOEMXX":"Por favor, ingrese solo letras, los números no están permitidos.",
           "linkInput": "Copia aquí tu enlace de afiliación.",
+          "TERMINATOR" :"FINALIZAR",
+          "PHOTOID" :"FOTO",
+          "TERMINATORW" :"FINALIZAR",
+          "PHOTOIDW" :"FOTO",
+          "STEPS14":"Paso 1 - 4",
+          "STEPS23":"Paso 2 - 4",
+          "STEPS34":"Paso 3 - 4",
+          "STEPS44":"Paso 4 - 4",
 
           }
         },
@@ -1792,9 +1815,11 @@ The site and its various services may be interrupted or suspended by the Editor,
           "IDTRANSLATEFORGET14":` This is not the correct answer `,
           "IDTRANSLATEFORGET15":` The user does not exist.`, 
           "IDTRANSLATEFORM1":` MY PROFILE `,
+          "IDTRANSLATEFORM1W":` MY PROFILE `,
           "IDTRANSLATEFORM2":` MY PROFILE `,
           "IDTRANSLATEFORM3":` MY PROFILE `,
           "IDTRANSLATEFORM4":` PROFILE I’M LOOKING FOR `,
+          "IDTRANSLATEFORM4W":` PROFILE I’M LOOKING FOR `,
           "IDTRANSLATEFORM5":` PROFILE I’M LOOKING FOR `,
           "IDTRANSLATEFORM6":` PLEASE FILL OUT THE FORM BELOW.`,
           "IDTRANSLATEFORM7":` PROVIDE ACCURATE AND INSIGHTFUL INFORMATION.`,
@@ -1905,6 +1930,7 @@ The site and its various services may be interrupted or suspended by the Editor,
           "IDTRANSLATEFORM98":` His/Her work `,
           "IDTRANSLATEFORM99":` More details.`,
           "IDTRANSLATEFORM100":` More details.`,
+          "IDTRANSLATEFORM10w":` Physical aspects`,
           "IDTRANSLATEFORM101":` Next `,
           "IDTRANSLATEFORM102":` Previous `,
           "IDTRANSLATEFORM103":` Send `,
@@ -1984,6 +2010,14 @@ The site and its various services may be interrupted or suspended by the Editor,
           "TITLEWALLETID": "E-wallet",
           "IDTRANSLATEFOEMXX":"Please enter only letters, numbers are not allowed.",
           "linkInput": "Copy your affiliate link here.",
+          "TERMINATOR" :"FINISH",
+          "PHOTOID" :"PHOTO",
+          "TERMINATORW" :"FINISH",
+          "PHOTOIDW" :"PHOTO",
+          "STEPS14":"Step   1 - 4",
+          "STEPS23":"Step   2 - 4",
+          "STEPS34":"Step   3 - 4",
+          "STEPS44":"Step   4 - 4",
 
         }
         }
@@ -2372,9 +2406,11 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATEFORGET28").text(i18next.t("IDTRANSLATEFORGET28"));
       //FORM PAGE
       $("#IDTRANSLATEFORM1").text(i18next.t("IDTRANSLATEFORM1"));
+      $("#IDTRANSLATEFORM1W").text(i18next.t("IDTRANSLATEFORM1W"));
       $("#IDTRANSLATEFORM2").text(i18next.t("IDTRANSLATEFORM2"));
       $("#IDTRANSLATEFORM3").text(i18next.t("IDTRANSLATEFORM3"));
       $("#IDTRANSLATEFORM4").text(i18next.t("IDTRANSLATEFORM4"));
+      $("#IDTRANSLATEFORM4W").text(i18next.t("IDTRANSLATEFORM4W"));
       $("#IDTRANSLATEFORM5").text(i18next.t("IDTRANSLATEFORM5"));
       $("#IDTRANSLATEFORM6").text(i18next.t("IDTRANSLATEFORM6"));
       $("#IDTRANSLATEFORM7").text(i18next.t("IDTRANSLATEFORM7"));
@@ -2497,6 +2533,7 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#myprofileidoccupations").attr("placeholder", i18next.t("IDTRANSLATEFORM98"));
       $("#TextiDy").text(i18next.t("IDTRANSLATEFORM99"));
       $("#myprofileidprécisions").attr("placeholder", i18next.t("IDTRANSLATEFORM100"));
+      $("#myprofileidpréférences").attr("placeholder", i18next.t("IDTRANSLATEFORM10w"));
       $("#linkInput").attr("placeholder", i18next.t("linkInput"));
       $("#IDnext").val(i18next.t("IDTRANSLATEFORM101"));
       $("#firstPre").val(i18next.t("IDTRANSLATEFORM102"));
@@ -2582,8 +2619,17 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATEWALLETM").text(i18next.t("IDTRANSLATEWALLETM"));
       $("#IDTRANSLATEWALLET1").text(i18next.t("IDTRANSLATEWALLET1"));
       $("#IDTRANSLATEWALLET2").text(i18next.t("IDTRANSLATEWALLET2"));
-      $("#TITLEWALLETID").text(i18next.t("TITLEWALLETID"));
+      $("#TITLEWALLETID").text(i18next.t("TITLEWALLETID")); 
       $("#IDTRANSLATEFOEMXX").text(i18next.t("IDTRANSLATEFOEMXX"));
+      $("#PHOTOID").text(i18next.t("PHOTOID"));
+      $("#TERMINATOR").text(i18next.t("TERMINATOR"));
+      $("#PHOTOIDW").text(i18next.t("PHOTOIDW"));
+      $("#TERMINATORW").text(i18next.t("TERMINATORW"));
+
+      $("#STEPS14").text(i18next.t("STEPS14"));
+      $("#STEPS23").text(i18next.t("STEPS23"));
+      $("#STEPS34").text(i18next.t("STEPS34"));
+      $("#STEPS44").text(i18next.t("STEPS44"));
       
   }
 

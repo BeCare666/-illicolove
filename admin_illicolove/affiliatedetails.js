@@ -16,6 +16,7 @@ var wallet =  document.getElementById('wallet-containerId');
 var ComeBackId =  document.getElementById('comeBackId');
 ComeBackId.style.fontSize = "2vh"
   }
+
   //star function to comBack
   document.getElementById('comeBackId').addEventListener('click', function(){
     window.location.href = "tableaffiliate.html"
@@ -177,4 +178,5 @@ const firebaseConfig = {
   
   // Exemple d'utilisation : Remplacez "ID_DE_L_UTILISATEUR" par l'ID de l'utilisateur que vous souhaitez récupérer.
   getUserById(UserConnectuser);
+
  }

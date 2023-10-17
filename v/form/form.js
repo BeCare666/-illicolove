@@ -103,6 +103,7 @@ $(document).ready(function(){
     
         //function to delete number of input
 
+{/**
         function validerSaisie(input) {
             const valeurSaisie = input.value;
             const regexLettres =  /^[A-Za-z\s]+$/;
@@ -122,3 +123,6 @@ $(document).ready(function(){
               //alert("fait pas ça")
             }
           }
+
+**/}
+      // Attendez que la page soit chargée

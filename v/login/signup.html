@@ -23,6 +23,9 @@
          <!-- Link to import alert personnal -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.js"></script>
     <script src="https://unpkg.com/jquery"></script>
     <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
       <style>
@@ -41,6 +44,7 @@
     } else {
         // Code pour ordinateur de bureau
     }
+  
   }
   </script>
 
@@ -89,6 +93,11 @@
                 <label for="username" id="IDTRANSLATESIGNUP6"></label>
                 <input type="email" class="form-control" id="email" required>
               </div>
+                <div class="form-group first">
+                <label for="username" id="IDTRANSLATESIGNUP6X"></label>
+                <input type="tel"  id="phone" name="phone" style="border: none;">
+                 
+              </div>
               <div class="form-group last mb-3">
                 <label for="password" id="IDTRANSLATESIGNUP8"></label>
                 <div style="display: flex !important;">
@@ -111,7 +120,7 @@
               </div>
               
               <input type="submit" class="btn btn-block" id="toSignupID"
-              style="background-color: # !important; color: white; font-size: 20px !important;" disabled>
+              style="background-color: #FFB6C1 !important; color: white; font-size: 20px !important;" disabled>
               <br>
               <span id="LinkID">
               <a href="login.html" style="font-size: 10px !important;" id="IDTRANSLATESIGNUP12"> </a>
@@ -409,6 +418,7 @@
       <script src="js/bootstrap.min.js"></script>
       <script src="js/main.js"></script>
       <script src="./../../translate.js"></script>
+      <script src="signup.js"></script>
   </body>
 </html>
     

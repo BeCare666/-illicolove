@@ -2678,6 +2678,9 @@ The site and its various services may be interrupted or suspended by the Editor,
       
   }
 
+
+        
+
     // Récupérer la langue sélectionnée à partir du stockage local
     var selectedLanguage = localStorage.getItem('selectedLanguage');
 

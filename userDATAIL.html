@@ -3,38 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sélection de pays</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.js"></script>
 </head>
 <body>
-  
-    <div class="copy-link">
-      <div class="copy-link-inner">
-        <form data-copy=true>
-          <input type="text" value="somascope.com/resources/" data-click-select-all />
-          <input type="submit" value="Copy" />
-        </form>
-  </div>
-  <script>
-    // Select on pressing COPY
-var els_copy = document.querySelectorAll("[data-copy]");
-for (var i = 0; i < els_copy.length; i++) {
-  var el = els_copy[i];
-  el.addEventListener("submit", function(e) {
-    e.preventDefault();
-    var text = e.target.querySelector('input[type="text"]').select();
-    document.execCommand("copy");
-  });
-}
+    <div>
+        <input type="tel" id="phone" name="phone" placeholder="Sélectionnez un pays">
+    </div>
+    <script>
+        var input = document.querySelector("#phone");
+        window.intlTelInput(input);
+        var input = document.querySelector("#phone");
 
-// Select all text when pressing inside text field
-var els_selectAll = document.querySelectorAll("[data-click-select-all]");
-for (var i = 0; i < els_selectAll.length; i++) {
-  var el = els_selectAll[i];
-  el.addEventListener("click", function(e) {
-    e.target.select();
-  });
-}
+        var iti = window.intlTelInput (input);
 
-  </script>
+        // Écoutez l'événement countrychange
+        input.addEventListener("countrychange", function () {
+            // Récupérez le code du pays actuellement sélectionné
+            var selectedCountry = iti.getSelectedCountryData();
+            var selectedCountryCode = selectedCountry.iso2;
+
+            // Récupérez la valeur du numéro de téléphone saisi par l'utilisateur
+            var phoneNumber = input.value;
+
+            // Validez que le numéro de téléphone commence par le code du pays sélectionné
+            if (!phoneNumber.startsWith("+" + selectedCountryCode)) {
+                // Réinitialisez la valeur du champ de saisie ou affichez un message d'erreur
+                input.value = "+" + selectedCountryCode;
+
+            }{
+                
+            }
+        });
+
+    </script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détection du code du pays par latitude et longitude</title>
+</head>
+<body>
+    <div>
+        <p>Latitude : <span id="latitude">12.9716</span></p>
+        <p>Longitude : <span id="longitude">77.5946</span></p>
+        <p>Code du pays : <span id="countryCode">En attente de détection...</span></p>
+    </div>
+
+    <script>
+        // Coordonnées géographiques (latitude et longitude)
+        var latitude = 6.3702928;
+        var longitude = 2.3912362;
+
+        // Obtenir le code du pays à partir des coordonnées géographiques
+        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
+            .then(response => response.json())
+            .then(data => {
+                var countryCode = data.address.country_code;
+                document.getElementById("countryCode").textContent = countryCode;
+            })
+            .catch(error => {
+                console.error("Erreur lors de la requête de géolocalisation : " + error);
+            });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sélection de pays</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+       
+</head>
+<body>
+    <div>
+        <input type="tel" id="phone" name="phone" placeholder="Sélection automatique du pays">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.js"></script>
+    <script>
+        // Fonction d'initialisation
+        $(document).ready(function () {
+            var input = document.querySelector("#phone");
+            var iti = window.intlTelInput(input);
+
+            // Obtenez la géolocalisation de l'utilisateur
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var latitude = position.coords.latitude;
+                    var longitude = position.coords.longitude;
+                    console.log(latitude)
+                    console.log(longitude)
+                    // Ensuite, réglez le pays sélectionné dans le champ de saisie
+                    var country = "BJ"; // Remplacez par le code du pays détecté
+                    iti.setCountry(country);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+

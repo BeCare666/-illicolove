@@ -666,7 +666,7 @@ $(document).ready(function() {
 
 
           "IDTRANSLATEUSERD2":`Pour me contacter`,
-          "IDTRANSLATEUSERD3":`<i class="bi bi-alexa"></i>Mon Profil `,
+          "IDTRANSLATEUSERD3":`<i class="bi bi-alexa" style="font-size: 3vh !important;"></i> Mon Profil `,
           "IDTRANSLATEUSERD4":`Réponses`,
           "IDTRANSLATEUSERD5":`Ma Ville de résidence :`,
           "IDTRANSLATEUSERD6":`Mon nom ou pseudonyme:`,
@@ -678,7 +678,7 @@ $(document).ready(function() {
           "IDTRANSLATEUSERD12":`Je veux une rencontre :`,
           "IDTRANSLATEUSERD13":`Mes préférences physiques :`,
           "IDTRANSLATEUSERD14":`Autres précisions :`,
-          "IDTRANSLATEUSERD15":`<i class="bi bi-alexa"></i> Profil que je cherche`,
+          "IDTRANSLATEUSERD15":`<i class="bi bi-alexa" style="font-size: 3vh !important;"></i> Profil que je cherche`,
           "IDTRANSLATEUSERD16":`Réponses`,
           "IDTRANSLATEUSERD17":`Son genre :`,
           "IDTRANSLATEUSERD18":`Sa tranche d'âge :`,
@@ -1301,7 +1301,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
 
 
           "IDTRANSLATEUSERD2":` Para contactarme `,
-          "IDTRANSLATEUSERD3":`Mi Perfil `,
+          "IDTRANSLATEUSERD3":`<i class="bi bi-alexa" style="font-size: 3vh !important;"></i> Mi Perfil `,
           "IDTRANSLATEUSERD4":` Respuestas `,
           "IDTRANSLATEUSERD5":` Mi ciudad de residencia`,
           "IDTRANSLATEUSERD6":` Mi nombre o seudónimo`,
@@ -1313,7 +1313,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATEUSERD12":` Quiero un encuentro`,
           "IDTRANSLATEUSERD13":` Mis preferencias físicas `,
           "IDTRANSLATEUSERD14":` Otros detalles`,
-          "IDTRANSLATEUSERD15":` Perfil que estoy buscando `,
+          "IDTRANSLATEUSERD15":`<i class="bi bi-alexa" style="font-size: 3vh !important;"></i> Perfil que estoy buscando `,
           "IDTRANSLATEUSERD16":` Respuestas `,
           "IDTRANSLATEUSERD17":` Su Género`,
           "IDTRANSLATEUSERD18":` Su grupo de edad`,
@@ -1956,7 +1956,7 @@ The site and its various services may be interrupted or suspended by the Editor,
 
 
           "IDTRANSLATEUSERD2":` To contact me `,
-          "IDTRANSLATEUSERD3":`My Profile `,
+          "IDTRANSLATEUSERD3":`<i class="bi bi-alexa" style="font-size: 3vh !important;"></i> My Profile `,
           "IDTRANSLATEUSERD4":` Answers `,
           "IDTRANSLATEUSERD5":` My hometown`,
           "IDTRANSLATEUSERD6":` My name or pseudonym`,
@@ -1968,7 +1968,7 @@ The site and its various services may be interrupted or suspended by the Editor,
           "IDTRANSLATEUSERD12":` I want a dating`,
           "IDTRANSLATEUSERD13":` My physical preferences `,
           "IDTRANSLATEUSERD14":` Other details`,
-          "IDTRANSLATEUSERD15":` Profile I’m looking for `,
+          "IDTRANSLATEUSERD15":`<i class="bi bi-alexa" style="font-size: 3vh !important;"></i> Profile I’m looking for `,
           "IDTRANSLATEUSERD16":` Answers `,
           "IDTRANSLATEUSERD17":` Gender`,
           "IDTRANSLATEUSERD18":` Her/His age group`,

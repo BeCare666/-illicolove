@@ -13,6 +13,7 @@ html {
 p {
     color: grey
 }
+
 /* Styles par défaut */
 #element {
     padding-left: 35vh !important;
@@ -24,6 +25,19 @@ p {
     #element {
         padding-left: 5vh !important;
         padding-right: 5vh !important;
+    }
+       
+    #IDTRANSLATEFORM1 {
+        display: none !important;
+    }
+    #IDTRANSLATEFORM4 {
+        display: none !important;
+    }
+    #PHOTOID {
+        display: none !important;
+    }
+    #TERMINATOR {
+        display: none !important;
     }
   }
   

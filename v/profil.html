@@ -159,10 +159,12 @@
             </div>
              
           </div>
-          <div class="user-profile" id="tofuserID">
-            
+          <div class="user-profile" id="tofuserID">   
           </div>
-          
+          <div class="file-upload" id="file-upload">
+            <label for="upload" class="file-upload__label"><i class="bi bi-camera-fill"></i></label>
+            <input id="upload" class="file-upload__input" type="file" name="file-upload">
+        </div>
         </div>
         <div class="content scroll-container" style="  height: 180px; overflow: auto;">
           <div class="card">
@@ -503,6 +505,7 @@ style="background-color: #f38e9d !important;"
     var comptDebitID = document.getElementById('comptDebitID')
     var myAccountID = document.getElementById('myAccountID')
     var tableTotakePaiement = []
+    var  base64Contenttable = []
     $(document).ready(function() {
     // Ajoutez un gestionnaire d'événement de clic à toutes les images avec la classe "clickable-image"
     $(".clickable-image").click(function() {
@@ -737,6 +740,120 @@ style="background-color: #f38e9d !important;"
           }else{
            
           }
+      // start function to uploade img
+      var inputElement = document.getElementById("upload");
+
+      // Ajoutez un gestionnaire d'événements pour écouter le changement de fichier
+      inputElement.addEventListener("change", handleFiles, false);
+
+      function handleFiles() {
+      // Récupérez le fichier sélectionné par l'utilisateur
+      var file = this.files[0];
+      console.log("Fichier sélectionné : ", file);
+
+      // Créez une nouvelle instance de FileReader
+      var reader = new FileReader();
+
+      // Ajoutez un gestionnaire d'événements pour écouter la fin de la lecture du fichier
+      reader.onload = function(event) {
+          // Créez une nouvelle instance d'image
+          var img = new Image();
+
+          // Définissez le gestionnaire d'événements pour lorsque l'image est chargée
+          img.onload = function() {
+          const minWidth = 300; // La largeur minimale souhaitée
+          const minHeight = 300; // La longeur minimale souhaitée
+          if (img.width >= minWidth && img.height >= minHeight) { 
+          // Créez un élément canvas
+          var canvas = document.createElement('canvas');
+          var context = canvas.getContext('2d');
+
+          // Déterminez les dimensions de l'image redimensionnée
+          var maxWidth = 800;
+          var maxHeight = 600;
+          var width = img.width;
+          var height = img.height;
+
+          // Vérifiez si l'image doit être redimensionnée
+          if (width > maxWidth || height > maxHeight) {
+              // Calculez le facteur de redimensionnement
+              var ratio = Math.min(maxWidth / width, maxHeight / height);
+
+              // Appliquez le redimensionnement
+              width *= ratio;
+              height *= ratio;
+          }
+
+          // Définissez les dimensions du canvas
+          canvas.width = width;
+          canvas.height = height;
+
+          // Dessinez l'image sur le canvas avec les nouvelles dimensions
+          context.drawImage(img, 0, 0, width, height);
+
+          // Obtenez le contenu de l'image redimensionnée sous forme de base64
+          var base64Content = canvas.toDataURL('image/jpeg');
+          base64Content = base64Content.replace(/^data:image\/jpeg;base64,/, '');
+          //console.log("Contenu en base64 : ", base64Content);
+          base64Contenttable.push(base64Content)
+          uploadyourphoto()
+          // ...
+          }else{
+              Swal.showValidationMessage(i18next.t('IDTRANSLATEFORM105'));
+              //alert(`Votre image est trop pétite. Veuillez sélectionner une image d'au moins 300x300 pixels.`)
+              inputElement.value = ""
+          }
+          };
+
+          // Définissez la source de l'image comme le contenu du fichier
+          img.src = event.target.result;
+      };
+
+      // Commencez la lecture du fichier
+      reader.readAsDataURL(file);
+      }
+      // end function to uploade img
+      // function to upload photo
+      function uploadyourphoto(){
+        var photourl = base64Contenttable.slice(-1).pop();
+        var photoDataUrl = 'data:image/png;base64,' + photourl;
+        Swal.fire({
+        text: i18next.t('IDTRANSLATEPROFIL29FILE'),
+        imageUrl: `${photoDataUrl}`,
+        imageWidth: 400,
+        imageHeight: 300,
+        imageAlt: 'Custom image',
+        showCancelButton : true,
+        allowOutsideClick : false,
+        cancelButtonText : i18next.t('IDTRANSLATEPROFIL29FILE1'),
+        confirmButtonText :i18next.t('IDTRANSLATEPROFIL29FILE2')
+      }).then((result)=>{
+        const db = getDatabase();
+        const UserConnectuser = localStorage.getItem("unserconnect");
+        if (result.isConfirmed) {
+          update(ref(db, "utilisateurs/" + UserConnectuser), {
+            PIECESDIDENTITE : photourl,
+          }).then(() => {
+          Swal.fire({
+          title: i18next.t('IDTRANSLATEPROFIL38X'),
+          text: i18next.t('IDTRANSLATEPROFIL39X'),
+          icon: 'success'
+        });
+       setTimeout(()=>{
+        window.location.reload();
+       }, 6000)
+        }).catch((error) => {
+          Swal.fire({
+          title: i18next.t('IDTRANSLATEPROFIL40X'),
+          text: i18next.t('IDTRANSLATEPROFIL41X'),
+          icon: 'error'
+        });
+        // alert("les données ne sont pas supprimées " + error);
+        });
+      
+      }
+      })
+      }
       } else {
         window.location.href = "./../v/login/login.html"
           //alert("no data");
@@ -985,10 +1102,10 @@ var logout = document.getElementById('logoutID');
     })
   }
 })
-    })
-    if(!UserConnectuser){
-      window.location.href = "./login/login.html"
-      }
+})
+if(!UserConnectuser){
+window.location.href = "./login/login.html"
+}
       
 </script>
   <!-- Vendor JS Files -->

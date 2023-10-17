@@ -1982,3 +1982,40 @@ font-family: 'Montserrat', sans-serif;
 #myBodyTopaie  input:required:valid {
       border-color: green;
     }
+          #tofuserID{
+            position: relative;
+            top: 2vh !important;
+            right: 0 !important;
+          }
+          /* Styles for the upload button */
+        .file-upload {
+        position: relative;
+        top: 3vh !important;
+        right: 8vh !important;
+        }
+        
+        .file-upload__label {
+            display: block;
+            padding: 3px 6px 3px 6px !important;
+            color: #fff;
+            background: #000080;
+            border-radius: 100% !important;
+            transition: background .3s;
+        }
+        
+        .file-upload__label:hover {
+            cursor: pointer;
+            background: #000080;
+        }
+        
+        .file-upload__input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            font-size: 1;
+            width: 0;
+            height: 100%;
+            opacity: 0;
+        }

@@ -451,10 +451,17 @@ $(document).ready(function() {
           "IDTRANSLATEPROFIL36":`Vous avez été déconnecté.`,
           "IDTRANSLATEPROFIL37":`Voulez-vous visiter notre page d'accueil ?`,
           "IDTRANSLATEPROFIL38":`Supprimé !`,
+          "IDTRANSLATEPROFIL38X":` succès.`,
+          "IDTRANSLATEPROFIL39X":`Votre photo a été mise à jour avec succès.`,
+          "IDTRANSLATEPROFIL40X":` erreur`,
+          "IDTRANSLATEPROFIL41X":`La mise à jour de votre photo a échoué.`,
+
           "IDTRANSLATEPROFIL39":`Votre compte a été supprimé avec succès !`,
           "IDTRANSLATEPROFIL40":`Supprimé !`,
           "IDTRANSLATEPROFIL41":`Erreur lors de la suppression de l'utilisateur ! `,
           "IDTRANSLATEPROFIL42":`il y a une ERROR`,
+          "IDTRANSLATEPROFIL42Q":`il y a une ERROR`,
+          "IDTRANSLATEPROFIL42QX":`il y a une ERROR`,
           "IDTRANSLATEPROFIL43":`Le champs n'est pas bien rempli !`, 
           "IDTRANSLATEPROFIL44":`Quelque chose s'est mal passé !`,
           "IDTRANSLATEPROFIL44IN":`Chers utilisateurs, nous souhaitons vous informer que ce moyen de paiement n'est pas encore disponible. Pour l'instant, veuillez utiliser Feexpay pour effectuer vos transactions. Merci !`,
@@ -724,6 +731,9 @@ $(document).ready(function() {
           "STEPS23":"Étape 2 - 4",
           "STEPS34":"Étape 3 - 4",
           "STEPS44":"Étape 4 - 4",
+          "IDTRANSLATEPROFIL29FILE" :"Souhaitez-vous envoyer cette image ?",
+          "IDTRANSLATEPROFIL29FILE1" :"Retour",
+          "IDTRANSLATEPROFIL29FILE2" :"Oui",
 
 
           }
@@ -1092,7 +1102,15 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATEPROFIL39":` ¡Su cuenta ha sido eliminada con éxito!`,
           "IDTRANSLATEPROFIL40":` Eliminado!`,
           "IDTRANSLATEPROFIL41":` ¡Error al eliminar usuario! `,
+          
+          "IDTRANSLATEPROFIL38X":` éxito.`,
+          "IDTRANSLATEPROFIL39X":`Su foto ha sido actualizada exitosamente.`,
+          "IDTRANSLATEPROFIL40X":` error`,
+          "IDTRANSLATEPROFIL41X":`La actualización de su foto ha fallado. `,
+
           "IDTRANSLATEPROFIL42":` Hay un ERROR `,
+          "IDTRANSLATEPROFIL42Q":`Hay un ERROR`,
+          "IDTRANSLATEPROFIL42QX":`Hay un ERROR`,
           "IDTRANSLATEPROFIL43":` ¡El campo no está bien lleno!`,
           "IDTRANSLATEPROFIL44":` ¡Algo no está bien!`,
           "IDTRANSLATEPROFIL44IN":`Estimados usuarios, deseamos informarles que este método de pago aún no está disponible. Por el momento, les pedimos que utilicen Feexpay para realizar sus transacciones. ¡Gracias!`,
@@ -1363,6 +1381,9 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "STEPS23":"Paso 2 - 4",
           "STEPS34":"Paso 3 - 4",
           "STEPS44":"Paso 4 - 4",
+          "IDTRANSLATEPROFIL29FILE" :"¿Desea enviar esta foto ?",
+          "IDTRANSLATEPROFIL29FILE1" :"Vuelta",
+          "IDTRANSLATEPROFIL29FILE2" :"Sí",
 
           }
         },
@@ -1743,10 +1764,18 @@ The site and its various services may be interrupted or suspended by the Editor,
           "IDTRANSLATEPROFIL36":` You’ve been disconnected.`,
           "IDTRANSLATEPROFIL37":` Would you like to visit our homepage?`,
           "IDTRANSLATEPROFIL38":` Deleted!`,
+
+          "IDTRANSLATEPROFIL38X":` success.`,
+          "IDTRANSLATEPROFIL39X":`Your photo has been successfully updated.`,
+          "IDTRANSLATEPROFIL40X":` error`,
+          "IDTRANSLATEPROFIL41X":`The update of your photo has failed. `,
+
           "IDTRANSLATEPROFIL39":` Your account has been successfully deleted!`,
           "IDTRANSLATEPROFIL40":` Removed!`,
           "IDTRANSLATEPROFIL41":` Error while deleting user! `,
           "IDTRANSLATEPROFIL42":` There is an ERROR `,
+          "IDTRANSLATEPROFIL42Q":`There is an ERROR`,
+          "IDTRANSLATEPROFIL42QX":`There is an ERROR`,
           "IDTRANSLATEPROFIL43":` The field is not well filled!`,
           "IDTRANSLATEPROFIL44":` Something is not right!`,
           "IDTRANSLATEPROFIL44IN":`Dear users, we would like to inform you that this payment method is not yet available. Please use Feexpay for now to carry out your transactions. Thank you!`,
@@ -2018,6 +2047,9 @@ The site and its various services may be interrupted or suspended by the Editor,
           "STEPS23":"Step   2 - 4",
           "STEPS34":"Step   3 - 4",
           "STEPS44":"Step   4 - 4",
+          "IDTRANSLATEPROFIL29FILE" :"Do you want to send this photo ?",
+          "IDTRANSLATEPROFIL29FILE1" :"Return",
+          "IDTRANSLATEPROFIL29FILE2" :"Yes",
 
         }
         }
@@ -2324,11 +2356,20 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATEPROFIL39").text(i18next.t("IDTRANSLATEPROFIL39"));
       $("#IDTRANSLATEPROFIL40").text(i18next.t("IDTRANSLATEPROFIL40"));
       $("#IDTRANSLATEPROFIL41").text(i18next.t("IDTRANSLATEPROFIL41"));
+
+      $("#IDTRANSLATEPROFIL38X").text(i18next.t("IDTRANSLATEPROFIL38X"));
+      $("#IDTRANSLATEPROFIL39X").text(i18next.t("IDTRANSLATEPROFIL39X"));
+      $("#IDTRANSLATEPROFIL40X").text(i18next.t("IDTRANSLATEPROFIL40X"));
+      $("#IDTRANSLATEPROFIL41X").text(i18next.t("IDTRANSLATEPROFIL41X"));
+
       $("#IDTRANSLATEPROFIL42").text(i18next.t("IDTRANSLATEPROFIL42"));
+      $("#IDTRANSLATEPROFIL42Q").text(i18next.t("IDTRANSLATEPROFIL42Q"));
+      $("#IDTRANSLATEPROFIL42QX").text(i18next.t("IDTRANSLATEPROFIL42QX"));
       $("#IDTRANSLATEPROFIL43").text(i18next.t("IDTRANSLATEPROFIL43"));
       $("#IDTRANSLATEPROFIL44").text(i18next.t("IDTRANSLATEPROFIL44"));
       $("#IDTRANSLATEPROFIL44IN").text(i18next.t("IDTRANSLATEPROFIL44IN"));
       $("#IDTRANSLATEPROFIL45").text(i18next.t("IDTRANSLATEPROFIL45"));
+      $("#IDTRANSLATEFORM112").text(i18next.t("IDTRANSLATEFORM112"));
       $("#IDTRANSLATEPROFIL46").text(i18next.t("IDTRANSLATEPROFIL46"));
       $("#IDTRANSLATEPROFIL47").text(i18next.t("IDTRANSLATEPROFIL47"));
       $("#IDTRANSLATEPROFIL48").text(i18next.t("IDTRANSLATEPROFIL48"));
@@ -2606,7 +2647,11 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATEUSERD58").text(i18next.t("IDTRANSLATEUSERD58"));
       $("#IDTRANSLATEUSERD59").text(i18next.t("IDTRANSLATEUSERD59"));
       $("#IDTRANSLATEUSERD60").text(i18next.t("IDTRANSLATEUSERD60"));
-
+      $("#IDTRANSLATEFORM109").text(i18next.t("IDTRANSLATEFORM109"));
+      $("#IDTRANSLATEFORM110").html(i18next.t("IDTRANSLATEFORM110"));
+      $("#IDTRANSLATEPROFIL29FILE").html(i18next.t("IDTRANSLATEPROFIL29FILE"));
+      $("#IDTRANSLATEPROFIL29FILE1").html(i18next.t("IDTRANSLATEPROFIL29FILE1"));
+      $("#IDTRANSLATEPROFIL29FILE2").html(i18next.t("IDTRANSLATEPROFIL29FILE2"));
       $("#myNameIDwallet").text(i18next.t("myNameIDwallet"));
       $("#MYEWALLETID").html(i18next.t("MYEWALLETID"));
       $("#MYEWALLETID1").text(i18next.t("MYEWALLETID1"));

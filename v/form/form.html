@@ -379,7 +379,9 @@
                             </div> 
                             <p style="text-align: start !important;"></p>
                             <input type="file" id="myprofileididentité" name="gplus"  />
-                        </div> <input type="button" name="next" class="next action-button" id="sunmitannonceid"/> 
+                        </div> 
+                        <input type="button" name="next" class="next action-button" id="sunmitannonceidx" style="display: none;"/> 
+                        <input type="button" name="next" class=" action-buttonx" id="sunmitannonceid"/> 
                         <input type="button" name="previous" class="previous action-button-previous"  id="treetPre"/>
                     </fieldset>
                     <fieldset id="fieldsetID">
@@ -392,13 +394,13 @@
                                     <h2 class="steps" id="STEPS44"></h2>
                                 </div>
                             </div> <br><br>
-                            <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2> <br>
+                            <h2 class="purple-text text-center"><strong id="IDTRANSLATEFORM109"></strong></h2> <br>
                             <div class="row justify-content-center">
                                 <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
                             </div> <br><br>
                             <div class="row justify-content-center">
                                 <div class="col-7 text-center">
-                                    <h5 class="purple-text text-center">You Have Successfully Signed Up</h5>
+                                    <h5 class="purple-text text-center" id="IDTRANSLATEFORM110"></h5>
                                 </div>
                             </div>
                         </div>
@@ -592,16 +594,23 @@ function getdata() {
      myprofileidSonpays.value =  snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE
 **/}
 } else {
-alert('pas de donnée')
+    Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: i18next.t("IDTRANSLATEUSERD25"),
+    }) 
    
 }
 })
 .catch((error) => {
-console.log("il y a une ERROR " + error);
+    Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: i18next.t("IDTRANSLATEPROFIL42QX"),
+    }) 
 });
 }
 window.onload = getdata;
-
 // start function to uploade img
 var inputElement = document.getElementById("myprofileididentité");
 
@@ -721,13 +730,17 @@ reader.readAsDataURL(file);
             })
                 .then(() => {
                 //window.location.reload();
+                var sunmitannonceidx = document.getElementById('sunmitannonceidx');
                 preloader.style.display = "none"
+                sunmitannonceidx.click()
                 document.getElementById('fieldsetID').style.display = "block"
-                alert('les données sont bien envoyés')
+                document.getElementById('heading').style.display = "none"
                 const IDAFILIATEID = localStorage.getItem("IDAFILIATE"); 
                 if(!IDAFILIATEID){
+                   setTimeout(()=>{
                     window.location.replace("./../profil.html");
-                }else{
+                   },10000)
+                }else{  
                     setTimeout(()=>{
                 const IDAFILIATEID = localStorage.getItem("IDAFILIATE"); 
                 var dbrefx = ref(db);
@@ -817,34 +830,42 @@ reader.readAsDataURL(file);
                         }, 2000)
                         })
                         .catch((error) => {
-                        alert("il y a une ERROR " + error);
+                        Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: i18next.t("IDTRANSLATEPROFIL42Q"),
+                        }) 
                         });  
                     } else {
                         //alert("no data");
                     }
                     })
                     .catch((error) => {
-                    alert("il y a une ERROR " + error);
+                    Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: i18next.t("IDTRANSLATEPROFIL42"),
+                    })  
                     });
                    
                 }, 10000)
                 }
-                var texteTraduitprofil1X = i18next.t("IDTRANSLATEFORM109");
-                $('[id="IDTRANSLATEFORM109"]').text(texteTraduitprofil1X);  
-                var texteTraduitprofil1X0 = i18next.t("IDTRANSLATEFORM110");
-                $('[id="IDTRANSLATEFORM110"]').html(texteTraduitprofil1X0); 
                 })
                 .catch((error) => {
                
                 
                 });
-            }else{ 
-                preloader.style.display = "none"   
-                document.getElementById('myFormulaireId').style.display = "none" 
-                alert('Tout les champs ne sont pas remplir')
-                
-                var texteTraduitprofil1X02 = i18next.t("IDTRANSLATEFORM112");
-                $('[id="IDTRANSLATEFORM112"]').html(texteTraduitprofil1X02); 
+            }else{
+                document.getElementById('fieldsetID').style.display = "none"
+                preloader.style.display = "none"
+                Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: i18next.t("IDTRANSLATEFORM112"),
+                })  
+                //document.getElementById('myFormulaireId').style.display = "none" 
+                //var texteTraduitprofil1X02 = i18next.t("IDTRANSLATEFORM112");
+                //$('[id="IDTRANSLATEFORM112"]').html(texteTraduitprofil1X02); 
             }
         })
 // end function to update data

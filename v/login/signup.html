@@ -80,7 +80,7 @@
         <div class="row align-items-center justify-content-center" >
           <div class="col-md-7" >
             <h3 id="IDTRANSLATESIGNUP1"></h3>
-            <form action="javascript:submitmy()">
+            <form action="javascript:submitmy()" id="msform">
               <div class="form-group first">
                 <label for="username" id="IDTRANSLATESIGNUP2"></label>
                 <input type="text" class="form-control" id="username" required>
@@ -95,7 +95,13 @@
               </div>
                 <div class="form-group first">
                 <label for="username" id="IDTRANSLATESIGNUP6X"></label>
-                <input type="tel"  id="phone" name="phone" style="border: none;">
+               <div style="display: flex;" id="divWrapper">
+                <div id="myphone" style="pointer-events: none !important;">
+                <input type="tel"  id="phone" name="phone" style="width: 10px !important; height: 30px !important;">
+                </div>&nbsp;
+                <input type="text" class="form-control" id="phoneuserID" required style="width: 40px !important; height: 30px !important;" readonly>
+                <input type="text" class="form-control" placeholder="votre de téléphone" id="phoneuserIDval" >
+               </div>
                  
               </div>
               <div class="form-group last mb-3">
@@ -106,6 +112,7 @@
                  <i class="fas fa-eye"></i>
                 </span>
                 </div>
+                
                 <!-- <span id="password-strength-indicator"></span>
                 <button type="button" id="toggle-password" class="Xbutton">X</button>-->
               </div>
@@ -134,6 +141,8 @@
       </div>
     </div>
   </div>
+  <style>
+  </style>
   </section>
   </section>
   <div id="preloader" style="display: none;"></div>
@@ -151,7 +160,7 @@
 
   // Référence Firebase contenant les adresses e-mails
   // Écoute de l'événement "click" sur le bouton de recherche
-  function submitmy(){
+  function submitmy(){ 
   const emailRef = firebase.database().ref('utilisateurs');
 
     document.getElementById('preloader').style.display = "block"
@@ -159,8 +168,41 @@
     var username = document.getElementById('username').value
     const email = document.getElementById('email').value;
     var password = document.getElementById('password').value
+    var phoneuserIDvalue = document.getElementById('phoneuserIDval').value
+    const Nameofcountryval = localStorage.getItem('Nameofcountry')
+    const DefaultValueval = localStorage.getItem('DefaultValue')
+    var numberphoneuser = DefaultValueval + phoneuserIDvalue
+    //alert(numberphoneuser)
     // Ajoutez un gestionnaire d'événements pour l'événement "input"
     const emailInput = document.getElementById('email').value;
+
+    if(phoneuserIDvalue.trim() === ""){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: i18next.t('IDTRANSLATESIGNUP19PHONE'),
+        showConfirmButton: false,
+        timer: 1500
+       // footer: '<a href="">Why do I have this issue?</a>'
+      })
+       
+    }
+
+    if(/^\d{7,}$/.test(phoneuserIDvalue)){
+
+    }else{
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: i18next.t('IDTRANSLATESIGNUP19PHONEX'),
+        showConfirmButton: false,
+        timer: 1500
+       // footer: '<a href="">Why do I have this issue?</a>'
+      })
+    }
+
+    if(email && fullname && username && password && Nameofcountryval && numberphoneuser
+    && phoneuserIDvalue !=="" && /^\d{7,}$/.test(phoneuserIDvalue)){
     let emailKey = null;
 
     // Filtrage des données pour trouver l'adresse e-mail spécifique
@@ -226,7 +268,6 @@
       const hours = currentDate.getHours(); // Heures (de 0 à 23)
       const minutes = currentDate.getMinutes(); // Minutes (de 0 à 59)
       const seconds = currentDate.getSeconds(); // Secondes (de 0 à 59)
-
       firebase.database().ref('utilisateurs/' + userID).set({
           userId : userID,
           email: email,
@@ -234,6 +275,7 @@
           username : username,
           password : password,
           MAVILLEDERESIDENCE : "",
+          MYCOUNTRY :Nameofcountryval,
           MANATIONNALITE : "",
           MONTRAVAILLEOUOCCUPATION : "",
           MASITUATIONMATRIMONIALE : "",
@@ -252,7 +294,7 @@
           COMPTEFACEBOOK:"",
           COMPTEINSATAGRAMME:"",
           MONSEXE:"",
-          TELEPHONE:"",
+          TELEPHONE:numberphoneuser,
           JEVEUXUNERENCONTRE:"", 
           PIECESDIDENTITE:"",
           MESDEUXPHOTOS:"",
@@ -317,9 +359,13 @@
       })
           //alert("Erreur lors de l'envoi de l'adresse mail à Firebase :", error);
       });
-
-      }
+    }
     });
+
+  }else{
+  //alert("les données ne sont pas")
+  document.getElementById('preloader').style.display = "none"
+    }
     }
   var checkbox = document.getElementById("myCheckbox");
   var ToSignupID = document.getElementById("toSignupID");
@@ -411,7 +457,6 @@
         togglePasswordButton.innerText = 'X';
       }
     }*/}
-
   </script>
       <script src="js/jquery-3.3.1.min.js"></script>
       <script src="js/popper.min.js"></script>

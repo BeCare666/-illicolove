@@ -12,6 +12,7 @@ $(document).ready(function() {
             "IDTRANSLATE4": `Termes`,
             "IDTRANSLATE5":"Conditions Générales d’Utilisation",
             "IDTRANSLATE6":"Politique de Confidentialité",
+            "IDTRANSLATE6X":"Contrat d'affiliation",
             "IDTRANSLATE7":"Contact",
             "IDTRANSLATE8":"S'inscrire",
             "IDTRANSLATE9":"Se connecter",
@@ -512,8 +513,10 @@ $(document).ready(function() {
           "IDTRANSLATESIGNUP15":`Vous avez déjà un compte avec cette adresse email !`,
           "IDTRANSLATESIGNUP16":`succès`,
           "IDTRANSLATESIGNUP17":`Vous êtes inscrit avec succès !`,
-          "IDTRANSLATESIGNUP18":`Erreur lors de l'envoi de l'adresse mail à Firebase`,
+          "IDTRANSLATESIGNUP18":`Erreur lors de l'envoi de l'adresse mail à Firebase`, 
           "IDTRANSLATESIGNUP19":`Ne mettez pas d'espace. Merci !`,
+          "IDTRANSLATESIGNUP19PHONE":`Veuillez fournir un numéro de téléphone valide.`,
+          "IDTRANSLATESIGNUP19PHONEX":`Veuillez fournir un numéro de téléphone valide.`,
           "IDTRANSLATEFORGET1":`Envoyer l'adresse e-mail utilisée lors de votre inscription.`,
           "IDTRANSLATEFORGET2":`Email`,
           "IDTRANSLATEFORGET3":`Votre email`,
@@ -731,11 +734,15 @@ $(document).ready(function() {
           "STEPS23":"Étape 2 - 4",
           "STEPS34":"Étape 3 - 4",
           "STEPS44":"Étape 4 - 4",
-          "IDTRANSLATEPROFIL29FILE" :"Souhaitez-vous envoyer cette image ?",
+          "IDTRANSLATEPROFIL29FILE" :"Souhaitez-vous envoyer cette image ?", 
           "IDTRANSLATEPROFIL29FILE1" :"Retour",
           "IDTRANSLATEPROFIL29FILE2" :"Oui",
-
-
+          "IDTRANSLATESIGNUP19OPTIONSERROR" :"Une erreur s'est produite lors de la demande de géolocalisation.",
+          "IDTRANSLATESIGNUP19OPTIONS" :"Nous regrettons de vous informer que vous ne pouvez pas utiliser nos services tant que votre position n'est pas acceptée.",
+          "IDTRANSLATESIALERT1" :"information",
+          "IDTRANSLATESIALERT2" :"Chers visiteurs, dans le but d'assurer votre sécurité et de lutter contre les fausses annonces, nous récupérons votre position.",
+          "IDTRANSLATESIALERT3" :"Oui, j'accepte !",
+          "IDTRANSLATESIALERT4" :"Refusé",
           }
 
         },
@@ -747,6 +754,7 @@ $(document).ready(function() {
             "IDTRANSLATE4": `Términos `, 
             "IDTRANSLATE5":"Condiciones Generales de Uso ",
             "IDTRANSLATE6":" Política de Privacidad ",
+            "IDTRANSLATE6X":"Contrato de afiliación",
             "IDTRANSLATE7":"Contacto",
             "IDTRANSLATE8":" Registrarse ",
             "IDTRANSLATE9":" Conectarse ",
@@ -1163,6 +1171,8 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATESIGNUP17":` ¡Estás registrado con éxito!`,
           "IDTRANSLATESIGNUP18":` Error al enviar la dirección de correo electrónico a Firebase `,
           "IDTRANSLATESIGNUP19":` No ponga espacio. ¡Gracias!`,
+          "IDTRANSLATESIGNUP19PHONE":`Por favor, proporcione un número de teléfono válido.`,
+          "IDTRANSLATESIGNUP19PHONEX":`Por favor, proporcione un número de teléfono válido.`,
           "IDTRANSLATEFORGET1":` Enviar la dirección de correo electrónico utilizada al registrarse.`,
           "IDTRANSLATEFORGET2":`Email`,
           "IDTRANSLATEFORGET3":` Su email `,
@@ -1381,9 +1391,17 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "STEPS23":"Paso 2 - 4",
           "STEPS34":"Paso 3 - 4",
           "STEPS44":"Paso 4 - 4",
-          "IDTRANSLATEPROFIL29FILE" :"¿Desea enviar esta foto ?",
-          "IDTRANSLATEPROFIL29FILE1" :"Vuelta",
+          "IDTRANSLATEPROFIL29FILE" :"¿Desea enviar esta foto ?", 
+          "IDTRANSLATEPROFIL29FILE1" :"Vuelta", 
           "IDTRANSLATEPROFIL29FILE2" :"Sí",
+          "IDTRANSLATESIGNUP19OPTIONSERROR" :"Se produjo un error durante la solicitud de geolocalización.",
+          "IDTRANSLATESIGNUP19OPTIONS" :"Lamentamos informarle que no puede utilizar nuestros servicios hasta que su ubicación sea aceptada.",
+          "IDTRANSLATESIALERT1" :"Información",
+          "IDTRANSLATESIALERT2" :"Estimados visitantes, con el fin de garantizar su seguridad y combatir los anuncios falsos, estamos recuperando su ubicación.",
+          "IDTRANSLATESIALERT3" :"¡Sí, acepto!",
+          "IDTRANSLATESIALERT4" :"Rechazado",
+
+
 
           }
         },
@@ -1395,6 +1413,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
  "IDTRANSLATE4": `Terms `,
 "IDTRANSLATE5":" General Terms of Use ",
 "IDTRANSLATE6":" Privacy Policy ",
+"IDTRANSLATE6X":"Affiliation Agreement",
 "IDTRANSLATE7":"Contact",
 "IDTRANSLATE8":"Sign up ",
 "IDTRANSLATE9":" Connect ",
@@ -1828,6 +1847,8 @@ The site and its various services may be interrupted or suspended by the Editor,
           "IDTRANSLATESIGNUP17":` You are successfully registered!`,
           "IDTRANSLATESIGNUP18":` Error sending email address to Firebase `,
           "IDTRANSLATESIGNUP19":` Do not put any space. Thank you!`,
+          "IDTRANSLATESIGNUP19PHONE":`Please provide a valid phone number.`,
+          "IDTRANSLATESIGNUP19PHONEX":`Please provide a valid phone number.`,
           "IDTRANSLATEFORGET1":` Send the email address used when registering.`,
           "IDTRANSLATEFORGET2":`Email`,
           "IDTRANSLATEFORGET3":`Your email`,
@@ -2048,8 +2069,19 @@ The site and its various services may be interrupted or suspended by the Editor,
           "STEPS34":"Step   3 - 4",
           "STEPS44":"Step   4 - 4",
           "IDTRANSLATEPROFIL29FILE" :"Do you want to send this photo ?",
-          "IDTRANSLATEPROFIL29FILE1" :"Return",
+          "IDTRANSLATEPROFIL29FILE1" :"Return", 
           "IDTRANSLATEPROFIL29FILE2" :"Yes",
+          "IDTRANSLATESIGNUP19OPTIONSERROR" :"An error occurred during the geolocation request.",
+          "IDTRANSLATESIGNUP19OPTIONS" :"We regret to inform you that you cannot use our services until your location is accepted.",
+          "IDTRANSLATESIALERT1" :"Información",
+          "IDTRANSLATESIALERT2" :"Estimados visitantes, con el fin de garantizar su seguridad y combatir los anuncios falsos, estamos recuperando su ubicación.",
+          "IDTRANSLATESIALERT3" :"¡Sí, acepto!",
+          "IDTRANSLATESIALERT4" :"Rechazado",
+
+          "IDTRANSLATESIALERT1" :"information",
+          "IDTRANSLATESIALERT2" :"Dear visitors, for security reasons and to prevent false advertisements, we are retrieving your location.",
+          "IDTRANSLATESIALERT3" :"Yes, I accept!",
+          "IDTRANSLATESIALERT4" :"Denied",
 
         }
         }
@@ -2067,6 +2099,7 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATE4").text(i18next.t("IDTRANSLATE4"));
       $("#IDTRANSLATE5").text(i18next.t("IDTRANSLATE5"));
       $("#IDTRANSLATE6").text(i18next.t("IDTRANSLATE6"));
+      $("#IDTRANSLATE6X").text(i18next.t("IDTRANSLATE6X"));
       $("#IDTRANSLATE7").text(i18next.t("IDTRANSLATE7"));
       $("#IDTRANSLATE8").text(i18next.t("IDTRANSLATE8"));
       $("#IDTRANSLATE9").text(i18next.t("IDTRANSLATE9"));
@@ -2415,6 +2448,8 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATESIGNUP17").text(i18next.t("IDTRANSLATESIGNUP17"));
       $("#IDTRANSLATESIGNUP18").text(i18next.t("IDTRANSLATESIGNUP18"));
       $("#IDTRANSLATESIGNUP19").text(i18next.t("IDTRANSLATESIGNUP19"));
+      $("#IDTRANSLATESIGNUP19PHONE").text(i18next.t("IDTRANSLATESIGNUP19PHONE"));
+      $("#IDTRANSLATESIGNUP19PHONEX").text(i18next.t("IDTRANSLATESIGNUP19PHONEX"));
       //FORGET PAGE
       $("#IDTRANSLATEFORGET1").text(i18next.t("IDTRANSLATEFORGET1"));
       $("#IDTRANSLATEFORGET2").text(i18next.t("IDTRANSLATEFORGET2"));
@@ -2650,8 +2685,10 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATEFORM109").text(i18next.t("IDTRANSLATEFORM109"));
       $("#IDTRANSLATEFORM110").html(i18next.t("IDTRANSLATEFORM110"));
       $("#IDTRANSLATEPROFIL29FILE").html(i18next.t("IDTRANSLATEPROFIL29FILE"));
-      $("#IDTRANSLATEPROFIL29FILE1").html(i18next.t("IDTRANSLATEPROFIL29FILE1"));
+      $("#IDTRANSLATEPROFIL29FILE1").html(i18next.t("IDTRANSLATEPROFIL29FILE1")); 
       $("#IDTRANSLATEPROFIL29FILE2").html(i18next.t("IDTRANSLATEPROFIL29FILE2"));
+      $("#IDTRANSLATESIGNUP19OPTIONSERROR").html(i18next.t("IDTRANSLATESIGNUP19OPTIONSERROR"));
+      $("#IDTRANSLATESIGNUP19OPTIONS").html(i18next.t("IDTRANSLATESIGNUP19OPTIONS"));
       $("#myNameIDwallet").text(i18next.t("myNameIDwallet"));
       $("#MYEWALLETID").html(i18next.t("MYEWALLETID"));
       $("#MYEWALLETID1").text(i18next.t("MYEWALLETID1"));
@@ -2668,8 +2705,13 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATEFOEMXX").text(i18next.t("IDTRANSLATEFOEMXX"));
       $("#PHOTOID").text(i18next.t("PHOTOID"));
       $("#TERMINATOR").text(i18next.t("TERMINATOR"));
-      $("#PHOTOIDW").text(i18next.t("PHOTOIDW"));
+      $("#PHOTOIDW").text(i18next.t("PHOTOIDW")); 
       $("#TERMINATORW").text(i18next.t("TERMINATORW"));
+
+      $("#IDTRANSLATESIALERT1").text(i18next.t("IDTRANSLATESIALERT1"));
+      $("#IDTRANSLATESIALERT2").text(i18next.t("IDTRANSLATESIALERT2"));
+      $("#IDTRANSLATESIALERT3").text(i18next.t("IDTRANSLATESIALERT3"));
+      $("#IDTRANSLATESIALERT4").text(i18next.t("IDTRANSLATESIALERT4"));
 
       $("#STEPS14").text(i18next.t("STEPS14"));
       $("#STEPS23").text(i18next.t("STEPS23"));
@@ -2677,10 +2719,6 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#STEPS44").text(i18next.t("STEPS44"));
       
   }
-
-
-        
-
     // Récupérer la langue sélectionnée à partir du stockage local
     var selectedLanguage = localStorage.getItem('selectedLanguage');
 

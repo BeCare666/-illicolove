@@ -12,7 +12,7 @@ $(document).ready(function() {
             "IDTRANSLATE4": `Termes`,
             "IDTRANSLATE5":"Conditions Générales d’Utilisation",
             "IDTRANSLATE6":"Politique de Confidentialité",
-            "IDTRANSLATE6X":"Contrat d'affiliation",
+            "IDTRANSLATE6X":"Notre système d'affiliation",
             "IDTRANSLATE7":"Contact",
             "IDTRANSLATE8":"S'inscrire",
             "IDTRANSLATE9":"Se connecter",
@@ -656,10 +656,10 @@ $(document).ready(function() {
 
 
 
-          "IDTRANSLATEFORM104":`<p ><em> Les données à caractère personnel collectées dans le présent formulaire par <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong> seront traitées exclusivement à des fins du bon déroulement du service de rencontres amoureuses que vous sollicitez. Les données à caractère personnel collectées ne sont communiquées à personne sans votre consentement.
+          "IDTRANSLATEFORM104":`<p > Les données à caractère personnel collectées dans le présent formulaire par <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong> seront traitées exclusivement à des fins du bon déroulement du service de rencontres amoureuses que vous sollicitez. Les données à caractère personnel collectées ne sont communiquées à personne sans votre consentement.
           En application des dispositions de la loi 2017-20 portant code du numérique en République du Bénin sur  la protection des données à caractère personnel, le traitement portant sur les données collectées a été déclaré devant l’APDP.</em> </p>
           <hr>
-          <p class="mb-0"><em>Conformément à la loi précitée, vous pouvez exercer vos droits d’accès, d’opposition, de rectification et de suppression auprès de <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong>.
+          <p class="mb-0">Conformément à la loi précitée, vous pouvez exercer vos droits d’accès, d’opposition, de rectification et de suppression auprès de <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong>.
           </em></p>`,
           "IDTRANSLATEFORM105":`Votre image est trop petite. Veuillez sélectionner une image d'au moins 300x300 pixels.`,
           "IDTRANSLATEFORM106":`Une erreur s'est produite lors de l'appel à l'API REST Countries`,
@@ -754,7 +754,7 @@ $(document).ready(function() {
             "IDTRANSLATE4": `Términos `, 
             "IDTRANSLATE5":"Condiciones Generales de Uso ",
             "IDTRANSLATE6":" Política de Privacidad ",
-            "IDTRANSLATE6X":"Contrato de afiliación",
+            "IDTRANSLATE6X":"Nuestro sistema de afiliados",
             "IDTRANSLATE7":"Contacto",
             "IDTRANSLATE8":" Registrarse ",
             "IDTRANSLATE9":" Conectarse ",
@@ -1309,10 +1309,10 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATEFORM102":` Anterior `,
           "IDTRANSLATEFORM103":` Enviar `,
 
-          "IDTRANSLATEFORM104":`<p ><em> Los datos personales recogidos en este formulario por <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong> serán tratadas exclusivamente para el buen desarrollo del servicio de encuentros amorosos que usted solicite. Los datos personales recopilados no se comparten con nadie sin su consentimiento.
+          "IDTRANSLATEFORM104":`<p > Los datos personales recogidos en este formulario por <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong> serán tratadas exclusivamente para el buen desarrollo del servicio de encuentros amorosos que usted solicite. Los datos personales recopilados no se comparten con nadie sin su consentimiento.
           En aplicación de las disposiciones de la Ley 2017-20 relativa al Código Numérico en la República de Benin sobre la protección de los datos de carácter personal, el tratamiento de los datos recogidos ha sido declarado ante la APDP.</em> </p>
           <hr>
-          <p class="mb-0"><em> De conformidad con la ley antes mencionada, puede ejercer sus derechos de acceso, oposición, rectificación y supresión ante <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong>.
+          <p class="mb-0"> De conformidad con la ley antes mencionada, puede ejercer sus derechos de acceso, oposición, rectificación y supresión ante <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong>.
           </em></p>`,
           "IDTRANSLATEFORM105":` Su imagen es demasiado pequeña. Seleccione una imagen de al menos 300x300 píxeles.`,
           "IDTRANSLATEFORM106":` Se produjo un error al llamar a la API de REST Countries `,
@@ -1413,7 +1413,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
  "IDTRANSLATE4": `Terms `,
 "IDTRANSLATE5":" General Terms of Use ",
 "IDTRANSLATE6":" Privacy Policy ",
-"IDTRANSLATE6X":"Affiliation Agreement",
+"IDTRANSLATE6X":"Our affiliate system",
 "IDTRANSLATE7":"Contact",
 "IDTRANSLATE8":"Sign up ",
 "IDTRANSLATE9":" Connect ",
@@ -1986,10 +1986,10 @@ The site and its various services may be interrupted or suspended by the Editor,
           "IDTRANSLATEFORM103":` Send `,
 
 
-          "IDTRANSLATEFORM104":`<p ><em> Personal data collected in this form by <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong> will be treated exclusively for the purposes of the smooth running of the dating service that you request. The personal data collected is not communicated to anyone without your consent. 
+          "IDTRANSLATEFORM104":`<p > Personal data collected in this form by <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong> will be treated exclusively for the purposes of the smooth running of the dating service that you request. The personal data collected is not communicated to anyone without your consent. 
           Pursuant to the provisions of Law 2017-20 on the Digital Code in the Republic of Benin on the Protection of Personal Data, the processing of the collected data was declared before to APDP.</em> </p>
           <hr>
-          <p class="mb-0"><em> In accordance with the aforementioned law, you can exercise your rights of access, opposition, rectification and deletion with <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong>.
+          <p class="mb-0"> In accordance with the aforementioned law, you can exercise your rights of access, opposition, rectification and deletion with <strong style="color: #000080;">BAKO FAMILIA & COMPANY</strong>.
           </em></p>`,
           "IDTRANSLATEFORM105":` Your image is too small. Please select an image of at least 300x300 pixels.`,
           "IDTRANSLATEFORM106":` Error occurred when calling REST Countries API `,

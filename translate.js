@@ -2164,6 +2164,7 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATE6").text(i18next.t("IDTRANSLATE6"));
       $("#IDTRANSLATE6X").text(i18next.t("IDTRANSLATE6X"));
       $("#IDTRANSLATE7").text(i18next.t("IDTRANSLATE7"));
+      $("#IDTRANSLATE7").text(i18next.t("IDTRANSLATE2KTI"));
       $("#IDTRANSLATE8").text(i18next.t("IDTRANSLATE8"));
       $("#IDTRANSLATE9").text(i18next.t("IDTRANSLATE9"));
 

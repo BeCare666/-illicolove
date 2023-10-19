@@ -542,16 +542,16 @@ $(document).ready(function() {
           "IDTRANSLATEFORM6":`VEUILLEZ REMPLIR LE FORMULAIRE CI-DESSOUS.`,
           "IDTRANSLATEFORM7":`Donnez des informations précises et judicieuses.`,
           "IDTRANSLATEFORM8":`Mon pays de résidence <i class="fa fa-star required"></i>`,
-          "IDTRANSLATEFORM9":`Ma Ville de résidence <i class="fa fa-star required"></i>`,
+          "IDTRANSLATEFORM9":`Ma ville de résidence <i class="fa fa-star required"></i>`,
           "IDTRANSLATEFORM10":`Nom ou Pseudonyme <i class="fa fa-star required"></i>`,
           "IDTRANSLATEFORM11":`Mon âge <i class="fa fa-star required"></i>`,
-          "IDTRANSLATEFORM9PL":`Ma Ville de résidence `,
+          "IDTRANSLATEFORM9PL":`Ma ville de résidence `,
 
 
 
 
 
-          "IDTRANSLATEFORM10X":`Ma Ville de résidence`,
+          "IDTRANSLATEFORM10X":`Ma ville de résidence`,
           "IDTRANSLATEFORM11X":`Mon âge`,
           "IDTRANSLATEFORM8X":`Mon pays de résidence`,
           "IDTRANSLATEFORM9X":`Mon âge`,
@@ -678,7 +678,7 @@ $(document).ready(function() {
           "IDTRANSLATEUSERD2":`Pour me contacter`,
           "IDTRANSLATEUSERD3":`<i class="bi bi-alexa" style="font-size: 3vh !important;"></i> Mon Profil `,
           "IDTRANSLATEUSERD4":`Réponses`,
-          "IDTRANSLATEUSERD5":`Ma Ville de résidence :`,
+          "IDTRANSLATEUSERD5":`Ma ville de résidence :`,
           "IDTRANSLATEUSERD6":`Mon nom ou pseudonyme:`,
           "IDTRANSLATEUSERD7":`Ma tranche d'âge :`,
           "IDTRANSLATEUSERD8":`Mon genre:`,
@@ -2263,8 +2263,9 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATE3").text(i18next.t("IDTRANSLATE3"));
       $("#IDTRANSLATE4").text(i18next.t("IDTRANSLATE4"));
       $("#IDTRANSLATE5").text(i18next.t("IDTRANSLATE5"));
-      $("#IDTRANSLATE6").text(i18next.t("IDTRANSLATE6"));
+      $("#IDTRANSLATE6").text(i18next.t("IDTRANSLATE6")); 
       $("#IDTRANSLATE6X").text(i18next.t("IDTRANSLATE6X"));
+      $("#IDTRANSLATE6XV").text(i18next.t("IDTRANSLATE6X"));
       $("#IDTRANSLATE7").text(i18next.t("IDTRANSLATE7"));
       $("#IDTRANSLATE2KTI").text(i18next.t("IDTRANSLATE7"));
       $("#IDTRANSLATE8").text(i18next.t("IDTRANSLATE8"));

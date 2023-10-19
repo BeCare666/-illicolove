@@ -3,225 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"> <!-- Assurez-vous d'ajouter le lien vers votre fichier CSS -->
-    <title>Ordered List UI</title>
+    <title>Sélection multiple</title>
 </head>
 <body>
-    <div class="heading">
-        <h1>Ordered List UI</h1>
-    </div>
-    <div class="container">
-        <div class="nav">
-            <a href="#">
-                <i class="fal fa-home"></i>
-            </a>
-            <a href="https://twitter.com/collinscode_" target="_blank">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://github.com/cmdeveloped" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://codepen.io/collinscode" target="_blank">
-                <i class="fab fa-codepen"></i>
-            </a>
-        </div>
-        <div class="list">
-            <div class="num">
-                <h3>Wolf snackwave cray mustache typewriter butcher tbh.</h3>
-            </div>
-            <div class="num">
-                <h3>Messenger bag normcore cardigan, brunch organic tumblr locavore street art.</h3>
-            </div>
-            <div class="num">
-                <h3>Echo park iPhone intelligentsia literally 8-bit pickled irony master cleanse activated charcoal yuccie slow-carb ennui.</h3>
-            </div>
-            <div class="num">
-                <h3>Marfa pinterest shaman literally tbh crucifix pop-up taiyaki tacos raw denim offal shoreditch jean shorts yr.</h3>
-            </div>
-            <div class="num">
-                <h3>Ethical fixie man braid, pork belly shoreditch tumeric cloud bread migas chillwave raclette normcore freegan.</h3>
-            </div>
-            <div class="num">
-              <h3>Ethical fixie man braid, pork belly shoreditch tumeric cloud bread migas chillwave raclette normcore freegan.</h3>
-            </div>
-            <div class="num">
-                <h3>Ethical fixie man braid, pork belly shoreditch tumeric cloud bread migas chillwave raclette normcore freegan.</h3>
-            </div>
-        </div>
-    </div>
-    <h5 class="message">Hover Over List Items</h5>
-    <style>
-  .gradient-a {
-    background: linear-gradient(to right, #2980b9, #2c3e50);
-}
+    <label for="options">Sélectionnez plusieurs options :</label>
+    <select id="options" multiple>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+        <option value="option4">Option 4</option>
+        <option value="option5">Option 5</option>
+    </select>
 
-.flex-a-center {
-    display: flex;
-    align-items: center;
-}
+    <button onclick="afficherOptionsSelectionnees()">Afficher les options sélectionnées</button>
 
-.flex-b-center {
-    justify-content: center;
-}
+    <div id="resultat"></div>
 
-.font {
-    font-family: 'Montserrat', sans-serif;
-}
+    <script>
+        function afficherOptionsSelectionnees() {
+            const selectElement = document.getElementById("options");
+            const resultat = document.getElementById("resultat");
+            resultat.innerHTML = "Options sélectionnées : ";
 
-.primary {
-    color: #2980b9;
-}
-
-.secondary {
-    color: #2c3e50;
-}
-
-html {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
-
-body {
-    margin: 0;
-    background: linear-gradient(to right, #2980b9, #2c3e50);
-    font-family: 'Montserrat', sans-serif;
-}
-
-.heading {
-    color: white;
-    text-align: center;
-}
-
-.heading h1 {
-    margin-bottom: 3rem;
-    font-weight: 300;
-    position: relative;
-}
-
-.heading h1::after {
-    content: '';
-    height: 2px;
-    width: 2rem;
-    position: absolute;
-    left: 50%;
-    bottom: -1rem;
-    transform: translateX(-50%);
-    background-color: white;
-}
-
-.container {
-    background-color: white;
-    padding: 2rem;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.container .nav {
-    background-color: #fafafa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    margin: 0 -3rem 2rem;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.container .nav::before,
-.container .nav::after {
-    content: '';
-    height: 0;
-    width: 0;
-    position: absolute;
-    top: 0;
-    border: 0.75rem solid transparent;
-    border-bottom: 0.75rem solid #f2f0f0;
-    transform-origin: center;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: -1;
-}
-
-.container .nav::before {
-    left: 0;
-    transform: translateY(-0.45rem) rotate(135deg) translateX(-0.4rem);
-}
-
-.container .nav::after {
-    right: 0;
-    transform: translateY(-0.45rem) rotate(-135deg) translateX(0.4rem);
-}
-
-.container .nav a {
-    display: inline-block;
-    margin: 0 3rem;
-    font-size: 2rem;
-    color: #2980b9;
-    opacity: 0.7;
-    transition: 0.25s;
-}
-
-.container .nav a:hover {
-    opacity: 1;
-}
-
-.container .list .num {
-    padding: 0.5rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    transition: 0.25s;
-}
-
-.container .list .num h3 {
-    position: relative;
-    left: -1.5rem;
-    color: #3d3d3d;
-    font-size: 0.85rem;
-    transition: 0.25s;
-}
-
-.container .list .num:hover {
-    background-color: #fafafa;
-    cursor: pointer;
-}
-
-.container .list .num:hover::before {
-    opacity: 0.2;
-}
-
-.container .list .num:hover h3 {
-    left: 1rem;
-}
-
-.message {
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 2rem;
-}
-
-    </style>
+            for (let i = 0; i < selectElement.options.length; i++) {
+                if (selectElement.options[i].selected) {
+                    resultat.innerHTML += selectElement.options[i].text + " ";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
-
-
-"CONTRACTID1":``,
-"CONTRACTID2":``,
-"CONTRACTID3":``,
-"CONTRACTID4":``,
-"CONTRACTID5":``,
-"CONTRACTID6":``,
-"CONTRACTID7":``,
-"CONTRACTID8":``,
-"CONTRACTID9":``,
-"CONTRACTID10":``,
-"CONTRACTID11":``,
-"CONTRACTID12":``,
-"CONTRACTID13":``,
-"CONTRACTID14":``,
-"CONTRACTID15":``,
-"CONTRACTID16":``,
-"CONTRACTID17":``,
-"CONTRACTID18":``,
-"CONTRACTID19":``,

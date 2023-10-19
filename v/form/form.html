@@ -479,6 +479,8 @@ function getdata() {
     if (snapshot.exists()) {
     if (snapshot.val()  .IDREGION) {
     var MycountryN = snapshot.val().MYCOUNTRY;
+    var MYTOF = snapshot.val().PIECESDIDENTITE
+    console.log(MYTOF)
     myprofileidtravail.value =  snapshot.val().MONTRAVAILLEOUOCCUPATION
     myprofileidpréférences.value =   snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE
     myprofileidprécisions.value =   snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE
@@ -704,7 +706,7 @@ reader.readAsDataURL(file);
                myprofileidSaville.value && myprofileidoccupations.value &&
                choicesmultipleremovebuttonsexe.value //&& Mycountry.value
             ){
-                const updatedValue = PieceID ? PieceID : "";
+                const updatedValue = PieceID ? PieceID : MYTOF;
                 update(ref(db, "utilisateurs/" + UserConnectuser), {
                 MAVILLEDERESIDENCE : myprofileidMaVille.value,
                 //MYCOUNTRY : Mycountry.value,

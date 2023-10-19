@@ -219,7 +219,7 @@
           <span id="logoutID" style="cursor: pointer;"><a >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <i class="bi bi-box-arrow-left" style="font-size: 26px !important;"></i><br> <p id="IDTRANSLATEPROFIL10"></p></a></span>
           <span><i class="fal fa-chart-bar"></i></span>&nbsp;&nbsp;&nbsp;
-          <div style="background-color: #40E0D0 !important; height: 11vh !important; width: 11vh !important; text-align: center;"
+          <div style="background-color: #40E0D0 !important; height: 11vh !important; width: 11vh !important; text-align: center;  padding: 3px !important; margin-right: 3vh !important;"
            class="menu-btn rotate" id="myBtn" data-toggle="modal" data-target="#exampleModalCenter" >
             <!---<i class="bi bi-plus-circle"></i>-->
           </div>
@@ -363,9 +363,6 @@
   </div>
 </div>
 </div>
-
-
-
 
 <style>
   /* Style pour le cadre rouge (invisible par défaut) */
@@ -889,6 +886,8 @@ style="background-color: #f38e9d !important;"
     CONSULTEZLESANNONCES.addEventListener("mouseenter", handleMouseEnterz); */}
     paiementBtnV.addEventListener("click", handleMouseEnter);   
       }else{
+      var paiementBtn = document.getElementById('myBtn');
+      var paiementBtnV = document.getElementById('myBtn2');
       paiementBtnV.style.display = "none"
       paiementBtn.style.display = "block"
       // function to add unity for kkiapay
@@ -1033,6 +1032,7 @@ style="background-color: #f38e9d !important;"
       text: i18next.t('IDTRANSLATEPROFIL42'),
       icon: 'error'
       });
+      console.log(error)
   });
 
 // Supprimer l'utilisateur de la base de données

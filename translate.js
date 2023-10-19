@@ -743,6 +743,26 @@ $(document).ready(function() {
           "IDTRANSLATESIALERT2" :"Chers visiteurs, dans le but d'assurer votre sécurité et de lutter contre les fausses annonces, nous récupérons votre position.",
           "IDTRANSLATESIALERT3" :"Oui, j'accepte !",
           "IDTRANSLATESIALERT4" :"Refusé",
+          "CONTRACTID1":`Contrat d'Affiliation`,
+          "CONTRACTID2":`      Entre: illicolove , ci-après dénommé "le site de rencontres",
+          et : MOI, ci-après dénommé "l'Affilié(e)".`,
+          "CONTRACTID3":`Objet`,
+          "CONTRACTID4":`Le présent contrat d'affiliation a pour but de régir la relation entre illicolove et l'Affilié en relation avec le programme d'affiliation du site de rencontres <a href="https://illicolove.com">illicolove.com</a>`,
+          "CONTRACTID5":`1. Programme d'Affiliation`,
+          "CONTRACTID6":`Illicolove exploite un programme d'affiliation en ligne pour promouvoir ses services de rencontres amoureuses.`,
+          "CONTRACTID7":`2. Rôle de l'Affilié`,
+          "CONTRACTID8":`L'Affilié s'engage à promouvoir les services du site de rencontres en utilisant des liens d'affiliation uniques fournis par illicolove, ainsi que d'autres moyens promotionnels approuvés par le site.`,
+          "CONTRACTID9":`3. Rémunération de l'Affilié`,
+          "CONTRACTID10":`3.1. L'Affilié recevra une commission de 100 F CFA pour chaque nouveau membre qui s'inscrit sur le site <a href="https://illicolove.com">illicolove.com</a> via le lien unique d'affiliation de l'Affilié et publie une annonce de recherche amoureuse.`,
+          "CONTRACTID11":`3.2. De plus, l'Affilié recevra une commission de 10% sur chaque achat effectué par les membres référés via son lien d'affiliation.`,
+          "CONTRACTID12":`4. Paiement de la Commission`,
+          "CONTRACTID13":`Illicolove versera la commission de l'Affilié sur une base régulière mensuelle sur demande par mobile money ou par virement bancaire , au choix de l'Affilié. Les frais de reversement sont à la charge de l'Affilié.`,
+          "CONTRACTID14":`5. Durée du Contrat`,
+          "CONTRACTID15":`Ce contrat d'affiliation entrera en vigueur à la date de son  acceptation par l'Affilié et restera en vigueur jusqu'à ce qu'il soit résilié par l'une ou l'autre des parties, sous réserve d'un préavis écrit de trente (30) jours.`,
+          "CONTRACTID16":`6. Résiliation`,
+          "CONTRACTID17":`Illicolove ou l'Affilié peut résilier ce contrat à tout moment en fournissant un préavis écrit à l'autre partie. Toute commission non payée sera réglée conformément aux termes de ce contrat.`,
+          "CONTRACTID18":`7. Loi Applicable`,
+          "CONTRACTID19":`Ce contrat est régi par les lois béninoises et tout litige découlant de ce contrat, à défaut d'être réglé à l'amiable, sera soumis à la juridiction exclusive des tribunaux de Commerce de Cotonou.`,
           }
 
         },
@@ -766,16 +786,16 @@ $(document).ready(function() {
             "IDTRANSLATECONTACT6":" Redes sociales ",
             "IDTRANSLATETITLE":"Find your soul mate",
             "IDTRANSLATETITLEFORM":"Form",
-"IDTRANSLATE1INF1":`Su dirección de correo electrónico es recopilada y procesada por BAKO FAMILIA & COMPANY para mantenerle informado de las nuevas características de la página web o de actualización.
-          En aplicación de la ley 2017-20 sobre el código digital en la República de Benín, sobre la protección de los datos de carácter personal, puede darse de baja o ejercer sus derechos de acceso, de oposición, rectificación y supresión enviando un correo electrónico a info@illicolove.com`,
+            "IDTRANSLATE1INF1":`Su dirección de correo electrónico es recopilada y procesada por BAKO FAMILIA & COMPANY para mantenerle informado de las nuevas características de la página web o de actualización.
+            En aplicación de la ley 2017-20 sobre el código digital en la República de Benín, sobre la protección de los datos de carácter personal, puede darse de baja o ejercer sus derechos de acceso, de oposición, rectificación y supresión enviando un correo electrónico a info@illicolove.com`,
 
-"IDTRANSLATE10":"illicolove,",
-"IDTRANSLATE11":` Su plataforma de citas, para luchar contra el celibato y la soledad `,
-"IDTRANSLATE12":` Consideramos la soledad involuntaria como un problema humanitario y nos comprometemos a ofrecer una solución a las personas que la padecen.`,
-"IDTRANSLATE13":` Regístrese gratis `,
-"IDTRANSLATE13KLM":`Ir a su perfil`,
- "IDTRANSLATE14":` Sobre nosotros `,
- "IDTRANSLATE15":` Su plataforma de encuentros en línea illicolove.com le es propuesta por los Establecimientos BAKO FAMILIA & COMPANY, una empresa individual(EI) de derecho beninés inscrita en el Registro de Comercio y Crédito Mobiliario RCCM RB/COT/08/A4101; al Identificador Fiscal Único (IFU) 3200800938610.`,
+            "IDTRANSLATE10":"illicolove,",
+            "IDTRANSLATE11":` Su plataforma de citas, para luchar contra el celibato y la soledad `,
+            "IDTRANSLATE12":` Consideramos la soledad involuntaria como un problema humanitario y nos comprometemos a ofrecer una solución a las personas que la padecen.`,
+            "IDTRANSLATE13":` Regístrese gratis `,
+            "IDTRANSLATE13KLM":`Ir a su perfil`,
+            "IDTRANSLATE14":` Sobre nosotros `,
+            "IDTRANSLATE15":` Su plataforma de encuentros en línea illicolove.com le es propuesta por los Establecimientos BAKO FAMILIA & COMPANY, una empresa individual(EI) de derecho beninés inscrita en el Registro de Comercio y Crédito Mobiliario RCCM RB/COT/08/A4101; al Identificador Fiscal Único (IFU) 3200800938610.`,
             "IDTRANSLATE16":` Tiene por actividades, el Wedding planning (acompañamiento en la organización de bodas), el Turismo-Ocio, la organización de ferias. Fue creada en mayo de 2008 en Cotonú. `,
             "IDTRANSLATE17":` Más detalles `,
             "IDTRANSLATE18":` Nuestros objetivos `,
@@ -791,11 +811,11 @@ $(document).ready(function() {
            "IDTRANSLATE23":` Fiabilidad,`,
            "IDTRANSLATE24":` La cortesía y `,
            "IDTRANSLATE25":` Discreción.`, 
-"IDTRANSLATE26":` A partir de la edad núbil, el hombre y la mujer, sin ninguna restricción en cuanto a la raza, la nacionalidad o la religión, tienen derecho a casarse y fundar una familia.
+            "IDTRANSLATE26":` A partir de la edad núbil, el hombre y la mujer, sin ninguna restricción en cuanto a la raza, la nacionalidad o la religión, tienen derecho a casarse y fundar una familia.
            Tienen los mismos derechos con respecto al matrimonio, durante el matrimonio y tras su disolución.`,
            "IDTRANSLATE27":` El matrimonio sólo puede celebrarse con el libre y pleno consentimiento de los futuros cónyuges.`,
            "IDTRANSLATE28":` La familia es el elemento natural y fundamental de la sociedad y tiene derecho a la protección de la sociedad y del Estado.  La soledad, el celibato y el aislamiento social constituyen un imperativo humanitario que interpela a los poderes públicos, las asociaciones y las empresas del sector.  La soledad crónica e involuntaria constituye un drama individual que viven quienes la padecen, la mayoría de las veces en silencio. Illicolove.com nació en este contexto, con la voluntad de proponer de otra manera y simplemente, servicios de citas en línea; con una caza demostrada a los perfiles ficticios. 
-¡Bienvenida!`,
+          ¡Bienvenida!`,
            "IDTRANSLATE29":` Nuestro objetivo son las personas :`,
            "IDTRANSLATE30":` Jóvenes de 18 años o más.`,
            "IDTRANSLATE31":` Solteros involuntarios de edad avanzada, desesperados y decepcionados.`,
@@ -1400,9 +1420,29 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATESIALERT2" :"Estimados visitantes, con el fin de garantizar su seguridad y combatir los anuncios falsos, estamos recuperando su ubicación.",
           "IDTRANSLATESIALERT3" :"¡Sí, acepto!",
           "IDTRANSLATESIALERT4" :"Rechazado",
-
-
-
+          "CONTRACTID1":`Contrato de Afiliación`,
+          "CONTRACTID2":`Entre: illicolove, en adelante referido como "el sitio de citas,"
+          y: YO, en adelante referido como "el Afiliado."`,
+          "CONTRACTID3":`Propósito`,
+          "CONTRACTID4":`Este contrato de afiliación tiene como objetivo regir la relación entre illicolove y el Afiliado en relación con el programa de afiliados del sitio de citas  <a href="https://illicolove.com">illicolove.com</a>.
+          `,
+          "CONTRACTID5":`1. Programa de Afiliados`,
+          "CONTRACTID6":`Illicolove opera un programa de afiliados en línea para promocionar sus servicios de citas románticas.`,
+          "CONTRACTID7":`2. Rol del Afiliado`,
+          "CONTRACTID8":`El Afiliado se compromete a promocionar los servicios del sitio de citas utilizando enlaces de afiliados únicos proporcionados por illicolove, así como otros métodos promocionales aprobados por el sitio.`,
+          "CONTRACTID9":`3. Compensación del Afiliado`,
+          "CONTRACTID10":`3.1. El Afiliado recibirá una comisión de 100 F CFA por cada nuevo miembro que se registre en el sitio  <a href="https://illicolove.com">illicolove.com</a> a través del enlace de afiliado único del Afiliado y publique un anuncio de búsqueda de amor.
+          `,
+          "CONTRACTID11":`3.2. Además, el Afiliado recibirá una comisión del 10% por cada compra realizada por los miembros referidos a través de su enlace de afiliado.`,
+          "CONTRACTID12":`4. Pago de Comisiones`,
+          "CONTRACTID13":`Illicolove pagará la comisión del Afiliado de forma regular, mensualmente, previa solicitud, a través de dinero móvil o transferencia bancaria, a elección del Afiliado. Los gastos de transferencia corren a cargo del Afiliado.`,
+          "CONTRACTID14":`5. Duración del Acuerdo`,
+          "CONTRACTID15":`Este contrato de afiliación entrará en vigor en la fecha de aceptación por parte del Afiliado y permanecerá en vigor hasta que sea terminado por cualquiera de las partes, sujeto a un aviso por escrito de treinta (30) días.`,
+          "CONTRACTID16":`6. Terminación`,
+          "CONTRACTID17":`Illicolove o el Afiliado pueden dar por terminado este acuerdo en cualquier momento proporcionando un aviso por escrito a la otra parte. Cualquier comisión no pagada se liquidará de acuerdo con los términos de este acuerdo.`,
+          "CONTRACTID18":`7. Ley Aplicable*`,
+          "CONTRACTID19":`Este acuerdo se rige por las leyes de Benín, y cualquier disputa que surja de este acuerdo, en ausencia de un acuerdo amistoso, estará sujeta a la jurisdicción exclusiva de los Tribunales Comerciales de Cotonú.`,
+          
           }
         },
         en: {
@@ -2076,7 +2116,30 @@ The site and its various services may be interrupted or suspended by the Editor,
           "IDTRANSLATESIALERT1" :"Información",
           "IDTRANSLATESIALERT2" :"Estimados visitantes, con el fin de garantizar su seguridad y combatir los anuncios falsos, estamos recuperando su ubicación.",
           "IDTRANSLATESIALERT3" :"¡Sí, acepto!",
+
           "IDTRANSLATESIALERT4" :"Rechazado",
+
+          "CONTRACTID1":`Affiliate Agreement`,
+          "CONTRACTID2":`
+          Between: illicolove, hereinafter referred to as "the dating site,"
+          and: ME, hereinafter referred to as "the Affiliate."`,
+          "CONTRACTID3":`Purpose`,
+          "CONTRACTID4":` This affiliate agreement is intended to govern the relationship between illicolove and the Affiliate in connection with the affiliate program of the  <a href="https://illicolove.com">illicolove.com</a> dating site.`,
+          "CONTRACTID5":`1. Affiliate Program`,
+          "CONTRACTID6":`Illicolove operates an online affiliate program to promote its romantic dating services.`,
+          "CONTRACTID7":`2. Affiliate's Role`,
+          "CONTRACTID8":`The Affiliate agrees to promote the dating site's services using unique affiliate links provided by illicolove, as well as other promotional methods approved by the site.`,
+          "CONTRACTID9":`3. Affiliate Compensation`,
+          "CONTRACTID10":`3.1. The Affiliate will receive a commission of 100 F CFA for each new member who registers on the  <a href="https://illicolove.com">illicolove.com</a> site through the Affiliate's unique affiliate link and posts a love-seeking advertisement.`,
+          "CONTRACTID11":`3.2. Additionally, the Affiliate will receive a 10% commission on each purchase made by referred members through their affiliate link.`,
+          "CONTRACTID12":`4. Commission Payment`,
+          "CONTRACTID13":`Illicolove will pay the Affiliate's commission on a regular monthly basis upon request through mobile money or bank transfer, at the Affiliate's choice. Transfer fees are the responsibility of the Affiliate.`,
+          "CONTRACTID14":`5. Duration of the Agreement`,
+          "CONTRACTID15":`This affiliate agreement shall come into effect on the date of acceptance by the Affiliate and shall remain in effect until terminated by either party, subject to written notice of thirty (30) days.`,
+          "CONTRACTID16":`6. Termination`,
+          "CONTRACTID17":`Illicolove or the Affiliate may terminate this agreement at any time by providing written notice to the other party. Any unpaid commissions will be settled in accordance with the terms of this agreement.`,
+          "CONTRACTID18":`7. Applicable Law`,
+          "CONTRACTID19":`This agreement is governed by the laws of Benin, and any dispute arising from this agreement, in the absence of an amicable settlement, shall be subject to the exclusive jurisdiction of the Commercial Courts of Cotonou.`,
 
           "IDTRANSLATESIALERT1" :"information",
           "IDTRANSLATESIALERT2" :"Dear visitors, for security reasons and to prevent false advertisements, we are retrieving your location.",
@@ -2712,6 +2775,28 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATESIALERT2").text(i18next.t("IDTRANSLATESIALERT2"));
       $("#IDTRANSLATESIALERT3").text(i18next.t("IDTRANSLATESIALERT3"));
       $("#IDTRANSLATESIALERT4").text(i18next.t("IDTRANSLATESIALERT4"));
+
+      $("#CONTRACTID1X").text(i18next.t("CONTRACTID1"));
+      $("#IDTRANSLATE6W").text(i18next.t("CONTRACTID1"));
+      $("#CONTRACTID1").text(i18next.t("CONTRACTID1"));
+      $("#CONTRACTID2").text(i18next.t("CONTRACTID2"));
+      $("#CONTRACTID3").text(i18next.t("CONTRACTID3"));
+      $("#CONTRACTID4").html(i18next.t("CONTRACTID4"));
+      $("#CONTRACTID5").text(i18next.t("CONTRACTID5"));
+      $("#CONTRACTID6").text(i18next.t("CONTRACTID6"));
+      $("#CONTRACTID7").text(i18next.t("CONTRACTID7"));
+      $("#CONTRACTID8").text(i18next.t("CONTRACTID8"));
+      $("#CONTRACTID9").text(i18next.t("CONTRACTID9"));
+      $("#CONTRACTID10").html(i18next.t("CONTRACTID10"));
+      $("#CONTRACTID11").text(i18next.t("CONTRACTID11"));
+      $("#CONTRACTID12").text(i18next.t("CONTRACTID12"));
+      $("#CONTRACTID13").text(i18next.t("CONTRACTID13"));
+      $("#CONTRACTID14").text(i18next.t("CONTRACTID14"));
+      $("#CONTRACTID15").text(i18next.t("CONTRACTID15"));
+      $("#CONTRACTID16").text(i18next.t("CONTRACTID16"));
+      $("#CONTRACTID17").text(i18next.t("CONTRACTID17"));
+      $("#CONTRACTID18").text(i18next.t("CONTRACTID18"));
+      $("#CONTRACTID19").text(i18next.t("CONTRACTID19"));
 
       $("#STEPS14").text(i18next.t("STEPS14"));
       $("#STEPS23").text(i18next.t("STEPS23"));

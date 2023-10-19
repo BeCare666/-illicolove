@@ -755,6 +755,7 @@ $(document).ready(function() {
           "CONTRACTID9":`3. Rémunération de l'Affilié`,
           "CONTRACTID10":`3.1. L'Affilié recevra une commission de 100 F CFA pour chaque nouveau membre qui s'inscrit sur le site <a href="https://illicolove.com">illicolove.com</a> via le lien unique d'affiliation de l'Affilié et publie une annonce de recherche amoureuse.`,
           "CONTRACTID11":`3.2. De plus, l'Affilié recevra une commission de 10% sur chaque achat effectué par les membres référés via son lien d'affiliation.`,
+          "CONTRACTID11X":`3.3 La commission de 100F CFA ne sera perçu que lorsque le nouveau  membre procède a un achat d'unité supérieur à 100F CFA, afin d'éviter les fraudes.`,
           "CONTRACTID12":`4. Paiement de la Commission`,
           "CONTRACTID13":`Illicolove versera la commission de l'Affilié sur une base régulière mensuelle sur demande par mobile money ou par virement bancaire , au choix de l'Affilié. Les frais de reversement sont à la charge de l'Affilié.`,
           "CONTRACTID14":`5. Durée du Contrat`,
@@ -763,6 +764,40 @@ $(document).ready(function() {
           "CONTRACTID17":`Illicolove ou l'Affilié peut résilier ce contrat à tout moment en fournissant un préavis écrit à l'autre partie. Toute commission non payée sera réglée conformément aux termes de ce contrat.`,
           "CONTRACTID18":`7. Loi Applicable`,
           "CONTRACTID19":`Ce contrat est régi par les lois béninoises et tout litige découlant de ce contrat, à défaut d'être réglé à l'amiable, sera soumis à la juridiction exclusive des tribunaux de Commerce de Cotonou.`,
+          "ANNONCEAFFILIATEID" : `        <div class="box--list__items">
+          <div class="box--list__item" style="  padding-top: 0 !important; margin-top: 0 !important;">
+              <h2 class="box--list__title box--list__titlex" >Gagnez de l'argent en aidant les gens à trouver l'amour sur illicolove !</h2>
+              <p class="box--list__description">Vous cherchez une opportunité d'affiliation lucrative ? Rejoignez notre programme d'affiliation unique et augmentez vos revenus 
+                en aidant les autres à trouver leur âme sœur. Voici comment ça fonctionne : <br>
+                ✅ Recevez 100 F CFA pour chaque nouveau membre qui s'inscrit via votre lien d'affiliation et publie une annonce de recherche amoureuse sur notre site. <br>
+
+                ✅ En plus, obtenez 10% de commission sur chaque achat effectué par les membres que vous avez référés. Plus ils dépensent, plus vous gagnez !</p>
+          </div>
+          
+          <div class="box--list__item">
+              <h2 class="box--list__title box--list__titlex"> Pourquoi choisir notre programme d'affiliation ?</h2>
+              <div class="box--list__description">
+                ✅ Gagnez de l'argent dès que quelqu'un s'inscrit, et publié son annonce de recherche. <br>
+                ✅ Obtenez une commission continue à chaque fois que vos affiliés effectuent un achat sur notre site. <br>
+                ✅ Ciblez un public en quête d'amour, une niche passionnante et en croissance constante. <br>
+                
+              </div>
+          </div>
+          
+          <div class="box--list__item">
+              <h2 class="box--list__title"> Rejoignez notre programme</h2>
+              <div class="box--list__description">✅  Rejoignez notre programme d'affiliation aujourd'hui et commencez à gagner de l'argent en aidant les gens à trouver l'amour sur illicolove ! 💑
+                
+               </div>
+          </div>
+          <div class="box--list__item">
+            <h2 class="box--list__title"> Inscrivez-vous.</h2>
+            <div class="box--list__description"> 
+              ✅ Inscrivez-vous maintenant et augmentez vos revenus : <a href="./v/login/signup.html">Votre lien d'inscription</a>
+                
+              Pour toute question, contactez-nous à info@illicolove.com</div>
+        </div>
+      </div>`,
           }
 
         },
@@ -1434,6 +1469,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "CONTRACTID10":`3.1. El Afiliado recibirá una comisión de 100 F CFA por cada nuevo miembro que se registre en el sitio  <a href="https://illicolove.com">illicolove.com</a> a través del enlace de afiliado único del Afiliado y publique un anuncio de búsqueda de amor.
           `,
           "CONTRACTID11":`3.2. Además, el Afiliado recibirá una comisión del 10% por cada compra realizada por los miembros referidos a través de su enlace de afiliado.`,
+          "CONTRACTID11X":`3.3. La comisión de 100 francos CFA solo se cobrará cuando el nuevo miembro realice una compra de unidades que exceda los 100 francos CFA, con el fin de prevenir fraudes.`,
           "CONTRACTID12":`4. Pago de Comisiones`,
           "CONTRACTID13":`Illicolove pagará la comisión del Afiliado de forma regular, mensualmente, previa solicitud, a través de dinero móvil o transferencia bancaria, a elección del Afiliado. Los gastos de transferencia corren a cargo del Afiliado.`,
           "CONTRACTID14":`5. Duración del Acuerdo`,
@@ -1442,7 +1478,39 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "CONTRACTID17":`Illicolove o el Afiliado pueden dar por terminado este acuerdo en cualquier momento proporcionando un aviso por escrito a la otra parte. Cualquier comisión no pagada se liquidará de acuerdo con los términos de este acuerdo.`,
           "CONTRACTID18":`7. Ley Aplicable*`,
           "CONTRACTID19":`Este acuerdo se rige por las leyes de Benín, y cualquier disputa que surja de este acuerdo, en ausencia de un acuerdo amistoso, estará sujeta a la jurisdicción exclusiva de los Tribunales Comerciales de Cotonú.`,
+          "ANNONCEAFFILIATEID":`        <div class="box--list__items">
+          <div class="box--list__item" style="  padding-top: 0 !important; margin-top: 0 !important;">
+              <h2 class="box--list__title box--list__titlex" >¡Gana dinero ayudando a las personas a encontrar el amor en illicolove! </h2>
+              <p class="box--list__description">¿Estás buscando una oportunidad de afiliación lucrativa? Únete a nuestro programa de afiliados único y aumenta tus ingresos ayudando a otros a encontrar a su media naranja. Así es cómo funciona: <br>
+                ✅ Recibe 100 francos CFA por cada nuevo miembro que se registre a través de tu enlace de afiliado y publique un anuncio de búsqueda de amor en nuestro sitio web.<br>
+
+                ✅ Además, obtén un 10% de comisión en cada compra realizada por los miembros que hayas referido. ¡Cuanto más gasten, más ganarás!</p>
+          </div>
           
+          <div class="box--list__item">
+              <h2 class="box--list__title box--list__titlex"> ¿Por qué elegir nuestro programa de afiliados?</h2>
+              <div class="box--list__description">
+                ✅ Gana dinero tan pronto como alguien se registre y publique su anuncio de búsqueda de amor. <br>
+                ✅ Obtén comisiones continuas cada vez que tus afiliados realicen una compra en nuestro sitio. <br>
+                ✅ Dirígete a un público en busca de amor, un nicho emocionante y en constante crecimiento.<br>
+                
+              </div>
+          </div>
+          
+          <div class="box--list__item">
+              <h2 class="box--list__title"> ¡Únete a nuestro programa</h2>
+              <div class="box--list__description">✅  ¡Únete a nuestro programa de afiliados hoy y comienza a ganar dinero ayudando a las personas a encontrar el amor en illicolove! 💑
+                
+               </div>
+          </div>
+          <div class="box--list__item">
+            <h2 class="box--list__title"> Regístrate</h2>
+            <div class="box--list__description"> 
+              ✅ egístrate ahora y aumenta tus ingresos : <a href="./v/login/signup.html">Votre lien d'inscription</a>
+                
+              Para cualquier pregunta, contáctanos en info@illicolove.com</div>
+        </div>
+      </div>`,
           }
         },
         en: {
@@ -2132,6 +2200,7 @@ The site and its various services may be interrupted or suspended by the Editor,
           "CONTRACTID9":`3. Affiliate Compensation`,
           "CONTRACTID10":`3.1. The Affiliate will receive a commission of 100 F CFA for each new member who registers on the  <a href="https://illicolove.com">illicolove.com</a> site through the Affiliate's unique affiliate link and posts a love-seeking advertisement.`,
           "CONTRACTID11":`3.2. Additionally, the Affiliate will receive a 10% commission on each purchase made by referred members through their affiliate link.`,
+          "CONTRACTID11X":`3.3 The 100 CFA francs commission will only be charged when the new member makes a purchase of units exceeding 100 CFA francs, in order to prevent fraud.`,
           "CONTRACTID12":`4. Commission Payment`,
           "CONTRACTID13":`Illicolove will pay the Affiliate's commission on a regular monthly basis upon request through mobile money or bank transfer, at the Affiliate's choice. Transfer fees are the responsibility of the Affiliate.`,
           "CONTRACTID14":`5. Duration of the Agreement`,
@@ -2145,6 +2214,39 @@ The site and its various services may be interrupted or suspended by the Editor,
           "IDTRANSLATESIALERT2" :"Dear visitors, for security reasons and to prevent false advertisements, we are retrieving your location.",
           "IDTRANSLATESIALERT3" :"Yes, I accept!",
           "IDTRANSLATESIALERT4" :"Denied",
+          "ANNONCEAFFILIATEID" : `      <div class="box--list__items">
+          <div class="box--list__item" style="  padding-top: 0 !important; margin-top: 0 !important;">
+              <h2 class="box--list__title box--list__titlex" >Make money by helping people find love on illicolove! </h2>
+              <p class="box--list__description">Are you looking for a lucrative affiliate opportunity? Join our unique affiliate program and boost your income by assisting others in finding their soulmates. Here's how it works: <br>
+                ✅ Receive 100 CFA francs for each new member who signs up through your affiliate link and posts a love-seeking ad on our website. <br>
+  
+                ✅ Additionally, get a 10% commission on every purchase made by the members you've referred. The more they spend, the more you earn!</p>
+          </div>
+          
+          <div class="box--list__item">
+              <h2 class="box--list__title box--list__titlex"> Why choose our affiliate program?</h2>
+              <div class="box--list__description">
+                ✅ Earn money as soon as someone signs up and posts their love-seeking ad. <br>
+                ✅ Get continuous commissions each time your affiliates make a purchase on our site. <br>
+                ✅ Target an audience in search of love, an exciting and continually growing niche. <br>
+                
+              </div>
+          </div>
+          
+          <div class="box--list__item">
+              <h2 class="box--list__title"> Join our affiliate program</h2>
+              <div class="box--list__description">✅  Join our affiliate program today and start making money by helping people find love on illicolove! 💑
+                
+               </div>
+          </div>
+          <div class="box--list__item">
+            <h2 class="box--list__title"> Sign up</h2>
+            <div class="box--list__description"> 
+              ✅ Sign up now and boost your income:  <a href="./v/login/signup.html">Your signup link </a>
+  
+              For any questions, contact us at info@illicolove.com </div>
+        </div>
+      </div>`,
 
         }
         }
@@ -2164,7 +2266,7 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATE6").text(i18next.t("IDTRANSLATE6"));
       $("#IDTRANSLATE6X").text(i18next.t("IDTRANSLATE6X"));
       $("#IDTRANSLATE7").text(i18next.t("IDTRANSLATE7"));
-      $("#IDTRANSLATE7").text(i18next.t("IDTRANSLATE2KTI"));
+      $("#IDTRANSLATE2KTI").text(i18next.t("IDTRANSLATE7"));
       $("#IDTRANSLATE8").text(i18next.t("IDTRANSLATE8"));
       $("#IDTRANSLATE9").text(i18next.t("IDTRANSLATE9"));
 
@@ -2790,6 +2892,7 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#CONTRACTID9").text(i18next.t("CONTRACTID9"));
       $("#CONTRACTID10").html(i18next.t("CONTRACTID10"));
       $("#CONTRACTID11").text(i18next.t("CONTRACTID11"));
+      $("#CONTRACTID11X").text(i18next.t("CONTRACTID11X"));
       $("#CONTRACTID12").text(i18next.t("CONTRACTID12"));
       $("#CONTRACTID13").text(i18next.t("CONTRACTID13"));
       $("#CONTRACTID14").text(i18next.t("CONTRACTID14"));
@@ -2798,6 +2901,7 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#CONTRACTID17").text(i18next.t("CONTRACTID17"));
       $("#CONTRACTID18").text(i18next.t("CONTRACTID18"));
       $("#CONTRACTID19").text(i18next.t("CONTRACTID19"));
+      $("#ANNONCEAFFILIATEID").html(i18next.t("ANNONCEAFFILIATEID"));
 
       $("#STEPS14").text(i18next.t("STEPS14"));
       $("#STEPS23").text(i18next.t("STEPS23"));

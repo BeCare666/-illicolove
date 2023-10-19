@@ -223,6 +223,13 @@
             .box--grid__button {
                 text-align: center;
             }
+           
+        }
+
+        @media (max-width: 400px){
+            #IDTRANSLATEUSERD15{
+                text-align: center !important;
+            }
         }
         /* Box Styles */
         .box {

@@ -99,10 +99,30 @@ $(document).ready(function(){
         TextCounpt.textContent =   remainingChars + " caractères restants";
         TextiD.style.display = "none"
       }
+      // function to controle myprofileidSonpaysQ input et select
+      var tableau =[]
+      var selectElement = document.getElementById("myprofileidSonpays");
+      var resultat = document.getElementById("myprofileidSonpaysQ");
 
-    
-        //function to delete number of input
-
+      selectElement.addEventListener("change", function () {
+          const optionSelectionnee = selectElement.options[selectElement.selectedIndex];
+          tableau.push(optionSelectionnee.value);
+          resultat.value = tableau.join(", ");
+          selectElement.setAttribute("style", "border: 1px solid green !important; width: 23px !important; border-left: 0 !important;"); 
+      });
+      function validerSaisie(input) {
+        var selectElement = document.getElementById("myprofileidSonpays");
+        var valeurSaisie = input.value;
+        if (valeurSaisie == "") {
+          selectElement.setAttribute("style", "border: 1px solid red !important; width: 23px !important; border-left: 0 !important;");
+        } else {
+          selectElement.setAttribute("style", "border: 1px solid green !important; width: 23px !important; border-left: 0 !important;");
+          tableau.splice(0, tableau.length);
+        }
+        
+      }
+          
+     
 {/**
         function validerSaisie(input) {
             const valeurSaisie = input.value;

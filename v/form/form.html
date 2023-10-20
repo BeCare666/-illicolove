@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title id="IDTRANSLATETITLEFORM"></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
@@ -178,8 +178,10 @@
                             </select>
 
                             <p style="text-align: start !important;" id="hecountries"></p>
-                            <select type="text" id="myprofileidSonpays"  placeholder="Ma nationalité"
-                            required style="display: block;"><option value="Afghanistan">Afghanistan</option><option
+                            <div style="display: flex !important;">
+                            <input style="width: 100% !important; border-right: 0 !important;" type="text" name="" id="myprofileidSonpaysQ" required oninput="validerSaisie(this)">
+                            <select style="width: 23px !important; border-left: 0 !important;" type="text" id="myprofileidSonpays"  placeholder="Ma nationalité"
+                             style="display: block;"><option value="Afghanistan">Afghanistan</option><option
                                 value="Åland Islands">Åland Islands</option><option value="Albania">Albania</option><option
                                 value="Algeria">Algeria</option><option value="American Samoa">American
                                 Samoa</option><option value="Andorra">Andorra</option><option
@@ -351,7 +353,9 @@
                                 Republic of)</option><option value="Vietnam">Vietnam</option><option
                                 value="Wallis and Futuna">Wallis and Futuna</option><option
                                 value="Western Sahara">Western Sahara</option><option value="Yemen">Yemen</option><option
-                                value="Zambia">Zambia</option><option value="Zimbabwe">Zimbabwe</option></select>
+                                value="Zambia">Zambia</option><option value="Zimbabwe">Zimbabwe</option>
+                            </select>
+                            </div>
                                 <p style="text-align: start !important;" id="TextiD"></p>
                                 <p style="text-align: start !important;" id="TextCounpt"></p>
                                 <textarea type="text" id="myprofileidpréférences" maxlength="125" minlength="0"
@@ -457,8 +461,9 @@ var myprofileidPhotos = document.getElementById('myprofileidPhotos');
 var myprofileidPhoto2 = document.getElementById('myprofileidPhoto2');
 var buttonSonGenre = document.getElementById('choices-multiple-remove-buttonSonsexe');
 var myprofileidtrancheâge = document.getElementById('myprofileidtrancheâge');
-var  buttonmatrimonialeValue = document.getElementById('buttonmatrimonialeID');
+var  buttonmatrimonialeValue = document.getElementById('buttonmatrimonialeID'); 
 var myprofileidSonpays = document.getElementById('myprofileidSonpays');
+var MyprofileidSonpaysQ = document.getElementById('myprofileidSonpaysQ');
 var myprofileidpréférences = document.getElementById('myprofileidpréférences');
 var myprofileidSaville = document.getElementById('myprofileidSavilleID');
 var myprofileidoccupations = document.getElementById('myprofileidoccupations');
@@ -467,6 +472,7 @@ var sunmitannonceid = document.getElementById('sunmitannonceid')
 var preloader = document.getElementById('preloader')
 const UserConnectuser = localStorage.getItem("unserconnect");
 var  base64Contenttable = []
+var  PIECESDIDENTITEtable = []
 var base64Contentphoto1table = []
 var base64Contentphoto2table = []
 const IDREGION = localStorage.getItem("myOption")
@@ -480,13 +486,16 @@ function getdata() {
     if (snapshot.val()  .IDREGION) {
     var MycountryN = snapshot.val().MYCOUNTRY;
     var MYTOF = snapshot.val().PIECESDIDENTITE
-    console.log(MYTOF)
+    PIECESDIDENTITEtable.push(MYTOF)
     myprofileidtravail.value =  snapshot.val().MONTRAVAILLEOUOCCUPATION
     myprofileidpréférences.value =   snapshot.val().PHYSIQUEDEPROFILQUEJECHERCHE
     myprofileidprécisions.value =   snapshot.val().AUTRESPRECISIONSDEPROFILQUEJECHERCHE
     myprofileidoccupations.value =   snapshot.val().TRAVAILDEDEPROFILQUEJECHERCHE 
     myprofileidSaville.value = snapshot.val().VILLEDHABITATIONDEPROFILQUEJECHERCHE
     myprofileidMaVille.value =  snapshot.val().MAVILLEDERESIDENCE
+    MyprofileidSonpaysQ.value =  snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE
+    // ajouter ce qui existais dans le tableau tableau dans form.js
+    tableau.push(snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE)
 
     // Parcourez les options du select
     //for (var i = 0; i < Mycountry.options.length; i++) {
@@ -576,8 +585,11 @@ function getdata() {
         }
     }
 
-    var PAYSDERESIDENCEDEPROFIL =  snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE
-    for (var i = 0; i < myprofileidSonpays.options.length; i++) {
+
+ 
+    }
+   {/**
+   for (var i = 0; i < myprofileidSonpays.options.length; i++) {
         // Vérifiez si la valeur de l'option correspond à ce que vous voulez afficher
         if (myprofileidSonpays.options[i].value === PAYSDERESIDENCEDEPROFIL) {
             // Sélectionnez cette option
@@ -586,9 +598,7 @@ function getdata() {
             break;
         }
     }
-    }
-   {/**
- const sonGenreVariable = snapshot.val().SEXEDEPROFILQUEJECHERCHE
+   const sonGenreVariable = snapshot.val().SEXEDEPROFILQUEJECHERCHE
     const trancheâgeVariable = snapshot.val().SONAGEDEPROFILQUEJECHERCHE
     const buttonmatrimonialeVariable = snapshot.val().SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE
     const myprofileidSonpaysVariable = snapshot.val().PAYSDERESIDENCEDEPROFILQUEJECHERCHE
@@ -696,7 +706,6 @@ reader.readAsDataURL(file);
             const PieceID = base64Contenttable.slice(-1).pop();
             //var allOptions = tableau.flat().join(', ');
             //document.getElementById('getAllOption').value = allOptions;
-            
             if(myprofileidMaVille.value && choicesmultipleremovebuttonrencontre.value &&
                myprofileidnationèèalité.value && //Photo1ID && Photo2ID &&
                myprofileidtravail.value && IDREGION && buttonSonGenre.value &&
@@ -706,7 +715,7 @@ reader.readAsDataURL(file);
                myprofileidSaville.value && myprofileidoccupations.value &&
                choicesmultipleremovebuttonsexe.value //&& Mycountry.value
             ){
-                const updatedValue = PieceID ? PieceID : MYTOF;
+                const updatedValue = PieceID ? PieceID : PIECESDIDENTITEtable[0];
                 update(ref(db, "utilisateurs/" + UserConnectuser), {
                 MAVILLEDERESIDENCE : myprofileidMaVille.value,
                 //MYCOUNTRY : Mycountry.value,
@@ -721,7 +730,7 @@ reader.readAsDataURL(file);
                 SEXEDEPROFILQUEJECHERCHE : buttonSonGenre.value,
                 SONAGEDEPROFILQUEJECHERCHE : myprofileidtrancheâge.value,
                 SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE : buttonmatrimonialeValue.value,
-                //PAYSDERESIDENCEDEPROFILQUEJECHERCHE : allOptions,
+                PAYSDERESIDENCEDEPROFILQUEJECHERCHE : myprofileidSonpaysQ.value,
                 PHYSIQUEDEPROFILQUEJECHERCHE : myprofileidpréférences.value,
                 VILLEDHABITATIONDEPROFILQUEJECHERCHE : myprofileidSaville.value,
                 TRAVAILDEDEPROFILQUEJECHERCHE : myprofileidoccupations.value,

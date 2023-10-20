@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sélection multiple</title>
+    <title>Sélection d'option</title>
 </head>
 <body>
-    <label for="options">Sélectionnez plusieurs options :</label>
-    <select id="options" multiple>
+    <label for="options">Sélectionnez une option :</label>
+    <select id="options">
         <option value="option1">Option 1</option>
         <option value="option2">Option 2</option>
         <option value="option3">Option 3</option>
@@ -15,22 +15,18 @@
         <option value="option5">Option 5</option>
     </select>
 
-    <button onclick="afficherOptionsSelectionnees()">Afficher les options sélectionnées</button>
+    <input type="text" id="valeurSelectionnee">
 
-    <div id="resultat"></div>
+    <script> 
+        var tableau =[]
+        const selectElement = document.getElementById("options");
+        const resultat = document.getElementById("valeurSelectionnee");
 
-    <script>
-        function afficherOptionsSelectionnees() {
-            const selectElement = document.getElementById("options");
-            const resultat = document.getElementById("resultat");
-            resultat.innerHTML = "Options sélectionnées : ";
-
-            for (let i = 0; i < selectElement.options.length; i++) {
-                if (selectElement.options[i].selected) {
-                    resultat.innerHTML += selectElement.options[i].text + " ";
-                }
-            }
-        }
+        selectElement.addEventListener("change", function () {
+            const optionSelectionnee = selectElement.options[selectElement.selectedIndex];
+            tableau.push(optionSelectionnee.value);
+            resultat.value = tableau.join(", ");   
+        });  
     </script>
 </body>
 </html>

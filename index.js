@@ -19,11 +19,21 @@ document.getElementById('tof3').style.height = "62vh"
 document.getElementById('tof4').style.height = "62vh" 
 document.getElementById('Mymaps').style.margin ="0"
 //document.getElementById('Mymaps').style.marginTop ="0"
-} else {
-    // Code pour ordinateur de bureau
-    document.getElementById('Mymapsq').style.marginTop ="5.5vh"
-}
-var acceptToUseCookies = localStorage.getItem('ToacceptCookies');
+// Sélectionnez votre div
+    var monDiv = document.getElementById("camera");
+
+    // Utilisez setTimeout pour ajouter la classe après un délai de 5 secondes
+    setTimeout(function () {
+        monDiv.classList.add("anim");
+    }, 5000); // 5000 millisecondes (5 secondes)
+  
+  } else {
+      // Code pour ordinateur de bureau
+      document.getElementById('Mymapsq').style.marginTop ="5.5vh"
+      setTimeout(function () {
+    }, 11000); // 5000 millisecondes (5 secondes)
+  }
+  var acceptToUseCookies = localStorage.getItem('ToacceptCookies');
 
 if(!acceptToUseCookies){
   Swal.fire({

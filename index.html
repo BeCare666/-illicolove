@@ -48,10 +48,8 @@
     if (/Mobi|Android/i.test(navigator.userAgent)) {
     // Code pour appareil mobile
     //document.body.style.fontSize = "16px"; // Modifier la taille de la police pour appareils mobiles
-    
-    document.getElementById('putImgLevelId').style.display = "none" 
+    document.getElementById('putImgLevelId').style.display = "none"
    
-    
     } else {
        
  
@@ -87,7 +85,7 @@
           <li><a href="contract.html" id="IDTRANSLATE6W"></a></li>
             </ul>
           </li>  
-          <li class="dropdown"><a href="#"><span><i class="bi bi-globe2"></i></span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown" > <a href="#" id="IDTRANSLATE6WX"></a>
             <ul id="language-select">
               <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/fr.jpeg" alt="fr" ></li><hr>
               <li  style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/en.jpeg" alt="en"></li><hr>
@@ -129,11 +127,8 @@
   </header><!-- End Header -->
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center" >
-    <div class="container" >
-      <div class="containerClass" style="align-items: center">
-        <img id="image" src="assets/img/illicolove.jpeg" alt="Votre image">
-      </div>
-      <div class="row" id="imgAnimationId" style="display: none;">
+    <div class="container" > 
+      <div class="row">
         <div class="col-lg-6 col-md-12  d-flex flex-column mt-5 justify-content-center">
          <div>
           <h1 data-aos="fade-up" style="font-size: 23px !important;"><strong style="color: #bb0852; font-size: 23px !important;">illicolove</strong></h1>
@@ -383,7 +378,7 @@
   
   </main>
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact" data-aos="fade-up" style="display: none;">
+  <section id="contact" class="contact" data-aos="fade-up" style="display: none;">
 
       <div class="container" data-aos="fade-up">
 
@@ -481,7 +476,7 @@
 
       </div>
 
-    </section><!-- End Contact Section -->
+  </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
   
@@ -529,58 +524,261 @@
     </div>
 
   </footer><!-- End Footer -->
-  
-<style>
- 
-  .containerClass {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      
-      position: relative;
-  }
-  
-  #image {
-      border-radius: 100%;
-      max-width: 0;
-      max-height: 0;
-      opacity: 0;
-      transition: all 10s ease-in-out;
-  }
-  </style>
-  <script>
-   document.addEventListener("DOMContentLoaded", function () { 
-    const image = document.getElementById("image");
-    const ImgAnimationId = document.getElementById("imgAnimationId");
-    var Header = document.getElementById('header');
-    var Hero = document.getElementById('hero');
-    var Footer = document.getElementById('footer');
-
-    // Démarrez l'animation lorsque la page est chargée
-    setTimeout(() => {
-        image.style.marginTop = "0%";
-        image.style.maxWidth = "60vh";
-        image.style.maxHeight = "30vh";
-        image.style.opacity = "1";
-        image.style.borderRadius = "1%"
-        Header.style.opacity = "0"
-        Footer.style.setProperty("display", "none", "important");
-    }, 100);
-
-    // Disparition de l'image après 5 secondes
-    setTimeout(() => {
-      image.style.display = "none"
-      //  image.style.maxWidth = "0";
-      //  image.style.maxHeight = "0";
-       // image.style.opacity = "0";
-       ImgAnimationId.style.display = "block"
-       Header.style.opacity = "1"
-       Footer.style.setProperty("display", "block", "important");
-    }, 10000);
-});  
-  </script>
-  <div id="preloader"></div>
+  <div id="preloader"></div> 
+  <div id="animadeID" style="display: none;">
+    <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <div class="papers">
+                  <div class="paper one"></div>
+                  <div class="paper two"></div>
+                  <div class="paper three"></div>
+              </div>
+              <div class="scene">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-16">
+                      <div class="camera" id="camera">
+                        <div class="body">
+                            <div class="back face">
+                                <div class="circle-buttons">
+                                    <div class="button one"></div>
+                                    <div class="button two"></div>
+                                    <div class="button three"></div>
+                                    <div class="button four"></div>
+                                </div>
+                                <div class="window"></div>
+                                <div class="screen">
+                                    <div class="photos">
+                                        <div class="photo one">
+                                        </div>
+                                        <div class="photo two">
+                                        </div>
+                                        <div class="photo three">
+                                        </div>
+                                        <div class="photo four">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="front face">
+                                <div class="handle">
+                                    <div class="top"></div>
+                                     <div class="front">
+                                        <div class="text" style="color: #00acee; font-size: 17px;">illicolove</div>
+                                    </div>
+                                    <div class="bottom"></div>
+                                    <div class="radius">
+                                        <div class="one"></div>
+                                        <div class="two"></div>
+                                        <div class="three"></div>
+                                        <div class="four"></div>
+                                        <div class="five"></div>
+                                        <div class="six"></div>
+                                        <div class="seven"></div>
+                                        <div class="eight"></div>
+                                        <div class="nine"></div>
+                                        <div class="ten"></div>
+                                    </div>
+                                </div>
+                                <div class="objective">
+                                    <!-- first quarter -->
+                                    <div class="depth one"></div>
+                                    <div class="depth two"></div>
+                                    <div class="depth three"></div>
+                                    <div class="depth four"></div>
+                                    <div class="depth five"></div>
+                                    <div class="depth six"></div>
+                                    <div class="depth seven"></div>
+                                    <div class="depth eight"></div>
+                                    <div class="depth nine"></div>
+                                    <div class="depth ten"></div>
+                                    <!-- second quarter -->
+                                    <div class="depth eleven"></div>
+                                    <div class="depth twelve"></div>
+                                    <div class="depth thirteen"></div>
+                                    <div class="depth fourteen"></div>
+                                    <div class="depth fifteen"></div>
+                                    <div class="depth sixteen"></div>
+                                    <div class="depth seventeen"></div>
+                                    <div class="depth eighteen"></div>
+                                    <div class="depth nineteen"></div>
+                                    <div class="depth twenty"></div>
+                                    <!-- third quarter -->
+                                    <div class="depth twentyone"></div>
+                                    <div class="depth twentytwo"></div>
+                                    <div class="depth twentythree"></div>
+                                    <div class="depth twentyfour"></div>
+                                    <div class="depth twentyfive"></div>
+                                    <div class="depth twentysix"></div>
+                                    <div class="depth twentyseven"></div>
+                                    <div class="depth twentyeight"></div>
+                                    <div class="depth twentynine"></div>
+                                    <div class="depth thirty"></div>
+                                    <!-- fourth quarter -->
+                                    <div class="depth thirtyone"></div>
+                                    <div class="depth thirtytwo"></div>
+                                    <div class="depth thirtythree"></div>
+                                    <div class="depth thirtyfour"></div>
+                                    <div class="depth thirtyfive"></div>
+                                    <div class="depth thirtysix"></div>		    			
+                                </div>
+                                
+                                <div class="objective small">
+                                    <div class="lens">
+                                        <div class="lens-inner">
+                                            <div class="one"></div>
+                                            <div class="two"></div>
+                                            <div class="three"></div>
+                                        </div>
+                                    </div>
+                                    <!-- first quarter -->
+                                    <div class="depth one"></div>
+                                    <div class="depth two"></div>
+                                    <div class="depth three"></div>
+                                    <div class="depth four"></div>
+                                    <div class="depth five"></div>
+                                    <div class="depth six"></div>
+                                    <div class="depth seven"></div>
+                                    <div class="depth eight"></div>
+                                    <div class="depth nine"></div>
+                                    <div class="depth ten"></div>
+                                    <!-- second quarter -->
+                                    <div class="depth eleven"></div>
+                                    <div class="depth twelve"></div>
+                                    <div class="depth thirteen"></div>
+                                    <div class="depth fourteen"></div>
+                                    <div class="depth fifteen"></div>
+                                    <div class="depth sixteen"></div>
+                                    <div class="depth seventeen"></div>
+                                    <div class="depth eighteen"></div>
+                                    <div class="depth nineteen"></div>
+                                    <div class="depth twenty"></div>
+                                    <!-- third quarter -->
+                                    <div class="depth twentyone"></div>
+                                    <div class="depth twentytwo"></div>
+                                    <div class="depth twentythree"></div>
+                                    <div class="depth twentyfour"></div>
+                                    <div class="depth twentyfive"></div>
+                                    <div class="depth twentysix"></div>
+                                    <div class="depth twentyseven"></div>
+                                    <div class="depth twentyeight"></div>
+                                    <div class="depth twentynine"></div>
+                                    <div class="depth thirty"></div>
+                                    <!-- fourth quarter -->
+                                    <div class="depth thirtyone"></div>
+                                    <div class="depth thirtytwo"></div>
+                                    <div class="depth thirtythree"></div>
+                                    <div class="depth thirtyfour"></div>
+                                    <div class="depth thirtyfive"></div>
+                                    <div class="depth thirtysix"></div>		    			
+                                </div>
+                                
+                            </div>
+                            <div class="left face"></div>
+                            <div class="right face"></div>
+                            <div class="top face">
+                                <div class="trigger">
+                                    <div class="radius">
+                                        <div class="one"></div>
+                                        <div class="two"></div>
+                                        <div class="three"></div>
+                                        <div class="four"></div>
+                                        <div class="five"></div>
+                                        <div class="six"></div>
+                                        <div class="seven"></div>
+                                        <div class="eight"></div>
+                                        <div class="nine"></div>
+                                        <div class="ten"></div>
+                                        <div class="eleven"></div>
+                                        <div class="twelve"></div>
+                                        <div class="thirteen"></div>
+                                        <div class="fourteen"></div>
+                                        <div class="fifteen"></div>
+                                        <div class="sixteen"></div>
+                                        <div class="seventeen"></div>
+                                        <div class="eighteen"></div>
+                                    </div>
+                                </div>
+                                <div class="trigger two">
+                                    <div class="radius">
+                                        <div class="one"></div>
+                                        <div class="two"></div>
+                                        <div class="three"></div>
+                                        <div class="four"></div>
+                                        <div class="five"></div>
+                                        <div class="six"></div>
+                                        <div class="seven"></div>
+                                        <div class="eight"></div>
+                                        <div class="nine"></div>
+                                        <div class="ten"></div>
+                                        <div class="eleven"></div>
+                                        <div class="twelve"></div>
+                                        <div class="thirteen"></div>
+                                        <div class="fourteen"></div>
+                                        <div class="fifteen"></div>
+                                        <div class="sixteen"></div>
+                                        <div class="seventeen"></div>
+                                        <div class="eighteen"></div>
+                                    </div>
+                                </div>
+                                <div class="flash">
+                                    <div class="left"></div>
+                                    <div class="right"></div>
+                                    <div class="radius">
+                                        <div class="one"></div>
+                                        <div class="two"></div>
+                                        <div class="three"></div>
+                                        <div class="four"></div>
+                                        <div class="five"></div>
+                                        <div class="six"></div>
+                                        <div class="seven"></div>
+                                        <div class="eight"></div>
+                                        <div class="nine"></div>
+                                        <div class="ten"></div>
+                                    </div>
+                                    <div class="light"></div>
+                                </div>
+                                
+                            </div>
+                            <div class="bottom face"></div>
+                            <div class="radiuses">
+                                <div class="left-top">
+                                    <div class="four"></div>
+                                    <div class="three"></div>
+                                    <div class="two"></div>
+                                    <div class="one"></div>
+                                </div>
+                                <div class="right-top">
+                                    <div class="four"></div>
+                                    <div class="three"></div>
+                                    <div class="two"></div>
+                                    <div class="one"></div>
+                                </div>
+                                <div class="left-bottom">
+                                    <div class="four"></div>
+                                    <div class="three"></div>
+                                    <div class="two"></div>
+                                    <div class="one"></div>
+                                </div>
+                                <div class="right-bottom">
+                                    <div class="four"></div>
+                                    <div class="three"></div>
+                                    <div class="two"></div>
+                                    <div class="one"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flash-overlay"></div>
+          </div>
+      </div>
+  </div> 
+  </div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
    <script type="module">
@@ -665,8 +863,17 @@
       document.getElementById('IDTRANSLATE8LI').style.display = "none"
       document.getElementById('IDTRANSLATE9LI').style.display = "none"
       document.getElementById('BTNTOCOMEBACKMYID1').style.display = "none"
-      document.getElementById('BTNTOCOMEBACKMYID2').style.display = "block"
+      document.getElementById('BTNTOCOMEBACKMYID2').style.display = "block" 
       document.getElementById('preloader').style.display = "none"
+
+      // functon to controle anaimation div
+      document.getElementById('animadeID').style.zIndex = "9999"
+      document.getElementById('Mymapsq').style.marginTop ="5.5vh"
+      document.getElementById('animadeID').style.display = "block"
+      setTimeout(function () {
+      document.getElementById('animadeID').style.display = "none"
+      }, 13000); // 5000 millisecondes (5 secondes)
+
       //const userData = childSnapshot.val();
       var photoDataUrl = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
       userbuttonID.innerHTML = `${snapshot.val().PIECESDIDENTITE ? `<img src="${photoDataUrl}" alt="Votre image" style="width: 6vh;  height: 6vh;"/>` : '<i class="bi bi-person-fill" style="width: 30px;"></i>&nbsp;'}`;
@@ -688,12 +895,14 @@
      }else{
       //alert("hoooo")
       document.getElementById('preloader').style.display = "none"
+      
       MyModalfinger.style.display = "none"
      }
       
     })
   }else{
     document.getElementById('preloader').style.display = "none"
+     
     
   }
 

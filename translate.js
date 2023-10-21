@@ -798,6 +798,7 @@ $(document).ready(function() {
               Pour toute question, contactez-nous à info@illicolove.com</div>
         </div>
       </div>`,
+            "IDTRANSLATE6WX":`Langues <span> <i class="bi bi-globe2"></i></span> <i class="bi bi-chevron-down"></i> `,
           }
 
         },
@@ -1511,6 +1512,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
               Para cualquier pregunta, contáctanos en info@illicolove.com</div>
         </div>
       </div>`,
+      "IDTRANSLATE6WX":`Idiomas <span> <i class="bi bi-globe2"></i></span> <i class="bi bi-chevron-down"></i> `,
           }
         },
         en: {
@@ -2247,6 +2249,8 @@ The site and its various services may be interrupted or suspended by the Editor,
               For any questions, contact us at info@illicolove.com </div>
         </div>
       </div>`,
+      "IDTRANSLATE6WX":`Languages <span> <i class="bi bi-globe2"></i></span> <i class="bi bi-chevron-down"></i> `,
+
 
         }
         }
@@ -2882,6 +2886,7 @@ The site and its various services may be interrupted or suspended by the Editor,
 
       $("#CONTRACTID1X").text(i18next.t("CONTRACTID1"));
       $("#IDTRANSLATE6W").text(i18next.t("CONTRACTID1"));
+      $("#IDTRANSLATE6WX").html(i18next.t("IDTRANSLATE6WX"));
       $("#CONTRACTID1").text(i18next.t("CONTRACTID1"));
       $("#CONTRACTID2").text(i18next.t("CONTRACTID2"));
       $("#CONTRACTID3").text(i18next.t("CONTRACTID3"));

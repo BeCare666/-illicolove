@@ -103,8 +103,12 @@ $(document).ready(function(){
       var tableau =[]
       var selectElement = document.getElementById("myprofileidSonpays");
       var resultat = document.getElementById("myprofileidSonpaysQ");
+      var pOne = document.getElementById("hecountries");
+      var pmultple = document.getElementById("IDTRANSLATEFORM89");
 
       selectElement.addEventListener("change", function () {
+          pOne.style.display = "none";
+          pmultple.style.display = "block"
           const optionSelectionnee = selectElement.options[selectElement.selectedIndex];
           tableau.push(optionSelectionnee.value);
           resultat.value = tableau.join(", ");

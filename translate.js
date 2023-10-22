@@ -22,7 +22,7 @@ $(document).ready(function() {
             "IDTRANSLATECONTACT4":'Téléphone',
             "IDTRANSLATECONTACT5":"E-mails", 
             "IDTRANSLATECONTACT6":"Réseaux sociaux",
-            "IDTRANSLATETITLE":"Trouvez votre âme sœur",
+            "IDTRANSLATETITLE":"Annonces",
             "IDTRANSLATETITLEFORM":"Formulaire",
             "IDTRANSLATE1INF1":`Votre adresse électronique est collectée et traitée par BAKO FAMILIA & COMPANY pour vous tenir informer de nouvelles fonctionnalités du site illicolove ou des mises à jour.
             En application de la loi 2017-20 portant code du numérique en République du Bénin, sur la   protection des données à caractère personnel, vous pouvez vous désabonner ou exercer vos droits d’accès, d’opposition, de rectification et de suppression en envoyant un mail à info@illicolove.com`,
@@ -740,7 +740,7 @@ $(document).ready(function() {
           "IDTRANSLATESIGNUP19OPTIONSERROR" :"Une erreur s'est produite lors de la demande de géolocalisation.",
           "IDTRANSLATESIGNUP19OPTIONS" :"Nous regrettons de vous informer que vous ne pouvez pas utiliser nos services tant que votre position n'est pas acceptée.",
           "IDTRANSLATESIALERT1" :"information",
-          "IDTRANSLATESIALERT2" :"Chers visiteurs, dans le but d'assurer votre sécurité et de lutter contre les fausses annonces, nous récupérons votre position.",
+          "IDTRANSLATESIALERT2" :"Chers visiteurs, dans le but d'assurer votre sécurité et de lutter contre les fausses annonces, nous récupérons votre pays de localisation.",
           "IDTRANSLATESIALERT3" :"Oui, j'accepte !",
           "IDTRANSLATESIALERT4" :"Refusé",
           "CONTRACTID1":`Contrat d'Affiliation`,
@@ -820,7 +820,7 @@ $(document).ready(function() {
             "IDTRANSLATECONTACT4":' Teléfono ',
             "IDTRANSLATECONTACT5":"E-mails",
             "IDTRANSLATECONTACT6":" Redes sociales ",
-            "IDTRANSLATETITLE":"Find your soul mate",
+            "IDTRANSLATETITLE":"Anuncios",
             "IDTRANSLATETITLEFORM":"Formulario",
             "IDTRANSLATE1INF1":`Su dirección de correo electrónico es recopilada y procesada por BAKO FAMILIA & COMPANY para mantenerle informado de las nuevas características de la página web o de actualización.
             En aplicación de la ley 2017-20 sobre el código digital en la República de Benín, sobre la protección de los datos de carácter personal, puede darse de baja o ejercer sus derechos de acceso, de oposición, rectificación y supresión enviando un correo electrónico a info@illicolove.com`,
@@ -1453,7 +1453,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
           "IDTRANSLATESIGNUP19OPTIONSERROR" :"Se produjo un error durante la solicitud de geolocalización.",
           "IDTRANSLATESIGNUP19OPTIONS" :"Lamentamos informarle que no puede utilizar nuestros servicios hasta que su ubicación sea aceptada.",
           "IDTRANSLATESIALERT1" :"Información",
-          "IDTRANSLATESIALERT2" :"Estimados visitantes, con el fin de garantizar su seguridad y combatir los anuncios falsos, estamos recuperando su ubicación.",
+          "IDTRANSLATESIALERT2" :"Estimados visitantes, con el fin de garantizar su seguridad y combatir los anuncios falsos, estamos recuperando su país de ubicación.",
           "IDTRANSLATESIALERT3" :"¡Sí, acepto!",
           "IDTRANSLATESIALERT4" :"Rechazado",
           "CONTRACTID1":`Contrato de Afiliación`,
@@ -1533,7 +1533,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
 "IDTRANSLATECONTACT4":' Phone ',
 "IDTRANSLATECONTACT5":"E-mails",
 "IDTRANSLATECONTACT6":" Social networks ",
-"IDTRANSLATETITLE":"Encuentre a su alma gemela",
+"IDTRANSLATETITLE":"Advertisements",
 "IDTRANSLATETITLEFORM":"Form",
 "IDTRANSLATE1INF1":`Your email address is collected and processed by BAKO FAMILIA & COMPANY to keep you informed of new features of the illicolove site or update.
             In application of the law 2017-20 on the protection of personal data, you can unsubscribe or exercise your rights of access, opposition, rectification and deletion by sending an email to info@illicolove.com`,
@@ -2184,7 +2184,6 @@ The site and its various services may be interrupted or suspended by the Editor,
           "IDTRANSLATESIGNUP19OPTIONSERROR" :"An error occurred during the geolocation request.",
           "IDTRANSLATESIGNUP19OPTIONS" :"We regret to inform you that you cannot use our services until your location is accepted.",
           "IDTRANSLATESIALERT1" :"Información",
-          "IDTRANSLATESIALERT2" :"Estimados visitantes, con el fin de garantizar su seguridad y combatir los anuncios falsos, estamos recuperando su ubicación.",
           "IDTRANSLATESIALERT3" :"¡Sí, acepto!",
 
           "IDTRANSLATESIALERT4" :"Rechazado",
@@ -2213,7 +2212,7 @@ The site and its various services may be interrupted or suspended by the Editor,
           "CONTRACTID19":`This agreement is governed by the laws of Benin, and any dispute arising from this agreement, in the absence of an amicable settlement, shall be subject to the exclusive jurisdiction of the Commercial Courts of Cotonou.`,
 
           "IDTRANSLATESIALERT1" :"information",
-          "IDTRANSLATESIALERT2" :"Dear visitors, for security reasons and to prevent false advertisements, we are retrieving your location.",
+          "IDTRANSLATESIALERT2" :"Dear visitors, for security reasons and to prevent false advertisements, we are retrieving your location country.",
           "IDTRANSLATESIALERT3" :"Yes, I accept!",
           "IDTRANSLATESIALERT4" :"Denied",
           "ANNONCEAFFILIATEID" : `      <div class="box--list__items">
@@ -2768,7 +2767,7 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#IDTRANSLATEFORM86").text(i18next.t("IDTRANSLATEFORM86"));
       $("#IDTRANSLATEFORM87").text(i18next.t("IDTRANSLATEFORM87"));
       $("#hecountries").html(i18next.t("IDTRANSLATEFORM88"));
-      $("#hecountriesId").html(i18next.t("IDTRANSLATEFORM89"));
+      $("#IDTRANSLATEFORM89").html(i18next.t("IDTRANSLATEFORM89"));
       $("#myprofileidSonpays").attr("placeholder", i18next.t("IDTRANSLATEFORM90"));
       $("#getAllOption").attr("placeholder", i18next.t("IDTRANSLATEFORM91"));
       $("#IDTRANSLATEFORM92").text(i18next.t("IDTRANSLATEFORM92"));

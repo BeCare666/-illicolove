@@ -396,7 +396,7 @@ position: relative;
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 60vh;
+  height: 100% !important;
   position: relative;
   background: url("../img/hero-carousel/1.jpg") no-repeat;
   background-size: cover;
@@ -473,7 +473,7 @@ position: relative;
 
 #hero .hero-slider {
   z-index: 8;
-  height: 60vh;
+  height: 78vh;
 }
 
 #hero .hero-slider::before {
@@ -1278,9 +1278,9 @@ section {
 --------------------------------------------------------------*/
 #footer {
   background: #f2f5f8;
-  padding:  35px 0 30px 0;
+  padding:  3px 0 12px 0;
   font-size: 14px;
-  height: 29.8vh !important;
+  height: 12vh !important;
   position: fixed;
   bottom: 0 !important;
   width: 100% !important;

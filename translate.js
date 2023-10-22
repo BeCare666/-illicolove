@@ -510,7 +510,7 @@ $(document).ready(function() {
 
 
 
-          "IDTRANSLATESIGNUP15":`Vous avez déjà un compte avec cette adresse email !`,
+          "IDTRANSLATESIGNUP15":`Un compte est déjà associé à cette adresse e-mail ou ce numéro de téléphone.`,
           "IDTRANSLATESIGNUP16":`succès`,
           "IDTRANSLATESIGNUP17":`Vous êtes inscrit avec succès !`,
           "IDTRANSLATESIGNUP18":`Erreur lors de l'envoi de l'adresse mail à Firebase`, 
@@ -1222,7 +1222,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
 
 
 
-          "IDTRANSLATESIGNUP15":`¡Ya tienes una cuenta con esta dirección de correo electrónico!`,
+          "IDTRANSLATESIGNUP15":`Una cuenta ya está vinculada a esta dirección de correo electrónico o número de teléfono.`,
           "IDTRANSLATESIGNUP16":` Exitoso `,
           "IDTRANSLATESIGNUP17":` ¡Estás registrado con éxito!`,
           "IDTRANSLATESIGNUP18":` Error al enviar la dirección de correo electrónico a Firebase `,
@@ -1952,7 +1952,7 @@ The site and its various services may be interrupted or suspended by the Editor,
 
 
 
-          "IDTRANSLATESIGNUP15":`You already have an account with this email address! `,
+          "IDTRANSLATESIGNUP15":`An account is already linked to this email address or phone number. `,
           "IDTRANSLATESIGNUP16":` Successful `,
           "IDTRANSLATESIGNUP17":` You are successfully registered!`,
           "IDTRANSLATESIGNUP18":` Error sending email address to Firebase `,

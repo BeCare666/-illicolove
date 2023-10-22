@@ -209,13 +209,20 @@
     emailRef.once('value', (snapshot) => {
       const emails = snapshot.val();
       for (const key in emails) {
-        if (emails.hasOwnProperty(key) && emails[key].email === emailInput) {
+        if (emails.hasOwnProperty(key) && emails[key].email === emailInput ) {
           emailKey = key;
           break;
         }
       }
 
-      if (emailKey) {
+      for (const keyphone in emails) {
+        if (emails.hasOwnProperty(keyphone) && emails[keyphone].TELEPHONE === numberphoneuser ) {
+          numberphoneuserKey = keyphone;
+          break;
+        }
+      }
+     
+      if (emailKey || numberphoneuserKey) {
         // L'adresse e-mail a été trouvée
         document.getElementById('preloader').style.display = "none"
         const email = emails[emailKey];

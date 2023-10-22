@@ -36,7 +36,10 @@
    <!-- Link to import alert personnal -->
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
-
+   <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
   <!--import firebase--->
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
@@ -126,7 +129,7 @@
     </div>
   </header><!-- End Header -->
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero d-flex align-items-center" >
+  <section id="hero" class="hero d-flex align-items-center heroClass" >
     <div class="container" > 
       <div class="row">
         <div class="col-lg-6 col-md-12  d-flex flex-column mt-5 justify-content-center">
@@ -619,7 +622,6 @@
       // functon to controle anaimation div
       document.getElementById('animadeID').style.zIndex = "9999"
       var img = document.querySelector(".animate");
-
       setTimeout(function() {
           img.classList.add("animate-hide");
       }, 100); // Démarrer l'animation de disparition après 2 secondes
@@ -628,6 +630,9 @@
       document.getElementById('animadeID').style.display = "block"
       setTimeout(function () {
       document.getElementById('animadeID').style.display = "none"
+      const element = document.querySelector('.hero');
+      element.classList.add('animate__animated', 'animate__zoomInDown');
+      
       }, 16000); // 5000 millisecondes (5 secondes)
 
       //const userData = childSnapshot.val();

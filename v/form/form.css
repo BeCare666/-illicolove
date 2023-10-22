@@ -19,7 +19,7 @@ html {
 
   #IdAlertSms {
     
-    border-color: #4169E1 !important;
+    border-color: #000080 !important;
     color: #FFB6C1 !important;
     background-color: white !important;
  
@@ -170,7 +170,7 @@ p {
 
 #msform .action-button:hover,
 #msform .action-button:focus {
-    background-color: #311B92
+    background-color: #000080
 }
 
 #msform .action-button-previous {

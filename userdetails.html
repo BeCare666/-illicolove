@@ -331,7 +331,7 @@
           //alert(UserConnectIdToBuy)
           var tableTotakeUser = []
             const dbref = ref(db);
-          get(child(dbref, "utilisateurs/" + UserConnectIdToBuy))
+              get(child(dbref, "utilisateurs/" + UserConnectIdToBuy))
               .then((snapshot) => {
                 if (snapshot.exists()) {
                 document.getElementById('preloader').style.display = "none"

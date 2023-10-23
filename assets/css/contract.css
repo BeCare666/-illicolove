@@ -1633,7 +1633,7 @@
     
     .team .member .social a {
       transition: color 0.3s;
-      color: rgba(1, 41, 112, 0.5);
+      color: #000080;
       margin: 15px 12px;
       display: block;
       line-height: 0;
@@ -1641,7 +1641,7 @@
     }
     
     .team .member .social a:hover {
-      color: rgba(1, 41, 112, 0.8);
+      color: #000080;
     }
     
     .team .member .social i {
@@ -2117,7 +2117,7 @@
     }
     
     .blog .blog-author .social-links a {
-      color: rgba(1, 41, 112, 0.5);
+      color: #000080;
       margin-right: 5px;
     }
     
@@ -2523,7 +2523,7 @@
     .footer .footer-top .social-links a {
       font-size: 20px;
       display: inline-block;
-      color: rgba(1, 41, 112, 0.5);
+      color: #000080;
       line-height: 0;
       margin-right: 10px;
       transition: 0.3s;

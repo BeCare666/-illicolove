@@ -6,7 +6,7 @@ $(document).ready(function() {
       resources: {
         fr: {
           translation : {
-            : "Accueil",
+            "IDTRANSLATE1": "Accueil",
             "IDTRANSLATE2": "À propos",
             "IDTRANSLATE3": `Comment ça fonctionne ?`,
             "IDTRANSLATE4": `Termes`,

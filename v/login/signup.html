@@ -28,6 +28,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.js"></script>
     <script src="https://unpkg.com/jquery"></script>
     <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+    <!-- function to get country: eg: BJ-->
+    <script>
+      function recordData (data) {
+        //console.log(data.country)
+        var ipinfo = data.country
+        localStorage.setItem('alphacodeipinfo', ipinfo)
+      }
+    </script>
+    <script src="https://ipinfo.io/json?callback=recordData"></script>
       <style>
       * {
         font-family: 'Montserrat-bold', sans-serif;
@@ -43,11 +52,9 @@
     document.getElementById('contentSignup').style.marginTop = "10vh"
     } else {
         // Code pour ordinateur de bureau
-    }
-  
+    } 
   }
   </script>
-
     <title id="IDTRANSLATE8K"></title>
   </head>
   <body id="MyIdBody">

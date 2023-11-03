@@ -887,12 +887,49 @@ style="background-color: #f38e9d !important;"
       var payYourUnity =  document.getElementById('payYourUnity');
       var payYourUnitybtn =  document.getElementById('payYourUnitybtn');
       payYourUnitybtn.addEventListener('click', function(){
+        var inputValue = payYourUnity.value;
+        if(payYourUnity.value != null
+        && payYourUnity.value != 0 && payYourUnity.value != "" ){
+        //var modal__close =  document.getElementById('modal__close'); 
+        document.getElementById('preloader').style.display = "block"
+        document.getElementById('myheaderid').style.display = "none"
+        document.getElementById('footer').style.display = "none"
+        //$("#render").trigger("click");
+        //modal__close.click()
+        const dbref = ref(db);
+        get(child(dbref, "utilisateurs/" + UserConnectuser))
+            .then((snapshot) => {
+            if (snapshot.exists()) {
+              document.getElementById('preloader').style.display = "none"
+              var debit = payYourUnity.value
+              var priceUnity = debit * 95
+              //alert(priceUnity)
+              var myCompta = snapshot.val().COMPTECREDIT
+              localStorage.setItem('unityVal', priceUnity)
+              localStorage.setItem('myComptaval', myCompta)
+              localStorage.setItem('Debitval', debit)
+              window.location.href = "nxi.html"
 
+              
+            } else {
+                alert("no data");
+            }
+            })
+            .catch((error) => {
+           alert("il y a une ERROR " + error);
+            });
+          }else{
+          Swal.fire({
+          text: i18next.t('IDTRANSLATEPROFIL43'),
+          icon: 'error'
+          });
+          }
+        {/*
         Swal.fire({
         text: i18next.t('IDTRANSLATEPROFIL44IN'),
         icon: 'info'
         });
-        {/*
+        
         var inputValue = payYourUnity.value;
         if(payYourUnity.value != null
         && payYourUnity.value != 0 && payYourUnity.value != "" ){

@@ -799,7 +799,16 @@ $(document).ready(function() {
         </div>
       </div>`,
             "IDTRANSLATE6WX":`Langues <span> <i class="bi bi-globe2"></i></span> <i class="bi bi-chevron-down"></i> `,
+            "SITEID1":`Site en Cours de Conception`,
+            "SITEID3":`<p style="margin: 20px !important;">
+            Nous travaillons dur pour vous offrir  la meilleure expérience possible. Revenez bientôt pour découvrir notre nouveau site web !.
+        </p>
+        <p>
+            Merci de votre compréhension et à bientôt !
+        </p>`
+          
           }
+          
 
         },
         es: {
@@ -1513,7 +1522,14 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
         </div>
       </div>`,
       "IDTRANSLATE6WX":`Idiomas <span> <i class="bi bi-globe2"></i></span> <i class="bi bi-chevron-down"></i> `,
-          }
+      "SITEID1":`Sitio en Construcción`,
+      "SITEID3":`<p style="margin: 20px !important;">
+      Estamos trabajando duro para ofrecerte la mejor experiencia posible. ¡Vuelve pronto para descubrir nuestro nuevo sitio web!
+  </p>
+  <p>
+  Gracias por su comprensión y hasta pronto.
+  </p>`      
+    }
         },
         en: {
         translation : {
@@ -2249,9 +2265,16 @@ The site and its various services may be interrupted or suspended by the Editor,
         </div>
       </div>`,
       "IDTRANSLATE6WX":`Languages <span> <i class="bi bi-globe2"></i></span> <i class="bi bi-chevron-down"></i> `,
-
+      "SITEID1":`Site under Construction`,
+      "SITEID3":`<p style="margin: 20px !important;">
+      We're working hard to provide you with the best possible experience. Come back soon to discover our new website!
+  </p>
+  <p>
+  Thank you for your understanding, and see you soon!
+  </p>`
 
         }
+       
         }
       }
     }, function(err, t) {
@@ -2912,6 +2935,9 @@ The site and its various services may be interrupted or suspended by the Editor,
       $("#STEPS23").text(i18next.t("STEPS23"));
       $("#STEPS34").text(i18next.t("STEPS34"));
       $("#STEPS44").text(i18next.t("STEPS44"));
+      $("#SITEID1").text(i18next.t("SITEID1"));
+      $("#SITEID2").text(i18next.t("SITEID1"));
+      $("#SITEID3").html(i18next.t("SITEID3"));
       
   }
     // Récupérer la langue sélectionnée à partir du stockage local

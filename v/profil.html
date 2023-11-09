@@ -319,10 +319,10 @@
       <div class="modal-body" id="myBodyTopaie">
         <p id="errorSms" style="text-align: start !important; font-size: 12px !important; display: none; color: #FFB6C1;"><i class="fa fa-star required"></i></p>
         <p id="SmspayId" style="text-align: start !important; font-size: 12px !important;"> <i class="fa fa-star required"></i></p>
-        <input type="text" pattern="[0-9]+" required id="payYourUnity">
+        <input type="text" pattern="[0-9]+" required id="payYourUnity" oninput="validerSaisie(this)">
 
       <div class="modal-body" id="myBodyTopaieX" style="
-       align-items: center; height: 30vh !important; background-color: #FFB6C1 !important;">
+       align-items: center; height: 30vh !important; background-color: #FFB6C1 !important; display: none !important;">
        <div>
         <div style="margin-top: 8.5vh;" id="CHOISEYOURPAIEMENTMYID">
         <p id="CHOISEYOURPAIEMENT" style="display: none;"></p>
@@ -1015,6 +1015,8 @@ style="background-color: #f38e9d !important;"
         });
       var payYourUnity =  document.getElementById('payYourUnity');
       var payYourUnitybtn =  document.getElementById('payYourUnitybtnd');
+
+  
       payYourUnitybtn.addEventListener('click', function(){
         var inputValue = payYourUnity.value;
         if(payYourUnity.value != null
@@ -1023,6 +1025,7 @@ style="background-color: #f38e9d !important;"
         document.getElementById('preloader').style.display = "block"
         document.getElementById('myheaderid').style.display = "none"
         document.getElementById('footer').style.display = "none"
+
         $("#render").trigger("click");
         //modal__close.click()
         const dbref = ref(db);
@@ -1157,6 +1160,7 @@ window.location.href = "./login/login.html"
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
   <script src="userConnect.js"></script>
   <script src="./../translate.js"></script>
+  <script src="profil.js"></script>
 </div>
 
 

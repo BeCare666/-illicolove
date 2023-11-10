@@ -20,30 +20,29 @@
             validerSaisie(this);
         });
 
-        const DialCodeofcountryLocal = localStorage.getItem('DialCodeofcountry');
-        if(DialCodeofcountryLocal){
-            // Obtenir le code du pays à partir des coordonnées géographiques  
-            var mycountryalphacodeipinfo = localStorage.getItem("alphacodeipinfo") // get in signup.html
-            var input = document.querySelector("#phone");
-            var iti = window.intlTelInput(input);
-            var country = mycountryalphacodeipinfo; // Remplacez par le code du pays détecté
-            iti.setCountry(country);
-            if(mycountryalphacodeipinfo){
-            var selectedCountry = iti.getSelectedCountryData();
-            var nameofcountry = selectedCountry.name;
-            var dialCodeofcountry = selectedCountry.dialCode;
-            var iso2ofcountry = selectedCountry.iso2;
-            localStorage.setItem('Nameofcountry', nameofcountry);
-            localStorage.setItem('DialCodeofcountry', dialCodeofcountry);
-            localStorage.setItem('Iso2ofcountry', iso2ofcountry);
-            }
-            const inputElement = document.getElementById("phoneuserID");
-            const DialCodeofcountryLocal = localStorage.getItem('DialCodeofcountry');
-            const defaultValue = `+${DialCodeofcountryLocal}`;
-            // Attribuez la valeur par défaut au champ d'entrée
-            inputElement.value = defaultValue;
-            localStorage.setItem('DefaultValue', defaultValue); 
+      
+        // Obtenir le code du pays à partir des coordonnées géographiques  
+        var mycountryalphacodeipinfo = localStorage.getItem("alphacodeipinfo") // get in signup.html
+        var input = document.querySelector("#phone");
+        var iti = window.intlTelInput(input);
+        var country = mycountryalphacodeipinfo; // Remplacez par le code du pays détecté
+        iti.setCountry(country);
+        if(mycountryalphacodeipinfo){
+        var selectedCountry = iti.getSelectedCountryData();
+        var nameofcountry = selectedCountry.name;
+        var dialCodeofcountry = selectedCountry.dialCode;
+        var iso2ofcountry = selectedCountry.iso2;
+        localStorage.setItem('Nameofcountry', nameofcountry);
+        localStorage.setItem('DialCodeofcountry', dialCodeofcountry);
+        localStorage.setItem('Iso2ofcountry', iso2ofcountry);
+        }
 
-    } 
+        const inputElementx = document.getElementById("phoneuserID");
+        const DialCodeofcountryLocal = localStorage.getItem('DialCodeofcountry');
+        const defaultValue = `+${DialCodeofcountryLocal}`;
+        // Attribuez la valeur par défaut au champ d'entrée
+        inputElementx.value = defaultValue;
+        localStorage.setItem('DefaultValue', defaultValue); 
+       
 });
 

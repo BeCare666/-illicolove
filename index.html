@@ -89,9 +89,17 @@
             </ul>
           </li>  
           <li class="dropdown" > <a href="#" id="IDTRANSLATE6WX"></a>
-            <ul id="language-select">
-              <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/fr.jpeg" alt="fr" ></li><hr>
+            <ul id="language-select" style="height: 300px; overflow: auto;">
+              <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/ar.jpeg" alt="ar"></li><hr>
+              <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/cn.jpeg" alt="cn"></li><hr>
               <li  style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/en.jpeg" alt="en"></li><hr>
+              <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/fr.jpeg" alt="fr" ></li><hr>
+              <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/de.jpeg" alt="de"></li><hr>
+              <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/it.jpeg" alt="it"></li><hr>
+              <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/jp.jpeg" alt="jp"></li><hr>
+              <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/kr.jpeg" alt="kr"></li><hr>
+              <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/pt.jpeg" alt="pt"></li><hr>
+              <li style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/ru.jpeg" alt="ru"></li><hr>
               <li  style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/es.jpeg" alt="es"></li>
             </ul>
           </li>
@@ -612,7 +620,7 @@
     .then((snapshot) => {
      if (snapshot.exists()){ 
       BacktoprofilID.style.display = "none" 
-      MyModalfinger.style.display = "block"  
+      //MyModalfinger.style.display = "block"  
       document.getElementById('IDTRANSLATE8LI').style.display = "none"
       document.getElementById('IDTRANSLATE9LI').style.display = "none"
       document.getElementById('BTNTOCOMEBACKMYID1').style.display = "none"
@@ -642,22 +650,37 @@
         window.location.href= "./v/profil.html"
       })
           //function to accept indicator alert
-        var IDTOACCEPTVAL = localStorage.getItem('IDTOACCEPT');
-        if(!IDTOACCEPTVAL){
-          var fingerI = document.getElementById("myModalfinger"); 
-          fingerI.style.display = "block";
-        } else{
-          var fingerI = document.getElementById("myModalfinger"); 
-          fingerI.style.display = "none";
-        }
+       // var IDTOACCEPTVAL = localStorage.getItem('IDTOACCEPT');
+        //if(!IDTOACCEPTVAL){
+        //  var fingerI = document.getElementById("myModalfinger"); 
+        //  fingerI.style.display = "block";
+        //} else{
+        //  var fingerI = document.getElementById("myModalfinger"); 
+        //  fingerI.style.display = "none";
+        //}
       //console.log(snapshot.val().PIECESDIDENTITE);
     // Utilisez les données de l'utilisateur comme vous le souhaitez
       //alert("mmmmmmoooo") 
      }else{
       //alert("hoooo")
       document.getElementById('preloader').style.display = "none"
+
+      // functon to controle anaimation div
+      document.getElementById('animadeID').style.zIndex = "9999"
+      var img = document.querySelector(".animate");
+      setTimeout(function() {
+          img.classList.add("animate-hide");
+      }, 100); // Démarrer l'animation de disparition après 2 secondes
+
+      document.getElementById('Mymapsq').style.marginTop ="5.5vh"
+      document.getElementById('animadeID').style.display = "block"
+      setTimeout(function () {
+      document.getElementById('animadeID').style.display = "none"
+      const element = document.querySelector('.hero');
+      element.classList.add('animate__animated', 'animate__zoomInDown');
       
-      MyModalfinger.style.display = "none"
+      }, 16000); // 5000 millisecondes (5 secondes)
+     // MyModalfinger.style.display = "none"
      }
       
     })

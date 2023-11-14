@@ -7,6 +7,7 @@ $(document).ready(function() {
       fr: {
        
         translation : {
+          "phoneuserIDval":`votre téléphone`,
           "IDTRANSLATE1": "Accueil",
          // "IDTRANSLATE2": "À propos",
           "IDTRANSLATE3": `Comment ça fonctionne ?`,
@@ -25,6 +26,7 @@ $(document).ready(function() {
           "IDTRANSLATECONTACT6":"Réseaux Sociaux",
           "IDTRANSLATETITLE":"Annonces",
           "IDTRANSLATETITLEFORM":"Formulaire",
+          "TITLEIDPAIEID":`paiement`,
           "IDTRANSLATE1INF1":`Votre adresse électronique est collectée et traitée par BAKO FAMILIA & COMPANY pour vous tenir informer de nouvelles fonctionnalités du site illicolove et de ses mises à jour.
           En application de la loi 2017-20 portant code du numérique en République du Bénin, sur la   protection des données à caractère personnel, vous pouvez vous désabonner ou exercer vos droits d’accès, d’opposition, de rectification et de suppression en envoyant un courriel à info@illicolove.com`,
           "IDTRANSLATE10":"illicolove,",
@@ -800,6 +802,7 @@ $(document).ready(function() {
       },
       es: {
         translation : {
+          "phoneuserIDval":`su teléfono`,
           "IDTRANSLATE1": "Inicio",
           "IDTRANSLATE2": " Sobre ",
           "IDTRANSLATE3": `Cómo funciona? `,
@@ -818,6 +821,7 @@ $(document).ready(function() {
           "IDTRANSLATECONTACT6":" Redes sociales ",
           "IDTRANSLATETITLE":"Anuncios",
           "IDTRANSLATETITLEFORM":"Formulario",
+          "TITLEIDPAIEID":`pago`,
           "IDTRANSLATE1INF1":`Su dirección de correo electrónico es recopilada y procesada por BAKO FAMILIA & COMPANY para mantenerle informado de las nuevas características de la página web o de actualización.
           En aplicación de la ley 2017-20 sobre el código digital en la República de Benín, sobre la protección de los datos de carácter personal, puede darse de baja o ejercer sus derechos de acceso, de oposición, rectificación y supresión enviando un correo electrónico a info@illicolove.com`,
 
@@ -1521,6 +1525,8 @@ Gracias por su comprensión y hasta pronto.
       en: {
       
    translation : {
+    "phoneuserIDval":`your phone`,
+    "TITLEIDPAIEID":`payment`,
     "IDTRANSLATE1": " Home ",
    // "IDTRANSLATE2": "À propos",
     "IDTRANSLATE3": ` how's that work?`,
@@ -2256,6 +2262,8 @@ Welcome!`,
       },
       kr:{
         translation : {
+          "phoneuserIDval":`당신의 전화 `,
+          "TITLEIDPAIEID":`지불 `,
           "IDTRANSLATE1": "홈",
          // "IDTRANSLATE2": "À propos",
           "IDTRANSLATE3": `어떻게 작동합니까?`,
@@ -2985,6 +2993,8 @@ illicolove.com 웹 사이트는 데이터의 보안 및 기밀성을 보장하�
       },
       it:{
         translation : {
+          "phoneuserIDval":`Il tuo telefono`,
+          "TITLEIDPAIEID":`Pagamento `,
           "IDTRANSLATE1": " Benvenuto ",
          // "IDTRANSLATE2": "À propos",
           "IDTRANSLATE3": ` Come funziona?`,
@@ -3724,6 +3734,8 @@ Benvenuto!`,
       },
       jp:{
         translation : {
+          "phoneuserIDval":`あなたの電話`,
+          "TITLEIDPAIEID":`支払い  `,
           "IDTRANSLATE1": "ホーム",
          // "IDTRANSLATE2": "À propos",
           "IDTRANSLATE3": `どのように動作しますか？`,
@@ -4448,6 +4460,8 @@ illicolove.comのサービスを利用する上で何か問題がある場合は
       },
       cn:{
         translation : {
+          "phoneuserIDval":`你的电话`,
+          "TITLEIDPAIEID":`付款`,
           "IDTRANSLATE1": "接收",
          // "IDTRANSLATE2": "À propos",
           "IDTRANSLATE3": `它是如何工作的`,
@@ -5185,6 +5199,8 @@ Publisher不负责这些网站的可用性,也不能控制内容或验证这些�
       ru:{
         
    translation : {
+    "phoneuserIDval":`ваш телефон`,
+    "TITLEIDPAIEID":`оплата `,
     "IDTRANSLATE1": " Прием ",
    // "IDTRANSLATE2": "À propos",
     "IDTRANSLATE3": ` Как это работает?`,
@@ -5927,6 +5943,8 @@ Publisher不负责这些网站的可用性,也不能控制内容或验证这些�
       },
       pt:{
         translation : {
+          "phoneuserIDval":`Seu telefone`,
+          "TITLEIDPAIEID":`Pagamento `,
           "IDTRANSLATE1": " Início ",
          // "IDTRANSLATE2": "À propos",
           "IDTRANSLATE3": ` Como funciona?`,
@@ -6685,6 +6703,8 @@ Bem-vindo!`,
       de:{
         
    translation : {
+    "phoneuserIDval":`Ihr Telefon`,
+    "TITLEIDPAIEID":`Zahlung`,
     "IDTRANSLATE1": " Startseite ",
    // "IDTRANSLATE2": "À propos",
     "IDTRANSLATE3": ` Wie funktioniert das?`,
@@ -7399,6 +7419,8 @@ Herzlich willkommen!`,
       ar:{
         
    translation : {
+    "phoneuserIDval":` هاتفك`,
+    "TITLEIDPAIEID":`دفع `,
     "IDTRANSLATE1": "استقبال",
 
    // "IDTRANSLATE2": "À propos",

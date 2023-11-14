@@ -619,7 +619,8 @@
     get(child(dbrefuser, "utilisateurs/" + UserConnectuser)) 
     .then((snapshot) => {
      if (snapshot.exists()){ 
-      BacktoprofilID.style.display = "none" 
+      var BacktoprofilID = document.getElementById('backtoprofilID');
+      BacktoprofilID.style.display = "block" 
       //MyModalfinger.style.display = "block"  
       document.getElementById('IDTRANSLATE8LI').style.display = "none"
       document.getElementById('IDTRANSLATE9LI').style.display = "none"
@@ -662,6 +663,8 @@
     // Utilisez les données de l'utilisateur comme vous le souhaitez
       //alert("mmmmmmoooo") 
      }else{
+      var BacktoprofilID = document.getElementById('backtoprofilID');
+      BacktoprofilID.style.display = "none" 
       //alert("hoooo")
       document.getElementById('preloader').style.display = "none"
 
@@ -685,7 +688,27 @@
       
     })
   }else{
-    document.getElementById('preloader').style.display = "none"
+     // functon to controle anaimation div
+    var BacktoprofilID = document.getElementById('backtoprofilID');
+      BacktoprofilID.style.display = "none" 
+      //alert("hoooo")
+      document.getElementById('preloader').style.display = "none"
+
+      // functon to controle anaimation div
+      document.getElementById('animadeID').style.zIndex = "9999"
+      var img = document.querySelector(".animate");
+      setTimeout(function() {
+          img.classList.add("animate-hide");
+      }, 100); // Démarrer l'animation de disparition après 2 secondes
+
+      document.getElementById('Mymapsq').style.marginTop ="5.5vh"
+      document.getElementById('animadeID').style.display = "block"
+      setTimeout(function () {
+      document.getElementById('animadeID').style.display = "none"
+      const element = document.querySelector('.hero');
+      element.classList.add('animate__animated', 'animate__zoomInDown');
+      
+      }, 16000); // 5000 millisecondes (5 secondes)
      
     
   }

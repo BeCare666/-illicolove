@@ -72,7 +72,8 @@
                             <select id="choices-multiple-remove-buttonsexe" required>
                                 <option   selected id="IDTRANSLATEFORM14"></option>
                                 <option   id="IDTRANSLATEFORM15"></option>
-                                <option   id="IDTRANSLATEFORM16"></option>
+                                <!--
+                                <option   id="IDTRANSLATEFORM16"></option> 
                                 <option   id="IDTRANSLATEFORM17"></option>
                                 <option   id="IDTRANSLATEFORM18"></option>
                                 <option   id="IDTRANSLATEFORM19"></option>
@@ -92,6 +93,7 @@
                                 <option   id="IDTRANSLATEFORM33"></option>
                                 <option   id="IDTRANSLATEFORM34"></option>
                                 <option   id="IDTRANSLATEFORM35"></option>
+                                 -->
                             </select>
 
                             <p style="text-align: start !important;" id="IDTRANSLATEFORM38"></p> 
@@ -133,6 +135,7 @@
                                 required>
                                 <option   selected id="IDTRANSLATEFORM60"></option>
                                 <option   id="IDTRANSLATEFORM61"></option>
+                                <!--
                                 <option   id="IDTRANSLATEFORM62"></option>
                                 <option   id="IDTRANSLATEFORM63"></option>
                                 <option   id="IDTRANSLATEFORM64"></option>
@@ -153,6 +156,7 @@
                                 <option   id="IDTRANSLATEFORM79"></option>
                                 <option   id="IDTRANSLATEFORM80"></option>
                                 <option   id="IDTRANSLATEFORM81"></option>
+                                -->
                             </select>
 
                             <p style="text-align: start !important;" id="Pyhold"></p>
@@ -715,7 +719,7 @@ reader.readAsDataURL(file);
                //allOptions && 
                myprofileidSaville.value && myprofileidoccupations.value &&
                choicesmultipleremovebuttonsexe.value //&& Mycountry.value
-            ){
+            ){  const IDAFILIATEID = localStorage.getItem("IDAFILIATE");
                 const updatedValue = PieceID ? PieceID : PIECESDIDENTITEtable[0];
                 update(ref(db, "utilisateurs/" + UserConnectuser), {
                 MAVILLEDERESIDENCE : myprofileidMaVille.value,
@@ -726,7 +730,7 @@ reader.readAsDataURL(file);
                 MONAGE : myprofileidâge.value ,
                 MONSEXE : choicesmultipleremovebuttonsexe.value, 
                 JEVEUXUNERENCONTRE : choicesmultipleremovebuttonrencontre.value,
-                PIECESDIDENTITE : updatedValue , 
+                PIECESDIDENTITE : updatedValue ,
                 IDREGION : IDREGION,
                 SEXEDEPROFILQUEJECHERCHE : buttonSonGenre.value,
                 SONAGEDEPROFILQUEJECHERCHE : myprofileidtrancheâge.value,
@@ -740,7 +744,7 @@ reader.readAsDataURL(file);
                 COMMISSION : "0",
                 GETALLWALLET : "",
                 STATUSAFILIATE : false,
-                TAKEMYIDAFILIAT : "",
+                TAKEMYIDAFILIAT : IDAFILIATEID,
                 AMOUNTALREDYPAID : "0"
             })
                 .then(() => {

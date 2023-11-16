@@ -448,6 +448,7 @@ font-size: 13.5px !important;
               if (snapshot.exists()) {
                 // Save fulle name and email
                 var Userfullename = snapshot.val().fullname
+                var userIdMX = snapshot.val().userId
                 var UserEmail =  snapshot.val().email
                 document.getElementById('preloader').style.display = "none"
                 //var photoDataUrl = snapshot.val().PIECESDIDENTITE ? 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE : '';
@@ -554,9 +555,16 @@ font-size: 13.5px !important;
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
                 //function to validate account
+
+                var dateActuelle = new Date();
+                // Date après trois jours
+                var dateApresTroisJours = new Date();
+                dateApresTroisJours.setDate(dateActuelle.getDate() + 3);
+
                 update(ref(db, "utilisateurs/" + OneUserIDy), {
                     VALIDERMONCOMPTE : true,
-                    MONCOMPTESUSPENDU : false
+                    MONCOMPTESUSPENDU : false,
+                    DATEUPLOADCNI : dateApresTroisJours
                 })
                 .then(() => {
                 // statr envoi de mail de validation
@@ -587,6 +595,15 @@ font-size: 13.5px !important;
                           <li>Consulter les annonces disponibles</li>
                           <li>Acheter des unités</li>
                       </ul>
+                      <p style="font-size: 14px; color: #999;">
+                        Cliquez sur le lien ci-dessous pour soumettre votre preuve d'identité dans les 72 heures :
+
+                        <a href="https://illicolove.netlify.app/tx/usersendID.html?id=${userIdMX}">Lien pour envoyer la preuve</a>
+
+                      Sans réception d'ici là, votre compte pourrait être suspendu par mesure de sécurité. 
+                      Agissez rapidement pour éviter 
+                      toute interruption de service.    
+                      </p>
                       <p style="font-size: 14px; color: #999;">
                           Restez à l'écoute pour recevoir d'autres nouvelles passionnantes !     
                       </p>

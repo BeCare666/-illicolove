@@ -9404,7 +9404,6 @@ chevron-down"></i> `,
     $("#SITEID2").text(i18next.t("SITEID1"));
     $("#SITEID3").html(i18next.t("SITEID3"));
     $("#TITLEIDPAIEID").html(i18next.t("TITLEIDPAIEID"));
-    $("#TITLEIDPAIEID").html(i18next.t("TITLEIDPAIEID"));
     $("#phoneuserIDval").attr("placeholder", i18next.t("phoneuserIDval"));
     
 }

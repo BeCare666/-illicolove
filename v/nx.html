@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="">paiement</title>
+    <title id="TITLEIDPAIEID"></title>
     <link href="./../assets/img/logoilli.jpeg" rel="icon">
     <script src="https://api.feexpay.me/feexpay-javascript-sdk/index.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
@@ -73,13 +73,13 @@
 
     update(ref(db, "utilisateurs/" + UserConnectuser), {
     COMPTECREDIT:moncomptvalide
-    }).then(() => {  
-        // function to take 10% for the user paiement
-          const IDAFILIATEITWO = localStorage.getItem("IDAFILIATETWO");
-                const db = getDatabase();
-                get(child(db, "utilisateurs/" + IDAFILIATEITWO))
-                    .then((snapshot) => {
-                    if (snapshot.exists()) {
+    }).then(() => {
+      // function to take 10% for the user paiement
+      const IDAFILIATEITWO = localStorage.getItem("usTakeAFILIATEID");      
+      const db = getDatabase();
+      get(child(db, "utilisateurs/" + IDAFILIATEITWO))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
                         var COMMISSIONVALUE = snapshot.val().COMMISSION
                         var Userfullename = snapshot.val().fullname
                         var UserEmail =  snapshot.val().email
@@ -164,10 +164,10 @@
                         alert("no data");
                     }
                     })
-                    .catch((error) => {
-                    alert("il y a une ERROR " + error);
-                    });            
-           //window.location.href = "profil.html"
+      .catch((error) => {
+      alert("il y a une ERROR " + error);
+      });            
+      //window.location.href = "profil.html"
       })
      .catch((error) => {
      Swal.fire({

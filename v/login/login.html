@@ -151,8 +151,14 @@
   usersRef.orderByChild("email").equalTo(email).once("value", function(snapshot) {
     if (snapshot.exists()) {
     snapshot.forEach(function(userSnapshot) {
+      // function to localStorage IDAFILIATE
+      var usTakeAFILIATE = userSnapshot.val().TAKEMYIDAFILIAT
+      if(usTakeAFILIATE){
+        localStorage.setItem("usTakeAFILIATEID", usTakeAFILIATE)
+      }else{
+      }
+      var TAKEMYIDAFILIAT = localStorage.setItem("TAKEMYIDAFILIATCONNECT", )
       // Vérifiez si le mot de passe de l'utilisateur correspond au mot de passe donné
-    
       if (userSnapshot.val().password === password) {
         // L'utilisateur existe avec l'e-mail et le mot de passe donnés
         document.getElementById('preloader').style.display = "none"

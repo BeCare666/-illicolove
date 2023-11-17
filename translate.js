@@ -8,6 +8,7 @@ $(document).ready(function() {
        
         translation : {
           "phoneuserIDval":`votre téléphone`,
+          "IDTRANSLATEFORM105LINKS":`Le lien n'est plus disponible.`,
           "IDTRANSLATE1": "Accueil",
          // "IDTRANSLATE2": "À propos",
           "IDTRANSLATE3": `Comment ça fonctionne ?`,
@@ -666,6 +667,9 @@ $(document).ready(function() {
         "IDTRANSLATEFORM109":`Succès`,
         "IDTRANSLATEFORM110":`Votre formulaire est soumis au contrôle pour validation sous 24 heures <i class="fa fa-heart"></i>.`,
         "IDTRANSLATEFORM111":`Désolé`,
+        "TITTLETOSENDIDCNI":` <h1>Télécharger la preuve d'identité.
+        <small>Avec aperçu</small> 
+         </h1>`,
         "IDTRANSLATEFORM112":`Tous vos champs ne sont pas remplis.`,
         "IDTRANSLATEUSERD1":`Contactez-moi  <svg xmlns="http://www.w3.org/2000/svg" width="10.444" height="9.7"><defs><clipPath id="a"><path fill="none" d="M0 0h10.444v9.7H0z"/></clipPath></defs><g fill="none" stroke="#2a46cc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.438" clip-path="url(#a)"><path d="M.719 4.85h8.709M5.594 8.683L9.427 4.85M5.594 1.017L9.427 4.85"/></g></svg>`,
       
@@ -720,6 +724,7 @@ $(document).ready(function() {
         "IDTRANSLATEWALLET":"Désolé !",
         "IDTRANSLATEWALLETM":"Votre transfert a échoué. Veuillez réessayer plus tard.", 
         "IDTRANSLATEWALLET1":"Félicitations !",
+        "IDTRANSLATEPROFIL38XSEND":"Félicitations !",
         "IDTRANSLATEWALLET2":"Votre transfert a été effectué avec succès !",
         "TITLEWALLETID": "Portefeuille électronique",
         "IDTRANSLATEFOEMXX": "Veuillez ne saisir que des lettres, les chiffres ne sont pas autorisés dans ce champ.",
@@ -804,6 +809,7 @@ $(document).ready(function() {
         translation : {
           "phoneuserIDval":`su teléfono`,
           "IDTRANSLATE1": "Inicio",
+          "IDTRANSLATEFORM105LINKS":`El enlace ya no está disponible.`,
           "IDTRANSLATE2": " Sobre ",
           "IDTRANSLATE3": `Cómo funciona? `,
           "IDTRANSLATE4": `Términos `, 
@@ -1377,6 +1383,10 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
         "IDTRANSLATEFORM109":` Éxito `,
         "IDTRANSLATEFORM110":` Su formulario se somete a control para validación en 24 horas <i class="fa fa-heart"></i>.`,
         "IDTRANSLATEFORM111":` Siento `,
+        "TITTLETOSENDIDCNI":` <h1>Descargar prueba de identidad.
+          <small>Con vista previa</small>
+      </h1>
+      `,
         "IDTRANSLATEFORM112":` No todos sus campos están llenos.`,
         "IDTRANSLATEUSERD1":` Contáctame`,
 
@@ -1435,6 +1445,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
         "IDTRANSLATEWALLET":"¡Lo siento!",
         "IDTRANSLATEWALLETM":"Su transferencia ha fallado. Por favor, inténtelo de nuevo más tarde.",
         "IDTRANSLATEWALLET1":"¡Felicidades!",
+        "IDTRANSLATEPROFIL38XSEND":"¡Felicidades!",
         "IDTRANSLATEWALLET2":"¡Su transferencia se realizó con éxito!",
         "TITLEWALLETID": "Monedero electrónico",
         "IDTRANSLATEFOEMXX":"Por favor, ingrese solo letras, los números no están permitidos.",
@@ -1526,6 +1537,7 @@ Gracias por su comprensión y hasta pronto.
       
    translation : {
     "phoneuserIDval":`your phone`,
+    "IDTRANSLATEFORM105LINKS":`The link is no longer available.`,
     "TITLEIDPAIEID":`payment`,
     "IDTRANSLATE1": " Home ",
    // "IDTRANSLATE2": "À propos",
@@ -2127,6 +2139,11 @@ Welcome!`,
   "IDTRANSLATEFORM109":` Successful `,
   "IDTRANSLATEFORM110":` Your form is subject to verification within 24 hours <i class="fa fa-heart"></i>.`,
   "IDTRANSLATEFORM111":` Sorry `,
+  "TITTLETOSENDIDCNI":` <h1>Download Proof of Identity.
+  <small>With Preview</small>
+</h1>
+
+      `,
   "IDTRANSLATEFORM112":` All your fields are not filled.`,
   "IDTRANSLATEUSERD1":` Contact me  <svg xmlns="http://www.w3.org/2000/svg" width="10.444" height="9.7"><defs><clipPath id="a"><path fill="none" d="M0 0h10.444v9.7H0z"/></clipPath></defs><g fill="none" stroke="#2a46cc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.438" clip-path="url(#a)"><path d="M.719 4.85h8.709M5.594 8.683L9.427 4.85M5.594 1.017L9.427 4.85"/></g></svg>`,
 
@@ -2180,7 +2197,8 @@ Welcome!`,
   "IDTRANSLATEWALLETX":" Paid ",
   "IDTRANSLATEWALLET":" Sorry!",
   "IDTRANSLATEWALLETM":" Your transfer failed. Please try again later.", 
-  "IDTRANSLATEWALLET1":" Congratulations -",
+  "IDTRANSLATEWALLET1":" Congratulations !",
+  "IDTRANSLATEPROFIL38XSEND":"Congratulations !",
   "IDTRANSLATEWALLET2":" Your transfer was successful!",
   "TITLEWALLETID": " e-Wallet ",
   "IDTRANSLATEFOEMXX": " Please enter only letters, numbers are not allowed in this field.",
@@ -2263,6 +2281,7 @@ Welcome!`,
       kr:{
         translation : {
           "phoneuserIDval":`당신의 전화 `,
+          "IDTRANSLATEFORM105LINKS":`링크를 사용할 수 없습니다.`,
           "TITLEIDPAIEID":`지불 `,
           "IDTRANSLATE1": "홈",
          // "IDTRANSLATE2": "À propos",
@@ -2913,6 +2932,7 @@ illicolove.com 웹 사이트는 데이터의 보안 및 기밀성을 보장하�
         "IDTRANSLATEWALLET":"죄송합니다. !",
         "IDTRANSLATEWALLETM":"전송에 실패했습니다. 나중에 다시 시도하십시오.", 
         "IDTRANSLATEWALLET1":"축하합니다!",
+        "IDTRANSLATEPROFIL38XSEND":"축하합니다!",
         "IDTRANSLATEWALLET2":"전송에 성공했습니다!",
         "TITLEWALLETID": "전자 지갑",
         "IDTRANSLATEFOEMXX": "문자만 입력하십시오. 이 필드에는 숫자가 허용되지 않습니다.",
@@ -2994,6 +3014,7 @@ illicolove.com 웹 사이트는 데이터의 보안 및 기밀성을 보장하�
       it:{
         translation : {
           "phoneuserIDval":`Il tuo telefono`,
+          "IDTRANSLATEFORM105LINKS":`Il link non è più disponibile.`,
           "TITLEIDPAIEID":`Pagamento `,
           "IDTRANSLATE1": " Benvenuto ",
          // "IDTRANSLATE2": "À propos",
@@ -3599,6 +3620,10 @@ Benvenuto!`,
         "IDTRANSLATEFORM109":` Successo `,
         "IDTRANSLATEFORM110":` Il modulo viene sottoposto a verifica per la convalida entro 24 ore <i class="fa fa-heart"></i>.`,
         "IDTRANSLATEFORM111":` Mi dispiace `,
+        "TITTLETOSENDIDCNI":`<h1>Scarica la prova d'identità.
+        <small>Con anteprima</small>
+    </h1>
+    `,
         "IDTRANSLATEFORM112":` Non tutti i tuoi campi sono compilati.`,
         "IDTRANSLATEUSERD1":` Contattami  <svg xmlns="http://www.w3.org/2000/svg" width="10.444" height="9.7"><defs><clipPath id="a"><path fill="none" d="M0 0h10.444v9.7H0z"/></clipPath></defs><g fill="none" stroke="#2a46cc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.438" clip-path="url(#a)"><path d="M.719 4.85h8.709M5.594 8.683L9.427 4.85M5.594 1.017L9.427 4.85"/></g></svg>`,
 
@@ -3653,6 +3678,7 @@ Benvenuto!`,
         "IDTRANSLATEWALLET":" Mi dispiace!",
         "IDTRANSLATEWALLETM":" Il trasferimento non è riuscito. Riprova più tardi.", 
         "IDTRANSLATEWALLET1":" Congratulazioni!",
+        "IDTRANSLATEPROFIL38XSEND":" Congratulazioni!",
         "IDTRANSLATEWALLET2":" Il trasferimento è stato completato con successo!",
         "TITLEWALLETID": " Portafoglio elettronico ",
         "IDTRANSLATEFOEMXX": " Inserisci solo lettere, i numeri non sono ammessi in questo campo.",
@@ -3735,6 +3761,7 @@ Benvenuto!`,
       jp:{
         translation : {
           "phoneuserIDval":`あなたの電話`,
+          "IDTRANSLATEFORM105LINKS":`リンクはもう利用できません。`,
           "TITLEIDPAIEID":`支払い  `,
           "IDTRANSLATE1": "ホーム",
          // "IDTRANSLATE2": "À propos",
@@ -4326,6 +4353,10 @@ illicolove.comのサービスを利用する上で何か問題がある場合は
         "IDTRANSLATEFORM109":`成功`,
         "IDTRANSLATEFORM110":`フォームは24時間以内に確認されます<i class="fa fa-heart"></i>.`,
         "IDTRANSLATEFORM111":`御免`,
+        "TITTLETOSENDIDCNI":`<h1>本人確認書類のダウンロード。
+        <small>プレビュー付き</small>
+        </h1>    
+        `,
         "IDTRANSLATEFORM112":`すべてのフィールドが入力されていません。`,
         "IDTRANSLATEUSERD1":`私に連絡してください  <svg xmlns="http://www.w3.org/2000/svg" width="10.444" height="9.7"><defs><clipPath id="a"><path fill="none" d="M0 0h10.444v9.7H0z"/></clipPath></defs><g fill="none" stroke="#2a46cc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.438" clip-path="url(#a)"><path d="M.719 4.85h8.709M5.594 8.683L9.427 4.85M5.594 1.017L9.427 4.85"/></g></svg>`,
 
@@ -4380,6 +4411,7 @@ illicolove.comのサービスを利用する上で何か問題がある場合は
         "IDTRANSLATEWALLET":"ごめんなさい！",
         "IDTRANSLATEWALLETM":"転送に失敗しました。後でもう一度お試しください。", 
         "IDTRANSLATEWALLET1":"おめでとうございます！",
+        "IDTRANSLATEPROFIL38XSEND":"おめでとうございます！",
         "IDTRANSLATEWALLET2":"転送が成功しました!",
         "TITLEWALLETID": "電子財布",
         "IDTRANSLATEFOEMXX": "このフィールドには文字のみを入力してください。番号は許可されていません。",
@@ -4461,6 +4493,7 @@ illicolove.comのサービスを利用する上で何か問題がある場合は
       cn:{
         translation : {
           "phoneuserIDval":`你的电话`,
+          "IDTRANSLATEFORM105LINKS":` 链接不再可用。`,
           "TITLEIDPAIEID":`付款`,
           "IDTRANSLATE1": "接收",
          // "IDTRANSLATE2": "À propos",
@@ -5062,6 +5095,10 @@ Publisher不负责这些网站的可用性,也不能控制内容或验证这些�
         "IDTRANSLATEFORM109":`成功`,
         "IDTRANSLATEFORM110":`您的表格将在24小时内提交验证<i class="fa fa-heart"></i>.`,
         "IDTRANSLATEFORM111":`对不起`,
+        "TITTLETOSENDIDCNI":`<h1>下载身份证明。
+        <small>带有预览</small>
+    </h1>       
+        `,
         "IDTRANSLATEFORM112":`并非所有字段都已填写。`,
         "IDTRANSLATEUSERD1":`联系我  <svg xmlns="http://www.w3.org/2000/svg" width="10.444" height="9.7"><defs><clipPath id="a"><path fill="none" d="M0 0h10.444v9.7H0z"/></clipPath></defs><g fill="none" stroke="#2a46cc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.438" clip-path="url(#a)"><path d="M.719 4.85h8.709M5.594 8.683L9.427 4.85M5.594 1.017L9.427 4.85"/></g></svg>`,
 
@@ -5116,6 +5153,7 @@ Publisher不负责这些网站的可用性,也不能控制内容或验证这些�
         "IDTRANSLATEWALLET":"真抱歉",
         "IDTRANSLATEWALLETM":"您的转会失败。请稍后再试", 
         "IDTRANSLATEWALLET1":"恭喜啊",
+        "IDTRANSLATEPROFIL38XSEND":"恭喜啊",
         "IDTRANSLATEWALLET2":"您的转帐已成功完成!",
         "TITLEWALLETID": "电子钱包",
         "IDTRANSLATEFOEMXX": "请只输入字母,此栏位中不允许输入数字。",
@@ -5200,6 +5238,7 @@ Publisher不负责这些网站的可用性,也不能控制内容或验证这些�
         
    translation : {
     "phoneuserIDval":`ваш телефон`,
+    "IDTRANSLATEFORM105LINKS":`Ссылка больше недоступна.`,
     "TITLEIDPAIEID":`оплата `,
     "IDTRANSLATE1": " Прием ",
    // "IDTRANSLATE2": "À propos",
@@ -5809,6 +5848,10 @@ Publisher不负责这些网站的可用性,也不能控制内容或验证这些�
   "IDTRANSLATEFORM109":` Успех `,
   "IDTRANSLATEFORM110":` Ваша форма подается на утверждение в течение 24 часов <i class="fa fa-heart"></i>.`,
   "IDTRANSLATEFORM111":` Прости `,
+  "TITTLETOSENDIDCNI":`<h1>Загрузить доказательство личности.
+  <small>С превью</small>
+</h1>   
+  `,
   "IDTRANSLATEFORM112":` Не все ваши поля заполнены.`,
   "IDTRANSLATEUSERD1":` Cвяжитесь со мной  <svg xmlns="http://www.w3.org/2000/svg" width="10.444" height="9.7"><defs><clipPath id="a"><path fill="none" d="M0 0h10.444v9.7H0z"/></clipPath></defs><g fill="none" stroke="#2a46cc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.438" clip-path="url(#a)"><path d="M.719 4.85h8.709M5.594 8.683L9.427 4.85M5.594 1.017L9.427 4.85"/></g></svg>`,
 
@@ -5863,6 +5906,7 @@ Publisher不负责这些网站的可用性,也不能控制内容或验证这些�
   "IDTRANSLATEWALLET":" Прости!",
   "IDTRANSLATEWALLETM":" Ваш перевод не удался. Пожалуйста, попробуйте позже.", 
   "IDTRANSLATEWALLET1":" Поздравляю!",
+  "IDTRANSLATEPROFIL38XSEND":" Поздравляю!",
   "IDTRANSLATEWALLET2":" Ваш перевод был успешно завершен!",
   "TITLEWALLETID": " Электронный Кошелек ",
   "IDTRANSLATEFOEMXX": " Пожалуйста, введите только буквы, номера в этом поле не разрешены.",
@@ -5944,6 +5988,7 @@ Publisher不负责这些网站的可用性,也不能控制内容或验证这些�
       pt:{
         translation : {
           "phoneuserIDval":`Seu telefone`,
+          "IDTRANSLATEFORM105LINKS":`O link não está mais disponível.`,
           "TITLEIDPAIEID":`Pagamento `,
           "IDTRANSLATE1": " Início ",
          // "IDTRANSLATE2": "À propos",
@@ -6566,6 +6611,10 @@ Bem-vindo!`,
         "IDTRANSLATEFORM109":` Sucesso `,
         "IDTRANSLATEFORM110":` Seu formulário é submetido à verificação para validação dentro de 24 horas <i class="fa fa-heart"></i>.`,
         "IDTRANSLATEFORM111":` Desculpe `,
+        "TITTLETOSENDIDCNI":`<h1>Baixar comprovante de identidade.
+        <small>Com visualização</small>
+        </h1>    
+        `,
         "IDTRANSLATEFORM112":` Nem todos os seus campos estão preenchidos.`,
         "IDTRANSLATEUSERD1":` Contacte-me  <svg xmlns="http://www.w3.org/2000/svg" width="10.444" height="9.7"><defs><clipPath id="a"><path fill="none" d="M0 0h10.444v9.7H0z"/></clipPath></defs><g fill="none" stroke="#2a46cc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.438" clip-path="url(#a)"><path d="M.719 4.85h8.709M5.594 8.683L9.427 4.85M5.594 1.017L9.427 4.85"/></g></svg>`,
 
@@ -6620,6 +6669,7 @@ Bem-vindo!`,
         "IDTRANSLATEWALLET":" Desculpe!",
         "IDTRANSLATEWALLETM":" A sua transferência falhou. Tente novamente mais tarde.", 
         "IDTRANSLATEWALLET1":" Parabéns!",
+        "IDTRANSLATEPROFIL38XSEND":" Parabéns!",
         "IDTRANSLATEWALLET2":" Sua transferência foi concluída com sucesso!",
         "TITLEWALLETID": " E-wallet ",
         "IDTRANSLATEFOEMXX": " Por favor, insira apenas letras, os números não são permitidos neste campo.",
@@ -6704,6 +6754,7 @@ Bem-vindo!`,
         
    translation : {
     "phoneuserIDval":`Ihr Telefon`,
+    "IDTRANSLATEFORM105LINKS":`Der Link ist nicht mehr verfügbar.`,
     "TITLEIDPAIEID":`Zahlung`,
     "IDTRANSLATE1": " Startseite ",
    // "IDTRANSLATE2": "À propos",
@@ -7282,6 +7333,9 @@ Herzlich willkommen!`,
   "IDTRANSLATEFORM109":` Erfolg `,
   "IDTRANSLATEFORM110":` Ihr Formular wird zur Überprüfung und Validierung innerhalb von 24 Stunden eingereicht. <i class="fa fa-heart"></i>.`,
   "IDTRANSLATEFORM111":` Es tut mir leid `,
+  "TITTLETOSENDIDCNI":`<h1>Identitätsnachweis herunterladen.
+  <small>Mit Vorschau</small>
+</h1> `,
   "IDTRANSLATEFORM112":` Nicht alle Ihre Felder sind ausgefüllt..`,
   "IDTRANSLATEUSERD1":` Kontaktieren Sie mich.  <svg xmlns="http://www.w3.org/2000/svg" width="10.444" height="9.7"><defs><clipPath id="a"><path fill="none" d="M0 0h10.444v9.7H0z"/></clipPath></defs><g fill="none" stroke="#2a46cc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.438" clip-path="url(#a)"><path d="M.719 4.85h8.709M5.594 8.683L9.427 4.85M5.594 1.017L9.427 4.85"/></g></svg>`,
 
@@ -7336,6 +7390,7 @@ Herzlich willkommen!`,
   "IDTRANSLATEWALLET":" Entschuldigung!",
   "IDTRANSLATEWALLETM":" Ihre Übertragung ist fehlgeschlagen. Bitte versuchen Sie es später erneut.", 
   "IDTRANSLATEWALLET1":" Herzlichen Glückwunsch -",
+  "IDTRANSLATEPROFIL38XSEND":" Herzlichen Glückwunsch -",
   "IDTRANSLATEWALLET2":" Ihr Transfer wurde erfolgreich abgeschlossen!",
   "TITLEWALLETID": " E-Wallet ",
   "IDTRANSLATEFOEMXX": " Bitte geben Sie nur Buchstaben ein, Zahlen sind in diesem Feld nicht zulässig.",
@@ -7420,6 +7475,7 @@ Herzlich willkommen!`,
         
    translation : {
     "phoneuserIDval":` هاتفك`,
+    "IDTRANSLATEFORM105LINKS":`الرابط غير متاح بعد الآن.`,
     "TITLEIDPAIEID":`دفع `,
     "IDTRANSLATE1": "استقبال",
 
@@ -8504,6 +8560,10 @@ FAMILIA & COMPANY</strong> سيتم معالجة البيانات الشخصية
   "IDTRANSLATEFORM110":`يخضع نموذجك للتحقق في غضون 24 ساعة <i class="fa fa-heart"></i>.`
 ,
   "IDTRANSLATEFORM111":`آسف`,
+  "TITTLETOSENDIDCNI":`<h1>تحميل إثبات الهوية.
+  <small>مع المعاينة</small>
+</h1>
+`,
 
   "IDTRANSLATEFORM112":`كل حقولك لم تملأ.`,
 
@@ -8611,6 +8671,7 @@ color: #FFB6C1;"></i> لا توجد بيانات`,
   "IDTRANSLATEWALLETM":"فشل نقلك. الرجاء معاودة المحاولة في وقت لاحق",
 
   "IDTRANSLATEWALLET1":"تهانينا!",
+  "IDTRANSLATEPROFIL38XSEND":"تهانينا!",
 
   "IDTRANSLATEWALLET2":"لقد كان نقلك ناجحاً",
 
@@ -9049,6 +9110,7 @@ chevron-down"></i> `,
     $("#IDTRANSLATEPROFIL41").text(i18next.t("IDTRANSLATEPROFIL41"));
 
     $("#IDTRANSLATEPROFIL38X").text(i18next.t("IDTRANSLATEPROFIL38X"));
+    $("#IDTRANSLATEPROFIL38XSEND").html(i18next.t("IDTRANSLATEPROFIL38XSEND"));
     $("#IDTRANSLATEPROFIL39X").text(i18next.t("IDTRANSLATEPROFIL39X"));
     $("#IDTRANSLATEPROFIL40X").text(i18next.t("IDTRANSLATEPROFIL40X"));
     $("#IDTRANSLATEPROFIL41X").text(i18next.t("IDTRANSLATEPROFIL41X"));
@@ -9081,6 +9143,7 @@ chevron-down"></i> `,
     $("#IDTRANSLATELOGIN11").text(i18next.t("IDTRANSLATELOGIN11"));
     $("#IDTRANSLATELOGIN12").text(i18next.t("IDTRANSLATELOGIN12"));
     $("#IDTRANSLATELOGIN13").text(i18next.t("IDTRANSLATELOGIN13"));
+    $("#IDTRANSLATELOGIN13SEND").text(i18next.t("IDTRANSLATELOGIN13"));
     $("#IDTRANSLATELOGIN14").text(i18next.t("IDTRANSLATELOGIN14"));
     $("#IDTRANSLATELOGIN15").text(i18next.t("IDTRANSLATELOGIN15"));
     $("#IDTRANSLATELOGIN16").text(i18next.t("IDTRANSLATELOGIN16")); 
@@ -9111,7 +9174,7 @@ chevron-down"></i> `,
     //FORGET PAGE
     $("#IDTRANSLATEFORGET1").text(i18next.t("IDTRANSLATEFORGET1"));
     $("#IDTRANSLATEFORGET2").text(i18next.t("IDTRANSLATEFORGET2"));
-    $("#email").attr("placeholder", i18next.t("IDTRANSLATEFORGET3"));
+    $("#email").attr("placeholder", i18next.t("IDTRANSLATEFORGET3")); 
     $("#IDTRANSLATEFORGET4").val(i18next.t("IDTRANSLATEFORGET4"));
     $("#IDTRANSLATEFORGET5").text(i18next.t("IDTRANSLATEFORGET5"));
     $("#IDTRANSLATEFORGET6").text(i18next.t("IDTRANSLATEFORGET6"));
@@ -9122,6 +9185,9 @@ chevron-down"></i> `,
     $("#IDTRANSLATEFORGET11").text(i18next.t("IDTRANSLATEFORGET11"));
     $("#IDTRANSLATEFORGET11X").text(i18next.t("IDTRANSLATEFORGET11X"));
     $("#IDTRANSLATEFORGET12").text(i18next.t("IDTRANSLATEFORGET12"));
+    $("#IDTRANSLATEFORGET12SEND").text(i18next.t("IDTRANSLATEFORGET12"));
+    $("#IDTRANSLATEFORGET12SEND1").text(i18next.t("IDTRANSLATEFORGET12"));
+    $("#IDTRANSLATEFORGET12SEND2").text(i18next.t("IDTRANSLATEFORGET12"));
     $("#IDTRANSLATEFORGET13").text(i18next.t("IDTRANSLATEFORGET13"));
     $("#IDTRANSLATEFORGET14").text(i18next.t("IDTRANSLATEFORGET14"));
     $("#IDTRANSLATEFORGET15").text(i18next.t("IDTRANSLATEFORGET15"));
@@ -9282,6 +9348,7 @@ chevron-down"></i> `,
     $("#IDTRANSLATEFORM105").text(i18next.t("IDTRANSLATEFORM105"));
     // USERDETAILS PAGE
     $("#IDTRANSLATEUSERD1").html(i18next.t("IDTRANSLATEUSERD1"));
+    $("#SENDID").html(i18next.t("IDTRANSLATEFORM103"));
     $("#IDTRANSLATEUSERD2").text(i18next.t("IDTRANSLATEUSERD2"));
     $("#IDTRANSLATEUSERD3").html(i18next.t("IDTRANSLATEUSERD3"));
     $("#IDTRANSLATEUSERD4").text(i18next.t("IDTRANSLATEUSERD4"));
@@ -9305,6 +9372,7 @@ chevron-down"></i> `,
     $("#IDTRANSLATEUSERD22").text(i18next.t("IDTRANSLATEUSERD22"));
     $("#IDTRANSLATEUSERD24").text(i18next.t("IDTRANSLATEUSERD24"));
     $("#IDTRANSLATEUSERD25").text(i18next.t("IDTRANSLATEUSERD25"));
+    $("#IDTRANSLATEUSERD25SEND").text(i18next.t("IDTRANSLATEUSERD25"));
     $("#IDTRANSLATEUSERD26").text(i18next.t("IDTRANSLATEUSERD26"));
     $("#IDTRANSLATEUSERD27").text(i18next.t("IDTRANSLATEUSERD27"));
     $("#IDTRANSLATEUSERD28").text(i18next.t("IDTRANSLATEUSERD28"));
@@ -9357,7 +9425,9 @@ chevron-down"></i> `,
     $("#IDTRANSLATEWALLETX").text(i18next.t("IDTRANSLATEWALLETX")); 
     $("#IDTRANSLATEWALLET").text(i18next.t("IDTRANSLATEWALLET"));
     $("#IDTRANSLATEWALLETM").text(i18next.t("IDTRANSLATEWALLETM"));
+    $("#IDTRANSLATEWALLETMSEND").text(i18next.t("IDTRANSLATEWALLETM"));
     $("#IDTRANSLATEWALLET1").text(i18next.t("IDTRANSLATEWALLET1"));
+    $("#IDTRANSLATEWALLET1SEND").text(i18next.t("IDTRANSLATEWALLET2"));
     $("#IDTRANSLATEWALLET2").text(i18next.t("IDTRANSLATEWALLET2"));
     $("#TITLEWALLETID").text(i18next.t("TITLEWALLETID")); 
     $("#IDTRANSLATEFOEMXX").text(i18next.t("IDTRANSLATEFOEMXX"));
@@ -9365,6 +9435,7 @@ chevron-down"></i> `,
     $("#TERMINATOR").text(i18next.t("TERMINATOR"));
     $("#PHOTOIDW").text(i18next.t("PHOTOIDW")); 
     $("#TERMINATORW").text(i18next.t("TERMINATORW"));
+    $("#IDTRANSLATEFORM105LINKS").text(i18next.t("IDTRANSLATEFORM105LINKS"));
 
     $("#IDTRANSLATESIALERT1").text(i18next.t("IDTRANSLATESIALERT1"));
     $("#IDTRANSLATESIALERT2").text(i18next.t("IDTRANSLATESIALERT2"));
@@ -9403,7 +9474,8 @@ chevron-down"></i> `,
     $("#SITEID1").text(i18next.t("SITEID1"));
     $("#SITEID2").text(i18next.t("SITEID1"));
     $("#SITEID3").html(i18next.t("SITEID3"));
-    $("#TITLEIDPAIEID").html(i18next.t("TITLEIDPAIEID"));
+    $("#SITEID3").html(i18next.t("SITEID3"));
+    $("#TITTLETOSENDIDCNI").html(i18next.t("TITTLETOSENDIDCNI"));
     $("#phoneuserIDval").attr("placeholder", i18next.t("phoneuserIDval"));
     
 }

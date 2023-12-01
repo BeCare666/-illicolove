@@ -582,38 +582,39 @@ font-size: 13.5px !important;
                   <table cellpadding="10" cellspacing="0" style="background-color: #f1f1f1; padding: 20px;">
                   <tr>
                       <td>
-                      <div style="text-align: center;">
-                        <img src="https://illicolove.netlify.app/assets/img/logo_illico-removebg-preview.png" style="max-width: 17%; height: auto; display: inline-block;" />
-                      </div>
-                      <h1 style="color: #333; text-align: center !important;">Félicitations ${Userfullename} !</h1>
-                      <p style="font-size: 16px; color: #666;">
-                          Nous sommes heureux de vous informer que votre compte illicolove a été validé avec succès. 
-                          Cela signifie que vous pouvez désormais profiter des fonctionnalités suivantes :    
-                      </p>
-                      <ul>
-                          <li>Modifier votre annonce</li>
-                          <li>Consulter les annonces disponibles</li>
-                          <li>Acheter des unités</li>
-                      </ul>
-                      <p style="font-size: 14px; color: #999;">
-                      <strong>NB : </strong> Cliquez ici <a href="https://illicolove.netlify.app/tx/usersendID.html?id=${userIdMX}">Lien pour envoyer la preuve</a>
-                      pour soumettre votre preuve d'identité dans les 72 heures.
-                      Sans réception d'ici là, votre compte pourrait être suspendu par mesure de sécurité. 
-                      Agissez rapidement pour éviter 
-                      toute interruption de service.    
-                      </p>
-                      <p style="font-size: 14px; color: #999;">
-                          Restez à l'écoute pour recevoir d'autres nouvelles passionnantes !     
-                      </p>
-                      <p style="font-size: 14px; color: #999;">
-                          Cordialement,     
-                      </p>
-                      <p style="font-size: 14px; color: #999;">
-                          L'équipe illicolove.      
-                      </p>
+                          <div style="text-align: center;">
+                              <img src="https://illicolove.netlify.app/assets/img/logo_illico-removebg-preview.png" style="max-width: 17%; height: auto; display: inline-block;" />
+                          </div>
+                          <h1 style="color: #333; text-align: center !important;">Congratulations ${Userfullename}!</h1>
+                          <p style="font-size: 16px; color: #666;">
+                              We are pleased to inform you that your illicolove account has been successfully validated.
+                              This means you can now enjoy the following features:
+                          </p>
+                          <ul>
+                              <li>Edit your ad</li>
+                              <li>View available ads</li>
+                              <li>Buy units</li>
+                          </ul>
+                          <p style="font-size: 14px; color: #999;">
+                              <strong>NB:</strong> Click here <a href="https://illicolove.netlify.app/tx/usersendID.html?id=${userIdMX}">Link to submit proof</a>
+                              to submit your proof of identity within 72 hours.
+                              Failure to receive it by then, your account could be suspended for security reasons.
+                              Act quickly to avoid
+                              any interruption of service.
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                              Stay tuned for more exciting news!
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                              Sincerely,
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                              The illicolove team.
+                          </p>
                       </td>
                   </tr>
-                  </table>
+              </table>
+
                   `
                 };
 
@@ -660,6 +661,7 @@ font-size: 13.5px !important;
                     MONCOMPTESUSPENDU : true
                 })
                 .then(() => {
+                  
                 //  envoi de mail de suspension
                 const apiKey = "34F593452254BAB8CACDA4A39FC9C44BFC0D3E63B8842CD369FF37BBE4AC5017DA7917B6E03C3C8EB379F906C80E9DED";
                 const apiUrl = "https://api.elasticemail.com/v2/email/send";
@@ -674,31 +676,32 @@ font-size: 13.5px !important;
                   <table cellpadding="10" cellspacing="0" style="background-color: #f1f1f1; padding: 20px;">
                   <tr>
                       <td>
-                      <div style="text-align: center;">
-                                <img src="https://illicolove.netlify.app/assets/img/logo_illico-removebg-preview.png" style="max-width: 17%; height: auto; display: inline-block;" />
-                      </div>
-                      <h1 style="color: #333; text-align: center !important;">Désolé ${Userfullename} !</h1>
-                      <p style="font-size: 16px; color: #666;">
-                        Nous regrettons de vous informer que votre compte illicolove a été suspendu. 
-                        Par conséquent, vous ne pourrez plus bénéficier des fonctionnalités suivantes :    
-                      </p>
-                      <ul>
-                          <li>Modifier votre annonce</li>
-                          <li>Consulter les annonces disponibles</li>
-                          <li>Acheter des unités</li>
-                      </ul>
-                      <p style="font-size: 14px; color: #999;">
-                          Restez à l'écoute pour recevoir de nouvelles !     
-                      </p>
-                      <p style="font-size: 14px; color: #999;">
-                          Cordialement,     
-                      </p>
-                      <p style="font-size: 14px; color: #999;">
-                          L'équipe illicolove.      
-                      </p>
+                          <div style="text-align: center;">
+                              <img src="https://illicolove.netlify.app/assets/img/logo_illico-removebg-preview.png" style="max-width: 17%; height: auto; display: inline-block;" />
+                          </div>
+                          <h1 style="color: #333; text-align: center !important;">Sorry ${Userfullename}!</h1>
+                          <p style="font-size: 16px; color: #666;">
+                              We regret to inform you that your illicolove account has been suspended.
+                              Consequently, you will no longer be able to enjoy the following features:
+                          </p>
+                          <ul>
+                              <li>Edit your ad</li>
+                              <li>View available ads</li>
+                              <li>Buy units</li>
+                          </ul>
+                          <p style="font-size: 14px; color: #999;">
+                              Stay tuned for more updates!
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                              Sincerely,
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                              The illicolove team.
+                          </p>
                       </td>
                   </tr>
-                  </table>
+              </table>
+
                   `
                 };
 
@@ -764,32 +767,33 @@ font-size: 13.5px !important;
                   bodyHtml: `
                   <table cellpadding="10" cellspacing="0" style="background-color: #f1f1f1; padding: 20px;">
                   <tr>
-                      <td> 
-                      <div style="text-align: center;">
-                                <img src="https://illicolove.netlify.app/assets/img/logo_illico-removebg-preview.png" style="max-width: 17%; height: auto; display: inline-block;" />
-                      </div>
-                      <h1 style="color: #333; text-align: center !important;">Désolé ${Userfullename} !</h1>
-                      <p style="font-size: 16px; color: #666;">
-                        Nous regrettons de vous informer que votre compte illicolove a été supprimé. 
-                        Par conséquent, vous ne pourrez plus bénéficier des fonctionnalités suivantes :    
-                      </p>
-                      <ul>
-                          <li>Modifier votre annonce</li>
-                          <li>Consulter les annonces disponibles</li>
-                          <li>Acheter des unités</li>
-                      </ul>
-                      <p style="font-size: 14px; color: #999;">
-                          Restez à l'écoute pour recevoir de nouvelles !     
-                      </p>
-                      <p style="font-size: 14px; color: #999;">
-                          Cordialement,     
-                      </p>
-                      <p style="font-size: 14px; color: #999;">
-                          L'équipe illicolove.      
-                      </p>
+                      <td>
+                          <div style="text-align: center;">
+                              <img src="https://illicolove.netlify.app/assets/img/logo_illico-removebg-preview.png" style="max-width: 17%; height: auto; display: inline-block;" />
+                          </div>
+                          <h1 style="color: #333; text-align: center !important;">Sorry ${Userfullename}!</h1>
+                          <p style="font-size: 16px; color: #666;">
+                              We regret to inform you that your illicolove account has been deleted.
+                              Consequently, you will no longer be able to enjoy the following features:
+                          </p>
+                          <ul>
+                              <li>Edit your ad</li>
+                              <li>View available ads</li>
+                              <li>Buy units</li>
+                          </ul>
+                          <p style="font-size: 14px; color: #999;">
+                              Stay tuned for more updates!
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                              Sincerely,
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                              The illicolove team.
+                          </p>
                       </td>
                   </tr>
-                  </table>
+              </table>
+
                   `
                 };
 

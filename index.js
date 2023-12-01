@@ -27,21 +27,22 @@ document.getElementById('Mymaps').style.margin ="0"
 
 if(!acceptToUseCookies){
   Swal.fire({
-    title: 'Accepter les cookies',
+    title: 'Accept Cookies',
     html: '<div class="swal-custom-content">' +
       '<div class="swal-icon-container">' +
       '<i class="fas fa-cookie-bite"></i>' +
       '</div>' +
       '<div class="swal-text-container">' +
-      '<p>En continuant à utiliser ce site, vous acceptez l\'utilisation des cookies.</p>' +
-      '<p>Ces cookies sont utilisés pour améliorer votre expérience et fournir des fonctionnalités persistantes.</p>' +
-      '<p>Visiter notre <a href="politique.html">politique en matière de cookies</a>.</p>' +
+      '<strong>Welcome to illicolove!</strong>' +
+      '<p>To enhance your experience, we use cookies and collect geolocation data.</p>' +
+      '<p>By continuing to browse our site, you consent to the use of these technologies.</p>' +
+      '<p>Check our <a href="politique.html">privacy policy</a> for more information and to customiourze y preferences.</p>'+
       '</div>' +
       '</div>',
     icon: 'info',
     showCancelButton: true,
-    confirmButtonText: '<i class="fas fa-check"></i> Tout accepter',
-    cancelButtonText: '<i class="fas fa-times"></i> Tout refuser',
+    confirmButtonText: '<i class="fas fa-check"></i> Accept All',
+    cancelButtonText: '<i class="fas fa-times"></i> Reject All',
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
     allowOutsideClick: false,
@@ -65,8 +66,8 @@ if(!acceptToUseCookies){
      var acceptToUseCookies = true
       localStorage.setItem('ToacceptCookies', acceptToUseCookies)
       Swal.fire(
-        'Cookies acceptés',
-        'Vous avez accepté l\'utilisation des cookies.',
+        'Cookies accepted',
+        'You have accepted the use of cookies.',
         'success'
       );
       // Ajoutez votre code pour gérer l'acceptation des cookies ici
@@ -80,8 +81,8 @@ if(!acceptToUseCookies){
      // },5000)
     } else {
       Swal.fire(
-        'Cookies refusés',
-        'Vous avez refusé l\'utilisation des cookies.',
+        'Cookies denied',
+        'You have refused the use of cookies.',
         'warning'
       );
       // Ajoutez votre code pour gérer le refus des cookies ici

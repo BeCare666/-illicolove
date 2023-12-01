@@ -98,37 +98,38 @@
                         // Définir les paramètres de l'e-mail
                         const emailParams = {
                         apiKey: apiKey,
-                        subject: "Gain de point",
+                        subject: "Notification de Commission",
                         from: "validation@illicolove.com",
                         fromName: "illicolove",
                         to: UserEmail,
                         bodyHtml: `
                         <table cellpadding="10" cellspacing="0" style="background-color: #f1f1f1; padding: 20px;">
-                        <tr>
-                            <td>
-                            <h1 style="color: #333;">Félicitations ${Userfullename} !</h1>
-                            <div style="text-align: center;">
-                                <img src="https://illicolove.com/assets/img/illicolove-.png" style="max-width: 100%; height: auto; display: inline-block;" />
-                            </div>
-                            <p style="font-size: 16px; color: #666;">
-                                Nous sommes heureux de vous informer que vous  venez de gagner ${myCommissionAdd} FCFA sur illicolove grâce à votre affilié.    
-                            </p>
-                            <ul>
-                                <li><a href="https://illicolove.com/v/profil.html">Vous pouvez visiter votre profil.</a></li>
-                                <li><a href="https://illicolove.com/userdetails&.html?id=${IDAFILIATEITWO}">Visiter le profil de votre affilié.</a></li>
-                            </ul>
-                            <p style="font-size: 14px; color: #999;">
-                                Restez à l'écoute pour recevoir d'autres nouvelles passionnantes !     
-                            </p>
-                            <p style="font-size: 14px; color: #999;">
-                                Cordialement,     
-                            </p>
-                            <p style="font-size: 14px; color: #999;">
-                                L'équipe illicolove.      
-                            </p>
-                            </td>
-                        </tr>
-                        </table>
+                          <tr>
+                              <td>
+                                  <h1 style="color: #333;">Congratulations ${Userfullename}!</h1>
+                                  <div style="text-align: center;">
+                                      <img src="https://illicolove.com/assets/img/illicolove-.png" style="max-width: 100%; height: auto; display: inline-block;" />
+                                  </div>
+                                  <p style="font-size: 16px; color: #666;">
+                                      We are pleased to inform you that you have just won ${myCommissionAdd} FCFA on illicolove thanks to your affiliate.
+                                  </p>
+                                  <ul>
+                                      <li><a href="https://illicolove.com/v/profil.html">You can visit your profile.</a></li>
+                                      <li><a href="https://illicolove.com/userdetails&.html?id=${IDAFILIATEITWO}">Visit your affiliate's profile.</a></li>
+                                  </ul>
+                                  <p style="font-size: 14px; color: #999;">
+                                      Stay tuned for more exciting news!
+                                  </p>
+                                  <p style="font-size: 14px; color: #999;">
+                                      Sincerely,
+                                  </p>
+                                  <p style="font-size: 14px; color: #999;">
+                                      The illicolove team.
+                                  </p>
+                              </td>
+                          </tr>
+                      </table>
+
                         `
                         };
 

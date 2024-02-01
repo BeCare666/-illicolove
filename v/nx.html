@@ -15,10 +15,7 @@
       href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
   </head>
   <body>
-    <div id="render" style="width: 40vh !important; position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);"></div>
+    <div id="render" style="width: 40vh !important; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="custom-btn btn-3"></div>
 
     <!--  
       //Pour affiche le logo illicolove dans les mails
@@ -26,6 +23,42 @@
        <div style="text-align: center;">
              <img src="https://illicolove.com/assets/img/illicolove-.png" style="max-width: 100%; height: auto; display: inline-block;" />
       </div>
+
+      
+  <style>
+            #render {
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 25px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+             box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+             7px 7px 20px 0px rgba(0,0,0,.1),
+             4px 4px 5px 0px rgba(0,0,0,.1);
+            outline: none;
+          }
+          .btn-3 {
+            background: transparent;
+            box-shadow: none;
+            animation: buttonAnimation 1s infinite; /* 4s au total (2s pour chaque état) */
+          }
+          
+          @keyframes buttonAnimation {
+            0%, 100% {
+              background: transparent;
+              box-shadow: none;
+            }
+            50% {
+              background:  #000080; /* Couleur de fond différente à mi-chemin */
+              box-shadow: 2px 2px 5px #f38e9d; /* Ombre différente à mi-chemin */
+            }
+          }
+  </style>
     -->
     <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
@@ -58,6 +91,7 @@
     var MyComptaval = localStorage.getItem("myComptaval");
     var variablenx = localStorage.getItem('unityVal');
     var Debitva = localStorage.getItem('Debitval');
+    //alert(UserConnectuser)
     FeexPayButton.init("render",{
     id: "64b7a5536efe766ee1327ad8",
     amount: `${variablenx}`,
@@ -72,7 +106,7 @@
     //la reponse du payement feexpay
     function paymentCallback() {
     // Cette fonction sera appelée après le paiement réussi 
-    var paymentId = true;
+    var paymentId = true; 
     if (paymentId) {
     var myComptaConvertis = parseFloat(MyComptaval);
     var debitConvertis = parseFloat(Debitva)
@@ -83,7 +117,8 @@
     COMPTECREDIT:moncomptvalide
     }).then(() => {
       // function to take 10% for the user paiement
-      const IDAFILIATEITWO = localStorage.getItem("usTakeAFILIATEID");      
+      const IDAFILIATEITWO = localStorage.getItem("usTakeAFILIATEID");
+      if(IDAFILIATEITWO){
       const db = getDatabase();
       get(child(db, "utilisateurs/" + IDAFILIATEITWO))
       .then((snapshot) => {
@@ -100,14 +135,14 @@
                         COMMISSION : addCommission
                         }).then(() => { 
                         // statr envoi de mail de validation
-                        const apiKey = "34F593452254BAB8CACDA4A39FC9C44BFC0D3E63B8842CD369FF37BBE4AC5017DA7917B6E03C3C8EB379F906C80E9DED";
+                        const apiKey = "1D5731AF3830C76F1A3295A44D90416F8BED40EFEA13E8767E9593501CA32F1E8EE00960B55ECB2336C7D408A052669D";
                         const apiUrl = "https://api.elasticemail.com/v2/email/send";
                         
                         // Définir les paramètres de l'e-mail
                         const emailParams = {
                         apiKey: apiKey,
                         subject: "Notification de Commission",
-                        from: "validation@illicolove.com",
+                        from: "info@illicolove.com",
                         fromName: "illicolove",
                         to: UserEmail,
                         bodyHtml: `
@@ -172,7 +207,11 @@
                     })
       .catch((error) => {
       alert("il y a une ERROR " + error);
-      });            
+      });  
+      }else{
+        window.location.href = "profil.html"
+      }   
+            
       //window.location.href = "profil.html"
       })
      .catch((error) => {
@@ -198,7 +237,5 @@
     renderDiv.style.transform = '';
     });
     </script>
-
-    <script src="./../translate.js"></script>
   </body>
 </html>

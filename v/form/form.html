@@ -720,7 +720,8 @@ reader.readAsDataURL(file);
                myprofileidSaville.value && myprofileidoccupations.value &&
                choicesmultipleremovebuttonsexe.value //&& Mycountry.value
             ){  const IDAFILIATEID = localStorage.getItem("IDAFILIATE");
-                const updatedValue = PieceID ? PieceID : PIECESDIDENTITEtable[0];
+                //const updatedValue = PieceID ? PieceID : PIECESDIDENTITEtable[0];
+                const updatedValue = PieceID ? PieceID : (PIECESDIDENTITEtable.length > 0 ? PIECESDIDENTITEtable[0] : '');
                 update(ref(db, "utilisateurs/" + UserConnectuser), {
                 MAVILLEDERESIDENCE : myprofileidMaVille.value,
                 //MYCOUNTRY : Mycountry.value,

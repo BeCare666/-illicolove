@@ -453,24 +453,12 @@
             <h4>NEWSLETTER</h4>
           </div>
           <div class="col-lg-6">
-            <form action="https://formsubmit.co/paymybase@gmail.com" method="POST">
-              <input type="email" name="email">
-              <input type="hidden" name="_captcha" value="false">
-             <!--  <input type="hidden" name="_webhook" value="https://becare666.github.io/-illicolove/smsnewsletter.html">-->
-              <input type="hidden" name="_autoresponse" value="Cher(e) utilisateur,
-
-              Merci de vous être abonné(e) à notre newsletter ! Nous sommes ravis de vous avoir parmi nos abonnés.
-              
-              À partir de maintenant, vous recevrez régulièrement nos dernières actualités, mises à jour et offres spéciales directement dans votre boîte de réception.
-              
-              Si vous avez des questions, des commentaires ou si vous avez besoin d'aide, n'hésitez pas à nous contacter. Notre équipe se fera un plaisir de vous assister.
-              
-              Encore une fois, bienvenue dans notre communauté et merci de votre confiance !
-              
-              Cordialement,
-              
-              Ghislain GANGBOZO / illicolove">
+            <form>
+              <input type="email" name="email" id="emailNewletters" required>
+        
               <input type="submit" value="Souscrire" id="submitFormID">
+              
+              <!--<input type="button" value="Souscrire" id="submitFormID" class="btn btn-primary">-->
             </form>
           </div><div style="opacity: 0;">ssfdsfdd</div>
           <span style="text-align: center;"><div id="IDTRANSLATE1INF1"></span>
@@ -479,7 +467,7 @@
     </div>
     <div class="container">
       <div class="copyright" style="color: #000080;">
-        &copy; Copyright 2023 illicolove. All Rights Reserved
+        &copy; Copyright 2024 illicolove. All Rights Reserved
       </div>
       <div class="credits" style="color: #000080;">
         Designed by illicolove
@@ -586,7 +574,6 @@
     document.getElementById('preloader').style.display = "none"
   }
 
-
    </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -602,6 +589,7 @@
   <script src="index.js"></script>
   <script src="translate.js"></script>
   <script src="showuser.js"></script>
+  <script src="newletters.js"></script>
 </body>
 
 </html>

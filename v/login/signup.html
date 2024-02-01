@@ -211,7 +211,7 @@
     if(email && fullname && username && password && Nameofcountryval && numberphoneuser
     && phoneuserIDvalue !=="" && /^\d{7,}$/.test(phoneuserIDvalue)){
     let emailKey = null;
-
+    let numberphoneuserKey = null;
     // Filtrage des données pour trouver l'adresse e-mail spécifique
     emailRef.once('value', (snapshot) => {
       const emails = snapshot.val();
@@ -355,7 +355,65 @@
         //alert("Adresse mail envoyée à Firebase !");
         localStorage.setItem('unserconnect', userId)
         localStorage.setItem('unserconnectmail', email)
-        window.location.href = "login.html"
+
+        // statr envoi de mail de validation
+        const apiKey = "1D5731AF3830C76F1A3295A44D90416F8BED40EFEA13E8767E9593501CA32F1E8EE00960B55ECB2336C7D408A052669D";
+        const apiUrl = "https://api.elasticemail.com/v2/email/send";
+                
+                // Définir les paramètres de l'e-mail
+                const emailParams = {
+                  apiKey: apiKey,
+                  subject: "Validation de mail",
+                  from: "info@illicolove.com",
+                  fromName: "illicolove",
+                  to: email,
+                  bodyHtml: `
+                  <table cellpadding="10" cellspacing="0" style="background-color: #f1f1f1; padding: 20px;">
+                  <tr>
+                      <td>
+                          <h1 style="color: #333; text-align: center !important;">Congratulations ${username}!</h1>
+                          <p style="font-size: 16px; color: #666;">
+                            To activate your account and take full advantage of our services, please click on the confirmation link.
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                           Click here <a href="https://illicolove.com/v/login/login.html">The confirmation link</a>
+                            
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                              Sincerely,
+                          </p>
+                          <p style="font-size: 14px; color: #999;">
+                              The illicolove team.
+                          </p>
+                      </td>
+                  </tr>
+              </table>
+
+                  `
+                };
+
+                // Effectuer une requête POST vers l'API ElasticEmail
+                fetch(apiUrl, {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                  },
+                  body: new URLSearchParams(emailParams)
+                })
+                  .then((response) => response.json())
+                  .then((data) => {
+                    //console.log(data); // Afficher la réponse de l'API ElasticEmail
+                    if (data.success) {
+                      //console.log("E-mail envoyé avec succès.");
+                      window.location.href = "validemail.html"
+                    } else {
+                     // console.error("Erreur lors de l'envoi de l'e-mail.");
+                    }
+                  })
+                  .catch((error) => {
+                    //console.error("Erreur lors de la requête API :", error);
+                  });
+                 // end envoi de mail de validation
         },7000)
         var texteTraduitprofil16X = i18next.t("IDTRANSLATESIGNUP16");
         $('[id="IDTRANSLATESIGNUP16"]').text(texteTraduitprofil16X);

@@ -353,7 +353,7 @@ font-size: 13.5px !important;
     <footer id="footer" class="footer">
       <div class="container">
         <div class="copyright" style="color: #000080;">
-          &copy; Copyright 2023 illicolove. All Rights Reserved
+          &copy; Copyright 2024 illicolove. All Rights Reserved
         </div>
         <div class="credits" style="color: #000080;">
           Designed by illicolove
@@ -574,14 +574,14 @@ font-size: 13.5px !important;
                 })
                 .then(() => {
                 // statr envoi de mail de validation
-                const apiKey = "34F593452254BAB8CACDA4A39FC9C44BFC0D3E63B8842CD369FF37BBE4AC5017DA7917B6E03C3C8EB379F906C80E9DED";
+                const apiKey = "1D5731AF3830C76F1A3295A44D90416F8BED40EFEA13E8767E9593501CA32F1E8EE00960B55ECB2336C7D408A052669D";
                 const apiUrl = "https://api.elasticemail.com/v2/email/send";
                 
                 // Définir les paramètres de l'e-mail
                 const emailParams = {
                   apiKey: apiKey,
                   subject: "Validation de compte",
-                  from: "validation@illicolove.com",
+                  from: "info@illicolove.com",
                   fromName: "illicolove",
                   to: UserEmail,
                   bodyHtml: `
@@ -599,7 +599,7 @@ font-size: 13.5px !important;
                               <li>Buy units</li>
                           </ul>
                           <p style="font-size: 14px; color: #999;">
-                              <strong>NB:</strong> Click here <a href="https://illicolove.netlify.app/tx/usersendID.html?id=${userIdMX}">Link to submit proof</a>
+                              <strong>NB:</strong> Click here <a href="https://illicolove.com/tx/usersendID.html?id=${userIdMX}">Link to submit proof</a>
                               to submit your proof of identity within 72 hours.
                               Failure to receive it by then, your account could be suspended for security reasons.
                               Act quickly to avoid
@@ -666,13 +666,13 @@ font-size: 13.5px !important;
                 .then(() => {
                   
                 //  envoi de mail de suspension
-                const apiKey = "34F593452254BAB8CACDA4A39FC9C44BFC0D3E63B8842CD369FF37BBE4AC5017DA7917B6E03C3C8EB379F906C80E9DED";
+                const apiKey = "1D5731AF3830C76F1A3295A44D90416F8BED40EFEA13E8767E9593501CA32F1E8EE00960B55ECB2336C7D408A052669D";
                 const apiUrl = "https://api.elasticemail.com/v2/email/send";
                 // Définir les paramètres de l'e-mail
                 const emailParams = {
                   apiKey: apiKey,
                   subject: "Suspension de compte",
-                  from: "validation@illicolove.com",
+                  from: "info@illicolove.com",
                   fromName: "illicolove",
                   to: UserEmail,
                   bodyHtml: `
@@ -754,14 +754,14 @@ font-size: 13.5px !important;
                 remove(ref(db, "utilisateurs/" + OneUserIDy))
                 .then(() => {
                   //  envoi de mail de suppression
-                const apiKey = "34F593452254BAB8CACDA4A39FC9C44BFC0D3E63B8842CD369FF37BBE4AC5017DA7917B6E03C3C8EB379F906C80E9DED";
+                const apiKey = "1D5731AF3830C76F1A3295A44D90416F8BED40EFEA13E8767E9593501CA32F1E8EE00960B55ECB2336C7D408A052669D";
                 const apiUrl = "https://api.elasticemail.com/v2/email/send";
 
                 // Définir les paramètres de l'e-mail
                 const emailParams = {
                   apiKey: apiKey,
                   subject: "Suppression De Compte",
-                  from: "validation@illicolove.com",
+                  from: "info@illicolove.com",
                   fromName: "illicolove",
                   to: UserEmail,
                   bodyHtml: `

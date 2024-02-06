@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="TITLEIDPAIEID"></title>
     <link href="./../assets/img/logoilli.jpeg" rel="icon">
-    <script src="https://api.feexpay.me/feexpay-javascript-sdk/index.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+    <script
+      src="https://api.feexpay.me/feexpay-javascript-sdk/index.js"></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
     <!-- Link to import alert personnal -->
     <script
       src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
@@ -15,7 +18,9 @@
       href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
   </head>
   <body>
-    <div id="render" style="width: 40vh !important; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="custom-btn btn-3"></div>
+    <div id="render"
+      style="width: 40vh !important; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"
+      class="custom-btn btn-3"></div>
 
     <!--  
       //Pour affiche le logo illicolove dans les mails
@@ -23,42 +28,6 @@
        <div style="text-align: center;">
              <img src="https://illicolove.com/assets/img/illicolove-.png" style="max-width: 100%; height: auto; display: inline-block;" />
       </div>
-
-      
-  <style>
-            #render {
-            color: #fff;
-            border-radius: 5px;
-            padding: 10px 25px;
-            font-family: 'Lato', sans-serif;
-            font-weight: 500;
-            background: transparent;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            display: inline-block;
-             box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-             7px 7px 20px 0px rgba(0,0,0,.1),
-             4px 4px 5px 0px rgba(0,0,0,.1);
-            outline: none;
-          }
-          .btn-3 {
-            background: transparent;
-            box-shadow: none;
-            animation: buttonAnimation 1s infinite; /* 4s au total (2s pour chaque état) */
-          }
-          
-          @keyframes buttonAnimation {
-            0%, 100% {
-              background: transparent;
-              box-shadow: none;
-            }
-            50% {
-              background:  #000080; /* Couleur de fond différente à mi-chemin */
-              box-shadow: 2px 2px 5px #f38e9d; /* Ombre différente à mi-chemin */
-            }
-          }
-  </style>
     -->
     <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
@@ -102,7 +71,7 @@
   },
     mode:'live',
     description: "Test",
-    })
+  })
     //la reponse du payement feexpay
     function paymentCallback() {
     // Cette fonction sera appelée après le paiement réussi 
@@ -115,9 +84,159 @@
 
     update(ref(db, "utilisateurs/" + UserConnectuser), {
     COMPTECREDIT:moncomptvalide
-    }).then(() => {
-      // function to take 10% for the user paiement
+    }).then(() => {   
+      
+      const IDAFILIATEID = localStorage.getItem("IDAFILIATE"); 
+                if(!IDAFILIATEID){
+                   setTimeout(()=>{
+                   window.location.href = "profil.html"
+                   },10000)
+                }else{  
+                    setTimeout(()=>{
+                const IDAFILIATEID = localStorage.getItem("IDAFILIATE"); 
+                var dbrefx = ref(db);
+                get(child(dbrefx, "utilisateurs/" + IDAFILIATEID))
+                    .then((snapshot) => {
+                    if (snapshot.exists()) {
+                        //alert(IDAFILIATEID)
+                        var COMMISSIONVALUE = snapshot.val().COMMISSION
+                        var Userfullename = snapshot.val().fullname
+                        var UserEmail =  snapshot.val().email
+                            var addCommission = "100"
+                            var myComptaConvertis = parseFloat(COMMISSIONVALUE);
+                            var addCommissionConvertis = parseFloat(addCommission)
+                            var myCommissionAdd = myComptaConvertis + addCommissionConvertis
+                            //var TheStatusAffiliate = true
+                        update(ref(db, "utilisateurs/" + IDAFILIATEID), {
+                                COMMISSION : myCommissionAdd,
+                                STATUSAFILIATE : true
+                        }).then(() => {                      
+                        // statr envoi de mail de validation
+                        const apiKey = "34F593452254BAB8CACDA4A39FC9C44BFC0D3E63B8842CD369FF37BBE4AC5017DA7917B6E03C3C8EB379F906C80E9DED";
+                        const apiUrl = "https://api.elasticemail.com/v2/email/send";
+                        
+                        // Définir les paramètres de l'e-mail
+                        const emailParams = {
+                        apiKey: apiKey,
+                        subject: "Notification de Commission",
+                        from: "validation@illicolove.com",
+                        fromName: "illicolove",
+                        to: UserEmail,
+                        bodyHtml: `
+                        <table cellpadding="10" cellspacing="0" style="background-color: #f1f1f1; padding: 20px;">
+                            <tr>
+                                <td>
+                                    <h1 style="color: #333;">Congratulations ${Userfullename}!</h1>
+                                    <div style="text-align: center;">
+                                        <img src="https://illicolove.com/assets/img/illicolove-.png" style="max-width: 100%; height: auto; display: inline-block;" />
+                                    </div>
+                                    <p style="font-size: 16px; color: #666;">
+                                        We are pleased to inform you that you have just won 100 FCFA on illicolove thanks to your affiliate.
+                                    </p>
+                                    <ul>
+                                        <li><a href="https://illicolove.com/v/profil.html">You can visit your profile.</a></li>
+                                        <li><a href="https://illicolove.com/userdetails&.html?id=${IDAFILIATEID}">Visit your affiliate's profile.</a></li>
+                                    </ul>
+                                    <p style="font-size: 14px; color: #999;">
+                                        Stay tuned for more exciting news!
+                                    </p>
+                                    <p style="font-size: 14px; color: #999;">
+                                        Sincerely,
+                                    </p>
+                                    <p style="font-size: 14px; color: #999;">
+                                        The illicolove team.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+
+                        `
+                        };
+
+                        // Effectuer une requête POST vers l'API ElasticEmail
+                        fetch(apiUrl, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        body: new URLSearchParams(emailParams)
+                        })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            //console.log(data); // Afficher la réponse de l'API ElasticEmail
+                            if (data.success) {
+                            localStorage.removeItem('IDAFILIATE');
+                            //console.log("E-mail envoyé avec succès.");
+                            } else {
+                            // console.error("Erreur lors de l'envoi de l'e-mail.");
+                            }
+                        })
+                        .catch((error) => {
+                            //console.error("Erreur lors de la requête API :", error);
+                        });
+                        // end envoi de mail de validation
+                        
+                        localStorage.removeItem('IDAFILIATE');
+                        //alert('le compte est bon')
+                        setTimeout(()=>{
+                        window.location.href = "profil.html"
+                        }, 2000)
+                        })
+                        .catch((error) => {
+                        Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: i18next.t("IDTRANSLATEPROFIL42Q"),
+                        }) 
+                        });  
+                    } else {
+                        //alert("no data");
+                    }
+                    })
+                    .catch((error) => {
+                    Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: i18next.t("IDTRANSLATEPROFIL42"),
+                    })  
+                    });
+                   
+                }, 10000)
+                }
+
+                
+      window.location.href = "profil.html"
+
+
+      })
+     .catch((error) => {
+     Swal.fire({
+    text: i18next.t('IDTRANSLATEPROFIL45'),
+    icon: 'error'
+    });
+    });  
+
+    } else {
+    Swal.fire({
+    text: i18next.t('IDTRANSLATEPROFIL44'),
+    icon: 'error'
+    });
+    }
+
+    }
+    const renderDiv = document.getElementById('render');
+    renderDiv.addEventListener('click', function() {
+    renderDiv.style.position = '';
+    renderDiv.style.top = '';
+    renderDiv.style.left = '';
+    renderDiv.style.transform = '';
+    });
+
+
+    
+    {/*    // function to take 10% for the user paiement
       const IDAFILIATEITWO = localStorage.getItem("usTakeAFILIATEID");
+      
       if(IDAFILIATEITWO){
       const db = getDatabase();
       get(child(db, "utilisateurs/" + IDAFILIATEITWO))
@@ -195,7 +314,7 @@
                         });
                         // end envoi de mail de validation
                         setTimeout(()=>{
-                        window.location.replace("profil.html");
+                        window.location.href = "profil.html";
                         }, 2000)
                         })
                         .catch((error) => {
@@ -208,34 +327,9 @@
       .catch((error) => {
       alert("il y a une ERROR " + error);
       });  
-      }else{
+    }else{
         window.location.href = "profil.html"
-      }   
-            
-      //window.location.href = "profil.html"
-      })
-     .catch((error) => {
-     Swal.fire({
-    text: i18next.t('IDTRANSLATEPROFIL45'),
-    icon: 'error'
-    });
-    });  
-
-    } else {
-    Swal.fire({
-    text: i18next.t('IDTRANSLATEPROFIL44'),
-    icon: 'error'
-    });
-    }
-
-    }
-    const renderDiv = document.getElementById('render');
-    renderDiv.addEventListener('click', function() {
-    renderDiv.style.position = '';
-    renderDiv.style.top = '';
-    renderDiv.style.left = '';
-    renderDiv.style.transform = '';
-    });
+     }  */}
     </script>
   </body>
 </html>

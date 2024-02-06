@@ -7,15 +7,13 @@ const firebaseConfig = {
     messagingSenderId: "687063035754",
     appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
   };
+  // Initialisez Firebase
   firebase.initializeApp(firebaseConfig);
 
-// Créer une référence à la base de données Firebase
-const dbRef = firebase.database().ref();
-
-// Obtenez une référence à l'emplacement contenant les données d'utilisateur
-const usersRef = dbRef.child("utilisateurs");
+  // Récupérez la référence de la base de données
+  const database = firebase.database();
 const UserConnectuser = localStorage.getItem("unserconnect");
- 
+
 // function to update
 // Mettre à jour l'e-mail de l'utilisateurF
 var updates = {};
@@ -25,15 +23,16 @@ let inactiveTimeoutId;
 
 // Fonction appelée lorsque l'utilisateur est actif sur la page
 function handleUserActive() {
-clearTimeout(inactiveTimeoutId); // Réinitialiser le délai
-updates["/" + UserConnectuser + "/USERCONNECT"] = true;
-updates['/' + UserConnectuser + '/ONLINEDATE'] = "en ligne";
-updates['/' + UserConnectuser + '/ONLINEHOURS'] = "en ligne";
-usersRef.update(updates)
-.then(function() {
+  database.ref('utilisateurs/' + UserConnectuser).update({
+    USERCONNECT : true,
+    ONLINEDATE : "en ligne",
+    ONLINEHOURS : "en ligne",
+    }).then(function() {
 }).catch(function(error) {
 console.error("Erreur :", error);
 });
+clearTimeout(inactiveTimeoutId); // Réinitialiser le délai
+ 
 //console.log("L'utilisateur est actif sur la page");
 // Vous pouvez exécuter d'autres actions ou déclencher des événements ici
 }
@@ -52,11 +51,12 @@ const minutes = currentDate.getMinutes(); // Minutes (de 0 à 59)
 //const seconds = currentDate.getSeconds(); // Secondes (de 0 à 59)
 var theOnlineDate = `${day}/${month}/${year}`
 var theOnlinehours = `${hours}h:${minutes}min`
-updates["/" + UserConnectuser + "/USERCONNECT"] = false;
-updates['/' + UserConnectuser + '/ONLINEDATE'] = theOnlineDate;
-updates['/' + UserConnectuser + '/ONLINEHOURS'] = theOnlinehours;
-usersRef.update(updates)
-.then(function() {
+
+database.ref('utilisateurs/' + UserConnectuser).update({
+  USERCONNECT : false,
+  ONLINEDATE : theOnlineDate,
+  ONLINEHOURS : theOnlinehours,
+  }).then(function() {
 }).catch(function(error) {
 console.error("Erreur :", error);
 });

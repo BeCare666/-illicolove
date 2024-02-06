@@ -51,9 +51,8 @@
     const database = firebase.database();
     // Générer un lien et le sauvegarder dans la base de données
     function genererLien() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const UserId = urlParams.get('id');
-
+    const UserId = localStorage.getItem("unserconnect");
+   // alert(UserId)
     if(UserId){
     // Récupérer les données une seule fois
     database.ref('utilisateurs/' + UserId).once('value')
@@ -61,44 +60,10 @@
             // La snapshot contient les données
             var data = snapshot.val();
             if (data) {
-            if(data.MESDEUXPHOTOS){
+            if(data.ALERTVALIDERMACIP){
             //console.log("Date d'expiration:", data.DATEUPLOADCNI);
             // Date actuelle
-            var dateActuelle = new Date();
-            var EXPIRED = data.DATEUPLOADCNI
-            if(EXPIRED){
-            var differenceEnMillisecondes =  dateActuelle - EXPIRED;
-            var differenceEnMinutes = differenceEnMillisecondes / 60;
-            console.log(differenceEnMinutes)
             var UPloadCNIMYID = document.getElementById('uploadCNIMYID');
-            if(differenceEnMinutes = 0){
-            UPloadCNIMYID.style.display = "none"
-                alert(`vous ne pouvez plus envoyer CNI`)
-                UPloadCNIMYID.style.display = "none"
-                let timerInterval;
-                Swal.fire({
-                html: i18next.t('IDTRANSLATEFORM105LINKS'),
-                timer: 3000,
-                icon: "error",
-                allowOutsideClick: false,
-                timerProgressBar: true,
-                didOpen: () => {
-                    Swal.showLoading();
-                    const timer = Swal.getPopup().querySelector("b");
-                    timerInterval = setInterval(() => {
-                    timer.textContent = `${Swal.getTimerLeft()}`;
-                    }, 100);
-                },
-                willClose: () => {
-                    clearInterval(timerInterval);
-                }
-                }).then((result) => {
-                /* Read more about handling dismissals below */
-                if (result.dismiss === Swal.DismissReason.timer) {
-                    window.location.href = "../v/profil.html"
-                }
-                });
-            }else{
              var  base64Contenttable = []
             // start function to uploade img
             var inputElement = document.getElementById("imageUpload");
@@ -179,7 +144,7 @@
                 }).then((result) => {
                 /* Read more about handling dismissals below */
                 if (result.dismiss === Swal.DismissReason.timer) {
-                    window.location.href = `usersendID.html?id=${UserId}`
+                    window.location.href = `usersendID.html`
                 }
                 });
                 //alert(`Votre image est trop pétite. Veuillez sélectionner une image d'au moins 300x300 pixels.`)
@@ -195,12 +160,14 @@
             reader.readAsDataURL(file);
             }
             // end function to uploade img
+
             var SENDIDVAL = document.getElementById("SENDID");
             SENDIDVAL.addEventListener('click', function(){
             const PieceID = base64Contenttable.slice(-1).pop();
             console.log(PieceID) 
             database.ref('utilisateurs/' + UserId).update({
-            MESDEUXPHOTOS: PieceID
+            MESDEUXPHOTOS: PieceID,
+            ALERTVALIDERMACIP : false,
             }).then(() => {
                 UPloadCNIMYID.style.display = "none"
                 let timerInterval;
@@ -215,17 +182,17 @@
                     const timer = Swal.getPopup().querySelector("b");
                     timerInterval = setInterval(() => {
                     timer.textContent = `${Swal.getTimerLeft()}`;
-                    }, 100);
+                    }, 5000);
                 },
                 willClose: () => {
                     clearInterval(timerInterval);
                 }
                 }).then((result) => {
-                /* Read more about handling dismissals below */
-                if (result.dismiss === Swal.DismissReason.timer) {
-                    window.location.href = "../v/profil.html"
-                }
-                }); 
+                
+                });
+            setTimeout(()=>{
+                window.location.href = "../v/profil.html" 
+            },5000)
             }).catch(error => {
                 UPloadCNIMYID.style.display = "none"
                 let timerInterval;
@@ -248,16 +215,12 @@
                 }).then((result) => {
                 /* Read more about handling dismissals below */
                 if (result.dismiss === Swal.DismissReason.timer) {
-                    window.location.href = `usersendID.html?id=${UserId}`
+                    window.location.href = `usersendID.html`
                 }
                 }); 
                  
             }); 
             })
-            }
-            }else{
-
-            }
             }else{
                 window.location.href = "../v/profil.html" 
             }
@@ -274,8 +237,8 @@
             console.error("Erreur lors de la récupération des données:", error);
     });
     //alert('Oui')
-   }
-    }
+   }else{window.location.href = "../v/login/login.html" }
+}
     genererLien()
    
     </script>

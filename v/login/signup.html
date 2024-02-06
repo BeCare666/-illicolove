@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous">
   
@@ -257,22 +258,44 @@
         $('[id="IDTRANSLATESIGNUP15"]').text(texteTraduitprofil15X);
 
       } else {
-        document.getElementById('preloader').style.display = "none"
+      document.getElementById('preloader').style.display = "none"
         //L'adresse e-mail n'a pas été trouvée
       //alert(`L'adresse e-mail ${emailInput} n'a pas été trouvée dans Firebase.`)
 
-    //console.log(monthAbbreviation); 
+    //console.log(monthAbbreviation);
+
+      // Inscription de l'utilisateur avec Firebase Authentication
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // L'utilisateur est inscrit avec succès
+        const user = userCredential.user;
+        const userwId = user.uid;
+        localStorage.setItem("wmyuserId", userwId)
+        // Envoi de l'e-mail de vérification
+        user.sendEmailVerification()
+          .then(() => {
+            // E-mail de vérification envoyé avec succès
+            console.log('E-mail de vérification envoyé à :', user.email);
+            // Redirection vers une page de confirmation ou affichage d'un message à l'utilisateur
+            createdatabase()
+          })
+          .catch((error) => {
+            // Gestion des erreurs lors de l'envoi de l'e-mail de vérification
+            console.error('Erreur lors de l\'envoi de l\'e-mail de vérification :', error);
+          });
+      })
+      .catch((error) => {
+        // Gestion des erreurs lors de l'inscription de l'utilisateur
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error('Erreur lors de l\'inscription de l\'utilisateur :', errorMessage);
+      });
  
-      var id = () => {
-          return Math.floor((1 + Math.random()) * 0x10000)
-              .toString(16)
-              .substring(1);
-      }
-      const userId = id();
-      var userID = username + userId
+  function createdatabase(){
+      var userID = localStorage.getItem("wmyuserId")
+      //var userID = username + userId
       // Récupération de l'adresse mail entrée par l'utilisateur
       // Envoi de l'adresse mail à Firebase
-
       // Créez une nouvelle instance de l'objet Date
       const currentDate = new Date();
       // Obtenez les différentes composantes de la date
@@ -305,6 +328,7 @@
           MONPAYSDEPUBLICATION:"",
           VALIDERMONCOMPTE:false,
           MONCOMPTESUSPENDU:false,
+          ALERTVALIDERMACIP : false,
           COMPTEFACEBOOK:"",
           COMPTEINSATAGRAMME:"",
           MONSEXE:"",
@@ -353,67 +377,11 @@
         document.getElementById('contentSignup').style.display = "block" 
         document.getElementById('modalID').style.display = "none"
         //alert("Adresse mail envoyée à Firebase !");
-        localStorage.setItem('unserconnect', userId)
+        localStorage.setItem('unserconnect', userID)
         localStorage.setItem('unserconnectmail', email)
 
-        // statr envoi de mail de validation
-        const apiKey = "1D5731AF3830C76F1A3295A44D90416F8BED40EFEA13E8767E9593501CA32F1E8EE00960B55ECB2336C7D408A052669D";
-        const apiUrl = "https://api.elasticemail.com/v2/email/send";
-                
-                // Définir les paramètres de l'e-mail
-                const emailParams = {
-                  apiKey: apiKey,
-                  subject: "Validation de mail",
-                  from: "info@illicolove.com",
-                  fromName: "illicolove",
-                  to: email,
-                  bodyHtml: `
-                  <table cellpadding="10" cellspacing="0" style="background-color: #f1f1f1; padding: 20px;">
-                  <tr>
-                      <td>
-                          <h1 style="color: #333; text-align: center !important;">Congratulations ${username}!</h1>
-                          <p style="font-size: 16px; color: #666;">
-                            To activate your account and take full advantage of our services, please click on the confirmation link.
-                          </p>
-                          <p style="font-size: 14px; color: #999;">
-                           Click here <a href="https://illicolove.com/v/login/login.html">The confirmation link</a>
-                            
-                          </p>
-                          <p style="font-size: 14px; color: #999;">
-                              Sincerely,
-                          </p>
-                          <p style="font-size: 14px; color: #999;">
-                              The illicolove team.
-                          </p>
-                      </td>
-                  </tr>
-              </table>
+        window.location.href = "validemail.html"
 
-                  `
-                };
-
-                // Effectuer une requête POST vers l'API ElasticEmail
-                fetch(apiUrl, {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/x-www-form-urlencoded"
-                  },
-                  body: new URLSearchParams(emailParams)
-                })
-                  .then((response) => response.json())
-                  .then((data) => {
-                    //console.log(data); // Afficher la réponse de l'API ElasticEmail
-                    if (data.success) {
-                      //console.log("E-mail envoyé avec succès.");
-                      window.location.href = "validemail.html"
-                    } else {
-                     // console.error("Erreur lors de l'envoi de l'e-mail.");
-                    }
-                  })
-                  .catch((error) => {
-                    //console.error("Erreur lors de la requête API :", error);
-                  });
-                 // end envoi de mail de validation
         },7000)
         var texteTraduitprofil16X = i18next.t("IDTRANSLATESIGNUP16");
         $('[id="IDTRANSLATESIGNUP16"]').text(texteTraduitprofil16X);
@@ -431,14 +399,17 @@
       })
           //alert("Erreur lors de l'envoi de l'adresse mail à Firebase :", error);
       });
+  }
     }
     });
 
   }else{
   //alert("les données ne sont pas")
   document.getElementById('preloader').style.display = "none"
-    }
-    }
+ }
+}
+
+
   var checkbox = document.getElementById("myCheckbox");
   var ToSignupID = document.getElementById("toSignupID");
   var AcceptID = document.getElementById("acceptID");

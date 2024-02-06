@@ -130,7 +130,7 @@ font-size: 13.5px !important;
                           <i class="bi bi-telephone-fill me-2 text-success"></i> 
                           <p class="mb-0" id="phone"></p>
                         </div>
-                        <div class="d-flex align-items-center mt-3">
+                        <div class="d-flex align-items-center mt-3" style="display: none !important;">
                           <i class="bi bi-whatsapp me-2 text-success"></i>
                           <p class="mb-0" id="whatsapp"></p>
                         </div>
@@ -138,9 +138,9 @@ font-size: 13.5px !important;
                           <i class="bi bi-envelope-fill me-2 text-primary"></i>
                           <p class="mb-0" id="myEmail"></p>
                         </div>
-                        <div class="d-flex align-items-center mt-3" style="cursor: pointer; display: none !important;">
-                          <i class="bi bi-file-text-fill me-2" style="color: #FFB6C1;"></i>
-                          <p class="mb-0" id="myDoc" style="color: #FFB6C1;">Consulter son CDN</p>
+                        <div class="d-flex align-items-center mt-3" style="cursor: pointer;">
+                          <i class="bi bi-file-text-fill me-2" id="myDoctextfill" ></i>
+                          <p class="mb-0" id="myDoc">Consulter son ID</p>
                         </div>
                         </div>
     
@@ -420,13 +420,18 @@ font-size: 13.5px !important;
 
         import { getStorage, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"
 
+        import { getAuth } from 'https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js';
+        import { getFunctions } from 'https://www.gstatic.com/firebasejs/9.6.5/firebase-functions.js';
+
+
         const db = getDatabase();
 
         //--------------Select data-----------------//  
         function seleectData() {
         const UserID = localStorage.getItem("userID");
-        var Thmonpays = document.getElementById('thmonpays');
+        var Thmonpays = document.getElementById('thmonpays'); 
         var MyDoc = document.getElementById('myDoc');
+        var MyDoctextfill = document.getElementById('myDoctextfill');
         var Thmaville = document.getElementById('thmaville');
         var Monpseudonyme = document.getElementById('monpseudonyme');
         var Monages = document.getElementById('monages');
@@ -459,12 +464,12 @@ font-size: 13.5px !important;
                 document.getElementById('preloader').style.display = "none"
                 //var photoDataUrl = snapshot.val().PIECESDIDENTITE ? 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE : '';
                 //var photoDataUrl2 = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
-                //var photoDataUrl3 = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
+                var photoDataUrl3 = 'data:image/png;base64,' + snapshot.val().MESDEUXPHOTOS;
                               // Get CIN
               MyDoc.addEventListener('click', function(){
                MyBodyID.style.display = "none" 
                Footer.style.display = "none" 
-                if(snapshot.val().PIECESDIDENTITE){
+                if(snapshot.val().MESDEUXPHOTOS){
                   Swal.fire({
                   title: 'CIN !',
                   //text: 'Modal with a custom image.',
@@ -473,6 +478,18 @@ font-size: 13.5px !important;
                   imageHeight: 300,
                   imageAlt: 'Custom image',
                   allowOutsideClick: false,
+                }).then((result) => {
+                if (result.isConfirmed) {
+                MyBodyID.style.display = "block" 
+                 Footer.style.display = "block" 
+                }
+                })
+                }else{
+                Swal.fire({
+                title: 'Oops..',
+                icon: 'info',
+                text:"Aucune pièce trouvée" ,            
+                allowOutsideClick: false,
                 }).then((result) => {
                 if (result.isConfirmed) {
                 MyBodyID.style.display = "block" 
@@ -491,7 +508,7 @@ font-size: 13.5px !important;
                 //img2Id.src = photoDataUrl2
                 document.getElementById('fullname').innerHTML = `${snapshot.val().fullname}`
                 document.getElementById('phone').innerHTML = `${snapshot.val().TELEPHONE}`
-                document.getElementById('whatsapp').innerHTML = `${snapshot.val().TELEPHONE}`
+               // document.getElementById('whatsapp').innerHTML = `${snapshot.val().TELEPHONE}`
                 document.getElementById('myEmail').innerHTML = `${snapshot.val().email}`
                 document.getElementById('residenceId').innerHTML = `${snapshot.val().MAVILLEDERESIDENCE}`
                 document.getElementById('occupation').innerHTML = `${snapshot.val().MONTRAVAILLEOUOCCUPATION}`
@@ -522,6 +539,16 @@ font-size: 13.5px !important;
                 var compteCertifie = snapshot.val().VALIDERMONCOMPTE
                 var comptesuspendu = snapshot.val().MONCOMPTESUSPENDU
                 var IconValidateID = document.getElementById('iconValidateID')
+
+                // start function to manage colors of the CIN 
+                if(!snapshot.val().MESDEUXPHOTOS){
+                  MyDoc.style.color = "#FFB6C1"
+                  MyDoctextfill.style.color = "#FFB6C1"
+                }else{
+                  MyDoc.style.color = "green"
+                  MyDoctextfill.style.color = "green"
+                }
+                 // end function to manage colors of the CIN 
 
                 if (compteCertifie) {
                   IconValidateID.innerHTML = '<i class="bi bi-patch-check-fill text-primary"></i> ';
@@ -570,7 +597,8 @@ font-size: 13.5px !important;
                 update(ref(db, "utilisateurs/" + OneUserIDy), {
                     VALIDERMONCOMPTE : true,
                     MONCOMPTESUSPENDU : false,
-                    DATEUPLOADCNI : dateApresTroisJours
+                    DATEUPLOADCNI : dateApresTroisJours,
+                    ALERTVALIDERMACIP : true,
                 })
                 .then(() => {
                 // statr envoi de mail de validation
@@ -580,7 +608,7 @@ font-size: 13.5px !important;
                 // Définir les paramètres de l'e-mail
                 const emailParams = {
                   apiKey: apiKey,
-                  subject: "Validation de compte",
+                  subject: "Account validation",
                   from: "info@illicolove.com",
                   fromName: "illicolove",
                   to: UserEmail,
@@ -599,8 +627,8 @@ font-size: 13.5px !important;
                               <li>Buy units</li>
                           </ul>
                           <p style="font-size: 14px; color: #999;">
-                              <strong>NB:</strong> Click here <a href="https://illicolove.com/tx/usersendID.html?id=${userIdMX}">Link to submit proof</a>
-                              to submit your proof of identity within 72 hours.
+                              <strong>NB:</strong> Click here <a href="https://illicolove.com/tx/usersendID.html">Link to submit proof</a>
+                              to submit your proof of identity.
                               Failure to receive it by then, your account could be suspended for security reasons.
                               Act quickly to avoid
                               any interruption of service.
@@ -671,7 +699,7 @@ font-size: 13.5px !important;
                 // Définir les paramètres de l'e-mail
                 const emailParams = {
                   apiKey: apiKey,
-                  subject: "Suspension de compte",
+                  subject: "Account suspension",
                   from: "info@illicolove.com",
                   fromName: "illicolove",
                   to: UserEmail,
@@ -760,7 +788,7 @@ font-size: 13.5px !important;
                 // Définir les paramètres de l'e-mail
                 const emailParams = {
                   apiKey: apiKey,
-                  subject: "Suppression De Compte",
+                  subject: "Account Deletion",
                   from: "info@illicolove.com",
                   fromName: "illicolove",
                   to: UserEmail,
@@ -822,7 +850,7 @@ font-size: 13.5px !important;
                     'success'
                     ).then((result) => {
                 if (result.isConfirmed) {
-                    location.reload();
+                window.location.href = "userdelete.html"
                 }
                 })
                 

@@ -53,8 +53,8 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="index.html" id="IDTRANSLATE1"></a></li>
-          <li><a class="nav-link scrollto" href="apropos.html" id="IDTRANSLATE2"></a></li>
-          <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li>-->
+          <!--<li><a class="nav-link scrollto" href="apropos.html" id="IDTRANSLATE2"></a></li>
+           <li><a class="nav-link scrollto" href="#services">Services</a></li>-->
           <li><a  class="nav-link scrollto active" href="contractaffiliate.html" id="IDTRANSLATE6X"></a></li>
           <li class="dropdown"><a href="#"><span id="IDTRANSLATE4"></span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -514,24 +514,11 @@
             <h4>NEWSLETTER</h4>
           </div>
           <div class="col-lg-6">
-            <form action="https://formsubmit.co/paymybase@gmail.com" method="POST">
-              <input type="email" name="email">
-              <input type="hidden" name="_captcha" value="false">
-             <!--  <input type="hidden" name="_webhook" value="https://becare666.github.io/-illicolove/smsnewsletter.html">-->
-              <input type="hidden" name="_autoresponse" value="Cher(e) utilisateur,
-
-              Merci de vous être abonné(e) à notre newsletter ! Nous sommes ravis de vous avoir parmi nos abonnés.
-              
-              À partir de maintenant, vous recevrez régulièrement nos dernières actualités, mises à jour et offres spéciales directement dans votre boîte de réception.
-              
-              Si vous avez des questions, des commentaires ou si vous avez besoin d'aide, n'hésitez pas à nous contacter. Notre équipe se fera un plaisir de vous assister.
-              
-              Encore une fois, bienvenue dans notre communauté et merci de votre confiance !
-              
-              Cordialement,
-              
-              Ghislain GANGBOZO / illicolove">
-              <input type="submit" value="Souscrire" id="submitFormID">
+            <form>
+              <input type="email" name="email" id="emailNewletters" required>
+        
+              <input type="button" value="Souscrire" id="submitFormID" class="btn btn-primary" 
+              style="background-color: #FFB6C1 !important;">
             </form>
           </div><div style="opacity: 0;">ssfdsfdd</div>
           <span style="text-align: center;"><div id="IDTRANSLATE1INF1"></span>
@@ -650,6 +637,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="translate.js"></script>
+  <script src="newletters.js"></script>
 </body>
 
 </html>

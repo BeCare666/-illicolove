@@ -27,7 +27,7 @@ window.onload = function(){
   }
   //star function to comBack
   document.getElementById('comeBackId').addEventListener('click', function(){
-    window.location.href = "profil.html"
+    window.location.href = "../../v/profil.html"
   })
   // end function tocomeBack
   // Configuration Firebase

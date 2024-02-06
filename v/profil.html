@@ -112,7 +112,6 @@
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center" style="margin-top: 15px !important;">
     <div class="container d-flex justify-content-between">
-
       <div id="logo">
         <img src="./../assets/img/logoilli.jpeg" alt="" style=" max-height: 65px; margin-bottom: 10px !important;"> 
         <span style="font-size: 30px;
@@ -186,7 +185,7 @@
                
               </div>              
             </div>
-            <a href="wallet.html">
+            <a href="./wallet/wallet.html">
             <div class="transaction" style="cursor: pointer;">
               <div class="t-icon-container"><i class="bi bi-wallet-fill" style="color: #f38e9d;"></i></div>
               
@@ -273,9 +272,9 @@
     </div>
     </div>
   <section id="hero">
+   <a href="../tx/usersendID.html" id="infologoId" style="display: none;"> </a>
     <div class="hero-content" data-aos="fade-up">
-     <!-- <h2 style="color: white !important;">illicolove,<span style="font-size: 15px !important; color: white;" id="IDTRANSLATEPROFIL13"></span></h2>-->
-      
+     <!-- <h2 style="color: white !important;">illicolove,<span style="font-size: 15px !important; color: white;" id="IDTRANSLATEPROFIL13"></span></h2>-->  
       <div>
         <a href="#" class="btn-get-started scrollto annoncy" id="PUBLIEZUNEANNONCE" onclick="PUBLIEZUNEANNONCE()"></a>
         <a href="#" class="btn-projects scrollto annoncy" id="CONSULTEZLESANNONCES" onclick="CONSULTEZLESANNONCES()"></a>
@@ -392,7 +391,7 @@ style="background-color: #f38e9d !important;"
         <div class="form-group">
           <label for="exampleFormControlSelect1" id="IDTRANSLATEPROFIL16"></label>
           <select class="form-control" id="RxampleFormControlSelect1" 
-          style="background-color: #f38e9d !important; border: none; cursor: pointer;">
+          style="background-color: #f38e9d !important; border: none; cursor: pointer; height:calc(4rem + 3px) !important;">
             <option  id="IDTRANSLATEPROFIL17">
             </option>
 
@@ -556,6 +555,14 @@ style="background-color: #f38e9d !important;"
          myUnityID.innerHTML = `${snapshot.val().COMPTECREDIT}`;
          MyCommiID.innerHTML = `${snapshot.val().COMMISSION}`;
          tofuserID.innerHTML = `${snapshot.val().PIECESDIDENTITE ? `<img src="${photoDataUrl}" class="user-photo" />` : '<img src="assets/img/log.png" class="user-photo" />'}`;
+
+         // start function alert to send CIN
+        if(snapshot.val().ALERTVALIDERMACIP == true){
+         document.getElementById("infologoId").style.display = "block"
+        }
+
+         // end function alert to send CIN
+
          //function to checkout in account debit
          comptDebitID.innerHTML = `${snapshot.val().COMPTECREDITSATUS ? `
           <div class="card-item" style="opacity: 0.2 !important; pointer-events: none;">

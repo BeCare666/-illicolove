@@ -1928,7 +1928,16 @@ font-family: 'Montserrat', sans-serif;
   overflow: hidden;
   background: #fff;
 }
-
+#infologoId{
+  position: fixed;
+  top: 13vh;
+  left: 5px;
+  z-index: 9999;
+  overflow: hidden;
+  background: #fff; 
+  padding: 5px;
+  border-radius: 5px;
+}
 
 #preloader:before {
   content: "";

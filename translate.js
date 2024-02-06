@@ -6,8 +6,9 @@ $(document).ready(function() {
     resources: {
       fr: {
        
-        translation : {
+        translation : { 
           "phoneuserIDval":`votre téléphone`,
+          "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> Vous devez envoyer votre pièce d'identité ici.`,
           "IDTRANSLATEFORM105LINKS":`Le lien n'est plus disponible.`,
           "IDTRANSLATE1": "Accueil",
          // "IDTRANSLATE2": "À propos",
@@ -758,7 +759,7 @@ $(document).ready(function() {
         "CONTRACTID9":`3. Rémunération de l'Affilié`,
         "CONTRACTID10":`3.1. L'Affilié recevra une commission de 100 F CFA pour chaque nouveau membre qui s'inscrit sur le site <a href="https://illicolove.com">illicolove.com</a> via le lien unique d'affiliation de l'Affilié et publie une annonce de recherche amoureuse.`,
         "CONTRACTID11":`3.2. De plus, l'Affilié recevra une commission de 10% sur chaque achat effectué par les membres référés via son lien d'affiliation.`,
-        "CONTRACTID11X":`3.3 La commission de 100F CFA ne sera perçu que lorsque le nouveau  membre procède à un achat d'unité supérieur à 100F CFA, afin d'éviter les fraudes à la commission.`,
+        "CONTRACTID11X":`3.2 La commission de 100F CFA ne sera perçu que lorsque le nouveau  membre procède à un achat d'unité supérieur à 100F CFA, afin d'éviter les fraudes à la commission.`,
         "CONTRACTID12":`4. Paiement de la Commission`,
         "CONTRACTID13":`Illicolove versera la commission de l'Affilié sur une base régulière trimestrielle sur demande par mobile money ou par virement bancaire , au choix de l'Affilié. Les frais de reversement sont à la charge de l'Affilié.`,
         "CONTRACTID14":`5. Durée du Contrat`,
@@ -774,14 +775,14 @@ $(document).ready(function() {
               en aidant les autres à trouver leur âme sœur. Voici comment ça fonctionne : <br>
               ✅ Recevez 100 F CFA pour chaque nouveau membre qui s'inscrit et qui publie une annonce de recherche amoureuse sur notre site via votre lien d'affiliation. <br>
       
-              ✅ En plus, obtenez 10% de commission sur chaque achat effectué par les membres que vous avez référés. Plus ils dépensent, plus vous gagnez !</p>
+             <!-- ✅ En plus, obtenez 10% de commission sur chaque achat effectué par les membres que vous avez référés. Plus ils dépensent, plus vous gagnez !--></p>
         </div>
         
         <div class="box--list__item">
             <h2 class="box--list__title box--list__titlex"> Pourquoi choisir notre programme d'affiliation ?</h2>
             <div class="box--list__description">
               ✅ Gagnez de l'argent dès que quelqu'un s'inscrit, et publie son annonce de recherche. <br>
-              ✅ Obtenez une commission continue à chaque fois que vos affiliés effectuent un achat sur notre site. <br>
+            <!--  ✅ Obtenez une commission continue à chaque fois que vos affiliés effectuent un achat sur notre site. <br>-->
               ✅ Ciblez un public en quête d'amour, une niche passionnante et en croissance constante. <br>
               
             </div>
@@ -808,6 +809,7 @@ $(document).ready(function() {
       es: {
         translation : {
           "phoneuserIDval":`su teléfono`,
+          "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> Debes enviar tu documento de identidad aquí.`,
           "IDTRANSLATE1": "Inicio",
           "IDTRANSLATEFORM105LINKS":`El enlace ya no está disponible.`,
           "IDTRANSLATE2": " Sobre ",
@@ -1481,7 +1483,7 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
         "CONTRACTID10":`3.1. El Afiliado recibirá una comisión de 100 F CFA por cada nuevo miembro que se registre en el sitio  <a href="https://illicolove.com">illicolove.com</a> a través del enlace de afiliado único del Afiliado y publique un anuncio de búsqueda de amor.
         `,
         "CONTRACTID11":`3.2. Además, el Afiliado recibirá una comisión del 10% por cada compra realizada por los miembros referidos a través de su enlace de afiliado.`,
-        "CONTRACTID11X":`3.3. La comisión de 100 francos CFA solo se cobrará cuando el nuevo miembro realice una compra de unidades que exceda los 100 francos CFA, con el fin de prevenir fraudes.`,
+        "CONTRACTID11X":`3.2. La comisión de 100 francos CFA solo se cobrará cuando el nuevo miembro realice una compra de unidades que exceda los 100 francos CFA, con el fin de prevenir fraudes.`,
         "CONTRACTID12":`4. Pago de Comisiones`,
         "CONTRACTID13":`Illicolove pagará la comisión del Afiliado de forma regular, mensualmente, previa solicitud, a través de dinero móvil o transferencia bancaria, a elección del Afiliado. Los gastos de transferencia corren a cargo del Afiliado.`,
         "CONTRACTID14":`5. Duración del Acuerdo`,
@@ -1496,14 +1498,14 @@ Nos corresponde a cada uno de nosotros adoptar ciertas actitudes de seguridad en
             <p class="box--list__description">¿Estás buscando una oportunidad de afiliación lucrativa? Únete a nuestro programa de afiliados único y aumenta tus ingresos ayudando a otros a encontrar a su media naranja. Así es cómo funciona: <br>
               ✅ Recibe 100 francos CFA por cada nuevo miembro que se registre a través de tu enlace de afiliado y publique un anuncio de búsqueda de amor en nuestro sitio web.<br>
 
-              ✅ Además, obtén un 10% de comisión en cada compra realizada por los miembros que hayas referido. ¡Cuanto más gasten, más ganarás!</p>
+              <!-- ✅ Además, obtén un 10% de comisión en cada compra realizada por los miembros que hayas referido. ¡Cuanto más gasten, más ganarás!--></p>
         </div>
         
         <div class="box--list__item">
             <h2 class="box--list__title box--list__titlex"> ¿Por qué elegir nuestro programa de afiliados?</h2>
             <div class="box--list__description">
               ✅ Gana dinero tan pronto como alguien se registre y publique su anuncio de búsqueda de amor. <br>
-              ✅ Obtén comisiones continuas cada vez que tus afiliados realicen una compra en nuestro sitio. <br>
+              <!--   ✅ Obtén comisiones continuas cada vez que tus afiliados realicen una compra en nuestro sitio. <br>-->
               ✅ Dirígete a un público en busca de amor, un nicho emocionante y en constante crecimiento.<br>
               
             </div>
@@ -1537,6 +1539,7 @@ Gracias por su comprensión y hasta pronto.
       
    translation : {
     "phoneuserIDval":`your phone`,
+    "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> You need to send your ID here.`,
     "IDTRANSLATEFORM105LINKS":`The link is no longer available.`,
     "TITLEIDPAIEID":`payment`,
     "IDTRANSLATE1": " Home ",
@@ -2232,7 +2235,7 @@ Welcome!`,
   "CONTRACTID9":`3. Remuneration of the Affiliate `,
   "CONTRACTID10":`3.1. The Affiliate will receive a commission of 100 CFA francs for each new member who registers on the site <a href="https://illicolove.com">illicolove.com</a> via the Affiliate’s unique affiliate link and publishes a love search ad.`,
   "CONTRACTID11":`3.2. In addition, the Affiliate will receive a 10% commission on each purchase made by the members referred via its affiliate link.`,
-  "CONTRACTID11X":`3.3 The 100F CFA commission will only be collected when the new member purchases a unit greater than 100F CFA, in order to avoid commission fraud.`,
+  "CONTRACTID11X":`3.2 The 100F CFA commission will only be collected when the new member purchases a unit greater than 100F CFA, in order to avoid commission fraud.`,
   "CONTRACTID12":`4. Commission Payment `,
   "CONTRACTID13":` illicolove will pay the Affiliate’s commission on a regular quarterly basis on request by mobile money or bank transfer, at the Affiliate’s choice. The Affiliate shall bear the costs of the return.`,
   "CONTRACTID14":`5. Term of Contract `,
@@ -2247,14 +2250,14 @@ Welcome!`,
       <p class="box--list__description"> Looking for a lucrative affiliate opportunity? Join our unique affiliate program and increase your income by helping others find their soulmate. Here’s how it works: <br>
         ✅ Receive 100 CFA francs for each new member who signs up and publishes a love research ad on our site via your affiliate link. <br>
 
-        ✅ Plus, get 10% commission on every purchase you refer. The more they spend, the more you earn!</p>
+        <!--  ✅ Plus, get 10% commission on every purchase you refer. The more they spend, the more you earn!--> </p>
   </div>
   
   <div class="box--list__item">
       <h2 class="box--list__title box--list__titlex"> Why choose our affiliate program?</h2>
       <div class="box--list__description">
         ✅ Earn money as soon as someone signs up, and publish their search ad. <br>
-        ✅ Get continuous commission every time your affiliates make a purchase on our site. <br>
+        <!--  ✅ Get continuous commission every time your affiliates make a purchase on our site. <br>-->
         ✅ Target an audience in search of love, an exciting and constantly growing niche. <br>
         
       </div>
@@ -2281,6 +2284,7 @@ Welcome!`,
       kr:{
         translation : {
           "phoneuserIDval":`당신의 전화 `,
+          "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> 여기에 신분증을 보내셔야 합니다.`,
           "IDTRANSLATEFORM105LINKS":`링크를 사용할 수 없습니다.`,
           "TITLEIDPAIEID":`지불 `,
           "IDTRANSLATE1": "홈",
@@ -2966,7 +2970,7 @@ illicolove.com 웹 사이트는 데이터의 보안 및 기밀성을 보장하�
         "CONTRACTID9":`3. 계열사의 보수`,
         "CONTRACTID10":`3.1. 제휴사는 사이트에 등록하는 각 신규 회원에 대해 100 CFA 프랑의 수수료를 받게됩니다. <a href="https://illicolove.com">illicolove.com</a> 제휴사의 고유한 제휴 링크를 통해 연애 관련 광고를 게시합니다.`,
         "CONTRACTID11":`3.2. 또한, 제휴사는 제휴 링크를 통해 추천 된 회원이 구매할 때마다 10 %의 수수료를 받게됩니다.`,
-        "CONTRACTID11X":`3.3 100F CFA 수수료는 신규 회원이 100F CFA 이상의 유닛을 구매할 때만 징수되며, 이는 커미션 사기를 방지하기 위한 것입니다.`,
+        "CONTRACTID11X":`3.2 100F CFA 수수료는 신규 회원이 100F CFA 이상의 유닛을 구매할 때만 징수되며, 이는 커미션 사기를 방지하기 위한 것입니다.`,
         "CONTRACTID12":`4. 수수료 지불`,
         "CONTRACTID13":` illicolove.com 는 제휴사의 선택에 따라 모바일 송금이나 은행 송금으로 요청할 경우 정기적으로 분기별로 제휴사의 수수료를 지불합니다. 제휴사는 반품 비용을 부담해야 합니다.`,
         "CONTRACTID14":`5. 계약 기간`,
@@ -2981,14 +2985,14 @@ illicolove.com 웹 사이트는 데이터의 보안 및 기밀성을 보장하�
             <p class="box--list__설명">수익성있는 제휴 기회를 찾고 계십니까? 우리의 독특한 제휴 프로그램에 가입하고 다른 사람들이 자신의 소울 메이트를 찾을 수 있도록 도움으로써 소득을 증가. 작동 방법은 다음과 같습니다. <br>
               ✅ 가입 및 제휴 링크를 통해 우리의 사이트에 사랑 연구 광고를 게시하는 각 새로운 회원에 대해 100 CFA 프랑 받으십시오. <br>
 
-              ✅ 그리고 제휴사가 추천한 회원이 실시한 각 구매에 대해 10%의 수수료를 받습니다. 그들이 지출하는 금액이 클수록 여러분의 수익도 증가합니다!</p>
+              <!-- ✅ 그리고 제휴사가 추천한 회원이 실시한 각 구매에 대해 10%의 수수료를 받습니다. 그들이 지출하는 금액이 클수록 여러분의 수익도 증가합니다!--> </p>
         </div>
         
         <div class="box--list__item">
             <h2 class="box--list__title box--list__titlex"> 왜 우리의 제휴 프로그램을 선택?</h2>
             <div class="box--list__설명">
               ✅ 누군가가 가입하고 사랑 찾기 광고를 게시할 때마다 돈을 벌 수 있습니다 <br>
-              ✅ 계열사가 우리 사이트에서 구매할 때마다 지속적인 커미션을 받으십시오.<br>
+              <!--  ✅ 계열사가 우리 사이트에서 구매할 때마다 지속적인 커미션을 받으십시오.<br>-->
               ✅ 사랑을 찾는 대상 고객층을 타겟팅하세요. 흥미로운 분야이며 지속적으로 성장하고 있는 니치입니다 <br>
               
             </div>
@@ -3014,6 +3018,7 @@ illicolove.com 웹 사이트는 데이터의 보안 및 기밀성을 보장하�
       it:{
         translation : {
           "phoneuserIDval":`Il tuo telefono`,
+          "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> Devi inviare qui il tuo documento d'identità.`,
           "IDTRANSLATEFORM105LINKS":`Il link non è più disponibile.`,
           "TITLEIDPAIEID":`Pagamento `,
           "IDTRANSLATE1": " Benvenuto ",
@@ -3712,7 +3717,7 @@ Benvenuto!`,
         "CONTRACTID9":`3. Remunerazione dell'Affiliato `,
         "CONTRACTID10":`3.1. L'Affiliato riceverà una commissione di 100 F FFS per ogni nuovo membro che si iscrive al sito <a href="https://illicolove.com">illicolove.com</a> tramite il link unico di affiliazione dell'Affiliato e pubblica un annuncio di ricerca amorosa.`,
         "CONTRACTID11":`3.2. Inoltre, l'Affiliato riceverà una commissione del 10% su ogni acquisto effettuato dai membri indirizzati tramite il suo link di affiliazione.`,
-        "CONTRACTID11X":`3.3 La commissione di 100F CFA sarà riscossa solo quando il nuovo membro procede ad un acquisto di unità superiore a 100F CFA, al fine di evitare le frodi in commissione.`,
+        "CONTRACTID11X":`3.2 La commissione di 100F CFA sarà riscossa solo quando il nuovo membro procede ad un acquisto di unità superiore a 100F CFA, al fine di evitare le frodi in commissione.`,
         "CONTRACTID12":`4. Pagamento da parte della Commissione `,
         "CONTRACTID13":` Illicolove verserà la commissione dell'Affiliato su base regolare trimestrale su richiesta tramite mobile money o bonifico bancario , a scelta dell'Affiliato. Le spese di rimborso sono a carico dell'Affiliato.`,
         "CONTRACTID14":`5. Durata del contratto `,
@@ -3727,14 +3732,14 @@ Benvenuto!`,
             <p class="box--list__ descrizione ">Cerchi un'opportunità di affiliazione redditizia? Unisciti al nostro esclusivo programma di affiliazione e aumenta le tue entrate aiutando gli altri a trovare la loro anima gemella. Ecco come funziona : <br>
               ✅ Ricevete 100 F FFS per ogni nuovo membro che si iscrive e che pubblica un annuncio di ricerca amorosa sul nostro sito tramite il vostro link di affiliazione. <br>
 
-              ✅ Inoltre, ottieni il 10% di commissione su ogni acquisto effettuato dai membri che hai inviato. Più spendono, più guadagni!</p>
+              <!-- ✅ Inoltre, ottieni il 10% di commissione su ogni acquisto effettuato dai membri che hai inviato. Più spendono, più guadagni!--> </p>
         </div>
         
         <div class="box--list__item">
             <h2 class="box--list__title box--list__titlex"> Perché scegliere il nostro programma di affiliazione?</h2>
             <div class="box--list__ descrizione ">
               ✅ Guadagna non appena qualcuno si registra, e pubblica il suo annuncio di ricerca. <br>
-              ✅ Ottieni una commissione continua ogni volta che i tuoi affiliati effettuano un acquisto sul nostro sito. <br>
+              <!-- ✅ Ottieni una commissione continua ogni volta che i tuoi affiliati effettuano un acquisto sul nostro sito. <br>-->
               ✅ Raggiungi un pubblico in cerca di amore, una nicchia eccitante e in costante crescita. <br>
               
             </div>
@@ -3761,6 +3766,7 @@ Benvenuto!`,
       jp:{
         translation : {
           "phoneuserIDval":`あなたの電話`,
+          "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> ここにあなたの身分証明書を送ってください。`,
           "IDTRANSLATEFORM105LINKS":`リンクはもう利用できません。`,
           "TITLEIDPAIEID":`支払い  `,
           "IDTRANSLATE1": "ホーム",
@@ -4445,7 +4451,7 @@ illicolove.comのサービスを利用する上で何か問題がある場合は
         "CONTRACTID9":`3。アフィリエイトの報酬`,
         "CONTRACTID10":`3.1。アフィリエイトは、サイトに登録する新しいメンバーごとに100 CFAフランの手数料を受け取ります <a href="https://illicolove.com">illicolove.com</a> アフィリエイトの固有のリンクを使用し、愛の検索広告を投稿します。`,
         "CONTRACTID11":`3.2。さらに、アフィリエイトは、アフィリエイトリンクを介して紹介されたメンバーによる購入ごとに10%の手数料を受け取ります。`,
-        "CONTRACTID11X":`3.3 100F CFAコミッションは、コミッション詐欺を回避するために、新しいメンバーが100F CFAを超えるユニットを購入した場合にのみ収集されます。`,
+        "CONTRACTID11X":`3.2 100F CFAコミッションは、コミッション詐欺を回避するために、新しいメンバーが100F CFAを超えるユニットを購入した場合にのみ収集されます。`,
         "CONTRACTID12":`4。委員会の支払い`,
         "CONTRACTID13":` Illicoloveは、アフィリエイトの選択により、モバイルマネーまたは銀行振込による要求に応じて、定期的に四半期ごとにアフィリエイトの手数料を支払います。アフィリエイトは、返品の費用を負担するものとします。`,
         "CONTRACTID14":`5。契約期間`,
@@ -4460,14 +4466,14 @@ illicolove.comのサービスを利用する上で何か問題がある場合は
             <p class="box--list__記述">有利なアフィリエイトの機会をお探しですか? 私たちのユニークなアフィリエイトプログラムに参加して、他の人がソウルメイトを見つけるのを助けることによってあなたの収入を増やしてください。仕組みは次のとおりです: <br>
               ✅ アフィリエイトリンク経由で当社のサイトに新規会員が登録し、恋愛広告を投稿するごとに100 F CFA を受け取ります。 <br>
 
-              ✅ さらに、紹介したメンバーが行ったすべての購入に対して10％の手数料を受け取ります。彼らが多く支出するほど、収益が増えます！</p>
+              <!-- ✅ さらに、紹介したメンバーが行ったすべての購入に対して10％の手数料を受け取ります。彼らが多く支出するほど、収益が増えます！ --> </p>
         </div>
         
         <div class="box--list__item">
             <h2 class="box--list__title box--list__titlex"> なぜアフィリエイトプログラムを選ぶのですか?</h2>
             <div class="box--list__記述">
               ✅ 誰かが登録し、恋愛広告を投稿すると、すぐにお金を稼げます。 <br>
-              ✅ アフィリエイトが当サイトで購入するたびに、継続的なコミッションを獲得してください。<br>
+              <!--   ✅ アフィリエイトが当サイトで購入するたびに、継続的なコミッションを獲得してください。<br>-->
               ✅ エキサイティングで絶えず成長しているニッチである愛を求めて聴衆をターゲットにします。 <br>
               
             </div>
@@ -4493,6 +4499,7 @@ illicolove.comのサービスを利用する上で何か問題がある場合は
       cn:{
         translation : {
           "phoneuserIDval":`你的电话`,
+          "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> 您需要在此处发送您的身份证件。`,
           "IDTRANSLATEFORM105LINKS":` 链接不再可用。`,
           "TITLEIDPAIEID":`付款`,
           "IDTRANSLATE1": "接收",
@@ -5187,7 +5194,7 @@ Publisher不负责这些网站的可用性,也不能控制内容或验证这些�
         "CONTRACTID9":`3. 联盟会员的报酬`,
         "CONTRACTID10":`3.1. 附属机构将为每个在网站上注册的新成员收取100 F CFA的佣金<a href="https://illicolove.com">illicolove.com</a> 通过联属公司独特的联属链接，发布一个爱情搜索广告。`,
         "CONTRACTID11":`3.2. 此外，联盟会员将会获得其通过联盟链接推荐的会员每次购买产生的10%佣金。`,
-        "CONTRACTID11X":`3.3 100 F CFA佣金只会在新成员购买大于100 F CFA的单位时收取，以避免向佣金舞弊。`,
+        "CONTRACTID11X":`3.2 100 F CFA佣金只会在新成员购买大于100 F CFA的单位时收取，以避免向佣金舞弊。`,
         "CONTRACTID12":`4. 佣金支付`,
         "CONTRACTID13":` Illicolove将根据移动资金或银行转账的要求,根据会员的选择,每季度定期向会员支付佣金。附属公司应承担退货费用。`,
         "CONTRACTID14":`5. 合同期限`,
@@ -5203,14 +5210,14 @@ Publisher不负责这些网站的可用性,也不能控制内容或验证这些�
 帮助别人找到自己的灵魂伴侣。以下是它的工作方式： <br>
               ✅ 每位注册并通过您的会员链接在我们的网站上发布爱心研究广告的新会员将获得100非洲金融共同体法郎。 <br>
 
-              ✅ 此外，您可以获得您所推荐的会员每次购买所产生的10%佣金。他们花费越多，您赚得越多！</p>
+              <!-- ✅ 此外，您可以获得您所推荐的会员每次购买所产生的10%佣金。他们花费越多，您赚得越多！--> </p>
         </div>
         
         <div class="box--list__item">
             <h2 class="box--list__title box--list__titlex"> 为什么选择我们的会员计划?</h2>
             <div class="box--list__描述">
               ✅ 一有人报名就挣钱，发布他们的搜索广告。 <br>
-              ✅ 每当您的下线会员在我们的网站上购买单位，您都将获得持续的佣金。<br>
+              <!--  ✅ 每当您的下线会员在我们的网站上购买单位，您都将获得持续的佣金。<br>-->
               ✅ 以瞄准寻求爱情的观众为目标，这是一个令人兴奋且持续增长的细分市场。 <br>
               
             </div>
@@ -5238,6 +5245,7 @@ Publisher不负责这些网站的可用性,也不能控制内容或验证这些�
         
    translation : {
     "phoneuserIDval":`ваш телефон`,
+    "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> Вы должны отправить свой идентификационный документ сюда.`,
     "IDTRANSLATEFORM105LINKS":`Ссылка больше недоступна.`,
     "TITLEIDPAIEID":`оплата `,
     "IDTRANSLATE1": " Прием ",
@@ -5939,7 +5947,7 @@ Publisher不负责这些网站的可用性,也不能控制内容或验证这些�
   "CONTRACTID9":`3. Вознаграждение партнера `,
   "CONTRACTID10":`3.1. Аффилированный член получит комиссию в размере 100 франков КФА за каждого нового члена, зарегистрировавшегося на сайте <a href="https://illicolove.com">illicolove.com</a> через уникальную партнерскую ссылку и публикует рекламу поиска любви.`,
   "CONTRACTID11":`3.2. Кроме того, Партнер получит 10% комиссионных за каждую покупку, сделанную членами, указанными через его партнерскую ссылку.`,
-  "CONTRACTID11X":`3.3 Комиссия 100F CFA будет взиматься только в том случае, если новый член  приобретает единицу, превышающую 100F CFA, во избежание мошенничества комиссии.`,
+  "CONTRACTID11X":`3.2 Комиссия 100F CFA будет взиматься только в том случае, если новый член  приобретает единицу, превышающую 100F CFA, во избежание мошенничества комиссии.`,
   "CONTRACTID12":`4. Выплата комиссии `,
   "CONTRACTID13":` Компания Illicolove будет перечислять комиссию Аффилированному лицу регулярно каждый квартал по запросу через мобильный кошелек или банковский перевод, на выбор Аффилированного лица. Расходы по перечислению оплачиваются Аффилированным лицом`,
   "CONTRACTID14":`5. Срока действия договора `,
@@ -5954,14 +5962,14 @@ Publisher不负责这些网站的可用性,也不能控制内容或验证这些�
       <p class="box--list__description"> Ищете выгодные партнерские возможности? Присоединяйтесь к нашей уникальной партнерской программе и увеличить свой доход, помогая другим найти их родственные души. Вот как это работает: <br>
         ✅ Получите 100 F CFA для каждого нового участника, который подписывается и публикует рекламу поиска любви на нашем сайте через вашу партнерскую ссылку. <br>
 
-        ✅ Плюс, заработать 10% комиссии на каждую покупку, сделанную членами вы ссылаетесь. Чем больше они тратят, тем больше вы зарабатываете!</p>
+        <!-- ✅ Плюс, заработать 10% комиссии на каждую покупку, сделанную членами вы ссылаетесь. Чем больше они тратят, тем больше вы зарабатываете! --> </p>
   </div>
   
   <div class="box--list__item">
       <h2 class="box--list__title box--list__titlex"> Почему выбрать нашу партнерскую программу?</h2>
       <div class="box--list__description">
         ✅ Заработать деньги, как только кто-то зарегистрироваться, и разместить их поиск объявления. <br>
-        ✅ Получайте постоянную комиссию каждый раз, когда ваши партнеры делают покупку на нашем сайте. <br>
+        <!--  ✅ Получайте постоянную комиссию каждый раз, когда ваши партнеры делают покупку на нашем сайте. <br>-->
         ✅ Направьте свое внимание на аудиторию, ищущую любовь, увлекательную и постоянно растущую нишу. <br>
         
       </div>
@@ -5988,6 +5996,7 @@ Publisher不负责这些网站的可用性,也不能控制内容或验证这些�
       pt:{
         translation : {
           "phoneuserIDval":`Seu telefone`,
+          "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> Você precisa enviar sua identidade aqui.`,
           "IDTRANSLATEFORM105LINKS":`O link não está mais disponível.`,
           "TITLEIDPAIEID":`Pagamento `,
           "IDTRANSLATE1": " Início ",
@@ -6703,7 +6712,7 @@ Bem-vindo!`,
         "CONTRACTID9":`3. Remuneração do Afiliado `,
         "CONTRACTID10":`3.1. O Afiliado receberá uma comissão de 100 F CFA por cada novo membro que se inscrever no site <a href="https://illicolove.com">illicolove.com</a> através do link exclusivo de afiliação do Afiliado e publica um anúncio de pesquisa de amor.`,
         "CONTRACTID11":`3.2. Além disso, o Afiliado receberá uma comissão de 10% sobre cada compra feita pelos membros indicados através do seu link de afiliado.`,
-        "CONTRACTID11X":`3.3 A comissão de 100F CFA só será cobrada quando o novo membro faz uma compra de unidade superior a 100F CFA, a fim de evitar fraudes na comissão.`,
+        "CONTRACTID11X":`3.2 A comissão de 100F CFA só será cobrada quando o novo membro faz uma compra de unidade superior a 100F CFA, a fim de evitar fraudes na comissão.`,
         "CONTRACTID12":`4. Pagamento da Comissão `,
         "CONTRACTID13":` A illicolove pagará a comissão do Afiliado em uma base trimestral regular, mediante solicitação por celular ou transferência bancária , à escolha do Afiliado. A taxa de reembolso é da responsabilidade do Afiliado.`,
         "CONTRACTID14":`5. Duração do contrato `,
@@ -6719,14 +6728,14 @@ Bem-vindo!`,
               ajudando os outros a encontrar sua alma gêmea. Veja como funciona : <br>
               ✅ Receba 100 F CFA por cada novo membro que se inscrever e publicar um anúncio de pesquisa de amor em nosso site através do seu link de afiliado. <br>
 
-              ✅ Além disso, obtenha 10% de comissão por cada compra feita pelos membros que você indicou. Quanto mais eles gastam, mais você ganha!</p>
+              <!-- ✅ Além disso, obtenha 10% de comissão por cada compra feita pelos membros que você indicou. Quanto mais eles gastam, mais você ganha!--> </p>
         </div>
         
         <div class="box--list__item">
             <h2 class="box--list__title box--list__titlex"> Porquê escolher o nosso programa de afiliados?</h2>
             <div class="box--list__description">
               ✅ Ganhe dinheiro assim que alguém se inscrever, e publica seu anúncio de pesquisa. <br>
-              ✅ Obtenha uma comissão contínua sempre que seus afiliados fizerem uma compra em nosso site. <br>
+              <!--  ✅ Obtenha uma comissão contínua sempre que seus afiliados fizerem uma compra em nosso site. <br>-->
               ✅ Alcance um público em busca de amor, um nicho emocionante e em constante crescimento. <br>
               
             </div>
@@ -6754,6 +6763,7 @@ Bem-vindo!`,
         
    translation : {
     "phoneuserIDval":`Ihr Telefon`,
+    "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> Sie müssen hier Ihren Ausweis senden.`,
     "IDTRANSLATEFORM105LINKS":`Der Link ist nicht mehr verfügbar.`,
     "TITLEIDPAIEID":`Zahlung`,
     "IDTRANSLATE1": " Startseite ",
@@ -7424,7 +7434,7 @@ Herzlich willkommen!`,
   "CONTRACTID9":`3. Die Vergütung des Mitglieds `,
   "CONTRACTID10":`3.1. Der Affiliate erhält eine Provision von 100 CFA F für jedes neue Mitglied, das sich auf der Website registriert <a href="https://illicolove.com">illicolove.com</a> über den einzigartigen Affiliate-Link des Affiliates und veröffentlicht eine Liebessuchanzeige.`,
   "CONTRACTID11":`3.2. Darüber hinaus erhält der Affiliate eine Provision von 10% auf jeden Kauf, den Mitglieder über seinen Affiliate-Link tätigen.`,
-  "CONTRACTID11X":`3.3 Die Provision von 100F CFA wird nur erhoben, wenn das neue Mitglied einen Einheitenkauf über 100F CFA tätigt, um Kommissionsbetrug zu vermeiden.`,
+  "CONTRACTID11X":`3.2 Die Provision von 100F CFA wird nur erhoben, wenn das neue Mitglied einen Einheitenkauf über 100F CFA tätigt, um Kommissionsbetrug zu vermeiden.`,
   "CONTRACTID12":`4. Zahlung durch die Kommission `,
   "CONTRACTID13":` Illicolove zahlt die Provision des Affiliates regelmäßig vierteljährlich auf Anfrage per Mobile Money oder Banküberweisung nach Wahl des Affiliates. Die Kosten für die Rückerstattung trägt der Affiliate.`,
   "CONTRACTID14":`5. Vertragslaufzeit `,
@@ -7440,14 +7450,14 @@ Herzlich willkommen!`,
         Anderen helfen, ihren Seelenverwandten zu finden. So funktioniert es: <br>
         ✅ Erhalten Sie 100 CFA für jedes neue Mitglied, das sich registriert und eine Liebessuchanzeige auf unserer Website über Ihren Affiliate-Link veröffentlicht. <br>
 
-        ✅ Zusätzlich erhalten Sie 10% Provision auf jeden Einkauf, den Ihre Mitglieder getätigt haben. Je mehr sie ausgeben, desto mehr verdienen Sie!</p>
+        <!-- ✅ Zusätzlich erhalten Sie 10% Provision auf jeden Einkauf, den Ihre Mitglieder getätigt haben. Je mehr sie ausgeben, desto mehr verdienen Sie! --> </p>
   </div>
   
   <div class="box--list__item">
       <h2 class="box--list__title box--list__titlex"> Warum unser Partnerprogramm wählen?</h2>
       <div class="box--list__description">
         ✅ Verdienen Sie Geld, sobald sich jemand registriert und seine Suchanzeige veröffentlicht. <br>
-        ✅ Erhalten Sie eine kontinuierliche Provision, wenn Ihre Affiliates einen Kauf auf unserer Website tätigen. <br>
+        <!--  ✅ Erhalten Sie eine kontinuierliche Provision, wenn Ihre Affiliates einen Kauf auf unserer Website tätigen. <br>-->
         ✅ Richten Sie sich an ein Publikum, das nach Liebe sucht, eine aufregende und ständig wachsende Nische. <br>
         
       </div>
@@ -7475,6 +7485,7 @@ Herzlich willkommen!`,
         
    translation : {
     "phoneuserIDval":` هاتفك`,
+    "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> يجب عليك إرسال بطاقتك الشخصية هنا.`,
     "IDTRANSLATEFORM105LINKS":`الرابط غير متاح بعد الآن.`,
     "TITLEIDPAIEID":`دفع `,
     "IDTRANSLATE1": "استقبال",
@@ -8739,7 +8750,7 @@ href="https://illicolove.com">illicolove.com</a>`,
 
   "CONTRACTID11":`3.2. بالإضافة إلى ذلك، ستتلقى الشركة التابعة عمولة بنسبة 10٪ على كل عملية شراء يقوم بها الأعضاء المحالين عبر الرابط التابع لها.`,
 
-  "CONTRACTID11X":`3.3 سيتم استلام عمولة 100 فرنك سي إف إيه فقط عندما يقوم العضو الجديد بشراء وحدة تزيد عن 100 فرنك سي إف إيه، وذلك لتجنب الاحتيال فيما يتعلق 
+  "CONTRACTID11X":`3.2 سيتم استلام عمولة 100 فرنك سي إف إيه فقط عندما يقوم العضو الجديد بشراء وحدة تزيد عن 100 فرنك سي إف إيه، وذلك لتجنب الاحتيال فيما يتعلق 
 بالعمولة."`,
 
   "CONTRACTID12":`4. مدفوعات العمولة`,
@@ -8769,14 +8780,14 @@ illicolove!</h2>
 الآخرين في العثور على توأم روحهم. إليك كيفية عملها: <br>
         ✅ احصل على 100 فرنك أفريقي لكل عضو جديد يقوم بالتسجيل ونشر إعلان بحث عن الحب على موقعنا عبر رابط الشركة التابعة لك. <br>
 
-        ✅ بالإضافة إلى ذلك، احصل على عمولة بنسبة 10٪ على كل عملية شراء تحيل إليها. كلما أنفقوا أكثر، كلما كسبت أكثر!</p>
+        <!--  ✅ بالإضافة إلى ذلك، احصل على عمولة بنسبة 10٪ على كل عملية شراء تحيل إليها. كلما أنفقوا أكثر، كلما كسبت أكثر! --> </p>
   </div>
   
   <div class="box--list__item">
       <h2 class="box--list__title box--list__titlex"> لماذا تختار البرنامج التابع لنا ؟</h2>
       <div class="box--list__description">
         ✅ كسب المال بمجرد تسجيل شخص ما ونشر إعلان البحث الخاص به.<br>
-        ✅ احصل على عمولة مستمرة في كل مرة تقوم فيها الشركات التابعة لك بعملية شراء على موقعنا. <br>
+        <!--  ✅ احصل على عمولة مستمرة في كل مرة تقوم فيها الشركات التابعة لك بعملية شراء على موقعنا. <br>-->
         ✅ استهدف جمهورًا يبحث عن الحب، مكانة مثيرة ومتنامية باستمرار.<br>
         
       </div>
@@ -9465,6 +9476,7 @@ chevron-down"></i> `,
     $("#CONTRACTID17").text(i18next.t("CONTRACTID17"));
     $("#CONTRACTID18").text(i18next.t("CONTRACTID18"));
     $("#CONTRACTID19").text(i18next.t("CONTRACTID19"));
+    $("#infologoId").html(i18next.t("infologoId"));
     $("#ANNONCEAFFILIATEID").html(i18next.t("ANNONCEAFFILIATEID"));
 
     $("#STEPS14").text(i18next.t("STEPS14"));

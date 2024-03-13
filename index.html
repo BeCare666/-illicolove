@@ -29,7 +29,9 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
   <!-- Template Main CSS File -->
   <link href="assets/css/stylea.css" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
@@ -40,10 +42,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
-  <!--import firebase--->
-  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
-
+ 
   <script src="https://unpkg.com/jquery"></script>
   <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
   <script>
@@ -59,7 +58,17 @@
     }
    }
   </script>
+   <!-- Google tag (gtag.js) -->
+   <script async
+   src="https://www.googletagmanager.com/gtag/js?id=G-H3FMR8VLEC">
+   </script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
  
+     gtag('config', 'G-H3FMR8VLEC');
+   </script>
 </head>
 
 <body>
@@ -529,14 +538,8 @@
   </div>
   </div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!--<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
    <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
     const firebaseConfig = {
     apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
     authDomain: "illicolove0.firebaseapp.com",
@@ -546,65 +549,21 @@
     messagingSenderId: "687063035754",
     appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
     };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-
-
-    import {
-    getDatabase,
-    ref,
-    onValue,
-    remove,
-    get,
-    child,
-    } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
-
-    var Xafri = []; 
-    var Yeuro = []; 
-    var Zpaysdumonde = [];
-    var myalldatasUSers = [];
-    const db = getDatabase();
-    const UserConnectuser = localStorage.getItem("unserconnect"); 
+    firebase.initializeApp(firebaseConfig);  
+  
+    //const UserConnectuser = localStorage.getItem("unserconnect"); 
     var BacktoprofilID = document.getElementById('backtoprofilID');
     var MyModalfinger = document.getElementById('myModalfinger');
     var userbuttonID = document.getElementById('user-button');
-    var  allCocuntry = document.getElementById('ALLCOUNTRY');
-    var  Afri = document.getElementById('AFRI');
-    var  Euro = document.getElementById('EURO');   
-    var  PaysDuMonde = document.getElementById('PAYSDUM');
     var Header = document.getElementById('header');
     var Hero = document.getElementById('hero');
     var Footer = document.getElementById('footer');
-
-    const dbref = ref(db, "utilisateurs/");
-    onValue(dbref, (snopshot) => {
-    snopshot.forEach((childsnopshot) => {
-      myalldatasUSers.push(childsnopshot.val());
-      //console.log(childsnopshot.val());
-    })
-    myalldatasUSers.map((T)=>{
-      allCocuntry.setAttribute('data-purecounter-end', `${myalldatasUSers.length}`);
-      
-      if(T.IDREGION === "AFRIQUE"){
-        Xafri.push(T.IDREGION)
-        Afri.setAttribute('data-purecounter-end', `${Xafri.length}`);
-      }
-      if(T.IDREGION === "EUROPE"){
-        Yeuro.push(T.IDREGION)
-        Euro.setAttribute('data-purecounter-end', `${Yeuro.length}`);
-      }
-      if(T.IDREGION === "AUTRESPAYSDUMONDE"){
-        Zpaysdumonde.push(T.IDREGION)
-        PaysDuMonde.setAttribute('data-purecounter-end', `${Zpaysdumonde.length}`);
-      }
-    })
-  });
-
-  if(UserConnectuser){
-    const dbrefuser = ref(db);  
-    get(child(dbrefuser, "utilisateurs/" + UserConnectuser)) 
-    .then((snapshot) => {
+    firebase.auth().onAuthStateChanged(function(userx) { 
+    if(userx){
+    var userId = userx.uid;
+    const database = firebase.database();
+    const userRef = database.ref(`/utilisateurs/${userId}`);
+    userRef.once("value").then((snapshot) => {
      if (snapshot.exists()){ 
       var BacktoprofilID = document.getElementById('backtoprofilID');
       BacktoprofilID.style.display = "block" 
@@ -637,18 +596,6 @@
       userbuttonID.addEventListener('click', function(){
         window.location.href= "./v/profil.html"
       })
-          //function to accept indicator alert
-       // var IDTOACCEPTVAL = localStorage.getItem('IDTOACCEPT');
-        //if(!IDTOACCEPTVAL){
-        //  var fingerI = document.getElementById("myModalfinger"); 
-        //  fingerI.style.display = "block";
-        //} else{
-        //  var fingerI = document.getElementById("myModalfinger"); 
-        //  fingerI.style.display = "none";
-        //}
-      //console.log(snapshot.val().PIECESDIDENTITE);
-    // Utilisez les données de l'utilisateur comme vous le souhaitez
-      //alert("mmmmmmoooo") 
      }else{
       var BacktoprofilID = document.getElementById('backtoprofilID');
       BacktoprofilID.style.display = "none" 
@@ -674,7 +621,7 @@
      }
       
     })
-  }else{
+    }else if(userx === null) {
      // functon to controle anaimation div
     var BacktoprofilID = document.getElementById('backtoprofilID');
       BacktoprofilID.style.display = "none" 
@@ -695,11 +642,9 @@
       const element = document.querySelector('.hero');
       element.classList.add('animate__animated', 'animate__zoomInDown');
       
-      }, 16000); // 5000 millisecondes (5 secondes)
-     
-    
-  }
-
+      }, 16000); // 5000 millisecondes (5 secondes) 
+    }
+    });
   //window.location.href = "site.html"
    </script>
   <!-- Vendor JS Files -->
@@ -710,7 +655,6 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="index.js"></script>

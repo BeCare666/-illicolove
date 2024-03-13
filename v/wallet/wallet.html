@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="wallet.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="./../assets/img/logoilli.jpeg" rel="icon">
+    <link href="./../../assets/img/logoilli.jpeg" rel="icon">
     <!-- Link to import alert personnal -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
@@ -20,6 +20,15 @@
           /**font-size: 13.5px !important;***/
         }
       </style>
+  <script async
+  src="https://www.googletagmanager.com/gtag/js?id=G-H3FMR8VLEC">
+  </script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());      
+  gtag('config', 'G-H3FMR8VLEC');
+  </script>
 </head>
 <body>
   <div id="particles-js"></div>
@@ -40,7 +49,7 @@
 			<div class="txn-history"  id="historyId">
 				<p><b id="HISTORYISMY"></b></p>
                 <div id="imgNodata" style="display: none;">
-                    <img src="assets/img/no-data-concept.jpg" alt="" style="height: 100%; width: 100%; display: flex; align-items: center !important; margin-top: 8vh;">
+                    <img src="./../assets/img/no-data-concept.jpg" alt="" style="height: 50%; width: 50%; display: flex; align-items: center !important; margin-top: 8vh; margin: auto;"> 
                 </div>
                 <div style="height: 40vh; overflow: auto; display: none;"  id="phistoryId">       
                 </div>	
@@ -51,7 +60,9 @@
 <script src="wallet.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
 <!-- Ajoutez d'autres bibliothèques Firebase si nécessaire (auth, firestore, etc.) -->
-<script src="./../translate.js"></script>
+<script src="./../../translate.js"></script>
+<script src="./../../t-analytics.js"></script>
 </body>
 </html>

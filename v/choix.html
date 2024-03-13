@@ -36,15 +36,25 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
   <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="./sign/logina.css">
   <link rel="stylesheet" href="choix.css">
   <script src="https://unpkg.com/jquery"></script>
   <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
-
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <script async
+  src="https://www.googletagmanager.com/gtag/js?id=G-H3FMR8VLEC">
+  </script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H3FMR8VLEC');
+</script>
 </head>
 
 <body>
@@ -120,7 +130,6 @@
       </div>
     </section><!-- End Services Section -->
 <script type="module">
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
           const firebaseConfig = {
           apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
@@ -131,29 +140,15 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
           messagingSenderId: "687063035754",
           appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
     };
-            // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        import {
-            getDatabase,
-            ref,
-            set,
-            update,
-            child,
-            onValue,
-            remove,
-            get,
-        } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
-
-        import { getStorage, getDownloadURL 
-        } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"
-
-        const db = getDatabase();
-        function getdata() {
-        const UserConnectuser = localStorage.getItem("unserconnect");
-        var tablecountry = []
-        const dbref = ref(db);
-        get(child(dbref, "utilisateurs/" + UserConnectuser))
-            .then((snapshot) => {
+    firebase.initializeApp(firebaseConfig);
+      function getdata() {
+      firebase.auth().onAuthStateChanged(function(user) { 
+      if(user){
+      var userId = user.uid;
+      const database = firebase.database();
+      const userRef = database.ref(`/utilisateurs/${userId}`);
+      var tablecountry = []
+      userRef.once("value").then((snapshot) => {
             if (snapshot.exists()) {
               if(snapshot.val().IDREGION){
               // Vérifier si la valeur correspond à l'un des div
@@ -261,8 +256,11 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
             .catch((error) => {
             alert("il y a une ERROR " + error);
         });
+      }else{
+        //wind
+      }
+      })
     }
-
       window.onload = getdata;
 
      function reflechethepagex(){

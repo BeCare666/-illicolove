@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/img/logoilli.jpeg" rel="icon">
+    <title id="SITEID1"></title>
+      <!-- Google Fonts -->
+  <link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+  rel="stylesheet">
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+ 
+</head>
+<body>
+<script>
+    // URL de l'API à partir de laquelle vous récupérez les données
+const url = 'https://illicolove0-default-rtdb.firebaseio.com';
+
+// Utilisation de fetch pour envoyer une requête GET
+fetch(url)
+  .then(response => {
+    // Vérification de la réponse du serveur
+    if (!response.ok) {
+      throw new Error('Erreur HTTP, statut ' + response.status);
+    }
+    // Renvoie la réponse JSON
+    return response.json();
+  })
+  .then(data => {
+    // Traitement des données JSON
+    console.log(data);
+  })
+  .catch(error => {
+    // Gestion des erreurs
+    console.error('Erreur lors de la récupération des données :', error);
+  });
+
+</script>
+</body>
+</html>

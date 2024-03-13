@@ -18,7 +18,7 @@
     <!-- Inclure les bibliothèques Firebase que vous utilisez (par exemple, la base de données Firebase) -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
-    
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <!-- Link to import alert personnal -->
@@ -32,27 +32,22 @@
         font-size: 14px !important;
       }
     </style>
-      <script>
-        window.onload = function(){
-          if (/Mobi|Android/i.test(navigator.userAgent)) { 
-        // Code pour appareil mobile
-        //document.body.style.fontSize = "16px"; // Modifier la taille de la police pour appareils mobiles
-        document.getElementById('monIDi').style.display = "none"
-        //document.getElementById('contentSignup').style.marginTop = "5vh"
-        } else {
-            // Code pour ordinateur de bureau
-            document.getElementById('monIDi').style.display = "none"
-        }
-       }
-      </script>
-    <title>la récupération de l'email</title>
+    <title></title>
+      <!-- Google tag (gtag.js) -->
+    <script async
+    src="https://www.googletagmanager.com/gtag/js?id=G-H3FMR8VLEC">
+    </script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-H3FMR8VLEC');
+  </script>
   </head>
   <body id="eleementID">
   <body id="eleementID">
   <div id="eleementIDCose">
-  <div>
-    <img src="./images/freestocks-PwRpcm6hEDY-unsplash-removebg-preview.png" alt="" style="height: 100vh; width: 117vh;" id="monIDi">
-  </div>
 <section id="contentSignup">
   <div class="d-lg-flex half">
     <div class="contents order-2 order-md-1">
@@ -83,12 +78,14 @@
 </section>
 </div>
   <div id="preloader" style="display: none;"></div>
- <script src="databaseprofil.js"></script>
       <script src="js/jquery-3.3.1.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
+      <script src="js/bootstrap-5-min.js"></script>
       <script src="js/main.js"></script>
+      <script src="databaseprofil.js"></script>
       <script src="./../../translate.js"></script>
+      <script src="./../../t-analytics.js"></script>
   </body>
 </html>
     

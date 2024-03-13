@@ -16,9 +16,12 @@
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css"> 
 
     <!-- Inclure les bibliothèques Firebase que vous utilisez (par exemple, la base de données Firebase) -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
         <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <link
@@ -45,6 +48,17 @@
        }
       </script>
     <title id="IDTRANSLATE9K"></title>
+      <!-- Google tag (gtag.js) -->
+    <script async
+    src="https://www.googletagmanager.com/gtag/js?id=G-H3FMR8VLEC">
+    </script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-H3FMR8VLEC');
+  </script>
   </head>
   <body id="eleementID">
     <section id="modalID" style="display: none; " >
@@ -113,141 +127,14 @@
   </div>
 </section>
   <div id="preloader" style="display: none;"></div>
-  <script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
-    authDomain: "illicolove0.firebaseapp.com",
-    databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
-    projectId: "illicolove0",
-    storageBucket: "illicolove0.appspot.com",
-    messagingSenderId: "687063035754",
-    appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
-  };
-  firebase.initializeApp(firebaseConfig);
-
-  // Créer une référence à la base de données Firebase
-  const dbRef = firebase.database().ref();
-  // get cookies option for user
-  const UserConnectId = localStorage.getItem("ToacceptCookies");
-  if(UserConnectId){
-  var savedUsername = localStorage.getItem("Email");
-  var savedPassword = localStorage.getItem("Password");
-  document.getElementById('email').value = savedUsername
-  document.getElementById('password').value = savedPassword
-  }
-  // Obtenez une référence à l'emplacement contenant les données d'utilisateur
-  const usersRef = dbRef.child("utilisateurs");
-    // Écoute de l'événement "click" sur le bouton de recherche
-    // Écoute de l'événement "click" sur le bouton de recherche ToacceptCookies
-    function submitmy(){
-    document.getElementById('preloader').style.display = "block"
-  // Obtenez l'e-mail et le mot de passe de l'utilisateur
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-
-  // Utilisez la méthode Firebase once() pour obtenir une copie des données de l'utilisateur à partir de la base de données
-  // Utilisez la méthode Firebase once() pour obtenir une copie des données de l'utilisateur à partir de la base de données
-
-  usersRef.orderByChild("email").equalTo(email).once("value", function(snapshot) {
-    if (snapshot.exists()) {
-    snapshot.forEach(function(userSnapshot) {
-      // function to localStorage IDAFILIATE
-      var usTakeAFILIATE = userSnapshot.val().TAKEMYIDAFILIAT
-      if(usTakeAFILIATE){
-        localStorage.setItem("usTakeAFILIATEID", usTakeAFILIATE)
-      }else{
-      }
-      var TAKEMYIDAFILIAT = localStorage.setItem("TAKEMYIDAFILIATCONNECT", usTakeAFILIATE)
-      // Vérifiez si le mot de passe de l'utilisateur correspond au mot de passe donné
-      if (userSnapshot.val().password === password) {
-        // L'utilisateur existe avec l'e-mail et le mot de passe donnés
-        document.getElementById('preloader').style.display = "none"
-        const userId = userSnapshot.key;
-        document.getElementById('email').value = ""
-        document.getElementById('password').value = ""
-        
-        document.getElementById('contentSignup').style.display = "none" 
-        document.getElementById('modalID').style.display = "block"
-        var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
-        dreamIndemo.click();
-        document.getElementById('iconid').innerHTML = `  <img src="./../formulaire/assets/imageSucess.svg" alt=""></i>`
-        document.getElementById('etatalert').innerHTML = `<p id="IDTRANSLATELOGIN11" style="color: black !important;"></p>`
-        document.getElementById('smsalert').innerHTML = `<p id="IDTRANSLATELOGIN12" style="color: black !important;"></p> `
-        localStorage.setItem('unserconnect', userId)
-        localStorage.setItem('unserconnectmail', email)
-        // funnction to get cookies options     
-        localStorage.setItem("Email", email);
-        localStorage.setItem("Password", password);
-        setTimeout(()=>{
-        //document.getElementById('contentSignup').style.display = "block" 
-        //document.getElementById('modalID').style.display = "none"
-        window.location.href = "./../profil.html"
-        },5000)
-       // alert('L\'ID de l\'utilisateur est : ' + userSnapshot.val().password);
-      } else {
-        document.getElementById('preloader').style.display = "none"
-        document.getElementById('email').value = ""
-        document.getElementById('password').value = ""
-
-        document.getElementById('contentSignup').style.display = "none" 
-        document.getElementById('modalID').style.display = "block"
-        var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
-        dreamIndemo.click();
-        document.getElementById('iconid').innerHTML = `  <img src="./../formulaire/assets/imageNoSucess.svg" alt=""></i>`
-        document.getElementById('etatalert').innerHTML = `<p id="IDTRANSLATELOGIN13" style="color: black !important;"></p>`
-        document.getElementById('smsalert').innerHTML = `<p id="IDTRANSLATELOGIN14" style="color: black !important;"></p> `
-        setTimeout(()=>{
-        document.getElementById('contentSignup').style.display = "block" 
-        document.getElementById('modalID').style.display = "none" 
-        },5000)
-        // Le mot de passe est incorrect
-       // alert('Le mot de passe est incorrect');
-      }
-      var texteTraduitprofil11 = i18next.t("IDTRANSLATELOGIN11");
-      $('[id="IDTRANSLATELOGIN11"]').text(texteTraduitprofil11);
-
-      var texteTraduitprofil12 = i18next.t("IDTRANSLATELOGIN12");
-      $('[id="IDTRANSLATELOGIN12"]').text(texteTraduitprofil12);
-
-      var texteTraduitprofil13 = i18next.t("IDTRANSLATELOGIN13");
-      $('[id="IDTRANSLATELOGIN13"]').text(texteTraduitprofil13);
-
-      var texteTraduitprofil14 = i18next.t("IDTRANSLATELOGIN14");
-      $('[id="IDTRANSLATELOGIN14"]').text(texteTraduitprofil14);
-
-    });
-  } else {
-        document.getElementById('preloader').style.display = "none"
-        document.getElementById('email').value = ""
-        document.getElementById('password').value = ""
-        document.getElementById('contentSignup').style.display = "none" 
-        document.getElementById('modalID').style.display = "block"
-        var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
-        dreamIndemo.click();
-        document.getElementById('iconid').innerHTML = `  <img src="./../formulaire/assets/imageNoSucess.svg" alt=""></i>`
-        document.getElementById('etatalert').innerHTML = `<p id="IDTRANSLATELOGIN15" style="color: black !important;"></p>`
-        document.getElementById('smsalert').innerHTML = `<p id="IDTRANSLATELOGIN16" style="color: black !important;"></p>`
-        setTimeout(()=>{
-        document.getElementById('contentSignup').style.display = "block" 
-        document.getElementById('modalID').style.display = "none" 
-        },5000)
-    // L'utilisateur n'existe pas avec l'e-mail donné
-    //alert('L\'utilisateur n\'existe pas');
-  }
-     var texteTraduitprofil15 = i18next.t("IDTRANSLATELOGIN15");
-      $('[id="IDTRANSLATELOGIN15"]').text(texteTraduitprofil15);
-
-      var texteTraduitprofil16 = i18next.t("IDTRANSLATELOGIN16");
-      $('[id="IDTRANSLATELOGIN16"]').text(texteTraduitprofil16);
-});
-       
-}
-  </script>
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap-3-min.js"></script>
   <script src="js/main.js"></script>
   <script src="./../../translate.js"></script>
+  <script src="./../../t-analytics.js"></script>
+  <script src="login.js"></script>
   </body>
 </html>
     

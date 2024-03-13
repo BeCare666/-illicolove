@@ -55,6 +55,17 @@
       }
      }
     </script>
+      <!-- Google tag (gtag.js) -->
+  <script async
+  src="https://www.googletagmanager.com/gtag/js?id=G-H3FMR8VLEC">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-H3FMR8VLEC');
+  </script>
   </head>
 
   <body>
@@ -203,13 +214,17 @@
             <ul class="list-group mt-4"  >
               <li class="list-group-item" >
                 <div class="d-flex align-items-center">
-                  <i class="bi bi-person-fill me-2 text-primary"></i>
+                  <div id="iconiconIdx">
+
+                  </div>
                   <div>
                     <h5 class="mb-1" id="ConnexionMyID"></h5>
                   </div>
                 </div>
                 <div class="d-flex align-items-center mt-3">
-                  <i class="bi bi-person-fill me-2 text-primary "></i>
+                  <div id="iconiconId">
+
+                  </div>
                   <div>
                     <h5 class="mb-1" id="fullname"></h5>
                   </div>
@@ -289,24 +304,9 @@
               appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
         };
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
+        firebase.initializeApp(firebaseConfig);
 
-
-        import {
-            getDatabase,
-            ref,
-            set,
-            update,
-            child,
-            onValue,
-            remove,
-            get,
-        } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
-
-        import { getStorage, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"
-
-        const db = getDatabase();
+        const database = firebase.database();    
                     
         //--------------Select data-----------------//
         var Thmaville = document.getElementById('thmaville');
@@ -324,17 +324,22 @@
         var Saville = document.getElementById('saville');
         var Sontravail = document.getElementById('sontravail');
         var connexionMyID = document.getElementById('ConnexionMyID'); 
-
+        var IconiconId = document.getElementById('iconiconId'); 
+        var IconiconIdx = document.getElementById('iconiconIdx');
         function seleectData() {
           const urlParams = new URLSearchParams(window.location.search);
           const UserConnectIdToBuy = urlParams.get('id');
-          const unserconnectID = localStorage.getItem("unserconnect");
+          // const unserconnectID = localStorage.getItem("unserconnect");
           var selectedLanguage = localStorage.getItem('selectedLanguage');
           //alert(UserConnectIdToBuy)
           var tableTotakeUser = []
-            const dbref = ref(db);
-          get(child(dbref, "utilisateurs/" + UserConnectIdToBuy))
-              .then((snapshot) => {
+
+          firebase.auth().onAuthStateChanged(function(user) { 
+            if(user){
+              trackVisiteOneuser()
+            var userId = user.uid;
+            const userRef = database.ref(`/utilisateurs/${UserConnectIdToBuy}`);
+            userRef.once("value").then((snapshot) => {
                 if (snapshot.exists()) {
                 document.getElementById('preloader').style.display = "none"
                 var photoDataUrl1 = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
@@ -347,9 +352,9 @@
                 //var img2Id = document.getElementById('img2Id');
                 //img2Id.src = photoDataUrl2
                 tableTotakeUser.push(snapshot.val().fullname)
-                document.getElementById('fullname').innerHTML = `${snapshot.val().fullname}`
+                document.getElementById('fullname').innerHTML = `${snapshot.val().username}`
                 document.getElementById('phone').innerHTML = `<a href="mailto:${snapshot.val().TELEPHONE}">${snapshot.val().TELEPHONE}</a>`
-                document.getElementById('whatsapp').innerHTML = `<a href="https://wa.me/${snapshot.val().TELEPHONE}?text=Salut ${snapshot.val().fullname},%20comment%20allez-vous%20?%20Vous%20êtes%20${snapshot.val().MONTRAVAILLEOUOCCUPATION}%20et%20je%20suis%20vraiment%20intéressé%20par%20votre%20profil%20que%20j'ai%20vu%20sur%20le%20site%20de%20rencontre%20illicolove. J'aimerais en savoir plus sur vous et explorer les possibilités d'une connexion significative. Pourriez-vous visiter mon profil aussi s'ils vous plaît ?: ${encodeURIComponent('https://www.illicolove.com/userdetails&.html?id=' + `${unserconnectID}`)}">${snapshot.val().TELEPHONE}</a>`
+                document.getElementById('whatsapp').innerHTML = `<a href="https://wa.me/${snapshot.val().TELEPHONE}?text=Hi ${snapshot.val().fullname},%20how%20are%20you%20doing%20?%20You%20are%20${snapshot.val().MONTRAVAILLEOUOCCUPATION}%20and%20I'm%20really%20interested%20in%20your%20profile%20that%20I%20saw%20on%20the%20illicolove%20dating%20site.%20I%20would%20like%20to%20know%20more%20about%20you%20and%20explore%20the%20possibilities%20of%20a%20meaningful%20connection.%20Could%20you%20please%20visit%20my%20profile%20too%3F%20${encodeURIComponent('https://illicolove.com/userdetails&.html?id=' + `${userId}`)}">${snapshot.val().TELEPHONE}</a>`
                 document.getElementById('myEmail').innerHTML = `<a href="mailto:${snapshot.val().email}">${snapshot.val().email}</a>`
                 document.getElementById('residenceId').innerHTML = `${snapshot.val().MAVILLEDERESIDENCE}`
                 document.getElementById('occupation').innerHTML = `${snapshot.val().MONTRAVAILLEOUOCCUPATION}`
@@ -391,7 +396,25 @@
                 }
 
                 connexionMyID.innerHTML = content
-                
+              // mn sexe
+              const contentwx = snapshot.val().ONLINEDATE=== "Homme" || 
+              snapshot.val().ONLINEDATE=== "Hombre" || 
+              snapshot.val().ONLINEDATE=== "Man" || 
+              snapshot.val().ONLINEDATE==="남자" || 
+              snapshot.val().ONLINEDATE==="Uomo" || 
+              snapshot.val().ONLINEDATE==="男" || 
+              snapshot.val().ONLINEDATE==="男人" || 
+              snapshot.val().ONLINEDATE==="Мужчина" || 
+              snapshot.val().ONLINEDATE==="Homem" || 
+              snapshot.val().ONLINEDATE==="Mann" ||
+              snapshot.val().ONLINEDATE=== "رجل"
+              ? `<i class="bi bi-gender-male" style="color:#000080;"></i>`   
+              : `<i class="bi bi-gender-female" style="color:#FFB6C1;"></i>`;
+                IconiconId.innerHTML = contentwx
+
+                IconiconIdx.innerHTML = contentwx
+
+
                 var texteIDTRANSLATEUSERD24 = i18next.t("IDTRANSLATEUSERD24");
                 $('[id="IDTRANSLATEUSERD24"]').html(texteIDTRANSLATEUSERD24);
 
@@ -409,9 +432,8 @@
             Swal.showValidationMessage(i18next.t('IDTRANSLATEUSERD26'));
               //alert("il y a une ERROR " + error);
           });
-
-          get(child(dbref, "utilisateurs/" + unserconnectID))
-          .then((snapshot) => {
+          const userRefxs = database.ref(`/utilisateurs/${userId}`);
+          userRefxs.once("value").then((snapshot) => {
               if (snapshot.exists()) { 
                 if(snapshot.val().COMPTECREDIT !=0 && snapshot.val().VALIDERMONCOMPTE){
                   var ContactUserbtnID = document.getElementById('contactUserbtnID');
@@ -423,9 +445,13 @@
                     var myCompta = snapshot.val().COMPTECREDIT
                   var debit = 1
                   var moncomptvalide = myCompta - debit
-                  update(ref(db, "utilisateurs/" + unserconnectID), {
-                    COMPTECREDIT:moncomptvalide
-                    }).then(() => {             
+                  const newData = {
+                          COMPTECREDIT:moncomptvalide
+                  };
+                  userRef.update(newData, (error) => {
+                    if (error){
+                      Swal.showValidationMessage(i18next.t('IDTRANSLATEUSERD28'));
+                    }else{
                       Swal.fire({
                         position: 'top-end',
                         icon: 'success',
@@ -433,11 +459,8 @@
                         showConfirmButton: false,
                         timer: 2500
                       })
-                        })
-                        .catch((error) => {
-                          Swal.showValidationMessage(i18next.t('IDTRANSLATEUSERD28'));
-                          //alert("les données ne sont pas mise à jour " + error);
-                        });
+                    }
+                  })
                       })
                 }else{
                   if(!snapshot.val().VALIDERMONCOMPTE) {
@@ -499,7 +522,79 @@
               }  
             }).catch((error)=>{
 
+            });
+            
+             // end function to userconnect
+            let inactiveTimeoutId;
+          // Fonction appelée lorsque l'utilisateur est actif sur la page
+          function handleUserActive() {
+            const newDataCwq = {
+              USERCONNECT : true,
+              ONLINEDATE : "en ligne",
+              ONLINEHOURS : "en ligne",
+              };
+              userRef.update(newDataCwq, (error) => {
+                if (error){
+                  //console.error("Erreur :", error);
+                }else{
+                  // console.log("O")
+                }
+              })
+          clearTimeout(inactiveTimeoutId); // Réinitialiser le délai
+          
+          //console.log("L'utilisateur est actif sur la page");
+          // Vous pouvez exécuter d'autres actions ou déclencher des événements ici
+          }
+
+          // Fonction appelée lorsque l'utilisateur quitte la page
+          function handleUserInactive() {
+          inactiveTimeoutId = setTimeout(function() {
+          // Créez une nouvelle instance de l'objet Date
+          const currentDate = new Date();
+          // Obtenez les différentes composantes de la date
+          const year = currentDate.getFullYear(); // Année (ex: 2023)
+          const month = currentDate.getMonth() + 1; // Mois (de 0 à 11, donc on ajoute 1)
+          const day = currentDate.getDate(); // Jour du mois (de 1 à 31)
+          const hours = currentDate.getHours().toString().padStart(2, '0'); // Heures (de 00 à 23)
+          const minutes = currentDate.getMinutes(); // Minutes (de 0 à 59)
+          //const seconds = currentDate.getSeconds(); // Secondes (de 0 à 59)
+          var theOnlineDate = `${day}/${month}/${year}`
+          var theOnlinehours = `${hours}h:${minutes}min`
+          const newDataCwqx = {
+            USERCONNECT : false,
+            ONLINEDATE : theOnlineDate,
+            ONLINEHOURS : theOnlinehours,
+            };
+
+            userRef.update(newDataCwqx, (error) => {
+              if (error){
+                //console.error("Erreur :", error);
+              }else{
+              //   console.log("N")
+              }
             })
+            // console.log("L'utilisateur a quitté la page");
+              // Mettre à jour le statut ou effectuer d'autres actions ici
+            }, 60000); // Délai de 60 secondes avant de mettre à jour le statut
+          }
+
+          // Appeler la fonction handleUserActive dès le chargement de la page
+          handleUserActive();
+
+          // Ajouter un écouteur d'événement pour détecter lorsque l'utilisateur interagit avec la page
+          document.addEventListener("visibilitychange", function() {
+            if (document.visibilityState !== "visible") {
+              handleUserInactive();
+            } else {
+              handleUserActive();
+            }
+          }); 
+          // end function to userconnect
+          }else if(user == null){
+          window.location.href = "./v/login/login.html"
+          }
+            
+          })
     }
     window.onload = seleectData;
   </script>
@@ -511,6 +606,9 @@
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
     <script src="./v/userConnect.js"></script>
        <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -520,6 +618,7 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
     <script src="translate.js"></script>
+    <script src="t-analytics.js"></script>
 
   </body>
 

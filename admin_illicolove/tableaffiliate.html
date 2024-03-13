@@ -18,7 +18,8 @@
         rel="stylesheet">
     <!---Import firebase-->
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
-    <script  src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -477,7 +478,10 @@
     const userRef = firebase.database().ref('utilisateurs');
 
     const adminRef = firebase.database().ref('admin');
-
+    firebase.auth().onAuthStateChanged(function(user) { 
+        if(user === null){
+            window.location.href = "login.html"
+        }else{  
     userRef.once('value')
     .then((snapshot) => {
     const users = snapshot.val();
@@ -810,7 +814,8 @@ if (snapshot.exists()) {
     window.location.href = "login.html"    
 }
 });
-
+}
+});
     </script>
     
     <!-- Bootstrap core JavaScript-->

@@ -38,6 +38,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
   <script src="https://unpkg.com/jquery"></script>
   <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async
+    src="https://www.googletagmanager.com/gtag/js?id=G-H3FMR8VLEC">
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+  
+      gtag('config', 'G-H3FMR8VLEC');
+    </script>
   </head>
 
   <body>
@@ -66,7 +77,8 @@
           </header>
 
           <div class="row gy-4">
-            <span id="idtheAllProForsite" style=" display: flex; align-items: center;  justify-content:center; flex-wrap: wrap;"></span>
+            <span id="idtheAllProForsite" style=" display: flex; align-items: center;  justify-content:center; flex-wrap: wrap;">
+            </span>
             <section id="modalID" style="display: none;">
               <div style = "display: flex; justify-content: center; margin: auto;">
                 <img src="./../assets/img/no-data/nodata.svg" alt="" style = "width: 100%; height: 40vh;">
@@ -99,35 +111,22 @@
         messagingSenderId: "687063035754",
         appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
         };
+      firebase.initializeApp(firebaseConfig);
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-
-
-        import {
-            getDatabase,
-            ref,
-            set,
-            update,
-            child,
-            onValue,
-            remove,
-            get,
-        } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
-
-        import { getStorage, getDownloadURL 
-        } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"
-
-     const db = getDatabase();
      const myOptionV = localStorage.getItem("myOptionV");
      var selectedLanguage = localStorage.getItem('selectedLanguage');
     //function to get all products in realTime
     function getAllDataRealtimePro() {
-       var myalldatas = []; 
-       var myalldatasUSers = []; 
-       var tableauTotakeidd = []
-       const dbref = ref(db);
-       get(child(dbref, "utilisateurs")).then((snopshot) => {
+    firebase.auth().onAuthStateChanged(function(user) { 
+    if(user){
+    var userId = user.uid;
+    var myalldatas = []; 
+    var myalldatasUSers = []; 
+    var tableauTotakeidd = []
+    const database = firebase.database();
+    const userRef = database.ref(`utilisateurs/`);
+    const userRefw = database.ref(`/utilisateurs/${userId}`);
+    userRef.once("value").then((snopshot) => {
         snopshot.forEach((childsnopshot) => {
           myalldatasUSers.push(childsnopshot.val());
         });
@@ -146,6 +145,16 @@
     } else {
       // Gérer le cas où myalldatas est vide ou non défini
      // console.log("Aucune donnée disponible");
+     document.getElementById('preloader').style.display = "none"
+     Swal.fire({
+     icon: 'info',
+        allowOutsideClick: false,
+        text:  i18next.t('IDTRANSLATEUSERD25'),
+        }).then((result)=>{
+        if(result.isConfirmed){
+          window.location.href = "../v/consulte.html"
+        }
+        })
     }
 
         function fonctionEnfant(){
@@ -168,15 +177,10 @@
           var divq = document.getElementById('idtheAllProForsite');
           let trow = document.createElement("div");
          // function to go check user data principal
-          const dbref = ref(db);
-
-          get(child(dbref, "utilisateurs/" + UserConnectuser))
-          .then((snapshot) => {
+         userRefw.once("value") .then((snapshot) => {
           if (snapshot.exists()) {
           document.getElementById('preloader').style.display = "none"
           var myCompta = snapshot.val().COMPTECREDIT
-          //alert(snapshot.val().userId)
-          
 
           if(snapshot.val().userId){
           // function to take userId
@@ -191,7 +195,6 @@
           var photoDataUrl = k.PIECESDIDENTITE ? 'data:image/png;base64,' + k.PIECESDIDENTITE : '';
           var muvar = selectedLanguage;
           var content;
-
           if (muvar === 'fr') {
             content = k.ONLINEDATE === k.ONLINEHOURS 
               ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> en ligne `
@@ -204,18 +207,63 @@
             content = k.ONLINEDATE === k.ONLINEHOURS
               ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> En línea `
               : `En línea el ${k.ONLINEDATE} a las ${k.ONLINEHOURS}`;
-          } else {
-            // Default language
-            content = `En ligne le ${k.ONLINEDATE} à ${k.ONLINEHOURS}`;
-          }
+          }else if (muvar === 'kr') {
+            content = k.ONLINEDATE === k.ONLINEHOURS
+              ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> 온라인 `
+              : `온라인에서 ${k.ONLINEDATE} 에 ${k.ONLINEHOURS}`;
+          }else if (muvar === 'jp') {
+            content = k.ONLINEDATE === k.ONLINEHOURS
+              ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div>オンラインで `
+              : `オンライン ${k.ONLINEDATE} に ${k.ONLINEHOURS}`;
+          } else if (muvar === 'ru') {
+            content = k.ONLINEDATE === k.ONLINEHOURS
+              ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> онлайн `
+              : `онлайн в ${k.ONLINEDATE} B ${k.ONLINEHOURS}`;
+          } else if (muvar === 'cn') {
+            content = k.ONLINEDATE === k.ONLINEHOURS
+              ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> " 在线 `
+              : `在线上 ${k.ONLINEDATE} 到 ${k.ONLINEHOURS}`;
+          } else if (muvar === 'ar') {
+            content = k.ONLINEDATE === k.ONLINEHOURS
+              ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> عبر الإنترنت`
+              : `عبر الإنترنت على ${k.ONLINEDATE} إلى ${k.ONLINEHOURS}`;
+          } else if (muvar === 'de') {
+            content = k.ONLINEDATE === k.ONLINEHOURS
+              ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> online `
+              : `online der ${k.ONLINEDATE} zu ${k.ONLINEHOURS}`;
+          } else if (muvar === 'it') {
+            content = k.ONLINEDATE === k.ONLINEHOURS
+              ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> online `
+              : `online il ${k.ONLINEDATE} a ${k.ONLINEHOURS}`;
+          } else if (muvar === 'pt') {
+            content = k.ONLINEDATE === k.ONLINEHOURS
+              ? `<div class="status-indicator" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: green;"></div> online `
+              : `online o ${k.ONLINEDATE} a  ${k.ONLINEHOURS}`;
+          } 
 
-          trow.innerHTML =
+
+        // mn sexe
+        const contentwx = k.MONSEXE === "Homme" || 
+        k.MONSEXE === "Hombre" || 
+        k.MONSEXE === "Man" || 
+        k.MONSEXE ==="남자" || 
+        k.MONSEXE ==="Uomo" || 
+        k.MONSEXE ==="男" || 
+        k.MONSEXE ==="男人" || 
+        k.MONSEXE ==="Мужчина" || 
+        k.MONSEXE ==="Homem" || 
+        k.MONSEXE ==="Mann" ||
+        k.MONSEXE === "رجل"
+        ? `<i class="bi bi-gender-male" style="color:#000080;"></i>`   
+        : `<i class="bi bi-gender-female" style="color:#FFB6C1;"></i>`;
+
+        trow.innerHTML =
           `
           <div class=" align-items-stretch"
-            data-aos="fade-up" data-aos-delay="100" style="width: 95%; height: 52vh; padding: 5px;">
+            data-aos="fade-up" data-aos-delay="100" style="width: 95%; height: 52vh !important; padding: 5px;">
               <div class="member">
                 <div class="member-img">
-                  <img src="${photoDataUrl || 'assets/img/log.png'}" class="user-photo" style="width: 37vh; height: 37vh;" />
+                  <img src="${photoDataUrl || 'assets/img/log.png'}" class="user-photo" style="max-width: 37vh; max-height: 37vh; width: auto; height: auto;" />
                   <div class="social">
                     <a class="mycontactidvUp" href="#demo-modal" style="cursor:pointer" ><i class="bi bi-eye"></i></a>
                     <a id="mycontactidw" style="cursor: none; pointer-events: none; opacity: 0.5;" href="https://wa.me/${k.TELEPHONE}?text=Salut,%20comment%20vas-tu%20?.%20Moi%20c'est%20${k.fullname},%20${k.MONTRAVAILLEOUOCCUPATION}.%20Je%20suis%20vraiment%20intéressé%20pas%20ton%20profil%20que%20j'ai%20vu%20sur%20le%20site%20de%20rencontre%20illicolove.">
@@ -229,7 +277,7 @@
                   <h4>${k.username}</h4>
                   <span style="font-size: 12px !important;">${content}</span>
                   <span style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold;"><i class="bi bi-geo-alt-fill me-2 text-info"></i> ${k.MYCOUNTRY}. ${k.MAVILLEDERESIDENCE}, ${k.MANATIONNALITE}</span>
-                  <span style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold;"> <i class="bi bi-person-fill" style="color:#000080;"></i> ${k.MONSEXE}</span>
+                  <span style="width: 35vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: bold;">${contentwx} ${k.MONSEXE}</span>
                 </div>
               </div>
             </div>
@@ -269,7 +317,7 @@
             data-aos="fade-up" data-aos-delay="100" style="width: 90%; height: 52vh; padding: 5px;">
               <div class="member">
                 <div class="member-img">     
-                  <img src="${photoDataUrl || 'assets/img/log.png'}" class="user-photo" style="width: 100%; height: 37vh;" />
+                  <img src="${photoDataUrl || 'assets/img/log.png'}" class="user-photo" style="max-width: 37vh; max-height: 37vh; width: auto; height: auto;" />
                   <div class="social">
                     <a id="mycontactidw" style="cursor: none; pointer-events: none; opacity: 0.5;" href="https://wa.me/${k.TELEPHONE}?text=Salut,%20comment%20vas-tu%20?.%20Moi%20c'est%20${k.fullname},%20${k.MONTRAVAILLEOUOCCUPATION}.%20Je%20suis%20vraiment%20intéressé%20pas%20ton%20profil%20que%20j'ai%20vu%20sur%20le%20site%20de%20rencontre%20illicolove.">
                     <i class="bi bi-whatsapp" style="cursor: none; pointer-events: none; opacity: 0.5;"></i></a>
@@ -343,7 +391,79 @@
         }
         }
       });
+    
+            // start function to userconnect
+
+let inactiveTimeoutId;
+// Fonction appelée lorsque l'utilisateur est actif sur la page
+function handleUserActive() {
+  const newDataCwq = {
+    USERCONNECT : true,
+    ONLINEDATE : "en ligne",
+    ONLINEHOURS : "en ligne",
+    };
+    userRef.update(newDataCwq, (error) => {
+      if (error){
+        //console.error("Erreur :", error);
+      }else{
+        // console.log("O")
+      }
+     })
+clearTimeout(inactiveTimeoutId); // Réinitialiser le délai
+ 
+//console.log("L'utilisateur est actif sur la page");
+// Vous pouvez exécuter d'autres actions ou déclencher des événements ici
+}
+
+// Fonction appelée lorsque l'utilisateur quitte la page
+function handleUserInactive() {
+inactiveTimeoutId = setTimeout(function() {
+// Créez une nouvelle instance de l'objet Date
+const currentDate = new Date();
+// Obtenez les différentes composantes de la date
+const year = currentDate.getFullYear(); // Année (ex: 2023)
+const month = currentDate.getMonth() + 1; // Mois (de 0 à 11, donc on ajoute 1)
+const day = currentDate.getDate(); // Jour du mois (de 1 à 31)
+const hours = currentDate.getHours().toString().padStart(2, '0'); // Heures (de 00 à 23)
+const minutes = currentDate.getMinutes(); // Minutes (de 0 à 59)
+//const seconds = currentDate.getSeconds(); // Secondes (de 0 à 59)
+var theOnlineDate = `${day}/${month}/${year}`
+var theOnlinehours = `${hours}h:${minutes}min`
+ const newDataCwqx = {
+  USERCONNECT : false,
+  ONLINEDATE : theOnlineDate,
+  ONLINEHOURS : theOnlinehours,
+  };
+
+  userRef.update(newDataCwqx, (error) => {
+    if (error){
+      //console.error("Erreur :", error);
+    }else{
+    //   console.log("N")
     }
+   })
+   // console.log("L'utilisateur a quitté la page");
+    // Mettre à jour le statut ou effectuer d'autres actions ici
+  }, 60000); // Délai de 60 secondes avant de mettre à jour le statut
+}
+
+// Appeler la fonction handleUserActive dès le chargement de la page
+handleUserActive();
+
+// Ajouter un écouteur d'événement pour détecter lorsque l'utilisateur interagit avec la page
+document.addEventListener("visibilitychange", function() {
+  if (document.visibilityState !== "visible") {
+    handleUserInactive();
+  } else {
+    handleUserActive();
+  }
+}); 
+// end function to userconnect
+}else if(user == null) {
+  window.location.href = "../v/login/login.html"
+}
+});
+}
     
     // function to update compte  
   const UserConnectuser = localStorage.getItem("unserconnect");
@@ -392,8 +512,9 @@
     </script>
 
     <!-- Inclure les bibliothèques Firebase que vous utilisez (par exemple, la base de données Firebase) -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
     <!-- Vendor JS Files -->
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
@@ -403,7 +524,7 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="./../alert/alert.js"></script>
-    <script src="./../v/userConnect.js"></script>
+   <!-- <script src="./../v/userConnect.js"></script>-->
     <script src="./../translate.js"></script>
     <script src="assets/js/main.js"></script>
   </body>

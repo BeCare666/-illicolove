@@ -4,13 +4,30 @@ $(document).ready(function() {
     lng: localStorage.getItem('selectedLanguage') || 'en',
     debug: true, 
     resources: {
-      fr: {
-       
+      fr: {  
+        
         translation : { 
           "phoneuserIDval":`votre téléphone`,
+          "IDTRANSLATEPROFIL45AQVASQMAILX":`Vous n'avez pas encore validé votre e-mail !`,
           "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> Vous devez envoyer votre pièce d'identité ici.`,
           "IDTRANSLATEFORM105LINKS":`Le lien n'est plus disponible.`,
+          "IDTRANSLATEPROFIL45AQ":`Vous devez finaliser votre compte.`,
+          "IDTRANSLATEPROFIL45AQVASQMAIL":`
+          <p style="text-align: justify !important;">
+          Cher utilisateur,<br><br>
+        
+          Nous espérons que ce message vous trouve en bonne santé. Merci de vous être inscrit sur notre plateforme !<br>
+      
+          Pour activer votre compte et profiter pleinement de nos services, veuillez valider votre adresse e-mail en cliquant sur le lien de confirmation que nous vous avons envoyé.<br>
+      
+          Veuillez vérifier votre boîte de réception (et éventuellement votre dossier de spam) pour trouver l'e-mail de confirmation. Si vous ne l'avez pas reçu, veuillez patienter quelques instants ou vérifier votre filtre anti-spam.<br>
+          Si vous rencontrez des difficultés pour trouver l'e-mail de confirmation, n'hésitez pas à nous contacter à l'adresse <a href="mailto:info@illicolove.com">info@illicolove.com</a>, et nous serons heureux de vous aider.
+          Merci pour votre compréhension et votre coopération.<br><br>
+          Meilleures salutations,<br><strong style="color: #FFB6C1;">illicolove</strong>
+      </p>
+      `,
           "IDTRANSLATE1": "Accueil",
+          "IDTRANSLATEUSERD29NOTVALIDATE": "Chers utilisateurs, veuillez patienter pendant que votre annonce est en cours de validation. Merci de votre compréhension !",
          // "IDTRANSLATE2": "À propos",
           "IDTRANSLATE3": `Comment ça fonctionne ?`,
           "IDTRANSLATE4": `Termes`,
@@ -460,7 +477,6 @@ $(document).ready(function() {
         "IDTRANSLATEPROFIL39":` Votre compte a bien été supprimé ! !`,
         "IDTRANSLATEPROFIL40":`Supprimé !`,
         "IDTRANSLATEPROFIL41":`Erreur lors de la suppression de l'utilisateur ! `,
-        "IDTRANSLATEPROFIL42":`Il y a une ERREUR`,
         "IDTRANSLATEPROFIL42Q":`Il y a une ERREUR`,
         "IDTRANSLATEPROFIL42QX":`Il y a une ERREUR`,
         "IDTRANSLATEPROFIL43":`Le champs n'est pas bien rempli !`, 
@@ -514,6 +530,7 @@ $(document).ready(function() {
         "IDTRANSLATESIGNUP16":`Succès`,
         "IDTRANSLATESIGNUP17":`Vous êtes inscrit avec succès !`,
         "IDTRANSLATESIGNUP18":` Erreur lors de l'envoi de l'adresse e-mail à Firebase `, 
+        "IDTRANSLATEFORGET14WWWW":`L'e-mail de réinitialisation du mot de passe a été envoyé avec succès !`,
         "IDTRANSLATESIGNUP19":`Ne mettez pas d'espace. Merci !`,
         "IDTRANSLATESIGNUP19PHONE":`Veuillez fournir un numéro de téléphone valide.`,
         "IDTRANSLATESIGNUP19PHONEX":`Veuillez fournir un numéro de téléphone valide.`,
@@ -809,9 +826,27 @@ $(document).ready(function() {
       es: {
         translation : {
           "phoneuserIDval":`su teléfono`,
+          "IDTRANSLATEPROFIL45AQVASQMAILX":`¡Aún no has validado tu correo electrónico!`,
           "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> Debes enviar tu documento de identidad aquí.`,
           "IDTRANSLATE1": "Inicio",
           "IDTRANSLATEFORM105LINKS":`El enlace ya no está disponible.`,
+          "IDTRANSLATEPROFIL45AQVASQMAIL":`<p style="text-align: justify !important;">
+          Estimado usuario,<br><br>
+      
+          Esperamos que este mensaje te encuentre bien. ¡Gracias por registrarte en nuestra plataforma!<br>
+      
+          Para activar tu cuenta y disfrutar plenamente de nuestros servicios, por favor valida tu dirección de correo electrónico haciendo clic en el enlace de confirmación que te hemos enviado.<br>
+      
+          Por favor, revisa tu bandeja de entrada (y posiblemente tu carpeta de spam) para encontrar el correo electrónico de confirmación. Si no lo has recibido, por favor espera unos momentos o revisa tu filtro de spam.<br>
+          Si tienes problemas para encontrar el correo electrónico de confirmación, no dudes en contactarnos en <a href="mailto:info@illicolove.com">info@illicolove.com</a>, ¡y estaremos encantados de ayudarte!
+          Gracias por tu comprensión y cooperación.<br><br>
+          Saludos cordiales,<br><strong style="color: #FFB6C1;">illicolove</strong>
+      </p>
+      ` ,
+          "IDTRANSLATEPROFIL45AQ":`Debe finalizar su cuenta.`,
+          "IDTRANSLATEUSERD29NOTVALIDATE":``,
+          "IDTRANSLATEUSERD29NOTVALIDATE": "Estimados usuarios, por favor esperen mientras su anuncio está siendo validado. ¡Gracias!",
+          "IDTRANSLATEFORGET14WWWW":`¡El correo electrónico de restablecimiento de contraseña se ha enviado `,
           "IDTRANSLATE2": " Sobre ",
           "IDTRANSLATE3": `Cómo funciona? `,
           "IDTRANSLATE4": `Términos `, 
@@ -1539,8 +1574,26 @@ Gracias por su comprensión y hasta pronto.
       
    translation : {
     "phoneuserIDval":`your phone`,
+    "IDTRANSLATEPROFIL45AQVASQMAILX":` You haven't validated your email yet!`,
     "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> You need to send your ID here.`,
     "IDTRANSLATEFORM105LINKS":`The link is no longer available.`,
+    "IDTRANSLATEPROFIL45AQVASQMAIL":`<p style="text-align: justify !important;">
+    Dear user,<br><br>
+
+    We hope this message finds you well. Thank you for signing up for our platform!<br>
+
+    To activate your account and enjoy our services fully, please validate your email address by clicking on the confirmation link we've sent you.<br>
+
+    Please check your inbox (and possibly your spam folder) to find the confirmation email. If you haven't received it, please wait a few moments or check your spam filter.<br>
+    If you're having trouble finding the confirmation email, feel free to contact us at <a href="mailto:info@illicolove.com">info@illicolove.com</a>, and we'll be happy to assist you.
+    Thank you for your understanding and cooperation.<br><br>
+    Best regards,<br><strong style="color: #FFB6C1;">illicolove</strong>
+</p>
+`,
+    "IDTRANSLATEPROFIL45AQ":`You need to finalize your account.`,
+    "IDTRANSLATEUSERD29NOTVALIDATE":``,
+    "IDTRANSLATEUSERD29NOTVALIDATE": "Dear users, please wait for your ad to be validated. Thank you!",
+    "IDTRANSLATEFORGET14WWWW":`The password reset email has been successfully sent! `,
     "TITLEIDPAIEID":`payment`,
     "IDTRANSLATE1": " Home ",
    // "IDTRANSLATE2": "À propos",
@@ -2284,8 +2337,22 @@ Welcome!`,
       kr:{
         translation : {
           "phoneuserIDval":`당신의 전화 `,
+          "IDTRANSLATEPROFIL45AQVASQMAILX":`이메일을 아직 확인하지 않으셨습니다!`,
           "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> 여기에 신분증을 보내셔야 합니다.`,
           "IDTRANSLATEFORM105LINKS":`링크를 사용할 수 없습니다.`,
+          "IDTRANSLATEPROFIL45AQVASQMAIL":`<p style="text-align: justify !important;">
+          소중한 사용자 여러분,<br><br>
+      
+          이 메시지가 여러분께 잘 전달되기를 바랍니다. 저희 플랫폼에 가입해 주셔서 감사합니다!<br>
+      
+          계정을 활성화하고 저희 서비스를 완전히 즐기시려면, 여러분께 보내드린 확인 링크를 클릭하여 이메일 주소를 확인해 주세요.<br>
+      
+          확인 이메일을 찾으려면 받은 편지함(스팸 메일함 포함)을 확인해 주세요. 만약 받지 못했다면, 잠시 기다리시거나 스팸 필터를 확인해 주세요.<br>
+          확인 이메일을 찾는 데 문제가 있으시면 <a href="mailto:info@illicolove.com">info@illicolove.com</a>으로 연락 주시면 도와드리
+      `,
+          "IDTRANSLATEPROFIL45AQ":`회원 가입을 완료해야 합니다.`,
+          "IDTRANSLATEUSERD29NOTVALIDATE": "소중한 사용자 여러분, 광고가 승인될 때까지 기다려 주세요. 감사합니다!",
+          "IDTRANSLATEFORGET14WWWW":`비밀번호 재설정 이메일이 성공적으로 발송되었습니다!`,
           "TITLEIDPAIEID":`지불 `,
           "IDTRANSLATE1": "홈",
          // "IDTRANSLATE2": "À propos",
@@ -3018,8 +3085,25 @@ illicolove.com 웹 사이트는 데이터의 보안 및 기밀성을 보장하�
       it:{
         translation : {
           "phoneuserIDval":`Il tuo telefono`,
+          "IDTRANSLATEPROFIL45AQVASQMAILX":`Non hai ancora convalidato la tua email!`,
           "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> Devi inviare qui il tuo documento d'identità.`,
           "IDTRANSLATEFORM105LINKS":`Il link non è più disponibile.`,
+          "IDTRANSLATEPROFIL45AQVASQMAIL":`<p style="text-align: justify !important;">
+          Gentile utente,<br><br>
+      
+          Speriamo che questo messaggio ti trovi bene. Grazie per esserti registrato sulla nostra piattaforma!<br>
+      
+          Per attivare il tuo account e godere pienamente dei nostri servizi, ti preghiamo di convalidare il tuo indirizzo email cliccando sul link di conferma che ti abbiamo inviato.<br>
+      
+          Controlla la tua casella di posta (e eventualmente la cartella dello spam) per trovare l'email di conferma. Se non l'hai ricevuta, attendi qualche istante o controlla il filtro dello spam.<br>
+          Se hai difficoltà a trovare l'email di conferma, non esitare a contattarci all'indirizzo <a href="mailto:info@illicolove.com">info@illicolove.com</a>, saremo lieti di assisterti.
+          Grazie per la tua comprensione e collaborazione.<br><br>
+          Cordiali saluti,<br><strong style="color: #FFB6C1;">illicolove</strong>
+      </p>
+      `,
+          "IDTRANSLATEPROFIL45AQ":`Devi finalizzare il tuo account.`,
+          "IDTRANSLATEUSERD29NOTVALIDATE": "Cari utenti, vi preghiamo di attendere che il vostro annuncio venga convalidato. Grazie!",
+          "IDTRANSLATEFORGET14WWWW":`La email per reimpostare la password è stata inviata con successo!`,
           "TITLEIDPAIEID":`Pagamento `,
           "IDTRANSLATE1": " Benvenuto ",
          // "IDTRANSLATE2": "À propos",
@@ -3766,8 +3850,25 @@ Benvenuto!`,
       jp:{
         translation : {
           "phoneuserIDval":`あなたの電話`,
+          "IDTRANSLATEPROFIL45AQVASQMAILX":`まだメールを確認していません！`,
           "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> ここにあなたの身分証明書を送ってください。`,
           "IDTRANSLATEFORM105LINKS":`リンクはもう利用できません。`,
+          "IDTRANSLATEPROFIL45AQVASQMAIL":`<p style="text-align: justify !important;">
+          お客様へ、<br><br>
+      
+          このメッセージがお手元に届きますように。弊社プラットフォームにご登録いただき、ありがとうございます！<br>
+      
+          アカウントを有効化し、当社のサービスをフルにご利用いただくには、お送りした確認リンクをクリックして、メールアドレスを確認してください。<br>
+      
+          確認メールを受信トレイ（およびスパムフォルダー）でご確認ください。受信されない場合は、しばらくお待ちいただくか、スパムフィルターを確認してください。<br>
+          確認メールが見つからない場合は、お気軽に<a href="mailto:info@illicolove.com">info@illicolove.com</a>までお問い合わせください。お手伝いさせていただきます。
+          ご理解とご協力、ありがとうございます。<br><br>
+          敬具、<br><strong style="color: #FFB6C1;">illicolove</strong>
+      </p>
+      `,
+          "IDTRANSLATEPROFIL45AQ":`アカウントを完了する必要があります。`,
+          "IDTRANSLATEUSERD29NOTVALIDATE": "皆様、広告の承認をお待ちください。ありがとうございます！",
+          "IDTRANSLATEFORGET14WWWW":`パスワードリセットのメールが正常に送信されました！`,
           "TITLEIDPAIEID":`支払い  `,
           "IDTRANSLATE1": "ホーム",
          // "IDTRANSLATE2": "À propos",
@@ -4499,8 +4600,25 @@ illicolove.comのサービスを利用する上で何か問題がある場合は
       cn:{
         translation : {
           "phoneuserIDval":`你的电话`,
+          "IDTRANSLATEPROFIL45AQVASQMAILX":`您还没有验证您的电子邮件！`,
           "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> 您需要在此处发送您的身份证件。`,
           "IDTRANSLATEFORM105LINKS":` 链接不再可用。`,
+          "IDTRANSLATEPROFIL45AQVASQMAIL":`<p style="text-align: justify !important;">
+          亲爱的用户，<br><br>
+      
+          希望这条消息能够找到您。感谢您注册我们的平台！<br>
+      
+          为了激活您的账户并充分享受我们的服务，请点击我们发送给您的确认链接来验证您的电子邮箱地址。<br>
+      
+          请检查您的收件箱（以及可能的垃圾邮件文件夹）以查找确认电子邮件。如果您没有收到，请稍等片刻或检查您的垃圾邮件过滤器。<br>
+          如果您无法找到确认电子邮件，请随时联系我们，邮箱地址为：<a href="mailto:info@illicolove.com">info@illicolove.com</a>，我们将乐意为您提供帮助。
+          感谢您的理解和合作。<br><br>
+          致以最诚挚的问候，<br><strong style="color: #FFB6C1;">illicolove</strong>
+      </p>
+      `,
+          "IDTRANSLATEPROFIL45AQ":`您需要完成您的帐户。`,
+          "IDTRANSLATEUSERD29NOTVALIDATE": "亲爱的用户，请等待您的广告通过验证。谢谢！",
+          "IDTRANSLATEFORGET14WWWW":`密码重置电子邮件已成功发送`,
           "TITLEIDPAIEID":`付款`,
           "IDTRANSLATE1": "接收",
          // "IDTRANSLATE2": "À propos",
@@ -5245,8 +5363,25 @@ Publisher不负责这些网站的可用性,也不能控制内容或验证这些�
         
    translation : {
     "phoneuserIDval":`ваш телефон`,
+    "IDTRANSLATEPROFIL45AQVASQMAILX":` Вы еще не подтвердили свою электронную почту!`,
     "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> Вы должны отправить свой идентификационный документ сюда.`,
     "IDTRANSLATEFORM105LINKS":`Ссылка больше недоступна.`,
+    "IDTRANSLATEPROFIL45AQVASQMAIL":`<p style="text-align: justify !important;">
+    Уважаемый пользователь,<br><br>
+
+    Надеемся, что это сообщение найдет вас в порядке. Спасибо за регистрацию на нашей платформе!<br>
+
+    Чтобы активировать свою учетную запись и полностью насладиться нашими услугами, пожалуйста, подтвердите свой адрес электронной почты, нажав на ссылку подтверждения, которую мы вам отправили.<br>
+
+    Пожалуйста, проверьте свой почтовый ящик (и возможно папку со спамом), чтобы найти письмо с подтверждением. Если вы его не получили, подождите несколько минут или проверьте свой фильтр спама.<br>
+    Если у вас возникли проблемы с поиском письма с подтверждением, не стесняйтесь связаться с нами по адресу <a href="mailto:info@illicolove.com">info@illicolove.com</a>, и мы будем рады вам помочь.
+    Благодарим за ваше понимание и сотрудничество.<br><br>
+    С наилучшими пожеланиями,<br><strong style="color: #FFB6C1;">illicolove</strong>
+</p>
+`,
+    "IDTRANSLATEPROFIL45AQ":`Вы должны завершить свой аккаунт.`,
+    "IDTRANSLATEUSERD29NOTVALIDATE": "Уважаемые пользователи, пожалуйста, подождите, пока ваше объявление будет проверено. Спасибо!",
+    "IDTRANSLATEFORGET14WWWW":`Электронное письмо для сброса пароля успешно отправлено!`,
     "TITLEIDPAIEID":`оплата `,
     "IDTRANSLATE1": " Прием ",
    // "IDTRANSLATE2": "À propos",
@@ -5996,8 +6131,25 @@ Publisher不负责这些网站的可用性,也不能控制内容或验证这些�
       pt:{
         translation : {
           "phoneuserIDval":`Seu telefone`,
+          "IDTRANSLATEPROFIL45AQVASQMAILX":`Você ainda não validou seu e-mail!`,
           "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> Você precisa enviar sua identidade aqui.`,
           "IDTRANSLATEFORM105LINKS":`O link não está mais disponível.`,
+          "IDTRANSLATEPROFIL45AQVASQMAIL":`<p style="text-align: justify !important;">
+          Prezado usuário,<br><br>
+      
+          Esperamos que esta mensagem o encontre bem. Obrigado por se cadastrar em nossa plataforma!<br>
+      
+          Para ativar sua conta e desfrutar plenamente de nossos serviços, por favor valide seu endereço de email clicando no link de confirmação que enviamos para você.<br>
+      
+          Por favor, verifique sua caixa de entrada (e possivelmente sua pasta de spam) para encontrar o email de confirmação. Se você não o recebeu, por favor aguarde alguns instantes ou verifique seu filtro de spam.<br>
+          Se estiver com dificuldades para encontrar o email de confirmação, sinta-se à vontade para nos contatar em <a href="mailto:info@illicolove.com">info@illicolove.com</a>, e teremos prazer em ajudá-lo.
+          Obrigado pela sua compreensão e cooperação.<br><br>
+          Atenciosamente,<br><strong style="color: #FFB6C1;">illicolove</strong>
+      </p>
+      `,
+          "IDTRANSLATEPROFIL45AQ":`Você precisa finalizar sua conta.`,
+          "IDTRANSLATEUSERD29NOTVALIDATE": "Caros usuários, por favor aguardem enquanto seu anúncio está sendo validado. Obrigado!",
+          "IDTRANSLATEFORGET14WWWW":`O e-mail de redefinição de senha foi enviado com sucesso!`,
           "TITLEIDPAIEID":`Pagamento `,
           "IDTRANSLATE1": " Início ",
          // "IDTRANSLATE2": "À propos",
@@ -6763,8 +6915,25 @@ Bem-vindo!`,
         
    translation : {
     "phoneuserIDval":`Ihr Telefon`,
+    "IDTRANSLATEPROFIL45AQVASQMAILX":`Sie haben Ihre E-Mail noch nicht bestätigt!`,
     "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> Sie müssen hier Ihren Ausweis senden.`,
     "IDTRANSLATEFORM105LINKS":`Der Link ist nicht mehr verfügbar.`,
+    "IDTRANSLATEPROFIL45AQVASQMAIL":`<p style="text-align: justify !important;">
+    Lieber Nutzer,<br><br>
+
+    Wir hoffen, dass diese Nachricht Sie gut erreicht. Vielen Dank für Ihre Anmeldung auf unserer Plattform!<br>
+
+    Um Ihr Konto zu aktivieren und unsere Dienste vollständig zu nutzen, bestätigen Sie bitte Ihre E-Mail-Adresse, indem Sie auf den Bestätigungslink klicken, den wir Ihnen geschickt haben.<br>
+
+    Überprüfen Sie bitte Ihren Posteingang (und möglicherweise Ihren Spam-Ordner), um die Bestätigungs-E-Mail zu finden. Wenn Sie sie nicht erhalten haben, warten Sie bitte einen Moment oder überprüfen Sie Ihren Spamfilter.<br>
+    Wenn Sie Probleme haben, die Bestätigungs-E-Mail zu finden, zögern Sie nicht, uns unter <a href="mailto:info@illicolove.com">info@illicolove.com</a> zu kontaktieren, und wir helfen Ihnen gerne weiter.
+    Vielen Dank für Ihr Verständnis und Ihre Mitarbeit.<br><br>
+    Mit freundlichen Grüßen,<br><strong style="color: #FFB6C1;">illicolove</strong>
+</p>
+`,
+    "IDTRANSLATEPROFIL45AQ":`Sie müssen Ihr Konto abschließen.`,
+    "IDTRANSLATEUSERD29NOTVALIDATE": "Liebe Nutzer, bitte warten Sie, bis Ihre Anzeige validiert ist. Danke!",
+    "IDTRANSLATEFORGET14WWWW":`Die E-Mail zum Zurücksetzen des Passworts wurde erfolgreich gesendet!`,
     "TITLEIDPAIEID":`Zahlung`,
     "IDTRANSLATE1": " Startseite ",
    // "IDTRANSLATE2": "À propos",
@@ -7485,8 +7654,25 @@ Herzlich willkommen!`,
         
    translation : {
     "phoneuserIDval":` هاتفك`,
+    "IDTRANSLATEPROFIL45AQVASQMAILX":` لم تقم بتأكيد بريدك الإلكتروني بعد!`,
     "infologoId":`<img src="./../assets/img/infologo.svg" alt=""> يجب عليك إرسال بطاقتك الشخصية هنا.`,
     "IDTRANSLATEFORM105LINKS":`الرابط غير متاح بعد الآن.`,
+    "IDTRANSLATEPROFIL45AQ":`يجب عليك إكمال حسابك.`,
+    "IDTRANSLATEPROFIL45AQVASQMAIL":`<p style="text-align: justify !important;">
+    عزيزي المستخدم،<br><br>
+
+    نأمل أن تصلك هذه الرسالة وأنت بخير. شكرًا لتسجيلك في منصتنا!<br>
+
+    لتفعيل حسابك والاستمتاع بخدماتنا بالكامل، يرجى تأكيد عنوان بريدك الإلكتروني عن طريق النقر على الرابط التأكيدي الذي أرسلناه لك.<br>
+
+    يرجى التحقق من صندوق الوارد الخاص بك (وربما مجلد البريد العشوائي) للعثور على رسالة التأكيد. إذا لم تستلمها، يرجى الانتظار لبضع دقائق أو التحقق من فلتر البريد العشوائي.<br>
+    إذا كنت تواجه مشكلة في العثور على رسالة التأكيد، فلا تتردد في الاتصال بنا على <a href="mailto:info@illicolove.com">info@illicolove.com</a>، وسنكون سعيدين بمساعدتك.
+    شكرًا لتفهمك وتعاونك.<br><br>
+    بأطيب التحيات،<br><strong style="color: #FFB6C1;">illicolove</strong>
+</p>
+`,
+    "IDTRANSLATEUSERD29NOTVALIDATE": "أعزاءنا المستخدمين، يرجى الانتظار حتى يتم تأكيد إعلانكم. شكرًا لكم!",
+    "IDTRANSLATEFORGET14WWWW":`تم إرسال بريد إلكتروني لإعادة تعيين كلمة المرور بنجاح!`,
     "TITLEIDPAIEID":`دفع `,
     "IDTRANSLATE1": "استقبال",
 
@@ -7526,9 +7712,9 @@ Herzlich willkommen!`,
     "IDTRANSLATETITLEFORM":"استمارة",
 
     "IDTRANSLATE1INF1":`يتم جمع عنوان بريدك الإلكتروني ومعالجته بواسطة BAKO FAMILIA&COMPANY لإبقائك على اطلاع بالميزات الجديدة لموقع الويب 
-والتحديثات illicolove.
-تطبيقًا للقانون 2017-20 بشأن الكود الرقمي في جمهورية بنين، بشأن حماية البيانات الشخصية، يمكنك إلغاء الاشتراك أو ممارسة حقوقك في الوصول والاعتراض والتصحيح والحذف عن طريق إرسال بريد إلكتروني إلى 
-info@illicolove.com`,
+      والتحديثات illicolove.
+      تطبيقًا للقانون 2017-20 بشأن الكود الرقمي في جمهورية بنين، بشأن حماية البيانات الشخصية، يمكنك إلغاء الاشتراك أو ممارسة حقوقك في الوصول والاعتراض والتصحيح والحذف عن طريق إرسال بريد إلكتروني إلى 
+      info@illicolove.com`,
 
     "IDTRANSLATE10":"illicolove,",
 
@@ -9179,6 +9365,7 @@ chevron-down"></i> `,
     $("#IDTRANSLATESIGNUP16").text(i18next.t("IDTRANSLATESIGNUP16"));
     $("#IDTRANSLATESIGNUP17").text(i18next.t("IDTRANSLATESIGNUP17"));
     $("#IDTRANSLATESIGNUP18").text(i18next.t("IDTRANSLATESIGNUP18"));
+    $("#IDTRANSLATEFORGET14WWWW").text(i18next.t("IDTRANSLATEFORGET14WWWW"));
     $("#IDTRANSLATESIGNUP19").text(i18next.t("IDTRANSLATESIGNUP19"));
     $("#IDTRANSLATESIGNUP19PHONE").text(i18next.t("IDTRANSLATESIGNUP19PHONE"));
     $("#IDTRANSLATESIGNUP19PHONEX").text(i18next.t("IDTRANSLATESIGNUP19PHONEX"));
@@ -9446,8 +9633,10 @@ chevron-down"></i> `,
     $("#TERMINATOR").text(i18next.t("TERMINATOR"));
     $("#PHOTOIDW").text(i18next.t("PHOTOIDW")); 
     $("#TERMINATORW").text(i18next.t("TERMINATORW"));
-    $("#IDTRANSLATEFORM105LINKS").text(i18next.t("IDTRANSLATEFORM105LINKS"));
-
+    $("#IDTRANSLATEFORM105LINKS").text(i18next.t("IDTRANSLATEFORM105LINKS")); 
+    $("#IDTRANSLATEPROFIL45AQ").text(i18next.t("IDTRANSLATEPROFIL45AQ"));
+    $("#IDTRANSLATEPROFIL45AQVASQMAIL").html(i18next.t("IDTRANSLATEPROFIL45AQVASQMAIL"));
+    $("#IDTRANSLATEUSERD29NOTVALIDATE").text(i18next.t("IDTRANSLATEUSERD29NOTVALIDATE"));
     $("#IDTRANSLATESIALERT1").text(i18next.t("IDTRANSLATESIALERT1"));
     $("#IDTRANSLATESIALERT2").text(i18next.t("IDTRANSLATESIALERT2"));
     $("#IDTRANSLATESIALERT3").text(i18next.t("IDTRANSLATESIALERT3"));
@@ -9487,8 +9676,9 @@ chevron-down"></i> `,
     $("#SITEID2").text(i18next.t("SITEID1"));
     $("#SITEID3").html(i18next.t("SITEID3"));
     $("#SITEID3").html(i18next.t("SITEID3"));
-    $("#TITTLETOSENDIDCNI").html(i18next.t("TITTLETOSENDIDCNI"));
+    $("#TITTLETOSENDIDCNI").html(i18next.t("TITTLETOSENDIDCNI")); 
     $("#phoneuserIDval").attr("placeholder", i18next.t("phoneuserIDval"));
+    $("#IDTRANSLATEPROFIL45AQVASQMAILX").attr("placeholder", i18next.t("IDTRANSLATEPROFIL45AQVASQMAILX"));
     
 }
   // Récupérer la langue sélectionnée à partir du stockage local

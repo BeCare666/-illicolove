@@ -39,6 +39,10 @@ const firebaseConfig = {
   
   // Récupérer un utilisateur par son ID
   function getUserById(userId) {
+    firebase.auth().onAuthStateChanged(function(user) { 
+      if(user === null){
+          window.location.href = "login.html"
+      }else{ 
     const database = firebase.database();
     const userRef = database.ref(`/utilisateurs/${userId}`);
   
@@ -174,6 +178,8 @@ const firebaseConfig = {
       .catch((error) => {
        // console.error("Erreur lors de la récupération de l'utilisateur :", error);
       });
+    }
+  })
   }
   
   // Exemple d'utilisation : Remplacez "ID_DE_L_UTILISATEUR" par l'ID de l'utilisateur que vous souhaitez récupérer.

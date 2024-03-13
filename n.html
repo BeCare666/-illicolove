@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>API Key: <span id="apiKey"></span></h3>
+        <h3>Auth Domain: <span id="authDomain"></span></h3>
+        <!-- Ajoutez d'autres éléments pour afficher d'autres variables d'environnement -->
+    </div>
+    
+    <script>
+       function sxw(){
+        fetch('/config')
+        .then(response => response.json())
+        .then(data => {
+            // Traitez les données reçues (les variables d'environnement)
+            console.log(data);
+            // Vous pouvez afficher les variables d'environnement dans votre interface utilisateur
+            // Par exemple :
+            document.getElementById('apiKey').innerText = data.apiKey;
+            document.getElementById('authDomain').innerText = data.authDomain;
+            // Ajoutez d'autres variables d'environnement ici...
+        })
+        .catch(error => {
+            console.error('Erreur lors de la récupération des configurations:', error);
+        });
+
+       }sxw()
+    </script>
+</body>
+</html>

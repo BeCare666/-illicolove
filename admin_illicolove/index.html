@@ -13,7 +13,8 @@
     <link href="./../assets/img/logoilli.jpeg" rel="icon">
     <!---Import firebase-->
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
-    <script  src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
 
   <!-- Link to import alert personnal -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
@@ -820,7 +821,7 @@
         };
         
         firebase.initializeApp(firebaseConfig);
-        const userRef = firebase.database().ref('utilisateurs');
+        const userRef = firebase.database().ref('/utilisateurs');
         const UserID = localStorage.getItem("userID")
         const yemail = localStorage.getItem("Yemail")
 
@@ -833,8 +834,12 @@
          var TableToTakeMonth = []
          var TableToTakeYear = []
 
-
-    const adminRef = firebase.database().ref('admin');
+        firebase.auth().onAuthStateChanged(function(user) { 
+        if(user === null){
+            window.location.href = "login.html"
+        }else{
+       
+    const adminRef = firebase.database().ref('/admin');
         userRef.once('value')
         .then((snapshot) => {
             
@@ -1056,6 +1061,7 @@
     var userAdmin2ID = "Ise2tPoAf0"
     //Mettre à jour les données dans la base de données
     adminRef.once('value', (snapshot) => {
+    let emailKey = null;
       const emails = snapshot.val();
       for (const key in emails) {
         if (emails.hasOwnProperty(key) && emails[key].email === inputTakeID.value) {
@@ -1065,7 +1071,16 @@
       }
 
       if (emailKey){
-        Swal.fire('Désolé !', 'cet administrateur existe déjà', 'error');
+        Swal.fire({
+            icon : "error",
+            title : "Désolé !",
+            text : "cet administrateur existe déjà",
+            allowOutsideClick: false,
+        }).then((result) => {
+            if (result.isConfirmed) {
+            location.reload();
+        }
+        })
       }else{
           //Mettre à jour les données dans la base de données
       adminRef.child(userAdmin2ID).update(updatedData, function(error) {
@@ -1146,6 +1161,7 @@
   var userAdmin2ID = "Ise2OPXAf0"
     // Filtrage des données pour trouver l'adresse e-mail spécifique
     adminRef.once('value', (snapshot) => {
+    let emailKey = null;
       const emails = snapshot.val();
       for (const key in emails) {
         if (emails.hasOwnProperty(key) && emails[key].email === inputTakeID.value) {
@@ -1155,7 +1171,16 @@
       }
 
       if (emailKey){
-        Swal.fire('Désolé !', 'cet administrateur existe déjà', 'error');
+        Swal.fire({
+            icon : "error",
+            title : "Désolé !",
+            text : "cet administrateur existe déjà",
+            allowOutsideClick: false,
+        }).then((result) => {
+            if (result.isConfirmed) {
+            location.reload();
+        }
+        })
       }else{
           //Mettre à jour les données dans la base de données
       adminRef.child(userAdmin2ID).update(updatedData, function(error) {
@@ -1208,7 +1233,8 @@
     } )
 
   })
-  
+}
+});  
   //function to logout 
   var LogoutID = document.getElementById('logoutID');
       LogoutID.addEventListener('click', function(){

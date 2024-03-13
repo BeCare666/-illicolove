@@ -29,21 +29,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.js"></script>
     <script src="https://unpkg.com/jquery"></script>
     <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
-    <!-- function to get country: eg: BJ-->
-    <script>
-      function recordData (data) {
-        //console.log(data.country)
-        var ipinfo = data.country
-        localStorage.setItem('alphacodeipinfo', ipinfo)
-      }
-    </script>
-    <script src="https://ipinfo.io/json?callback=recordData"></script>
-      <style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+    <style>
       * {
         font-family: 'Montserrat-bold', sans-serif;
         font-size: 14px !important;
       }
-    </style>
+    </style> 
+    <!-- function to get country: eg: BJ-->
   <script>
     window.onload = function(){
       if (/Mobi|Android/i.test(navigator.userAgent)) { 
@@ -57,6 +51,16 @@
   }
   </script>
     <title id="IDTRANSLATE8K"></title>
+    <script async
+    src="https://www.googletagmanager.com/gtag/js?id=G-H3FMR8VLEC">
+    </script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-H3FMR8VLEC');
+  </script>
   </head>
   <body id="MyIdBody">
     <section id="modalID" style="display: none;">
@@ -89,29 +93,11 @@
           <div class="col-md-7" >
             <h3 id="IDTRANSLATESIGNUP1"></h3>
             <form action="javascript:submitmy()" id="msform">
-              <div class="form-group first">
-                <label for="username" id="IDTRANSLATESIGNUP2"></label>
-                <input type="text" class="form-control" id="username" required>
-              </div>
-              <div class="form-group first">
-                <label for="username" id="IDTRANSLATESIGNUP4"></label>
-                <input type="text" class="form-control" id="name" required>
-              </div>
+               
               <div class="form-group first">
                 <label for="username" id="IDTRANSLATESIGNUP6"></label>
                 <input type="email" class="form-control" id="email" required>
-              </div>
-                <div class="form-group first">
-                <label for="username" id="IDTRANSLATESIGNUP6X"></label>
-               <div style="display: flex;" id="divWrapper">
-                <div id="myphone" style="pointer-events: none !important;">
-                <input type="tel"  id="phone" name="phone" style="width: 10px !important; height: 30px !important;">
-                </div>&nbsp;
-                <input type="text" class="form-control" id="phoneuserID" required style="width: 40px !important; height: 30px !important;" readonly>
-                <input type="text" class="form-control"  id="phoneuserIDval" >
-               </div>
-                 
-              </div>
+              </div>    
               <div class="form-group last mb-3">
                 <label for="password" id="IDTRANSLATESIGNUP8"></label>
                 <div style="display: flex !important;">
@@ -154,359 +140,14 @@
   </section>
   </section>
   <div id="preloader" style="display: none;"></div>
-  <script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
-    authDomain: "illicolove0.firebaseapp.com",
-    databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
-    projectId: "illicolove0",
-    storageBucket: "illicolove0.appspot.com",
-    messagingSenderId: "687063035754",
-    appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
-  };
-  firebase.initializeApp(firebaseConfig);
-
-  // Référence Firebase contenant les adresses e-mails
-  // Écoute de l'événement "click" sur le bouton de recherche
-  function submitmy(){ 
-  const emailRef = firebase.database().ref('utilisateurs');
-
-    document.getElementById('preloader').style.display = "block"
-    var fullname = document.getElementById('name').value
-    var username = document.getElementById('username').value
-    const email = document.getElementById('email').value;
-    var password = document.getElementById('password').value
-    var phoneuserIDvalue = document.getElementById('phoneuserIDval').value
-    const Nameofcountryval = localStorage.getItem('Nameofcountry')
-    const DefaultValueval = localStorage.getItem('DefaultValue')
-    var numberphoneuser = DefaultValueval + phoneuserIDvalue
-    //alert(numberphoneuser)
-    // Ajoutez un gestionnaire d'événements pour l'événement "input"
-    const emailInput = document.getElementById('email').value;
-
-    if(phoneuserIDvalue.trim() === ""){
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: i18next.t('IDTRANSLATESIGNUP19PHONE'),
-        showConfirmButton: false,
-        timer: 1500
-       // footer: '<a href="">Why do I have this issue?</a>'
-      })
-       
-    }
-
-    if(/^\d{7,}$/.test(phoneuserIDvalue)){
-
-    }else{
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: i18next.t('IDTRANSLATESIGNUP19PHONEX'),
-        showConfirmButton: false,
-        timer: 1500
-       // footer: '<a href="">Why do I have this issue?</a>'
-      })
-    }
-
-    if(email && fullname && username && password && Nameofcountryval && numberphoneuser
-    && phoneuserIDvalue !=="" && /^\d{7,}$/.test(phoneuserIDvalue)){
-    let emailKey = null;
-    let numberphoneuserKey = null;
-    // Filtrage des données pour trouver l'adresse e-mail spécifique
-    emailRef.once('value', (snapshot) => {
-      const emails = snapshot.val();
-      for (const key in emails) {
-        if (emails.hasOwnProperty(key) && emails[key].email === emailInput ) {
-          emailKey = key;
-          break;
-        }
-      }
-
-      for (const keyphone in emails) {
-        if (emails.hasOwnProperty(keyphone) && emails[keyphone].TELEPHONE === numberphoneuser ) {
-          numberphoneuserKey = keyphone;
-          break;
-        }
-      }
-     
-      if (emailKey || numberphoneuserKey) {
-        // L'adresse e-mail a été trouvée
-        document.getElementById('preloader').style.display = "none"
-        const email = emails[emailKey];
-        document.getElementById('username').value = ""
-        document.getElementById('email').value = ""
-        document.getElementById('name').value = ""
-        document.getElementById('password').value = ""
-
-        document.getElementById('contentSignup').style.display = "none" 
-        document.getElementById('modalID').style.display = "block"
-        var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
-        dreamIndemo.click();
-        document.getElementById('iconid').innerHTML = `  <img src="./../formulaire/assets/imageNoSucess.svg" alt=""></i>`
-        document.getElementById('etatalert').innerHTML = `<p id="IDTRANSLATESIGNUP14" style="color: black !important;"></p>`
-        document.getElementById('smsalert').innerHTML = `<p id="IDTRANSLATESIGNUP15" style="color: black !important;"></p>`
-        setTimeout(()=>{
-        document.getElementById('contentSignup').style.display = "block" 
-        document.getElementById('modalID').style.display = "none" 
-        },5000)
-        //alert(`L'adresse e-mail ${email.email} de ${emailKey}a été trouvée dans Firebase !`)
-        var texteTraduitprofil14X = i18next.t("IDTRANSLATESIGNUP14");
-        $('[id="IDTRANSLATESIGNUP14"]').text(texteTraduitprofil14X);
-
-        var texteTraduitprofil15X = i18next.t("IDTRANSLATESIGNUP15");
-        $('[id="IDTRANSLATESIGNUP15"]').text(texteTraduitprofil15X);
-
-      } else {
-      document.getElementById('preloader').style.display = "none"
-        //L'adresse e-mail n'a pas été trouvée
-      //alert(`L'adresse e-mail ${emailInput} n'a pas été trouvée dans Firebase.`)
-
-    //console.log(monthAbbreviation);
-
-      // Inscription de l'utilisateur avec Firebase Authentication
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        // L'utilisateur est inscrit avec succès
-        const user = userCredential.user;
-        const userwId = user.uid;
-        localStorage.setItem("wmyuserId", userwId)
-        // Envoi de l'e-mail de vérification
-        user.sendEmailVerification()
-          .then(() => {
-            // E-mail de vérification envoyé avec succès
-            console.log('E-mail de vérification envoyé à :', user.email);
-            // Redirection vers une page de confirmation ou affichage d'un message à l'utilisateur
-            createdatabase()
-          })
-          .catch((error) => {
-            // Gestion des erreurs lors de l'envoi de l'e-mail de vérification
-            console.error('Erreur lors de l\'envoi de l\'e-mail de vérification :', error);
-          });
-      })
-      .catch((error) => {
-        // Gestion des erreurs lors de l'inscription de l'utilisateur
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error('Erreur lors de l\'inscription de l\'utilisateur :', errorMessage);
-      });
- 
-  function createdatabase(){
-      var userID = localStorage.getItem("wmyuserId")
-      //var userID = username + userId
-      // Récupération de l'adresse mail entrée par l'utilisateur
-      // Envoi de l'adresse mail à Firebase
-      // Créez une nouvelle instance de l'objet Date
-      const currentDate = new Date();
-      // Obtenez les différentes composantes de la date
-      const year = currentDate.getFullYear(); // Année (ex: 2023)
-      const month = currentDate.getMonth() + 1; // Mois (de 0 à 11, donc on ajoute 1)
-      const day = currentDate.getDate(); // Jour du mois (de 1 à 31)
-      const hours = currentDate.getHours(); // Heures (de 0 à 23)
-      const minutes = currentDate.getMinutes(); // Minutes (de 0 à 59)
-      const seconds = currentDate.getSeconds(); // Secondes (de 0 à 59)
-      firebase.database().ref('utilisateurs/' + userID).set({
-          userId : userID,
-          email: email,
-          fullname: fullname,
-          username : username,
-          password : password,
-          MAVILLEDERESIDENCE : "",
-          MYCOUNTRY :Nameofcountryval,
-          MANATIONNALITE : "",
-          MONTRAVAILLEOUOCCUPATION : "",
-          MASITUATIONMATRIMONIALE : "",
-          MONAGE:"",
-          MATAILLE:"",
-          MONPOIDS:"",
-          MONTEINT:"",
-          QUESTIONUNIQUE:"",
-          COMPTECREDIT: 3,
-          COMPTECREDITSATUS: false,
-          isDefaultAccount: true,
-          isPaidAccount: false,
-          MONPAYSDEPUBLICATION:"",
-          VALIDERMONCOMPTE:false,
-          MONCOMPTESUSPENDU:false,
-          ALERTVALIDERMACIP : false,
-          COMPTEFACEBOOK:"",
-          COMPTEINSATAGRAMME:"",
-          MONSEXE:"",
-          TELEPHONE:numberphoneuser,
-          JEVEUXUNERENCONTRE:"", 
-          PIECESDIDENTITE:"",
-          MESDEUXPHOTOS:"",
-          MESDEUXPHOTO2:"",
-          SEXEDEPROFILQUEJECHERCHE:"",
-          SONAGEDEPROFILQUEJECHERCHE:"",
-          SITUATIONMATRIMONIALEDEPROFILQUEJECHERCHE:"",
-          PAYSDERESIDENCEDEPROFILQUEJECHERCHE:"",
-          PHYSIQUEDEPROFILQUEJECHERCHE:"",
-          VILLEDHABITATIONDEPROFILQUEJECHERCHE:"",
-          TRAVAILDEDEPROFILQUEJECHERCHE:"",
-          AUTRESPRECISIONSDEPROFILQUEJECHERCHE:"",
-          IDREGION : "",
-          QUESTIONSECUREPASSWORDSTATUS : false,
-          QUESTIONSECUREPASSWORD : "",
-          QUESTIONSECUREPASSWORDRESPONSE : "",
-          USERCONNECT : false,
-          DATETIME : `${day}/${month}/${year}`,
-          ONLINEDATE : "",
-          ONLINEHOURS : "",
-          COMMISSION : "0",
-          GETALLWALLET : "",
-          STATUSAFILIATE : false,
-          TAKEMYIDAFILIAT : "",
-          AMOUNTALREDYPAID : "0"
-
-
-
-      }).then(() => {
-        document.getElementById('username').value = ""
-        document.getElementById('email').value = ""
-        document.getElementById('name').value = ""
-        document.getElementById('password').value = ""
-        document.getElementById('contentSignup').style.display = "none" 
-        document.getElementById('modalID').style.display = "block"
-        var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
-        dreamIndemo.click();
-        document.getElementById('iconid').innerHTML = `  <img src="./../formulaire/assets/imageSucess.svg" alt=""></i>`
-        document.getElementById('etatalert').innerHTML = `<p id="IDTRANSLATESIGNUP16" style="color: black !important;"></p>`
-        document.getElementById('smsalert').innerHTML = `<p id="IDTRANSLATESIGNUP17" style="color: black !important;"></p>`
-        setTimeout(()=>{
-        document.getElementById('contentSignup').style.display = "block" 
-        document.getElementById('modalID').style.display = "none"
-        //alert("Adresse mail envoyée à Firebase !");
-        localStorage.setItem('unserconnect', userID)
-        localStorage.setItem('unserconnectmail', email)
-
-        window.location.href = "validemail.html"
-
-        },7000)
-        var texteTraduitprofil16X = i18next.t("IDTRANSLATESIGNUP16");
-        $('[id="IDTRANSLATESIGNUP16"]').text(texteTraduitprofil16X);
-
-        var texteTraduitprofil17X = i18next.t("IDTRANSLATESIGNUP17");
-        $('[id="IDTRANSLATESIGNUP17"]').text(texteTraduitprofil17X);
-      }).catch((error) => {
-        Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: i18next.t('IDTRANSLATESIGNUP18'),
-        showConfirmButton: false,
-        timer: 1500
-       // footer: '<a href="">Why do I have this issue?</a>'
-      })
-          //alert("Erreur lors de l'envoi de l'adresse mail à Firebase :", error);
-      });
-  }
-    }
-    });
-
-  }else{
-  //alert("les données ne sont pas")
-  document.getElementById('preloader').style.display = "none"
- }
-}
-
-
-  var checkbox = document.getElementById("myCheckbox");
-  var ToSignupID = document.getElementById("toSignupID");
-  var AcceptID = document.getElementById("acceptID");
-  var ReadID = document.getElementById("readID");
-
-  checkbox.addEventListener("change", function() {
-    if (checkbox.checked) {
-      ToSignupID.disabled = false;  // Activer le bouton
-      AcceptID.style.display = "block "
-      ReadID.style.display = "none"
-    } else {
-      ToSignupID.disabled = true;   // Désactiver le bouton
-      AcceptID.style.display = "none"
-      ReadID.style.display = "block"
-    }
-  });
-
-
-   
-  var username = document.getElementById('username')
-    username.addEventListener('input', function(event) {
-      var inputValue = event.target.value;
-      
-      // Vérifiez si la valeur contient des espaces
-      if (inputValue.includes(' ')) {
-        // Supprimez les espaces de la valeur
-        event.target.value = inputValue.replace(/\s/g, '');
-        Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: i18next.t('IDTRANSLATESIGNUP19'),
-        showConfirmButton: false,
-        timer: 1500
-       // footer: '<a href="">Why do I have this issue?</a>'
-      })
-      }
-    });
-
-    {/*//function to control password
-    const passwordInput = document.getElementById('password');
-    const passwordStrengthIndicator = document.getElementById('password-strength-indicator');
-
-    passwordInput.addEventListener('input', validatePassword);
-
-    function validatePassword() {
-      const password = passwordInput.value;
-      const passwordStrength = calculatePasswordStrength(password);
-
-      // Afficher la force du mot de passe à l'utilisateur
-      passwordStrengthIndicator.textContent = `Force du mot de passe : ${passwordStrength}`;
-
-      // Vérifier si le mot de passe contient des caractères spéciaux
-      const containsSpecialChars = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password);
-
-      // Si le mot de passe contient des caractères spéciaux, afficher un message d'erreur
-      if (containsSpecialChars) {
-        alert('Le mot de passe ne doit pas contenir de caractères spéciaux.');
-      } else {
-        passwordInput.setCustomValidity('');
-      }
-    }*/}
-
-    function calculatePasswordStrength(password) {
-      // Logique pour calculer la force du mot de passe
-      // Vous pouvez utiliser des critères tels que la longueur, la présence de chiffres, de lettres majuscules, de lettres minuscules, etc.
-      // Dans cet exemple, nous utilisons simplement la longueur du mot de passe comme indicateur de force
-      const passwordLength = password.length;
-
-      if (passwordLength < 8) {
-        return 'Faible';
-      } else if (passwordLength >= 8 && passwordLength < 12) {
-        return 'Moyenne';
-      } else {
-        return 'Forte';
-      }
-    }
-
-   {/* const togglePasswordButton = document.getElementById('toggle-password');
-
-    togglePasswordButton.addEventListener('click', togglePasswordVisibility);
-
-    function togglePasswordVisibility() {
-      if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        togglePasswordButton.innerText = 'O';
-      } else {
-        passwordInput.type = 'password';
-        togglePasswordButton.innerText = 'X';
-      }
-    }*/}
-  </script>
   <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="signup.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap-4-min.js"></script>
   <script src="js/main.js"></script>
   <script src="./../../translate.js"></script>
-  <script src="signup.js"></script>
+  <script src="./../../t-analytics.js"></script>
   </body>
 </html>
     

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un rendez-vous Google Calendar</title>
+</head>
+<body>
+    <button onclick="createGoogleEvent()">Créer un rendez-vous</button>
+
+    <script>
+        function createGoogleEvent() {
+            // Paramètres pour le rendez-vous
+            var eventName = encodeURIComponent('Titre de l\'événement');
+            var eventDescription = encodeURIComponent('Description de l\'événement');
+            var startDate = '2024-02-21T12:00:00'; // Format: YYYY-MM-DDTHH:MM:SS
+            var endDate = '2024-02-21T13:00:00'; // Format: YYYY-MM-DDTHH:MM:SS
+
+            // URL de création du rendez-vous Google Calendar
+            var googleCalendarUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + eventName + '&details=' + eventDescription + '&dates=' + startDate + '/' + endDate;
+
+            // Ouvrir le lien dans une nouvelle fenêtre
+            window.open(googleCalendarUrl, '_blank');
+        }
+    </script>
+</body>
+</html>

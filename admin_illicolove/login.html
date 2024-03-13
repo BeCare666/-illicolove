@@ -19,6 +19,7 @@
         rel="stylesheet">
         <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -52,7 +53,7 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Entrer les identifiants pour vous 
-                                            connecter à l'administration illicolove.</h1>
+                                            authentifier à l'administration illicolove.</h1>
                                     </div>
                                     <form class="user" action="javascript:submitmy()">
                                         <div class="form-group">
@@ -107,87 +108,72 @@
         };
         firebase.initializeApp(firebaseConfig);
       
-          // Créer une référence à la base de données Firebase
-      const dbRef = firebase.database().ref();
-      
-      // Obtenez une référence à l'emplacement contenant les données d'utilisateur
-      const usersRef = dbRef.child("admin");
+        // Créer une référence à la base de données Firebase
+        const dbRef = firebase.database().ref();
+        // Obtenez une référence à l'emplacement contenant les données d'utilisateur
+        const usersRef = dbRef.child("utilisateurs");
+          // Écoute de l'événement "click" sur le bouton de recherche
+          // Écoute de l'événement "click" sur le bouton de recherche ToacceptCookies
 
-// Écoute de l'événement "click" sur le bouton de recherche
-// Écoute de l'événement "click" sur le bouton de recherche
-function submitmy(){
- const email = document.getElementById('exampleInputEmail').value;
- //const ExampleInputnom = document.getElementById('exampleInputnom').value; 
-const CodeAcces = document.getElementById('exampleInputcode').value;
-const loginAdminId = document.getElementById('LoginAdminId')
-
-// Utilisez la méthode Firebase once() pour obtenir une copie des données de l'utilisateur à partir de la base de données
-// Utilisez la méthode Firebase once() pour obtenir une copie des données de l'utilisateur à partir de la base de données
-usersRef.orderByChild("email").equalTo(email).once("value", function(snapshot) {
-if (snapshot.exists()) {
-  snapshot.forEach(function(userSnapshot) {
-    // Vérifiez si le mot de passe de l'utilisateur correspond au mot de passe donné
-    if (userSnapshot.val().codeAcces === CodeAcces) {
-        loginAdminId.style.display = "none"
-        document.getElementById('exampleInputEmail').value = ""
-        document.getElementById('exampleInputcode').value.value = ""
-        Swal.fire({
-        title: 'Connexion avec succèss',
-        icon: 'success',        
-        allowOutsideClick: false,
-        confirmButtonText: `Accéder à l'admin !`,
-        }).then((result) => {
-        var userId =  userSnapshot.val().userId
-        var yemail =  userSnapshot.val().email
-        localStorage.setItem("userID", userId)
-        localStorage.setItem("Yemail", yemail)
-        if (result.isConfirmed) {
-        window.location.href = "index.html"
-    }
-})
-
-    } else {
-        Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: `Le code n'est pas valide`,
-        timer: 3000,
-        }).then(()=>{
-            if (result.isConfirmed) {
-                loginAdminId.style.display = "block"
-    }
+        const loginAdminId = document.getElementById('LoginAdminId')
+        function submitmy(){
+        const email = document.getElementById('exampleInputEmail').value;
+        const password = document.getElementById('exampleInputcode').value;
+        firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {             
+              var user = userCredential.user;
+              var useruid = user.uid;
+              var userAdEmail = user.email;
+              if(useruid === "UZbHm3NSUqQaojk68RKizCQwdTz2"){
+                loginAdminId.style.display = "none"
+              document.getElementById('exampleInputEmail').value = ""
+                document.getElementById('exampleInputcode').value.value = ""
+                Swal.fire({
+                title: 'Authentification avec succèss',
+                icon: 'success',        
+                allowOutsideClick: false,
+                confirmButtonText: `Connectez-vous à l'admin !`,
+                }).then((result) => {
+                if (result.isConfirmed) {
+                window.location.href = "loginauth.html"
+            }
         })
-    setTimeout(()=>{
-        loginAdminId.style.display = "block"
-    },3000)
-    }
-  });
-} else {
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: `Vous n'êtes pas confirgueré en tan que Admin !`,
-        timer: 3000,
-        }).then(()=>{
+        }else{
+            Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: `E-mail ou mot de passe incorrect `,
+            timer: 5000,
+            }).then((result)=>{
             if (result.isConfirmed) {
-                loginAdminId.style.display = "block"
-    }
+            loginAdminId.style.display = "block"
+        }
+            })
+        }
         })
-        setTimeout(()=>{
-        loginAdminId.style.display = "block"
-    },3000)
-}
-});
-
-      
-}
-
-
-      </script>
+        .catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.log(errorMessage)
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: `Vous n'êtes pas confirgueré en tan que Admin !`,
+            timer: 3000,
+            }).then((result)=>{
+                if (result.isConfirmed) {
+                loginAdminId.style.display = "block"
+        }
+            })
+            setTimeout(()=>{
+            loginAdminId.style.display = "block"
+        },3000)
+        });     
+      }
+        </script>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 

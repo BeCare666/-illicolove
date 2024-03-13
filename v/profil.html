@@ -27,6 +27,7 @@
     <!-- Inclure les bibliothèques Firebase que vous utilisez (par exemple, la base de données Firebase) -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -62,6 +63,16 @@
  
     }
    }
+  </script>
+  <script async
+  src="https://www.googletagmanager.com/gtag/js?id=G-H3FMR8VLEC">
+  </script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'G-H3FMR8VLEC');
   </script>
 </head>
 <body>
@@ -447,15 +458,12 @@ style="background-color: #f38e9d !important;"
    function PUBLIEZUNEANNONCE(){
       window.location.href="choix.html"
    }
- 
    function CONSULTEZLESANNONCES(){
-    window.location.href="consulte.html"
+      window.location.href="consulte.html"
    }
-
   </script>
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-    const firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
     authDomain: "illicolove0.firebaseapp.com",
     databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
@@ -463,24 +471,14 @@ style="background-color: #f38e9d !important;"
     storageBucket: "illicolove0.appspot.com",
     messagingSenderId: "687063035754",
     appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
-};
-      // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    import {
-      getDatabase,
-      ref,
-      set,
-      update,
-      child,
-      onValue,
-      remove,
-      get,
-    } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+  };
+  //const UserConnectuser = localStorage.getItem("unserconnect");
+  // Initialisation de Firebase
+  firebase.initializeApp(firebaseConfig);
 
-    import { getStorage, getDownloadURL 
-    } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"      
-    const db = getDatabase();
-    const UserConnectuser = localStorage.getItem("unserconnect");
+  const database = firebase.database();
+  
+    const userId = localStorage.getItem("unserconnect");
     var userMyID = document.getElementById('userMyID'); 
     var myUnityID = document.getElementById('myUnityID');
     var MyCommiID = document.getElementById('myCommiID');
@@ -495,49 +493,34 @@ style="background-color: #f38e9d !important;"
     var myAccountID = document.getElementById('myAccountID')
     var tableTotakePaiement = []
     var  base64Contenttable = []
-    $(document).ready(function() {
-    // Ajoutez un gestionnaire d'événement de clic à toutes les images avec la classe "clickable-image"
-    $(".clickable-image").click(function() {
-      // Retirez la classe "clicked" de toutes les images pour réinitialiser les autres cadres
-      $(".clickable-image").removeClass("clicked");
-      tableTotakePaiement.push(clickedImageId)
-      var payYourUnity = document.getElementById('payYourUnity');
-      if (!payYourUnity.checkValidity()) {       
-      }else {
-      $("#payYourUnitybtn").prop("disabled", false);
-      $("#payYourUnitybtnd").prop("disabled", false);
-       // Ajoutez la classe "clicked" à l'image cliquée pour afficher le cadre rouge
-       $(this).addClass("clicked");
-     }
-     var clickedImageId = $(this).attr("id");
-      var fees = "INTOUCH"
-      if(clickedImageId===fees){
-        var payYourUnitybtn = document.getElementById('payYourUnitybtn');
-        payYourUnitybtn.style.display = "block"
-        var payYourUnitybtnd = document.getElementById('payYourUnitybtnd');
-        payYourUnitybtnd.style.display = "none"
-      }else{
-        var payYourUnitybtnd = document.getElementById('payYourUnitybtnd');
-        payYourUnitybtnd.style.display = "block"
-        var payYourUnitybtn = document.getElementById('payYourUnitybtn');
-        payYourUnitybtn.style.display = "none"
-      }
-    });
-  });
-    const dbref = ref(db);
-    
-    get(child(dbref, "utilisateurs/" + UserConnectuser))
+
+    firebase.auth().onAuthStateChanged(function(user) { 
+      if(user){
+      var userId = user.uid;
+      const userRef = database.ref(`/utilisateurs/${userId}`);
+      userRef.once("value")
       .then((snapshot) => {
       document.getElementById('preloader').style.display = "none"
       if (snapshot.exists()) {
-
+        var iddatabase = snapshot.val().userId
+        if(!iddatabase){
+          Swal.fire({
+          icon: 'info',
+          allowOutsideClick: false,
+          text:  i18next.t('IDTRANSLATEPROFIL45AQ'),
+        }).then((result)=>{
+        if(result.isConfirmed){
+          window.location.href = "./login/end.html"
+        }
+        })
+        }
        //function to generate affilition link
         const linkInput = document.getElementById('linkInput');
         const copyButton = document.getElementById('affiliateID');
         //linkInput.value = `Copier ici votre lien d'affiliation.`
         // function to hide border when you click
         copyButton.addEventListener('click', () => {
-        linkInput.value = `https://illicolove.com?id=${UserConnectuser}`
+        linkInput.value = `https://illicolove.com?id=${userId}`
         linkInput.select(); // Sélectionne le texte dans l'input
         document.execCommand('copy'); // Copie le texte sélectionné dans le presse-papiers
         });
@@ -624,12 +607,9 @@ style="background-color: #f38e9d !important;"
          $('[id="IDTRANSLATEPROFIL12"]').text(texteTraduit12);
          var texteTraduit45X = i18next.t("IDTRANSLATEPROFIL46");
          $('[id="IDTRANSLATEPROFIL46"]').text(texteTraduit45X);
-
-         
-
          //function to update password
-         if(snapshot.val().QUESTIONSECUREPASSWORDSTATUS == false){
-          setTimeout(()=>{ btnSecureAccount
+         if(snapshot.val().QUESTIONSECUREPASSWORDSTATUS == false && snapshot.val().email != ""){
+           setTimeout(()=>{ //btnSecureAccount
           var monModal = document.getElementById('modalToSecurepasseword');
 
           var exampleFormControlSelect1 = document.getElementById('RxampleFormControlSelect1');
@@ -663,51 +643,56 @@ style="background-color: #f38e9d !important;"
           var userMyName = snapshot.val().username
           var fxampleFormControlInput1 = exampleFormControlInput1.value
           var PexampleFormControlSelect1 = exampleFormControlSelect1.value
-          update(ref(db, "utilisateurs/" + UserConnectuser), {
+          const newData = {
             QUESTIONSECUREPASSWORDRESPONSE: fxampleFormControlInput1,
             QUESTIONSECUREPASSWORD: PexampleFormControlSelect1,
             QUESTIONSECUREPASSWORDSTATUS: true,
-                  }).then(() => {  
+            };
+            userRef.update(newData, (error) => {
+              if (error){
+                Swal.fire({
+                text: i18next.t('IDTRANSLATEPROFIL45'),
+                icon: 'error'
+                }); 
+              }else{
                   monModal.classList.add('hide');
                   monModal.style.display = 'none';
                   Swal.fire({
                   icon: 'success',
                   title: i18next.t('congratulationsTitle'),
                   text: i18next.t('accountSecureMessage'),
-                  showConfirmButton: false,
-                  timer: 5000
+                  showConfirmButton: true,
+                  allowOutsideClick: false,
                 // footer: '<a href="">Why do I have this issue?</a>'
+                }).then((result)=>{
+                if(result.isConfirmed){
+                  window.location.href = "profil.html"
+                }
                 })
-                // alert("Votre compte est arrivé à terme !")         
-                 // window.location.reload()
-                })
-                .catch((error) => {
-                Swal.fire({
-                text: i18next.t('IDTRANSLATEPROFIL45'),
-                icon: 'error'
-                }); 
-
-                });
+              }
+             })
           })
           },500)
          }else{
 
          }
+
+
           //function to change status user
           if(snapshot.val().COMPTECREDIT === 0 && snapshot.val().COMPTECREDITSATUS == false){
-            update(ref(db, "utilisateurs/" + UserConnectuser), {
-                 COMPTECREDITSATUS: true,
+            const newDatax = {
+              COMPTECREDITSATUS: true,
                  isDefaultAccount: false,
                  isPaidAccount: true,
-                  }).then(() => {  
-                  //var dreamIndemo = document.getElementById("dreamIndemo"); // Remplacez "nom-du-bouton" par l'ID réel de votre bouton
-                 // dreamIndemo.click();
-                 // document.getElementById('iconid').innerHTML = ` <img src="./.././illicolovx/formulaire/assets/imageNoSucess.svg" alt="">`
-                 // document.getElementById('etatalert').innerText = "Info"
-                 // document.getElementById('smsalert').innerHTML = `
-                 // Votre compte est en cours de validation, vous ne pouvez pas effectuer de paiement ! Merci ! <br>
-                 // `
-                 Swal.fire({
+            };
+            userRef.update(newDatax, (error) => {
+              if (error){
+                Swal.fire({
+                      text: i18next.t('IDTRANSLATEPROFIL45'),
+                      icon: 'error'
+                      }); 
+              }else{
+                Swal.fire({
                   icon: 'info',
                   html: i18next.t('IDTRANSLATEPROFIL28'),
                   allowOutsideClick: false,
@@ -724,15 +709,9 @@ style="background-color: #f38e9d !important;"
                 }
                 })
 
-                 // window.location.reload()
-                    })
-                    .catch((error) => {
-                      Swal.fire({
-                      text: i18next.t('IDTRANSLATEPROFIL45'),
-                      icon: 'error'
-                      }); 
+              }
+             })
 
-                    });
               debyID.innerHTML = `${snapshot.val().COMPTECREDIT}`;
           }else{
            
@@ -825,29 +804,30 @@ style="background-color: #f38e9d !important;"
         cancelButtonText : i18next.t('IDTRANSLATEPROFIL29FILE1'),
         confirmButtonText :i18next.t('IDTRANSLATEPROFIL29FILE2')
       }).then((result)=>{
-        const db = getDatabase();
-        const UserConnectuser = localStorage.getItem("unserconnect");
+        const userId = localStorage.getItem("unserconnect");
         if (result.isConfirmed) {
-          update(ref(db, "utilisateurs/" + UserConnectuser), {
+
+          const newDataq = {
             PIECESDIDENTITE : photourl,
-          }).then(() => {
-          Swal.fire({
-          title: i18next.t('IDTRANSLATEPROFIL38X'),
-          text: i18next.t('IDTRANSLATEPROFIL39X'),
-          icon: 'success'
-        });
-       setTimeout(()=>{
-        window.location.reload();
-       }, 6000)
-        }).catch((error) => {
-          Swal.fire({
-          title: i18next.t('IDTRANSLATEPROFIL40X'),
-          text: i18next.t('IDTRANSLATEPROFIL41X'),
-          icon: 'error'
-        });
-        // alert("les données ne sont pas supprimées " + error);
-        });
-      
+            };
+            userRef.update(newDataq, (error) => {
+              if (error){
+                Swal.fire({
+                title: i18next.t('IDTRANSLATEPROFIL40X'),
+                text: i18next.t('IDTRANSLATEPROFIL41X'),
+                icon: 'error'
+              });
+              }else{
+                Swal.fire({
+                title: i18next.t('IDTRANSLATEPROFIL38X'),
+                text: i18next.t('IDTRANSLATEPROFIL39X'),
+                icon: 'success'
+              });
+            setTimeout(()=>{
+              window.location.reload();
+            }, 6000)
+              }
+             })   
       }
       })
       }
@@ -857,14 +837,13 @@ style="background-color: #f38e9d !important;"
       }
       
 
-        //function to controle button paiement
+      //function to controle button paiement
       var statusmyCompt = snapshot.val().IDREGION
       if(snapshot.val().isDefaultAccount){
       var paiementBtn = document.getElementById('myBtn');
       var paiementBtnV = document.getElementById('myBtn2');
       paiementBtnV.style.display = "block"
       paiementBtn.style.display = "none"
-      var CONSULTEZLESANNONCES = document.getElementById('CONSULTEZLESANNONCES');
       function handleMouseEnter() {
       Swal.fire({
       icon: 'error',
@@ -902,10 +881,7 @@ style="background-color: #f38e9d !important;"
         document.getElementById('myheaderid').style.display = "none"
         document.getElementById('footer').style.display = "none"
         //$("#render").trigger("click");
-        //modal__close.click()
-        const dbref = ref(db);
-        get(child(dbref, "utilisateurs/" + UserConnectuser))
-            .then((snapshot) => {
+        userRef.once("value").then((snapshot) => {
             if (snapshot.exists()) {
               document.getElementById('preloader').style.display = "none"
               var debit = payYourUnity.value
@@ -923,7 +899,7 @@ style="background-color: #f38e9d !important;"
             }
             })
             .catch((error) => {
-           alert("il y a une ERROR " + error);
+            console.log("il y a une ERROR " + error);
             });
           }else{
           Swal.fire({
@@ -931,85 +907,7 @@ style="background-color: #f38e9d !important;"
           icon: 'error'
           });
           }
-        {/*
-        Swal.fire({
-        text: i18next.t('IDTRANSLATEPROFIL44IN'),
-        icon: 'info'
-        });
-        
-        var inputValue = payYourUnity.value;
-        if(payYourUnity.value != null
-        && payYourUnity.value != 0 && payYourUnity.value != "" ){
-        //var modal__close =  document.getElementById('modal__close');
-        document.getElementById('preloader').style.display = "block"
-        //modal__close.click()
-        const dbref = ref(db);
-        get(child(dbref, "utilisateurs/" + UserConnectuser))
-            .then((snapshot) => {
-            if (snapshot.exists()) {
-              document.getElementById('preloader').style.display = "none"
-              var debit = payYourUnity.value
-              var priceUnity = debit * 95
-              //alert(priceUnity)
-              openKkiapayWidget({
-                amount: `${122    }`,
-                position: "center",
-                callback: "javascript:sendmycommandinCentremodale()",
-                data: "",
-                theme: "blue",
-                sandbox: "true",
-                key: "ed50bf80f6e111ed99bbd9617b9c4f6c",
-              });
-              //la reponse du payement kkiapay
-              addSuccessListener((response) => {
-                console.log(response);
-                var trans = response.transactionId;
-                //  console.log(trans);
-                if (trans) {
-                  var myCompta = snapshot.val().COMPTECREDIT
-                  var debit = payYourUnity.value
-
-                  var myComptaConvertis = parseFloat(myCompta);
-                  var debitConvertis = parseFloat(debit)
-
-                  var moncomptvalide = myComptaConvertis + debitConvertis
-
-                  update(ref(db, "utilisateurs/" + UserConnectuser), {
-                  COMPTECREDIT:moncomptvalide
-                  }).then(() => {  
-                        
-                  window.location.reload()
-                    })
-                    .catch((error) => {
-                      Swal.fire({
-                      text: i18next.t('IDTRANSLATEPROFIL45'),
-                      icon: 'error'
-                      }); 
-                    });  
-
-                } else {
-                  Swal.fire({
-                  text: i18next.t('IDTRANSLATEPROFIL44'),
-                  icon: 'error'
-                  });
-                }
-              });
-
-              
-            } else {
-                alert("no data");
-            }
-            })
-            .catch((error) => {
-           alert("il y a une ERROR " + error);
-            });
-          }else{
-          Swal.fire({
-          text: i18next.t('IDTRANSLATEPROFIL43'),
-          icon: 'error'
-          });
-          }
-        */}
+ 
           })
         // Deuxième moyens de paiement
         const renderDiv = document.getElementById('render');
@@ -1032,12 +930,9 @@ style="background-color: #f38e9d !important;"
         document.getElementById('preloader').style.display = "block"
         document.getElementById('myheaderid').style.display = "none"
         document.getElementById('footer').style.display = "none"
-
+        const userRef = database.ref(`/utilisateurs/${userId}`);
         $("#render").trigger("click");
-        //modal__close.click()
-        const dbref = ref(db);
-        get(child(dbref, "utilisateurs/" + UserConnectuser))
-            .then((snapshot) => {
+        userRef.once("value").then((snapshot) => {
             if (snapshot.exists()) {
               document.getElementById('preloader').style.display = "none"
               var debit = payYourUnity.value
@@ -1055,7 +950,8 @@ style="background-color: #f38e9d !important;"
             }
             })
             .catch((error) => {
-           alert("il y a une ERROR " + error);
+           //alert("il y a une ERROR " + error);
+           console.log("il y a une ERROR " + error)
             });
           }else{
           Swal.fire({
@@ -1074,7 +970,78 @@ style="background-color: #f38e9d !important;"
       });
       console.log(error)
   });
+// start function to userconnect
 
+let inactiveTimeoutId;
+// Fonction appelée lorsque l'utilisateur est actif sur la page
+function handleUserActive() {
+  const newDataCwq = {
+    USERCONNECT : true,
+    ONLINEDATE : "en ligne",
+    ONLINEHOURS : "en ligne",
+    };
+    userRef.update(newDataCwq, (error) => {
+      if (error){
+        //console.error("Erreur :", error);
+      }else{
+        console.log("O")
+      }
+     })
+clearTimeout(inactiveTimeoutId); // Réinitialiser le délai
+ 
+//console.log("L'utilisateur est actif sur la page");
+// Vous pouvez exécuter d'autres actions ou déclencher des événements ici
+}
+
+// Fonction appelée lorsque l'utilisateur quitte la page
+function handleUserInactive() {
+inactiveTimeoutId = setTimeout(function() {
+// Créez une nouvelle instance de l'objet Date
+const currentDate = new Date();
+// Obtenez les différentes composantes de la date
+const year = currentDate.getFullYear(); // Année (ex: 2023)
+const month = currentDate.getMonth() + 1; // Mois (de 0 à 11, donc on ajoute 1)
+const day = currentDate.getDate(); // Jour du mois (de 1 à 31)
+const hours = currentDate.getHours().toString().padStart(2, '0'); // Heures (de 00 à 23)
+const minutes = currentDate.getMinutes(); // Minutes (de 0 à 59)
+//const seconds = currentDate.getSeconds(); // Secondes (de 0 à 59)
+var theOnlineDate = `${day}/${month}/${year}`
+var theOnlinehours = `${hours}h:${minutes}min`
+ const newDataCwqx = {
+  USERCONNECT : false,
+  ONLINEDATE : theOnlineDate,
+  ONLINEHOURS : theOnlinehours,
+  };
+
+  userRef.update(newDataCwqx, (error) => {
+    if (error){
+      //console.error("Erreur :", error);
+    }else{
+      console.log("N")
+    }
+   })
+   // console.log("L'utilisateur a quitté la page");
+    // Mettre à jour le statut ou effectuer d'autres actions ici
+  }, 60000); // Délai de 60 secondes avant de mettre à jour le statut
+}
+
+// Appeler la fonction handleUserActive dès le chargement de la page
+handleUserActive();
+
+// Ajouter un écouteur d'événement pour détecter lorsque l'utilisateur interagit avec la page
+document.addEventListener("visibilitychange", function() {
+  if (document.visibilityState !== "visible") {
+    handleUserInactive();
+  } else {
+    handleUserActive();
+  }
+}); 
+// end function to userconnect
+
+}else{
+window.location.href = "./login/login.html"
+}
+  })
 // Supprimer l'utilisateur de la base de données
 
 // function to delete my count
@@ -1090,14 +1057,13 @@ DeleteMyAccountID.addEventListener('click', function(){
   confirmButtonText: i18next.t('IDTRANSLATEPROFIL31'),
 }).then((result) => {
   if (result.isConfirmed) {
-    remove(ref(db, "utilisateurs/" + UserConnectuser))
+    userRef.remove()
     .then(() => {
       Swal.fire({
       title: i18next.t('IDTRANSLATEPROFIL38'),
       text: i18next.t('IDTRANSLATEPROFIL39'),
       icon: 'success'
-    });
-     
+    });  
      //window.location.reload();
      }).catch((error) => {
       Swal.fire({
@@ -1143,9 +1109,7 @@ var logout = document.getElementById('logoutID');
   }
 })
 })
-if(!UserConnectuser){
-window.location.href = "./login/login.html"
-}
+ 
       
 </script>
   <!-- Vendor JS Files -->
@@ -1165,14 +1129,13 @@ window.location.href = "./login/login.html"
   <script src="assets/js/main.js"></script>
    <!-- script to import alert personnal -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
-  <script src="userConnect.js"></script>
   <script src="./../translate.js"></script>
+  <script src="./../t-analytics.js"></script>
+  <script src="userConnect.js"></script>
   <script src="profil.js"></script>
+  <script src="userConnect.js"></script>
 </div>
 
 
 </body>
-<style>
- 
-</style>
 </html>

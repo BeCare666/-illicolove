@@ -1,48 +1,55 @@
-   // Fonction d'initialisation
-    $(document).ready(function () {
-        // Fonction de validation
-        function validerSaisie(input) {
-        const valeurSaisie = input.value;
-        const regexLettresAvecEspaces = /^\d+/;
-        input.value = input.value.replace(/[^0-9]/g, "")
-        if (!regexLettresAvecEspaces.test(valeurSaisie)) { 
-        // Effacez la saisie incorrecte
-        input.value = input.value.replace(/\D/g, '');
+  
+          {/*//function to control password
+          const passwordInput = document.getElementById('password');
+          const passwordStrengthIndicator = document.getElementById('password-strength-indicator');
       
-        }
-        }
-
-        // Obtenez la référence de l'élément input
-        const inputElement = document.getElementById("phoneuserIDval");
-
-        // Ajoutez un gestionnaire d'événements oninput pour exécuter la fonction
-        inputElement.addEventListener("input", function() {
-            validerSaisie(this);
-        });
+          passwordInput.addEventListener('input', validatePassword);
+      
+          function validatePassword() {
+            const password = passwordInput.value;
+            const passwordStrength = calculatePasswordStrength(password);
+      
+            // Afficher la force du mot de passe à l'utilisateur
+            passwordStrengthIndicator.textContent = `Force du mot de passe : ${passwordStrength}`;
+      
+            // Vérifier si le mot de passe contient des caractères spéciaux
+            const containsSpecialChars = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(password);
+      
+            // Si le mot de passe contient des caractères spéciaux, afficher un message d'erreur
+            if (containsSpecialChars) {
+              alert('Le mot de passe ne doit pas contenir de caractères spéciaux.');
+            } else {
+              passwordInput.setCustomValidity('');
+            }
+          }
+      
+          function calculatePasswordStrength(password) {
+            // Logique pour calculer la force du mot de passe
+            // Vous pouvez utiliser des critères tels que la longueur, la présence de chiffres, de lettres majuscules, de lettres minuscules, etc.
+            // Dans cet exemple, nous utilisons simplement la longueur du mot de passe comme indicateur de force
+            const passwordLength = password.length;
+      
+            if (passwordLength < 8) {
+              return 'Faible';
+            } else if (passwordLength >= 8 && passwordLength < 12) {
+              return 'Moyenne';
+            } else {
+              return 'Forte';
+            }
+          }
+         */}
+         {/* const togglePasswordButton = document.getElementById('toggle-password');
+      
+          togglePasswordButton.addEventListener('click', togglePasswordVisibility);
+      
+          function togglePasswordVisibility() {
+            if (passwordInput.type === 'password') {
+              passwordInput.type = 'text';
+              togglePasswordButton.innerText = 'O';
+            } else {
+              passwordInput.type = 'password';
+              togglePasswordButton.innerText = 'X';
+            }
+          }*/}
 
       
-        // Obtenir le code du pays à partir des coordonnées géographiques  
-        var mycountryalphacodeipinfo = localStorage.getItem("alphacodeipinfo") // get in signup.html
-        var input = document.querySelector("#phone");
-        var iti = window.intlTelInput(input);
-        var country = mycountryalphacodeipinfo; // Remplacez par le code du pays détecté
-        iti.setCountry(country);
-        if(mycountryalphacodeipinfo){
-        var selectedCountry = iti.getSelectedCountryData();
-        var nameofcountry = selectedCountry.name;
-        var dialCodeofcountry = selectedCountry.dialCode;
-        var iso2ofcountry = selectedCountry.iso2;
-        localStorage.setItem('Nameofcountry', nameofcountry);
-        localStorage.setItem('DialCodeofcountry', dialCodeofcountry);
-        localStorage.setItem('Iso2ofcountry', iso2ofcountry);
-        }
-
-        const inputElementx = document.getElementById("phoneuserID");
-        const DialCodeofcountryLocal = localStorage.getItem('DialCodeofcountry');
-        const defaultValue = `+${DialCodeofcountryLocal}`;
-        // Attribuez la valeur par défaut au champ d'entrée
-        inputElementx.value = defaultValue;
-        localStorage.setItem('DefaultValue', defaultValue); 
-       
-});
-

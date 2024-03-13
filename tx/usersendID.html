@@ -8,12 +8,24 @@
     <link rel="stylesheet" href="usersendID.css">
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://unpkg.com/jquery"></script>
     <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+      <!-- Google tag (gtag.js) -->
+  <script async
+  src="https://www.googletagmanager.com/gtag/js?id=G-H3FMR8VLEC">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-H3FMR8VLEC');
+  </script>
 </head>
 <body>
     <div class="container" id="uploadCNIMYID">
@@ -51,12 +63,13 @@
     const database = firebase.database();
     // Générer un lien et le sauvegarder dans la base de données
     function genererLien() {
-    const UserId = localStorage.getItem("unserconnect");
-   // alert(UserId)
-    if(UserId){
-    // Récupérer les données une seule fois
-    database.ref('utilisateurs/' + UserId).once('value')
-        .then(function(snapshot) {
+    firebase.auth().onAuthStateChanged(function(user) { 
+    if(user){
+    var userId = user.uid;
+    const database = firebase.database();
+    const userRef = database.ref(`/utilisateurs/${userId}`);
+    //const UserId = localStorage.getItem("unserconnect");
+    userRef.once("value").then(function(snapshot) {
             // La snapshot contient les données
             var data = snapshot.val();
             if (data) {
@@ -136,7 +149,7 @@
                     const timer = Swal.getPopup().querySelector("b");
                     timerInterval = setInterval(() => {
                     timer.textContent = `${Swal.getTimerLeft()}`;
-                    }, 100);
+                    }, 1000);
                 },
                 willClose: () => {
                     clearInterval(timerInterval);
@@ -165,35 +178,12 @@
             SENDIDVAL.addEventListener('click', function(){
             const PieceID = base64Contenttable.slice(-1).pop();
             console.log(PieceID) 
-            database.ref('utilisateurs/' + UserId).update({
+            const newData = {
             MESDEUXPHOTOS: PieceID,
             ALERTVALIDERMACIP : false,
-            }).then(() => {
-                UPloadCNIMYID.style.display = "none"
-                let timerInterval;
-                Swal.fire({
-                html: i18next.t('IDTRANSLATEPROFIL38XSEND'),
-                timer: 3000,
-                icon: "success",
-                allowOutsideClick: false,
-                timerProgressBar: true,
-                didOpen: () => {
-                    Swal.showLoading();
-                    const timer = Swal.getPopup().querySelector("b");
-                    timerInterval = setInterval(() => {
-                    timer.textContent = `${Swal.getTimerLeft()}`;
-                    }, 5000);
-                },
-                willClose: () => {
-                    clearInterval(timerInterval);
-                }
-                }).then((result) => {
-                
-                });
-            setTimeout(()=>{
-                window.location.href = "../v/profil.html" 
-            },5000)
-            }).catch(error => {
+            };
+            userRef.update(newData, (error) => {
+              if (error){
                 UPloadCNIMYID.style.display = "none"
                 let timerInterval;
                 Swal.fire({
@@ -218,8 +208,33 @@
                     window.location.href = `usersendID.html`
                 }
                 }); 
-                 
-            }); 
+              }else{
+                UPloadCNIMYID.style.display = "none"
+                let timerInterval;
+                Swal.fire({
+                html: i18next.t('IDTRANSLATEPROFIL38XSEND'),
+                timer: 3000,
+                icon: "success",
+                allowOutsideClick: false,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading();
+                    const timer = Swal.getPopup().querySelector("b");
+                    timerInterval = setInterval(() => {
+                    timer.textContent = `${Swal.getTimerLeft()}`;
+                    }, 5000);
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+                }).then((result) => {
+                
+                });
+            setTimeout(()=>{
+                window.location.href = "../v/profil.html" 
+            },5000)
+              }
+             })
             })
             }else{
                 window.location.href = "../v/profil.html" 
@@ -237,7 +252,11 @@
             console.error("Erreur lors de la récupération des données:", error);
     });
     //alert('Oui')
-   }else{window.location.href = "../v/login/login.html" }
+
+}else{
+    window.location.href = "../v/login/login.html"
+    }
+    });
 }
     genererLien()
    

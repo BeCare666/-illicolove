@@ -11,17 +11,28 @@
       src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script
       src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
     <!-- Link to import alert personnal -->
     <script
       src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+      <script async
+      src="https://www.googletagmanager.com/gtag/js?id=G-H3FMR8VLEC">
+      </script>
+      <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+  
+      gtag('config', 'G-H3FMR8VLEC');
+    </script>
   </head>
   <body>
     <div id="render"
       style="width: 40vh !important; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"
-      class="custom-btn btn-3"></div>
-
+      class="custom-btn btn-3">
+    </div>
     <!--  
       //Pour affiche le logo illicolove dans les mails
       
@@ -30,7 +41,6 @@
       </div>
     -->
     <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
     const firebaseConfig = {
     apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
     authDomain: "illicolove0.firebaseapp.com",
@@ -40,27 +50,14 @@
     messagingSenderId: "687063035754",
     appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
     };
-      // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    import {
-      getDatabase,
-      ref,
-      set,
-      update,
-      child,
-      onValue,
-      remove,
-      get,
-    } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
-
-    import { getStorage, getDownloadURL 
-    } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"      
-    const db = getDatabase();
+    firebase.initializeApp(firebaseConfig);
     var UserConnectuser = localStorage.getItem("unserconnect");
     var MyComptaval = localStorage.getItem("myComptaval");
     var variablenx = localStorage.getItem('unityVal');
     var Debitva = localStorage.getItem('Debitval');
-    //alert(UserConnectuser)
+    firebase.auth().onAuthStateChanged(function(user) { 
+    if(user){
+      var userId = user.uid;
     FeexPayButton.init("render",{
     id: "64b7a5536efe766ee1327ad8",
     amount: `${variablenx}`,
@@ -72,45 +69,65 @@
     mode:'live',
     description: "Test",
   })
+  //const IDAFILIATEID = localStorage.getItem("IDAFILIATEIDXXX");
     //la reponse du payement feexpay
     function paymentCallback() {
+      trackSuccessfulbuyUnity()
+    const database = firebase.database();
+    const userRef = database.ref(`/utilisateurs/${userId}`);
+    //userRef.once("value")
+    //alert(UserConnectuser)
     // Cette fonction sera appelée après le paiement réussi 
     var paymentId = true; 
     if (paymentId) {
     var myComptaConvertis = parseFloat(MyComptaval);
     var debitConvertis = parseFloat(Debitva)
-
     var moncomptvalide = myComptaConvertis + debitConvertis
 
-    update(ref(db, "utilisateurs/" + UserConnectuser), {
-    COMPTECREDIT:moncomptvalide
-    }).then(() => {   
-      
-      const IDAFILIATEID = localStorage.getItem("IDAFILIATE"); 
+    const newData = {
+      COMPTECREDIT:moncomptvalide
+            };
+            userRef.update(newData, (error) => {
+              if (error){
+                Swal.fire({
+                text: i18next.t('IDTRANSLATEPROFIL45'),
+                icon: 'error'
+                });
+                setTimeout(()=>{
+                   window.location.href = "nx.html"
+                },300)
+              }else{
+                const IDAFILIATEID = localStorage.getItem("IDAFILIATEIDXXX");
                 if(!IDAFILIATEID){
-                   setTimeout(()=>{
-                   window.location.href = "profil.html"
-                   },10000)
+                  window.location.href = "profil.html"
                 }else{  
-                    setTimeout(()=>{
-                const IDAFILIATEID = localStorage.getItem("IDAFILIATE"); 
-                var dbrefx = ref(db);
-                get(child(dbrefx, "utilisateurs/" + IDAFILIATEID))
-                    .then((snapshot) => {
+                const IDAFILIATEID = localStorage.getItem("IDAFILIATEIDXXX");
+                const userRefk = database.ref(`/utilisateurs/${IDAFILIATEID}`);
+                userRefk.once("value").then((snapshot) => {
                     if (snapshot.exists()) {
                         //alert(IDAFILIATEID)
                         var COMMISSIONVALUE = snapshot.val().COMMISSION
                         var Userfullename = snapshot.val().fullname
                         var UserEmail =  snapshot.val().email
-                            var addCommission = "100"
-                            var myComptaConvertis = parseFloat(COMMISSIONVALUE);
-                            var addCommissionConvertis = parseFloat(addCommission)
-                            var myCommissionAdd = myComptaConvertis + addCommissionConvertis
+                        var addCommission = "100"
+                        var myComptaConvertis = parseFloat(COMMISSIONVALUE);
+                        var addCommissionConvertis = parseFloat(addCommission)
+                        var myCommissionAdd = myComptaConvertis + addCommissionConvertis
                             //var TheStatusAffiliate = true
-                        update(ref(db, "utilisateurs/" + IDAFILIATEID), {
-                                COMMISSION : myCommissionAdd,
+
+                            const newDatav = {
+                              COMMISSION : myCommissionAdd,
                                 STATUSAFILIATE : true
-                        }).then(() => {                      
+                            };
+                            userRefk.update(newDatav, (error) => {
+                              if (error){
+                                Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: i18next.t("IDTRANSLATEPROFIL42Q"),
+                                }) 
+                              }else{
+                                localStorage.removeItem('IDAFILIATEIDXXX');
                         // statr envoi de mail de validation
                         const apiKey = "34F593452254BAB8CACDA4A39FC9C44BFC0D3E63B8842CD369FF37BBE4AC5017DA7917B6E03C3C8EB379F906C80E9DED";
                         const apiUrl = "https://api.elasticemail.com/v2/email/send";
@@ -119,7 +136,7 @@
                         const emailParams = {
                         apiKey: apiKey,
                         subject: "Notification de Commission",
-                        from: "validation@illicolove.com",
+                        from: "info@illicolove.com",
                         fromName: "illicolove",
                         to: UserEmail,
                         bodyHtml: `
@@ -165,32 +182,26 @@
                         .then((data) => {
                             //console.log(data); // Afficher la réponse de l'API ElasticEmail
                             if (data.success) {
-                            localStorage.removeItem('IDAFILIATE');
+                               window.location.href = "profil.html"
+                            // localStorage.removeItem('IDAFILIATE');
                             //console.log("E-mail envoyé avec succès.");
                             } else {
                             // console.error("Erreur lors de l'envoi de l'e-mail.");
+                            window.location.href = "profil.html"
                             }
                         })
                         .catch((error) => {
                             //console.error("Erreur lors de la requête API :", error);
+                             window.location.href = "profil.html"
                         });
                         // end envoi de mail de validation
-                        
-                        localStorage.removeItem('IDAFILIATE');
-                        //alert('le compte est bon')
-                        setTimeout(()=>{
-                        window.location.href = "profil.html"
-                        }, 2000)
-                        })
-                        .catch((error) => {
-                        Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: i18next.t("IDTRANSLATEPROFIL42Q"),
-                        }) 
-                        });  
+                              }
+                            })
                     } else {
-                        //alert("no data");
+                      localStorage.removeItem('IDAFILIATEIDXXX');
+                      setTimeout(()=>{
+                      window.location.href = "profil.html"
+                      },300)
                     }
                     })
                     .catch((error) => {
@@ -199,30 +210,21 @@
                     title: 'Oops...',
                     text: i18next.t("IDTRANSLATEPROFIL42"),
                     })  
+                    setTimeout(()=>{
+                   window.location.href = "profil.html"
+                   },300)
                     });
-                   
-                }, 10000)
+      
                 }
 
-                
-      window.location.href = "profil.html"
-
-
-      })
-     .catch((error) => {
-     Swal.fire({
-    text: i18next.t('IDTRANSLATEPROFIL45'),
-    icon: 'error'
-    });
-    });  
-
-    } else {
-    Swal.fire({
-    text: i18next.t('IDTRANSLATEPROFIL44'),
-    icon: 'error'
-    });
-    }
-
+              }
+             })
+          } else {
+          Swal.fire({
+          text: i18next.t('IDTRANSLATEPROFIL44'),
+          icon: 'error'
+          });
+          }
     }
     const renderDiv = document.getElementById('render');
     renderDiv.addEventListener('click', function() {
@@ -231,105 +233,11 @@
     renderDiv.style.left = '';
     renderDiv.style.transform = '';
     });
-
-
-    
-    {/*    // function to take 10% for the user paiement
-      const IDAFILIATEITWO = localStorage.getItem("usTakeAFILIATEID");
-      
-      if(IDAFILIATEITWO){
-      const db = getDatabase();
-      get(child(db, "utilisateurs/" + IDAFILIATEITWO))
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-                        var COMMISSIONVALUE = snapshot.val().COMMISSION
-                        var Userfullename = snapshot.val().fullname
-                        var UserEmail =  snapshot.val().email
-                        var variablenx = localStorage.getItem('unityVal');
-                        var myComptaConvertis = parseFloat(variablenx);
-                        var addCommissionConvertis = parseFloat(COMMISSIONVALUE)
-                        var myCommissionAdd = myComptaConvertis * 0.1
-                        var addCommission = myCommissionAdd + addCommissionConvertis
-                        update(ref(db, "utilisateurs/" + IDAFILIATEITWO), {
-                        COMMISSION : addCommission
-                        }).then(() => { 
-                        // statr envoi de mail de validation
-                        const apiKey = "1D5731AF3830C76F1A3295A44D90416F8BED40EFEA13E8767E9593501CA32F1E8EE00960B55ECB2336C7D408A052669D";
-                        const apiUrl = "https://api.elasticemail.com/v2/email/send";
-                        
-                        // Définir les paramètres de l'e-mail
-                        const emailParams = {
-                        apiKey: apiKey,
-                        subject: "Notification de Commission",
-                        from: "info@illicolove.com",
-                        fromName: "illicolove",
-                        to: UserEmail,
-                        bodyHtml: `
-                        <table cellpadding="10" cellspacing="0" style="background-color: #f1f1f1; padding: 20px;">
-                          <tr>
-                              <td>
-                                  <h1 style="color: #333;">Congratulations ${Userfullename}!</h1>
-                                  <p style="font-size: 16px; color: #666;">
-                                      We are pleased to inform you that you have just won ${myCommissionAdd} FCFA on illicolove thanks to your affiliate.
-                                  </p>
-                                  <ul>
-                                      <li><a href="https://illicolove.com/v/profil.html">You can visit your profile.</a></li>
-                                      <li><a href="https://illicolove.com/userdetails&.html?id=${IDAFILIATEITWO}">Visit your affiliate's profile.</a></li>
-                                  </ul>
-                                  <p style="font-size: 14px; color: #999;">
-                                      Stay tuned for more exciting news!
-                                  </p>
-                                  <p style="font-size: 14px; color: #999;">
-                                      Sincerely,
-                                  </p>
-                                  <p style="font-size: 14px; color: #999;">
-                                      The illicolove team.
-                                  </p>
-                              </td>
-                          </tr>
-                      </table>
-
-                        `
-                        };
-
-                        // Effectuer une requête POST vers l'API ElasticEmail
-                        fetch(apiUrl, {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/x-www-form-urlencoded"
-                        },
-                        body: new URLSearchParams(emailParams)
-                        })
-                        .then((response) => response.json())
-                        .then((data) => {
-                            //console.log(data); // Afficher la réponse de l'API ElasticEmail
-                            if (data.success) {
-                            //console.log("E-mail envoyé avec succès.");
-                            } else {
-                            // console.error("Erreur lors de l'envoi de l'e-mail.");
-                            }
-                        })
-                        .catch((error) => {
-                            //console.error("Erreur lors de la requête API :", error);
-                        });
-                        // end envoi de mail de validation
-                        setTimeout(()=>{
-                        window.location.href = "profil.html";
-                        }, 2000)
-                        })
-                        .catch((error) => {
-                        alert("il y a une ERROR " + error);
-                        });  
-                    } else {
-                        alert("no data");
-                    }
-                    })
-      .catch((error) => {
-      alert("il y a une ERROR " + error);
-      });  
-    }else{
-        window.location.href = "profil.html"
-     }  */}
+  }else if(user ==null) {
+         window.location.href = "./login/login.html"
+    }
+  });
     </script>
+    <script src="../t-analytics.js"></script>
   </body>
 </html>

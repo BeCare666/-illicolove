@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title id="IDTRANSLATE19USER"></title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <script src="https://api.feexpay.me/feexpay-javascript-sdk/index.js"></script>
+  <!-- Favicons 
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+  <link href="./../assets/img/logoilli.jpeg" rel="icon">
+  <!-- Google Fonts -->
+  <link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+  rel="stylesheet">
+  <style>
+  * {
+    font-family: 'Montserrat-bold', sans-serif;
+    font-size: 14px !important;
+  }
+
+</style>
+    <!-- Inclure les bibliothèques Firebase que vous utilisez (par exemple, la base de données Firebase) -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <!-- Link to import alert personnal -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.min.css">
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+  <script>
+    window.onload = function(){
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+    // Code pour appareil mobile
+    //document.body.style.fontSize = "16px"; // Modifier la taille de la police pour appareils mobiles
+    document.getElementById('myiframe').style.height = "190vh"
+    document.getElementById('myiframeconsult').style.height = "190vh" 
+    document.getElementById('footer').style.position = "relative"
+    document.getElementById('footer').style.bottom = "0"
+    
+    } else {
+        // Code pour ordinateur de bureau
+        //document.body.style.fontSize = "18px"; // Modifier la taille de la police pour ordinateurs de bureau
+        document.getElementById('myiframe').style.height = "80vh"
+        document.getElementById('myiframe').style.marginTop = "7vh"
+        document.getElementById('myiframeconsult').style.height = "80vh"
+        document.getElementById('myiframeconsult').style.marginTop = "7vh"
+ 
+    }
+   }
+  </script>
+</head>
+<body>
+
+<section id="modalID" style="display: none;"> 
+  <div class="wrapper">
+      <a href="#demo-modal" id="dreamIndemo" style="opacity: 0;">Open Demo Modal</a>
+  </div>         
+  <div id="demo-modal" class="modal">
+      <div class="modal__content">
+          <h3 style="text-align: center;" id="iconid"></h3>
+  
+          <h3 style="text-align: center;" id="etatalert"></h3>
+  
+          <div class="modal__footer" id="smsalert" style="font-size: 14px !important;">
+            
+          </div><br>
+          <div class="modal__footer" id="updateform" 
+          style="cursor: pointer; background-color: #4169E1; border-radius: 5px; 
+           color: white;">
+          </div><br>
+
+         <a href="#" class="modal__close" id="modal__close">&times;</a>
+      </div>
+  </div>
+</section>  
+<div id="myBody1">
+  <div id="myheaderid">
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center" style="display: none !important;">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">info@illicolove.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+229 64 39 01 06</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="https://twitter.com/illicolove_com" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="https://web.facebook.com/illicolove/" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/illicolove/" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="https://www.snapchat.com/add/illicolove?share_id=I3RMDZq6GNQ&locale=fr-BJ" class="linkedin"><i class="bi bi-snapchat"></i></a>
+        <a href="https://www.tiktok.com/@illicolove?_t=8dEw09tT2hh&_r=1" class="linkedin"><i class="bi bi-tiktok"></i></a>
+        
+      </div>
+    </div>
+  </section><!-- End Top Bar-->
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center" style="margin-top: 15px !important;">
+    <div class="container d-flex justify-content-between">
+      <div id="logo">
+        <img src="./../assets/img/logoilli.jpeg" alt="" style=" max-height: 65px; margin-bottom: 10px !important;"> 
+        <span style="font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #000080;">illicolove</span>
+      </div>
+    </div>
+    <button class="image-button btn-my-color circle-image " id="user-button" 
+    style="display: flex;  border-radius: 100%; justify-content: center;
+    align-items: center;
+    width: 8vh;
+    height: 8vh;
+    border-radius: 100%;
+    overflow: hidden;
+    background-color: #FFB6C1;
+    color: white; 
+    transition: background-color 0.5s ease;">
+    </button>
+  </header><!-- End Header -->
+ <style>
+  #user-button{
+    position: absolute !important;
+    right: 0 !important;
+    margin-right: 9px !important;
+    top: 13px !important;
+  }
+ </style>
+  <!-- ======= hero Section ======= -->
+<div id="modalMyDropdown" style="display: none;">
+<div class="container">
+      <div class="iphone">
+        <div class="header">
+          <div class="header-summary"><br>
+            <span id="iconValidateID"></span><br>
+            <div class="summary-text" id="userMyID">
+            </div>
+            <div class="summary-balance " style="display: flex; width: 10vh; margin-bottom: 0 !important;" >
+              <strong style="color: aqua; font-size: 20px !important; margin-top: 0 !important;">U</strong>&nbsp; <p style="font-size: 20px !important;" id="myUnityID"></p>
+              </div>
+              <div style="margin-top: 0 !important; display: flex !important;">
+              <strong style="color: aqua; font-size: 20px !important; margin-top: 0 !important; ">C</strong>&nbsp; <p style="font-size: 20px !important;" id="myCommiID"></p>
+              &nbsp;<span style="font-size: 20px !important;">FCFA</span>
+            </div>
+             
+          </div>
+          <div class="user-profile" id="tofuserID">   
+          </div>
+          <div class="file-upload" id="file-upload">
+            <label for="upload" class="file-upload__label"><i class="bi bi-camera-fill"></i></label>
+            <input id="upload" class="file-upload__input" type="file" name="file-upload">
+        </div>
+        </div>
+        <div class="content scroll-container" style="  height: 180px; overflow: auto;">
+          <div class="card">
+            <div class="upper-row">
+              <span id="comptDebitID"></span>
+              <span id="myAccountID"></span>
+            </div>
+          </div>
+          <div class="transactions"><span class="t-desc" id="IDTRANSLATEPROFIL7"></span>
+            <div class="transaction">
+              <div class="t-icon-container"><i class="bi bi-person-fill" class="t-icon" style="color: #f38e9d;"></i></div>
+              <div id="myEmailID" class="t-details" style="width: 29vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+                
+              </div>           
+            </div>
+            <div class="transaction">
+              <div class="t-icon-container"><i class="bi bi-envelope-at-fill" class="t-icon" style="color: #f38e9d;"></i></div>
+              <div id="myNameID" class="t-details" style="width: 29vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+               
+              </div>              
+            </div>
+            <a href="./wallet/wallet.html">
+            <div class="transaction" style="cursor: pointer;">
+              <div class="t-icon-container"><i class="bi bi-wallet-fill" style="color: #f38e9d;"></i></div>
+              
+                <div id="myNameIDwallet" class="t-details" style="width: 29vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; color: black !important;">
+                  
+                 </div> 
+
+                      
+            </div>
+            </a>
+            <strong style="font-size: 12px !important; color: #f38e9d; display: none;"><strong style="opacity: 0;">fghjkld</strong> Copier ici votre lien d'affiliation.</strong>
+            <div class="transaction" id="affiliateID" style="cursor: pointer !important;">
+              <div class="t-icon-container"><i class="bi bi-link-45deg" style="color: #f38e9d; font-size: 26px !important;"></i></div>
+              <div id="myNameIDXA" class="t-details" style="width: 29vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+                <form data-copy=true>
+                  <input id="linkInput" type="text" data-click-select-all style="border: none !important; cursor: pointer;"/>
+                </form>
+              </div>           
+            </div>
+
+            <div class="transaction" id="deleteMyAccountID" style="cursor: pointer !important;">
+              <div class="t-icon-container"><i class="bi bi-trash3-fill" style="color: #f38e9d;"></i></div>
+              <div id="myNameIDX" class="t-details" style="width: 29vh !important; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+              
+              </div>           
+            </div>
+          </div>
+        </div>
+        <div class="drawer">
+          <span id="logoutID" style="cursor: pointer;"><a >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="bi bi-box-arrow-left" style="font-size: 26px !important;"></i><br> <p id="IDTRANSLATEPROFIL10"></p></a></span>
+          <span><i class="fal fa-chart-bar"></i></span>&nbsp;&nbsp;&nbsp;
+          <div style="color: #000080; background-color: #40E0D0 !important; height: 11vh !important; width: 11vh !important; text-align: center;  padding: 3px !important; margin-right: 3vh !important;"
+           class="menu-btn rotate" id="myBtn" data-toggle="modal" data-target="#exampleModalCenter" >
+            <!---<i class="bi bi-plus-circle"></i>-->
+          </div>
+          <div style="color: #000080; display: none; background-color: #40E0D0 !important; height: 11vh !important; width: 11vh !important; text-align: center; padding: 3px !important; margin-right: 3vh !important;"
+          class="menu-btn rotate" id="myBtn2">
+           <!---<i class="bi bi-plus-circle"></i>-->
+         </div>
+          <!--<span style="margin-top: 12px !important;"><i class="bi bi-pencil-square"></i></span> 
+          <i class="bi bi-sign-turn-right-fill"></i>-->
+          <span><i class="fal fa-sticky-note"></i> </span>
+          <span ><a href="./../index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <i class="bi bi-house-door" style="font-size: 26px !important;"></i>
+          <br><p id="IDTRANSLATEPROFIL9"></p></a></span>
+        </div>
+      <style>
+        .rotate {
+        display: inline-block;
+        font-size: 16px;
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        position: relative;
+        transition: transform 0.5s ease;
+      }
+
+      .rotate:hover {
+        animation: rotateClockwise 1s forwards;
+      }
+
+      .rotate:hover::before {
+        animation: rotateAntiClockwise 1s forwards;
+      }
+
+      @keyframes rotateClockwise {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes rotateAntiClockwise {
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+
+      </style>
+      </div>
+    </div>
+    </div>
+  <section id="hero">
+   <a href="../tx/usersendID.html" id="infologoId" style="display: none;"> </a>
+    <div class="hero-content" data-aos="fade-up">
+     <!-- <h2 style="color: white !important;">illicolove,<span style="font-size: 15px !important; color: white;" id="IDTRANSLATEPROFIL13"></span></h2>-->  
+      <div>
+        <a href="#" class="btn-get-started scrollto annoncy" id="PUBLIEZUNEANNONCE" onclick="PUBLIEZUNEANNONCE()"></a>
+        <a href="#" class="btn-projects scrollto annoncy" id="CONSULTEZLESANNONCES" onclick="CONSULTEZLESANNONCES()"></a>
+      </div>
+    </div>
+
+    <div class="hero-slider swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="swiper-slide" style="background-image: url('assets/img/illicolo_ban.jpeg'); height: 92vh; "></div>
+         
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero Section -->
+  </div>
+  <main id="main" style="display: none;" >
+    <div class="responsive-iframe">
+      <iframe src="choix.html" frameborder="0" scrolling="no" style="width: 100%; margin-top: 10px;" id="myiframe"></iframe>
+    </div>
+  </main><!-- End #main -->
+  <main id="mainconsultconsult" style="display: none;" >
+    <div class="responsive-iframe">
+      <iframe src="consulte.html" frameborder="0" scrolling="no" style="width: 100%; margin-top: 10px;" id="myiframeconsult"></iframe>
+    </div>
+  </main><!-- End #main -->
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="myBodyTopaie">
+        <p id="errorSms" style="text-align: start !important; font-size: 12px !important; display: none; color: #FFB6C1;"><i class="fa fa-star required"></i></p>
+        <p id="SmspayId" style="text-align: start !important; font-size: 12px !important;"> <i class="fa fa-star required"></i></p>
+        <input type="text" pattern="[0-9]+" required id="payYourUnity" oninput="validerSaisie(this)">
+
+      <div class="modal-body" id="myBodyTopaieX" style="
+       align-items: center; height: 30vh !important; background-color: #FFB6C1 !important; display: none !important;">
+       <div>
+        <div style="margin-top: 8.5vh;" id="CHOISEYOURPAIEMENTMYID">
+        <p id="CHOISEYOURPAIEMENT" style="display: none;"></p>
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <img src="https://app.feexpay.me/_nuxt/img/feexpay_logo-h.047b89d.png" alt="" 
+            style="width: 12vh; height: 10vh; cursor: pointer; background-color: white;"
+            class="clickable-image" id="FEEXPAY">
+          </div>
+          
+          <div class="col-6">
+            <img src="assets/img/Touch-Point-by-Intouch.png" alt="" 
+            style="width: 12vh; height: 10vh; cursor: pointer; background-color: white;"
+            class="clickable-image" id="INTOUCH">
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn" style="background-color: #4169E1; color: white;" id="IDTRANSLATEPROFIL14"></button>
+        <button disabled type="button" class="btn btn" style="background-color: #FFB6C1; color: white; display: none;" id="payYourUnitybtn"></button>
+        <button disabled type="button" class="btn btn" style="background-color: #FFB6C1; color: white;  display: none;" id="payYourUnitybtnd" 
+        data-dismiss="modal" aria-label="Close"></button>
+        <div id="render"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<style>
+  /* Style pour le cadre rouge (invisible par défaut) */
+.clickable-image {
+  border: 1px solid transparent; /* Le cadre est initialement transparent */
+}
+
+/* Style pour le cadre rouge lorsque l'image est cliquée */
+.clickable-image.clicked {
+  border-color: green;
+}
+
+/*Styles pour le bouton désactivé (vous pouvez personnaliser le style en fonction de vos besoins)*/
+button[disabled] {
+  opacity: 0.6; /* Réduire l'opacité pour indiquer visuellement que le bouton est désactivé */
+  cursor: not-allowed; /* Changer le curseur pour indiquer qu'il n'est pas cliquable */
+}
+</style>
+<!---Modal to secure password-->
+<div class="modal fade" id="modalToSecurepasseword" tabindex="-1" role="dialog"
+style="background-color: #f38e9d !important;"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitleX"> <i class="bi bi-exclamation-circle-fill text-danger"></i></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="myBodyTopaie">
+        <p id="IDTRANSLATEPROFIL15" style="text-align: start !important; font-size: 12px !important;">
+          <i class="fa fa-star required"></i></p>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1" id="IDTRANSLATEPROFIL16"></label>
+          <select class="form-control" id="RxampleFormControlSelect1" 
+          style="background-color: #f38e9d !important; border: none; cursor: pointer; height:calc(4rem + 3px) !important;">
+            <option  id="IDTRANSLATEPROFIL17">
+            </option>
+
+            <option  id="IDTRANSLATEPROFIL18">
+            </option>
+
+            <option  id="IDTRANSLATEPROFIL19">
+            </option>
+
+              <option id="IDTRANSLATEPROFIL20">
+              </option>
+
+              <option id="IDTRANSLATEPROFIL21">
+              </option>
+
+              <option id="IDTRANSLATEPROFIL22">
+              </option>
+
+              <option  id="IDTRANSLATEPROFIL23">
+              </option>
+
+              <option id="IDTRANSLATEPROFIL24">
+              </option>
+           
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1" id="IDTRANSLATEPROFIL25"></label>
+          <input type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn" style="background-color: #FFB6C1; color: white;" id="btnSecureAccount" data-dismiss="modal"></button> 
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright" id="copyright" style="color: #000080;">
+        &copy; Copyright 2024 illicolove. All Rights Reserved
+        <div class="credits" style="color: #000080;"> Designed by illicolove
+      </div>
+     
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+  <div id="preloader"></div>
+ <!-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> -->
+
+  <script>
+   function PUBLIEZUNEANNONCE(){
+      window.location.href="choix.html"
+   }
+ 
+   function CONSULTEZLESANNONCES(){
+    window.location.href="consulte.html"
+   }
+
+  </script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js";
+    import {
+      getDatabase,
+      ref,
+      set,
+      update,
+      child,
+      onValue,
+      remove,
+      get,
+    } from "https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js";
+
+    import { getStorage, getDownloadURL
+    } from "https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js" 
+    
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+
+    const firebaseConfig = {
+    apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
+    authDomain: "illicolove0.firebaseapp.com",
+    databaseURL: "https://illicolove0-default-rtdb.firebaseio.com",
+    projectId: "illicolove0",
+    storageBucket: "illicolove0.appspot.com",
+    messagingSenderId: "687063035754",
+    appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
+};
+      // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase();
+    const storage = getStorage(app);
+    const auth = getAuth(app);
+
+    const userId = localStorage.getItem("unserconnect");
+    var userMyID = document.getElementById('userMyID'); 
+    var myUnityID = document.getElementById('myUnityID');
+    var MyCommiID = document.getElementById('myCommiID');
+    var tofuserID = document.getElementById('tofuserID');
+    var debyOfferID = document.getElementById('debyOfferID');
+    var debyID = document.getElementById('debyID');
+    var myEmailID = document.getElementById('myEmailID');
+    var myNameID = document.getElementById('myNameID');
+    var userbuttonID = document.getElementById('user-button');
+    var iconValidateID = document.getElementById('iconValidateID');
+    var comptDebitID = document.getElementById('comptDebitID')
+    var myAccountID = document.getElementById('myAccountID')
+    var tableTotakePaiement = []
+    var  base64Contenttable = []
+
+    onAuthStateChanged(auth, (user) => { 
+      var userId = user.uid;
+      const userRef = child(ref(db), '/utilisateurs/' + userId);
+
+    get(userRef).then((snapshot) => {
+      document.getElementById('preloader').style.display = "none"
+      if (snapshot.exists()) {
+
+       //function to generate affilition link
+        const linkInput = document.getElementById('linkInput');
+        const copyButton = document.getElementById('affiliateID');
+        //linkInput.value = `Copier ici votre lien d'affiliation.`
+        // function to hide border when you click
+        copyButton.addEventListener('click', () => {
+        linkInput.value = `https://illicolove.com?id=${userId}`
+        linkInput.select(); // Sélectionne le texte dans l'input
+        document.execCommand('copy'); // Copie le texte sélectionné dans le presse-papiers
+        });
+
+         if(snapshot.val().IDREGION){
+          document.getElementById('PUBLIEZUNEANNONCE').innerHTML = `<i class="bi bi-pencil-square"></i> <span id="IDTRANSLATEPROFIL11"></span>`
+         }else{
+          document.getElementById('PUBLIEZUNEANNONCE').innerHTML = `<i class="bi bi-send"></i> <span id="IDTRANSLATEPROFIL12"></span> `
+         }
+         
+         var photoDataUrl = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
+         userbuttonID.innerHTML = `${snapshot.val().PIECESDIDENTITE ? `<img src="${photoDataUrl}" alt="Votre image" style="width: 7vh;  height: 7vh;"/>` : '<i class="bi bi-person-fill" style="width: 30px;"></i>'}`;
+         iconValidateID.innerHTML = `${snapshot.val().VALIDERMONCOMPTE ? `<i class="bi bi-patch-check-fill text" style="color:#000080" id="IDTRANSLATEPROFIL1"> </i> ` : '<i class="bi bi-exclamation-circle-fill text-danger" id="IDTRANSLATEPROFIL2"></i> '}`;
+         userMyID.innerHTML = `${snapshot.val().username}`;
+         myUnityID.innerHTML = `${snapshot.val().COMPTECREDIT}`;
+         MyCommiID.innerHTML = `${snapshot.val().COMMISSION}`;
+         tofuserID.innerHTML = `${snapshot.val().PIECESDIDENTITE ? `<img src="${photoDataUrl}" class="user-photo" />` : '<img src="assets/img/log.png" class="user-photo" />'}`;
+
+         // start function alert to send CIN
+        if(snapshot.val().ALERTVALIDERMACIP == true){
+         document.getElementById("infologoId").style.display = "block"
+        }
+
+         // end function alert to send CIN
+
+         //function to checkout in account debit
+         comptDebitID.innerHTML = `${snapshot.val().COMPTECREDITSATUS ? `
+          <div class="card-item" style="opacity: 0.2 !important; pointer-events: none;">
+                <span id="IDTRANSLATEPROFIL3"></span>
+                <span>0 <strong class="dollar" style="color: aqua;">U</strong>
+          </div>` 
+          
+          : `<div class="card-item" >
+          <span id="IDTRANSLATEPROFIL4"></span>
+          <span id="debyOfferID"> ${snapshot.val().COMPTECREDIT} <strong class="dollar" style="color: aqua;">U</strong>
+          </div>`}  `
+
+          myAccountID.innerHTML = `${snapshot.val().isDefaultAccount ? `
+            <div class="card-item" style="opacity: 0.2 !important; pointer-events: none;">
+                <span id="IDTRANSLATEPROFIL5"></span>
+                <span >0 &nbsp;<strong class="dollar" style="color: aqua;">U</strong></span>
+              </div>   
+          ` 
+          
+          : ` <div class="card-item" >
+                <span id="IDTRANSLATEPROFIL5"></span>
+                <span id="debyID">${snapshot.val().COMPTECREDIT} <strong class="dollar" style="color: aqua;"> U</strong></span>
+              </div>`}  `
+
+
+         //debyOfferID.innerHTML = `${snapshot.val().COMPTECREDIT}`;
+         
+         myEmailID.innerHTML = `${snapshot.val().fullname}`;
+         myNameID.innerHTML = `${snapshot.val().email}`;
+         if(snapshot.val().COMPTECREDIT = 0){
+          alertUnity.innerHTML = `
+          <div class="alert alert-danger" role="alert" style="font-size: 10px; text-align: center;" id="IDTRANSLATEPROFIL46">
+          
+          </div>
+          `
+         }
+         //function to translate the create for inerhtml
+         var texteTraduit = i18next.t("IDTRANSLATEPROFIL2");
+         $('[id="IDTRANSLATEPROFIL2"]').text(texteTraduit);
+
+         var texteTraduit1 = i18next.t("IDTRANSLATEPROFIL1");
+         $('[id="IDTRANSLATEPROFIL1"]').text(texteTraduit1);
+
+         var texteTraduit3 = i18next.t("IDTRANSLATEPROFIL3");
+         $('[id="IDTRANSLATEPROFIL3"]').text(texteTraduit3);
+
+         var texteTraduit4 = i18next.t("IDTRANSLATEPROFIL4");
+         $('[id="IDTRANSLATEPROFIL4"]').text(texteTraduit4);
+
+         var texteTraduit5 = i18next.t("IDTRANSLATEPROFIL5");
+         $('[id="IDTRANSLATEPROFIL5"]').text(texteTraduit5);
+         var texteTraduit6 = i18next.t("IDTRANSLATEPROFIL6"); 
+         $('[id="IDTRANSLATEPROFIL6"]').text(texteTraduit6);
+
+         var texteTraduit11 = i18next.t("IDTRANSLATEPROFIL11");
+         $('[id="IDTRANSLATEPROFIL11"]').text(texteTraduit11);
+         
+         var texteTraduit12 = i18next.t("IDTRANSLATEPROFIL12");
+         $('[id="IDTRANSLATEPROFIL12"]').text(texteTraduit12);
+         var texteTraduit45X = i18next.t("IDTRANSLATEPROFIL46");
+         $('[id="IDTRANSLATEPROFIL46"]').text(texteTraduit45X);
+
+         
+
+         //function to update password
+         if(snapshot.val().QUESTIONSECUREPASSWORDSTATUS == false){
+          setTimeout(()=>{ btnSecureAccount
+          var monModal = document.getElementById('modalToSecurepasseword');
+
+          var exampleFormControlSelect1 = document.getElementById('RxampleFormControlSelect1');
+          var exampleFormControlInput1 = document.getElementById('exampleFormControlInput1');
+          var btnSecureAccount = document.getElementById('btnSecureAccount');
+
+
+          // function to delete espace in input
+          exampleFormControlInput1.addEventListener('input', function(event) {
+            var exampleFormControlInput1 = document.getElementById('exampleFormControlInput1');
+            var inputValue = event.target.value;
+            
+            // Vérifiez si la valeur contient des espaces
+            if (inputValue.includes(' ')) {
+              // Supprimez les espaces de la valeur
+              event.target.value = inputValue.replace(/\s/g, '');
+              Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: i18next.t('accountSecureMessageX'),
+              showConfirmButton: false,
+              timer: 1500
+            // footer: '<a href="">Why do I have this issue?</a>'
+            })
+            }
+          });
+          monModal.classList.add('show');
+          monModal.style.display = 'block';
+          document.body.classList.add('modal-open');
+          btnSecureAccount.addEventListener('click', function(){
+          var userMyName = snapshot.val().username
+          var fxampleFormControlInput1 = exampleFormControlInput1.value
+          var PexampleFormControlSelect1 = exampleFormControlSelect1.value
+          update(ref(db, "utilisateurs/" + userId), {
+            QUESTIONSECUREPASSWORDRESPONSE: fxampleFormControlInput1,
+            QUESTIONSECUREPASSWORD: PexampleFormControlSelect1,
+            QUESTIONSECUREPASSWORDSTATUS: true,
+                  }).then(() => {  
+                  monModal.classList.add('hide');
+                  monModal.style.display = 'none';
+                  Swal.fire({
+                  icon: 'success',
+                  title: i18next.t('congratulationsTitle'),
+                  text: i18next.t('accountSecureMessage'),
+                  showConfirmButton: false,
+                  timer: 5000
+                // footer: '<a href="">Why do I have this issue?</a>'
+                })
+                // alert("Votre compte est arrivé à terme !")         
+                 // window.location.reload()
+                })
+                .catch((error) => {
+                Swal.fire({
+                text: i18next.t('IDTRANSLATEPROFIL45'),
+                icon: 'error'
+                }); 
+
+                });
+          })
+          },500)
+         }else{
+
+         }
+          //function to change status user
+          if(snapshot.val().COMPTECREDIT === 0 && snapshot.val().COMPTECREDITSATUS == false){
+            update(ref(db, "utilisateurs/" + userId), {
+                 COMPTECREDITSATUS: true,
+                 isDefaultAccount: false,
+                 isPaidAccount: true,
+                  }).then(() => {  
+                 Swal.fire({
+                  icon: 'info',
+                  html: i18next.t('IDTRANSLATEPROFIL28'),
+                  allowOutsideClick: false,
+                  focusConfirm: false,
+                  confirmButtonText:
+                    '<i class="fa fa-thumbs-up"></i> Great!',
+                  confirmButtonAriaLabel: 'Thumbs up, great!',
+                  cancelButtonText:
+                    '<i class="fa fa-thumbs-down"></i>',
+                  cancelButtonAriaLabel: 'Thumbs down',
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    location.reload();
+                }
+                })
+
+                 // window.location.reload()
+                    })
+                    .catch((error) => {
+                      Swal.fire({
+                      text: i18next.t('IDTRANSLATEPROFIL45'),
+                      icon: 'error'
+                      }); 
+
+                    });
+              debyID.innerHTML = `${snapshot.val().COMPTECREDIT}`;
+          }else{
+           
+          }
+      // start function to uploade img
+      var inputElement = document.getElementById("upload");
+
+      // Ajoutez un gestionnaire d'événements pour écouter le changement de fichier
+      inputElement.addEventListener("change", handleFiles, false);
+
+      function handleFiles() {
+      // Récupérez le fichier sélectionné par l'utilisateur
+      var file = this.files[0];
+      console.log("Fichier sélectionné : ", file);
+
+      // Créez une nouvelle instance de FileReader
+      var reader = new FileReader();
+
+      // Ajoutez un gestionnaire d'événements pour écouter la fin de la lecture du fichier
+      reader.onload = function(event) {
+          // Créez une nouvelle instance d'image
+          var img = new Image();
+
+          // Définissez le gestionnaire d'événements pour lorsque l'image est chargée
+          img.onload = function() {
+          const minWidth = 300; // La largeur minimale souhaitée
+          const minHeight = 300; // La longeur minimale souhaitée
+          if (img.width >= minWidth && img.height >= minHeight) { 
+          // Créez un élément canvas
+          var canvas = document.createElement('canvas');
+          var context = canvas.getContext('2d');
+
+          // Déterminez les dimensions de l'image redimensionnée
+          var maxWidth = 800;
+          var maxHeight = 600;
+          var width = img.width;
+          var height = img.height;
+
+          // Vérifiez si l'image doit être redimensionnée
+          if (width > maxWidth || height > maxHeight) {
+              // Calculez le facteur de redimensionnement
+              var ratio = Math.min(maxWidth / width, maxHeight / height);
+
+              // Appliquez le redimensionnement
+              width *= ratio;
+              height *= ratio;
+          }
+
+          // Définissez les dimensions du canvas
+          canvas.width = width;
+          canvas.height = height;
+
+          // Dessinez l'image sur le canvas avec les nouvelles dimensions
+          context.drawImage(img, 0, 0, width, height);
+
+          // Obtenez le contenu de l'image redimensionnée sous forme de base64
+          var base64Content = canvas.toDataURL('image/jpeg');
+          base64Content = base64Content.replace(/^data:image\/jpeg;base64,/, '');
+          //console.log("Contenu en base64 : ", base64Content);
+          base64Contenttable.push(base64Content)
+          uploadyourphoto()
+          // ...
+          }else{
+              Swal.showValidationMessage(i18next.t('IDTRANSLATEFORM105'));
+              //alert(`Votre image est trop pétite. Veuillez sélectionner une image d'au moins 300x300 pixels.`)
+              inputElement.value = ""
+          }
+          };
+
+          // Définissez la source de l'image comme le contenu du fichier
+          img.src = event.target.result;
+      };
+
+      // Commencez la lecture du fichier
+      reader.readAsDataURL(file);
+      }
+      // end function to uploade img
+      // function to upload photo
+      function uploadyourphoto(){
+        var photourl = base64Contenttable.slice(-1).pop();
+        var photoDataUrl = 'data:image/png;base64,' + photourl;
+        Swal.fire({
+        text: i18next.t('IDTRANSLATEPROFIL29FILE'),
+        imageUrl: `${photoDataUrl}`,
+        imageWidth: 400,
+        imageHeight: 300,
+        imageAlt: 'Custom image',
+        showCancelButton : true,
+        allowOutsideClick : false,
+        cancelButtonText : i18next.t('IDTRANSLATEPROFIL29FILE1'),
+        confirmButtonText :i18next.t('IDTRANSLATEPROFIL29FILE2')
+      }).then((result)=>{
+        const db = getDatabase();
+        const userId = localStorage.getItem("unserconnect");
+        if (result.isConfirmed) {
+          update(ref(db, "utilisateurs/" + userId), {
+            PIECESDIDENTITE : photourl,
+          }).then(() => {
+          Swal.fire({
+          title: i18next.t('IDTRANSLATEPROFIL38X'),
+          text: i18next.t('IDTRANSLATEPROFIL39X'),
+          icon: 'success'
+        });
+       setTimeout(()=>{
+        window.location.reload();
+       }, 6000)
+        }).catch((error) => {
+          Swal.fire({
+          title: i18next.t('IDTRANSLATEPROFIL40X'),
+          text: i18next.t('IDTRANSLATEPROFIL41X'),
+          icon: 'error'
+        });
+        // alert("les données ne sont pas supprimées " + error);
+        });
+      
+      }
+      })
+      }
+      } else {
+        window.location.href = "./../v/login/login.html"
+          //alert("no data");
+      }
+      
+
+        //function to controle button paiement
+      var statusmyCompt = snapshot.val().IDREGION
+      if(snapshot.val().isDefaultAccount){
+      var paiementBtn = document.getElementById('myBtn');
+      var paiementBtnV = document.getElementById('myBtn2');
+      paiementBtnV.style.display = "block"
+      paiementBtn.style.display = "none"
+      var CONSULTEZLESANNONCES = document.getElementById('CONSULTEZLESANNONCES');
+      function handleMouseEnter() {
+      Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: i18next.t('IDTRANSLATEPROFIL29'),
+      //footer: '<a href="">Why do I have this issue?</a>'
+      })    
+      }
+
+     {/*function handleMouseEnterz() {
+      Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: `Vous ne pouvez pas consulter les annonces pour l'instant. 
+      Car vous n'avez pas encore un compte validé. `,
+      //footer: '<a href="">Why do I have this issue?</a>'
+      })    
+      }
+    CONSULTEZLESANNONCES.addEventListener("mouseenter", handleMouseEnterz); */}
+    paiementBtnV.addEventListener("click", handleMouseEnter);   
+      }else{
+      var paiementBtn = document.getElementById('myBtn');
+      var paiementBtnV = document.getElementById('myBtn2');
+      paiementBtnV.style.display = "none"
+      paiementBtn.style.display = "block"
+      // function to add unity for kkiapay
+      var payYourUnity =  document.getElementById('payYourUnity');
+      var payYourUnitybtn =  document.getElementById('payYourUnitybtn');
+      payYourUnitybtn.addEventListener('click', function(){
+        var inputValue = payYourUnity.value;
+        if(payYourUnity.value != null
+        && payYourUnity.value != 0 && payYourUnity.value != "" ){
+        //var modal__close =  document.getElementById('modal__close'); 
+        document.getElementById('preloader').style.display = "block"
+        document.getElementById('myheaderid').style.display = "none"
+        document.getElementById('footer').style.display = "none"
+        //$("#render").trigger("click");
+        //modal__close.click()
+        const dbref = ref(db);
+        get(child(dbref, "utilisateurs/" + userId))
+            .then((snapshot) => {
+            if (snapshot.exists()) {
+              document.getElementById('preloader').style.display = "none"
+              var debit = payYourUnity.value
+              var priceUnity = debit * 95
+              //alert(priceUnity)
+              var myCompta = snapshot.val().COMPTECREDIT
+              localStorage.setItem('unityVal', priceUnity)
+              localStorage.setItem('myComptaval', myCompta)
+              localStorage.setItem('Debitval', debit)
+              window.location.href = "nxi.html"
+
+              
+            } else {
+                alert("no data");
+            }
+            })
+            .catch((error) => {
+           alert("il y a une ERROR " + error);
+            });
+          }else{
+          Swal.fire({
+          text: i18next.t('IDTRANSLATEPROFIL43'),
+          icon: 'error'
+          });
+          }
+ 
+          })
+        // Deuxième moyens de paiement
+        const renderDiv = document.getElementById('render');
+
+        renderDiv.addEventListener('click', function() {
+          renderDiv.style.position = '';
+          renderDiv.style.top = '';
+          renderDiv.style.left = '';
+          renderDiv.style.transform = '';
+        });
+      var payYourUnity =  document.getElementById('payYourUnity');
+      var payYourUnitybtn =  document.getElementById('payYourUnitybtnd');
+
+  
+      payYourUnitybtn.addEventListener('click', function(){
+        var inputValue = payYourUnity.value;
+        if(payYourUnity.value != null
+        && payYourUnity.value != 0 && payYourUnity.value != "" ){
+        //var modal__close =  document.getElementById('modal__close'); 
+        document.getElementById('preloader').style.display = "block"
+        document.getElementById('myheaderid').style.display = "none"
+        document.getElementById('footer').style.display = "none"
+
+        $("#render").trigger("click");
+        //modal__close.click()
+        const dbref = ref(db);
+        get(child(dbref, "utilisateurs/" + userId))
+            .then((snapshot) => {
+            if (snapshot.exists()) {
+              document.getElementById('preloader').style.display = "none"
+              var debit = payYourUnity.value
+              var priceUnity = debit * 95
+              //alert(priceUnity)
+              var myCompta = snapshot.val().COMPTECREDIT
+              localStorage.setItem('unityVal', priceUnity)
+              localStorage.setItem('myComptaval', myCompta)
+              localStorage.setItem('Debitval', debit)
+              window.location.href = "nx.html"
+
+              
+            } else {
+                alert("no data");
+            }
+            })
+            .catch((error) => {
+           alert("il y a une ERROR " + error);
+           console.log("il y a une ERROR " + error)
+            });
+          }else{
+          Swal.fire({
+          text: i18next.t('IDTRANSLATEPROFIL43'),
+          icon: 'error'
+          });
+          }
+          })
+      } 
+      
+      })
+      .catch((error) => {
+      Swal.fire({
+      text: i18next.t('IDTRANSLATEPROFIL42'),
+      icon: 'error'
+      });
+      console.log(error)
+  });
+  })
+// Supprimer l'utilisateur de la base de données
+
+// function to delete my count
+var DeleteMyAccountID = document.getElementById('deleteMyAccountID');
+DeleteMyAccountID.addEventListener('click', function(){
+  Swal.fire({
+  title: i18next.t('IDTRANSLATEPROFIL30W'),
+  text: i18next.t('IDTRANSLATEPROFIL30'),
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: i18next.t('IDTRANSLATEPROFIL31'),
+}).then((result) => {
+  if (result.isConfirmed) {
+    remove(ref(db, "utilisateurs/" + userId))
+    .then(() => {
+      Swal.fire({
+      title: i18next.t('IDTRANSLATEPROFIL38'),
+      text: i18next.t('IDTRANSLATEPROFIL39'),
+      icon: 'success'
+    });
+     
+     //window.location.reload();
+     }).catch((error) => {
+      Swal.fire({
+      title: i18next.t('IDTRANSLATEPROFIL40'),
+      text: i18next.t('IDTRANSLATEPROFIL41'),
+      icon: 'error'
+    });
+     // alert("les données ne sont pas supprimées " + error);
+    });
+   
+  }
+})
+})
+
+//function to logout a count
+var logout = document.getElementById('logoutID');
+    logout.addEventListener('click', function() {
+    Swal.fire({
+    title: i18next.t('IDTRANSLATEPROFIL32'), 
+    text: i18next.t('IDTRANSLATEPROFIL33'), 
+    icon: 'warning',
+    showCancelButton: true,
+    allowOutsideClick: false,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: i18next.t('IDTRANSLATEPROFIL34'), 
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.removeItem('unserconnect');
+      localStorage.removeItem('Email');
+      localStorage.removeItem('Password');
+      Swal.fire({
+      icon: 'success',
+      allowOutsideClick: false,
+      title: i18next.t('IDTRANSLATEPROFIL35'), 
+      text: i18next.t('IDTRANSLATEPROFIL36'),
+      footer: '<a href="" id="IDTRANSLATEPROFIL37">' + i18next.t('IDTRANSLATEPROFIL37') + '</a>',
+    }).then((result)=>{
+     if(result.isConfirmed){
+      window.location.href = "./login/login.html"
+     }
+    })
+  }
+})
+})
+if(!userId){
+window.location.href = "./login/login.html"
+}
+      
+</script>
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.kkiapay.me/k.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </script>
+  <!-- Template Main JS File -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/main.js"></script>
+   <!-- script to import alert personnal -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+  <script src="userConnect.js"></script>
+  <script src="./../translate.js"></script>
+  <script src="profil.js"></script>
+</div>
+
+
+</body>
+<style>
+ 
+</style>
+</html>

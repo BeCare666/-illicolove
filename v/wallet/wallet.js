@@ -41,12 +41,14 @@ const firebaseConfig = {
     messagingSenderId: "687063035754",
     appId: "1:687063035754:web:7f03061d8cd5fd0ee9bf13"
   };
-  const UserConnectuser = localStorage.getItem("unserconnect");
+  //const UserConnectuser = localStorage.getItem("unserconnect");
   // Initialisation de Firebase
   firebase.initializeApp(firebaseConfig);
-  
   // Récupérer un utilisateur par son ID
+  firebase.auth().onAuthStateChanged(function(user) { 
+  var userId = user.uid;
   function getUserById(userId) {
+
     const database = firebase.database();
     const userRef = database.ref(`/utilisateurs/${userId}`);
   
@@ -72,7 +74,7 @@ const firebaseConfig = {
             IdTogetwallet.disabled = false
           }
           //function to creat the liste p
-          // Sélectionnez la balise p
+
           const userListP = document.getElementById("phistoryId");
           const userListUl = document.createElement("span");
           //console.log("Utilisateur récupéré :", user);
@@ -233,22 +235,92 @@ const firebaseConfig = {
                 });
                 // end envoi de mail de validation
                 }
-                  });
+                });
 
             })
             var texteTraduit3W = i18next.t("IDTRANSLATEWALLETU");
             $('[id="IDTRANSLATEWALLETU"]').text(texteTraduit3W);
             var texteTraduit3WX = i18next.t("IDTRANSLATEWALLETX");
             $('[id="IDTRANSLATEWALLETX"]').text(texteTraduit3WX);
-        } else {
-          //console.log("Utilisateur introuvable.");
-        }
+
+            // start function to userconnect
+
+let inactiveTimeoutId;
+// Fonction appelée lorsque l'utilisateur est actif sur la page
+function handleUserActive() {
+  const newDataCwq = {
+    USERCONNECT : true,
+    ONLINEDATE : "en ligne",
+    ONLINEHOURS : "en ligne",
+    };
+    userRef.update(newDataCwq, (error) => {
+      if (error){
+        //console.error("Erreur :", error);
+      }else{
+        // console.log("O")
+      }
+     })
+clearTimeout(inactiveTimeoutId); // Réinitialiser le délai
+ 
+//console.log("L'utilisateur est actif sur la page");
+// Vous pouvez exécuter d'autres actions ou déclencher des événements ici
+}
+
+// Fonction appelée lorsque l'utilisateur quitte la page
+function handleUserInactive() {
+inactiveTimeoutId = setTimeout(function() {
+// Créez une nouvelle instance de l'objet Date
+const currentDate = new Date();
+// Obtenez les différentes composantes de la date
+const year = currentDate.getFullYear(); // Année (ex: 2023)
+const month = currentDate.getMonth() + 1; // Mois (de 0 à 11, donc on ajoute 1)
+const day = currentDate.getDate(); // Jour du mois (de 1 à 31)
+const hours = currentDate.getHours().toString().padStart(2, '0'); // Heures (de 00 à 23)
+const minutes = currentDate.getMinutes(); // Minutes (de 0 à 59)
+//const seconds = currentDate.getSeconds(); // Secondes (de 0 à 59)
+var theOnlineDate = `${day}/${month}/${year}`
+var theOnlinehours = `${hours}h:${minutes}min`
+ const newDataCwqx = {
+  USERCONNECT : false,
+  ONLINEDATE : theOnlineDate,
+  ONLINEHOURS : theOnlinehours,
+  };
+
+  userRef.update(newDataCwqx, (error) => {
+    if (error){
+      //console.error("Erreur :", error);
+    }else{
+    //   console.log("N")
+    }
+   })
+   // console.log("L'utilisateur a quitté la page");
+    // Mettre à jour le statut ou effectuer d'autres actions ici
+  }, 60000); // Délai de 60 secondes avant de mettre à jour le statut
+}
+
+// Appeler la fonction handleUserActive dès le chargement de la page
+handleUserActive();
+
+// Ajouter un écouteur d'événement pour détecter lorsque l'utilisateur interagit avec la page
+document.addEventListener("visibilitychange", function() {
+  if (document.visibilityState !== "visible") {
+    handleUserInactive();
+  } else {
+    handleUserActive();
+  }
+}); 
+// end function to userconnect
+  } else if(user === null) {
+   window.location.href =  "../login/login.html"
+  }
       })
       .catch((error) => {
         //console.error("Erreur lors de la récupération de l'utilisateur :", error);
       });
+    
   }
   
   // Exemple d'utilisation : Remplacez "ID_DE_L_UTILISATEUR" par l'ID de l'utilisateur que vous souhaitez récupérer.
-  getUserById(UserConnectuser);
+  getUserById(userId);
+  });
  }

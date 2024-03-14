@@ -119,6 +119,7 @@
     function getAllDataRealtimePro() {
     firebase.auth().onAuthStateChanged(function(user) { 
     if(user){
+      trackVisiteAllusers()
     var userId = user.uid;
     var myalldatas = []; 
     var myalldatasUSers = []; 

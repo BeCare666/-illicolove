@@ -325,7 +325,7 @@
 
             firebase.auth().onAuthStateChanged(function(user) { 
             if(user){
-            trackVisiteAllusers()
+              trackVisiteOneuser()
             var userId = user.uid;
             const userRef = database.ref(`/utilisateurs/${UserConnectIdToBuy}`);
             userRef.once("value").then((snapshot) => {

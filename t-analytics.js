@@ -5,6 +5,7 @@ function trackSuccessfulRegistration() {
       'category': 'utilisateurs',
       'label': 'inscription_réussie'
     });
+    alert("inscription")
  }
 
  // Fonction pour déclencher l'événement d'inscription réussie
@@ -14,6 +15,7 @@ function trackSuccessfulLogin() {
       'category': 'utilisateurs',
       'label': 'connexion_réussie'
     });
+    alert("connexion")
  }
 
   // Fonction pour déclencher l'événement d'inscription réussie
@@ -23,6 +25,7 @@ function trackSuccessfulEnd() {
       'category': 'utilisateurs',
       'label': 'finalisation_réussie'
     });
+    alert("finalisation")
  }
   // Fonction pour déclencher l'événement d'inscription réussie
   function trackSuccessfulforgetpassword() {
@@ -31,6 +34,7 @@ function trackSuccessfulEnd() {
       'category': 'utilisateurs',
       'label': 'Récupération de mot de passe_réussie'
     });
+    alert("Récupération de mot de passe")
  }
 // Fonction pour déclencher l'événement d'inscription réussie
 function trackSuccessfulSendForm() {
@@ -39,6 +43,7 @@ function trackSuccessfulSendForm() {
       'category': 'utilisateurs',
       'label': 'annonce_réussie'
     });
+    alert("annonce")
  }
 
  // Fonction pour déclencher l'événement d'inscription réussie
@@ -48,6 +53,7 @@ function trackSuccessfulbuyUnity() {
       'category': 'utilisateurs',
       'label': 'achatunité_réussie'
     });
+    alert("achat_unité")
  }
 
 // Fonction pour déclencher l'événement d'inscription réussie
@@ -57,6 +63,7 @@ function trackVisiteAllusers() {
       'category': 'utilisateurs',
       'label': 'visite_utilisateurs_réussie'
     });
+    alert("visite de tout les utilisateurs")
  }
 
  // Fonction pour déclencher l'événement d'inscription réussie
@@ -66,4 +73,14 @@ function trackVisiteOneuser() {
       'category': 'utilisateurs',
       'label': "visite d'un utilisateur_réussie"
     });
+    alert("visite d'un utilisateur")
  }
+  // Fonction pour déclencher l'événement d'inscription réussie
+function visiteSurlapage1() {
+  gtag("event', 'visite sur la page 1 ", {
+    'method': 'pages',
+    'category': 'utilisateurs',
+    'label': "visite sur la page 1_réussie"
+  });
+ alert("visite sur la page 1")
+}

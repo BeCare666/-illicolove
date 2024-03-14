@@ -1,5 +1,5 @@
 window.onload = function(){
-
+  visiteSurlapage1()
   const urlParams = new URLSearchParams(window.location.search);
   const UserAffiliateID = urlParams.get('id');
   if(UserAffiliateID){

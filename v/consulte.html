@@ -88,9 +88,15 @@
 
         </div>
 
-      </div><img src="./../u/index.html" alt="">
-    </section><!-- End Services Section -->
+      </div>
+    </section><!-- End Services Section <img src="./../u/index.html" alt="">-->
 <script>
+  const myOptionID = localStorage.getItem("myOptionID");
+  if(!myOptionID){
+  window.location.href = "profil.html" 
+  }else{
+
+  }
    var tablecountryV = []
    const ChosemyregionclassV = document.getElementsByClassName('chosemyregionclass');
      for (let i = 0; i < ChosemyregionclassV.length; i++) {

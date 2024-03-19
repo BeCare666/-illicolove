@@ -288,7 +288,7 @@
      <!-- <h2 style="color: white !important;">illicolove,<span style="font-size: 15px !important; color: white;" id="IDTRANSLATEPROFIL13"></span></h2>-->  
       <div>
         <a href="#" class="btn-get-started scrollto annoncy" id="PUBLIEZUNEANNONCE" onclick="PUBLIEZUNEANNONCE()"></a>
-        <a href="#" class="btn-projects scrollto annoncy" id="CONSULTEZLESANNONCES" onclick="CONSULTEZLESANNONCES()"></a>
+        <a href="#" class="btn-projects scrollto annoncy" id="CONSULTEZLESANNONCES"></a>
       </div>
     </div>
 
@@ -458,11 +458,9 @@ style="background-color: #f38e9d !important;"
    function PUBLIEZUNEANNONCE(){
       window.location.href="choix.html"
    }
-   function CONSULTEZLESANNONCES(){
-      window.location.href="consulte.html"
-   }
+  
   </script>
-  <script type="module">
+  <script>
 const firebaseConfig = {
     apiKey: "AIzaSyCDGjJ1-gLtw0__8Om8OEzbXYNgBPWw1ik",
     authDomain: "illicolove0.firebaseapp.com",
@@ -514,6 +512,45 @@ const firebaseConfig = {
         }
         })
         }
+        // start  function CONSULTEZLESANNONCES
+        var CONSULTEZLESANNONCESX = document.getElementById('CONSULTEZLESANNONCES');
+        CONSULTEZLESANNONCESX.addEventListener('click', CONSULTEZLESANNONCES)
+        function CONSULTEZLESANNONCES(){
+        if(!snapshot.val().IDREGION) {
+        Swal.fire({
+        icon: 'error',
+        allowOutsideClick: false,
+        title: 'Oops...',
+        text: i18next.t('IDTRANSLATEUSERD29'),
+        confirmButtonText: i18next.t('IDTRANSLATEUSERD33'),
+        footer: '<a href="choix.html" id="IDTRANSLATEUSERD30">' + i18next.t('IDTRANSLATEUSERD30') + '</a>' 
+        })
+        }else if(!snapshot.val().VALIDERMONCOMPTE){
+          Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: i18next.t('IDTRANSLATEPROFIL2'),
+              showConfirmButton: false,
+              timer: 1500
+            // footer: '<a href="">Why do I have this issue?</a>'
+            })
+        }else if(snapshot.val().MONCOMPTESUSPENDU){
+          Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: i18next.t('IDTRANSLATEPROFIL2'),
+              showConfirmButton: false,
+              timer: 1500
+            // footer: '<a href="">Why do I have this issue?</a>'
+            })
+        }else{
+          var IDREGIONW = "AETIPMLKJHGFDQSCVBN"
+          localStorage.setItem('myOptionID', IDREGIONW);
+          window.location.href="consulte.html"
+        }    
+      }
+      // end  function CONSULTEZLESANNONCES
+
        //function to generate affilition link
         const linkInput = document.getElementById('linkInput');
         const copyButton = document.getElementById('affiliateID');

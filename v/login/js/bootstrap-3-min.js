@@ -23,8 +23,8 @@ document.getElementById('password').value = savedPassword
 }
 // Obtenez une référence à l'emplacement contenant les données d'utilisateur
 const usersRef = dbRef.child("utilisateurs");
-  // Écoute de l'événement "click" sur le bouton de recherche
-  // Écoute de l'événement "click" sur le bouton de recherche ToacceptCookies
+// Écoute de l'événement "click" sur le bouton de recherche
+// Écoute de l'événement "click" sur le bouton de recherche ToacceptCookies
 function submitmy(){
 document.getElementById('preloader').style.display = "block"
 // Obtenez l'e-mail et le mot de passe de l'utilisateur

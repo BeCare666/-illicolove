@@ -484,7 +484,7 @@ font-size: 13.5px !important;
                 var unityUser = snapshot.val().COMPTECREDIT                
                 var Img1Id = document.getElementById('img1Id');
                 var photoDataUrl = 'data:image/png;base64,' + snapshot.val().PIECESDIDENTITE;
-                Img1Id.innerHTML = `${snapshot.val().PIECESDIDENTITE ? `<img src="${photoDataUrl}" alt="Image 1" style="height: 55vh; width: 100%;"/>` : '<img src="img/log.png" alt="Image 1" style="max-width: 100%; max-height: 55vh; width: auto; height: auto;"/>&nbsp;'}`;
+                Img1Id.innerHTML = `${snapshot.val().PIECESDIDENTITE ? `<img src="${photoDataUrl}" alt="Image 1" style="width: 100%; max-height: 55vh; width: auto; height: auto;"/>` : '<img src="img/log.png" alt="Image 1" style="max-width: 100%; max-height: 55vh; width: auto; height: auto;"/>&nbsp;'}`;
                 //var img2Id = document.getElementById('img2Id');
                 //img2Id.src = photoDataUrl2
                 document.getElementById('fullname').innerHTML = `${snapshot.val().fullname}`

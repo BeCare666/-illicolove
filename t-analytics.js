@@ -84,3 +84,12 @@ function visiteSurlapage1() {
   });
  console.log("visite sur la page 1") 
 }
+
+function sendeCNI() {
+  gtag("event', 'Envoie de la pièce d'identité  ", {
+    'method': 'pages',
+    'category': 'utilisateurs',
+    'label': "Envoie de la pièce d'identité_réussie"
+  });
+ console.log("Envoie de la pièce d'identité") 
+}

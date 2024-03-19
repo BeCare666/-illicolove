@@ -26,6 +26,80 @@ document.getElementById('Mymaps').style.margin ="0"
   var acceptToUseCookies = localStorage.getItem('ToacceptCookies');
 
 if(!acceptToUseCookies){
+ Swal.fire({
+  title: 'Accepter les cookies',
+  html: '<div class="swal-custom-content">' +
+    '<div class="swal-icon-container">' +
+    '<i class="fas fa-cookie-bite"></i>' +
+    '</div>' +
+    '<div class="swal-text-container">' +
+    '<strong>Bienvenue sur illicolove !</strong>' +
+    '<p>Pour améliorer votre expérience, nous utilisons des cookies et collectons des données de géolocalisation.</p>' +
+    `<p>En continuant à naviguer sur notre site, vous consentez à l'utilisation de ces technologies.</p>` +
+    `<p>Consultez notre <a href="politique.html">politique de confidentialité</a> pour plus d'informations et pour personnaliser vos préférences.</p>`+
+    '</div>' +
+    '</div>',
+  icon: 'info',
+  showCancelButton: true,
+  confirmButtonText: '<i class="fas fa-check"></i> Accepter tout',
+  cancelButtonText: '<i class="fas fa-times"></i> Rejeter tout',
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  allowOutsideClick: false,
+  showClass: {
+    popup: 'swal2-noanimation',
+    backdrop: 'swal2-noanimation'
+  },
+  hideClass: {
+    popup: '',
+    backdrop: ''
+  },
+  customClass: {
+    actions: 'swal-custom-actions'
+  },
+  onBeforeOpen: () => {
+    const confirmButton = Swal.getConfirmButton();
+    confirmButton.style.marginRight = '15vh';
+  }
+}).then((result) => {
+    if (result.isConfirmed) {
+     var acceptToUseCookies = true
+      localStorage.setItem('ToacceptCookies', acceptToUseCookies)
+      Swal.fire(
+        'Cookies acceptés',
+        `Vous avez accepté l'utilisation des cookies.`,
+        'success'
+      );
+      // Ajoutez votre code pour gérer l'acceptation des cookies ici
+      //setTimeout(()=>{
+      //  Swal.fire({
+      //    text: `
+       //   Chers utilisateurs, nous tenons à vous informer que notre site illicolve.com est toujours en cours de développement. 
+       //   Nous vous remercions de votre compréhension et de votre patience pendant cette phase de création.`,
+      //    icon: 'info'
+      //    });
+     // },5000)
+    } else {
+      Swal.fire(
+        'Cookies refusés',
+        `Vous avez refusé l'utilisation des cookies.`,
+        'warning'
+      );
+      // Ajoutez votre code pour gérer le refus des cookies ici
+    }
+  });
+}
+
+}
+
+// function to open detail  
+//var OpendetailIDILLI = document.getElementById('opendetailIDILLI');
+//var DetailIDILLI = document.getElementById('detailIDILLI');
+//OpendetailIDILLI.addEventListener('click', function(){
+//DetailIDILLI.style.display = "block"
+//})
+
+{/*if(!acceptToUseCookies){
   Swal.fire({
     title: 'Accept Cookies',
     html: '<div class="swal-custom-content">' +
@@ -88,14 +162,4 @@ if(!acceptToUseCookies){
       // Ajoutez votre code pour gérer le refus des cookies ici
     }
   });
-}
-
-}
-
-// function to open detail  
-//var OpendetailIDILLI = document.getElementById('opendetailIDILLI');
-//var DetailIDILLI = document.getElementById('detailIDILLI');
-//OpendetailIDILLI.addEventListener('click', function(){
-//DetailIDILLI.style.display = "block"
-//})
-
+}*/}

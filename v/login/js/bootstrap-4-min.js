@@ -104,7 +104,24 @@
        }
       }
       
-      
+      const auth = firebase.auth();
+      // Définir l'événement de clic sur le bouton
+      const loginWithFacebookBtn = document.getElementById('toSignupIDgoogle');
+      loginWithFacebookBtn.addEventListener('click', () => {
+        // Créer une instance du fournisseur d'authentification Facebook
+        const provider = new firebase.auth.FacebookAuthProvider();
+  
+        // Authentifier avec Facebook
+        auth.signInWithPopup(provider)
+          .then((result) => {
+            // L'utilisateur est connecté avec Facebook
+            console.log('Utilisateur connecté avec Facebook:', result.user);
+          })
+          .catch((error) => {
+            // Une erreur s'est produite lors de l'authentification
+            console.error('Erreur d\'authentification avec Facebook:', error);
+          });
+      });
         var checkbox = document.getElementById("myCheckbox");
         var ToSignupID = document.getElementById("toSignupID");
         var AcceptID = document.getElementById("acceptID");

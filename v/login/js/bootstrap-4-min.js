@@ -103,10 +103,17 @@
         document.getElementById('preloader').style.display = "none"
        }
       }
-      
+
+      // start function to sign up with facebook
       const auth = firebase.auth();
-      // Définir l'événement de clic sur le bouton
-      const loginWithFacebookBtn = document.getElementById('toSignupIDgoogle');
+      // Définir l'événement de clic sur le bouton  
+      const loginWithFacebookBtn = document.getElementById('toSignupIDfacebook');
+      const toSignupIDgoogle = document.getElementById('toSignupIDgoogle');
+      loginWithFacebookBtn.innerHTML = `&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-facebook-f" style="
+      padding: 8px; background-color: blue !important; color: white; font-size: 20px !important;"></i> FACEBOOK`
+      toSignupIDgoogle.innerHTML = `<i class="fab fa-google" style="padding: 5px !important; background: linear-gradient(120deg, #db4437, #f4b400, #0f9d58);
+      border-radius: 50%;
+      padding: 10px; color: white; font-size: 20px !important;"></i> GOOGLE`
       loginWithFacebookBtn.addEventListener('click', () => {
         // Créer une instance du fournisseur d'authentification Facebook
         const provider = new firebase.auth.FacebookAuthProvider();
@@ -115,25 +122,51 @@
         auth.signInWithPopup(provider)
           .then((result) => {
             // L'utilisateur est connecté avec Facebook
-            console.log('Utilisateur connecté avec Facebook:', result.user);
+            //console.log('Utilisateur connecté avec Facebook:', result.user);
+            window.location.href = "login.html"
           })
           .catch((error) => {
             // Une erreur s'est produite lors de l'authentification
             console.error('Erreur d\'authentification avec Facebook:', error);
           });
       });
+      // end function to sign up with facebook
+
+    // Créez une instance du fournisseur Google
+    var googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+    // Ajoutez un événement de clic à un bouton de connexion Google
+    var googleSignInButton = document.getElementById('toSignupIDgoogle');
+    googleSignInButton.addEventListener('click', function() {
+      // Authentification avec Google Popup
+      firebase.auth().signInWithPopup(googleAuthProvider)
+        .then((userCredential) => {
+          // L'utilisateur est authentifié avec succès
+          var user = userCredential.user;
+          console.log('Utilisateur authentifié:', user);
+        })
+        .catch((error) => {
+          // Une erreur s'est produite lors de l'authentification
+          var errorMessage = error.message;
+          console.error('Erreur d\'authentification:', errorMessage);
+        });
+    });
+
         var checkbox = document.getElementById("myCheckbox");
         var ToSignupID = document.getElementById("toSignupID");
         var AcceptID = document.getElementById("acceptID");
         var ReadID = document.getElementById("readID");
-      
         checkbox.addEventListener("change", function() {
           if (checkbox.checked) {
             ToSignupID.disabled = false;  // Activer le bouton
+           // loginWithFacebookBtn.disabled = false;
+           // toSignupIDgoogle.disabled = false;
             AcceptID.style.display = "block "
             ReadID.style.display = "none"
           } else {
             ToSignupID.disabled = true;   // Désactiver le bouton
+           // loginWithFacebookBtn.disabled = true;
+           // toSignupIDgoogle.disabled = true;
             AcceptID.style.display = "none"
             ReadID.style.display = "block"
           }

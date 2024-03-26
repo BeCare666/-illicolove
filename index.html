@@ -550,7 +550,7 @@
     };
     firebase.initializeApp(firebaseConfig);  
   
-    //const UserConnectuser = localStorage.getItem("unserconnect"); 
+    const UserConnectuser = localStorage.getItem("unserconnect"); 
     var BacktoprofilID = document.getElementById('backtoprofilID');
     var MyModalfinger = document.getElementById('myModalfinger');
     var userbuttonID = document.getElementById('user-button');
@@ -564,7 +564,8 @@
     const userRef = database.ref(`/utilisateurs/${userId}`);
     userRef.once("value").then((snapshot) => {
      if (snapshot.exists()){ 
-      var BacktoprofilID = document.getElementById('backtoprofilID');
+      if(UserConnectuser){
+        var BacktoprofilID = document.getElementById('backtoprofilID');
       BacktoprofilID.style.display = "block" 
       //MyModalfinger.style.display = "block"  
       document.getElementById('IDTRANSLATE8LI').style.display = "none"
@@ -595,7 +596,7 @@
       userbuttonID.addEventListener('click', function(){
         window.location.href= "./v/profil.html"
       })
-     }else{
+      }else{
       var BacktoprofilID = document.getElementById('backtoprofilID');
       BacktoprofilID.style.display = "none" 
       //alert("hoooo")
@@ -618,7 +619,29 @@
       }, 16000); // 5000 millisecondes (5 secondes)
      // MyModalfinger.style.display = "none"
      }
+    }else{
+       // functon to controle anaimation div
+    var BacktoprofilID = document.getElementById('backtoprofilID');
+      BacktoprofilID.style.display = "none" 
+      //alert("hoooo")
+      document.getElementById('preloader').style.display = "none"
+
+      // functon to controle anaimation div
+      document.getElementById('animadeID').style.zIndex = "9999"
+      var img = document.querySelector(".animate");
+      setTimeout(function() {
+          img.classList.add("animate-hide");
+      }, 100); // Démarrer l'animation de disparition après 2 secondes
+
+      document.getElementById('Mymapsq').style.marginTop ="5.5vh"
+      document.getElementById('animadeID').style.display = "block"
+      setTimeout(function () {
+      document.getElementById('animadeID').style.display = "none"
+      const element = document.querySelector('.hero');
+      element.classList.add('animate__animated', 'animate__zoomInDown');
       
+      }, 16000); // 5000 millisecondes (5 secondes)
+    }
     })
     }else if(userx === null) {
      // functon to controle anaimation div

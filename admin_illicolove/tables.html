@@ -746,9 +746,9 @@ var administraAccès = document.getElementById('AdministraAccès');
 var administupdate = document.getElementById('Administupdate');
 
 adminRef.orderByChild("email").equalTo(yemail).once("value", function(snapshot) { 
-if (snapshot.exists()) {
+if (!snapshot.exists()) {
   snapshot.forEach(function(userSnapshot) {
-    if(userSnapshot.val().TYPE === "ADMIN"){
+    if(!userSnapshot.val().TYPE === "ADMIN"){
         takemail.innerHTML = `
         <a class="dropdown-item" href="#" id="Administrateur1"> 
          <i style="color: #FFB6C1 !important;" class="fas fa-user fa-sm fa-fw mr-2 text-gray-400" ></i>

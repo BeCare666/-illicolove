@@ -128,20 +128,20 @@
                                 }) 
                               }else{
                                 localStorage.removeItem('IDAFILIATEIDXXX');
-                        // statr envoi de mail de validation
-                        const apiKey = "34F593452254BAB8CACDA4A39FC9C44BFC0D3E63B8842CD369FF37BBE4AC5017DA7917B6E03C3C8EB379F906C80E9DED";
-                        const apiUrl = "https://api.elasticemail.com/v2/email/send";
-                        
-                        // Définir les paramètres de l'e-mail
-                        const emailParams = {
-                        apiKey: apiKey,
-                        subject: "Notification de Commission",
-                        from: "info@illicolove.com",
-                        fromName: "illicolove",
-                        to: UserEmail,
-                        bodyHtml: `
-                        <table cellpadding="10" cellspacing="0" style="background-color: #f1f1f1; padding: 20px;">
-                            <tr>
+                              // statr envoi de mail de validation
+                              const apiKey = "34F593452254BAB8CACDA4A39FC9C44BFC0D3E63B8842CD369FF37BBE4AC5017DA7917B6E03C3C8EB379F906C80E9DED";
+                              const apiUrl = "https://api.elasticemail.com/v2/email/send";
+                              
+                              // Définir les paramètres de l'e-mail
+                              const emailParams = {
+                              apiKey: apiKey,
+                              subject: "Notification de Commission",
+                              from: "info@illicolove.com",
+                              fromName: "illicolove",
+                              to: UserEmail,
+                              bodyHtml: `
+                              <table cellpadding="10" cellspacing="0" style="background-color: #f1f1f1; padding: 20px;">
+                                  <tr>
                                 <td>
                                     <h1 style="color: #333;">Congratulations ${Userfullename}!</h1>
                                     <div style="text-align: center;">
@@ -219,12 +219,12 @@
 
               }
              })
-          } else {
-          Swal.fire({
-          text: i18next.t('IDTRANSLATEPROFIL44'),
-          icon: 'error'
-          });
-          }
+    } else {
+    Swal.fire({
+    text: i18next.t('IDTRANSLATEPROFIL44'),
+    icon: 'error'
+    });
+    }
     }
     const renderDiv = document.getElementById('render');
     renderDiv.addEventListener('click', function() {
@@ -233,10 +233,10 @@
     renderDiv.style.left = '';
     renderDiv.style.transform = '';
     });
-  }else if(user ==null) {
-         window.location.href = "./login/login.html"
-    }
-  });
+    }else if(user ==null) {
+          window.location.href = "./login/login.html"
+      }
+    });
     </script>
     <script src="../t-analytics.js"></script>
   </body>

@@ -11,8 +11,17 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig); 
  var userID = localStorage.getItem("unserconnect")
  var useremail = localStorage.getItem("unserconnectmail")
-  // Référence Firebase contenant les adresses e-mails
-  // Écoute de l'événement "click" sur le bouton de recherche
+ var UID = "UZbHm3NSUqQaojk68RKizCQwdTz2"
+ if(userID != UID){
+  // Sélectionnez l'élément HTML que vous souhaitez modifier
+  var element = document.getElementById("myphone");
+  // Appliquez la règle CSS pour désactiver les événements de pointer
+  element.style.pointerEvents = "none";
+ }else{
+
+ }
+// Référence Firebase contenant les adresses e-mails
+// Écoute de l'événement "click" sur le bouton de recherche
 // Obtenir le code du pays à partir des coordonnées géographiques  
 var mycountryalphacodeipinfo = localStorage.getItem("alphacodeipinfo") // get in signup.html
 var input = document.querySelector("#phone");

@@ -133,3 +133,39 @@ firebase.auth().signInWithEmailAndPassword(email, password)
     $('[id="IDTRANSLATELOGIN15"]').text(texteTraduitprofil15);
  
 }
+
+     // start function to sign up with facebook
+     const auth = firebase.auth();
+     // Définir l'événement de clic sur le bouton
+     const loginWithFacebookBtn = document.getElementById('toSignupIDfacebook');
+     const toSignupIDgoogle = document.getElementById('toSignupIDgoogle');
+      loginWithFacebookBtn.innerHTML = `&nbsp;&nbsp;&nbsp;&nbsp;<i class="fab fa-facebook-f" style="
+      padding: 8px; background-color: blue !important; color: white; font-size: 20px !important;"></i> FACEBOOK`
+      toSignupIDgoogle.innerHTML = `<i class="fab fa-google" style="padding: 5px !important; background: linear-gradient(120deg, #db4437, #f4b400, #0f9d58);
+      border-radius: 50%;
+      padding: 10px; color: white; font-size: 20px !important;"></i> GOOGLE`
+     loginWithFacebookBtn.addEventListener('click', () => {
+       // Créer une instance du fournisseur d'authentification Facebook
+       const provider = new firebase.auth.FacebookAuthProvider();
+ 
+       // Authentifier avec Facebook
+       auth.signInWithPopup(provider)
+         .then((result) => {
+           // L'utilisateur est connecté avec Facebook
+           //console.log('Utilisateur connecté avec Facebook:', result.user);
+           var result = result.user
+           var useruid = result.uid;
+           localStorage.setItem('unserconnect', useruid)
+          // localStorage.setItem('unserconnectmail', email)
+           // funnction to get cookies options     
+           trackSuccessfulLogin()
+           setTimeout(()=>{
+           window.location.href = "./../profil.html"
+           },5000)
+         })
+         .catch((error) => {
+           // Une erreur s'est produite lors de l'authentification
+           console.error('Erreur d\'authentification avec Facebook:', error);
+         });
+     });
+     // end function to sign up with facebook

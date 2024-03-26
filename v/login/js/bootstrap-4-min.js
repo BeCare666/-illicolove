@@ -114,20 +114,22 @@
       toSignupIDgoogle.innerHTML = `<i class="fab fa-google" style="padding: 5px !important; background: linear-gradient(120deg, #db4437, #f4b400, #0f9d58);
       border-radius: 50%;
       padding: 10px; color: white; font-size: 20px !important;"></i> GOOGLE`
-      loginWithFacebookBtn.addEventListener('click', () => {
-        // Créer une instance du fournisseur d'authentification Facebook
-        const provider = new firebase.auth.FacebookAuthProvider();
-  
-        // Authentifier avec Facebook
-        auth.signInWithPopup(provider)
-          .then((result) => {
-            // L'utilisateur est connecté avec Facebook
-            //console.log('Utilisateur connecté avec Facebook:', result.user);
-            window.location.href = "login.html"
+      var facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
+
+      // Ajoutez un événement de clic à un bouton de connexion Facebook
+      var facebookSignInButton = document.getElementById('toSignupIDfacebook');
+      facebookSignInButton.addEventListener('click', function() {
+        // Authentification avec Facebook Popup
+        firebase.auth().signInWithPopup(facebookAuthProvider)
+          .then((userCredential) => {
+            // L'utilisateur est authentifié avec succès
+            var user = userCredential.user;
+            console.log('Utilisateur authentifié:', user);
           })
           .catch((error) => {
             // Une erreur s'est produite lors de l'authentification
-            console.error('Erreur d\'authentification avec Facebook:', error);
+            var errorMessage = error.message;
+            console.error('Erreur d\'authentification:', errorMessage);
           });
       });
       // end function to sign up with facebook
@@ -159,14 +161,14 @@
         checkbox.addEventListener("change", function() {
           if (checkbox.checked) {
             ToSignupID.disabled = false;  // Activer le bouton
-           // loginWithFacebookBtn.disabled = false;
-           // toSignupIDgoogle.disabled = false;
+            loginWithFacebookBtn.disabled = false;
+           toSignupIDgoogle.disabled = false;
             AcceptID.style.display = "block "
             ReadID.style.display = "none"
           } else {
             ToSignupID.disabled = true;   // Désactiver le bouton
-           // loginWithFacebookBtn.disabled = true;
-           // toSignupIDgoogle.disabled = true;
+            loginWithFacebookBtn.disabled = true;
+            toSignupIDgoogle.disabled = true;
             AcceptID.style.display = "none"
             ReadID.style.display = "block"
           }
